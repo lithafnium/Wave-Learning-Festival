@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../theme'
 
 export const NavbarContainer = styled.div`
     width: 100%; 
@@ -9,7 +10,22 @@ export const NavbarContainer = styled.div`
 
 export const NavbarInner = styled.div`
     width: 100%; 
-    max-width: 1024px; 
+    @media ${device.mobleS}{
+        max-width: 320px; 
+    }
+    @media ${device.tablet} {
+        max-width: 768px;
+
+    }
+    @media ${device.tabletL} {
+        max-width: 768px;
+       
+    }
+
+    @media ${device.laptop} {
+        max-width: 1024px;
+      
+    }
     display: flex; 
     align-items: center; 
     justify-content: space-between;
@@ -21,8 +37,16 @@ export const Brand = styled.h2`
 `
 
 export const Links = styled.div`
-    display: flex; 
-    align-items: center; 
+    @media ${device.mobileS}{
+        display: none;
+    }
+
+    @media ${device.tablet}{
+        display: flex; 
+        align-items: center; 
+    }
+
+    
 
     & a{
         color: rgba(31,45,61,.5);
