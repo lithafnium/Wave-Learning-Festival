@@ -1,14 +1,21 @@
 import styled from 'styled-components'
 import { device } from '../../theme'
 
-export const NavbarContainer = styled.header`
+export const FooterContainer = styled.footer`
     width: 100%; 
     height: 120px; 
     display: flex; 
     justify-content: center; 
+    background: rgb(38,132,255);
+    background: linear-gradient(90deg, rgba(38,132,255,1) 0%, rgba(0,184,217,1) 100%);
+
+    & p{
+        color: #eeeeee;
+        font-weight: 600; 
+    }
 `
 
-export const NavbarInner = styled.div`
+export const FooterInner = styled.div`
     width: 100%; 
     @media ${device.mobleS}{
         max-width: 320px; 
@@ -29,54 +36,17 @@ export const NavbarInner = styled.div`
     display: flex; 
     align-items: center; 
     justify-content: space-between;
+    flex-wrap: wrap; 
 `
 
-export const Brand = styled.h2`
-    margin: 0px; 
-    color: #2684ff;
+export const Social = styled.div`
+    display: flex; 
 `
 
-export const Links = styled.div`
-    @media ${device.mobileS}{
-        display: none;
-    }
-
-    @media ${device.tablet}{
-        display: flex; 
-        align-items: center; 
-    }
-
-    
-
-    & a{
-        color: rgba(31,45,61,.5);
-        font-size: 16px; 
-        text-decoration: none; 
-        transition: 0.2s; 
-        font-weight: 600; 
-    }
-
-    & a:hover{
-        color: rgba(31,45,61,1);
-    }
-
-    & a:visited{
-        color: black; 
-    }
-
+export const Icon = styled.div`
+    margin: 10px; 
 `
 
-export const NavItem = styled.p`
-    margin: 0px; 
-    margin-left: 15px; 
-    margin-right: 15px;  
-    border-bottom: 2px solid white; 
-    transition: 0.2s; 
-
-    &:hover{
-        border-bottom: 2px solid #21ce99;
-    }
-`
 
 export const Button = styled.button`
     padding: 15px 40px 15px 40px; 

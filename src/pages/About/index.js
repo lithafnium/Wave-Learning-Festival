@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
 import {
     Container, ContainerInner, HeaderImage, AboutDescription,
     Header, DescriptionText, Button, DescriptionContainer, DescriptionContainerInner,
@@ -73,7 +74,7 @@ const About = () => {
                 </DescriptionContainerInner>
             </DescriptionContainer>
             <SchoolsContainer>
-            <h2 style = {{color: 'rgba(0, 0, 0, 0.8'}}>Taught by students from over 25 universities:</h2>
+            <h2 style = {{textAlign: 'center', color: 'rgba(0, 0, 0, 0.8'}}>Taught by students from over 25 universities:</h2>
 
                 <SchoolsContainerInner>
                     <SchoolLogo>
@@ -86,7 +87,7 @@ const About = () => {
                     </SchoolLogo>
                 </SchoolsContainerInner>
             </SchoolsContainer>
-
+            <Footer/>
         </div>
     )
 }
