@@ -177,6 +177,7 @@ export const SchoolsContainer = styled.div`
     display: flex; 
     align-items: center; 
     flex-direction: column; 
+    margin-bottom: 8vh; 
 `
 
 export const SchoolsContainerInner = styled.div`
