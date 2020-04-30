@@ -10,27 +10,33 @@ export const Container = styled.div`
 `
 
 export const ContainerInner = styled.div`
-    width: 80%; 
     margin-bottom: 5vh;
 
     @media ${device.mobileS} {
         flex-direction: column; 
         justify-content: center; 
         align-items: center; 
+        width: 80%; 
+
     }
 
     @media ${device.tablet} {
-        margin-top: 20em; 
+        margin-top: 0; 
+        width: 80%;
 
     }
     @media ${device.tabletL} {
         margin-top: 0; 
         max-width: 768px;
+        width: 100%;
+
  
     }
 
     @media ${device.laptop} {
         max-width: 1024px;
+        width: 100%;
+
     }
 
     & h1{

@@ -14,7 +14,7 @@ export const NavbarInner = styled.div`
         width: 80%;
     }
     @media ${device.tablet} {
-        width: 100%; 
+        width: 80%; 
         max-width: 768px;
 
     }
