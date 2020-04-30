@@ -25,12 +25,15 @@ const About = () => {
                 <ContainerInner>
                     <AboutDescription>
                         <Header>
-                            Title slogan slogan
+                            Make a Difference, Right from home
                         </Header>
                         <DescriptionText>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        Wave Learning Festival is a student-run educational 
+                        platform that aims to teach students through seminars 
+                        on a variety of topics. Classes will be free with an 
+                        optional donation, and we hope to donate everything we 
+                        raise to nonprofits aiding in COVID-19 relief.
+
                         </DescriptionText>
                         <Button>
                             <IconContext.Provider value={{ color: "white", size: "1.5em", style: { verticalAlign: 'middle' } }}>
@@ -53,7 +56,9 @@ const About = () => {
                                 <MdPersonalVideo />
                             </div>
                         </IconContext.Provider>
-                        <p>Lorem ipsum dolor sit ameasdfasdfasft, consectetur adipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+                        <h3>Platform</h3>
+                        <p>Our teachers connect with students online via remote-learning platforms 
+                            like Zoom while maintaining an interactive and engaging environment</p>
                     </Card>
                     <Card>
                         <IconContext.Provider value={{ color: "#2684ff", size: "3em", style: { verticalAlign: 'middle' } }}>
@@ -61,7 +66,8 @@ const About = () => {
                                 <MdModeEdit />
                             </div>
                         </IconContext.Provider>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed sdafasdfasdklfjaskdfja Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+                        <h3>Types of Courses</h3>
+                        <p>Our courses will range from traditionally styled lectures to teachers’ passion projects, exploring unique areas of education.</p>
                     </Card>
                     <Card>
                         <IconContext.Provider value={{ color: "#2684ff", size: "3em", style: { verticalAlign: 'middle' } }}>
@@ -69,12 +75,14 @@ const About = () => {
                                 <MdLanguage />
                             </div>
                         </IconContext.Provider>
-                        <p>Lorem ipsum dolor sit amet, casdfasdfasfadfonsectetur asdfasfdadipiscing elit, sed Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+                        <h3>Demographics</h3>
+
+                        <p>Our aim is to create a global community of teachers and students in order to ensure educational equity during the COVID-19 crisis.</p>
                     </Card>
                 </DescriptionContainerInner>
             </DescriptionContainer>
             <SchoolsContainer>
-            <h2 style = {{textAlign: 'center', color: 'rgba(0, 0, 0, 0.8'}}>Taught by students from over 25 universities:</h2>
+            <h2 style = {{textAlign: 'center', color: 'rgba(0, 0, 0, 0.8'}}>Taught by students from all over the country:</h2>
 
                 <SchoolsContainerInner>
                     <SchoolLogo>
