@@ -7,6 +7,23 @@ export const Container = styled.div`
     display: flex; 
     justify-content: center; 
     align-items: center; 
+    @media ${device.mobileS} {
+        margin-top: 120px 
+    }
+
+    @media ${device.mobileM} {
+        margin-top: 0px; 
+    }
+
+    @media ${device.mobileL} {
+        margin-top: 0px; 
+    }
+
+
+    @media ${device.tablet} {
+        margin-top: 0px;
+    }
+    
 `
 
 export const ContainerInner = styled.div`
@@ -157,6 +174,7 @@ export const Card = styled.div`
     display: flex; 
     flex-direction: column; 
     align-items: center; 
+    justify-content: space-evenly;
 
     @media ${device.mobileS} {
         width: 60%; 

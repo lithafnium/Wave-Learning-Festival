@@ -45,6 +45,10 @@ export const Social = styled.div`
 
 export const Icon = styled.div`
     margin: 10px; 
+
+    &:hover{
+        cursor: pointer;
+    }
 `
 
 

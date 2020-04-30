@@ -1,6 +1,6 @@
 import React from 'react'
 import { FooterContainer, FooterInner, Social, Icon } from './styles'
-import { FaFacebookSquare, FaInstagram } from 'react-icons/fa'
+import { FaFacebookSquare, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { IconContext } from "react-icons"
 
 const Footer = () => {
@@ -16,10 +16,24 @@ const Footer = () => {
                             </div>
                         </IconContext.Provider>
                     </Icon>
-                    <Icon>
+                    <Icon onClick = {() => window.location.href = 'https://www.instagram.com/wavelearningfestival/'}>
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
                             <div>
                                 <FaInstagram />
+                            </div>
+                        </IconContext.Provider>
+                    </Icon>
+                    <Icon onClick = {() => window.location.href = 'https://twitter.com/wavelf2020'}>
+                        <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
+                            <div>
+                                <FaTwitter />
+                            </div>
+                        </IconContext.Provider>
+                    </Icon>
+                    <Icon onClick = {() => window.location.href = 'https://www.linkedin.com/company/wavelf/'}>
+                        <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
+                            <div>
+                                <FaLinkedin />
                             </div>
                         </IconContext.Provider>
                     </Icon>
