@@ -1,6 +1,7 @@
 import React from 'react'
 import { FooterContainer, FooterInner, Social, Icon } from './styles'
 import { FaFacebookSquare, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'
+import { AiOutlineMail } from 'react-icons/ai'
 import { IconContext } from "react-icons"
 
 const Footer = () => {
@@ -34,6 +35,13 @@ const Footer = () => {
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
                             <div>
                                 <FaLinkedin />
+                            </div>
+                        </IconContext.Provider>
+                    </Icon>
+                    <Icon onClick = {() => window.open('mailto:wavelearningfestival@gmail.com', '_blank"')}>
+                        <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
+                            <div>
+                                <AiOutlineMail />
                             </div>
                         </IconContext.Provider>
                     </Icon>
