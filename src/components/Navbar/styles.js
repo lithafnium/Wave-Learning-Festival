@@ -42,7 +42,7 @@ export const BrandText = styled.img`
         display: block; 
 
     }
-   width: 15em; 
+   width: 20em; 
    height: auto; 
 `
 

@@ -17,9 +17,9 @@ import {
     Route,
     Link
 } from "react-router-dom"
-import Logo from './logo.png'
+import Logo from './logo.svg'
 import LogoText from './logoText.png'
-import LogoTextFull from './logoTextFull.png'
+import LogoTextFull from './logoTextFull.svg'
 
 const Navbar = () => {
     const [slide, toggleSlide] = useState(false)
