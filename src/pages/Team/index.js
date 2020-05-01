@@ -10,12 +10,12 @@ const Team = () => {
 
             <div class="row">
               <div class="team-member">
-                <img src="headshot/kevin-tan.jpg" />
+                <img src="./headshot/kevin-tan.jpg" />
                 <p class="name">Kevin Tan</p>
                 <p class="desc">Hello</p>
               </div>
               <div class="team-member">
-                <img src="headshot/blen-beharu-kedir.jpg" />
+                <img src="./headshot/blen-beharu-kedir.jpg" />
                 <p class="name">Blen Kedir</p>
                 <p class="desc">Bruh</p>
               </div>
@@ -23,12 +23,12 @@ const Team = () => {
 
             <div class="row">
               <div class="team-member">
-                <img src="headshot/chase-souder.jpg" />
+                <img src="./headshot/chase-souder.jpg" />
                 <p class="name">Chase Souder</p>
                 <p class="desc">Hello</p>
               </div>
               <div class="team-member">
-                <img src="headshot/sandra-chiu.jpg" />
+                <img src="./headshot/sandra-chiu.jpg" />
                 <p class="name">Sandra Chiu</p>
                 <p class="desc">Bruh</p>
               </div>
