@@ -7,7 +7,7 @@
 .team-member
 {
   float: left;
-  width: 5%;
+  width: 20%;
   padding: 20px;
 }
 
@@ -15,7 +15,7 @@
 {
   position: absolute;
   bottom: 0px;
-  width: 5%;
+  width: 20%;
 }
 
 .name
