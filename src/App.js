@@ -4,6 +4,7 @@ import './App.css';
 import About from './pages/About'
 import Teachers from './pages/Teachers'
 import Team from './pages/Team'
+import FAQ from './pages/FAQ'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 
