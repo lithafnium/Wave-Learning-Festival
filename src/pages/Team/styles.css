@@ -1,31 +1,37 @@
 .row
 {
-  align: center;
+  text-align: center;
   position: relative;
   margin-top: 50px;
   margin-bottom: 50px;
+  display: table;
 }
 
 .team-member
 {
   float: left;
-  width: 20%;
+  width: 25%;
   padding: 20px;
+  display: table-row;
 }
 
 .team-member img
 {
-  position: absolute;
-  bottom: 0px;
-  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  width: inherit;
+  text-align: center;
+  display: block;
 }
 
 .name
 {
   color: #000000;
+  text-align: center
 }
 
 .desc
 {
   color: #666666;
+  text-align: center
 }
