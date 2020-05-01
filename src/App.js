@@ -19,12 +19,13 @@ function App() {
           <Route path="/team">
             <Team />
           </Route>
-          <Route path="/">
-            <About />
-          </Route>
           <Route path="/faq">
             <FAQ />
           </Route>
+          <Route path="/">
+            <About />
+          </Route>
+          
 
         </Switch>
 
