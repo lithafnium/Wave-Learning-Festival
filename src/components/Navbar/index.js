@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import {
     NavbarContainer,
     NavbarInner,
-    Brand,
+    BrandText,
     Links,
     Button,
     NavItem,
     Hamburger,
     Bar,
-    SideBar
+    SideBar, 
+    Brand
 } from './styles'
 import {
     BrowserRouter as Router,
@@ -16,15 +17,17 @@ import {
     Route,
     Link
 } from "react-router-dom"
+import Logo from './logo.png'
+import LogoText from './logoText.png'
+import LogoTextFull from './logoTextFull.png'
 
 const Navbar = () => {
     const [slide, toggleSlide] = useState(false)
     return (
         <NavbarContainer>
             <NavbarInner>
-                <Brand>
-                    Wave Learning Festival
-                </Brand>
+                <BrandText src={LogoTextFull}/>
+                <Brand src={Logo}/>
                 <Links>
                     <NavItem>
                         <Link to='/'>Home</Link>
@@ -50,6 +53,7 @@ const Navbar = () => {
                     <Bar num={1} rotate3={slide && true} slide={slide}/>
                 </Hamburger>
                 <SideBar show={slide}>
+                    <Brand style = {{marginLeft: '15px', marginBottom: '20px', width: '9em'}}src={LogoText}/>
                     <NavItem>
                         <Link to='/'>Home</Link>
                     </NavItem>

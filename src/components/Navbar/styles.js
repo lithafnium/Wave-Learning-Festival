@@ -34,9 +34,28 @@ export const NavbarInner = styled.div`
     justify-content: space-between;
 `
 
-export const Brand = styled.h2`
-    margin: 0px; 
-    color: #2684ff;
+export const BrandText = styled.img`
+    @media ${device.mobileS}{
+        display: none; 
+    }
+    @media ${device.tablet} {
+        display: block; 
+
+    }
+   width: 15em; 
+   height: auto; 
+`
+
+export const Brand = styled.img`
+    @media ${device.mobileS}{
+        display: block; 
+    }
+    @media ${device.tablet} {
+        display: none; 
+
+    }
+    width: 3.5em; 
+    height: auto; 
 `
 
 export const Links = styled.div`
