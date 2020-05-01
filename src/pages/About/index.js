@@ -25,7 +25,7 @@ const About = () => {
                 <ContainerInner>
                     <AboutDescription>
                         <Header>
-                            Make a Difference, Right from home
+                            Make a difference, right from home
                         </Header>
                         <DescriptionText>
                         Wave Learning Festival is a student-run educational
