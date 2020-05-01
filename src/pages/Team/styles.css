@@ -21,6 +21,7 @@
   width: inherit;
   height: 100%;
   display: block;
+  transform: rotate(90deg);
 }
 
 .name
