@@ -32,7 +32,7 @@ const Team = () => {
                 <p class="desc">Chair</p>
               </div>
               <div class="team-member">
-                <img src={YaelLivneh} style="image-orientation: 90deg;"/>
+                <img src={YaelLivneh} style="transform: rotate(90deg);"/>
                 <p class="name">Yael Livneh</p>
                 <p class="desc">Director of Logistics</p>
               </div>
@@ -45,7 +45,7 @@ const Team = () => {
 
             <div class="row">
               <div class="team-member">
-                <img src={SimonTao} style="image-orientation: 90deg;"/>
+                <img src={SimonTao} style="transform: rotate(90deg);"/>
                 <p class="name">Simon Tao</p>
                 <p class="desc">Associate Director of Logistics</p>
               </div>
@@ -86,7 +86,7 @@ const Team = () => {
                 <p class="desc">Associate Director</p>
               </div>
               <div class="team-member">
-                <img src={NikkiSuzani} style="image-orientation: 90deg;"/>
+                <img src={NikkiSuzani} style="transform: rotate(90deg);"/>
                 <p class="name">Nikki Suzani</p>
                 <p class="desc">Associate Director</p>
               </div>
@@ -109,7 +109,7 @@ const Team = () => {
                 <p class="desc">Associate Director of Media and Design</p>
               </div>
               <div class="team-member">
-                <img src={ChaseSouder} style="image-orientation: 90deg;"/>
+                <img src={ChaseSouder} style="transform: rotate(90deg);"/>
                 <p class="name">Chase Souder</p>
                 <p class="desc">Co-Director of Business</p>
               </div>
