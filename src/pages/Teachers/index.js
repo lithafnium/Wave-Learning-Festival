@@ -11,7 +11,7 @@ const Teachers = () => {
                 <ContainerInner>
                     <h1>Teachers</h1>
                     <p>
-                        HNothing to do in the summer? Want to share your passions with students worldwide? 
+                        Nothing to do in the summer? Want to share your passions with students worldwide? 
                         Apply to be a teacher for Wave Learning Festival!
                     </p>
                     <p>
