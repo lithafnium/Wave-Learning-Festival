@@ -58,7 +58,7 @@ const Navbar = () => {
                         <Link to='/'>Home</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/'>Team</Link>
+                        <Link to='/team'>Team</Link>
                     </NavItem>
                     <NavItem>
                         <Link to='/teachers'>Teachers</Link>

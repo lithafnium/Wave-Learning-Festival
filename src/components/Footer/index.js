@@ -16,21 +16,21 @@ const Footer = () => {
                             </div>
                         </IconContext.Provider>
                     </Icon>
-                    <Icon onClick = {() => window.location.href = 'https://www.instagram.com/wavelearningfestival/'}>
+                    <Icon onClick = {() => window.open('https://www.instagram.com/wavelearningfestival/', '_blank')}>
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
                             <div>
                                 <FaInstagram />
                             </div>
                         </IconContext.Provider>
                     </Icon>
-                    <Icon onClick = {() => window.location.href = 'https://twitter.com/wavelf2020'}>
+                    <Icon onClick = {() => window.open('https://twitter.com/wavelf2020', '_blank')}>
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
                             <div>
                                 <FaTwitter />
                             </div>
                         </IconContext.Provider>
                     </Icon>
-                    <Icon onClick = {() => window.location.href = 'https://www.linkedin.com/company/wavelf/'}>
+                    <Icon onClick = {() => window.open('https://www.linkedin.com/company/wavelf/', '_blank"')}>
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
                             <div>
                                 <FaLinkedin />
