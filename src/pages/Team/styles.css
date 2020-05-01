@@ -10,8 +10,7 @@
 .team-member
 {
   float: left;
-  width: 25%;
-  padding: 20px;
+  width: 30%;
   display: table-row;
 }
 
@@ -20,7 +19,7 @@
   margin-left: auto;
   margin-right: auto;
   width: inherit;
-  text-align: center;
+  height: 100%;
   display: block;
 }
 

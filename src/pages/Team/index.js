@@ -8,7 +8,7 @@ import CarterMartindale from "./headshot/carter-martindale.jpg"
 import ChaseSouder from "./headshot/chase-souder.JPG"
 import DanielaShuman from "./headshot/daniela-shuman.png"
 import IrisSu from "./headshot/iris-su.jpg"
-import JeffreyYao from "./headshot/jeffrey-yao.tif"
+import JeffreyYao from "./headshot/jeffrey-yao.jpg"
 import JonnyRogers from "./headshot/jonny-rogers.jpg"
 import KarlyHou from "./headshot/karly-hou.JPG"
 import KevinTan from "./headshot/kevin-tan.jpg"
@@ -68,7 +68,7 @@ const Team = () => {
                 <p class="desc">Co-Director of Tech</p>
               </div>
               <div class="team-member">
-                <img src={SandraChiu} />
+                <img src={JonnyRogers} />
                 <p class="name">Jonny Rogers</p>
                 <p class="desc">Associate Director of Tech</p>
               </div>
@@ -81,7 +81,7 @@ const Team = () => {
 
             <div class="row">
               <div class="team-member">
-                <img src={ChaseSouder} />
+                <img src={RuhiMistry} />
                 <p class="name">Ruhi Mistry</p>
                 <p class="desc">Associate Director</p>
               </div>
