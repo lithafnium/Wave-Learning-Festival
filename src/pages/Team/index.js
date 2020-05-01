@@ -4,9 +4,9 @@ import Footer from '../../components/Footer'
 import './styles.css'
 
 import KevinTan from "./headshot/kevin-tan.jpg"
-import BlenKedir from "./headshot/blen-beharu-kedir.jpg"
-import ChaseSouder from "./headshot/chase-souder.jpg"
-import SandraChiu from "./headshot/sandra-chiu.jpg"
+import BlenKedir from "./headshot/blen-beharu-kedir.png"
+import ChaseSouder from "./headshot/chase-souder.JPG"
+import SandraChiu from "./headshot/sandra-chiu.png"
 
 const Team = () => {
     return(
