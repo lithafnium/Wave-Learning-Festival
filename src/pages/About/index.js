@@ -12,7 +12,7 @@ import { MdPersonalVideo, MdModeEdit, MdLanguage } from 'react-icons/md'
 import { IconContext } from "react-icons"
 import Berkeley from './berkeley.png'
 import Brown from './brown.png'
-import Harvard from './harvard.png' 
+import Harvard from './harvard.png'
 import CMU from './cmu.png'
 import Umich from './umich.png'
 import Upenn from './upenn.png'
@@ -28,10 +28,10 @@ const About = () => {
                             Make a Difference, Right from home
                         </Header>
                         <DescriptionText>
-                        Wave Learning Festival is a student-run educational 
-                        platform that aims to teach students through seminars 
-                        on a variety of topics. Classes will be free with an 
-                        optional donation, and we hope to donate everything we 
+                        Wave Learning Festival is a student-run educational
+                        platform that aims to teach students through seminars
+                        on a variety of topics. Classes will be free with an
+                        optional donation, and we hope to donate everything we
                         raise to nonprofits aiding in COVID-19 relief.
 
                         </DescriptionText>
@@ -57,7 +57,7 @@ const About = () => {
                             </div>
                         </IconContext.Provider>
                         <h3>Platform</h3>
-                        <p>Our teachers connect with students online via remote-learning platforms 
+                        <p>Our teachers connect with students online via remote-learning platforms
                             like Zoom while maintaining an interactive and engaging environment</p>
                     </Card>
                     <Card>

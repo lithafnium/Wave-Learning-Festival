@@ -26,6 +26,8 @@ const Team = () => {
               </div>
             </div>
 
+            <br />
+
             <div class="row">
               <div class="team-member">
                 <img src={ChaseSouder} />
