@@ -1,0 +1,28 @@
+.row
+{
+  align: center;
+  position: relative;
+}
+
+.team-member
+{
+  float: left;
+  width: 25%;
+  padding: 20px;
+}
+
+.team-member img
+{
+  position: absolute;
+  bottom: 0px;
+}
+
+.name
+{
+  color: #000000;
+}
+
+.desc
+{
+  color: #666666;
+}
