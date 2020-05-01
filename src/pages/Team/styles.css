@@ -33,5 +33,12 @@
 .desc
 {
   color: #666666;
+  text-align: center;
+  font-weight: bold
+}
+
+.school
+{
+  color: #666666;
   text-align: center
 }
