@@ -6,6 +6,23 @@ export const NavbarContainer = styled.header`
     height: 120px; 
     display: flex; 
     justify-content: center; 
+    @media ${device.mobileS}{
+        margin-bottom: 160px; 
+    }
+    @media ${device.tablet} {
+        margin-bottom: 0px; 
+
+    }
+    @media ${device.tabletL} {
+        
+       
+    }
+
+    @media ${device.laptop} {
+        
+      
+    }
+    
 `
 
 export const NavbarInner = styled.div`
