@@ -236,7 +236,7 @@ export const SchoolLogo = styled.div`
 
 export const School = styled.img`
     width: 5em;
-    height: auto; 
+    height: 5em; 
     margin: 20px; 
     
 `
