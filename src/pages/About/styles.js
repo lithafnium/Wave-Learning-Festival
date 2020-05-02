@@ -12,11 +12,11 @@ export const Container = styled.div`
     }
 
     @media ${device.mobileM} {
-        margin-top: 0px; 
+        margin-top: 120px; 
     }
 
     @media ${device.mobileL} {
-        margin-top: 0px; 
+        margin-top: 60px; 
 
     }
 
@@ -33,14 +33,14 @@ export const ContainerInner = styled.div`
     width: 100%; 
 
     @media ${device.mobileS} {
-        margin-top: 20em; 
+        margin-top: 150px;
         flex-direction: column; 
         justify-content: center; 
         align-items: center; 
     }
 
     @media ${device.tablet} {
-        margin-top: 20em; 
+        margin-top: 20em;
         flex-direction: column; 
         justify-content: center; 
         align-items: center; 
