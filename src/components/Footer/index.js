@@ -11,7 +11,7 @@ const Footer = () => {
                 <FooterLeft><p>
                     &#9400; Wave Learning Festival 2020</p>
                     <hr/>
-                    <p>Quesitons? Email us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a></p>
+                    <p>Questions? Email us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a></p>
                 </FooterLeft>
                 <Social>
                     <Icon>
