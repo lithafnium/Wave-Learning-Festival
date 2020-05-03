@@ -18,8 +18,8 @@ const Teachers = () => {
                     Wave Learning Festival is an educational platform organized by students at 
                     Harvard, Stanford, Northwestern, Williams, RISD, and SLO in which college 
                     students and high school upperclassmen teach seminars on a variety of topics 
-                    (anything from mathematical origami to explosives to modern philosophy or a
-                    nything you want) to middle schoolers and high schoolers online 
+                    (anything from mathematical origami to explosives to modern philosophy or anything 
+                    you want) to middle schoolers and high schoolers online 
                     (focus: 6th - 10th grade). Classes will be free with an optional donation, 
                     and we hope to donate everything we raise to nonprofits for COVID-19 relief.
 

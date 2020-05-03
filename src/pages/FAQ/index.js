@@ -12,8 +12,18 @@ const FAQ = () => {
                     <h1>FAQ - Teachers</h1>
                     <p>
                     <br/>
+                    <b>When will classes start?</b><br/>
+                    The first wave of classes will begin May 25th.
+                    </p>
+                    <p>
+                    <br/>
+                    <b>When will future waves be?</b><br/>
+                    All subsequent waves after the initial wave on May 25th will start every two weeks.
+                    </p>
+                    <p>
+                    <br/>
                     <b>How long will my teaching session be?</b><br/>
-                    That will be up to you, as the teacher of a session. You may choose between a one-day seminar, a one-week seminar, or a two-week seminar. You can also decide how long you would like to teach per day, and how many days a week you would like to teach. 
+                    That will be up to you, as the teacher of a session. You may choose between a one-day seminar, a one-week seminar, or a two-week seminar. You can also decide how long you would like to teach per day, and how many days a week you would like to teach.
                     </p>
                     <p>
                     <br/><b>Will I be getting any support when planning my course curriculum?</b><br/>
@@ -21,11 +31,11 @@ const FAQ = () => {
                     </p>
                     <p>
                     <br/><b>Do I have to know what I’m teaching before I apply?</b><br/>
-                    Yes, you will apply with a topic and description for your course. However, you will not need to have your full course curriculum fleshed out before you apply. If you are having a hard time deciding between classes you’d like to teach or would like some inspiration, contact <a href="mailto: wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a> with questions. 
+                    Yes, you will apply with a topic and description for your course. However, you will not need to have your full course curriculum fleshed out before you apply. If you are having a hard time deciding between classes you’d like to teach or would like some inspiration, contact <a href="mailto: wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a> with questions.
                     </p>
                     <p>
                     <br/><b>Is it possible to co-teach with another person?</b><br/>
-                    Yes! In fact, we encourage it—double the ideas and half the work is awesome for everyone involved. When filling out the Teacher Registration Form, add your co-teacher’s name and contact information. You only have to submit one form per pair. 
+                    Yes! In fact, we encourage it—double the ideas and half the work is awesome for everyone involved. When filling out the Teacher Registration Form, add your co-teacher’s name and contact information. You only have to submit one form per pair.
                     </p>
                     <p>
                     <br/><b>What should I teach?</b><br/>

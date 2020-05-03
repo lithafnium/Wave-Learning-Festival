@@ -3,7 +3,7 @@ import { device } from '../../theme'
 
 export const FooterContainer = styled.footer`
     width: 100%; 
-    height: 120px; 
+    height: 200px; 
     display: flex; 
     justify-content: center; 
     background: rgb(38,132,255);
@@ -13,6 +13,20 @@ export const FooterContainer = styled.footer`
         color: #eeeeee;
         font-weight: 600; 
     }
+`
+
+export const FooterLeft = styled.div`
+    padding-left: 15px; 
+    & hr{
+        border: 1px solid #ffffff; 
+        width: 80%;
+        margin: 0px; 
+    }
+
+    a {
+        color: #ffffff; 
+    }
+
 `
 
 export const FooterInner = styled.div`

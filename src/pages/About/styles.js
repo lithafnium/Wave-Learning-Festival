@@ -2,26 +2,28 @@ import styled from 'styled-components'
 import { device } from '../../theme'
 export const Container = styled.div`
     width: 100%; 
-    height: 65vh; 
+    height: 65vh;
     min-height: 65vh; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
     @media ${device.mobileS} {
-        margin-top: 120px 
+        margin-top: 120px ;
     }
 
     @media ${device.mobileM} {
-        margin-top: 0px; 
+        margin-top: 120px; 
     }
 
     @media ${device.mobileL} {
-        margin-top: 0px; 
+        margin-top: 60px; 
+
     }
 
 
     @media ${device.tablet} {
         margin-top: 0px;
+
     }
     
 `
@@ -31,14 +33,14 @@ export const ContainerInner = styled.div`
     width: 100%; 
 
     @media ${device.mobileS} {
-        margin-top: 20em; 
+        margin-top: 150px;
         flex-direction: column; 
         justify-content: center; 
         align-items: center; 
     }
 
     @media ${device.tablet} {
-        margin-top: 20em; 
+        margin-top: 20em;
         flex-direction: column; 
         justify-content: center; 
         align-items: center; 
@@ -142,16 +144,12 @@ export const DescriptionContainerInner = styled.div`
     margin: auto; 
 
     @media ${device.mobileS} {
-        margin-top: 20em; 
         flex-direction: column; 
-        justify-content: center; 
         align-items: center; 
     }
 
     @media ${device.tablet} {
-        margin-top: 20em; 
         flex-direction: column; 
-        justify-content: center; 
         align-items: center; 
     }
     @media ${device.tabletL} {
@@ -238,11 +236,84 @@ export const SchoolLogo = styled.div`
 
 export const School = styled.img`
     width: 5em;
-    height: auto; 
+    height: 5em; 
     margin: 20px; 
+    
 `
 
+export const WhoContanier = styled.div`
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 7em; 
+    padding-bottom: 7em; 
+    flex-wrap: wrap; 
+    @media ${device.mobileS} {
+        margin-top: 500px ;
+    }
+
+    @media ${device.mobileM} {
+        margin-top: 500px ;
+    }
+
+    @media ${device.mobileL} {
+        margin-top: 500px ;
+
+    }
 
 
+    @media ${device.tablet} {
+        margin-top: 500px ;
 
+    }
 
+    @media ${device.tabletL} {
+        margin-top: 80px; 
+    }
+
+`
+
+export const WhoWeAre = styled.div`
+    display: flex; 
+    width: 100%; 
+    margin: auto; 
+    margin-bottom: 30px; 
+    
+    @media ${device.mobileS} {
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    @media ${device.tablet} {
+        
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    @media ${device.tabletL} {
+        margin-top: 0; 
+        max-width: 768px;
+        flex-direction: row !important;
+        justify-content: space-evenly;   
+        align-items: flex-start;  
+    }
+
+    @media ${device.laptop} {
+        max-width: 1024px;
+        flex-direction: row !important; 
+        justify-content: space-evenly;
+    }
+`
+
+export const WhoHeader = styled.div`
+    width: 50%; 
+    display: flex; 
+    flex-direction: column;     
+
+    & h1{
+        color: #2684ff;
+    }
+`

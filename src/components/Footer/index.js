@@ -1,14 +1,18 @@
 import React from 'react'
-import { FooterContainer, FooterInner, Social, Icon } from './styles'
+import { FooterContainer, FooterInner, Social, Icon, FooterLeft } from './styles'
 import { FaFacebookSquare, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'
-import { AiOutlineMail } from 'react-icons/ai'
+import { MdEmail } from 'react-icons/md'
 import { IconContext } from "react-icons"
 
 const Footer = () => {
     return (
         <FooterContainer>
             <FooterInner>
-                <p>&#9400; Wave Learning Festival 2020</p>
+                <FooterLeft><p>
+                    &#9400; Wave Learning Festival 2020</p>
+                    <hr/>
+                    <p>Questions? Email us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a></p>
+                </FooterLeft>
                 <Social>
                     <Icon>
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
@@ -35,13 +39,6 @@ const Footer = () => {
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
                             <div>
                                 <FaLinkedin />
-                            </div>
-                        </IconContext.Provider>
-                    </Icon>
-                    <Icon onClick = {() => window.open('mailto:wavelearningfestival@gmail.com', '_blank"')}>
-                        <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
-                            <div>
-                                <AiOutlineMail />
                             </div>
                         </IconContext.Provider>
                     </Icon>
