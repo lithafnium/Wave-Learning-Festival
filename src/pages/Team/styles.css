@@ -18,7 +18,6 @@ html {
 .team-member
 {
   float: left;
-  width: 30%;
   display: table-row;
 }
 
