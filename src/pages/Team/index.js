@@ -19,6 +19,7 @@ import SandraChiu from "./headshot/sandra-chiu.png"
 import SimonTao from "./headshot/simon-tao.jpg"
 import SteveLi from "./headshot/steve-li.jpg"
 import YaelLivneh from "./headshot/yael-livneh.jpg"
+import LinaCho from "./headshot/lina-cho.jpg"
 
 const Team = () => {
     return(
@@ -121,6 +122,14 @@ const Team = () => {
                 <img src={BlenKedir} />
                 <p class="name">Blen Kedir</p>
                 <p class="school">Stanford University, 2023</p>
+                <p class="desc">Associate Director of PR</p>
+              </div>
+              </div>
+              <div class="column">
+              <div class="team-member">
+                <img src={LinaCho} />
+                <p class="name">Lina Cho</p>
+                <p class="school">Harvard University, 2023</p>
                 <p class="desc">Associate Director of PR</p>
               </div>
               </div>
