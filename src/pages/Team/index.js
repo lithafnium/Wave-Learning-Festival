@@ -25,6 +25,7 @@ const Team = () => {
     return(
         <div>
             <Navbar/>
+            <div class="container">
 
             <div class="row">
             <div class="column">
@@ -166,7 +167,7 @@ const Team = () => {
               </div>
               </div>
             </div>
-
+            </div>
             <Footer/>
         </div>
     )
