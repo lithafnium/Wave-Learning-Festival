@@ -105,7 +105,7 @@ const Team = () => {
                 <img src={RuhiMistry} />
                 <p class="name">Ruhi Mistry</p>
                 <p class="school">UC Riverside, 2024</p>
-                <p class="desc">Associate Director</p>
+                <p class="desc">Associate Director of PR</p>
               </div>
               </div>
               <div class="column">
@@ -113,7 +113,7 @@ const Team = () => {
                 <img src={NikkiSuzani} />
                 <p class="name">Nikki Suzani</p>
                 <p class="school">Henry M. Gunn High School, 2021</p>
-                <p class="desc">Associate Director</p>
+                <p class="desc">Associate Director of PR</p>
               </div>
               </div>
               <div class="column">
@@ -121,7 +121,7 @@ const Team = () => {
                 <img src={BlenKedir} />
                 <p class="name">Blen Kedir</p>
                 <p class="school">Stanford University, 2023</p>
-                <p class="desc">Associate Director</p>
+                <p class="desc">Associate Director of PR</p>
               </div>
               </div>
               <div class="column">
