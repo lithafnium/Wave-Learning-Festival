@@ -2,6 +2,12 @@ html {
   box-sizing: border-box;
 }
 
+.container{
+  width: 100%; 
+  display: flex; 
+  justify-content: center;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -12,7 +18,10 @@ html {
   position: relative;
   margin-top: 50px;
   margin-bottom: 50px;
-  display: table;
+  width: 100%; 
+  max-width: 1024px; 
+  display: flex; 
+  flex-wrap: wrap; 
 }
 
 .team-member
@@ -44,17 +53,17 @@ html {
 }
 
 .column {
-  float: left;
   width: 33.3%;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   margin-bottom: 16px;
   padding: 0 8px;
 }
 
 @media screen and (max-width: 650px) {
   .column {
-    width: 100%;
-    display: block;
-   
+    width: 100%;   
   }
 }
 

@@ -7,7 +7,7 @@ export const NavbarContainer = styled.header`
     display: flex; 
     justify-content: center; 
     @media ${device.mobileS}{
-        margin-bottom: 160px; 
+        margin-bottom: 150px; 
     }
     @media ${device.tablet} {
         margin-bottom: 0px; 
