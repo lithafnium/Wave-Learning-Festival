@@ -7,6 +7,13 @@ export const Container = styled.div`
     min-height: 80vh; 
     display: flex; 
     justify-content: center; 
+    @media ${device.mobileS}{
+        margin-top: -150px; 
+    }
+    @media ${device.tablet} {
+        margin-top: 0px; 
+
+    }
 `
 
 export const ContainerInner = styled.div`
