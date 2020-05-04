@@ -6,6 +6,7 @@ export const NavbarContainer = styled.header`
     height: 120px; 
     display: flex; 
     justify-content: center; 
+    z-index: 20; 
     @media ${device.mobileS}{
         margin-bottom: 150px; 
     }
