@@ -134,6 +134,8 @@ const Team = () => {
                 <p class="school">Harvard University, 2023</p>
                 <p class="desc">Associate Director of PR</p>
               </div>
+              </div>
+              <div class="column">
               <div class="team-member">
                 <img src={JoshuaChen} />
                 <p class="name">Joshua Chen</p>
