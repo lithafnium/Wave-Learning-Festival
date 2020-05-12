@@ -15,9 +15,11 @@ const Team = () => {
             <div class="row">
             <div class="column">
               <div class="course">
-                <img src={DigitalPainting} />
-                <div class="overlay">
-                  <div class="text">Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.</div>
+                <div class="image-container">
+                  <img src={DigitalPainting} />
+                  <div class="overlay">
+                    <div class="text">Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.</div>
+                  </div>
                 </div>
                 <p class="name">Digital Painting with Photoshop</p>
                 <p class="teacher">Yutong Liu, USC ‘21</p>
@@ -25,9 +27,11 @@ const Team = () => {
             </div>
             <div class="column">
               <div class="course">
-                <img src={LearnCancer}/>
-                <div class="overlay">
-                  <div class="text">How Cancer Works is a course dedicated to understanding the fundamentals of cancer, a debilitating disease that affects millions of people annually.</div>
+                <div class="image-container">
+                  <img src={LearnCancer}/>
+                  <div class="overlay">
+                    <div class="text">How Cancer Works is a course dedicated to understanding the fundamentals of cancer, a debilitating disease that affects millions of people annually.</div>
+                  </div>
                 </div>
                 <p class="name">How Cancer Works</p>
                 <p class="teacher">Madison Abbasi, Palo Alto High School ‘22</p>
@@ -35,9 +39,11 @@ const Team = () => {
             </div>
             <div class="column">
               <div class="course">
-                <img src={LearnPython} />
-                <div class="overlay">
-                  <div class="text">Learn Python is an introductory Python course that hopes to provide a support system to students new to the language, while also providing support for those who have experience but would like to improve their code.</div>
+                <div class="image-container">
+                  <img src={LearnPython} />
+                  <div class="overlay">
+                    <div class="text">Learn Python is an introductory Python course that hopes to provide a support system to students new to the language, while also providing support for those who have experience but would like to improve their code.</div>
+                  </div>
                 </div>
                 <p class="name">Learn Python</p>
                 <p class="teacher">Fatima-Zahra Chriha, Felician University ‘23</p>

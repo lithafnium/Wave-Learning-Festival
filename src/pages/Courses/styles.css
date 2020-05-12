@@ -32,6 +32,12 @@ html {
   display: table-row;
 }
 
+.image-container
+{
+  position: relative;
+  width: 50%;
+}
+
 .course img
 {
   margin-left: auto;
@@ -88,7 +94,7 @@ html {
 }
 
 .overlay {
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;
@@ -101,13 +107,13 @@ html {
 }
 
 .container:hover .overlay {
-  opacity: .3;
+  opacity: .7;
 }
 
 .text {
   color: white;
-  font-size: 20px;
-  position: absolute;
+  font-size: 12px;
+  position: relative;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
