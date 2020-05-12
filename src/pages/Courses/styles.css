@@ -1,0 +1,117 @@
+html {
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%; 
+  display: flex; 
+  justify-content: center;
+  z-index: 0; 
+
+  
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.row
+{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%; 
+  max-width: 1024px; 
+  display: flex; 
+  flex-wrap: wrap; 
+}
+
+.course
+{
+  float: left;
+  display: table-row;
+}
+
+.course img
+{
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  
+}
+
+.column {
+  width: 33.3%;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;   
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .container{
+    margin-top: -150px; 
+  }
+}
+
+@media screen and (min-width: 786px){
+  .container{
+    margin-top: 0px; 
+  }
+}
+.name
+{
+  color: #000000;
+  text-align: center
+}
+
+.teacher
+{
+  color: #666666;
+  text-align: center
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
+
+.container:hover .overlay {
+  opacity: .3;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

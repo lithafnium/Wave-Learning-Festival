@@ -41,6 +41,9 @@ const Navbar = () => {
                     <NavItem>
                         <Link to='/faq'>FAQ</Link>
                     </NavItem>
+                    <NavItem>
+                        <Link to='/courses'>Courses</Link>
+                    </NavItem>
                     <Link>
                         <Button>
                             Login
@@ -65,6 +68,9 @@ const Navbar = () => {
                     </NavItem>
                     <NavItem>
                         <Link to='/faq'>FAQ</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/courses'>Courses</Link>
                     </NavItem>
                     <Link>
                         <Button>

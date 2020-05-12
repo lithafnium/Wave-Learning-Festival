@@ -5,6 +5,7 @@ import About from './pages/About'
 import Teachers from './pages/Teachers'
 import Team from './pages/Team'
 import FAQ from './pages/FAQ'
+import Courses from './pages/Courses'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/faq">
             <FAQ />
+          </Route>
+          <Route path="/courses">
+            <Courses />
           </Route>
           <Route path="/">
             <About />
