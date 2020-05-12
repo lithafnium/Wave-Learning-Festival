@@ -35,7 +35,6 @@ html {
 .image-container
 {
   position: relative;
-  width: 50%;
 }
 
 .course img
@@ -94,7 +93,7 @@ html {
 }
 
 .overlay {
-  position: relative;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -106,13 +105,13 @@ html {
   background-color: black;
 }
 
-.container:hover .overlay {
+.course:hover .overlay {
   opacity: .7;
 }
 
 .text {
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   position: relative;
   top: 50%;
   left: 50%;
