@@ -112,6 +112,8 @@ html {
 .text {
   color: white;
   font-size: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
   position: relative;
   top: 50%;
   left: 50%;
@@ -119,4 +121,8 @@ html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+h1{
+  color: #2684ff;
 }

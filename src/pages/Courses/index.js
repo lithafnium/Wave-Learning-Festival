@@ -51,6 +51,15 @@ const Team = () => {
             </div>
             </div>
             </div>
+            <h1>Register by 5/23 take a class in the first wave!</h1>
+                <iframe
+                title="form"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
+                width="100%"
+                height="500"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0">Loading…</iframe>
             <Footer/>
         </div>
     )
