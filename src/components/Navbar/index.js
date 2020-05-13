@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import NavDropdown from 'react-bootstrap/Nav';
 import {
     NavbarContainer,
     NavbarInner,
@@ -40,11 +39,7 @@ const Navbar = () => {
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
                     <NavItem>
-                        <NavDropdown title="FAQ">
-                            <NavDropdown.Item href="/faq-students">Students</NavDropdown.Item>
-                            <NavDropdown.Item href="/faq-parents">Parents</NavDropdown.Item>
-                            <NavDropdown.Item href="/faq-teachers">Teachers</NavDropdown.Item>
-                        </NavDropdown>
+                        <Link to='/faq-teachers'>FAQ</Link>
                     </NavItem>
                     <NavItem>
                         <Link to='/courses'>Courses</Link>
@@ -72,11 +67,7 @@ const Navbar = () => {
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
                     <NavItem>
-                        <NavDropdown title="FAQ">
-                            <NavDropdown.Item href="/faq-students">Students</NavDropdown.Item>
-                            <NavDropdown.Item href="/faq-parents">Parents</NavDropdown.Item>
-                            <NavDropdown.Item href="/faq-teachers">Teachers</NavDropdown.Item>
-                        </NavDropdown>
+                        <Link to='/faq-teachers'>FAQ</Link>
                     </NavItem>
                     <NavItem>
                         <Link to='/courses'>Courses</Link>
