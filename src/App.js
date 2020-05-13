@@ -4,7 +4,9 @@ import './App.css';
 import About from './pages/About'
 import Teachers from './pages/Teachers'
 import Team from './pages/Team'
-import FAQ from './pages/FAQ'
+import FAQStudents from './pages/FAQ/Students'
+import FAQParents from './pages/FAQ/Parents'
+import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
@@ -20,8 +22,14 @@ function App() {
           <Route path="/team">
             <Team />
           </Route>
-          <Route path="/faq">
-            <FAQ />
+          <Route path="/faq-students">
+            <FAQStudents />
+          </Route>
+          <Route path="/faq-parents">
+            <FAQParents />
+          </Route>
+          <Route path="/faq-teachers">
+            <FAQTeachers />
           </Route>
           <Route path="/courses">
             <Courses />

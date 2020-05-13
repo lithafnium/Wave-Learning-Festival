@@ -3,13 +3,13 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from './styles'
 
-const FAQ = () => {
+const FAQStudents = () => {
     return(
         <div>
             <Navbar/>
             <Container>
                 <ContainerInner>
-                    <h1>FAQ - Teachers</h1>
+                <h1>FAQ - Teachers</h1>
                     <p>
                     <br/>
                     <b>When will classes start?</b><br/>
@@ -60,4 +60,4 @@ const FAQ = () => {
     )
 }
 
-export default FAQ
+export default FAQStudents
