@@ -45,7 +45,13 @@ const Teachers = () => {
                     in making your class come to life! Please also feel free to share this to anyone 
                     or any group you think may be interested!
                     </p>
-                    <h1>Apply by 5/15 to be included in the first wave!</h1>
+                    <h1>Apply by 5/29 to be included in the second wave!</h1>
+                    <p>
+                    Due to overwhelming interest in teaching, we have closed applications to the first wave 
+                    early in the interest of keeping our inaugural cohort small. If you haven't heard back 
+                    from us yet, we will be reaching out soon to include you in our expanded second wave. 
+                    Thank you for your patience!
+                    </p>
 
                     <iframe
                     title="form"
