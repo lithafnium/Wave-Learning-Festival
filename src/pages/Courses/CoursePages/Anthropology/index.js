@@ -5,7 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
 import CourseImage from "../../headshot/anthropology.png"
-import AnonymousProfile from "../../headshot/anonymous-profile.png"
+import Profile from "../../teacherheadshots/Cecilia Eure.jpg"
 
 const CoursePage = () => {
     return(
@@ -21,7 +21,7 @@ const CoursePage = () => {
                   <b>Class Date + Time: </b>M, 6/1, 3-4pm
                   </p>
                   <p>
-                  <img src={AnonymousProfile} class="img-left"/>
+                  <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Cecilia Eure<br/>
                   <b>Teacher Bio: </b>Cecelia Eure is part of the class of 2023 at The College of William and Mary. She is an introduction to anthropology because she wished that she had an opportunity to learn about anthropology as a subject long before she did. Today, she is double majoring in Anthropology and American Studies. Though she has never taught an anthropology class before, she taught theatre at a summer day camp in high school. 
                   </p>

@@ -5,7 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
 import CourseImage from "../../headshot/block-coding.jpg"
-import AnonymousProfile from "../../headshot/anonymous-profile.png"
+import AnonymousProfile from "../../teacherheadshots/Yuan Sui.jpg"
 
 const CoursePage = () => {
     return(
