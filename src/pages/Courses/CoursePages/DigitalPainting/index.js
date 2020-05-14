@@ -5,6 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
 import CourseImage from "../../headshot/digital-painting-photoshop.png"
+import AnonymousProfile from "../../headshot/anonymous-profile.png"
 
 const CoursePage = () => {
     return(
@@ -20,6 +21,7 @@ const CoursePage = () => {
                   <b>Class Date + Time: </b>
                   </p>
                   <p>
+                  <img src={AnonymousProfile}/>
                   <b>Taught by: </b>Yutong Liu, USC ‘21<br/>
                   <b>Teacher Bio: </b>
                   </p>
