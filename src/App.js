@@ -9,6 +9,8 @@ import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses'
 import CourseLearnPython from './pages/Courses/CoursePages/LearnPython'
+import CourseHowCancerWorks from './pages/Courses/CoursePages/HowCancerWorks'
+import CourseDigitalPainting from './pages/Courses/CoursePages/DigitalPainting'
 import Login from './pages/Login'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
@@ -38,6 +40,12 @@ function App() {
           </Route>
           <Route path="/course-learn-python">
             <CourseLearnPython />
+          </Route>
+          <Route path="/course-how-cancer-works">
+            <CourseHowCancerWorks />
+          </Route>
+          <Route path="/course-digital-painting">
+            <CourseDigitalPainting />
           </Route>
           <Route path="/login">
             <Login />
