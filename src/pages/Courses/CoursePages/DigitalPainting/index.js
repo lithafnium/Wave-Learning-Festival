@@ -15,11 +15,11 @@ const CoursePage = () => {
                 <ContainerInner>
                   <h1>Digital Painting with Photoshop</h1>
                   <p>
-                  Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
                   <img src={CourseImage} class="img-right"/>
+                  Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
                   </p>
-                  <p>
-                  <h2>Class Date + Time:</h2>
+                  <p style="clear:right">
+                  <b>Class Date + Time: </b>
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>

@@ -15,11 +15,11 @@ const CoursePage = () => {
                 <ContainerInner>
                   <h1>Learn Python</h1>
                   <p>
-                  Learn Python is an introductory Python course that hopes to provide a support system to students new to the language, while also providing support for those who have experience but would like to improve their code.
                   <img src={CourseImage} class="img-right"/>
+                  Learn Python is an introductory Python course that hopes to provide a support system to students new to the language, while also providing support for those who have experience but would like to improve their code.
                   </p>
-                  <p>
-                  <h2>Class Date + Time: </h2>
+                  <p style="clear:right">
+                  <b>Class Date + Time: </b>
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
