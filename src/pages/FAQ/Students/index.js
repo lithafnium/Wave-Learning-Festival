@@ -18,12 +18,7 @@ const FAQStudents = () => {
                     <p>
                     <br/>
                     <b>Do I need to have any previous experience in the class topic to enroll in a class?</b><br/>
-                    Not at all. Anyone can take any class they are interested in. It may be helpful to have some background in certain subjects before taking certain classes, but there is no formal requirement. 
-                    </p>
-                    <p>
-                    <br/>
-                    <b>Can I take a class even if I am not in middle school or a high school underclassman?</b><br/>
-                    Yes! Although courses are aimed at students in that age range, we believe a quality education should be available to everyone who is interested. 
+                    Not at all. Anyone can take any class they are interested in. It may be helpful to have some background in certain subjects before taking certain classes, but there is no formal requirement.
                     </p>
                     <p>
                     <br/>
