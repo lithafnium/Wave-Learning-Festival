@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
-import CourseImage from "../../headshot/digital-painting-photoshop.png"
+import CourseImage from "../../headshot/emotions.jpg"
 import AnonymousProfile from "../../headshot/anonymous-profile.png"
 
 const CoursePage = () => {
@@ -13,17 +13,17 @@ const CoursePage = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                <h1>Digital Painting with Photoshop</h1>
+                <h1>Philosophy and Morality of Emotions</h1>
                   <p>
                   <img src={CourseImage} class="img-right"/>
-                  Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
+                  This philosophy course is an exploration of the five core emotions: happiness, anger, love, fear, and sadness. Students will discuss what they are, why they exist, and how we can interact with them.
                   </p>
                   <p style="clear:right">
-                  <b>Class Date + Time: </b>
+                  <b>Class Date + Time: </b>MWF, 5/25-6/5, 2-2:50pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
-                  <b>Taught by: </b>Yutong Liu, USC ‘21<br/>
+                  <b>Taught by: </b>Sophia Giegerich<br/>
                   <b>Teacher Bio: </b>
                   </p>
                   <h1>Register for this course!</h1>

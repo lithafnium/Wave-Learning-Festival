@@ -11,9 +11,19 @@ import Courses from './pages/Courses'
 import CourseLearnPython from './pages/Courses/CoursePages/LearnPython'
 import CourseHowCancerWorks from './pages/Courses/CoursePages/HowCancerWorks'
 import CourseDigitalPainting from './pages/Courses/CoursePages/DigitalPainting'
+import CourseJoy from './pages/Courses/CoursePages/Joy'
+import CourseAnthropology from './pages/Courses/CoursePages/Anthropology'
+import CourseBlockCoding from './pages/Courses/CoursePages/BlockCoding'
+import CourseEmotions from './pages/Courses/CoursePages/Emotions'
+import CourseExplosives from './pages/Courses/CoursePages/Explosives'
+import CourseGeobiology from './pages/Courses/CoursePages/Geobiology'
+import CoursePublicTransit from './pages/Courses/CoursePages/PublicTransportation'
+import CourseShortStories from './pages/Courses/CoursePages/ShortStories'
+import CourseSignLanguage from './pages/Courses/CoursePages/SignLanguage'
+import CourseWebDev from './pages/Courses/CoursePages/WebDevelopment'
+import CourseWesternMusic from './pages/Courses/CoursePages/WesternMusic'
 import Login from './pages/Login'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-
 
 function App() {
   return (
@@ -46,6 +56,39 @@ function App() {
           </Route>
           <Route path="/course-digital-painting-with-photoshop">
             <CourseDigitalPainting />
+          </Route>
+          <Route path="/course-joy">
+            <CourseJoy />
+          </Route>
+          <Route path="/course-anthropology">
+            <CourseAnthropology />
+          </Route>
+          <Route path="/course-block-coding">
+            <CourseBlockCoding />
+          </Route>
+          <Route path="/course-emotions">
+            <CourseEmotions />
+          </Route>
+          <Route path="/course-explosives">
+            <CourseExplosives />
+          </Route>
+          <Route path="/course-geobiology-astrobiology">
+            <CourseGeobiology />
+          </Route>
+          <Route path="/course-public-transportation">
+            <CoursePublicTransit />
+          </Route>
+          <Route path="/course-short-stories">
+            <CourseShortStories />
+          </Route>
+          <Route path="/course-web-development">
+            <CourseWebDev />
+          </Route>
+          <Route path="/course-western-music">
+            <CourseWesternMusic />
+          </Route>
+          <Route path="/course-sign-language">
+            <CourseSignLanguage />
           </Route>
           <Route path="/login">
             <Login />

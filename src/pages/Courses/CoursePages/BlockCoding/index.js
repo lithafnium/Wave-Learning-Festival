@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
-import CourseImage from "../../headshot/digital-painting-photoshop.png"
+import CourseImage from "../../headshot/block-coding.jpg"
 import AnonymousProfile from "../../headshot/anonymous-profile.png"
 
 const CoursePage = () => {
@@ -13,17 +13,17 @@ const CoursePage = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                <h1>Digital Painting with Photoshop</h1>
+                <h1>How to Build an App with Block Coding</h1>
                   <p>
                   <img src={CourseImage} class="img-right"/>
-                  Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
+                  Learn how to build an app from scratch with block coding! Simpler than text coding, block coding is easy to pick up and no prior experience is necessary for this course. This course will run for 6 weeks.
                   </p>
                   <p style="clear:right">
-                  <b>Class Date + Time: </b>
+                  <b>Class Date + Time: </b>Sundays, 5/31-7/5, 4-5pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
-                  <b>Taught by: </b>Yutong Liu, USC ‘21<br/>
+                  <b>Taught by: </b>Yuan Sui<br/>
                   <b>Teacher Bio: </b>
                   </p>
                   <h1>Register for this course!</h1>

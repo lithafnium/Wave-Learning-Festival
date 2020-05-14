@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
-import CourseImage from "../../headshot/digital-painting-photoshop.png"
+import CourseImage from "../../headshot/western-music.png"
 import AnonymousProfile from "../../headshot/anonymous-profile.png"
 
 const CoursePage = () => {
@@ -13,17 +13,17 @@ const CoursePage = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                <h1>Digital Painting with Photoshop</h1>
+                <h1>History’s Top Hits: An Introduction to the Great Works of Western Music</h1>
                   <p>
                   <img src={CourseImage} class="img-right"/>
-                  Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
+                  This course will cover not just 21st-century American musical hits, but will delve into the ‘greatest’ pieces of music of all time and what it means to hold that title. 
                   </p>
                   <p style="clear:right">
-                  <b>Class Date + Time: </b>
+                  <b>Class Date + Time: </b>MWF, 5/25-6/5, 2-3pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
-                  <b>Taught by: </b>Yutong Liu, USC ‘21<br/>
+                  <b>Taught by: </b>Justin Oei<br/>
                   <b>Teacher Bio: </b>
                   </p>
                   <h1>Register for this course!</h1>

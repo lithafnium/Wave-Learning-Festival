@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
-import CourseImage from "../../headshot/digital-painting-photoshop.png"
+import CourseImage from "../../headshot/public-transit.png"
 import AnonymousProfile from "../../headshot/anonymous-profile.png"
 
 const CoursePage = () => {
@@ -13,17 +13,17 @@ const CoursePage = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                <h1>Digital Painting with Photoshop</h1>
+                <h1>Public Transportation and Urban Planning</h1>
                   <p>
                   <img src={CourseImage} class="img-right"/>
-                  Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
+                  This course will introduce students to public transportation and urban planning, exploring the importance of both through a case study of Boston’s public transportation system.
                   </p>
                   <p style="clear:right">
-                  <b>Class Date + Time: </b>
+                  <b>Class Date + Time: </b>MWF, 6/1-6/5, 4-5pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
-                  <b>Taught by: </b>Yutong Liu, USC ‘21<br/>
+                  <b>Taught by: </b>Perrin Price<br/>
                   <b>Teacher Bio: </b>
                   </p>
                   <h1>Register for this course!</h1>
