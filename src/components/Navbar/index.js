@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import {
     NavbarContainer,
     NavbarInner,
@@ -9,7 +10,9 @@ import {
     Hamburger,
     Bar,
     SideBar,
-    Brand
+    Brand,
+    NavbarDropdown,
+    DropdownItem
 } from './styles'
 import {
     BrowserRouter as Router,
@@ -17,11 +20,14 @@ import {
     Route,
     Link
 } from "react-router-dom"
+import { IconContext } from "react-icons"
+import { FaUserAlt, FaChalkboardTeacher, FaCaretRight } from 'react-icons/fa'
 import Logo from './logo.svg'
 import LogoText from './logoText.png'
 import LogoTextFull from './logoTextFull.svg'
 
 const Navbar = () => {
+    const [show, setShown] = useState(false)
     const [slide, toggleSlide] = useState(false)
     return (
         <NavbarContainer>
@@ -38,11 +44,40 @@ const Navbar = () => {
                     <NavItem>
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
-                    <NavItem>
-                        <Link to='/courses'>Courses</Link>
+                    <NavItem onMouseEnter={() => setShown(true)}
+                              onMouseLeave={() => setShown(false)} >
+                        <Link>
+                            FAQ
+                        </Link>  
+                       {show && 
+                            <>
+                            <NavbarDropdown>
+                                <Link to='/faq-students'>
+                                    <DropdownItem>
+                                        <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                            <div>
+                                        <FaUserAlt/> 
+                                        </div>
+                                    </IconContext.Provider>
+                                        Students
+                                    </DropdownItem>
+                                </Link>
+                                <Link to='/faq-teachers'>
+                                    <DropdownItem>
+                                    <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                            <div>
+                                            <FaChalkboardTeacher/> 
+                                        </div>
+                                    </IconContext.Provider>
+                                        Teachers
+                                    </DropdownItem>
+                                </Link>
+                                </NavbarDropdown> 
+                            </>
+                        }
                     </NavItem>
                     <NavItem>
-                        <Link to='/faq-teachers'>FAQ</Link>
+                        <Link to='/courses'>Courses</Link>
                     </NavItem>
                     <Link to='/login'>
                         <Button>
@@ -67,10 +102,17 @@ const Navbar = () => {
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/courses'>Courses</Link>
+                        <Link to='/faq-teachers'>
+                            Teachers FAQ
+                        </Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/faq-teachers'>FAQ</Link>
+                        <Link to='/faq-teachers'>
+                            Student FAQ
+                        </Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/courses'>Courses</Link>
                     </NavItem>
                     <Link to='/login'>
                         <Button>
