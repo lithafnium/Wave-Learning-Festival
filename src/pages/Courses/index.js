@@ -14,7 +14,7 @@ const Courses = () => {
             <div class="container">
             <div class="row">
             <div class="column">
-              <a href="course-digital-painting-with-photoshop">
+              <a href="course-digital-painting">
                 <div class="course">
                   <div class="image-container">
                     <img src={DigitalPainting} />
