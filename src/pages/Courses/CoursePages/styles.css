@@ -9,8 +9,9 @@ html {
 .img-left
 {
   float: left;
+  object-fit: cover;
   width: 200px;
-  height: 200px;
+  height: 200px;  
   margin-right:15px;
   margin-bottom: 20px;
 }
