@@ -19,7 +19,7 @@ const CoursePage = () => {
                   <img src={CourseImage} class="img-right"/>
                   </p>
                   <p>
-                  <b>Class Date + Time: </b>
+                  <h2>Class Date + Time: </h2>
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
@@ -28,13 +28,14 @@ const CoursePage = () => {
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe
-                  title="form"
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
-                  width="100%"
-                  height="500"
-                  frameborder="0"
-                  marginheight="0"
-                  marginwidth="0">Loading…</iframe>
+                      title="form"
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
+                      width="100%"
+                      height="500"
+                      frameborder="0"
+                      marginheight="0"
+                      marginwidth="0">Loading…
+                    </iframe>
               </ContainerInner>
             </Container>
             <Footer/>

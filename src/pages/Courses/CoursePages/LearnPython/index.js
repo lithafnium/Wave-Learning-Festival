@@ -19,7 +19,7 @@ const CoursePage = () => {
                   <img src={CourseImage} class="img-right"/>
                   </p>
                   <p>
-                  <b>Class Date + Time: </b>
+                  <h2>Class Date + Time: </h2>
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
