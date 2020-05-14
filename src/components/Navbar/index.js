@@ -39,10 +39,10 @@ const Navbar = () => {
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/faq-teachers'>FAQ</Link>
+                        <Link to='/courses'>Courses</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/courses'>Courses</Link>
+                        <Link to='/faq-teachers'>FAQ</Link>
                     </NavItem>
                     <Link>
                         <Button>
@@ -67,10 +67,10 @@ const Navbar = () => {
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/faq-teachers'>FAQ</Link>
+                        <Link to='/courses'>Courses</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/courses'>Courses</Link>
+                        <Link to='/faq-teachers'>FAQ</Link>
                     </NavItem>
                     <Link>
                         <Button>
