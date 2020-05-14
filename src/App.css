@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+
+.dropdown-enter {
+  opacity: 0;
+}
+.dropdown-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.dropdown-exit {
+  opacity: 1;
+}
+.dropdown-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}

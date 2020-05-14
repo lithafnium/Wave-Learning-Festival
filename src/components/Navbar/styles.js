@@ -94,9 +94,7 @@ export const Links = styled.div`
         font-weight: 600; 
     }
 
-    & a:hover{
-        color: rgba(31,45,61,1);
-    }
+
 
     & a:visited{
         color: black; 
@@ -104,18 +102,7 @@ export const Links = styled.div`
 
 `
 
-export const NavItem = styled.p`
-    margin: 0px; 
-    margin-left: 15px; 
-    margin-right: 15px;  
-    border-bottom: 2px solid white; 
-    transition: 0.2s; 
-    width: fit-content;
 
-    &:hover{
-        border-bottom: 2px solid #2684ff;
-    }
-`
 
 export const Button = styled.button`
     padding: 15px 40px 15px 40px; 
@@ -199,4 +186,71 @@ export const SideBar = styled.div`
     & p{
         margin-bottom: 15px; 
     }
+`
+
+
+
+
+export const NavbarDropdown = styled.div`
+    position: absolute; 
+    left: -60px; 
+    bottom: -110px; 
+    width: 150px; 
+    height: auto; 
+    background-color: #ffffff; 
+    box-shadow: 0 0 1.25rem rgba(31,45,61,.08); 
+    transition: 0.2s; 
+    border-radius:10px; 
+
+`
+
+
+export const NavItem = styled.p`
+    position: relative; 
+    margin: 0px; 
+    margin-left: 15px; 
+    margin-right: 15px;  
+    transition: 0.2s; 
+    width: fit-content;
+    border-bottom: 2px solid white; 
+
+
+    &:hover{
+        border-bottom: 2px solid #2684ff;
+    }
+
+    &:hover a{
+        color: rgba(31,45,61,1);
+    }
+`
+export const Triangle = styled.div`
+      position: absolute; 
+      bottom: -10px; 
+      width: 0px;
+      height: 0px;
+    border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #ffffff;
+      box-shadow: 0 0 1.25rem rgba(31,45,61,.08); 
+`
+
+export const DropdownItem = styled.p`
+    margin: 0px; 
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
+    padding-left: 25px; 
+    padding-right: 15px;  
+    display: flex; 
+    transition: 0.1s; 
+    border-radius: 5px; 
+
+    &:hover{
+        cursor:pointer;
+        background-color: #eee; 
+    }
+`
+
+export const SidebarDropdown = styled.div`
+    height: 0px; 
+    transition: 0.2s; 
 `
