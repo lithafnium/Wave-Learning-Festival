@@ -66,7 +66,7 @@ const Team = () => {
                 marginwidth="0">Loading…</iframe>
                 </div>
               </div>
-            </div>
+            </div> 
 
             <Footer/>
         </div>
