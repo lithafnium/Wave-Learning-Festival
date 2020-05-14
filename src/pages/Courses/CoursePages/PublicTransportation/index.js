@@ -23,7 +23,7 @@ const CoursePage = () => {
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Perrin Price<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>Perrin Price is an undergraduate at Harvard University, Class of 2023. She will be teaching a course about public transportation. She has a passion for public transportation and has experience working in public transit as an intern at the MBTA (Massachusetts Bay Transportation Authority). She has also worked on two academic projects surrounding the public transportation in Boston. Perrin also loves to sing, cook, and work with kids! She hopes to connect with students who share an interest in public transportation and love learning and being creative!
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

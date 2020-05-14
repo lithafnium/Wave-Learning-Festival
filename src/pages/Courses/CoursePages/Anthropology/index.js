@@ -18,12 +18,12 @@ const CoursePage = () => {
                   This course will provide students with the basic foundation of the study of anthropology. No prior experience necessary.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> M, 6/1, 3-4pm
+                  <b>Class Date + Time: </b>M, 6/1, 3-4pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Cecilia Eure<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>Cecelia Eure is part of the class of 2023 at The College of William and Mary. She is an introduction to anthropology because she wished that she had an opportunity to learn about anthropology as a subject long before she did. Today, she is double majoring in Anthropology and American Studies. Though she has never taught an anthropology class before, she taught theatre at a summer day camp in high school. 
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

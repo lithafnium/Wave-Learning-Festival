@@ -23,7 +23,7 @@ const CoursePage = () => {
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Juliana Drozd<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>I'm a rising junior at MIT majoring in Earth, Atmospheric, and Planetary Sciences, with a focus on geology and environmental systems, and minoring in biology. I'll be teaching a class on geobiology and astrobiology, looking at the most extreme life on Earth and how it can inform us in the search for life outside Earth! I'm incredibly passionate about the search for alien life, but I've learned that a lot of the life forms that you can find on Earth seem pretty alien already—they can survive in boiling pools of acid, in Antarctic lakes that have been frozen over for millions of years, and at the bottom of the ocean around underwater volcanoes. What are the limits for life as we know it and what does this extreme life on Earth mean about the possibility for life on planets completely different from our own? I hope to not only share some of the insanely cool science being done, but to inspire students to ask questions of their own about life and the universe. Apart from my own classes and my knowledge from those, I've worked in the Summons Lab at MIT, which is a geobiology and astrobiology lab, and the Astrobiology Analytical Lab at NASA Goddard, conducting research on biomarkers of microbial life and prebiotic chemistry. Outside of school and research, I'm an ice dancer and the president of the MIT Figure Skating Club!
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

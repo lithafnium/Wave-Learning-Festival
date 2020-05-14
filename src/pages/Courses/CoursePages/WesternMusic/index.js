@@ -23,7 +23,7 @@ const CoursePage = () => {
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Justin Oei<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>A member of College of William and Mary’s class of 2023, Justin Oei is excited to share his knowledge and passion for music.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

@@ -23,7 +23,7 @@ const CoursePage = () => {
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Kristen Kiley<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>Hi! My name is Kristin Kiley. I'm a first-year student at Harvard studying Chemistry and Russian (and who knows what else!). I love teaching Chemistry, I've been a tutor for many years and was a teaching assistant for AP Chemistry in high school. What's cooler about chemistry than explosions?? A few fun facts about me: my DNA is in space and I compete on the Harvard Curling team!
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

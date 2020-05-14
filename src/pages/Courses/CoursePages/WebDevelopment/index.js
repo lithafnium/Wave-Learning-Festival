@@ -23,7 +23,7 @@ const CoursePage = () => {
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Ryan Cottone and Zachary Hauch<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>Ryan Cottone and Zachary Hauch are students hoping to help people new to website development build their skills. 
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

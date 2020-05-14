@@ -18,12 +18,12 @@ const CoursePage = () => {
                   This course will seek to answer, from a variety of philosophical and scientific standpoints, why and how humans experience joy, with an emphasis on finding ways to increase joyful moments while stuck in quarantine.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>
+                  <b>Class Date + Time: </b>TR, 5/26-6/4, 5-6:15pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Abby McElroy, Harvard University '23<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>Abby McElroy is a member of Harvard College’s class of 2023. She is excited to share her knowledge of human emotion in her course!
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

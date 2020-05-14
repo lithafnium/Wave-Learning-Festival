@@ -23,7 +23,7 @@ const CoursePage = () => {
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Sophia Giegerich<br/>
-                  <b>Teacher Bio: </b>
+                  <b>Teacher Bio: </b>I am a sophomore (rising junior) at Whitman College in Walla Walla, Wa and will be graduating in 2022. I am a philosophy major with a focus on compassion. I am particularly interested in how we can cultivate and promote compassion in society. This past semester I took a moral emotions philosophy course that deeply inspired me. We went over core emotions such as love, compassion, fear, anger, jealousy, disgust, and friendship, to name a few. I ended the class having a much deeper understanding of my own emotions. I have experience with tutoring. I was previously an English Language Fellow at my college, in which I helped international students with their reading and writing assignments, and I am currently a tutor at my college’s Center for Reading and Writing. In addition to having a passion for philosophy, I am also passionate about art, education, music, nature, and animals.  
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

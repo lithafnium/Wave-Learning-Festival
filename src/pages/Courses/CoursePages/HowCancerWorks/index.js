@@ -18,7 +18,7 @@ const CoursePage = () => {
                   How Cancer Works is a course dedicated to understanding the fundamentals of cancer, a debilitating disease that affects millions of people annually.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>
+                  <b>Class Date + Time: </b>MWF, 5/25-6/5, 7:45-8:30pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>

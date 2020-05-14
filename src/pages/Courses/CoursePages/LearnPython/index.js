@@ -18,7 +18,7 @@ const CoursePage = () => {
                   Learn Python is an introductory Python course that hopes to provide a support system to students new to the language, while also providing support for those who have experience but would like to improve their code.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>
+                  <b>Class Date + Time: </b>MWF, 5/25-6/12, 3-4:30pm
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
