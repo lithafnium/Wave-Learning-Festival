@@ -7,7 +7,7 @@ import DigitalPainting from "./headshot/digital-painting-photoshop.png"
 import LearnCancer from "./headshot/how-cancer-works.jpg"
 import LearnPython from "./headshot/learn-python.png"
 
-const Team = () => {
+const Courses = () => {
     return(
         <div>
             <Navbar/>
@@ -72,4 +72,4 @@ const Team = () => {
     )
 }
 
-export default Team
+export default Courses

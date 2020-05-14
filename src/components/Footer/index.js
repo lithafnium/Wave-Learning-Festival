@@ -1,7 +1,6 @@
 import React from 'react'
 import { FooterContainer, FooterInner, Social, Icon, FooterLeft } from './styles'
 import { FaFacebookSquare, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
 import { IconContext } from "react-icons"
 
 const Footer = () => {

@@ -8,6 +8,7 @@ import FAQStudents from './pages/FAQ/Students'
 import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses'
+import CourseLearnPython from './pages/Courses/CoursePages/LearnPython'
 import Login from './pages/Login'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
@@ -35,16 +36,16 @@ function App() {
           <Route path="/courses">
             <Courses />
           </Route>
+          <Route path="/course-learn-python">
+            <CourseLearnPython />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/">
             <About />
           </Route>
-          
-
         </Switch>
-
       </div>
     </Router>
   );
