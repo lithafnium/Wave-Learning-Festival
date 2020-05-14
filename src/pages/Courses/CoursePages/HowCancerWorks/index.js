@@ -16,12 +16,13 @@ const CoursePage = () => {
                   <h1>How Cancer Works</h1>
                   <p>
                   How Cancer Works is a course dedicated to understanding the fundamentals of cancer, a debilitating disease that affects millions of people annually.
+                  <img src={CourseImage} class="img-right"/>
                   </p>
                   <p>
                   <b>Class Date + Time: </b>
                   </p>
                   <p>
-                  <img src={AnonymousProfile}/>
+                  <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Madison Abbassi, Palo Alto High School ‘22<br/>
                   <b>Teacher Bio: </b>Hi, I'm Madison! I'm a student at Palo Alto High School (Class of 2022) who loves science. I'm teaching this course because I truly believe that our generation will be the one that cures cancer and it is never too early to start learning. Cancer biology is a fascinating topic to explore and very important to understand, as cancer affects millions around the world. I hold course certifications in cancer biology from Johns Hopkins University and thoracic oncology from the University of Michigan, so I'm really excited to spread the knowledge. In my free time, I like to swim, watch old Twilight Zone episodes, and try new baking projects with my younger sister.
                   </p>

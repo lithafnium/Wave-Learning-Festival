@@ -16,12 +16,13 @@ const CoursePage = () => {
                   <h1>Digital Painting with Photoshop</h1>
                   <p>
                   Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
+                  <img src={CourseImage} class="img-right"/>
                   </p>
                   <p>
-                  <b>Class Date + Time: </b>
+                  <h2>Class Date + Time:</h2>
                   </p>
                   <p>
-                  <img src={AnonymousProfile}/>
+                  <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Yutong Liu, USC ‘21<br/>
                   <b>Teacher Bio: </b>
                   </p>
