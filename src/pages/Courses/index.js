@@ -50,6 +50,10 @@ const Team = () => {
               </div>
             </div>
             </div>
+            </div>
+            <div class="container">
+              <div class="row">
+              <div class = "row">
             <h1>Register by 5/23 to take a class in the first wave!</h1>
                 <iframe
                 title="form"
@@ -59,7 +63,10 @@ const Team = () => {
                 frameborder="0"
                 marginheight="0"
                 marginwidth="0">Loading…</iframe>
-            </div>
+                </div>
+              </div>
+            </div> 
+
             <Footer/>
         </div>
     )
