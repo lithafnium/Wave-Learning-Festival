@@ -51,15 +51,15 @@ const Navbar = () => {
                               onMouseLeave={() => setShown(false)} >
                         <Link>
                             FAQ
-                        </Link>  
-                       {show && 
+                        </Link>
+                       {show &&
                             <>
                             <NavbarDropdown>
                                 <Link to='/faq-students'>
                                     <DropdownItem>
                                         <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
                                             <div>
-                                        <FaUserAlt/> 
+                                        <FaUserAlt/>
                                         </div>
                                     </IconContext.Provider>
                                         Students
@@ -69,17 +69,17 @@ const Navbar = () => {
                                     <DropdownItem>
                                     <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
                                             <div>
-                                            <FaChalkboardTeacher/> 
+                                            <FaChalkboardTeacher/>
                                         </div>
                                     </IconContext.Provider>
                                         Teachers
                                     </DropdownItem>
                                 </Link>
-                                </NavbarDropdown> 
+                                </NavbarDropdown>
                             </>
                         }
                     </NavItem>
-                   
+
                     <Link to='/login'>
                         <Button>
                             Login
@@ -111,11 +111,11 @@ const Navbar = () => {
                         </Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/faq-teachers'>
+                        <Link to='/faq-students'>
                             Student FAQ
                         </Link>
                     </NavItem>
-                    
+
                     <Link to='/login'>
                         <Button>
                             Login
