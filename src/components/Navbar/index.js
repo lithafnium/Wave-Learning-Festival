@@ -44,6 +44,9 @@ const Navbar = () => {
                     <NavItem>
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
+                    <NavItem>
+                        <Link to='/courses'>Courses</Link>
+                    </NavItem>
                     <NavItem onMouseEnter={() => setShown(true)}
                               onMouseLeave={() => setShown(false)} >
                         <Link>
@@ -76,9 +79,7 @@ const Navbar = () => {
                             </>
                         }
                     </NavItem>
-                    <NavItem>
-                        <Link to='/courses'>Courses</Link>
-                    </NavItem>
+                   
                     <Link to='/login'>
                         <Button>
                             Login
@@ -102,6 +103,9 @@ const Navbar = () => {
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
                     <NavItem>
+                        <Link to='/courses'>Courses</Link>
+                    </NavItem>
+                    <NavItem>
                         <Link to='/faq-teachers'>
                             Teachers FAQ
                         </Link>
@@ -111,9 +115,7 @@ const Navbar = () => {
                             Student FAQ
                         </Link>
                     </NavItem>
-                    <NavItem>
-                        <Link to='/courses'>Courses</Link>
-                    </NavItem>
+                    
                     <Link to='/login'>
                         <Button>
                             Login
