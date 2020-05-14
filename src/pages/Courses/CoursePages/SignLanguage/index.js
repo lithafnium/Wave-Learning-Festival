@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>Introduction to American Sign Language</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   This highly interactive course will cover the basics of ASL, and will guide students to conversational skill level. No prior experience necessary.
                   </p>
                   <p style={{clear: 'right'}}>

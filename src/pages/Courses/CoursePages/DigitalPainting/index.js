@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>Digital Painting with Photoshop</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   Join Yutong Liu in a one-time workshop focusing on Digital Painting with Photoshop! Learn to set up canvases, change brushes, get the right equipment, and improve your painting technique.
                   </p>
                   <p style={{clear: 'right'}}>

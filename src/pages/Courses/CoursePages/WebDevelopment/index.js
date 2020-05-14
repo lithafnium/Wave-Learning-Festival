@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>Introduction to Website Development</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   Learn to develop a custom website on your own! No prior experience with web development necessary.
                   </p>
                   <p style={{clear: 'right'}}>

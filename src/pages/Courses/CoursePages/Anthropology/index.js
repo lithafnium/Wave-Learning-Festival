@@ -15,8 +15,7 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>What Even is Anthropology?</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
-                  This course will provide students with the basic foundation of the study of anthropology. No prior experience necessary. 
+                  This course will provide students with the basic foundation of the study of anthropology. No prior experience necessary.
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b> M, 6/1, 3-4pm

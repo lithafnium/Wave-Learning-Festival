@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>The Chemistry of Explosives</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   This course will cover the basics of how explosives work, and the chemistry behind them.
                   </p>
                   <p style={{clear: 'right'}}>

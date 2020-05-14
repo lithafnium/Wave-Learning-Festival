@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>Public Transportation and Urban Planning</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   This course will introduce students to public transportation and urban planning, exploring the importance of both through a case study of Boston’s public transportation system.
                   </p>
                   <p style={{clear: 'right'}}>

@@ -15,8 +15,7 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>Geobiology and Astrobiology</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
-                  This course focuses on life in extreme environments on Earth and the search for life outside of Earth (read: aliens!). No prior experience necessary. 
+                  This course focuses on life in extreme environments on Earth and the search for life outside of Earth (read: aliens!). No prior experience necessary.
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b>W, 6/3, 4-5:30pm

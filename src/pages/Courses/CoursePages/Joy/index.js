@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                   <h1>Where and Why is Joy?</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   This course will seek to answer, from a variety of philosophical and scientific standpoints, why and how humans experience joy, with an emphasis on finding ways to increase joyful moments while stuck in quarantine.
                   </p>
                   <p style={{clear: 'right'}}>

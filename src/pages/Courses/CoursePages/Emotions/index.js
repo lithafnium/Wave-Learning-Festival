@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>Philosophy and Morality of Emotions</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   This philosophy course is an exploration of the five core emotions: happiness, anger, love, fear, and sadness. Students will discuss what they are, why they exist, and how we can interact with them.
                   </p>
                   <p style={{clear: 'right'}}>

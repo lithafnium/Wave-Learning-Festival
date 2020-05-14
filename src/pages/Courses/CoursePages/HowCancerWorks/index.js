@@ -15,7 +15,6 @@ const CoursePage = () => {
                 <ContainerInner>
                   <h1>How Cancer Works</h1>
                   <p>
-                  <img src={CourseImage} class="img-right"/>
                   How Cancer Works is a course dedicated to understanding the fundamentals of cancer, a debilitating disease that affects millions of people annually.
                   </p>
                   <p style={{clear: 'right'}}>
