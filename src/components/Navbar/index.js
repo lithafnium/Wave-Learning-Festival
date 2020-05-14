@@ -21,7 +21,7 @@ import {
     Link
 } from "react-router-dom"
 import { IconContext } from "react-icons"
-import { FaUserAlt, FaChalkboardTeacher, FaCaretRight } from 'react-icons/fa'
+import { FaUserAlt, FaChalkboardTeacher, FaUserFriends } from 'react-icons/fa'
 import Logo from './logo.svg'
 import LogoText from './logoText.png'
 import LogoTextFull from './logoTextFull.svg'
@@ -65,6 +65,16 @@ const Navbar = () => {
                                         Students
                                     </DropdownItem>
                                 </Link>
+                                <Link to='/faq-parents'>
+                                    <DropdownItem>
+                                    <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                            <div>
+                                            <FaUserFriends/>
+                                        </div>
+                                    </IconContext.Provider>
+                                        Parents
+                                    </DropdownItem>
+                                </Link>
                                 <Link to='/faq-teachers'>
                                     <DropdownItem>
                                     <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
@@ -75,7 +85,8 @@ const Navbar = () => {
                                         Teachers
                                     </DropdownItem>
                                 </Link>
-                                </NavbarDropdown>
+                                
+                            </NavbarDropdown>
                             </>
                         }
                     </NavItem>
@@ -113,6 +124,11 @@ const Navbar = () => {
                     <NavItem>
                         <Link to='/faq-students'>
                             Student FAQ
+                        </Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/faq-parents'>
+                            Parents FAQ
                         </Link>
                     </NavItem>
 
