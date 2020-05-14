@@ -44,7 +44,7 @@ function App() {
           <Route path="/course-how-cancer-works">
             <CourseHowCancerWorks />
           </Route>
-          <Route path="/course-digital-painting">
+          <Route path="/course-digital-painting-with-photoshop">
             <CourseDigitalPainting />
           </Route>
           <Route path="/login">
