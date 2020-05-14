@@ -18,7 +18,7 @@ const CoursePage = () => {
                   <img src={CourseImage} class="img-right"/>
                   This course will provide students with tips on writing, getting past writer’s block, varying writing, changing voice, and understanding story pace. 
                   </p>
-                  <p style="clear:right">
+                  <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b>
                   </p>
                   <p>

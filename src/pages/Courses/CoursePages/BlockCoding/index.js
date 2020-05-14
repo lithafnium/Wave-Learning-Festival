@@ -18,7 +18,7 @@ const CoursePage = () => {
                   <img src={CourseImage} class="img-right"/>
                   Learn how to build an app from scratch with block coding! Simpler than text coding, block coding is easy to pick up and no prior experience is necessary for this course. This course will run for 6 weeks.
                   </p>
-                  <p style="clear:right">
+                  <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b>Sundays, 5/31-7/5, 4-5pm
                   </p>
                   <p>

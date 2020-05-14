@@ -18,7 +18,7 @@ const CoursePage = () => {
                   <img src={CourseImage} class="img-right"/>
                   This philosophy course is an exploration of the five core emotions: happiness, anger, love, fear, and sadness. Students will discuss what they are, why they exist, and how we can interact with them.
                   </p>
-                  <p style="clear:right">
+                  <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b>MWF, 5/25-6/5, 2-2:50pm
                   </p>
                   <p>

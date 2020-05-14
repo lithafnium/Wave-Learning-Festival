@@ -18,7 +18,7 @@ const CoursePage = () => {
                   <img src={CourseImage} class="img-right"/>
                   This course will introduce students to public transportation and urban planning, exploring the importance of both through a case study of Boston’s public transportation system.
                   </p>
-                  <p style="clear:right">
+                  <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b>MWF, 6/1-6/5, 4-5pm
                   </p>
                   <p>

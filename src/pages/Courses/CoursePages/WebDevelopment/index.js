@@ -18,7 +18,7 @@ const CoursePage = () => {
                   <img src={CourseImage} class="img-right"/>
                   Learn to develop a custom website on your own! No prior experience with web development necessary.
                   </p>
-                  <p style="clear:right">
+                  <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b>WF, 5/31-6/5, 6:30-8pm
                   </p>
                   <p>
