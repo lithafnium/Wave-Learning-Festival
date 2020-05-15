@@ -6,13 +6,14 @@ import {
     Header, DescriptionText, Button, DescriptionContainer, DescriptionContainerInner,
     Card, SchoolsContainer, SchoolsContainerInner, SchoolLogo, School, WhoWeAre, WhoHeader, WhoContanier
 } from './styles'
+import "./styles.css"
 import Learning from './learning.svg'
 import { IoMdLogIn } from "react-icons/io"
 import { MdPersonalVideo, MdModeEdit, MdLanguage } from 'react-icons/md'
 import { IconContext } from "react-icons"
 import Berkeley from './berkeley.png'
 import Brown from './brown.png'
-import Harvard from './harvard.png' 
+import Harvard from './harvard.png'
 import CMU from './cmu.png'
 import Umich from './umich.png'
 import Upenn from './upenn.png'
@@ -28,21 +29,23 @@ const About = () => {
                             Make a Difference, right from home
                         </Header>
                         <DescriptionText>
-                        Wave Learning Festival is a student-run educational platform 
-                        that aims to teach students through seminars on a variety of 
-                        topics. We hope to provide equitable educational resources 
-                        while alleviating some of the new pressures that have fallen 
+                        Wave Learning Festival is a student-run educational platform
+                        that aims to teach students through seminars on a variety of
+                        topics. We hope to provide equitable educational resources
+                        while alleviating some of the new pressures that have fallen
                         on working parents during the pandemic.
 
                         </DescriptionText>
-                        <Button>
-                            <IconContext.Provider value={{ color: "white", size: "1.5em", style: { verticalAlign: 'middle' } }}>
-                                <div>
-                                    <IoMdLogIn />
-                                </div>
-                            </IconContext.Provider>
-                            <p>Sign up</p>
-                        </Button>
+                        <a href="/courses" class="sign-up-link">
+                          <Button>
+                              <IconContext.Provider value={{ color: "white", size: "1.5em", style: { verticalAlign: 'middle' } }}>
+                                  <div>
+                                      <IoMdLogIn />
+                                  </div>
+                              </IconContext.Provider>
+                              <p>Sign up</p>
+                          </Button>
+                        </a>
                     </AboutDescription>
                     <HeaderImage src={Learning} />
 
@@ -58,11 +61,11 @@ const About = () => {
                         </WhoHeader>
                     <WhoHeader>
                         <p>
-                        We are organizing a student-run educational platform in 
-                        which college students and high school upperclassmen teach 
-                        seminars on a variety of topics to middle schoolers and high 
-                        schoolers online (focus: 6th - 10th grade). Classes will be 
-                        free with an optional donation, and we hope to donate everything 
+                        We are organizing a student-run educational platform in
+                        which college students and high school upperclassmen teach
+                        seminars on a variety of topics to middle schoolers and high
+                        schoolers online (focus: 6th - 10th grade). Classes will be
+                        free with an optional donation, and we hope to donate everything
                         we raise to nonprofits aiding the COVID-19 crisis.
 
                         </p>
@@ -74,32 +77,32 @@ const About = () => {
                     <WhoHeader>
 
                         <h1>
-                            Why are we doing this? 
+                            Why are we doing this?
                         </h1>
                         </WhoHeader>
                     <WhoHeader>
                         <p>
-                        The global pandemic has disrupted education worldwide, 
-                        and in many cases, completely shut it down. While we cannot 
-                        replicate the entire school day, we hope that providing these 
-                        fun and diverse classes can help students to continue learning, 
-                        staying engaged, and interacting with fellow students when 
+                        The global pandemic has disrupted education worldwide,
+                        and in many cases, completely shut it down. While we cannot
+                        replicate the entire school day, we hope that providing these
+                        fun and diverse classes can help students to continue learning,
+                        staying engaged, and interacting with fellow students when
                         they’re stuck at home.
 
                         </p>
                         <p>
-                        In addition, we hope to alleviate some of the new burdens 
-                        that have fallen on parents who no longer have school/daycare 
-                        to keep their children busy while they work full-time. 
-                        For a few hours each day, they can take a break and get 
+                        In addition, we hope to alleviate some of the new burdens
+                        that have fallen on parents who no longer have school/daycare
+                        to keep their children busy while they work full-time.
+                        For a few hours each day, they can take a break and get
                         their work done without having to worry.
 
                         </p>
                         <p>
-                        One parent writes, “Attempting to work full time while rooming with, 
-                        feeding and educating one or more children during the pandemic is not 
-                        going well — not for me, and not for most people I know...across demographics and 
-                        income levels, the pandemic has undone many of the supports parents usually rely 
+                        One parent writes, “Attempting to work full time while rooming with,
+                        feeding and educating one or more children during the pandemic is not
+                        going well — not for me, and not for most people I know...across demographics and
+                        income levels, the pandemic has undone many of the supports parents usually rely
                         on to manage raising children while working.”
                         <ul>
                             <li><a href = "https://www.economist.com/international/2020/03/19/how-covid-19-is-interrupting-childrens-education">
@@ -117,7 +120,7 @@ const About = () => {
 
 
                 </WhoWeAre>
-                
+
             </WhoContanier>
             <DescriptionContainer>
                 <DescriptionContainerInner>
@@ -128,7 +131,7 @@ const About = () => {
                             </div>
                         </IconContext.Provider>
                         <h3>Platform</h3>
-                        <p>Our teachers connect with students online via remote-learning platforms 
+                        <p>Our teachers connect with students online via remote-learning platforms
                             like Zoom while maintaining an interactive and engaging environment</p>
                     </Card>
                     <Card>
