@@ -31,18 +31,6 @@ const Courses = () => {
             <div class="container">
             <div class="row">
             <div class="column">
-              <a href="course-digital-painting">
-                <div class="course">
-                  <div class="image-container">
-                    <img src={DigitalPainting} />
-                  </div>
-                  <p class="name">Digital Painting with Photoshop</p>
-                  <p class="teacher">Yutong Liu</p>
-                  <p class="school">USC ‘21</p>
-                </div>
-              </a>
-            </div>
-            <div class="column">
               <a href="course-how-cancer-works">
                 <div class="course">
                   <div class="image-container">
