@@ -37,7 +37,8 @@ const Courses = () => {
                     <img src={DigitalPainting} />
                   </div>
                   <p class="name">Digital Painting with Photoshop</p>
-                  <p class="teacher">Yutong Liu, USC ‘21</p>
+                  <p class="teacher">Yutong Liu</p>
+                  <p class="school">USC ‘21</p>
                 </div>
               </a>
             </div>
@@ -48,7 +49,8 @@ const Courses = () => {
                     <img src={LearnCancer}/>
                   </div>
                   <p class="name">How Cancer Works</p>
-                  <p class="teacher">Madison Abbasi, Palo Alto High School ‘22</p>
+                  <p class="teacher">Madison Abbasi</p>
+                  <p class="school">Palo Alto High School ‘22</p>
                 </div>
               </a>
             </div>
@@ -59,7 +61,8 @@ const Courses = () => {
                     <img src={LearnPython} />
                   </div>
                   <p class="name">Learn Python</p>
-                  <p class="teacher">Fatima-Zahra Chriha, Felician University ‘23</p>
+                  <p class="teacher">Fatima-Zahra Chriha</p>
+                  <p class="school">Felician University ‘23</p>
                 </div>
               </a>
             </div>
@@ -70,7 +73,8 @@ const Courses = () => {
                     <img src={Joy} />
                   </div>
                   <p class="name">Where and Why is Joy?</p>
-                  <p class="teacher">Abby McElroy, Harvard University '23</p>
+                  <p class="teacher">Abby McElroy</p>
+                  <p class="school">Harvard University '23</p>
                 </div>
               </a>
             </div>
@@ -81,7 +85,8 @@ const Courses = () => {
                     <img src={ShortStories} />
                   </div>
                   <p class="name">Starting Short Stories</p>
-                  <p class="teacher">Annetta Venford, Henry M Gunn High School '22</p>
+                  <p class="teacher">Annetta Venford</p>
+                  <p class="school">Henry M Gunn High School '21</p>
                 </div>
               </a>
             </div>
@@ -92,7 +97,8 @@ const Courses = () => {
                     <img src={Anthropology} />
                   </div>
                   <p class="name">What Even is Anthropology?</p>
-                  <p class="teacher">Cecilia Eure, College of William & Mary '23</p>
+                  <p class="teacher">Cecilia Eure</p>
+                  <p class="school">College of William & Mary '23</p>
                 </div>
               </a>
             </div>
@@ -103,7 +109,8 @@ const Courses = () => {
                     <img src={SignLanguage} />
                   </div>
                   <p class="name">Introduction to American Sign Language</p>
-                  <p class="teacher">Emma Doughty, University at Buffalo '24</p>
+                  <p class="teacher">Emma Doughty</p>
+                  <p class="school">University at Buffalo '24</p>
                 </div>
               </a>
             </div>
@@ -114,7 +121,8 @@ const Courses = () => {
                     <img src={Geobiology} />
                   </div>
                   <p class="name">Geobiology and Astrobiology</p>
-                  <p class="teacher">Juliana Drozd, Massachusetts Institute of Technology '22</p>
+                  <p class="teacher">Juliana Drozd</p>
+                  <p class="school">Massachusetts Institute of Technology '22</p>
                 </div>
               </a>
             </div>
@@ -125,7 +133,8 @@ const Courses = () => {
                     <img src={WesternMusic} />
                   </div>
                   <p class="name">History’s Top Hits: An Introduction to the Great Works of Western Music</p>
-                  <p class="teacher">Justin Oei, College of William and Mary '23</p>
+                  <p class="teacher">Justin Oei</p>
+                  <p class="school">College of William and Mary '23</p>
                 </div>
               </a>
             </div>
@@ -136,7 +145,8 @@ const Courses = () => {
                     <img src={Explosives} />
                   </div>
                   <p class="name">The Chemistry of Explosives</p>
-                  <p class="teacher">Kristen Kiley, Harvard College '23</p>
+                  <p class="teacher">Kristen Kiley</p>
+                  <p class="school">Harvard College '23</p>
                 </div>
               </a>
             </div>
@@ -147,7 +157,8 @@ const Courses = () => {
                     <img src={PublicTransit} />
                   </div>
                   <p class="name">Public Transportation and Urban Planning</p>
-                  <p class="teacher">Perrin Price, Harvard College '23</p>
+                  <p class="teacher">Perrin Price</p>
+                  <p class="school">Harvard College '23</p>
                 </div>
               </a>
             </div>
@@ -169,7 +180,8 @@ const Courses = () => {
                     <img src={Emotions} />
                   </div>
                   <p class="name">Philosophy and Morality of Emotions</p>
-                  <p class="teacher">Sophia Giegerich, Whitman College '22</p>
+                  <p class="teacher">Sophia Giegerich</p>
+                  <p class="school">Whitman College '22</p>
                 </div>
               </a>
             </div>
