@@ -85,7 +85,7 @@ const Courses = () => {
                     <img src={Anthropology} />
                   </div>
                   <p class="name">What Even is Anthropology?</p>
-                  <p class="teacher">Cecilia Eure</p>
+                  <p class="teacher">Cecelia Eure</p>
                   <p class="school">College of William & Mary '23</p>
                 </div>
               </a>
