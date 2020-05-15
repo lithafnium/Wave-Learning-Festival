@@ -22,8 +22,8 @@ const CoursePage = () => {
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Cecilia Eure<br/>
-                  <b>Teacher Bio: </b>Cecelia Eure is part of the class of 2023 at The College of William and Mary. She is an introduction to anthropology because she wished that she had an opportunity to learn about anthropology as a subject long before she did. Today, she is double majoring in Anthropology and American Studies. Though she has never taught an anthropology class before, she taught theatre at a summer day camp in high school. 
+                  <b>Taught by: </b>Cecelia Eure<br/>
+                  <b>Teacher Bio: </b>Cecelia Eure is part of the class of 2023 at The College of William and Mary. She is an introduction to anthropology because she wished that she had an opportunity to learn about anthropology as a subject long before she did. Today, she is double majoring in Anthropology and American Studies. Though she has never taught an anthropology class before, she taught theatre at a summer day camp in high school.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe
