@@ -26,7 +26,7 @@ const Courses = () => {
             <Container>
             <ContainerInner>
             <p>
-              For our inaugural wave, we are excited to offer 14 courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
+              For our inaugural wave, we are excited to offer 13 courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
             </p>
             <div class="container">
             <div class="row">
