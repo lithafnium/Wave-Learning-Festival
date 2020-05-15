@@ -85,17 +85,18 @@ const Navbar = () => {
                                         Teachers
                                     </DropdownItem>
                                 </Link>
-                                
+
                             </NavbarDropdown>
                             </>
                         }
                     </NavItem>
-
+{/*
                     <Link to='/login'>
                         <Button>
                             Login
                         </Button>
                     </Link>
+                    */}
                 </Links>
                 <Hamburger slide={slide} onClick={() => toggleSlide(!slide)}>
                     <Bar num={0} rotate1={slide && true} slide={slide}/>
