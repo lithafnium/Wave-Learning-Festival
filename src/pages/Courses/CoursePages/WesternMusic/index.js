@@ -18,7 +18,7 @@ const CoursePage = () => {
                   This course will cover not just 21st-century American musical hits, but will delve into the ‘greatest’ pieces of music of all time and what it means to hold that title.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>MWF, 5/25-6/5, 2-3pm
+                  <b>Class Date + Time: </b>MWF, 5/25-6/5, 2-3pm EDT
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>

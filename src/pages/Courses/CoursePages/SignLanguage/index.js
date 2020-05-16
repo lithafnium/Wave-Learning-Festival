@@ -18,7 +18,7 @@ const CoursePage = () => {
                   This highly interactive course will cover the basics of ASL, and will guide students to conversational skill level. No prior experience necessary.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>MWF, 5/25-6/12, 12-12:45pm
+                  <b>Class Date + Time: </b>MWF, 5/25-6/12, 12-12:45pm EDT
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>

@@ -18,12 +18,12 @@ const CoursePage = () => {
                   Learn how to build an app from scratch with block coding! Simpler than text coding, block coding is easy to pick up and no prior experience is necessary for this course. This course will run for 6 weeks.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>Sundays, 5/31-7/5, 4-5pm
+                  <b>Class Date + Time: </b>Sundays, 5/31-7/5, 4-5pm EDT
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Yuan Sui<br/>
-                  <b>Teacher Bio: </b>My name is Yuan Sui and I am a high school senior from Canada. This September, I plan to study Electrical and Computer Engineering at the University of Toronto. I have three years of programming experience, in Java and C++. I have also competed in competitions where my team and I build a functional app using block coding! Through this course, I want to share with students the joy of coding and I want to help students to actualize their ideas in real life. One fun fact about me is that I recently started to do book reviews on my social media account. 
+                  <b>Teacher Bio: </b>My name is Yuan Sui and I am a high school senior from Canada. This September, I plan to study Electrical and Computer Engineering at the University of Toronto. I have three years of programming experience, in Java and C++. I have also competed in competitions where my team and I build a functional app using block coding! Through this course, I want to share with students the joy of coding and I want to help students to actualize their ideas in real life. One fun fact about me is that I recently started to do book reviews on my social media account.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

@@ -18,7 +18,7 @@ const CoursePage = () => {
                   This course will provide students with the basic foundation of the study of anthropology. No prior experience necessary.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>M, 6/1, 3-4pm
+                  <b>Class Date + Time: </b>M, 6/1, 3-4pm EDT
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

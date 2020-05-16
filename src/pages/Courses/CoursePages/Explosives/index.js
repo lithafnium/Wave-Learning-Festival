@@ -18,7 +18,7 @@ const CoursePage = () => {
                   This course will cover the basics of how explosives work, and the chemistry behind them.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>TR, 5/26-6/4, 10-11am
+                  <b>Class Date + Time: </b>TR, 5/26-6/4, 10-11am EDT
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>

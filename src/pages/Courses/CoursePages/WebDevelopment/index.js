@@ -18,12 +18,12 @@ const CoursePage = () => {
                   Learn to develop a custom website on your own! No prior experience with web development necessary.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>WF, 5/31-6/5, 6:30-8pm
+                  <b>Class Date + Time: </b>WF, 5/31-6/5, 6:30-8pm EDT
                   </p>
                   <p>
                   <img src={AnonymousProfile} class="img-left"/>
                   <b>Taught by: </b>Ryan Cottone and Zachary Hauch<br/>
-                  <b>Teacher Bio: </b>Ryan Cottone and Zachary Hauch are students hoping to help people new to website development build their skills. 
+                  <b>Teacher Bio: </b>Ryan Cottone and Zachary Hauch are students hoping to help people new to website development build their skills.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe
