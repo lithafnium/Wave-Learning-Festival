@@ -150,6 +150,7 @@ const Courses = () => {
                 </div>
               </a>
             </div>
+            {/*
             <div class="column">
               <a href="course-web-development">
                 <div class="course">
@@ -161,6 +162,7 @@ const Courses = () => {
                 </div>
               </a>
             </div>
+            */}
             <div class="column">
               <a href="course-emotions">
                 <div class="course">
