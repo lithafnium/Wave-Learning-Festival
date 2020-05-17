@@ -55,18 +55,6 @@ const Courses = () => {
               </a>
             </div>
             <div class="column">
-              <a href="course-joy">
-                <div class="course">
-                  <div class="image-container">
-                    <img src={Joy} />
-                  </div>
-                  <p class="name">Where and Why is Joy?</p>
-                  <p class="teacher">Abby McElroy</p>
-                  <p class="school">Harvard University '23</p>
-                </div>
-              </a>
-            </div>
-            <div class="column">
               <a href="course-short-stories">
                 <div class="course">
                   <div class="image-container">
