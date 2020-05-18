@@ -47,7 +47,7 @@ const TermsConditions = () => {
                         collection, use, and disclosure of personal information collected from children below 
                         the age of 13. For more information on these practices, please view our Privacy Policy. 
                     </p>
-                    <h2>Eligibility</h2>
+                    <h2>Eligibility:</h2>
                     <p><u>For Parents, Guardians, and Students:</u></p>
                     <p>
                         No student may use the Services unless they have been registered with the consent of a 
