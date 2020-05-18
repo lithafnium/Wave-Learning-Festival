@@ -22,6 +22,9 @@ import CourseShortStories from './pages/Courses/CoursePages/ShortStories'
 import CourseSignLanguage from './pages/Courses/CoursePages/SignLanguage'
 import CourseWebDev from './pages/Courses/CoursePages/WebDevelopment'
 import CourseWesternMusic from './pages/Courses/CoursePages/WesternMusic'
+import TermsAndConditions from './pages/Terms/TermsConditions'
+import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
+import TeacherAgreement from './pages/Terms/TeacherAgreement'
 import Login from './pages/Login'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
@@ -89,6 +92,15 @@ function App() {
           </Route>
           <Route path="/course-sign-language">
             <CourseSignLanguage />
+          </Route>
+          <Route path="/terms-conditions">
+            <TermsAndConditions />
+          </Route>
+          <Route path="/privacy-policy">
+            <PrivacyPolicy />
+          </Route>
+          <Route path="/teacher-agreement">
+            <TeacherAgreement />
           </Route>
           <Route path="/login">
             <Login />
