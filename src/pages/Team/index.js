@@ -124,7 +124,7 @@ const Team = () => {
               <div class="team-member">
                 <img src={RuhiMistry} />
                 <p class="name">Ruhi Mistry</p>
-                <p class="school">UC Riverside, 2024</p>
+                <p class="school">UC Santa Cruz, 2024</p>
                 <p class="desc">Associate Director of PR</p>
               </div>
               </div>
