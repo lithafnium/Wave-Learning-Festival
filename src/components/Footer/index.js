@@ -12,8 +12,7 @@ const Footer = () => {
                     <hr/>
                     <p>Questions? Email us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a></p>
                     <p>
-                        <a href = "terms-conditions">Terms and Conditions</a> and 
-                        <a href = "privacy-policy">Privacy Policy</a>
+                        <a href = "terms-conditions">Terms and Conditions</a> and <a href = "privacy-policy">Privacy Policy</a>
                     </p>
                 </FooterLeft>
                 <Social>
