@@ -11,12 +11,12 @@ const Teachers = () => {
                 <ContainerInner>
                     <h1>Teachers</h1>
                     <p>
-                        Nothing to do in the summer? Want to share your passions with students worldwide? 
+                        Want to share your passions with students worldwide? 
                         Apply to be a teacher for Wave Learning Festival!
                     </p>
                     <p>
                     Wave Learning Festival is an educational platform organized by students at 
-                    Harvard, Stanford, Northwestern, Williams, RISD, and SLO in which college 
+                    Harvard, Stanford, Northwestern, UPenn, Williams, RISD, and SLO in which college 
                     students and high school upperclassmen teach seminars on a variety of topics 
                     (anything from mathematical origami to explosives to modern philosophy or anything 
                     you want) to middle schoolers and high schoolers online 
