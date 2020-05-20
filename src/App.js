@@ -28,12 +28,10 @@ import TeacherAgreement from './pages/Terms/TeacherAgreement'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
-import { FirebaseProvider } from './firebaseContext'
 
 function App() {
 
   return (
-    <FirebaseProvider>
       <Router>
         <div>
           <Switch>
@@ -118,7 +116,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </FirebaseProvider>
   );
 }
 
