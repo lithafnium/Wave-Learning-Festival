@@ -1,0 +1,30 @@
+import React, { useState, useEffect } from 'react'
+import { firebaseApp } from './firebase'
+export const FirebaseContext = React.createContext()
+
+export const FirebaseProvider = ({ children }) => {
+    const [auth, setAuth] = useState(null)
+    const [db, setdb] = useState(null)
+
+    const createAuth = () => {
+        setAuth(firebaseApp.auth())   
+    }
+
+    const createFirestore = () => {
+        setdb(firebaseApp.firestore())
+    }
+
+    useEffect(() => {
+        createAuth()
+        createFirestore()
+    }, [])
+
+    return(
+        <FirebaseContext.Provider value={{
+            auth,
+            db
+        }}>
+            {children}
+        </FirebaseContext.Provider>
+    )
+}
