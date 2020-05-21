@@ -171,6 +171,10 @@ const Courses = () => {
                 </div>
               </a>
             </div>
+        </div>
+        </div>
+            <h1>Course Schedule</h1>
+            <iframe src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             <h1>Register by 5/23 to take a class in the first wave!</h1>
                 <iframe
                 title="form"
@@ -180,8 +184,6 @@ const Courses = () => {
                 frameborder="0"
                 marginheight="0"
                 marginwidth="0">Loading…</iframe>
-                </div>
-            </div>
             </ContainerInner>
           </Container>
             <Footer/>
