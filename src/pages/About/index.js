@@ -17,13 +17,13 @@ import Harvard from './harvard.png'
 import CMU from './cmu.png'
 import Umich from './umich.png'
 import Upenn from './upenn.png'
-import { FirebaseContext} from '../../firebaseContext'
+// import { FirebaseContext} from '../../firebaseContext'
 
 const About = () => {
-    const {db} = useContext(FirebaseContext)
-    useEffect(() => {
-        console.log(db)
-    }, [db])
+    // const {db} = useContext(FirebaseContext)
+    // useEffect(() => {
+    //     console.log(db)
+    // }, [db])
     return (
         <div>
             <Navbar />
