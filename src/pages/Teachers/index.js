@@ -11,13 +11,13 @@ const Teachers = () => {
                 <ContainerInner>
                     <h1>Teachers</h1>
                     <p>
-                        Want to share your passions with students worldwide? 
-                        Apply to be a teacher for Wave Learning Festival!
+                        Share your passions with students worldwide—
+                        apply to teach for Wave Learning Festival!
                     </p>
                     <p>
                     Wave Learning Festival is an educational platform organized by students at 
                     Harvard, Stanford, Northwestern, UPenn, Williams, RISD, and SLO in which college 
-                    students teach completely free seminars on a variety of topics to middle and high 
+                    students teach free seminars on a variety of topics to middle and high 
                     schoolers online. 
                     </p>
                     <p>
@@ -37,14 +37,11 @@ const Teachers = () => {
                     while sharing your passions with a wide audience. The flexibility of the 
                     time commitment allows you to volunteer while also pursuing other summer 
                     experiences. No prior teaching experience is required, and you will receive help and feedback 
-                    in making your class come to life! Please also feel free to share this to anyone 
-                    or any group you think may be interested!
+                    in making your class come to life! 
                     </p>
                     <h1>Apply by 5/29 to be included in the second wave!</h1>
                     <p>
-                    Due to overwhelming interest in teaching, we have closed applications to the first wave 
-                    early in the interest of keeping our inaugural cohort small. If you haven't heard back 
-                    from us yet, we will be reaching out soon to include you in our expanded second wave. 
+                    Due to overwhelming interest in teaching, we may push your class to a later wave. 
                     Thank you for your patience!
                     </p>
 
