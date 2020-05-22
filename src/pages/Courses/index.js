@@ -4,19 +4,16 @@ import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "./styles.js"
 import './styles.css'
 
-import DigitalPainting from "./headshot/digital-painting-photoshop.png"
 import LearnCancer from "./headshot/how-cancer-works.jpg"
 import LearnPython from "./headshot/learn-python.png"
-import Joy from "./headshot/joy.png"
 import Anthropology from "./headshot/anthropology.png"
-import BlockCoding from "./headshot/block-coding.jpg"
-import Emotions from "./headshot/emotions.jpg"
+import BlockCoding from "./headshot/block-coding.png"
+import Emotions from "./headshot/emotions.png"
 import Explosives from "./headshot/explosives.png"
 import Geobiology from "./headshot/geobiology-astrobiology.png"
 import PublicTransit from "./headshot/public-transit.png"
 import ShortStories from "./headshot/short-stories.png"
 import SignLanguage from "./headshot/sign-language.png"
-import WebDevelopment from "./headshot/web-development.png"
 import WesternMusic from "./headshot/western-music.png"
 
 const Courses = () => {

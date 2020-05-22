@@ -57,13 +57,24 @@ const Teachers = () => {
                         <p>
                             A very limited portion of the Services allow you to post or transmit content (“User Content”). For example, a teacher will submit User Content in order to build a profile. You may post User Content at your sole discretion, but please note that some User Content may be publicly available or viewable to others. Do not post any sensitive personal information as User Content.
                         </p>
+                        <p>
+                            Periodically, WLF may send you surveys regarding the functionality, effectiveness, or 
+                            ease of access of the Services. Such responses are voluntary, yet appreciated, however 
+                            they may contain personally identifiable information. 
+                        </p>
+                        <p>
+                            Throughout our courses, our teachers and/or directors may decide to take screenshots 
+                            or photographs of the classes to use for social media campaigns and advertising. By 
+                            using your webcam you agree to allow WLF to take such screenshots and photos, and post 
+                            pictures with your face (and any other information visible while using the online 
+                            learning platform, such as a username if using Zoom) on any social media accounts or 
+                            websites that we see fit. Such posts will only be pursuant to our goals at WLF, and we 
+                            will strive to conceal any unnecessary information. If at any time you wish to opt out 
+                            of these pictures, please turn off your webcam and/or change your visible username prior 
+                            to a teacher or director taking a picture. 
+                        </p>
                     </li>
                 </ul>
-                <p>
-                    Periodically, WLF may send you surveys regarding the functionality, effectiveness, or 
-                    ease of access of the Services. Such responses are voluntary, yet appreciated, however 
-                    they may contain personally identifiable information. 
-                </p>
                 <p>
                     The information collected from students is as follows:
                 </p>

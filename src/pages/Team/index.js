@@ -22,6 +22,7 @@ import YaelLivneh from "./headshot/yael-livneh.jpg"
 import JoshuaChen from "./headshot/joshua-chen.png"
 import AustinLi from "./headshot/austin-li.jpg"
 import MarkPekala from "./headshot/mark-pekala.jpg"
+import AlainDalma from './headshot/alain-saal-dalma.jpg'
 
 const Team = () => {
     return(
@@ -80,6 +81,14 @@ const Team = () => {
                 <p class="desc">Associate Director of Logistics</p>
               </div>
             </div>
+            <div class="column">
+              <div class="team-member">
+                <img src={AlainDalma} />
+                <p class="name">Alain Saal-Dalma</p>
+                <p class="school">Carnegie Mellon University, 2023</p>
+                <p class="desc">Associate Director of Logistics</p>
+              </div>
+            </div>
            <div class="column">
               <div class="team-member">
                 <img src={SteveLi} />
@@ -124,7 +133,7 @@ const Team = () => {
               <div class="team-member">
                 <img src={RuhiMistry} />
                 <p class="name">Ruhi Mistry</p>
-                <p class="school">UC Riverside, 2024</p>
+                <p class="school">UC Santa Cruz, 2024</p>
                 <p class="desc">Associate Director of PR</p>
               </div>
               </div>

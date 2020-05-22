@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import {
@@ -19,6 +19,7 @@ import Umich from './umich.png'
 import Upenn from './upenn.png'
 
 const About = () => {
+
     return (
         <div>
             <Navbar />

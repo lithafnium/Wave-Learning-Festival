@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../styles'
 
-import CourseImage from "../../headshot/explosives.png"
+
 import AnonymousProfile from "../../teacherheadshots/Kristin Kiley.jpg"
 
 const CoursePage = () => {
