@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+import {Colors} from '../../styles'
 import { device } from '../../theme'
+
 export const Container = styled.div`
     width: 100%; 
     height: 65vh;
@@ -61,28 +63,38 @@ export const ContainerInner = styled.div`
 
 export const HeaderImage = styled.img`
     @media ${device.mobileS} {
-        width: 60%; 
+        width: 55%; 
         margin-top: 4em; 
     }
     @media ${device.tablet} {
-        width: 45%; 
+        width: 40%; 
         margin-top: 4em; 
     }
     @media ${device.tabletL} {
-        width: 45%; 
+        width: 40%; 
         margin-top: 0;  
     }
 
     @media ${device.laptop} {
-        width: 45%; 
+        width: 35%; 
         margin-top: 0;  
     }
      
     height: auto; 
 `
 
-export const AboutDescription = styled.div` 
+export const Highlight = styled.img`
+    position: absolute;
+    width: 150px;
+    height: 800px;
+    top: -165px;
+    left: 240px;
+    z-index: 1;
+`
 
+export const AboutDescription = styled.div` 
+    position: relative;
+    z-index: 2;
     @media ${device.mobileS} {
         width: 80%;
         display: flex; 
@@ -107,6 +119,7 @@ export const AboutDescription = styled.div`
 export const Header = styled.h1`
     color: #2684ff;
     font-size: 48px; 
+    font-family: 'Mukta Mahee', sans-serif;
 `
 
 export const DescriptionText = styled.p`
@@ -116,17 +129,17 @@ export const DescriptionText = styled.p`
 
 export const Button = styled.div`
     display: flex; 
-    background-color: #2684ff;
+    background-color: ${Colors.WLF_ORANGE};
     color: white; 
-    padding: 15px 30px 15px 30px;
+    padding: 5px 25px 5px 25px;
+    margin-right: 20px;
     align-items: center; 
     width: fit-content; 
-    border-radius: 50px; 
+    border-radius: 10px; 
 
     & p{
-        margin: 0px; 
-        margin-left: 10px;
-        font-size: 1.2em; 
+        margin: 0px;
+        font-size: 0.9em; 
     }
 `
 
@@ -316,4 +329,8 @@ export const WhoHeader = styled.div`
     & h1{
         color: #2684ff;
     }
+`
+
+export const SubHeaderContainer = styled.div`
+    width: 85%;
 `

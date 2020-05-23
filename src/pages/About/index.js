@@ -2,12 +2,14 @@ import React, {useContext, useEffect} from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import {
-    Container, ContainerInner, HeaderImage, AboutDescription,
+    Container, ContainerInner, HeaderImage, AboutDescription, Highlight,
     Header, DescriptionText, Button, DescriptionContainer, DescriptionContainerInner,
-    Card, SchoolsContainer, SchoolsContainerInner, SchoolLogo, School, WhoWeAre, WhoHeader, WhoContanier
+    Card, SchoolsContainer, SchoolsContainerInner, SchoolLogo, School, SubHeaderContainer, WhoWeAre, WhoHeader, WhoContanier
 } from './styles'
+import {Colors, Typography} from '../../styles';
 import "./styles.css"
 import Learning from './learning.svg'
+import Swing from './swing_animation.gif';
 import { IoMdLogIn } from "react-icons/io"
 import { MdPersonalVideo, MdModeEdit, MdLanguage } from 'react-icons/md'
 import { IconContext } from "react-icons"
@@ -17,6 +19,7 @@ import Harvard from './harvard.png'
 import CMU from './cmu.png'
 import Umich from './umich.png'
 import Upenn from './upenn.png'
+import Highlight1 from './highlight_1.svg';
 
 const About = () => {
 
@@ -25,30 +28,30 @@ const About = () => {
             <Navbar />
             <Container>
                 <ContainerInner>
+                    <Highlight src={Highlight1} />
                     <AboutDescription>
-                        <Header>
-                            Make a Difference, right from home
-                        </Header>
-                        <DescriptionText>
-                        Wave Learning Festival is a student-run educational platform
-                        that aims to teach students through seminars on a variety of
-                        topics. We hope to provide equitable educational resources
-                        while alleviating some of the new pressures that have fallen
-                        on working parents during the pandemic.
-
-                        </DescriptionText>
-                        <a href="/courses" class="sign-up-link">
-                          <Button>
-                              <IconContext.Provider value={{ color: "white", size: "1.5em", style: { verticalAlign: 'middle' } }}>
-                                  <div>
-                                      <IoMdLogIn />
-                                  </div>
-                              </IconContext.Provider>
-                              <p>Sign up</p>
-                          </Button>
-                        </a>
+                        <Typography.Header>
+                            Make Waves With Us!
+                        </Typography.Header>
+                        <SubHeaderContainer>
+                            <Typography.BodyText>
+                                Join the Wave Learning Festival for a summer of not-at-all-ordinary programming, hosted by student leaders across the nation.
+                            </Typography.BodyText>
+                        </SubHeaderContainer>
+                        <div style={{display: 'flex', flexDirection: 'row', marginTop: '50px'}}>
+                            <a href="/students" class="sign-up-link">
+                            <Button>
+                                <p>Students</p>
+                            </Button>
+                            </a>
+                            <a href="/teachers" class="sign-up-link">
+                            <Button>
+                                <p>Teachers</p>
+                            </Button>
+                            </a>
+                        </div>
                     </AboutDescription>
-                    <HeaderImage src={Learning} />
+                    <HeaderImage src={Swing} />
 
                 </ContainerInner>
             </Container>
