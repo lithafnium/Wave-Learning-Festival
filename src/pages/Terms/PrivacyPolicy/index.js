@@ -10,31 +10,35 @@ const Teachers = () => {
             <Container>
                 <ContainerInner>
                 <h1>Privacy Policy</h1>
+                <p><b>Last Updated: May 22, 2020</b></p>
                 <h2>Introduction:</h2>
                 <p>
-                    At WLF we know you care about how your personal information is used and shared, and as 
-                    such we take your privacy very seriously. Below you will find our Privacy Policy (the 
-                    “Policy”), and by using or accessing the WLF services in any manner you acknowledge that 
-                    you accept the practices and requirements outlined in this Policy. You also hereby consent 
-                    to our collection, use, and sharing of your information in the following ways:  
+                    At WLF we know you care about how your personal information is used and shared, and as
+                    such we take your privacy very seriously. Below you will find our Privacy Policy (the
+                    “Policy”), and by using or accessing the WLF services in any manner you acknowledge that
+                    you accept the practices and requirements outlined in this Policy. You also hereby consent
+                    to our collection, use, and sharing of your information in the following ways:
                 </p>
                 <p>
-                    Note: Unless otherwise indicated, all terms have the same definition as in the 
-                    <a href="terms-conditions">WLF Terms and Conditions</a>. 
+                    Note: Unless otherwise indicated, all terms have the same definition as in the
+                    <a href="terms-conditions">WLF Terms and Conditions</a>.
                 </p>
                 <h2><u>Information That WLF Collects:</u></h2>
                 <p>
-                    WLF collects different information depending on whether you use the services as a 
-                    teacher or as a student. As set forth in our <a href="terms-conditions"> Terms and Conditions</a>, WLF requires the consent 
-                    and contact information of a parent or guardian for a student to sign up. The Children’s 
-                    Online Privacy Protection Act of 1998 and regulations enacted under it by the Federal 
-                    Trade Commission (“COPPA”) require us to obtain verifiable parental consent in order to 
-                    collect, use, and disclose personal information of individuals under the age of 13. We do 
-                    not knowingly collect personal information from individuals under 13 years of age without 
-                    parental consent. If we learn we have collected or received personal information about an 
-                    individual under 13 years of age without verification of parental consent, we will delete 
-                    that information. If you believe we might have any information from or about an individual 
+                    WLF collects different information depending on whether you use the services as a
+                    teacher or as a student. As set forth in our <a href="terms-conditions"> Terms and Conditions</a>, WLF requires the consent
+                    and contact information of a parent or guardian for a student to sign up. The Children’s
+                    Online Privacy Protection Act of 1998 and regulations enacted under it by the Federal
+                    Trade Commission (“COPPA”) require us to obtain verifiable parental consent in order to
+                    collect, use, and disclose personal information of individuals under the age of 13. We do
+                    not knowingly collect personal information from individuals under 13 years of age without
+                    parental consent. If we learn we have collected or received personal information about an
+                    individual under 13 years of age without verification of parental consent, we will delete
+                    that information. If you believe we might have any information from or about an individual
                     under 13 years of age, please contact us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a>.
+                </p>
+                <p>
+                  We ask all students to turn off their cameras upon entering a class. Any student who has their webcam on during a class agrees to having their picture taken (as part of a class screenshot or other photograph) and used by WLF for any purposes pursuant to our goals, such as advertising our services on social media or other online platforms. Such posts may include pictures of your face and any other information visible while using the online learning platform, such as your username if using Zoom. Again, if at any time you wish to opt out of these pictures, please turn off your webcam and/or change your visible username upon entering a class.
                 </p>
                 <p>
                     The information collected for all users is as follows:
@@ -58,20 +62,20 @@ const Teachers = () => {
                             A very limited portion of the Services allow you to post or transmit content (“User Content”). For example, a teacher will submit User Content in order to build a profile. You may post User Content at your sole discretion, but please note that some User Content may be publicly available or viewable to others. Do not post any sensitive personal information as User Content.
                         </p>
                         <p>
-                            Periodically, WLF may send you surveys regarding the functionality, effectiveness, or 
-                            ease of access of the Services. Such responses are voluntary, yet appreciated, however 
-                            they may contain personally identifiable information. 
+                            Periodically, WLF may send you surveys regarding the functionality, effectiveness, or
+                            ease of access of the Services. Such responses are voluntary, yet appreciated, however
+                            they may contain personally identifiable information.
                         </p>
                         <p>
-                            Throughout our courses, our teachers and/or directors may decide to take screenshots 
-                            or photographs of the classes to use for social media campaigns and advertising. By 
-                            using your webcam you agree to allow WLF to take such screenshots and photos, and post 
-                            pictures with your face (and any other information visible while using the online 
-                            learning platform, such as a username if using Zoom) on any social media accounts or 
-                            websites that we see fit. Such posts will only be pursuant to our goals at WLF, and we 
-                            will strive to conceal any unnecessary information. If at any time you wish to opt out 
-                            of these pictures, please turn off your webcam and/or change your visible username prior 
-                            to a teacher or director taking a picture. 
+                            Throughout our courses, our teachers and/or directors may decide to take screenshots
+                            or photographs of the classes to use for social media campaigns and advertising. By
+                            using your webcam you agree to allow WLF to take such screenshots and photos, and post
+                            pictures with your face (and any other information visible while using the online
+                            learning platform, such as a username if using Zoom) on any social media accounts or
+                            websites that we see fit. Such posts will only be pursuant to our goals at WLF, and we
+                            will strive to conceal any unnecessary information. If at any time you wish to opt out
+                            of these pictures, please turn off your webcam and/or change your visible username prior
+                            to a teacher or director taking a picture.
                         </p>
                     </li>
                 </ul>
@@ -91,37 +95,37 @@ const Teachers = () => {
                 <ul>
                     <li><h2>Information Collected at Registration:</h2>
                         <p>
-                            At registration, WLF collects your name, email, school, and graduation year. Upon approval to teach a course, WLF also collects a headshot and a short personal description. 
+                            At registration, WLF collects your name, email, school, and graduation year. Upon approval to teach a course, WLF also collects a headshot and a short personal description.
                         </p>
                     </li>
                 </ul>
                 <h2><u>Use of Collected Information</u></h2>
                 <p>
-                    WLF uses the information collected as described above to develop and maintain the 
-                    Services, comply with legal obligations, and for any purpose for which you provide 
-                    consent. We may communicate with you via email to verify your account, notify you 
-                    about our privacy practices and activity on the Services, inform you of changes to 
-                    our policies and procedures, or to otherwise facilitate the operation of the Services. 
+                    WLF uses the information collected as described above to develop and maintain the
+                    Services, comply with legal obligations, and for any purpose for which you provide
+                    consent. We may communicate with you via email to verify your account, notify you
+                    about our privacy practices and activity on the Services, inform you of changes to
+                    our policies and procedures, or to otherwise facilitate the operation of the Services.
                 </p>
                 <h2><u>Disclosure of Information</u></h2>
                 <p>WLF may disclose the information above in the following circumstances:</p>
                 <ul>
-                    <li><i>Third-Party Services and Contractors</i> - 
+                    <li><i>Third-Party Services and Contractors</i> -
                         <p>
-                            WLF may employ other companies and people to perform tasks on our behalf and, 
-                            from time to time, may need to share your information with them to provide services 
-                            to you. For example, we may use third-party services to host our web application and 
-                            store user data. Any information shared for such purposes will be limited and will only 
-                            include what is needed to provide the service, and WLF has worked to confirm that these 
-                            service providers do not disclose information to others except as is consistent with this 
+                            WLF may employ other companies and people to perform tasks on our behalf and,
+                            from time to time, may need to share your information with them to provide services
+                            to you. For example, we may use third-party services to host our web application and
+                            store user data. Any information shared for such purposes will be limited and will only
+                            include what is needed to provide the service, and WLF has worked to confirm that these
+                            service providers do not disclose information to others except as is consistent with this
                             Policy.
                         </p>
                     </li>
-                    <li><i>Public Information</i> - 
+                    <li><i>Public Information</i> -
                         <p>
-                            a very limited amount of User Content is made available on the Services, including information 
-                            a teacher provides for their profile. Please note that any information you submit in a public 
-                            portion of the site will be viewable by others. Accordingly, only include information in such 
+                            a very limited amount of User Content is made available on the Services, including information
+                            a teacher provides for their profile. Please note that any information you submit in a public
+                            portion of the site will be viewable by others. Accordingly, only include information in such
                             submissions that you are comfortable sharing with third parties or the general public.
                         </p>
                     </li>
@@ -143,7 +147,7 @@ const Teachers = () => {
                 </ul>
                 <h2><u>Data Security and Storage</u></h2>
                 <p>
-                WLF recognizes the importance of data security and has implemented measures designed to protect the security, integrity, and confidentiality of your personal information. 
+                WLF recognizes the importance of data security and has implemented measures designed to protect the security, integrity, and confidentiality of your personal information.
                 We endeavor to protect the privacy of your account and other personal information we hold in our records and actively work to prevent unauthorized entry or use, hardware or software failure, and other factors that could potentially compromise security of user information. The safety and security of your information also depend on you. Certain parts of the Services are protected by a password, and it is your responsibility to keep that password confidential.
                 </p>
                 <h2><u>Modification and Deletion of Information</u></h2>
