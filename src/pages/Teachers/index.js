@@ -11,18 +11,14 @@ const Teachers = () => {
                 <ContainerInner>
                     <h1>Teachers</h1>
                     <p>
-                        Want to share your passions with students worldwide? 
-                        Apply to be a teacher for Wave Learning Festival!
+                        Share your passions with students worldwide—
+                        apply to teach for Wave Learning Festival!
                     </p>
                     <p>
                     Wave Learning Festival is an educational platform organized by students at 
                     Harvard, Stanford, Northwestern, UPenn, Williams, RISD, and SLO in which college 
-                    students and high school upperclassmen teach seminars on a variety of topics 
-                    (anything from mathematical origami to explosives to modern philosophy or anything 
-                    you want) to middle schoolers and high schoolers online 
-                    (focus: 6th - 10th grade). Classes will be free with an optional donation, 
-                    and we hope to donate everything we raise to nonprofits for COVID-19 relief.
-
+                    students teach free seminars on a variety of topics to middle and high 
+                    schoolers online. 
                     </p>
                     <p>
                     The global pandemic has changed what education and summer programs look like, 
@@ -40,16 +36,12 @@ const Teachers = () => {
                     Wave is an opportunity to gain valuable teaching and leadership experience 
                     while sharing your passions with a wide audience. The flexibility of the 
                     time commitment allows you to volunteer while also pursuing other summer 
-                    experiences. Your teaching commitment can be as little as one hour a week. 
-                    No prior teaching experience is required, and you will receive help and feedback 
-                    in making your class come to life! Please also feel free to share this to anyone 
-                    or any group you think may be interested!
+                    experiences. No prior teaching experience is required, and you will receive help and feedback 
+                    in making your class come to life! 
                     </p>
                     <h1>Apply by 5/29 to be included in the second wave!</h1>
                     <p>
-                    Due to overwhelming interest in teaching, we have closed applications to the first wave 
-                    early in the interest of keeping our inaugural cohort small. If you haven't heard back 
-                    from us yet, we will be reaching out soon to include you in our expanded second wave. 
+                    Due to overwhelming interest in teaching, we may push your class to a later wave. 
                     Thank you for your patience!
                     </p>
 
