@@ -1,10 +1,11 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import {
     Container, ContainerInner, HeaderImage, AboutDescription,
     Header, DescriptionText, Button, DescriptionContainer, DescriptionContainerInner,
-    Card, SchoolsContainer, SchoolsContainerInner, SchoolLogo, School, WhoWeAre, WhoHeader, WhoContanier
+    Card, SchoolsContainer, SchoolsContainerInner, SchoolLogo, School, WhoWeAre, WhoHeader, WhoContanier,
+    NewsLetter, Input, Subscribe
 } from './styles'
 import "./styles.css"
 import Learning from './learning.svg'
@@ -19,7 +20,20 @@ import Umich from './umich.png'
 import Upenn from './upenn.png'
 import {FirebaseContext} from '../../firebaseContext'
 const About = () => {
+    const [name, updateName] = useState('')
+    const [email, updateEmail] = useState('')
+    const [subscribed, toggleSubscribed] = useState(false)
     const {db} = useContext(FirebaseContext)
+
+    const subscribe = () => {
+        if(db){
+            db.collection('Newsletter').add({
+                name, 
+                email
+            }).then(toggleSubscribed(true))
+        }
+    }
+
     useEffect(() => {
         if(db){
             console.log(db)
@@ -175,6 +189,24 @@ const About = () => {
                     </SchoolLogo>
                 </SchoolsContainerInner>
             </SchoolsContainer>
+            <DescriptionContainer id="newsletter">
+                <WhoWeAre>
+                    <NewsLetter>
+                        <h2>Sign up for our newsletter! Be the first to hear about our new courses and special guests!</h2>
+                    </NewsLetter>
+                    <NewsLetter>
+                        <p>Name</p>
+                        <Input placeholder="Jane Doe"
+                               value={name}
+                               onChange={e => updateName(e.target.value)}/>
+                        <p>Email</p>
+                        <Input placeholder="name@email.com"
+                               value={email}
+                               onChange={e=> updateEmail(e.target.value)}/>
+                        <Subscribe disabled={subscribed} onClick={() => subscribe()}>{subscribed ? 'Subscribed!' : 'Subscribe'}</Subscribe>
+                    </NewsLetter>
+                </WhoWeAre>
+            </DescriptionContainer>
             <Footer/>
         </div>
     )
