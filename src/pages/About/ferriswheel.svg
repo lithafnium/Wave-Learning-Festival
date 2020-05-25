@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290.84 305.63">
+  <defs>
+    <style>
+      .\35 147f899-9197-4c69-a5ce-7e209f6013cf {
+        fill: #6265ad;
+      }
+
+      .\33 b293296-69b4-46d8-bfd8-2f4666cea016 {
+        fill: #69afa1;
+        stroke: #f3af3d;
+        stroke-miterlimit: 10;
+      }
+
+      .\33 b293296-69b4-46d8-bfd8-2f4666cea016, .ff978cea-c338-4c47-9792-1761fbe31014 {
+        stroke-width: 7.54px;
+      }
+
+      .c5a4788e-e5be-4cc7-9976-244449a76625, .ff978cea-c338-4c47-9792-1761fbe31014 {
+        fill: none;
+        stroke-linejoin: round;
+      }
+
+      .c5a4788e-e5be-4cc7-9976-244449a76625 {
+        stroke: #69afa1;
+        stroke-width: 7.54px;
+      }
+
+      .ff978cea-c338-4c47-9792-1761fbe31014 {
+        stroke: #6265ad;
+      }
+    </style>
+  </defs>
+  <title>ferriswheel</title>
+  <g id="b39d0127-b78b-4f85-beee-350774d4d27a" data-name="Layer 2">
+    <g id="f8c64050-9e42-49f4-bcda-8b4eb851bd27" data-name="Layer 1">
+      <g>
+        <g>
+          <g>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="83.52" y="10.16" width="19.39" height="19.39" transform="translate(110.55 113.57) rotate(-112.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="187.4" y="260.95" width="19.39" height="19.39" transform="translate(22.49 556.31) rotate(-112.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="10.69" y="188.98" width="19.39" height="19.39" transform="translate(-155.37 293.54) rotate(-112.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="261.48" y="85.1" width="19.39" height="19.39" transform="translate(287.36 381.61) rotate(-112.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="187.4" y="10.16" width="19.39" height="19.39" transform="translate(103.33 194.35) rotate(-67.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="83.52" y="260.95" width="19.39" height="19.39" transform="translate(-192.49 253.19) rotate(-67.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="9.45" y="85.1" width="19.39" height="19.39" transform="translate(-75.76 76.21) rotate(-67.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="260.24" y="188.98" width="19.39" height="19.39" transform="translate(-16.92 372.04) rotate(-67.5)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="231.7" y="39.75" width="19.39" height="19.39" transform="translate(35.74 185.17) rotate(-45)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="39.75" y="231.7" width="19.39" height="19.39" transform="translate(-156.21 105.67) rotate(-45)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="38.61" y="40.9" width="19.39" height="19.39" transform="translate(-21.62 48.97) rotate(-45)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="230.56" y="232.84" width="19.39" height="19.39" transform="translate(-101.13 240.92) rotate(-45)"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="271.45" y="135.73" width="19.39" height="19.39"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" y="135.73" width="19.39" height="19.39"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="134.11" width="19.39" height="19.39"/>
+            <rect class="5147f899-9197-4c69-a5ce-7e209f6013cf" x="134.11" y="271.45" width="19.39" height="19.39"/>
+          </g>
+          <g>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="99.71" y1="35.53" x2="138.05" y2="128.08"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="152.27" y1="162.41" x2="190.61" y2="254.97"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="190.61" y1="35.53" x2="152.27" y2="128.08"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="138.05" y1="162.41" x2="99.71" y2="254.97"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="254.88" y1="99.8" x2="162.33" y2="138.14"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="127.99" y1="152.36" x2="35.44" y2="190.69"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="254.88" y1="190.69" x2="162.33" y2="152.36"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="127.99" y1="138.14" x2="35.44" y2="99.8"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="61.18" y1="61.27" x2="132.02" y2="132.11"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="158.3" y1="158.39" x2="229.14" y2="229.22"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="145.16" y1="26.49" x2="145.16" y2="126.66"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="145.16" y1="163.83" x2="145.16" y2="264.01"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="229.14" y1="61.27" x2="158.3" y2="132.11"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="132.02" y1="158.39" x2="61.18" y2="229.22"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="263.92" y1="145.25" x2="163.74" y2="145.25"/>
+            <line class="3b293296-69b4-46d8-bfd8-2f4666cea016" x1="126.58" y1="145.25" x2="26.4" y2="145.25"/>
+          </g>
+        </g>
+        <circle class="c5a4788e-e5be-4cc7-9976-244449a76625" cx="145.14" cy="145.19" r="61.4"/>
+        <polyline class="ff978cea-c338-4c47-9792-1761fbe31014" points="40.12 303.54 145.15 145.19 250.1 301.93"/>
+      </g>
+    </g>
+  </g>
+</svg>

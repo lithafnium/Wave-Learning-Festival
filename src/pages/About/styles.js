@@ -82,13 +82,55 @@ export const HeaderImage = styled.img`
      
     height: auto; 
 `
+export const MediumImage = styled.img`
+    @media ${device.mobileS} {
+        width: 35%; 
+        margin-top: 4em; 
+    }
+    @media ${device.tablet} {
+        width: 25%; 
+        margin-top: 4em; 
+    }
+    @media ${device.tabletL} {
+        width: 25%; 
+        margin-top: 0;  
+    }
+
+    @media ${device.laptop} {
+        width: 25%; 
+        margin-top: 0;  
+    }
+     
+    height: auto; 
+`
+
+export const MediumDescription = styled.div` 
+    position: relative;
+    z-index: 2;
+    @media ${device.mobileS} {
+        width: 55%;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    @media ${device.tablet} {
+        width: 65%; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    @media ${device.tabletL} {
+        width: 65%; 
+        display: block; 
+    }
+
+    @media ${device.laptop} {
+        width: 65%; 
+    }
+`
 
 export const Highlight = styled.img`
     position: absolute;
-    width: 150px;
-    height: 800px;
-    top: -165px;
-    left: 240px;
     z-index: 1;
 `
 
