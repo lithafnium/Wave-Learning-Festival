@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import {
     Container, ContainerInner, HeaderImage, AboutDescription, Highlight,
-    Header, DescriptionText, Button, DescriptionContainer, DescriptionContainerInner,
+    Header, DescriptionText, Button, DescriptionContainer, DescriptionContainerInner, MediumImage, MediumDescription,
     Card, SchoolsContainer, SchoolsContainerInner, SchoolLogo, School, SubHeaderContainer, WhoWeAre, WhoHeader, WhoContanier
 } from './styles'
 import {Colors, Typography} from '../../styles';
@@ -20,6 +20,10 @@ import CMU from './cmu.png'
 import Umich from './umich.png'
 import Upenn from './upenn.png'
 import Highlight1 from './highlight_1.svg';
+import Highlight2 from './highlight_2.svg';
+import Highlight3 from './highlight_3.svg';
+import Beach from './beach.svg';
+import FerrisWheel from './ferriswheel.svg';
 
 const About = () => {
 
@@ -28,9 +32,14 @@ const About = () => {
             <Navbar />
             <Container>
                 <ContainerInner>
-                    <Highlight src={Highlight1} />
                     <AboutDescription>
-                        <Typography.Header>
+                        <Highlight src={Highlight1} style={{
+                            width: 150,
+                            height: 200,
+                            top: -65,
+                            left: 140,
+                        }}/>
+                        <Typography.Header style={{position: "relative", zIndex: 2}}>
                             Make Waves With Us!
                         </Typography.Header>
                         <SubHeaderContainer>
@@ -53,6 +62,53 @@ const About = () => {
                     </AboutDescription>
                     <HeaderImage src={Swing} />
 
+                </ContainerInner>
+            </Container>
+            <Container style={{backgroundColor: Colors.WLF_PURPLE, marginTop: 40}}>
+                <ContainerInner>
+                    <MediumImage src={Beach} />
+                    <MediumDescription>
+                        <Highlight src={Highlight2} style={{
+                            width: 175,
+                            height: 50,
+                        }}/>
+                        <Typography.Header style={{
+                            position: 'relative',
+                            zIndex: 2,
+                            color: 'white',
+                            fontSize: 28,
+                            marginBottom: 30
+                        }}>
+                            Our Mission: Smash Summer Boredom</Typography.Header>
+                        <Typography.BodyText style={{color: 'white', fontSize: 18, fontWeight: '100'}}>
+                            Join the Wave Learning Festival for a summer of not-at-all-ordinary programming, hosted by student leaders across the nation.
+                        </Typography.BodyText>
+                    </MediumDescription>
+                </ContainerInner>
+            </Container>
+            <Container style={{backgroundColor: Colors.WLF_ORANGE}}>
+                <ContainerInner>
+                    <MediumDescription>
+                        <Highlight src={Highlight3} style={{
+                            width: 110,
+                            height: 45,
+                            left: 30,
+                        }}/>
+                        <Typography.Header style={{
+                            position: 'relative',
+                            zIndex: 2,
+                            color: 'white',
+                            fontSize: 28,
+                            marginBottom: 30
+                        }}>
+                            A Festival Unlike Any Other</Typography.Header>
+                        <Typography.BodyText style={{color: 'white', fontSize: 18, fontWeight: '100'}}>
+                            During the Wave Learning Festival, tune into seminars designed for middle schoolers and high schoolers covering
+                            every topic imaginable, especially those not found in a classroom. Learn how to code your own games, cook up some
+                            French Cuisine, or pick up some digital painting skills. The possibilities are endless!
+                        </Typography.BodyText>
+                    </MediumDescription>
+                    <MediumImage src={FerrisWheel} />
                 </ContainerInner>
             </Container>
             <WhoContanier style = {{backgroundColor: '#F2F6F7'}}>
