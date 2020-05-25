@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import {
@@ -34,11 +34,6 @@ const About = () => {
         }
     }
 
-    useEffect(() => {
-        if(db){
-            console.log(db)
-        }
-    }, [db])
     return (
         <div>
             <Navbar />
