@@ -175,7 +175,7 @@ const Courses = () => {
         </div>
         <h1>Course Schedule</h1>
           <iframe 
-            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FLos_Angeles" 
+            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
           </iframe>  
         <h1>Register by 5/23 to take a class in the first wave!</h1>
