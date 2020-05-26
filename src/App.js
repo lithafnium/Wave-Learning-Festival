@@ -27,6 +27,7 @@ import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
 import TeacherAgreement from './pages/Terms/TeacherAgreement'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Unsubscribe from './pages/Unsubscribe'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
@@ -110,6 +111,9 @@ function App() {
             </Route>
             <Route path="/signup">
               <Signup />
+            </Route>
+            <Route path="/unsubscribe">
+              <Unsubscribe />
             </Route>
             <Route path="/">
               <About />
