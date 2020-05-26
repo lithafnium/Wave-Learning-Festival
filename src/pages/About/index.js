@@ -5,7 +5,7 @@ import {
     Container, ContainerInner, HeaderImage, AboutDescription,
     Header, DescriptionText, Button, DescriptionContainer, DescriptionContainerInner,
     Card, SchoolsContainer, SchoolsContainerInner, SchoolLogo, School, WhoWeAre, WhoHeader, WhoContanier,
-    NewsLetter, Input, Subscribe, Popup, Triangle
+    NewsLetter, Input, Subscribe, Popup, Triangle, Error
 } from './styles'
 import "./styles.css"
 import Learning from './learning.svg'
@@ -22,11 +22,26 @@ import {FirebaseContext} from '../../firebaseContext'
 const About = () => {
     const [name, updateName] = useState('')
     const [email, updateEmail] = useState('')
+    const [nameError, toggleName] = useState(false)
+    const [emailError, toggleEmail] = useState(false)
     const [subscribed, toggleSubscribed] = useState(false)
     const {db} = useContext(FirebaseContext)
 
     const subscribe = () => {
-        if(db){
+        toggleEmail(false)
+        toggleName(false)
+        let valid = true
+
+        if(name.length === 0){
+            toggleName(true)
+            valid = false
+        } 
+        if(email.length === 0){
+            toggleEmail(true)
+            valid = false
+        }
+        
+        if(db && valid){
             db.collection('Newsletter').add({
                 name, 
                 email
@@ -188,12 +203,12 @@ const About = () => {
                 <WhoWeAre>
                     <NewsLetter>
                         <h2>Sign up for our newsletter! Be the first to hear about our new courses and special guests!</h2>
-                        {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit, 
+                        {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit, 
                             we don't have the funds to establish a domain so we need to ensure 
                             that our emails aren't sent to your spambox. Please follow the 
                             directions sent to your email! We'd really appreciate it.</p>
                             <Triangle/>
-                            </Popup>}
+                            </Popup>} */}
                     
                     </NewsLetter>
                     <NewsLetter>
@@ -201,10 +216,13 @@ const About = () => {
                         <Input placeholder="Jane Doe"
                                value={name}
                                onChange={e => updateName(e.target.value)}/>
+                        {nameError && <Error>Please enter a name</Error>}
+                        
                         <p>Email</p>
                         <Input placeholder="name@email.com"
                                value={email}
                                onChange={e=> updateEmail(e.target.value)}/>
+                        {emailError && <Error>Please enter an email</Error>}
                         <Subscribe disabled={subscribed} onClick={() => subscribe()}>{subscribed ? 'Subscribed!' : 'Subscribe'}</Subscribe>
                     </NewsLetter>
                 </WhoWeAre>
