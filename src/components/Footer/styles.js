@@ -3,8 +3,11 @@ import { device } from '../../theme'
 
 export const FooterContainer = styled.footer`
     width: 100%; 
-    height: 200px; 
+    height: fit-content;
+    padding-top: 30px; 
+    padding-bottom: 30px; 
     display: flex; 
+    flex-wrap: wrap; 
     justify-content: center; 
     background: rgb(38,132,255);
     background: linear-gradient(90deg, rgba(38,132,255,1) 0%, rgba(0,184,217,1) 100%);
@@ -17,6 +20,7 @@ export const FooterContainer = styled.footer`
 
 export const FooterLeft = styled.div`
     padding-left: 15px; 
+    width: 50%; 
     & hr{
         border: 1px solid #ffffff; 
         width: 80%;
@@ -30,6 +34,7 @@ export const FooterLeft = styled.div`
 `
 
 export const FooterInner = styled.div`
+
     width: 100%; 
     @media ${device.mobleS}{
         max-width: 320px; 
