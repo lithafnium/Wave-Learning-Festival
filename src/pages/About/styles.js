@@ -416,3 +416,9 @@ export const Triangle = styled.div`
       border-bottom: 30px solid transparent;
       border-radius: 15px; 
 `
+
+export const Error = styled.p`
+    color: #ff5630; 
+    font-size: 0.9rem; 
+    margin: 0px; 
+`
