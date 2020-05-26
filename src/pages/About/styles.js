@@ -387,3 +387,32 @@ export const Subscribe = styled.button`
         opacity: 0.8; 
     }
 `
+
+export const Popup = styled.div`
+    background-color: #2684ff; 
+    padding: 20px; 
+    box-shadow: 0 0 1.25rem rgba(31,45,61,.3); 
+    border-radius: 5px; 
+    position: relative; 
+    margin-bottom: 2rem; 
+	transition: all 1s cubic-bezier(.25,.8,.25,1);
+    opacity: ${props => props.subscribed ? '1' : '0'}; 
+
+
+    & p{
+        margin: 0px; 
+        color: #fff;
+    }
+`
+
+export const Triangle = styled.div`
+      position: absolute; 
+      bottom: 30px;
+      right: -40px ;
+      width: 0px;
+      height: 0px;
+      border-left: 50px solid #2684ff;
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+      border-radius: 15px; 
+`
