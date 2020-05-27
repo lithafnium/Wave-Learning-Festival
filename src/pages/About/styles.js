@@ -61,6 +61,11 @@ export const ContainerInner = styled.div`
     }
 `
 
+export const Background = styled.img`
+    position: absolute;
+    width: 100%;
+`
+
 export const HeaderImage = styled.img`
     @media ${device.mobileS} {
         width: 55%; 
@@ -132,6 +137,29 @@ export const MediumDescription = styled.div`
 export const Highlight = styled.img`
     position: absolute;
     z-index: 1;
+`
+
+export const DescRow = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+`
+
+export const DescItem = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 40px;
+    justify-content: flex-start;
+`
+
+export const DescImage = styled.img`
+    height: 110px;
+    width: auto;
+    margin-bottom: 10px;
 `
 
 export const AboutDescription = styled.div` 
