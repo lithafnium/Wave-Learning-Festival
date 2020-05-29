@@ -202,7 +202,7 @@ const About = () => {
             <DescriptionContainer id="newsletter">
                 <WhoWeAre>
                     <NewsLetter>
-                        <h2>Sign up for our newsletter! Be the first to hear about our new courses and special guests!</h2>
+                        <h2>Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</h2>
                         {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit, 
                             we don't have the funds to establish a domain so we need to ensure 
                             that our emails aren't sent to your spambox. Please follow the 
