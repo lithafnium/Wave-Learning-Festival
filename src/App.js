@@ -26,51 +26,6 @@ import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
 import TeacherAgreement from './pages/Terms/TeacherAgreement'
 import Login from './pages/Login'
-<<<<<<< HEAD
-import Dashboard from './pages/Dashboard'
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-
-
-function App() {
-  return (
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/teachers">
-            <Teachers />
-          </Route>
-          <Route path="/team">
-            <Team />
-          </Route>
-          <Route path="/faq-students">
-            <FAQStudents />
-          </Route>
-          <Route path="/faq-parents">
-            <FAQParents />
-          </Route>
-          <Route path="/faq-teachers">
-            <FAQTeachers />
-          </Route>
-          <Route path="/courses">
-            <Courses />
-          </Route>
-          <Route path="/course-learn-python">
-            <CourseLearnPython />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/">
-            <About />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-=======
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
@@ -171,7 +126,6 @@ function App() {
       </Router>
     </FirebaseProvider>
   )
->>>>>>> master
 }
 
 export default App;
