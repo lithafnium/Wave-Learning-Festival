@@ -10,6 +10,7 @@ import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses'
 import CourseLearnPython from './pages/Courses/CoursePages/LearnPython'
 import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
           <Route path="/">
             <About />
