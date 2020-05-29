@@ -59,6 +59,7 @@ import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
 import TeacherAgreement from './pages/Terms/TeacherAgreement'
 import StudentAgreement from './pages/Terms/StudentAgreement'
 import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 import Donate from './pages/Donate'
@@ -243,6 +244,9 @@ function App () {
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="/signup">
               <Signup />
