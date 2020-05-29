@@ -56,11 +56,11 @@ export const BrandText = styled.img`
     @media ${device.mobileS}{
         display: none; 
     }
-    @media ${device.tablet} {
-        display: block; 
 
+    @media ${device.tablet} {
+        width: 20em; 
+        display: block; 
     }
-   width: 20em; 
    height: auto; 
 `
 
@@ -194,7 +194,7 @@ export const SideBar = styled.div`
 export const NavbarDropdown = styled.div`
     position: absolute; 
     left: -60px; 
-    bottom: -110px; 
+    bottom: -160px; 
     width: 150px; 
     height: auto; 
     background-color: #ffffff; 

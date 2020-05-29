@@ -2,13 +2,18 @@ html {
   box-sizing: border-box;
 }
 
-.container{
-  width: 100%; 
-  display: flex; 
-  justify-content: center;
-  z-index: 0; 
+.school {
+  margin-top: -0.75em;
+}
 
-  
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  margin-bottom: -3.5em;
+
+
 }
 
 *, *:before, *:after {
@@ -18,10 +23,10 @@ html {
 .row
 {
   text-align: center;
-  width: 100%; 
-  max-width: 1024px; 
-  display: flex; 
-  flex-wrap: wrap; 
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .course
@@ -32,7 +37,7 @@ html {
 
 .image-container
 {
-  position: relative;
+  /* position: relative; */
 }
 
 .course img
@@ -49,33 +54,33 @@ html {
   content: "";
   clear: both;
   display: table;
-  
+
 }
 
 .column {
   width: 33.3%;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 16px;
   padding: 0 8px;
 }
 
 @media screen and (max-width: 650px) {
   .column {
-    width: 100%;   
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 320px) {
   .container{
-    margin-top: 0px; 
+    margin-top: 0px;
   }
 }
 
 @media screen and (min-width: 786px){
   .container{
-    margin-top: 0px; 
+    margin-top: 0px;
   }
 }
 .name
@@ -88,23 +93,6 @@ html {
 {
   color: #666666;
   text-align: center
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: black;
-}
-
-.course:hover .overlay {
-  opacity: .7;
 }
 
 .text {

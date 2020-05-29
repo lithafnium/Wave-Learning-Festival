@@ -10,8 +10,13 @@ const Footer = () => {
                 <FooterLeft><p>
                     &#9400; Wave Learning Festival 2020</p>
                     <hr/>
-                    <p>Questions? Email us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a></p>
-                    <p><a href = "https://docs.google.com/document/d/1bLzv7JLyi_E1HZy2Z3vDSGC7SdftH5P5L6qZb-QTeyQ/edit?usp=sharing">Terms and Conditions</a> and <a href = "https://docs.google.com/document/d/1nDSrb1KkpjV7VTEBSqgcd83HWWX_awSsaOCdJWVK-KU/edit?usp=sharing">Privacy Policy</a></p>
+                    <p>Questions? Email us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a> or <a href = "/#newsletter">sign up</a> for email updates!</p>
+                    <p>
+                    </p>
+                    <p>
+                        <a href = "terms-conditions">Terms and Conditions</a> and <a href = "privacy-policy">Privacy Policy</a>
+                    </p>
+                    
                 </FooterLeft>
                 <Social>
                     <Icon>
