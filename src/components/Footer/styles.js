@@ -1,16 +1,14 @@
 import styled from 'styled-components'
 import { device } from '../../theme'
+import {Colors} from '../../styles';
 
 export const FooterContainer = styled.footer`
     width: 100%; 
-    height: fit-content;
-    padding-top: 30px; 
-    padding-bottom: 30px; 
+    height: 150px; 
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
-    background: rgb(38,132,255);
-    background: linear-gradient(90deg, rgba(38,132,255,1) 0%, rgba(0,184,217,1) 100%);
+    background: ${Colors.WLF_YELLOW};
 
     & p{
         color: #eeeeee;
