@@ -2,21 +2,23 @@ import React from 'react'
 import { FooterContainer, FooterInner, Social, Icon, FooterLeft } from './styles'
 import { FaFacebookSquare, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { IconContext } from "react-icons"
+import {Colors, Typography} from "../../styles";
 
 const Footer = () => {
     return (
         <FooterContainer>
             <FooterInner>
-                <FooterLeft><p>
-                    &#9400; Wave Learning Festival 2020</p>
-                    <hr/>
-                    <p>Questions? Email us at <a href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a> or <a href = "newsletter">sign up</a> for email updates!</p>
-                    <p>
-                    </p>
-                    <p>
-                        <a href = "terms-conditions">Terms and Conditions</a> and <a href = "privacy-policy">Privacy Policy</a>
-                    </p>
-                    
+                <FooterLeft>
+                    <Typography.BodyText style={{fontWeight: '200'}}>
+                        Questions? Email us at <a style={{fontWeight:'600', textDecoration: 'none'}} href = "wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a>
+                    </Typography.BodyText>
+                    <p></p>
+                    <Typography.BodyText style={{fontWeight: '200', fontSize: 10}}>
+                        <a style={{fontWeight:'600', textDecoration: 'none'}} href="terms-conditions">Terms and Conditions</a> and <a style={{fontWeight:'600', textDecoration: 'none'}} href="privacy-policy">Privacy Policy</a>
+                    </Typography.BodyText>
+                    <Typography.BodyText style={{fontWeight: '200', fontSize: 10}}>
+                    <span>&#169;</span> Wave Learning Festival 2020
+                    </Typography.BodyText>
                 </FooterLeft>
                 <Social>
                     <Icon>
