@@ -3,6 +3,8 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import './styles.css'
 
+import {Colors, Typography } from "../../styles";
+
 import BlenKedir from "./headshot/blen-beharu-kedir.png"
 import CarterMartindale from "./headshot/carter-martindale.jpg"
 import ChaseSouder from "./headshot/chase-souder.JPG"
@@ -23,6 +25,7 @@ import JoshuaChen from "./headshot/joshua-chen.png"
 import AustinLi from "./headshot/austin-li.jpg"
 import MarkPekala from "./headshot/mark-pekala.jpg"
 import AlainDalma from './headshot/alain-saal-dalma.jpg'
+import AmyShen from './headshot/amy-shen.jpg'
 
 const Team = () => {
     return(
@@ -35,162 +38,170 @@ const Team = () => {
               <div class="team-member">
                 <img src={KarlyHou} />
                 <div class="card">
-                  <p class="name">Karly Hou</p>
-                  <p class="school">Harvard University, 2023</p>
-                  <p class="desc">Chair</p>
+                  <Typography.Name>Karly Hou</Typography.Name>
+                  <Typography.School>Harvard University, 2023</Typography.School>
+                  <Typography.Position>Chair</Typography.Position>
                 </div>
               </div>
             </div>
             <div class="column">
               <div class="team-member">
                 <img src={YaelLivneh}/>
-                <p class="name">Yael Livneh</p>
-                <p class="school">Cal Poly SLO, 2023</p>
-                <p class="desc">Director of Logistics</p>
+                <Typography.Name>Yael Livneh</Typography.Name>
+                <Typography.School>Cal Poly SLO, 2023</Typography.School>
+                <Typography.Position>Director of Logistics</Typography.Position>
               </div>
             </div>
             <div class="column">
               <div class="team-member">
                 <img src={SalmaKamni} />
-                <p class="name">Salma Kamni</p>
-                <p class="school">Stanford University, 2024</p>
-                <p class="desc">Associate Director of Logistics</p>
+                <Typography.Name>Salma Kamni</Typography.Name>
+                <Typography.School>Stanford University, 2024</Typography.School>
+                <Typography.Position>Associate Director of Logistics</Typography.Position>
               </div>
             </div>
             <div class="column">
               <div class="team-member">
                 <img src={SimonTao} />
-                <p class="name">Simon Tao</p>
-                <p class="school">Stanford University, 2022</p>
-                <p class="desc">Associate Director of Logistics</p>
+                <Typography.Name>Simon Tao</Typography.Name>
+                <Typography.School>Stanford University, 2022</Typography.School>
+                <Typography.Position>Associate Director of Logistics</Typography.Position>
               </div>
             </div>
             <div class="column">
               <div class="team-member">
                 <img src={KevinTan} />
-                <p class="name">Kevin Tan</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Associate Director of Logistics</p>
+                <Typography.Name>Kevin Tan</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Associate Director of Logistics</Typography.Position>
               </div>
             </div>
             <div class="column">
               <div class="team-member">
                 <img src={AustinLi} />
-                <p class="name">Austin Li</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Associate Director of Logistics</p>
+                <Typography.Name>Austin Li</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Associate Director of Logistics</Typography.Position>
               </div>
             </div>
             <div class="column">
               <div class="team-member">
                 <img src={AlainDalma} />
-                <p class="name">Alain Saal-Dalma</p>
-                <p class="school">Carnegie Mellon University, 2023</p>
-                <p class="desc">Associate Director of Logistics</p>
+                <Typography.Name>Alain Saal-Dalma</Typography.Name>
+                <Typography.School>Carnegie Mellon University, 2023</Typography.School>
+                <Typography.Position>Associate Director of Logistics</Typography.Position>
+              </div>
+            </div>
+            <div class="column">
+              <div class="team-member">
+                <img src={AmyShen} />
+                <Typography.Name>Amy Shen</Typography.Name>
+                <Typography.School>University of Pennsylvania, 2022</Typography.School>
+                <Typography.Position>Associate Director of Logistics</Typography.Position>
               </div>
             </div>
            <div class="column">
               <div class="team-member">
                 <img src={SteveLi} />
-                <p class="name">Steve Li</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Co-Director of Tech</p>
+                <Typography.Name>Steve Li</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Co-Director of Tech</Typography.Position>
               </div>
               </div>
             <div class="column">
               <div class="team-member">
                 <img src={DanielaShuman} />
-                <p class="name">Daniela Shuman</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Co-Director of Tech</p>
+                <Typography.Name>Daniela Shuman</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Co-Director of Tech</Typography.Position>
               </div>
               </div>
             <div class="column">
               <div class="team-member">
                 <img src={JonnyRogers} />
-                <p class="name">Jonny Rogers</p>
-                <p class="school">Williams College, 2023</p>
-                <p class="desc">Associate Director of Tech</p>
+                <Typography.Name>Jonny Rogers</Typography.Name>
+                <Typography.School>Williams College, 2023</Typography.School>
+                <Typography.Position>Associate Director of Tech</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={MarkPekala} />
-                <p class="name">Mark Pekala</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Associate Director of Tech</p>
+                <Typography.Name>Mark Pekala</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Associate Director of Tech</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={IrisSu} />
-                <p class="name">Iris Su</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Director of PR</p>
+                <Typography.Name>Iris Su</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Director of PR</Typography.Position>
               </div>
             </div>
             <div class="column">
               <div class="team-member">
                 <img src={RuhiMistry} />
-                <p class="name">Ruhi Mistry</p>
-                <p class="school">UC Santa Cruz, 2024</p>
-                <p class="desc">Associate Director of PR</p>
+                <Typography.Name>Ruhi Mistry</Typography.Name>
+                <Typography.School>UC Santa Cruz, 2024</Typography.School>
+                <Typography.Position>Associate Director of PR</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={NikkiSuzani} />
-                <p class="name">Nikki Suzani</p>
-                <p class="school">Henry M. Gunn High School, 2021</p>
-                <p class="desc">Associate Director of PR</p>
+                <Typography.Name>Nikki Suzani</Typography.Name>
+                <Typography.School>Henry M. Gunn High School, 2021</Typography.School>
+                <Typography.Position>Associate Director of PR</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={BlenKedir} />
-                <p class="name">Blen Kedir</p>
-                <p class="school">Stanford University, 2023</p>
-                <p class="desc">Associate Director of PR</p>
+                <Typography.Name>Blen Kedir</Typography.Name>
+                <Typography.School>Stanford University, 2023</Typography.School>
+                <Typography.Position>Associate Director of PR</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={JoshuaChen} />
-                <p class="name">Joshua Chen</p>
-                <p class="school">UPenn, 2022</p>
-                <p class="desc">Associate Director of PR</p>
+                <Typography.Name>Joshua Chen</Typography.Name>
+                <Typography.School>University of Pennsylvania, 2022</Typography.School>
+                <Typography.Position>Associate Director of PR</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={SandraChiu} />
-                <p class="name">Sandra Chiu</p>
-                <p class="school">Northwestern, 2023</p>
-                <p class="desc">Director of Media and Design</p>
+                <Typography.Name>Sandra Chiu</Typography.Name>
+                <Typography.School>Northwestern, 2023</Typography.School>
+                <Typography.Position>Director of Media and Design</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={JeffreyYao} />
-                <p class="name">Jeffrey Yao</p>
-                <p class="school">Rhode Island School of Design, 2022</p>
-                <p class="desc">Associate Director of Media and Design</p>
+                <Typography.Name>Jeffrey Yao</Typography.Name>
+                <Typography.School>Rhode Island School of Design, 2022</Typography.School>
+                <Typography.Position>Associate Director of Media and Design</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={ChaseSouder} />
-                <p class="name">Chase Souder</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Co-Director of Business</p>
+                <Typography.Name>Chase Souder</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Co-Director of Business</Typography.Position>
               </div>
               </div>
               <div class="column">
               <div class="team-member">
                 <img src={CarterMartindale} />
-                <p class="name">Carter Martindale</p>
-                <p class="school">Harvard University, 2023</p>
-                <p class="desc">Co-Director of Business</p>
+                <Typography.Name>Carter Martindale</Typography.Name>
+                <Typography.School>Harvard University, 2023</Typography.School>
+                <Typography.Position>Co-Director of Business</Typography.Position>
               </div>
               </div>
             </div>

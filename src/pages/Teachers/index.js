@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from './styles'
+import {Colors, Typography} from '../../styles';
 
 const Teachers = () => {
     return(
@@ -9,18 +10,18 @@ const Teachers = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                    <h1>Teachers</h1>
-                    <p>
+                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>Teachers</Typography.Header>
+                    <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 20}}>
                         Share your passions with students worldwide—
                         apply to teach for Wave Learning Festival!
-                    </p>
-                    <p>
+                    </Typography.BodyText>
+                    <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 20}}>
                     Wave Learning Festival is an educational platform organized by students at 
                     Harvard, Stanford, Northwestern, UPenn, Williams, RISD, and SLO in which college 
                     students teach free seminars on a variety of topics to middle and high 
                     schoolers online. 
-                    </p>
-                    <p>
+                    </Typography.BodyText>
+                    <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 20}}>
                     The global pandemic has changed what education and summer programs look like, 
                     and in some cases, completely shut them down. We hope that by providing fun 
                     and diverse live classes, we can help students to continue learning, stay 
@@ -31,19 +32,19 @@ const Teachers = () => {
                     having to worry.
 
 
-                    </p>
-                    <p>
+                    </Typography.BodyText>
+                    <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 20}}>
                     Wave is an opportunity to gain valuable teaching and leadership experience 
                     while sharing your passions with a wide audience. The flexibility of the 
                     time commitment allows you to volunteer while also pursuing other summer 
                     experiences. No prior teaching experience is required, and you will receive help and feedback 
                     in making your class come to life! 
-                    </p>
-                    <h1>Apply by 5/29 to be included in the second wave!</h1>
-                    <p>
+                    </Typography.BodyText>
+                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>Apply by 5/29 to be included in the second wave!</Typography.Header>
+                    <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 20}}>
                     Due to overwhelming interest in teaching, we may push your class to a later wave. 
                     Thank you for your patience!
-                    </p>
+                    </Typography.BodyText>
 
                     <iframe
                     title="form"

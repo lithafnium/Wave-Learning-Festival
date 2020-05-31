@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import {
@@ -27,20 +27,15 @@ import {
   DescItem,
   DescImage,
   Background,
+  Input,
+  NewsLetter,
+  Error,
+  Subscribe,
+  Image,
 } from "./styles";
 import { Colors, Typography } from "../../styles";
 import "./styles.css";
-import Learning from "./learning.svg";
 import Swing from "./swing_animation.gif";
-import { IoMdLogIn } from "react-icons/io";
-import { MdPersonalVideo, MdModeEdit, MdLanguage } from "react-icons/md";
-import { IconContext } from "react-icons";
-import Berkeley from "./berkeley.png";
-import Brown from "./brown.png";
-import Harvard from "./harvard.png";
-import CMU from "./cmu.png";
-import Umich from "./umich.png";
-import Upenn from "./upenn.png";
 import Highlight1 from "./highlight_1.svg";
 import Highlight2 from "./highlight_2.svg";
 import Highlight3 from "./highlight_3.svg";
@@ -51,14 +46,46 @@ import Icon1 from './icon_1.svg';
 import Icon2 from './icon_2.svg';
 import Icon3 from './icon_3.svg';
 import WhyWave from './whywave.svg';
-import Wave1 from './wave1.svg';
-import Wave2 from './wave2.svg';
+import WavyOrange from './wavy_orange.svg';
+import WavyPurple from './wavy_purple.svg';
+import WavyTurquoise from './wavy_turquoise.svg';
+import WavyWhite from './wavy_white.svg';
+import {FirebaseContext} from '../../firebaseContext'
 
 const About = () => {
+  const [name, updateName] = useState('')
+  const [email, updateEmail] = useState('')
+  const [nameError, toggleName] = useState(false)
+  const [emailError, toggleEmail] = useState(false)
+  const [subscribed, toggleSubscribed] = useState(false)
+  const {db} = useContext(FirebaseContext)
+
+  const subscribe = () => {
+      toggleEmail(false)
+      toggleName(false)
+      let valid = true
+
+      if(name.length === 0){
+          toggleName(true)
+          valid = false
+      } 
+      if(email.length === 0){
+          toggleEmail(true)
+          valid = false
+      }
+      
+      if(db && valid){
+          db.collection('Newsletter').add({
+              name, 
+              email
+          }).then(toggleSubscribed(true))
+      }
+  }
+
   return (
     <div>
       <Navbar />
-      <Container style={{marginBottom: 100}}>
+      <Container style={{marginBottom: 200}}>
         <ContainerInner>
           <AboutDescription>
             <Highlight
@@ -102,8 +129,9 @@ const About = () => {
           <HeaderImage src={Swing} />
         </ContainerInner>
       </Container>
-      <Container style={{ backgroundColor: Colors.WLF_PURPLE, marginTop: 40}}>
-        <ContainerInner>
+      <Container style={{ backgroundColor: Colors.WLF_PURPLE, marginTop: 40, marginBottom: 100}}>
+        <Image src={WavyPurple} style={{position: 'absolute', width: '100%'}} />
+        <ContainerInner style={{position: 'absolute'}}>
           <MediumImage src={Beach} />
           <MediumDescription>
             <Highlight
@@ -135,8 +163,9 @@ const About = () => {
           </MediumDescription>
         </ContainerInner>
       </Container>
-      <Container style={{ backgroundColor: Colors.WLF_ORANGE }}>
-        <ContainerInner>
+      <Container style={{ backgroundColor: Colors.WLF_ORANGE, marginBottom: 130 }}>
+        <Image src={WavyOrange} style={{position: 'absolute', width: '100%'}} />
+        <ContainerInner style={{position:'absolute'}}>
           <MediumDescription>
             <Highlight
               src={Highlight3}
@@ -170,8 +199,9 @@ const About = () => {
           <MediumImage src={FerrisWheel} />
         </ContainerInner>
       </Container>
-      <Container>
-        <ContainerInner>
+      <Container style={{marginBottom: 120}}>
+        <Image src={WavyWhite} style={{position: 'absolute', width: '100%'}} />
+        <ContainerInner style={{position: 'absolute'}}>
           <DescRow>
             <DescItem>
               <DescImage src={Icon1}/>
@@ -206,8 +236,9 @@ const About = () => {
           </DescRow>
         </ContainerInner>
       </Container>
-      <Container style={{ backgroundColor: Colors.WLF_TURQOUISE, marginTop: 40 }}>
-        <ContainerInner>
+      <Container style={{ backgroundColor: Colors.WLF_TURQOUISE, marginTop: 40, marginBottom: 50 }}>
+        <Image src={WavyTurquoise} style={{position: 'absolute', width: '100%'}} />
+        <ContainerInner style={{position: 'absolute'}}>
           <MediumImage src={WhyWave} />
           <MediumDescription>
             <Highlight
@@ -238,6 +269,35 @@ const About = () => {
               a project they love.
             </Typography.BodyText>
           </MediumDescription>
+        </ContainerInner>
+      </Container>
+      <Container style={{backgroundColor: Colors.WLF_PURPLE}}>
+        <ContainerInner>
+        <NewsLetter>
+          <Typography.Header style={{color: 'white', fontSize: 28,}}> Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</Typography.Header>
+          {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit, 
+              we don't have the funds to establish a domain so we need to ensure 
+              that our emails aren't sent to your spambox. Please follow the 
+              directions sent to your email! We'd really appreciate it.</p>
+              <Triangle/>
+              </Popup>} */}
+                    
+          </NewsLetter>
+          <NewsLetter>
+              <Input placeholder="Name"
+                      value={name}
+                      onChange={e => updateName(e.target.value)}
+                      />
+              {nameError && <Error>Please enter a name</Error>}
+              <p></p>
+              <Input placeholder="Email"
+                      value={email}
+                      onChange={e=> updateEmail(e.target.value)}/>
+              {emailError && <Error>Please enter an email</Error>}
+              <Button disabled={subscribed} onClick={() => subscribe()} style={{marginTop: 40}}>
+                  <p>{subscribed ? 'Subscribed!' : 'Subscribe'}</p>
+              </Button>
+          </NewsLetter>
         </ContainerInner>
       </Container>
       <Footer />
