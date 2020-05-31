@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../../../../components/Navbar'
 import Footer from '../../../../components/Footer'
 import '../styles.css'
-import { Container, ContainerInner } from '../../styles'
+import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Cecilia Eure.jpg"
 
