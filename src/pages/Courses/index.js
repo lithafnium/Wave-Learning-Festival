@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import { Container, ContainerInner } from "./styles.js"
+import { Container, ContainerInner } from "../../globalStyles"
 import './styles.css'
 
 import LearnCancer from "./headshot/how-cancer-works.jpg"
@@ -174,10 +174,10 @@ const Courses = () => {
         </div>
         </div>
         <h1>Course Schedule</h1>
-          <iframe 
-            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
-          </iframe>  
+          </iframe>
         <h1>Register by 5/23 to take a class in the first wave!</h1>
             <iframe
               title="form"

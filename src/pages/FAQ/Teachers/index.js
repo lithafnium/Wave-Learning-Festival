@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
-import { Container, ContainerInner } from './styles'
+import { Container, ContainerInner } from '../../../globalStyles'
 
 const FAQStudents = () => {
     return(

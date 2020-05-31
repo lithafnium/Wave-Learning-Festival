@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import { Container, ContainerInner, Left, FormContainer, Form, Input, Button} from './styles'
+import { Left, FormContainer, Form, Input, Button} from './styles'
+import { Container, ContainerInner } from '../../globalStyles'
 
 const Login = () => {
   return(

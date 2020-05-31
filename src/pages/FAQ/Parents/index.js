@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
-import { Container, ContainerInner } from './styles'
+import { Container, ContainerInner } from '../../../globalStyles'
 
 const FAQStudents = () => {
     return(
@@ -23,7 +23,7 @@ const FAQStudents = () => {
                     <p>
                     <br/>
                     <b>How will my student's privacy and safety be protected?</b><br/>
-                    We will CC parents in all email communications we send to students, and teachers will never meet one-on-one with any student or directly message any student under 18 years old without explicit consent from the parent. We will not distribute student or parent emails to outside parties under any circumstance without explicit consent from the student and parent. 
+                    We will CC parents in all email communications we send to students, and teachers will never meet one-on-one with any student or directly message any student under 18 years old without explicit consent from the parent. We will not distribute student or parent emails to outside parties under any circumstance without explicit consent from the student and parent.
                     All of our teachers have been vetted.
                     </p>
                     <p>
