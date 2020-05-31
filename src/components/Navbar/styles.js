@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { device } from '../../theme'
 
 export const NavbarContainer = styled.header`
+    font-family: 'Mukta Mahee', sans-serif;
     width: 100%; 
     height: 120px; 
     display: flex; 
