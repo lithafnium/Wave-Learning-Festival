@@ -17,7 +17,6 @@ export const Container = styled.div`
 
 export const ContainerInner = styled.div`
     margin-bottom: 5vh;
-    display: flex;
 
     @media ${device.mobileS} {
         flex-direction: column;
@@ -28,7 +27,6 @@ export const ContainerInner = styled.div`
     }
 
     @media ${device.tablet} {
-        flex-direction: row;
         margin-top: 0;
         width: 80%;
 

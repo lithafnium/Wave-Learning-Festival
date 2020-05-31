@@ -1,6 +1,44 @@
 import styled from 'styled-components'
 import { device } from '../../theme'
 
+export const ContainerInner = styled.div`
+    margin-bottom: 5vh;
+    display: flex;
+
+    @media ${device.mobileS} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+
+    }
+
+    @media ${device.tablet} {
+        flex-direction: row;
+        margin-top: 0;
+        width: 80%;
+
+    }
+    @media ${device.tabletL} {
+        margin-top: 0;
+        max-width: 768px;
+        width: 100%;
+
+
+    }
+
+    @media ${device.laptop} {
+        max-width: 1024px;
+        width: 100%;
+
+    }
+
+    & h1{
+        color: #2684ff;
+    }
+
+`
+
 export const Left = styled.div`
     @media ${device.mobileS}{
         width: 100%;
