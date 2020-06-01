@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
-import Profile from "../../teacherheadshots/Maria Estrada.jpeg"
+import Profile from "../../teacherheadshots/Abby McElroy.jpg"
 
 const CoursePage = () => {
     return(
@@ -12,18 +12,20 @@ const CoursePage = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                <h1>Financial Literacy</h1>
+                <h1>Where and Why is Joy?</h1>
                   <p>
+                  This course will seek to answer, from a variety of philosophical and scientific standpoints, why and how humans experience joy, with an emphasis on finding ways to increase joyful moments while stuck in quarantine. 
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> June 16-June 25
-                  <br/><b>Format: </b> Tuesday, Thursday 
-                  <br/><b>Time (EDT): </b> 3pm-4pm
+                  <b>Class Date + Time: </b>June 15-June 26 
+                  <br/><b>Format: </b> Monday, Wednesday 
+                  <br/><b>Time (EDT): </b> 7pm-8pm EDT
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Maria Fernanda Estrada<br/>
-                  <b>Teacher Bio: </b>Hello, my name is Maria Estrada and I am a rising sophomore at Williams College. I am teaching this course because growing up as a first-generation student, financial literacy has proven to be of the utmost importance. The skills I aim to promote will be important for the rest of the students' lives as they navigate budgeting and financial skills. I hope to bring awareness to the existent financial literacy gap among the youth. I enjoy reading, listening to podcasts, and cooking!
+                  <b>Taught by: </b> Abby McElroy
+                  <br/>
+                  <b>Teacher Bio: </b>Abby McElroy just finished her freshman year at Harvard College, where she lived in Pennypacker Hall. She is passionate about social justice, interfaith work, and, of course, joy! She has always looked for ways to maximize joy, and she even runs an email list called Joy is My Favorite Word. During quarantine, she has been taking lots of long walks, reading, and doing puzzles with her family.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe
