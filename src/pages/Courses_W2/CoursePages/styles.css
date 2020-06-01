@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.img-left
+{
+  float: left;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;  
+  margin-right:15px;
+  margin-bottom: 20px;
+}
+
+.img-right
+{
+  float: right;
+  width: 100px;
+  height: 100px;
+  margin-left:15px;
+  margin-bottom: 20px;
+}
+
+h1{
+  color: #2684ff;
+  clear: left;
+}
