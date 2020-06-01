@@ -8,6 +8,8 @@ import FAQStudents from './pages/FAQ/Students'
 import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses_W2'
+
+// wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
 import CourseHowCancerWorks from './pages/Courses_W1/CoursePages/HowCancerWorks'
 import CourseDigitalPainting from './pages/Courses_W1/CoursePages/DigitalPainting'
@@ -22,6 +24,7 @@ import CourseSignLanguage from './pages/Courses_W1/CoursePages/SignLanguage'
 import CourseWebDev from './pages/Courses_W1/CoursePages/WebDevelopment'
 import CourseWesternMusic from './pages/Courses_W1/CoursePages/WesternMusic'
 
+// wave 2
 import CourseCodingActivities from './pages/Courses_W2/CoursePages/CodingActivities'
 import CourseFinancialLiteracy from './pages/Courses_W2/CoursePages/FinancialLiteracy'
 import CourseGreatSpeeches from './pages/Courses_W2/CoursePages/GreatSpeeches'
@@ -35,6 +38,16 @@ import CourseIntroCS from './pages/Courses_W2/CoursePages/IntroCS'
 import CourseCinema from './pages/Courses_W2/CoursePages/Cinema'
 import CourseInvesting from './pages/Courses_W2/CoursePages/Investing'
 import CoursePsychology from './pages/Courses_W2/CoursePages/SocialPsychology'
+import CourseClimateCrisis from './pages/Courses_W2/CoursePages/TackleClimateCrisis'
+import CourseIntroNeuroscience from './pages/Courses_W2/CoursePages/IntroToNeuroscience'
+import CoursePoetry from './pages/Courses_W2/CoursePages/PoetrySelfExpression'
+import CourseLinksMythologies from './pages/Courses_W2/CoursePages/LinksInMythologies'
+import CourseComputerSecurity from './pages/Courses_W2/CoursePages/ComputerSecurity'
+import CourseStatisticalMachine from './pages/Courses_W2/CoursePages/StatisticalMachine'
+import CourseCoronaAnxiety from './pages/Courses_W2/CoursePages/CoronaAndAnxiety'
+import CourseCampaignsElections from './pages/Courses_W2/CoursePages/CampaignsElections'
+import CourseGreatNumbers from './pages/Courses_W2/CoursePages/GreatSpeeches'
+import CourseSignLanguage2 from './pages/Courses_W2/CoursePages/AmericanSignLanguage'
 
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
@@ -69,6 +82,8 @@ function App() {
             <Route path="/courses">
               <Courses />
             </Route>
+
+            {/* wave 1 */}
             <Route path="/course-learn-python">
               <CourseLearnPython />
             </Route>
@@ -111,45 +126,78 @@ function App() {
             <Route path="/course-sign-language">
               <CourseSignLanguage />
             </Route>
+
+            {/* wave 2 */}
             <Route path="/course-coding-activities">
               <CourseCodingActivities/>
             </Route>
-            <Route path="course-financial-literacy">
+            <Route path="/course-financial-literacy">
               <CourseFinancialLiteracy/>
             </Route>
-            <Route path="course-great-speeches">
+            <Route path="/course-great-speeches">
               <CourseGreatSpeeches/>
             </Route>
-            <Route path="course-kanye-west">
+            <Route path="/course-kanye-west">
               <CourseKanyeWest/>
             </Route>
-            <Route path="course-physics">
+            <Route path="/course-physics">
               <CoursePhysics/>
             </Route>
-            <Route path="course-joy">
+            <Route path="/course-joy">
               <CourseJoy/>
             </Route>
-            <Route path="course-laughs">
+            <Route path="/course-laughs">
               <CourseLaughs/>
             </Route>
-            <Route path="course-contemporary-art">
+            <Route path="/course-contemporary-art">
               <CourseContemporaryArt/>
             </Route>
-            <Route path="course-butterflies">
+            <Route path="/course-butterflies">
               <CourseButterflies/>
             </Route>
-            <Route path="course-intro-cs">
+            <Route path="/course-intro-cs">
               <CourseIntroCS/>
             </Route>
-            <Route path="course-cinema">
+            <Route path="/course-cinema">
               <CourseCinema/>
             </Route>
-            <Route path="course-investing">
+            <Route path="/course-investing">
               <CourseInvesting/>
             </Route>
-            <Route path="course-psychology">
+            <Route path="/course-psychology">
               <CoursePsychology/>
             </Route>
+            <Route path="/course-climate-crisis">
+              <CourseClimateCrisis/>
+            </Route>
+            <Route path="/course-intro-neuroscience">
+              <CourseIntroNeuroscience/>
+            </Route>
+            <Route path="/course-poetry">
+              <CoursePoetry/>
+            </Route>
+            <Route path="/course-links-mythologies">
+              <CourseLinksMythologies/>
+            </Route>
+            <Route path="/course-computer-security">
+              <CourseComputerSecurity/>
+            </Route>
+            <Route path="/course-statistical-machine">
+              <CourseStatisticalMachine/>
+            </Route>
+            <Route path="/course-corona-anxiety">
+              <CourseCoronaAnxiety/>
+            </Route>
+            <Route path="/course-campaigns-elections">
+              <CourseCampaignsElections/>
+            </Route>
+            <Route path="/course-great-numbers">
+              <CourseGreatNumbers/>
+            </Route>
+            <Route path="/course-sign-language-2">
+              <CourseSignLanguage2/>
+            </Route>
+
             <Route path="/terms-conditions">
               <TermsAndConditions />
             </Route>

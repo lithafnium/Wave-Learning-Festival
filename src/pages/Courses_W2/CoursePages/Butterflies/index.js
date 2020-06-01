@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Callia Chuang.jpg"
 
-const CoursePage = () => {
+const CourseButterflies = () => {
     return(
         <div>
             <Navbar/>

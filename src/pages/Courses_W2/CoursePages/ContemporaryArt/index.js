@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Karly Hou.JPG"
 
-const CoursePage = () => {
+const CourseContemporaryArt = () => {
     return(
         <div>
             <Navbar/>
@@ -18,7 +18,7 @@ const CoursePage = () => {
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b> June 15-June 26
-                  <br/><b>Format: </b> Tuesday, Thursday, Saturday 
+                  <br/><b>Format: </b> Tuesday, Thursday, Saturday
                   <br/><b>Time (EDT): </b> 8pm-9pm EDT
                   </p>
                   <p>

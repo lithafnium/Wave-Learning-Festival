@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Chioma Ugochukwu.jpg"
 
-const CoursePage = () => {
+const CoursePoetry = () => {
     return(
         <div>
             <Navbar/>

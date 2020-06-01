@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Max Bricken.jpg"
 
-const CoursePage = () => {
+const CourseInvesting = () => {
     return(
         <div>
             <Navbar/>
@@ -18,15 +18,15 @@ const CoursePage = () => {
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b> June 15-June 19
-                  <br/><b>Format: </b> Monday, Wednesday, Friday 
+                  <br/><b>Format: </b> Monday, Wednesday, Friday
                   <br/><b>Time (EDT): </b> 3pm-4pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Max Bricken & James Bowden<br/>
                   <b>Teacher Bio: </b>
-                  Hi my name is Max Bricken and I am a rising sophomore at Caltech studying Information and Data Sciences and Business, Economics, and Management. I am involved with the collegiate water polo team and am a board member of the student investment fund on campus. I am teaching this course to try to give you insight into the importance of finance and the benefits of smart investing. 
-                  <br/>Hi, my name is James Bowden and I’m a rising sophomore at Caltech studying computer science and biology. I’m a board member of the student investment fund and didn’t start personally investing until recently. I didn’t learn a lot of these important concepts until after I started investing, which is why I’m excited to teach this course and prepare students to allocate their funds wisely. I also do bioinformatics research in a synthetic biology lab, machine learning research with a CS group, and play for the water polo team. 
+                  Hi my name is Max Bricken and I am a rising sophomore at Caltech studying Information and Data Sciences and Business, Economics, and Management. I am involved with the collegiate water polo team and am a board member of the student investment fund on campus. I am teaching this course to try to give you insight into the importance of finance and the benefits of smart investing.
+                  <br/>Hi, my name is James Bowden and I’m a rising sophomore at Caltech studying computer science and biology. I’m a board member of the student investment fund and didn’t start personally investing until recently. I didn’t learn a lot of these important concepts until after I started investing, which is why I’m excited to teach this course and prepare students to allocate their funds wisely. I also do bioinformatics research in a synthetic biology lab, machine learning research with a CS group, and play for the water polo team.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

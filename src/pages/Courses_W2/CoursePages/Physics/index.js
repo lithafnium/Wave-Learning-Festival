@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Kylee Carden.jpg"
 
-const CoursePage = () => {
+const CoursePhysics = () => {
     return(
         <div>
             <Navbar/>
@@ -16,7 +16,7 @@ const CoursePage = () => {
                   <p>
                   Howdy! This class will introduce the fundamentals of physics and use these basic concepts to understand complicated, buzz-word topics in physics like black holes and the expansion of the universe. This class is designed to be fun and intuitive, and we will dive deep to see beauty in physics! While this class will include mathematical derivations, the main goal of the class is to build physical intuition and introduce students to concepts they will see in future physics courses.
                   <br/>Required: algebra, trigonometry, intro physics (middle school level acceptable)
-                  <br/>Recommended: basic calculus 
+                  <br/>Recommended: basic calculus
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b> June 15-June 26

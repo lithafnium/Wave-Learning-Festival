@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Abby McElroy.jpg"
 
-const CoursePage = () => {
+const CourseJoy = () => {
     return(
         <div>
             <Navbar/>
@@ -14,11 +14,11 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>Where and Why is Joy?</h1>
                   <p>
-                  This course will seek to answer, from a variety of philosophical and scientific standpoints, why and how humans experience joy, with an emphasis on finding ways to increase joyful moments while stuck in quarantine. 
+                  This course will seek to answer, from a variety of philosophical and scientific standpoints, why and how humans experience joy, with an emphasis on finding ways to increase joyful moments while stuck in quarantine.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>June 15-June 26 
-                  <br/><b>Format: </b> Monday, Wednesday 
+                  <b>Class Date + Time: </b>June 15-June 26
+                  <br/><b>Format: </b> Monday, Wednesday
                   <br/><b>Time (EDT): </b> 7pm-8pm EDT
                   </p>
                   <p>

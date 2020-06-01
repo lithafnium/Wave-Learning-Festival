@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Emma Doughty.jpg"
 
-const CoursePage = () => {
+const CourseSignLanguage2 = () => {
     return(
         <div>
             <Navbar/>

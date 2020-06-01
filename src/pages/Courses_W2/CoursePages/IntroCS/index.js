@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Kevin Bao.png"
 
-const CoursePage = () => {
+const CourseIntroCS = () => {
     return(
         <div>
             <Navbar/>
@@ -14,11 +14,11 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>An Introduction to the Applications of Computer Science</h1>
                   <p>
-                  This course will mainly focus on some of the applications of computer science. We will be covering topics such as objects, algorithms, data structures, and pathfinding algorithms. This is going to be a brief introduction into the world of computer science and no previous experience is required. 
+                  This course will mainly focus on some of the applications of computer science. We will be covering topics such as objects, algorithms, data structures, and pathfinding algorithms. This is going to be a brief introduction into the world of computer science and no previous experience is required.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> June 16- June 25 
-                  <br/><b>Format: </b> Tuesday, Thursday 
+                  <b>Class Date + Time: </b> June 16- June 25
+                  <br/><b>Format: </b> Tuesday, Thursday
                   <br/><b>Time (EDT): </b> 12pm-1pm
                   </p>
                   <p>

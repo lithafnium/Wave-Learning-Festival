@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Claire Garrett.JPG"
 
-const CoursePage = () => {
+const CoursePsychology = () => {
     return(
         <div>
             <Navbar/>
@@ -14,11 +14,11 @@ const CoursePage = () => {
                 <ContainerInner>
                 <h1>A Crash Course in Social Psychology</h1>
                   <p>
-                  This course provides students with a broad introduction to the field of social psychology, the study of how others influence our thoughts, feelings, and behavior in a social world. Course content will focus on both theory and empirical research to explore the ways in which social situations affect the way we think, our emotions, and our actions. Specific topics include social perception and judgment, attitude and attitude change, persuasion, conformity, liking and love, and helping. In the course of discussing these topics, students will analyze real-life situations and events. Some of these events may be disturbing or upsetting, so please keep this in mind before enrolling. This class is appropriate for high school students, and no prerequisites are necessary. 
+                  This course provides students with a broad introduction to the field of social psychology, the study of how others influence our thoughts, feelings, and behavior in a social world. Course content will focus on both theory and empirical research to explore the ways in which social situations affect the way we think, our emotions, and our actions. Specific topics include social perception and judgment, attitude and attitude change, persuasion, conformity, liking and love, and helping. In the course of discussing these topics, students will analyze real-life situations and events. Some of these events may be disturbing or upsetting, so please keep this in mind before enrolling. This class is appropriate for high school students, and no prerequisites are necessary.
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date + Time: </b> June 15th-26th
-                  <br/><b>Format: </b>Monday, Wednesday, Friday 
+                  <br/><b>Format: </b>Monday, Wednesday, Friday
                   <br/><b>Time (EDT): </b> 1pm-2pm
                   </p>
                   <p>

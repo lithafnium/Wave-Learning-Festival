@@ -6,7 +6,7 @@ import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Willow Taylor Chiang Yang.jpg"
 
-const CoursePage = () => {
+const CourseCampaignsElections = () => {
     return(
         <div>
             <Navbar/>

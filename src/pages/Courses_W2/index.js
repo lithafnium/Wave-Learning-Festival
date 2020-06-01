@@ -266,7 +266,7 @@ const Courses = () => {
             </div>
 
             <div class="column">
-              <a href="course-climate-crisis">
+              <a href="course-great-numbers">
                 <div class="course">
                   <div class="image-container">
                     <img src={Geobiology} />
@@ -279,7 +279,7 @@ const Courses = () => {
             </div>
 
             <div class="column">
-              <a href="course-climate-crisis">
+              <a href="course-sign-language-2">
                 <div class="course">
                   <div class="image-container">
                     <img src={Geobiology} />
