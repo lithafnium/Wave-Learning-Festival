@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useContext } from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
@@ -43,11 +44,34 @@ const CoursePage = ({ match }) => {
           console.log("Error getting document:", error);
       });
     }
+=======
+import React, {useContext} from 'react'
+import Navbar from '../../../components/Navbar'
+import Footer from '../../../components/Footer'
+import { Container, ContainerInner } from "../styles"
+import './styles.css'
+import {FirebaseContext} from '../../../firebaseContext'
+
+const CoursePage = (docId) => {
+    const {db} = useContext(FirebaseContext)
+
+    const pageInfo = db.collection('fl_content').doc(docId); 
+    console.log("Collect Info");
+    /*() => {
+        if(db){
+            const pageInfo = 
+            return pageInfo;
+        }
+       return;
+    }*/
+
+>>>>>>> Initial Flamelink commit
     return (
       <div>
           <Navbar/>
           <Container>
               <ContainerInner>
+<<<<<<< HEAD
               <h1>{courseTitle}</h1>
                 <p>
                 {courseDescription}
@@ -60,6 +84,19 @@ const CoursePage = ({ match }) => {
                 <b>Taught by: </b>{teacherName}<br/>
                 <b>Teacher Bio: </b>{teacherBio}
                 </p>
+=======
+              <h1>{pageInfo.courseTitle}</h1>
+                <p>
+                {pageInfo.courseDescription}
+                </p>
+                <p style={{clear: 'right'}}>
+                <b>Class Date + Time: </b>{pageInfo.classDateTime}
+                </p>
+                <p>
+                <img src={pageInfo.teacherHeadshot} class="img-left"/> 
+                <b>Taught by: </b>{pageInfo.teacherName}<br/>
+                <b>Teacher Bio: </b>{pageInfo.teacherBio}</p>
+>>>>>>> Initial Flamelink commit
                 <h1>Register for this course!</h1>
                   <iframe
                 title="form"

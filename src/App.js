@@ -63,6 +63,7 @@ import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
 import CourseTesting from './pages/Courses'
 import CoursePage from './pages/Courses/CoursePages'
+import CourseTesting from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
@@ -249,6 +250,9 @@ function App() {
               <CourseTesting />
             </Route>
             <Route path="/:slug" component={CoursePage} />*/}
+            <Route path="/courseTesting">
+              <CourseTesting />
+            </Route>
             <Route path="/">
               <About />
             </Route>

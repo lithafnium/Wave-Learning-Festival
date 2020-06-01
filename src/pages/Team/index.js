@@ -29,19 +29,19 @@ import AmyShen from "./headshot/amy-shen.jpg";
 
 const Team = () => {
     return(
-      <div>
+        <div>
           <Navbar/>
           <div class="container">
-          <div class="row">
-          <div class="column">
-            <div class="team-member">
-              <img src={KarlyHou} />
-                <Typography.Name>Karly Hou</Typography.Name>
-                <Typography.School>Harvard University, 2023</Typography.School>
-                <Typography.Position>Chair</Typography.Position>
-              </div>
+            <div class="row">
+            <div class="column">
+              <div class="team-member">
+                <img src={KarlyHou} />
+                  <Typography.Name>Karly Hou</Typography.Name>
+                  <Typography.School>Harvard University, 2023</Typography.School>
+                  <Typography.Position>Chair</Typography.Position>
+                </div>
+            </div>
           </div>
-        </div>
           <div class="column">
             <div class="team-member">
               <img src={YaelLivneh} />
@@ -241,7 +241,6 @@ const Team = () => {
             </div>
           </div>
         </div>
-      </div>
       <Footer />
     </div>
   );
