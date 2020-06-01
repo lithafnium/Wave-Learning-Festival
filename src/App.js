@@ -59,6 +59,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 import Join from './pages/Join'
+import CourseTesting from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
@@ -231,6 +232,12 @@ function App() {
             </Route>
             <Route path="/unsubscribe">
               <Unsubscribe />
+            </Route>
+            <Route path="/join">
+              <Join />
+            </Route>
+            <Route path="/courseTesting">
+              <CourseTesting />
             </Route>
             <Route path="/">
               <About />
