@@ -29,7 +29,7 @@ const CourseCoronaAnxiety = () => {
                   <h1>Register for this course!</h1>
                     <iframe
                   title="form"
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSeML1NrfKfCVFZ_HIYHGCrGcwJ0BX0C3wRaAcTS6zGBD0nDgQ/viewform?embedded=true"
                   width="100%"
                   height="500"
                   frameborder="0"

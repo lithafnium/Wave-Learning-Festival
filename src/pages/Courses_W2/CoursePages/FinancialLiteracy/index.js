@@ -13,7 +13,7 @@ const CourseFinancialLiteracy = () => {
             <Container>
                 <ContainerInner>
                 <h1>Financial Literacy</h1>
-                  <p>
+                  <p> Updated Soon!
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/16/2020 - 06/25/2020
@@ -28,7 +28,7 @@ const CourseFinancialLiteracy = () => {
                   <h1>Register for this course!</h1>
                     <iframe
                   title="form"
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSeML1NrfKfCVFZ_HIYHGCrGcwJ0BX0C3wRaAcTS6zGBD0nDgQ/viewform?embedded=true"
                   width="100%"
                   height="500"
                   frameborder="0"
