@@ -14,7 +14,8 @@ const CourseSignLanguage2 = () => {
                 <ContainerInner>
                 <h1>Introduction to American Sign Language</h1>
                   <p>
-                  This highly interactive course will cover the basics of ASL, and will guide students to conversational skill level. No prior experience necessary.
+                  This highly interactive course will cover the basics of ASL, and will guide students to conversational skill level. No prior experience necessary. 
+                  Emma's class is back due to incredibly popular demand from Wave One.
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> June 15 - June 26

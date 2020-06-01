@@ -16,7 +16,7 @@ const CourseGreatSpeeches = () => {
                 <h1>Great Speeches of History</h1>
                   <p>
                   This seminar will introduce students to some of the greatest speeches in world history. In each class, we will focus on one element of the human condition by reading and discussing a few short, accessible speeches. (The list includes everyone from JFK and MLK, to Queen Elizabeth and Abraham Lincoln, to Steve Jobs and Socrates.)
-                  <br/>We will explore the historical background, subject, style, and impact of the speeches, as well as their relations to each other, to our world, and to our daily lives. The teachers will present a handful of public speaking “power points” in each class that will improve everyone’s public speaking abilities. Students will be encouraged to perform excerpts of the speeches, if interested.
+                  <br/><br/>We will explore the historical background, subject, style, and impact of the speeches, as well as their relations to each other, to our world, and to our daily lives. The teachers will present a handful of public speaking “power points” in each class that will improve everyone’s public speaking abilities. Students will be encouraged to perform excerpts of the speeches, if interested.
                   <br/><b>Target Audience: </b>The seminar is targeted toward high school students (incoming sophomores and up), but open to all students interested in rhetoric, history, and reading older speeches.
                   </p>
                   <p style={{clear: 'right'}}>
