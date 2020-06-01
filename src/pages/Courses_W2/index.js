@@ -25,7 +25,8 @@ const Courses = () => {
                     <img src={Geobiology} />
                   </div>
                   <p class="name">Coding through Activities</p>
-                  <p class="teacher">Ethar Hussein, Salma Kamni</p>
+                  <p class="teacher">Ethar Hussein & Salma Kamni</p>
+                  <p class="school">Amos Alonzo Stagg High School '20, Stanford University '24</p>
                 </div>
               </a>
             </div>
@@ -37,6 +38,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Financial Literacy</p>
                   <p class="teacher">Maria Estrada</p>
+                  <p class="school">Williams College '23</p>
                 </div>
               </a>
             </div>
@@ -48,6 +50,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Great Speeches in History</p>
                   <p class="teacher">Samarth Desai & Nicholas Danby</p>
+                  <p class="school">Harvard University '20</p>
                 </div>
               </a>
             </div>
@@ -59,6 +62,7 @@ const Courses = () => {
                   </div>
                   <p class="name">From "Jesus Walks" to "Jesus is King": The Discography of Kanye West</p>
                   <p class="teacher">Angel Mata</p>
+                  <p class="school">Harvard University '22</p>
                 </div>
               </a>
             </div>
@@ -70,6 +74,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Physics: From Newton to Relativity, Black Holes, Inflation, the Universe and Beyond</p>
                   <p class="teacher">Kylee Carden</p>
+                  <p class="school">MIT '23</p>
                 </div>
               </a>
             </div>
@@ -79,8 +84,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={Geobiology} />
                   </div>
-                  <p class="name">Where and Why is Joy</p>
+                  <p class="name">Where and Why is Joy?</p>
                   <p class="teacher">Abby McElroy</p>
+                  <p class="school">Harvard University '23</p>
                 </div>
               </a>
             </div>
@@ -92,6 +98,7 @@ const Courses = () => {
                   </div>
                   <p class="name">The Art of Laughs: Writing Your First Stand-Up Comedy Set</p>
                   <p class="teacher">Phoebe Barr</p>
+                  <p class="school">Harvard University '23</p>
                 </div>
               </a>
             </div>
@@ -103,6 +110,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Contemporary Art: Principles, Movements, & Practice</p>
                   <p class="teacher">Karly Hou</p>
+                  <p class="school">Harvard University '23</p>
                 </div>
               </a>
             </div>
@@ -114,6 +122,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Butterflies, Berries, and “Beauty to Set the World Right:” Hip-Hop and Social Activism</p>
                   <p class="teacher">Callia Chuang & Talia Blatt</p>
+                  <p class="school">Harvard University '23</p>
                 </div>
               </a>
             </div>
@@ -125,6 +134,7 @@ const Courses = () => {
                   </div>
                   <p class="name">An Introduction to the Applications of Computer Science</p>
                   <p class="teacher">Kevin Bao & Ian Zhang</p>
+                  <p class="school">Henry M. Gunn High School '21</p>
                 </div>
               </a>
             </div>
@@ -136,6 +146,7 @@ const Courses = () => {
                   </div>
                   <p class="name">An Overview of American Cinema: 1945 - Present</p>
                   <p class="teacher">Margaret Lu</p>
+                  <p class="school">University of Pennsylvania '22</p>
                 </div>
               </a>
             </div>
@@ -147,6 +158,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Fundamentals of Investing</p>
                   <p class="teacher">Max Bricken & James Bowden</p>
+                  <p class="school">Caltech '23</p>
                 </div>
               </a>
             </div>
@@ -158,6 +170,7 @@ const Courses = () => {
                   </div>
                   <p class="name">A Crash Course in Social Psychology</p>
                   <p class="teacher">Claire Garret</p>
+                  <p class="school">Whitman College '20</p>
                 </div>
               </a>
             </div>
@@ -170,6 +183,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Developing Solutions to Tackle the Climate Crisis</p>
                   <p class="teacher">Charles Hua, Kiana Ziadkhanpour</p>
+                  <p class="school">Harvard University '22</p>
                 </div>
               </a>
             </div>
@@ -247,7 +261,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Corona and Anxiety</p>
                   <p class="teacher">Lizzie Letsou</p>
-                  <p class="school">Williams College '22</p>
+                  <p class="school">Williams College '23</p>
                 </div>
               </a>
             </div>
