@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState, useContext } from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
@@ -45,6 +46,8 @@ const CoursePage = ({ match }) => {
       });
     }
 =======
+=======
+>>>>>>> Initial Flamelink commit
 import React, {useContext} from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
@@ -65,12 +68,16 @@ const CoursePage = (docId) => {
        return;
     }*/
 
+<<<<<<< HEAD
+>>>>>>> Initial Flamelink commit
+=======
 >>>>>>> Initial Flamelink commit
     return (
       <div>
           <Navbar/>
           <Container>
               <ContainerInner>
+<<<<<<< HEAD
 <<<<<<< HEAD
               <h1>{courseTitle}</h1>
                 <p>
@@ -85,6 +92,8 @@ const CoursePage = (docId) => {
                 <b>Teacher Bio: </b>{teacherBio}
                 </p>
 =======
+=======
+>>>>>>> Initial Flamelink commit
               <h1>{pageInfo.courseTitle}</h1>
                 <p>
                 {pageInfo.courseDescription}
@@ -96,6 +105,9 @@ const CoursePage = (docId) => {
                 <img src={pageInfo.teacherHeadshot} class="img-left"/> 
                 <b>Taught by: </b>{pageInfo.teacherName}<br/>
                 <b>Teacher Bio: </b>{pageInfo.teacherBio}</p>
+<<<<<<< HEAD
+>>>>>>> Initial Flamelink commit
+=======
 >>>>>>> Initial Flamelink commit
                 <h1>Register for this course!</h1>
                   <iframe
