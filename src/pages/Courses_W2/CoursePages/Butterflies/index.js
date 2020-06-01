@@ -33,7 +33,7 @@ const CourseButterflies = () => {
                   <p>
                   <img src={ProfileTwo} class="img-left"/>
                   <b>Taught by: </b>Talia Blatt<br/>
-                  <b>Teacher Bio: </b>Talia Blatt (Harvard '23) is teaching this course to combine her love of music with the important history and tradition of activism that comes with it. With her work as a tutor, coach, and teaching assistant, she is comfortable working with a wide age range of students. She plans to concentrate in Social Studies and Integrative Biology.
+                  <b>Teacher Bio: </b>Talia Blatt (Harvard University '23) is teaching this course to combine her love of music with the important history and tradition of activism that comes with it. With her work as a tutor, coach, and teaching assistant, she is comfortable working with a wide age range of students. She plans to concentrate in Social Studies and Integrative Biology.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

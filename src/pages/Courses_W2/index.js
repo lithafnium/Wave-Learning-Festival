@@ -270,7 +270,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Statistical Machine and Deep Learning in Natural Language Processing</p>
                   <p class="teacher">Asher Noel</p>
-                  <p class="school">Harvard ‘23</p>
+                  <p class="school">Harvard University ‘23</p>
                 </div>
               </a>
             </div>
@@ -309,7 +309,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Three Great Numbers of Math</p>
                   <p class="teacher">Michael Kielstra</p>
-                  <p class="school">Harvard '22</p>
+                  <p class="school">Harvard University '22</p>
                 </div>
               </a>
             </div>

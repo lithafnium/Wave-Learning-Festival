@@ -26,7 +26,7 @@ const CourseIntroCS = () => {
                   <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Kevin Bao<br/>
                   <b>Teacher Bio: </b>
-                  Hi my name is Kevin and I am a rising Senior at Gunn High school. I’m interested in the fields of computer science and Artificial and I hope that I will be able to share what I have learned. I hope that I will be able to show a little bit of what computers can do and spark your interest in this field!
+                  Hi my name is Kevin and I am a rising Senior at Gunn High school. I’m interested in the fields of computer science and Artificial Intelligence and I hope that I will be able to share what I have learned. I hope that I will be able to show a little bit of what computers can do and spark your interest in this field!
                   <br/>
                   <br/>    
                   <br/>     
