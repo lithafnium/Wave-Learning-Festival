@@ -16,10 +16,10 @@ const Footer = () => {
                     <p>
                         <a href = "terms-conditions">Terms and Conditions</a> and <a href = "privacy-policy">Privacy Policy</a>
                     </p>
-                    
+
                 </FooterLeft>
                 <Social>
-                    <Icon>
+                    <Icon onClick = {() => window.open('https://www.facebook.com/wavelf/', '_blank')}>
                         <IconContext.Provider value={{ color: "white", size: "2em", style: { verticalAlign: 'middle' } }}>
                             <div>
                                 <FaFacebookSquare />
