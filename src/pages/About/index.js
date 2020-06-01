@@ -93,9 +93,9 @@ const About = () => {
                 marginTop: "50px",
               }}
             >
-              <a href="/students" class="sign-up-link">
+              <a href="/courses" class="sign-up-link">
                 <Button>
-                  <p>Students</p>
+                  <p>Courses</p>
                 </Button>
               </a>
               <a href="/teachers" class="sign-up-link">
