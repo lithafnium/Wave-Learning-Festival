@@ -15,6 +15,7 @@ const CourseGreatNumbers = () => {
                 <h1>Three Great Numbers of Math</h1>
                   <p>
                   In this course, most appropriate for high-school students, we will consider mathematics through the lens of three numbers: 2 (the integers, even/odd parity, prime numbers, binary), the square root of 2 (rational numbers, irrational numbers, proof by contradiction, solving the quadratic), and i, the square root of -1 (complex numbers, solving the quadratic some more, the fundamental theorem of algebra).  By focusing on one number every lesson, students will be able to really explore the idea of *mathematics* as opposed to just calculation.
+                  <br/><b>Target Audience: </b> 9th - 12th Graders
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/15/2020 - 06/19/2020

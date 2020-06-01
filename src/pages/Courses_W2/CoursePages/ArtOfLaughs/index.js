@@ -15,7 +15,8 @@ const CourseLaughs = () => {
                 <h1>The Art of Laughs: Writing Your First Stand-Up Comedy Set</h1>
                   <p>
                   Are you a fan of stand-up comedy? Do you love watching comedy shows and Netflix stand-up specials, and have you ever dreamed of writing your own routine? Novices to stand-up comedy can often feel unsure where to begin, not to mention worry about not being funny – but we all have comedic potential. This two-week course offers a low-stakes, supportive, and fun environment to learn the basics of stand-up comedy writing.
-                  <br/>This is a participatory course; students will be encouraged to engage in discussions and to share jokes. Students of all ages are welcome to join, but the aim of the course is specifically for comedy beginners.
+                  <br/>This is a participatory course; students will be encouraged to engage in discussions and to share jokes. 
+                  <br/><b>Target Audience: </b>Students of all ages are welcome to join, but the aim of the course is specifically for comedy beginners.
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b>06/16/2020 - 06/27/2020

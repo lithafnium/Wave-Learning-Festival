@@ -14,7 +14,8 @@ const CourseComputerSecurity = () => {
                 <ContainerInner>
                 <h1>Intro to Computer Security: How to Protect Your Data</h1>
                   <p>
-                  Today it seems like you never know who is watching what you browse on the internet or send to your friends. Learn the most common ways that hackers can infiltrate your computer and and your communications and some things you can do to protect yourself from them. Topics such as password cracking, email phishing, the Tor browser, and others will be discussed. Geared towards high schoolers with a basic knowledge of how to use a computer. ​
+                  Today it seems like you never know who is watching what you browse on the internet or send to your friends. Learn the most common ways that hackers can infiltrate your computer and and your communications and some things you can do to protect yourself from them. Topics such as password cracking, email phishing, the Tor browser, and others will be discussed. 
+                  <br/><b>Target Audience: </b> Geared towards high schoolers with a basic knowledge of how to use a computer. ​
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/22/2020 - 06/26/2020
