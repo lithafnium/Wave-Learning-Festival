@@ -37,7 +37,7 @@ const Courses = () => {
                     <img src={Geobiology} />
                   </div>
                   <p class="name">Financial Literacy</p>
-                  <p class="teacher">Maria Estrada</p>
+                  <p class="teacher">Maria Fernanda Estrada</p>
                   <p class="school">Williams College '23</p>
                 </div>
               </a>
