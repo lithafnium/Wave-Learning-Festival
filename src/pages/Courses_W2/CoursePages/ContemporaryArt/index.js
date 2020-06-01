@@ -17,7 +17,7 @@ const CourseContemporaryArt = () => {
                   When someone mentions “modern art,” what comes to mind? A banana taped to a wall? A framed canvas that’s just blank? All of the above, along with a billion dollar price tag? Though contemporary art often gets a bad rap (“I could make that too!”) because it can appear arbitrary, thoughtless or unrealistic, we will explore the beauty and genius of works by revolutionary contemporary artists, including Henri Matisse, Marcel Duchamp, Stuart Davis, Wang Huaiqing, and many others. Through analysis of their works, we will also learn about the foundations of art composition and practice these skills through creating our own art responses to exercise prompts. Students should leave the workshop with a newfound appreciation for the bizarre, the contrived, the unrealistic and the exaggerated, as well as a realization that abstraction liberates us from the constraints of initial appearances to capture the true essence of a subject. I also hope to just introduce students to many works of art from different cultural origins This class is appropriate for anyone with an interest in the appreciation or creation of art, or anyone who finds contemporary art meaningless and would like a new perspective!
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date: </b> June 15-June 26
+                  <b>Class Date: </b> 06/15/2020 - 06/26/2020
                   <br/><b>Format: </b> Tuesday, Thursday, Saturday
                   <br/><b>Time (EDT): </b> 8pm - 9pm
                   </p>

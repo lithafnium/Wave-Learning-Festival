@@ -18,7 +18,7 @@ const CourseLaughs = () => {
                   <br/>This is a participatory course; students will be encouraged to engage in discussions and to share jokes. Students of all ages are welcome to join, but the aim of the course is specifically for comedy beginners.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date: </b>June 16-June 27
+                  <b>Class Date: </b>06/16/2020 - 06/27/2020
                   <br/><b>Format: </b>Tuesday, Thursday, Saturday
                   <br/><b>Time (EDT): </b>2pm - 3pm
                   </p>
