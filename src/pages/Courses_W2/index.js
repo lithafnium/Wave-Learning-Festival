@@ -346,7 +346,7 @@ const Courses = () => {
             src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
           </iframe>
-        <h1>Register by 6/13 to take a class in this wave!</h1>
+        <h1>Register by 6/10 to take a class in this wave!</h1>
 	<p>Sign-ups are on a first-come-first-serve basis. If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!</p>
             <iframe
               title="form"
