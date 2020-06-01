@@ -25,7 +25,139 @@ const Courses = () => {
                     <img src={Geobiology} />
                   </div>
                   <p class="name">Coding through Activities</p>
-                  <p class="teacher">Ethar Hussein (she/her), Salma Kamni (she/her)</p>
+                  <p class="teacher">Ethar Hussein, Salma Kamni</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-financial-literacy">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">Financial Literacy</p>
+                  <p class="teacher">Maria Estrada</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-great-speeches">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">Great Speeches in History</p>
+                  <p class="teacher">Samarth Desai & Nicholas Danby</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-kanye-west">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">From "Jesus Walks" to "Jesus is King": The Discography of Kanye West</p>
+                  <p class="teacher">Angel Mata</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-physics">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">Physics: From Newton to Relativity, Black Holes, Inflation, the Universe and Beyond</p>
+                  <p class="teacher">Kylee Carden</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-joy">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">Where and Why is Joy</p>
+                  <p class="teacher">Abby McElroy</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-laughs">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">The Art of Laughs: Writing Your First Stand-Up Comedy Set</p>
+                  <p class="teacher">Phoebe Barr</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-contemporary-art">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">Contemporary Art: Principles, Movements, & Practice</p>
+                  <p class="teacher">Karly Hou</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-butterflies">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">Butterflies, Berries, and “Beauty to Set the World Right:” Hip-Hop and Social Activism</p>
+                  <p class="teacher">Callia Chuang & Talia Blatt</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-intro-cs">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">An Introduction to the Applications of Computer Science</p>
+                  <p class="teacher">Kevin Bao & Ian Zhang</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-cinema">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">An Overview of American Cinema: 1945 - Present</p>
+                  <p class="teacher">Margaret Lu</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-investing">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">Fundamentals of Investing</p>
+                  <p class="teacher">Max Bricken & James Bowden</p>
+                </div>
+              </a>
+            </div>
+            <div class="column">
+              <a href="course-psychology">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={Geobiology} />
+                  </div>
+                  <p class="name">A Crash Course in Social Psychology</p>
+                  <p class="teacher">Claire Garret</p>
                 </div>
               </a>
             </div>

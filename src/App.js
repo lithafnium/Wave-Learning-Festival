@@ -11,7 +11,6 @@ import Courses from './pages/Courses_W2'
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
 import CourseHowCancerWorks from './pages/Courses_W1/CoursePages/HowCancerWorks'
 import CourseDigitalPainting from './pages/Courses_W1/CoursePages/DigitalPainting'
-import CourseJoy from './pages/Courses_W1/CoursePages/Joy'
 import CourseAnthropology from './pages/Courses_W1/CoursePages/Anthropology'
 import CourseBlockCoding from './pages/Courses_W1/CoursePages/BlockCoding'
 import CourseEmotions from './pages/Courses_W1/CoursePages/Emotions'
@@ -24,6 +23,18 @@ import CourseWebDev from './pages/Courses_W1/CoursePages/WebDevelopment'
 import CourseWesternMusic from './pages/Courses_W1/CoursePages/WesternMusic'
 
 import CourseCodingActivities from './pages/Courses_W2/CoursePages/CodingActivities'
+import CourseFinancialLiteracy from './pages/Courses_W2/CoursePages/FinancialLiteracy'
+import CourseGreatSpeeches from './pages/Courses_W2/CoursePages/GreatSpeeches'
+import CourseKanyeWest from './pages/Courses_W2/CoursePages/KanyeWest'
+import CoursePhysics from './pages/Courses_W2/CoursePages/Physics'
+import CourseJoy from './pages/Courses_W2/CoursePages/Joy'
+import CourseLaughs from './pages/Courses_W2/CoursePages/ArtOfLaughs'
+import CourseContemporaryArt from './pages/Courses_W2/CoursePages/ContemporaryArt'
+import CourseButterflies from './pages/Courses_W2/CoursePages/Butterflies'
+import CourseIntroCS from './pages/Courses_W2/CoursePages/IntroCS'
+import CourseCinema from './pages/Courses_W2/CoursePages/Cinema'
+import CourseInvesting from './pages/Courses_W2/CoursePages/Investing'
+import CoursePsychology from './pages/Courses_W2/CoursePages/SocialPsychology'
 
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
@@ -102,6 +113,42 @@ function App() {
             </Route>
             <Route path="/course-coding-activities">
               <CourseCodingActivities/>
+            </Route>
+            <Route path="course-financial-literacy">
+              <CourseFinancialLiteracy/>
+            </Route>
+            <Route path="course-great-speeches">
+              <CourseGreatSpeeches/>
+            </Route>
+            <Route path="course-kanye-west">
+              <CourseKanyeWest/>
+            </Route>
+            <Route path="course-physics">
+              <CoursePhysics/>
+            </Route>
+            <Route path="course-joy">
+              <CourseJoy/>
+            </Route>
+            <Route path="course-laughs">
+              <CourseLaughs/>
+            </Route>
+            <Route path="course-contemporary-art">
+              <CourseContemporaryArt/>
+            </Route>
+            <Route path="course-butterflies">
+              <CourseButterflies/>
+            </Route>
+            <Route path="course-intro-cs">
+              <CourseIntroCS/>
+            </Route>
+            <Route path="course-cinema">
+              <CourseCinema/>
+            </Route>
+            <Route path="course-investing">
+              <CourseInvesting/>
+            </Route>
+            <Route path="course-psychology">
+              <CoursePsychology/>
             </Route>
             <Route path="/terms-conditions">
               <TermsAndConditions />
