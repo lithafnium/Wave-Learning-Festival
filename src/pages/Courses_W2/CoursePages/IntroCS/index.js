@@ -5,6 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Kevin Bao.png"
+import ProfileTwo from "../../teacherheadshots/Ian Zhang.png"
 
 const CourseIntroCS = () => {
     return(
@@ -23,10 +24,15 @@ const CourseIntroCS = () => {
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Kevin Bao & Ian Zhang<br/>
+                  <b>Taught by: </b>Kevin Bao<br/>
                   <b>Teacher Bio: </b>
                   Hi my name is Kevin and I am a rising Senior at Gunn High school. I’m interested in the fields of computer science and Artificial and I hope that I will be able to share what I have learned. I hope that I will be able to show a little bit of what computers can do and spark your interest in this field!
-                  <br/>Howdy! My name is Ian, and I'm a rising senior at Gunn High School with experience in coding in various languages, namely Java, Python and Scheme. My interest in CS stemmed last year after being involved in Gunn Hacks and taking AP CS A. Since then, I have worked on various coding projects with my friends such as a school work planner. I am really looking forward to teaching this class!
+                  </p>
+                  <p>
+                  <img src={ProfileTwo} class="img-left"/>
+                  <b>Taught by: </b>Ian Zhang<br/>
+                  <b>Teacher Bio: </b>
+                  Howdy! My name is Ian, and I'm a rising senior at Gunn High School with experience in coding in various languages, namely Java, Python and Scheme. My interest in CS stemmed last year after being involved in Gunn Hacks and taking AP CS A. Since then, I have worked on various coding projects with my friends such as a school work planner. I am really looking forward to teaching this class!
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

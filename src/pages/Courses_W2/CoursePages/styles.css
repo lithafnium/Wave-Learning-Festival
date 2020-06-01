@@ -16,6 +16,15 @@ html {
   margin-bottom: 20px;
 }
 
+.img-mid
+{
+  object-fit: cover;
+  width: 200px;
+  height: 200px;  
+  margin-right:15px;
+  margin-bottom: 20px;
+}
+
 .img-right
 {
   float: right;

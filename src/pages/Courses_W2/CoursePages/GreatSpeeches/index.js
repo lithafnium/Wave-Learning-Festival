@@ -5,6 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Samarth Desai.jpeg"
+import ProfileTwo from "../../teacherheadshots/Nick Danby.png"
 
 const CourseGreatSpeeches = () => {
     return(
@@ -25,10 +26,16 @@ const CourseGreatSpeeches = () => {
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Samarth Desai & Nicholas Danby<br/>
+                  <b>Taught by: </b>Samarth Desai<br/>
                   <b>Teacher Bio: </b>
                   Samarth is a 2020 graduate of Harvard College, having concentrated in Social Studies with a focus in constitutional law, American foreign policy, and political economy. At Harvard, he served as both President and Captain of the Harvard Mock Trial Association, co-founded the Alexander Hamilton Society, and wrote for the Harvard Political Review. He also worked as a Research Assistant to Harvard Law School professor Noah Feldman. He is a National Merit Scholar and the recipient of a Legislative Commendation from the Pennsylvania House of Representatives. His favorite movie speech is Al Pacino's in Scent of a Woman.
-                  <br/>Nick Danby is a 2020 graduate of Harvard College, where he studied History and Government, with a focus on national security, foreign policy, and economic statecraft. At Harvard, Nick served as the Co-Founder and Chairman of the Alexander Hamilton Society, Editor-in-Chief of Tempus: The Historical Review, and Chairman of the Economic Policy Group. During his time at college, Nick worked for global consulting firms, government agencies, and think tanks. After graduation, Nick will be attending the University of Cambridge to receive his Master of Philosophy (MPhil) in International Relations in the fall and, then, commissioning as an active duty naval intelligence officer next summer. Nick’s public speaking career began at 12 when he addressed 2,000 people at the Maine Democratic Convention. Since then, he has been named the 2015 National Speech and Debate Association Congressional Debate Champion and 2017 American Mock Trial Association All-American Witness, among other achievements. His favorite movie speech is George C. Scott’s opening scene in Patton.
+                  Nick Danby is a 2020 graduate of Harvard College, where he studied History and Government, with a focus on national security, foreign policy, and economic statecraft. At Harvard, Nick served as the Co-Founder and Chairman of the Alexander Hamilton Society, Editor-in-Chief of Tempus: The Historical Review, and Chairman of the Economic Policy Group. During his time at college, Nick worked for global consulting firms, government agencies, and think tanks. After graduation, Nick will be attending the University of Cambridge to receive his Master of Philosophy (MPhil) in International Relations in the fall and, then, commissioning as an active duty naval intelligence officer next summer. Nick’s public speaking career began at 12 when he addressed 2,000 people at the Maine Democratic Convention. Since then, he has been named the 2015 National Speech and Debate Association Congressional Debate Champion and 2017 American Mock Trial Association All-American Witness, among other achievements. His favorite movie speech is George C. Scott’s opening scene in Patton.
+                  </p>
+                  <p>
+                  <img src={ProfileTwo} class="img-left"/>
+                  <b>Taught by: </b>Nicholas Danby<br/>
+                  <b>Teacher Bio: </b>
+                  Nick Danby is a 2020 graduate of Harvard College, where he studied History and Government, with a focus on national security, foreign policy, and economic statecraft. At Harvard, Nick served as the Co-Founder and Chairman of the Alexander Hamilton Society, Editor-in-Chief of Tempus: The Historical Review, and Chairman of the Economic Policy Group. During his time at college, Nick worked for global consulting firms, government agencies, and think tanks. After graduation, Nick will be attending the University of Cambridge to receive his Master of Philosophy (MPhil) in International Relations in the fall and, then, commissioning as an active duty naval intelligence officer next summer. Nick’s public speaking career began at 12 when he addressed 2,000 people at the Maine Democratic Convention. Since then, he has been named the 2015 National Speech and Debate Association Congressional Debate Champion and 2017 American Mock Trial Association All-American Witness, among other achievements. His favorite movie speech is George C. Scott’s opening scene in Patton.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

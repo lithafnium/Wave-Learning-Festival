@@ -44,11 +44,9 @@ const Navbar = () => {
                     <NavItem>
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
-                    {/*
                     <NavItem>
                         <Link to='/courses'>Courses</Link>
                     </NavItem>
-                    */}
                     <NavItem onMouseEnter={() => setShown(true)}
                               onMouseLeave={() => setShown(false)} >
                         <Link>

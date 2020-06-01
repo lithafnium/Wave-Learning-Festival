@@ -4,7 +4,29 @@ import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
 import './styles.css'
 
-import Geobiology from "./headshot/geobiology-astrobiology.png"
+import Cinema from "./headshot/American cinema.png"
+import Elections from "./headshot/Campaigns and elections.png"
+import ClimateCrisis from "./headshot/Climate crisis.png"
+import CodingActivities from "./headshot/Coding through activities.png"
+import ContemporaryArt from "./headshot/Contemporary art.png"
+import Coronavirus from "./headshot/Coronavirus.png"
+import FinancialLiteracy from "./headshot/Financial literacy.png"
+import Investing from "./headshot/Fundamentals of investing.png"
+import GreatSpeeches from "./headshot/Great speeches.png"
+import HipHop from "./headshot/Hip-hop and social activism.png"
+import IntroCS from "./headshot/Intro to applications of CS.png"
+import Security from "./headshot/Intro to computer security.png"
+import Psychology from "./headshot/Intro to social psychology.png"
+import ASL from "./headshot/introduction-to-american-sign-language.png"
+import KanyeWest from "./headshot/Kanye West.png"
+import Mythologies from "./headshot/Links in mythologies.png"
+import MachineLearning from "./headshot/Machine and deep learning.png"
+import Neuroscience from "./headshot/Neuroscience.png"
+import Physics from "./headshot/Physics.png"
+import Poetry from "./headshot/Poetry.png"
+import StandUp from "./headshot/Stand-up.png"
+import GreatNumbers from "./headshot/Three great numbers.png"
+import Joy from "./headshot/Where ad why is joy.png"
 
 const Courses = () => {
     return(
@@ -22,7 +44,7 @@ const Courses = () => {
               <a href="course-coding-activities">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={CodingActivities} />
                   </div>
                   <p class="name">Coding through Activities</p>
                   <p class="teacher">Ethar Hussein & Salma Kamni</p>
@@ -34,7 +56,7 @@ const Courses = () => {
               <a href="course-financial-literacy">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={FinancialLiteracy} />
                   </div>
                   <p class="name">Financial Literacy</p>
                   <p class="teacher">Maria Fernanda Estrada</p>
@@ -46,7 +68,7 @@ const Courses = () => {
               <a href="course-great-speeches">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={GreatSpeeches} />
                   </div>
                   <p class="name">Great Speeches in History</p>
                   <p class="teacher">Samarth Desai & Nicholas Danby</p>
@@ -58,7 +80,7 @@ const Courses = () => {
               <a href="course-kanye-west">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={KanyeWest} />
                   </div>
                   <p class="name">From "Jesus Walks" to "Jesus is King": The Discography of Kanye West</p>
                   <p class="teacher">Angel Mata</p>
@@ -70,7 +92,7 @@ const Courses = () => {
               <a href="course-physics">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Physics} />
                   </div>
                   <p class="name">Physics: From Newton to Relativity, Black Holes, Inflation, the Universe and Beyond</p>
                   <p class="teacher">Kylee Carden</p>
@@ -82,7 +104,7 @@ const Courses = () => {
               <a href="course-joy">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Joy} />
                   </div>
                   <p class="name">Where and Why is Joy?</p>
                   <p class="teacher">Abby McElroy</p>
@@ -94,7 +116,7 @@ const Courses = () => {
               <a href="course-laughs">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={StandUp} />
                   </div>
                   <p class="name">The Art of Laughs: Writing Your First Stand-Up Comedy Set</p>
                   <p class="teacher">Phoebe Barr</p>
@@ -106,7 +128,7 @@ const Courses = () => {
               <a href="course-contemporary-art">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={ContemporaryArt} />
                   </div>
                   <p class="name">Contemporary Art: Principles, Movements, & Practice</p>
                   <p class="teacher">Karly Hou</p>
@@ -118,7 +140,7 @@ const Courses = () => {
               <a href="course-butterflies">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={HipHop} />
                   </div>
                   <p class="name">Butterflies, Berries, and “Beauty to Set the World Right:” Hip-Hop and Social Activism</p>
                   <p class="teacher">Callia Chuang & Talia Blatt</p>
@@ -130,7 +152,7 @@ const Courses = () => {
               <a href="course-intro-cs">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={IntroCS} />
                   </div>
                   <p class="name">An Introduction to the Applications of Computer Science</p>
                   <p class="teacher">Kevin Bao & Ian Zhang</p>
@@ -142,7 +164,7 @@ const Courses = () => {
               <a href="course-cinema">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Cinema} />
                   </div>
                   <p class="name">An Overview of American Cinema: 1945 - Present</p>
                   <p class="teacher">Margaret Lu</p>
@@ -154,7 +176,7 @@ const Courses = () => {
               <a href="course-investing">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Investing} />
                   </div>
                   <p class="name">Fundamentals of Investing</p>
                   <p class="teacher">Max Bricken & James Bowden</p>
@@ -166,7 +188,7 @@ const Courses = () => {
               <a href="course-psychology">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Psychology} />
                   </div>
                   <p class="name">A Crash Course in Social Psychology</p>
                   <p class="teacher">Claire Garret</p>
@@ -179,10 +201,10 @@ const Courses = () => {
               <a href="course-climate-crisis">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={ClimateCrisis} />
                   </div>
                   <p class="name">Developing Solutions to Tackle the Climate Crisis</p>
-                  <p class="teacher">Charles Hua, Kiana Ziadkhanpour</p>
+                  <p class="teacher">Charles Hua & Kiana Ziadkhanpour</p>
                   <p class="school">Harvard University '22</p>
                 </div>
               </a>
@@ -192,7 +214,7 @@ const Courses = () => {
               <a href="course-intro-neuroscience">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Neuroscience} />
                   </div>
                   <p class="name">Intro to Neuroscience: Mind, Brain and Behavior</p>
                   <p class="teacher">Elizabeth Kinard</p>
@@ -205,7 +227,7 @@ const Courses = () => {
               <a href="course-poetry">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Poetry} />
                   </div>
                   <p class="name">Poetry for Self Expression</p>
                   <p class="teacher">Chioma Ugochukwu</p>
@@ -218,7 +240,7 @@ const Courses = () => {
               <a href="course-links-mythologies">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Mythologies} />
                   </div>
                   <p class="name">The Links in Mythologies</p>
                   <p class="teacher">Annetta Venford</p>
@@ -231,7 +253,7 @@ const Courses = () => {
               <a href="course-computer-security">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Security} />
                   </div>
                   <p class="name">Intro to Computer Security: How to Protect Your Data</p>
                   <p class="teacher">Elizabeth Truchan</p>
@@ -244,7 +266,7 @@ const Courses = () => {
               <a href="course-statistical-machine">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={MachineLearning} />
                   </div>
                   <p class="name">Statistical Machine and Deep Learning in Natural Language Processing</p>
                   <p class="teacher">Asher Noel</p>
@@ -257,7 +279,7 @@ const Courses = () => {
               <a href="course-corona-anxiety">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Coronavirus} />
                   </div>
                   <p class="name">Corona and Anxiety</p>
                   <p class="teacher">Lizzie Letsou</p>
@@ -270,7 +292,7 @@ const Courses = () => {
               <a href="course-campaigns-elections">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={Elections} />
                   </div>
                   <p class="name">Campaigns and Elections 101</p>
                   <p class="teacher">Willow Taylor Chiang Yang</p>
@@ -283,7 +305,7 @@ const Courses = () => {
               <a href="course-great-numbers">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={GreatNumbers} />
                   </div>
                   <p class="name">Three Great Numbers of Math</p>
                   <p class="teacher">Michael Kielstra</p>
@@ -296,7 +318,7 @@ const Courses = () => {
               <a href="course-sign-language-2">
                 <div class="course">
                   <div class="image-container">
-                    <img src={Geobiology} />
+                    <img src={ASL} />
                   </div>
                   <p class="name">Introduction to American Sign Language</p>
                   <p class="teacher">Emma Doughty</p>

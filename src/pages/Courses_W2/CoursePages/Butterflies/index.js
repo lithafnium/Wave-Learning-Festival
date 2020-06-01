@@ -5,6 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Callia Chuang.jpg"
+import ProfileTwo from "../../teacherheadshots/anonymous-profile.png"
 
 const CourseButterflies = () => {
     return(
@@ -18,14 +19,19 @@ const CourseButterflies = () => {
                   <br/><i>Note: This course may contain explicit lyrics and touch on sensitive topics, such as violence and hate crimes.</i>
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date: </b>???
-                  <br/><b>Format: </b>???
-                  <br/><b>Time (EDT): </b>???
+                  <b>Class Date: </b>June 15 - June 26 
+                  <br/><b>Format: </b>Monday, Wednesday, Friday 
+                  <br/><b>Time (EDT): </b>10:30am - 11:30am 
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Callia Chuang & Talia Blatt<br/>
+                  <b>Taught by: </b>Callia Chuang<br/>
                   <b>Teacher Bio: </b>Hi! My name is Callia Chuang, and I am a rising sophomore at Harvard University, class of 2023. I am planning 	on concentrating in History and Literature with a secondary in Psychology. This course grew out of an essay I wrote this year on the connection between philosopher W.E.B. Du Bois and rapper Kendrick Lamar, and I can’t wait to share my passion for music, history, and social activism with you!
+                  </p>
+                  <p>
+                  <img src={ProfileTwo} class="img-left"/>
+                  <b>Taught by: </b>Talia Blatt<br/>
+                  <b>Teacher Bio: </b>Talia Blatt (Harvard '23) is teaching this course to combine her love of music with the important history and tradition of activism that comes with it. With her work as a tutor, coach, and teaching assistant, she is comfortable working with a wide age range of students. She plans to concentrate in Social Studies and Integrative Biology.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

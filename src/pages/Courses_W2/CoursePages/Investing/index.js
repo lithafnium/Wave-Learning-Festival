@@ -5,6 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Max Bricken.jpg"
+import ProfileTwo from "../../teacherheadshots/James Bowden.jpg"
 
 const CourseInvesting = () => {
     return(
@@ -23,10 +24,15 @@ const CourseInvesting = () => {
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Max Bricken & James Bowden<br/>
+                  <b>Taught by: </b>Max Bricken<br/>
                   <b>Teacher Bio: </b>
                   Hi my name is Max Bricken and I am a rising sophomore at Caltech studying Information and Data Sciences and Business, Economics, and Management. I am involved with the collegiate water polo team and am a board member of the student investment fund on campus. I am teaching this course to try to give you insight into the importance of finance and the benefits of smart investing.
-                  <br/>Hi, my name is James Bowden and I’m a rising sophomore at Caltech studying computer science and biology. I’m a board member of the student investment fund and didn’t start personally investing until recently. I didn’t learn a lot of these important concepts until after I started investing, which is why I’m excited to teach this course and prepare students to allocate their funds wisely. I also do bioinformatics research in a synthetic biology lab, machine learning research with a CS group, and play for the water polo team.
+                  </p>
+                  <p>
+                  <img src={ProfileTwo} class="img-left"/>
+                  <b>Taught by: </b>James Bowden<br/>
+                  <b>Teacher Bio: </b>
+                  Hi, my name is James Bowden and I’m a rising sophomore at Caltech studying computer science and biology. I’m a board member of the student investment fund and didn’t start personally investing until recently. I didn’t learn a lot of these important concepts until after I started investing, which is why I’m excited to teach this course and prepare students to allocate their funds wisely. I also do bioinformatics research in a synthetic biology lab, machine learning research with a CS group, and play for the water polo team.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe
