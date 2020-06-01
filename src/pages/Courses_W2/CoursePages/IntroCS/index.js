@@ -17,9 +17,9 @@ const CourseIntroCS = () => {
                   This course will mainly focus on some of the applications of computer science. We will be covering topics such as objects, algorithms, data structures, and pathfinding algorithms. This is going to be a brief introduction into the world of computer science and no previous experience is required.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> June 16- June 25
+                  <b>Class Date + Time: </b> 06/16/2020 - 06/25/2020
                   <br/><b>Format: </b> Tuesday, Thursday
-                  <br/><b>Time (EDT): </b> 12pm-1pm
+                  <br/><b>Time (EDT): </b> 12pm - 1pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

@@ -17,9 +17,9 @@ const CourseJoy = () => {
                   This course will seek to answer, from a variety of philosophical and scientific standpoints, why and how humans experience joy, with an emphasis on finding ways to increase joyful moments while stuck in quarantine.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>June 15-June 26
+                  <b>Class Date: </b>06/15/2020 - 06/26/2020
                   <br/><b>Format: </b> Monday, Wednesday
-                  <br/><b>Time (EDT): </b> 7pm-8pm EDT
+                  <br/><b>Time (EDT): </b> 7pm - 8pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

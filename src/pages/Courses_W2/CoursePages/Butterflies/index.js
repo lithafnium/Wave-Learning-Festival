@@ -18,9 +18,9 @@ const CourseButterflies = () => {
                   <br/><i>Note: This course may contain explicit lyrics and touch on sensitive topics, such as violence and hate crimes.</i>
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b>
-                  <br/><b>Format: </b>
-                  <br/><b>Time (EDT): </b>
+                  <b>Class Date: </b>???
+                  <br/><b>Format: </b>???
+                  <br/><b>Time (EDT): </b>???
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

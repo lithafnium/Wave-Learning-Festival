@@ -14,12 +14,12 @@ const CourseCodingActivities = () => {
                 <ContainerInner>
                 <h1>Coding through Activities</h1>
                   <p>
-                  This course will provide students with the basic foundation of the study of anthropology. No prior experience necessary.
+                  Join this class if you want an interactive experience to learn how to code. We will learn how coding was developed, basic coding algorithms, create a mini-game through Scratch, and tips and opportunities for high schoolers interested in STEM.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> 06/15/2020 - 06/24/2020
+                  <b>Class Date: </b> 06/15/2020 - 06/24/2020
                   <br/><b>Format: </b> Monday and Wednesday
-                  <br/><b>Time (EDT): </b> 2:30 - 3:15 EDT
+                  <br/><b>Time (EDT): </b> 2:30pm - 3:15pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

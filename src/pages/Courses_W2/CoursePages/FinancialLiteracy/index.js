@@ -16,9 +16,9 @@ const CourseFinancialLiteracy = () => {
                   <p>
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> June 16-June 25
+                  <b>Class Date: </b> 06/16/2020 - 06/25/2020
                   <br/><b>Format: </b> Tuesday, Thursday
-                  <br/><b>Time (EDT): </b> 3pm-4pm
+                  <br/><b>Time (EDT): </b> 3pm - 4pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

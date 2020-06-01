@@ -19,9 +19,9 @@ const CoursePhysics = () => {
                   <br/>Recommended: basic calculus
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> June 15-June 26
+                  <b>Class Date: </b> 06/15/2020 - 06/26/2020
                   <br/><b>Format: </b> Monday Wednesday Friday
-                  <br/><b>Time (EDT): </b> 7pm-8:30pm
+                  <br/><b>Time (EDT): </b> 7pm - 8:30pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
@@ -45,4 +45,4 @@ const CoursePhysics = () => {
     )
 }
 
-export default CoursePage
+export default CoursePhysics

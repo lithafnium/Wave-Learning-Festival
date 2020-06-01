@@ -17,9 +17,9 @@ const CourseKanyeWest = () => {
                   Kanye West once called himself the "greatest human artist of all time." Over the course of the next two weeks, we will break down his entire musical discography, looking at his music through the lens of both literary and musical criticism, and also as historical objects. We will look at recurring themes in his lyricism and even some of his other ventures, such as the world of fashion with his billion-dollar "Yeezy" brand. Due to some of the mature content in his music, this course is recommended for high school students but is open to anybody with parent's permission.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date + Time: </b> June 15-June 26
+                  <b>Class Date: </b> 06/15/2020 - 06/26/2020
                   <br/><b>Format: </b> Monday, Tuesday, Wednesday, Thursday, Friday
-                  <br/><b>Time (EDT): </b> 12pm-1pm
+                  <br/><b>Time (EDT): </b> 12pm - 1pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

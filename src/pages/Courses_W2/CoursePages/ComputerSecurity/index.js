@@ -42,4 +42,4 @@ const CourseComputerSecurity = () => {
     )
 }
 
-export default CoursePage
+export default CourseComputerSecurity
