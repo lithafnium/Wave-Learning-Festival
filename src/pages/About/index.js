@@ -2,36 +2,21 @@ import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import {
-  Container,
-  ContainerInner,
   HeaderImage,
   AboutDescription,
   Highlight,
-  Header,
-  DescriptionText,
+  HighlightStyle1,
   Button,
-  DescriptionContainer,
-  DescriptionContainerInner,
   MediumImage,
-  MediumDescription,
-  Card,
-  SchoolsContainer,
-  SchoolsContainerInner,
-  SchoolLogo,
-  School,
+  MetaContainer,
+  MediumContainer,
   SubHeaderContainer,
-  WhoWeAre,
-  WhoHeader,
-  WhoContanier,
-  DescRow,
   DescItem,
   DescImage,
-  Background,
   Input,
   NewsLetter,
   Error,
-  Subscribe,
-  Image,
+  Popup,
 } from "./styles";
 import { Colors, Typography } from "../../styles";
 import "./styles.css";
@@ -83,19 +68,13 @@ const About = () => {
   }
 
   return (
-    <div>
+    <MetaContainer>
       <Navbar />
-      <Container style={{marginBottom: 200}}>
-        <ContainerInner>
-          <AboutDescription>
-            <Highlight
+      <div style={{width: "100%", minHeight: "65vh"}}>
+        <AboutDescription>
+          <div>
+            <HighlightStyle1
               src={Highlight1}
-              style={{
-                width: 140,
-                height: 200,
-                top: -53,
-                left: 125,
-              }}
             />
             <Typography.Header style={{ position: "relative", zIndex: 2 }}>
               Make Waves With Us!
@@ -125,15 +104,14 @@ const About = () => {
                 </Button>
               </a>
             </div>
-          </AboutDescription>
+          </div>
           <HeaderImage src={Swing} />
-        </ContainerInner>
-      </Container>
-      <Container style={{ backgroundColor: Colors.WLF_PURPLE, marginTop: 40, marginBottom: 100}}>
-        <Image src={WavyPurple} style={{position: 'absolute', width: '100%'}} />
-        <ContainerInner style={{position: 'absolute'}}>
+        </AboutDescription>
+      </div>
+      <div style={{width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyPurple})`, backgroundSize: 'cover', paddingBottom: 100}}>
+        <MediumContainer>
           <MediumImage src={Beach} />
-          <MediumDescription>
+          <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
             <Highlight
               src={Highlight2}
               style={{
@@ -160,19 +138,18 @@ const About = () => {
               of a summer camp right to your home. We hope to provide students resources that help make this time as productive
               and engaging as possible.
             </Typography.BodyText>
-          </MediumDescription>
-        </ContainerInner>
-      </Container>
-      <Container style={{ backgroundColor: Colors.WLF_ORANGE, marginBottom: 130 }}>
-        <Image src={WavyOrange} style={{position: 'absolute', width: '100%'}} />
-        <ContainerInner style={{position:'absolute'}}>
-          <MediumDescription>
+          </div>
+        </MediumContainer>
+      </div>
+      <div style={{position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyOrange})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
+        <MediumContainer>
+          <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
             <Highlight
               src={Highlight3}
               style={{
-                width: 100,
-                height: 60,
-                left: 25,
+                width: 160,
+                height: 35,
+                marginTop: 10,
               }}
             />
             <Typography.Header
@@ -195,58 +172,55 @@ const About = () => {
               to code your own games, cook up some French Cuisine, or pick up
               some digital painting skills. The possibilities are endless!
             </Typography.BodyText>
-          </MediumDescription>
+          </div>
           <MediumImage src={FerrisWheel} />
-        </ContainerInner>
-      </Container>
-      <Container style={{marginBottom: 120}}>
-        <Image src={WavyWhite} style={{position: 'absolute', width: '100%'}} />
-        <ContainerInner style={{position: 'absolute'}}>
-          <DescRow>
-            <DescItem>
-              <DescImage src={Icon1}/>
-              <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
-                Never the Same
-              </Typography.Header>
-              <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
-                Choose from over 25 different seminars covering everything from STEM to performing arts. 
-                Love trying new things? New waves of classes and seminar leaders get released every 2 weeks.
-              </Typography.BodyText>
-            </DescItem>
-            <DescItem>
-            <DescImage src={Icon2}/>
-              <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
-                Exclusive Seminar Leaders
-              </Typography.Header>
-              <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
-                Seminars are hosted by talented college students across campuses such as Harvard, Stanford, MIT, and so many more. 
-                Our seminar leaders love teaching and want to introduce you to their favorite passion projects and subjects!
-              </Typography.BodyText>
-            </DescItem>
-            <DescItem>
-              <DescImage src={Icon3}/>
-              <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
-                Have a Great Summer
-              </Typography.Header>
-              <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
-                Stay connected with peers who share your intellectual interests, and participate in an open, welcoming environment
-                -- all while doing this remotely and free of charge.
-              </Typography.BodyText>
-            </DescItem>
-          </DescRow>
-        </ContainerInner>
-      </Container>
-      <Container style={{ backgroundColor: Colors.WLF_TURQOUISE, marginTop: 40, marginBottom: 50 }}>
-        <Image src={WavyTurquoise} style={{position: 'absolute', width: '100%'}} />
-        <ContainerInner style={{position: 'absolute'}}>
+        </MediumContainer>
+      </div>
+      <div style={{position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyWhite})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
+        <br /><br />
+        <MediumContainer>
+          <DescItem>
+            <DescImage src={Icon1}/>
+            <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
+              Never the Same
+            </Typography.Header>
+            <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
+              Choose from over 25 different seminars covering everything from STEM to performing arts. 
+              Love trying new things? New waves of classes and seminar leaders get released every 2 weeks.
+            </Typography.BodyText>
+          </DescItem>
+          <DescItem>
+          <DescImage src={Icon2}/>
+            <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
+              Exclusive Seminar Leaders
+            </Typography.Header>
+            <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
+              Seminars are hosted by talented college students across campuses such as Harvard, Stanford, MIT, and so many more. 
+              Our seminar leaders love teaching and want to introduce you to their favorite passion projects and subjects!
+            </Typography.BodyText>
+          </DescItem>
+          <DescItem>
+            <DescImage src={Icon3}/>
+            <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
+              Have a Great Summer
+            </Typography.Header>
+            <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
+              Stay connected with peers who share your intellectual interests, and participate in an open, welcoming environment
+              -- all while doing this remotely and free of charge.
+            </Typography.BodyText>
+          </DescItem>
+        </MediumContainer>
+      </div>
+      <div style={{position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyTurquoise})`, backgroundSize: 'cover', marginTop: -100}}>
+        <MediumContainer>
           <MediumImage src={WhyWave} />
-          <MediumDescription>
+          <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
             <Highlight
               src={Highlight4}
               style={{
-                width: 90,
-                height: 60,
-                left: 60,
+                width: 205,
+                height: 35,
+                marginTop: 10,
               }}
             />
             <Typography.Header
@@ -268,21 +242,18 @@ const About = () => {
               and interact with fellow students when they're stuck at home. For a few hours every day, students can take a break with
               a project they love.
             </Typography.BodyText>
-          </MediumDescription>
-        </ContainerInner>
-      </Container>
-      <Container style={{backgroundColor: Colors.WLF_PURPLE}}>
-        <ContainerInner>
-        <NewsLetter>
-          <Typography.Header style={{color: 'white', fontSize: 28,}}> Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</Typography.Header>
-          {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit, 
-              we don't have the funds to establish a domain so we need to ensure 
-              that our emails aren't sent to your spambox. Please follow the 
-              directions sent to your email! We'd really appreciate it.</p>
-              <Triangle/>
-              </Popup>} */}
-                    
-          </NewsLetter>
+          </div>
+        </MediumContainer>
+      </div>
+      <div style={{backgroundColor: Colors.WLF_PURPLE}}>
+        <MediumContainer>
+            <Typography.Header style={{color: 'white', fontSize: 28, marginBottom: 30}}> Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</Typography.Header>
+            {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit, 
+                we don't have the funds to establish a domain so we need to ensure 
+                that our emails aren't sent to your spambox. Please follow the 
+                directions sent to your email! We'd really appreciate it.</p>
+                <Triangle/>
+                </Popup>} */}
           <NewsLetter>
               <Input placeholder="Name"
                       value={name}
@@ -298,10 +269,10 @@ const About = () => {
                   <p>{subscribed ? 'Subscribed!' : 'Subscribe'}</p>
               </Button>
           </NewsLetter>
-        </ContainerInner>
-      </Container>
+        </MediumContainer>
+      </div>
       <Footer />
-    </div>
+    </MetaContainer>
   );
 };
 
