@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
-// import Profile from "../../teacherheadshots/Asher Noel.jpg"
+ import Profile from "../../../Courses_W1/teacherheadshots/Asher Noel.jpg"
 
 const CourseStatisticalMachine = () => {
     return(
@@ -22,9 +22,9 @@ const CourseStatisticalMachine = () => {
                   <br/><b>Time (EDT): </b> 6pm - 7pm
                   </p>
                   <p>
-                  {/* <img src={Profile} class="img-left"/> */}
+                  <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Asher Noel (Harvard University '23)<br/>
-                  <b>Teacher Bio: </b> ???
+                  <b>Teacher Bio: </b> Updated Soon!
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

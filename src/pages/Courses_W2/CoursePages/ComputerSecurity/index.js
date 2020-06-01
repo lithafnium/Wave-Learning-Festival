@@ -24,7 +24,7 @@ const CourseComputerSecurity = () => {
                   <p>
                   <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Elizabeth Truchan<br/>
-                  <b>Teacher Bio: </b> ???
+                  <b>Teacher Bio: </b> Most people call me Boof, and I am graduating from MIT with a degree in Electrical Engineering and Computer Science this May 2020. I love computer systems and security and have taken classes in the fields, and I would like to pass on some helpful, practical knowledge on computer security and protecting your data.
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

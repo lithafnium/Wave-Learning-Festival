@@ -46,7 +46,7 @@ import CourseComputerSecurity from './pages/Courses_W2/CoursePages/ComputerSecur
 import CourseStatisticalMachine from './pages/Courses_W2/CoursePages/StatisticalMachine'
 import CourseCoronaAnxiety from './pages/Courses_W2/CoursePages/CoronaAndAnxiety'
 import CourseCampaignsElections from './pages/Courses_W2/CoursePages/CampaignsElections'
-import CourseGreatNumbers from './pages/Courses_W2/CoursePages/GreatSpeeches'
+import CourseGreatNumbers from './pages/Courses_W2/CoursePages/GreatNumbers'
 import CourseSignLanguage2 from './pages/Courses_W2/CoursePages/AmericanSignLanguage'
 import CourseAIHealthcare from './pages/Courses_W2/CoursePages/AIHealthcare'
 
