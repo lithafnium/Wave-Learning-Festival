@@ -22,24 +22,20 @@ const Teachers = () => {
                     </p>
                     <p>
                     The global pandemic has changed what education and summer programs look like,
-                    and in some cases, completely shut them down. We hope that by providing fun
-                    and diverse live classes, we can help students to continue learning, stay
+                    and in some cases, completely shut them down. By providing fun
+                    and diverse live classes, we hope to help students continue learning, stay
                     engaged, and interact with others while stuck at home. We also hope to
                     alleviate some of the new burdens that have fallen on parents who no longer
                     have summer programs to keep their children busy while they work full-time.
-                    For a few hours each day, they can take a break and get their work done without
-                    having to worry.
-
-
                     </p>
                     <p>
                     Wave is an opportunity to gain valuable teaching and leadership experience
                     while sharing your passions with a wide audience. The flexibility of the
                     time commitment allows you to volunteer while also pursuing other summer
-                    experiences. No prior teaching experience is required, and you will receive help and feedback
+                    experiences. No prior teaching experience is required, and you will receive help 
                     in making your class come to life!
                     </p>
-                    <h1>Apply by 5/29 to be included in the second wave!</h1>
+                    <h1>Apply by 6/12 to be included in the third wave!</h1>
                     <p>
                     Due to overwhelming interest in teaching, we may push your class to a later wave.
                     Thank you for your patience!
