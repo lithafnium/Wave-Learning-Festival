@@ -24,7 +24,8 @@ const CourseIntroNeuroscience = () => {
                   <p>
                   <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Elizabeth Kinard<br/>
-                  <b>Teacher Bio: </b> ???
+                  <b>Teacher Bio: </b>My name is Elizabeth, and I am a rising junior at Harvard University (class of 2022), where I am majoring in neuroscience. Some other facts about me are that I also study German, and love to talk about all things film/music!
+                  <br/>I chose to teach an intro course for neuroscience not only because that is what i am interested in and plan to make a career studying about, but also because I believe it is important to understand at least at a basic level, how we as humans think and function as a result of our brain activity. This course will cover basic anatomy, with a main focus on the connection between brain activity and resulting behaviors, and what happens when there is dysfunction in these neurological mechanisms. I look forward to sharing my passion for the human brain with everyone!
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

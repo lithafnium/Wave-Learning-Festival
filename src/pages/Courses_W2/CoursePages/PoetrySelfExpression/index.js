@@ -23,7 +23,7 @@ const CoursePoetry = () => {
                   <p>
                   <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Chioma Ugochukwu<br/>
-                  <b>Teacher Bio: </b> ???
+                  <b>Teacher Bio: </b> Hello! My name is Chioma Ugochukwu, and I am an incoming sophomore at Harvard College. Everyone feels things. It's knowing why you feel the way you do  that is the key to self awareness. I started writing as a shy young girl to learn to express myself, as the youngest of my older brothers. It made me feel more intune with myself, and helped me to work through the complex emotions of adolescence. Soon I delved into poetry, and reading the works of Keats, Dickinson, Byron in class hooked me. I found that there was a release involved in this creative outlet. A release that came from not only producing your own writing, but in the reading and discussion of the works of others. With this release also comes understanding. And it is this understanding of one's self, and their emotions that I hope my students can gain from this class. 
                   </p>
                   <h1>Register for this course!</h1>
                     <iframe

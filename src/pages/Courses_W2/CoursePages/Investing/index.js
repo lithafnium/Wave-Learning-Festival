@@ -27,6 +27,8 @@ const CourseInvesting = () => {
                   <b>Taught by: </b>Max Bricken<br/>
                   <b>Teacher Bio: </b>
                   Hi my name is Max Bricken and I am a rising sophomore at Caltech studying Information and Data Sciences and Business, Economics, and Management. I am involved with the collegiate water polo team and am a board member of the student investment fund on campus. I am teaching this course to try to give you insight into the importance of finance and the benefits of smart investing.
+                  <br/>
+                  <br/>
                   </p>
                   <p>
                   <img src={ProfileTwo} class="img-left"/>

@@ -27,6 +27,8 @@ const CourseButterflies = () => {
                   <img src={Profile} class="img-left"/>
                   <b>Taught by: </b>Callia Chuang<br/>
                   <b>Teacher Bio: </b>Hi! My name is Callia Chuang, and I am a rising sophomore at Harvard University, class of 2023. I am planning 	on concentrating in History and Literature with a secondary in Psychology. This course grew out of an essay I wrote this year on the connection between philosopher W.E.B. Du Bois and rapper Kendrick Lamar, and I can’t wait to share my passion for music, history, and social activism with you!
+                  <br/>
+                  <br/>   
                   </p>
                   <p>
                   <img src={ProfileTwo} class="img-left"/>
