@@ -326,6 +326,19 @@ const Courses = () => {
                 </div>
               </a>
             </div>
+
+            <div class="column">
+              <a href="course-ai-in-healthcare">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={IntroCS} />
+                  </div>
+                  <p class="name">AI in Healthcare</p>
+                  <p class="teacher">Annika Viswesh</p>
+                  <p class="school"></p>
+                </div>
+              </a>
+            </div>
         </div>
         </div>
         <h1>Course Schedule</h1>

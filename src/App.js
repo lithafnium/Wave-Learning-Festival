@@ -48,6 +48,7 @@ import CourseCoronaAnxiety from './pages/Courses_W2/CoursePages/CoronaAndAnxiety
 import CourseCampaignsElections from './pages/Courses_W2/CoursePages/CampaignsElections'
 import CourseGreatNumbers from './pages/Courses_W2/CoursePages/GreatSpeeches'
 import CourseSignLanguage2 from './pages/Courses_W2/CoursePages/AmericanSignLanguage'
+import CourseAIHealthcare from './pages/Courses_W2/CoursePages/AIHealthcare'
 
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
@@ -196,6 +197,9 @@ function App() {
             </Route>
             <Route path="/course-sign-language-2">
               <CourseSignLanguage2/>
+            </Route>
+            <Route path="/course-ai-in-healthcare">
+              <CourseAIHealthcare/>
             </Route>
 
             <Route path="/terms-conditions">
