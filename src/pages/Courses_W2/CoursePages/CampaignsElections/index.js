@@ -42,4 +42,4 @@ const CourseCampaignsElections = () => {
     )
 }
 
-export default CoursePage
+export default CourseCampaignsElections

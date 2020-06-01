@@ -43,4 +43,4 @@ const CourseLaughs = () => {
     )
 }
 
-export default CoursePage
+export default CourseLaughs

@@ -44,4 +44,4 @@ const CourseIntroCS = () => {
     )
 }
 
-export default CoursePage
+export default CourseIntroCS

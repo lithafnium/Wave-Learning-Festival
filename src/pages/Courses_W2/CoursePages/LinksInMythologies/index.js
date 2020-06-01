@@ -42,4 +42,4 @@ const CourseLinksMythologies = () => {
     )
 }
 
-export default CoursePage
+export default CourseLinksMythologies

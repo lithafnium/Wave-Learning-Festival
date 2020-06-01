@@ -41,4 +41,4 @@ const CoursePoetry = () => {
     )
 }
 
-export default CoursePage
+export default CoursePoetry

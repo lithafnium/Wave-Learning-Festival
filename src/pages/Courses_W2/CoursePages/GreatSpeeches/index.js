@@ -46,4 +46,4 @@ const CourseGreatSpeeches = () => {
     )
 }
 
-export default CoursePage
+export default CourseGreatSpeeches

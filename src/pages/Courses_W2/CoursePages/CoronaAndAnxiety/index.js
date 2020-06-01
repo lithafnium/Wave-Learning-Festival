@@ -42,4 +42,4 @@ const CourseCoronaAnxiety = () => {
     )
 }
 
-export default CoursePage
+export default CourseCoronaAnxiety

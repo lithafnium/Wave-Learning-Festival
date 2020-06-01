@@ -42,4 +42,4 @@ const CourseContemporaryArt = () => {
     )
 }
 
-export default CoursePage
+export default CourseContemporaryArt

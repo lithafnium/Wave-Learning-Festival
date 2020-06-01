@@ -44,4 +44,4 @@ const CourseInvesting = () => {
     )
 }
 
-export default CoursePage
+export default CourseInvesting

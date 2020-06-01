@@ -42,4 +42,4 @@ const CourseKanyeWest = () => {
     )
 }
 
-export default CoursePage
+export default CourseKanyeWest

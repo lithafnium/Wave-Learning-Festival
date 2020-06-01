@@ -43,4 +43,4 @@ const CourseButterflies = () => {
     )
 }
 
-export default CoursePage
+export default CourseButterflies

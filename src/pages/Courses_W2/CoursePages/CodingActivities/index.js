@@ -45,4 +45,4 @@ const CourseCodingActivities = () => {
     )
 }
 
-export default CoursePage
+export default CourseCodingActivities

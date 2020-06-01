@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
-import Profile from "../../teacherheadshots/Elizabeth Truchan.jpg"
+import Profile from "../../teacherheadshots/Elizabeth Truchan.png"
 
 const CourseComputerSecurity = () => {
     return(

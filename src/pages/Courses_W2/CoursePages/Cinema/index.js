@@ -42,4 +42,4 @@ const CourseCinema = () => {
     )
 }
 
-export default CoursePage
+export default CourseCinema

@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
-import Profile from "../../teacherheadshots/Emma Doughty.jpg"
+// import Profile from "../../teacherheadshots/Emma Doughty.jpg"
 
 const CourseSignLanguage2 = () => {
     return(
@@ -22,7 +22,7 @@ const CourseSignLanguage2 = () => {
                   <br/><b>Time (EDT): </b> 12pm - 1pm
                   </p>
                   <p>
-                  <img src={Profile} class="img-left"/>
+                  {/* <img src={Profile} class="img-left"/> */}
                   <b>Taught by: </b>Emma Doughty<br/>
                   <b>Teacher Bio: </b> I'm teaching this course to simply spread awareness about invisible disabilities, and to share my beautiful culture that I am so ever grateful to be a part of! Some fun facts: I was born deaf, I have red hair, I love taking care of my houseplants, and I love to read.
                   </p>
@@ -42,4 +42,4 @@ const CourseSignLanguage2 = () => {
     )
 }
 
-export default CoursePage
+export default CourseSignLanguage2

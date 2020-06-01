@@ -42,4 +42,4 @@ const CourseGreatNumbers = () => {
     )
 }
 
-export default CoursePage
+export default CourseGreatNumbers

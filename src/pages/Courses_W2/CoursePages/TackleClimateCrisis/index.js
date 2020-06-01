@@ -42,4 +42,4 @@ const CourseClimateCrisis = () => {
     )
 }
 
-export default CoursePage
+export default CourseClimateCrisis

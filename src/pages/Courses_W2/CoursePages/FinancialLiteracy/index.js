@@ -41,4 +41,4 @@ const CourseFinancialLiteracy = () => {
     )
 }
 
-export default CoursePage
+export default CourseFinancialLiteracy
