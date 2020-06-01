@@ -22,6 +22,9 @@ import CourseShortStories from './pages/Courses_W1/CoursePages/ShortStories'
 import CourseSignLanguage from './pages/Courses_W1/CoursePages/SignLanguage'
 import CourseWebDev from './pages/Courses_W1/CoursePages/WebDevelopment'
 import CourseWesternMusic from './pages/Courses_W1/CoursePages/WesternMusic'
+
+import CourseCodingActivities from './pages/Courses_W2/CoursePages/CodingActivities'
+
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
 import TeacherAgreement from './pages/Terms/TeacherAgreement'
@@ -96,6 +99,9 @@ function App() {
             </Route>
             <Route path="/course-sign-language">
               <CourseSignLanguage />
+            </Route>
+            <Route path="/course-coding-activities">
+              <CourseCodingActivities/>
             </Route>
             <Route path="/terms-conditions">
               <TermsAndConditions />
