@@ -17,9 +17,9 @@ const CourseLinksMythologies = () => {
                   This is a one day course exploring a few common themes seen in the mythologies of cultures across the globe, and what those common themes tell us about the values of those respective societies and how these values impacted their societies.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date: </b> June 16 - June 25
-                  <br/><b>Format: </b> Tuesdays
-                  <br/><b>Time (EDT): </b> 5pm-6pm
+                  <b>Class Date: </b> 06/16/2020
+                  <br/><b>Format: </b> Tuesday
+                  <br/><b>Time (EDT): </b> 5pm - 6pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>

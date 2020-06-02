@@ -22,21 +22,27 @@ const CourseIntroCS = () => {
                   <br/><b>Format: </b> Tuesday, Thursday
                   <br/><b>Time (EDT): </b> 12pm - 1pm
                   </p>
-                  <p>
-                  <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Kevin Bao<br/>
-                  <b>Teacher Bio: </b>
-                  Hi my name is Kevin and I am a rising Senior at Gunn High school. I’m interested in the fields of computer science and Artificial Intelligence and I hope that I will be able to share what I have learned. I hope that I will be able to show a little bit of what computers can do and spark your interest in this field!
-                  <br/>
-                  <br/>    
-                  <br/>     
-                  </p>
-                  <p>
-                  <img src={ProfileTwo} class="img-left"/>
-                  <b>Taught by: </b>Ian Zhang<br/>
-                  <b>Teacher Bio: </b>
-                  Howdy! My name is Ian, and I'm a rising senior at Gunn High School with experience in coding in various languages, namely Java, Python and Scheme. My interest in CS stemmed last year after being involved in Gunn Hacks and taking AP CS A. Since then, I have worked on various coding projects with my friends such as a school work planner. I am really looking forward to teaching this class!
-                  </p>
+                  <div class="bios">
+                    <div class="bio">
+                      <p>
+                      <img src={Profile} class="img-left"/>
+                      <b>Taught by: </b>Kevin Bao<br/>
+                      <b>Teacher Bio: </b>
+                      Hi my name is Kevin and I am a rising Senior at Gunn High school. I’m interested in the fields of computer science and Artificial Intelligence and I hope that I will be able to share what I have learned. I hope that I will be able to show a little bit of what computers can do and spark your interest in this field!
+                      <br/>
+                      <br/>
+                      <br/>
+                      </p>
+                    </div>
+                    <div class="bio">
+                      <p>
+                      <img src={ProfileTwo} class="img-left"/>
+                      <b>Taught by: </b>Ian Zhang<br/>
+                      <b>Teacher Bio: </b>
+                      Howdy! My name is Ian, and I'm a rising senior at Gunn High School with experience in coding in various languages, namely Java, Python and Scheme. My interest in CS stemmed last year after being involved in Gunn Hacks and taking AP CS A. Since then, I have worked on various coding projects with my friends such as a school work planner. I am really looking forward to teaching this class!
+                      </p>
+                    </div>
+                  </div>
                   <h1>Register for this course!</h1>
                     <iframe
                   title="form"

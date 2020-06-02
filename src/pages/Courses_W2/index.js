@@ -27,6 +27,7 @@ import Poetry from "./headshot/Poetry.png"
 import StandUp from "./headshot/Stand-up.png"
 import GreatNumbers from "./headshot/Three great numbers.png"
 import Joy from "./headshot/Where ad why is joy.png"
+import MakingAsian from "./headshot/Making Asian America.jpg"
 
 const Courses = () => {
     return(
@@ -335,6 +336,19 @@ const Courses = () => {
                   </div>
                   <p class="name">AI in Healthcare</p>
                   <p class="teacher">Annika Viswesh</p>
+                  <p class="school"></p>
+                </div>
+              </a>
+            </div>
+
+            <div class="column">
+              <a href="course-making-asian">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={MakingAsian} />
+                  </div>
+                  <p class="name">Making Asian America: An Exploration Through Hit Comedy Fresh Off the Boat</p>
+                  <p class="teacher">Larry Dang & Shuxin Zhou</p>
                   <p class="school"></p>
                 </div>
               </a>

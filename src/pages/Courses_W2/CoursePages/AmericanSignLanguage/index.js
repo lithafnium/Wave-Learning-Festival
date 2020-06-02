@@ -12,10 +12,10 @@ const CourseSignLanguage2 = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                <h1>Introduction to American Sign Language</h1>
+                <h1>ASL Basics Continued</h1>
                   <p>
-                  This highly interactive course will cover the basics of ASL, and will guide students to conversational skill level. No prior experience necessary. 
-                  Emma's class is back due to incredibly popular demand from Wave One.
+                  This highly interactive course will cover the basics of ASL, and will guide students to conversational skill level. No prior experience necessary.
+                  Emma's class is back due to incredibly popular demand from Wave One. <b>This class is a continuation of the ASL course in Wave 1</b>
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> June 15 - June 26
