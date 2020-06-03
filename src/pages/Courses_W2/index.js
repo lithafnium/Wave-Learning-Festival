@@ -323,7 +323,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Introduction to American Sign Language</p>
                   <p class="teacher">Emma Doughty</p>
-                  <p class="school"></p>
+                  <p class="school">University at Buffalo '24</p>
                 </div>
               </a>
             </div>
@@ -336,7 +336,7 @@ const Courses = () => {
                   </div>
                   <p class="name">AI in Healthcare</p>
                   <p class="teacher">Annika Viswesh</p>
-                  <p class="school"></p>
+                  <p class="school">Palo Alto High School '22</p>
                 </div>
               </a>
             </div>
@@ -349,7 +349,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Making Asian America: An Exploration Through Hit Comedy Fresh Off the Boat</p>
                   <p class="teacher">Larry Dang & Shuxin Zhou</p>
-                  <p class="school"></p>
+                  <p class="school">N/A, Pamona '22</p>
                 </div>
               </a>
             </div>
