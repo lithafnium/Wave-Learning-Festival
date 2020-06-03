@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import {
@@ -20,17 +20,7 @@ import {
 } from "./styles";
 import { Colors, Typography } from "../../styles";
 import "./styles.css";
-import Learning from "./learning.svg";
 import Swing from "./swing_animation.gif";
-import { IoMdLogIn } from "react-icons/io";
-import { MdPersonalVideo, MdModeEdit, MdLanguage } from "react-icons/md";
-import { IconContext } from "react-icons";
-import Berkeley from "./berkeley.png";
-import Brown from "./brown.png";
-import Harvard from "./harvard.png";
-import CMU from "./cmu.png";
-import Umich from "./umich.png";
-import Upenn from "./upenn.png";
 import Highlight1 from "./highlight_1.svg";
 import Highlight2 from "./highlight_2.svg";
 import Highlight3 from "./highlight_3.svg";
@@ -41,10 +31,42 @@ import Icon1 from './icon_1.svg';
 import Icon2 from './icon_2.svg';
 import Icon3 from './icon_3.svg';
 import WhyWave from './whywave.svg';
-import Wave1 from './wave1.svg';
-import Wave2 from './wave2.svg';
+import WavyOrange from './wavy_orange.svg';
+import WavyPurple from './wavy_purple.svg';
+import WavyTurquoise from './wavy_turquoise.svg';
+import WavyWhite from './wavy_white.svg';
+import {FirebaseContext} from '../../firebaseContext'
 
 const About = () => {
+  const [name, updateName] = useState('')
+  const [email, updateEmail] = useState('')
+  const [nameError, toggleName] = useState(false)
+  const [emailError, toggleEmail] = useState(false)
+  const [subscribed, toggleSubscribed] = useState(false)
+  const {db} = useContext(FirebaseContext)
+
+  const subscribe = () => {
+      toggleEmail(false)
+      toggleName(false)
+      let valid = true
+
+      if(name.length === 0){
+          toggleName(true)
+          valid = false
+      } 
+      if(email.length === 0){
+          toggleEmail(true)
+          valid = false
+      }
+      
+      if(db && valid){
+          db.collection('Newsletter').add({
+              name, 
+              email
+          }).then(toggleSubscribed(true))
+      }
+  }
+
   return (
     <MetaContainer>
       <Navbar />
@@ -71,9 +93,9 @@ const About = () => {
                 marginTop: "50px",
               }}
             >
-              <a href="/students" class="sign-up-link">
+              <a href="/courses" class="sign-up-link">
                 <Button>
-                  <p>Students</p>
+                  <p>Courses</p>
                 </Button>
               </a>
               <a href="/teachers" class="sign-up-link">
