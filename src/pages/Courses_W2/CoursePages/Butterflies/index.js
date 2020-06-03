@@ -19,9 +19,9 @@ const CourseButterflies = () => {
                   <br/><i>Note: This course may contain explicit lyrics and touch on sensitive topics, such as violence and hate crimes.</i>
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date: </b>June 15 - June 26
+                  <b>Class Date: </b>06/15/2020 - 06/26/2020
                   <br/><b>Format: </b>Monday, Wednesday, Friday
-                  <br/><b>Time (EDT): </b>10:30am - 11:30am
+                  <br/><b>Time (EDT): </b>5:30pm - 6:30pm
                   </p>
                   <div class="bios">
                     <div class="bio">
