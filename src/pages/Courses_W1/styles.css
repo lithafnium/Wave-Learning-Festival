@@ -6,22 +6,21 @@ html {
   margin-top: -0.75em;
 }
 
-.container{
+.container {
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 0;
   margin-bottom: -3.5em;
-
-
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-.row
-{
+.row {
   text-align: center;
   width: 100%;
   max-width: 1024px;
@@ -29,19 +28,16 @@ html {
   flex-wrap: wrap;
 }
 
-.course
-{
+.course {
   float: left;
   display: table-row;
 }
 
-.image-container
-{
+.image-container {
   /* position: relative; */
 }
 
-.course img
-{
+.course img {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
@@ -54,16 +50,16 @@ html {
   content: "";
   clear: both;
   display: table;
-
 }
 
 .column {
   width: 33.3%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 16px;
   padding: 0 8px;
+  height: 350px;
 }
 
 @media screen and (max-width: 650px) {
@@ -73,26 +69,24 @@ html {
 }
 
 @media screen and (min-width: 320px) {
-  .container{
+  .container {
     margin-top: 0px;
   }
 }
 
-@media screen and (min-width: 786px){
-  .container{
+@media screen and (min-width: 786px) {
+  .container {
     margin-top: 0px;
   }
 }
-.name
-{
+.name {
   color: #000000;
-  text-align: center
+  text-align: center;
 }
 
-.teacher
-{
+.teacher {
   color: #666666;
-  text-align: center
+  text-align: center;
 }
 
 .text {
@@ -109,6 +103,6 @@ html {
   text-align: center;
 }
 
-h1{
+h1 {
   color: #2684ff;
 }
