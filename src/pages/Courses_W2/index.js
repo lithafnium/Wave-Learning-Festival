@@ -349,7 +349,7 @@ const Courses = () => {
                   </div>
                   <p class="name">Making Asian America: An Exploration Through Hit Comedy Fresh Off the Boat</p>
                   <p class="teacher">Larry Dang & Shuxin Zhou</p>
-                  <p class="school">N/A, Pamona '22</p>
+                  <p class="school">N/A, Pomona '22</p>
                 </div>
               </a>
             </div>
