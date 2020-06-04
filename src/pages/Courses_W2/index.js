@@ -359,7 +359,7 @@ const Courses = () => {
               <a href="course-public-speaking">
                 <div class="course">
                   <div class="image-container">
-                    <img src={CoursePublicSpeaking} />
+                    <img src={PublicSpeaking} />
                   </div>
                   <p class="name">How to be Persuasive: An Intro to the Art of Public Speaking</p>
                   <p class="teacher">Kevin Xu & Kelly Shen</p>
