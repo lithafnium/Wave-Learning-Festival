@@ -28,6 +28,7 @@ import StandUp from "./headshot/Stand-up.png"
 import GreatNumbers from "./headshot/Three great numbers.png"
 import Joy from "./headshot/Where ad why is joy.png"
 import MakingAsian from "./headshot/Making Asian America.jpg"
+import PublicSpeaking from "./headshot/Making Asian America.jpg"
 
 const Courses = () => {
     return(

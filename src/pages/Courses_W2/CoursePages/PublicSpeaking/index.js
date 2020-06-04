@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
-import Profile from "../../teacherheadshots/Kevin Xug.jpg"
+import Profile from "../../teacherheadshots/Kevin Xu.jpg"
 import ProfileTwo from "../../teacherheadshots/Kelly Shen.jpg"
 
 const CoursePublicSpeaking = () => {
