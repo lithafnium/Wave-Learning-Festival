@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.52 138.91">
+  <defs>
+    <style>
+      .\36 4fd9235-af3a-4763-897a-f880cc769331 {
+        fill: #6265ad;
+      }
+
+      .\36 4fd9235-af3a-4763-897a-f880cc769331, .\36 e9a7404-b8ce-474c-89f8-feae2c8eee13, .c6668aae-288c-4ff1-9b98-ff523cca9ed0 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 4.5px;
+      }
+
+      .\36 e9a7404-b8ce-474c-89f8-feae2c8eee13 {
+        fill: #db6b49;
+      }
+
+      .c6668aae-288c-4ff1-9b98-ff523cca9ed0 {
+        fill: #f3a31e;
+      }
+    </style>
+  </defs>
+  <title>icon_1</title>
+  <g id="8a97a4f8-5e05-4612-a685-17bd4b2f121e" data-name="Layer 2">
+    <g id="52b7fb94-74d8-4f30-b738-fb907309dc6e" data-name="Layer 1">
+      <g>
+        <rect class="64fd9235-af3a-4763-897a-f880cc769331" x="55.45" y="6.73" width="67.98" height="99.62" rx="13.29" ry="13.29" transform="translate(20.63 -23.84) rotate(17.14)"/>
+        <rect class="6e9a7404-b8ce-474c-89f8-feae2c8eee13" x="27.15" y="17.75" width="67.98" height="99.62" rx="13.29" ry="13.29" transform="translate(5.7 -4.75) rotate(4.67)"/>
+        <rect class="c6668aae-288c-4ff1-9b98-ff523cca9ed0" x="6.72" y="34.71" width="67.98" height="99.62" rx="13.29" ry="13.29" transform="translate(-10.41 5.86) rotate(-7.3)"/>
+      </g>
+    </g>
+  </g>
+</svg>

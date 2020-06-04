@@ -2,38 +2,36 @@ html {
   box-sizing: border-box;
 }
 
-.container{
-  width: 100%; 
-  display: flex; 
+.container {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  z-index: 0; 
-
-  
+  z-index: 0;
+  padding-bottom: 80px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-.row
-{
+.row {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
-  width: 100%; 
-  max-width: 1024px; 
-  display: flex; 
-  flex-wrap: wrap; 
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.team-member
-{
+.team-member {
   float: left;
   display: table-row;
 }
 
-.team-member img
-{
+.team-member img {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
@@ -42,59 +40,55 @@ html {
   display: block;
 }
 
-.card
-{
+.card {
   padding: 0 16px;
 }
 
-.card::after, .row::after {
+.card::after,
+.row::after {
   content: "";
   clear: both;
   display: table;
-  
 }
 
 .column {
   width: 33.3%;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 16px;
   padding: 0 8px;
 }
 
 @media screen and (max-width: 650px) {
   .column {
-    width: 100%;   
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 320px) {
-  .container{
-    margin-top: -150px; 
+  .container {
+    margin-top: -150px;
   }
 }
 
-@media screen and (min-width: 786px){
-  .container{
-    margin-top: 0px; 
+@media screen and (min-width: 786px) {
+  .container {
+    margin-top: 0px;
   }
 }
-.name
-{
+.name {
   color: #000000;
-  text-align: center
+  text-align: center;
 }
 
-.desc
-{
+.desc {
   color: #666666;
   text-align: center;
-  font-weight: bold
+  font-weight: bold;
 }
 
-.school
-{
+.school {
   color: #666666;
-  text-align: center
+  text-align: center;
 }

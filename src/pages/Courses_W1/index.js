@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
 import './styles.css'
+import {Colors, Typography} from "../../styles";
 
 import LearnCancer from "./headshot/how-cancer-works.jpg"
 import LearnPython from "./headshot/learn-python.png"
@@ -22,9 +23,9 @@ const Courses = () => {
             <Navbar/>
             <Container>
             <ContainerInner>
-            <p>
+            <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
               For our inaugural wave, we are excited to offer 11 courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
-            </p>
+            </Typography.BodyText>
             <div class="container">
             <div class="row">
             <div class="column">
@@ -33,9 +34,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={LearnCancer}/>
                   </div>
-                  <p class="name">How Cancer Works</p>
-                  <p class="teacher">Madison Abbasi</p>
-                  <p class="school">Palo Alto High School ‘22</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>How Cancer Works</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Madison Abbasi</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>Palo Alto High School</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -45,9 +46,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={LearnPython} />
                   </div>
-                  <p class="name">Learn Python</p>
-                  <p class="teacher">Fatima-Zahra Chriha</p>
-                  <p class="school">Felician University ‘23</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>Learn Python</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Fatima-Zahra Chriha</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>Felician University ‘23</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -57,9 +58,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={ShortStories} />
                   </div>
-                  <p class="name">Starting Short Stories</p>
-                  <p class="teacher">Annetta Venford</p>
-                  <p class="school">Henry M Gunn High School '21</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>Starting Short Stories</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Annetta Venford</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>Henry M Gunn High School '21</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -69,9 +70,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={Anthropology} />
                   </div>
-                  <p class="name">What Even is Anthropology?</p>
-                  <p class="teacher">Cecelia Eure</p>
-                  <p class="school">College of William & Mary '23</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>What Even is Anthropology?</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Cecelia Eure</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>College of William & Mary '23</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -81,9 +82,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={SignLanguage} />
                   </div>
-                  <p class="name">Introduction to American Sign Language</p>
-                  <p class="teacher">Emma Doughty</p>
-                  <p class="school">University at Buffalo '24</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>Introduction to American Sign Language</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Emma Doughty</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>University at Buffalo '24</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -93,9 +94,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={Geobiology} />
                   </div>
-                  <p class="name">Geobiology and Astrobiology</p>
-                  <p class="teacher">Juliana Drozd</p>
-                  <p class="school">Massachusetts Institute of Technology '22</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>Geobiology and Astrobiology</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Juliana Drozd</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>Massachusetts Institute of Technology '22</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -105,9 +106,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={WesternMusic} />
                   </div>
-                  <p class="name">History’s Top Hits: An Introduction to the Great Works of Western Music</p>
-                  <p class="teacher">Justin Oei</p>
-                  <p class="school">College of William and Mary '23</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>History’s Top Hits: An Introduction to the Great Works of Western Music</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Justin Oei</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>College of William and Mary '23</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -117,9 +118,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={Explosives} />
                   </div>
-                  <p class="name">The Chemistry of Explosives</p>
-                  <p class="teacher">Kristen Kiley</p>
-                  <p class="school">Harvard College '23</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>The Chemistry of Explosives</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Kristen Kiley</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>Harvard College '23</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -129,9 +130,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={PublicTransit} />
                   </div>
-                  <p class="name">Public Transportation and Urban Planning</p>
-                  <p class="teacher">Perrin Price</p>
-                  <p class="school">Harvard College '23</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>Public Transportation and Urban Planning</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Perrin Price</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>Harvard College '23</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -142,8 +143,8 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={WebDevelopment} />
                   </div>
-                  <p class="name">Introduction to Website Development</p>
-                  <p class="teacher">Ryan Cottone and Zachary Hauch</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>Introduction to Website Development</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Ryan Cottone and Zachary Hauch</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -154,9 +155,9 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={Emotions} />
                   </div>
-                  <p class="name">Philosophy and Morality of Emotions</p>
-                  <p class="teacher">Sophia Giegerich</p>
-                  <p class="school">Whitman College '22</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>Philosophy and Morality of Emotions</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Sophia Giegerich</Typography.BodyText>
+                  <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>Whitman College '22</Typography.BodyText>
                 </div>
               </a>
             </div>
@@ -166,25 +167,27 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={BlockCoding} />
                   </div>
-                  <p class="name">How to Build an App with Block Coding</p>
-                  <p class="teacher">Yuan Sui</p>
+                  <Typography.Header2 style={{color: Colors.WLF_BLACK}}>How to Build an App with Block Coding</Typography.Header2>
+                  <Typography.BodyText style={{fontSize: 16}}>Yuan Sui</Typography.BodyText>
                 </div>
               </a>
             </div>
         </div>
         </div>
-        <h1>Course Schedule</h1>
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
+        <Typography.Header style={{color: Colors.WLF_PURPLE}}>Course Schedule</Typography.Header>
+          <iframe 
+            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
-          </iframe>
-        <h1>Register by 5/23 to take a class in the first wave!</h1>
-	<p>Sign-ups are on a first-come-first-serve basis. If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!</p>
+          </iframe>  
+          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 5/23 to take a class in the first wave!</Typography.Header>
+	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
+            Sign-ups are on a first-come-first-serve basis. If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
+          </Typography.BodyText>
             <iframe
               title="form"
               src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
               width="100%"
-              height="500"
+              height="400"
               frameborder="0"
               marginheight="0"
               marginwidth="0">Loading…

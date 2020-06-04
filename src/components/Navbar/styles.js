@@ -8,6 +8,7 @@ export const NavbarContainer = styled.header`
     display: flex; 
     justify-content: center; 
     z-index: 20; 
+    position: relative;
     @media ${device.mobileS}{
         margin-bottom: 150px; 
     }
