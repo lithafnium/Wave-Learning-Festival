@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
-import Profile from "../../teacherheadshots/anonymous-profile.png"
+import Profile from "../../teacherheadshots/Annika Viswesh.jpeg"
 
 const CourseFinancialLiteracy = () => {
     return(
@@ -17,7 +17,7 @@ const CourseFinancialLiteracy = () => {
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> June 15-June 26
-                  <br/><b>Format: </b> Monday, Tuesday, Wednesday, Thursday, Friday 
+                  <br/><b>Format: </b> Monday, Tuesday, Wednesday, Thursday, Friday
                   <br/><b>Time (EDT): </b> 12pm-1pm
                   </p>
                   <p>

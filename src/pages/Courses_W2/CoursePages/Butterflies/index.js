@@ -5,7 +5,7 @@ import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
 import Profile from "../../teacherheadshots/Callia Chuang.jpg"
-import ProfileTwo from "../../teacherheadshots/anonymous-profile.png"
+import ProfileTwo from "../../teacherheadshots/Talia Blatt.JPG"
 
 const CourseButterflies = () => {
     return(

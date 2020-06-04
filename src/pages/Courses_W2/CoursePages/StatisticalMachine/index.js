@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
- import Profile from "../../../Courses_W1/teacherheadshots/Asher Noel.jpg"
+ import Profile from "../../teacherheadshots/Asher Noel.jpg"
 
 const CourseStatisticalMachine = () => {
     return(

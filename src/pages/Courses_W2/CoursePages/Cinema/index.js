@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer'
 import '../styles.css'
 import { Container, ContainerInner } from '../../../../globalStyles'
 
-import Profile from "../../teacherheadshots/anonymous-profile.png"
+import Profile from "../../teacherheadshots/Margaret Lu.JPG"
 
 const CourseCinema = () => {
     return(
