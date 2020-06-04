@@ -321,7 +321,7 @@ const Courses = () => {
                   <div class="image-container">
                     <img src={ASL} />
                   </div>
-                  <p class="name">Introduction to American Sign Language</p>
+                  <p class="name">ASL Basics Continued</p>
                   <p class="teacher">Emma Doughty</p>
                   <p class="school">University at Buffalo '24</p>
                 </div>
