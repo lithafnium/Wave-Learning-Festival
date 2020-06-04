@@ -36,7 +36,7 @@ const Courses = () => {
             <Container>
             <ContainerInner>
             <p>
-              We are excited to offer 25 courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
+              We are excited to offer 26 courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
             </p>
             <div class="container">
             <div class="row">
@@ -350,6 +350,19 @@ const Courses = () => {
                   <p class="name">Making Asian America: An Exploration Through Hit Comedy Fresh Off the Boat</p>
                   <p class="teacher">Larry Dang & Shuxin Zhou</p>
                   <p class="school">N/A, Pomona '22</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="column">
+              <a href="course-public-speaking">
+                <div class="course">
+                  <div class="image-container">
+                    <img src={CoursePublicSpeaking} />
+                  </div>
+                  <p class="name">How to be Persuasive: An Intro to the Art of Public Speaking</p>
+                  <p class="teacher">Kevin Xu & Kelly Shen</p>
+                  <p class="school">University of Pennsylvania '22, University of Pennsylvania '23</p>
                 </div>
               </a>
             </div>

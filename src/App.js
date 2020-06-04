@@ -50,6 +50,7 @@ import CourseGreatNumbers from './pages/Courses_W2/CoursePages/GreatNumbers'
 import CourseSignLanguage2 from './pages/Courses_W2/CoursePages/AmericanSignLanguage'
 import CourseAIHealthcare from './pages/Courses_W2/CoursePages/AIHealthcare'
 import CourseMakingAsian from './pages/Courses_W2/CoursePages/MakingAsian'
+import CoursePublicSpeaking from './pages/Courses_W2/CoursePages/PublicSpeaking'
 
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
@@ -204,6 +205,9 @@ function App() {
             </Route>
             <Route path="/course-making-asian">
               <CourseMakingAsian/>
+            </Route>
+            <Route path="/course-public-speaking">
+              <CoursePublicSpeaking/>
             </Route>
 
             <Route path="/terms-conditions">
