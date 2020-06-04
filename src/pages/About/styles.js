@@ -9,7 +9,7 @@ export const MetaContainer = styled.div`
     }
 `
 
-export const AboutDescription = styled.div` 
+export const AboutDescription = styled.div`
     position: relative;
     display: grid;
     width: 100%;
@@ -50,24 +50,24 @@ export const MediumImage = styled.img`
 
 export const Image = styled.img`
     @media ${device.mobileS} {
-        width: 35%; 
-        margin-top: 4em; 
+        width: 35%;
+        margin-top: 4em;
     }
     @media ${device.tablet} {
-        width: 25%; 
-        margin-top: 4em; 
+        width: 25%;
+        margin-top: 4em;
     }
     @media ${device.tabletL} {
-        width: 25%; 
-        margin-top: 0;  
+        width: 25%;
+        margin-top: 0;
     }
 
     @media ${device.laptop} {
-        width: 25%; 
-        margin-top: 0;  
+        width: 25%;
+        margin-top: 0;
     }
-     
-    height: auto; 
+
+    height: auto;
 `
 
 export const Highlight = styled.img`
@@ -126,18 +126,18 @@ export const DescImage = styled.img`
 `
 
 export const Button = styled.div`
-    display: flex; 
+    display: flex;
     background-color: ${Colors.WLF_ORANGE};
-    color: white; 
-    padding: 5px 25px 5px 25px;
+    color: white;
+    padding: 12.5px 62.5px 12.5px 62.5px;
     margin-right: 20px;
-    align-items: center; 
-    width: fit-content; 
-    border-radius: 10px; 
+    align-items: center;
+    width: fit-content;
+    border-radius: 10px;
 
     & p{
         margin: 0px;
-        font-size: 0.9em; 
+        font-size: 2.25em;
     }
 `
 
@@ -150,56 +150,56 @@ export const NewsLetter = styled.div`
         width: 80%;
     }
     @media ${device.tablet} {
-        
+
         width: 40%;
     }
-    display: flex; 
-    flex-direction: column;     
+    display: flex;
+    flex-direction: column;
 
     & h2{
         color: #2684ff;
     }
 `
 export const Input = styled.input`
-    width: 100%; 
+    width: 100%;
     background-color: #fff;
-    padding: 0.50rem 0.75rem; 
+    padding: 0.50rem 0.75rem;
     font-size: 1rem;
-    font-weight: 400; 
-    line-height: 1.5; 
+    font-weight: 400;
+    line-height: 1.5;
     color: #8492a6;
-    transition: 0.2s; 
+    transition: 0.2s;
     box-shadow: none;
-    border: 1px solid #e0e6ed; 
-    border-radius: .50rem; 
+    border: 1px solid #e0e6ed;
+    border-radius: .50rem;
     font-family: 'Muli', sans-serif;
     font-weight: '700';
     &:focus{
-        outline: 0; 
-        border-color: rgba(38, 132, 255, 0.7); 
-        box-shadow: 0 0 1.25rem rgba(31,45,61,.08); 
+        outline: 0;
+        border-color: rgba(38, 132, 255, 0.7);
+        box-shadow: 0 0 1.25rem rgba(31,45,61,.08);
     }
 `
 
 export const Popup = styled.div`
-    background-color: #2684ff; 
-    padding: 20px; 
-    box-shadow: 0 0 1.25rem rgba(31,45,61,.3); 
-    border-radius: 5px; 
-    position: relative; 
-    margin-bottom: 2rem; 
+    background-color: #2684ff;
+    padding: 20px;
+    box-shadow: 0 0 1.25rem rgba(31,45,61,.3);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 2rem;
 	transition: all 1s cubic-bezier(.25,.8,.25,1);
-    opacity: ${props => props.subscribed ? '1' : '0'}; 
+    opacity: ${props => props.subscribed ? '1' : '0'};
 
 
     & p{
-        margin: 0px; 
+        margin: 0px;
         color: #fff;
     }
 `
 
 export const Error = styled.p`
-    color: #ff5630; 
-    font-size: 0.9rem; 
-    margin: 0px; 
+    color: #ff5630;
+    font-size: 0.9rem;
+    margin: 0px;
 `
