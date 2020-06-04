@@ -13,7 +13,7 @@ const FAQStudents = () => {
                     <p>
                     <br/>
                     <b>Does it cost anything to take a class?</b><br/>
-                    All classes are completely free—our goal is to make education as equitable as possible. However, we appreciate donations of any amount, and everything we raise will go toward a nonprofit aiding COVID-19 response.
+                    All classes are completely free—our goal is to make education as equitable as possible.
                     </p>
                     <p>
                     <br/>

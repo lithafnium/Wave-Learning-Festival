@@ -35,15 +35,15 @@ const About = () => {
         if(name.length === 0){
             toggleName(true)
             valid = false
-        } 
+        }
         if(email.length === 0){
             toggleEmail(true)
             valid = false
         }
-        
+
         if(db && valid){
             db.collection('Newsletter').add({
-                name, 
+                name,
                 email
             }).then(toggleSubscribed(true))
         }
@@ -95,8 +95,7 @@ const About = () => {
                         which college students and high school upperclassmen teach
                         seminars on a variety of topics to middle schoolers and high
                         schoolers online (focus: 6th - 10th grade). Classes will be
-                        free with an optional donation, and we hope to donate everything
-                        we raise to nonprofits aiding the COVID-19 crisis.
+                        free of charge.
 
                         </p>
                     </WhoHeader>
@@ -203,13 +202,13 @@ const About = () => {
                 <WhoWeAre>
                     <NewsLetter>
                         <h2>Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</h2>
-                        {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit, 
-                            we don't have the funds to establish a domain so we need to ensure 
-                            that our emails aren't sent to your spambox. Please follow the 
+                        {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit,
+                            we don't have the funds to establish a domain so we need to ensure
+                            that our emails aren't sent to your spambox. Please follow the
                             directions sent to your email! We'd really appreciate it.</p>
                             <Triangle/>
                             </Popup>} */}
-                    
+
                     </NewsLetter>
                     <NewsLetter>
                         <p>Name</p>
@@ -217,7 +216,7 @@ const About = () => {
                                value={name}
                                onChange={e => updateName(e.target.value)}/>
                         {nameError && <Error>Please enter a name</Error>}
-                        
+
                         <p>Email</p>
                         <Input placeholder="name@email.com"
                                value={email}

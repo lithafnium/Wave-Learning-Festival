@@ -18,7 +18,7 @@ const FAQStudents = () => {
                     <p>
                     <br/>
                     <b>How can I support Wave Learning Festival?</b><br/>
-                    Wave runs on the goodwill of students hoping to look out for other students. We appreciate donations of any amount, and everything we raise will go toward a nonprofit aiding COVID-19 response. Also, feel free to share this resource with anyone you think could benefit from taking a class or might be interested in teaching a class!
+                    Wave runs on the goodwill of students hoping to look out for other students. Feel free to share this resource with anyone you think could benefit from taking a class or might be interested in teaching a class!
                     </p>
                     <p>
                     <br/>
