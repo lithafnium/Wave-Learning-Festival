@@ -17,6 +17,8 @@ const CoursePhysics = () => {
                   Howdy! This class will introduce the fundamentals of physics and use these basic concepts to understand complicated, buzz-word topics in physics like black holes and the expansion of the universe. This class is designed to be fun and intuitive, and we will dive deep to see beauty in physics! While this class will include mathematical derivations, the main goal of the class is to build physical intuition and introduce students to concepts they will see in future physics courses.
                   <br/><br/>Required: algebra, trigonometry, intro physics (middle school level acceptable)
                   <br/>Recommended: basic calculus
+                  <br/><br/><b>Target Audience: </b>10th - 12th Graders
+                  <br/><b>Max Class Size: </b>100
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/15/2020 - 06/26/2020

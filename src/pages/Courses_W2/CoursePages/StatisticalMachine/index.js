@@ -15,6 +15,7 @@ const CourseStatisticalMachine = () => {
                 <h1>Statistical Machine and Deep Learning in Natural Language Processing</h1>
                   <p>
                   Receive an introduction to the paradigm shift from statistical methods to deep learning in natural language over the past decade, covering advancements in conversation language understanding, dialogue systems, and natural language generation.
+                  <br/><b>Target Audience: </b> All Grades
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/22/2020 - 07/13/2020

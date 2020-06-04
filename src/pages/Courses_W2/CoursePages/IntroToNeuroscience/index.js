@@ -15,6 +15,7 @@ const CourseIntroNeuroscience = () => {
                 <h1>Intro to Neuroscience: Mind, Brain and Behavior</h1>
                   <p>
                   Every function in the human body, be it something as important as heart pumping, or something as trivial as foot tapping, comes down to the brain. In this course, we will cover the basic anatomy and physiology of the human brain, and what happens when certain parts of the brain malfunction. We will talk disorders, diseases, and how they are diagnosed and treated by physicians and other medical professionals. I look forward to teaching all of you!
+                  <br/><b>Target Audience: </b>9th - 12th Graders
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/15/2020 - 06/26/2020

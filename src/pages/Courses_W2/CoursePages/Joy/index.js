@@ -15,6 +15,7 @@ const CourseJoy = () => {
                 <h1>Where and Why is Joy?</h1>
                   <p>
                   This course will seek to answer, from a variety of philosophical and scientific standpoints, why and how humans experience joy, with an emphasis on finding ways to increase joyful moments while stuck in quarantine.
+                  <br/><b>Max Class Size: </b>30
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b>06/15/2020 - 06/26/2020

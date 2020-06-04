@@ -16,7 +16,7 @@ const CourseCodingActivities = () => {
                 <h1>Coding through Activities</h1>
                   <p>
                   Join this class if you want an interactive experience to learn how to code. We will learn how coding was developed, basic coding algorithms, create a mini-game through Scratch, and tips and opportunities for high schoolers interested in STEM.
-                  <br/><b>Target Audience: </b> 9th - 12th Graders
+                  <br/><b>Target Audience: </b> 7th - 10th Graders
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/15/2020 - 06/24/2020

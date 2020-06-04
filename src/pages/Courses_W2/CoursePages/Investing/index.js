@@ -18,6 +18,7 @@ const CourseInvesting = () => {
                   This course will discuss basic terminology and strategies involved in investing and the stock market. We will give three one hour sessions with each lecture building on the last. The first day we will go over compound interest, the stock market, asset classes, and trading platforms. On the second day we will discuss the actual trading of stocks, including buying, selling, orders, earnings, portfolio diversification, sectors, and dividends. The third day will start to delve into more advanced topics with options trading, including calls, puts, and spreads and provide insight into the basics of analysis with indicators such as MACD, candlesticks, and moving averages. No prior knowledge is required; we will start from the basics and bring you up to speed in a short amount of time.
                   <br/><br/>There will be time for discussion and Q&A after each lecture and will do our best to get all the content across in a digestible way. Although this course by no means provides a comprehensive knowledge of investing we hope it will give you a good baseline in stock market literacy and may spark interest in some of you to pursue the field further.
                   <br/><br/>Both of us are happy to discuss anything about the course or more advanced topics further so feel free to shoot us an email.
+                  <br/><b>Target Audience: </b>8th - 12th Graders
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/15/2020 - 06/19/2020

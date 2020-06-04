@@ -17,6 +17,8 @@ const CourseButterflies = () => {
                   <p>
                   At the 2016 Grammy Awards, Kendrick Lamar rapped about police brutality inside a jail cell. Beyoncé shot a music video on a former slave plantation. Jay Z dropped tracks alluding to Malcolm X. This class will examine the role of hip-hop and rap music in speaking out about important political issues. We will briefly examine some of the history behind the genre, beginning with the Harlem Renaissance and the rise of hip-hop in the late 1980s. We will then use that context to evaluate some contemporary works of socially-critical songs and albums, such as Kendrick Lamar’s “Alright,” Kanye West’s “New Slaves,” and Beyoncé’s “Formation.” The course will involve analyzing song lyrics, listening to music, reading news articles, and watching music videos to understand the intersection between art, culture, politics, and systemic injustice.
                   <br/><i>Note: This course may contain explicit lyrics and touch on sensitive topics, such as violence and hate crimes.</i>
+                  <br/><b>Target Audience: </b>9th - 10th Graders
+                  <br/><b>Max Class Size: </b>30
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b>06/15/2020 - 06/26/2020

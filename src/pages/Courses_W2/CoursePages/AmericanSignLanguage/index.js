@@ -16,6 +16,7 @@ const CourseSignLanguage2 = () => {
                   <p>
                   This highly interactive course will cover the basics of ASL, and will guide students to conversational skill level. No prior experience necessary.
                   Emma's class is back due to incredibly popular demand from Wave One. <b>This class is a continuation of the ASL course in Wave 1</b>
+                  <br/><b>Max Class Size: </b>50
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> June 15 - June 26

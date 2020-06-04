@@ -15,6 +15,7 @@ const CourseLinksMythologies = () => {
                 <h1>The Links in Mythologies</h1>
                   <p>
                   This is a one day course exploring a few common themes seen in the mythologies of cultures across the globe, and what those common themes tell us about the values of those respective societies and how these values impacted their societies.
+                  <br/><b>Target Audience: </b> All Grades
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/16/2020

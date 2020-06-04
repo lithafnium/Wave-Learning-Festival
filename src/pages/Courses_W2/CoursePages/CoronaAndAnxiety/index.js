@@ -15,6 +15,7 @@ const CourseCoronaAnxiety = () => {
                 <h1>Corona and Anxiety</h1>
                   <p>
                   This is an online course that deals with the issue of mental illness, as it relates to the current worldwide pandemic, on a personal and intellectual level.
+                  <br/><b>Target Audience: </b> 9th - 12th Graders
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/22/2020 - 06/26/2020
