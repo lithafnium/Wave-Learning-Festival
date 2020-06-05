@@ -103,6 +103,11 @@ const About = () => {
                   <p>Teachers</p>
                 </Button>
               </a>
+              <a href="/join" class="sign-up-link">
+                <Button>
+                  <p>Join</p>
+                </Button>
+              </a>
             </div>
           </div>
           <HeaderImage src={Swing} />

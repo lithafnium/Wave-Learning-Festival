@@ -58,6 +58,7 @@ import TeacherAgreement from './pages/Terms/TeacherAgreement'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
+import Join from './pages/Join'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
@@ -84,6 +85,9 @@ function App() {
             </Route>
             <Route path="/courses">
               <Courses />
+            </Route>
+            <Route path="/join">
+              <Join />
             </Route>
 
             {/* wave 1 */}
