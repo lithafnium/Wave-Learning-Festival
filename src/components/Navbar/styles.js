@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { device } from '../../theme'
+import { WLF_PURPLE } from '../../styles/Colors'
 
 export const NavbarContainer = styled.header`
     font-family: 'Mukta Mahee', sans-serif;
@@ -198,9 +199,9 @@ export const SideBar = styled.div`
 
 export const NavbarDropdown = styled.div`
     position: absolute;
-    left: 10px;
-    bottom: -244px;
-    width: 225px;
+    left: -10px;
+    bottom: -190px;
+    width: fit-content;
     height: auto;
     background-color: #ffffff;
     box-shadow: 0 0 1.25rem rgba(31,45,61,.08);
@@ -221,7 +222,7 @@ export const NavItem = styled.p`
 
 
     &:hover{
-        border-bottom: 2px solid #2684ff;
+    border-bottom: 2px solid ${WLF_PURPLE};
     }
 
     &:hover a{
@@ -244,7 +245,7 @@ export const DropdownItem = styled.p`
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 25px;
-    padding-right: 15px;
+    padding-right: 25px;
     display: flex;
     transition: 0.1s;
     border-radius: 5px;
