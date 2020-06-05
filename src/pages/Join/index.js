@@ -10,7 +10,7 @@ const Join = () => {
         <Navbar />
         <Container>
             <ContainerInner>
-                <h1>Join Wave Learning Festival!</h1>
+                <h1>Join the Wave Learning Festival Team!</h1>
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdvwghN60MNhtoJMTuR5lb-l-eh3JZNYacKJX_lPBppItp8Xw/viewform?embedded=true" 
                     width="700" 
                     height="520" 
@@ -23,7 +23,6 @@ const Join = () => {
         <Footer />
         </>
     )
-
 }
 
 export default Join

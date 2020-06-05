@@ -39,13 +39,16 @@ const Navbar = () => {
                         <Link to='/'>Home</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/team'>Team</Link>
+                        <Link to='/team'>About Us</Link>
                     </NavItem>
                     <NavItem>
                         <Link to='/teachers'>Teachers</Link>
                     </NavItem>
                     <NavItem>
                         <Link to='/courses'>Courses</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/join'>Join the Team</Link>
                     </NavItem>
                     <NavItem onMouseEnter={() => setShown(true)}
                               onMouseLeave={() => setShown(false)} >

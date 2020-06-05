@@ -104,19 +104,6 @@ const About = () => {
                 </Button>
               </a>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                marginTop: "50px",
-              }}
-            >
-              <a href="/join" class="sign-up-link">
-                <Button>
-                  <p>Join</p>
-                </Button>
-              </a>
-            </div>
           </div>
           <HeaderImage src={Swing} />
         </AboutDescription>
