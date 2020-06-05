@@ -4,6 +4,9 @@ import { device } from '../../theme'
 
 export const MetaContainer = styled.div`
     width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
     @media ${device.laptop} {
         min-width: 400px;
     }
@@ -30,6 +33,7 @@ export const HeaderImage = styled.img`
 `
 
 export const MediumContainer = styled.div`
+    max-width: 1024px;
     position: relative;
     display: grid;
     width: 100%;
@@ -129,7 +133,7 @@ export const Button = styled.div`
     display: flex;
     background-color: ${Colors.WLF_ORANGE};
     color: white;
-    padding: 12.5px 62.5px 12.5px 62.5px;
+    padding: 12.5px 25px 12.5px 25px;
     margin-right: 20px;
     align-items: center;
     width: fit-content;
@@ -137,7 +141,7 @@ export const Button = styled.div`
 
     & p{
         margin: 0px;
-        font-size: 2.25em;
+        font-size: 1.2em;
     }
 `
 
