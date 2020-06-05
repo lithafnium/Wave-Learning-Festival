@@ -14,6 +14,7 @@ import {
     NavbarDropdown,
     DropdownItem
 } from './styles'
+import { WLF_PURPLE } from './../../styles/Colors'
 import {
     BrowserRouter as Router,
     Switch,
@@ -60,7 +61,7 @@ const Navbar = () => {
                             <NavbarDropdown>
                                 <Link to='/faq-students'>
                                     <DropdownItem>
-                                        <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                        <IconContext.Provider value={{ color: WLF_PURPLE, style: { verticalAlign: 'middle', marginRight: '10px' } }}>
                                             <div>
                                         <FaUserAlt/>
                                         </div>
@@ -70,7 +71,7 @@ const Navbar = () => {
                                 </Link>
                                 <Link to='/faq-parents'>
                                     <DropdownItem>
-                                    <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                    <IconContext.Provider value={{ color: WLF_PURPLE, style: { verticalAlign: 'middle', marginRight: '10px' } }}>
                                             <div>
                                             <FaUserFriends/>
                                         </div>
@@ -80,7 +81,7 @@ const Navbar = () => {
                                 </Link>
                                 <Link to='/faq-teachers'>
                                     <DropdownItem>
-                                    <IconContext.Provider value={{ color: "#2684ff", style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                    <IconContext.Provider value={{ color: WLF_PURPLE, style: { verticalAlign: 'middle', marginRight: '10px' } }}>
                                             <div>
                                             <FaChalkboardTeacher/>
                                         </div>

@@ -1,18 +1,21 @@
 import styled from 'styled-components'
 import { device } from '../../theme'
+import { WLF_PURPLE } from '../../styles/Colors'
 
 export const NavbarContainer = styled.header`
     font-family: 'Mukta Mahee', sans-serif;
-    width: calc(~"100% - 60px");
+    width: 100%;
     height: 120px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    /* justify-content: left; */
     z-index: 20;
     position: relative;
     margin-left: 60px;
+    margin-right: 60px; 
 
     @media ${device.mobileS}{
-        margin-bottom: 150px;
+        /* margin-bottom: 150px; */
     }
     @media ${device.tablet} {
         margin-bottom: 0px;
@@ -37,18 +40,17 @@ export const NavbarInner = styled.div`
     }
     @media ${device.tablet} {
         width: 80%;
-        max-width: 768px;
 
     }
     @media ${device.tabletL} {
         width: 100%;
-        max-width: 768px;
 
     }
 
     @media ${device.laptop} {
         width: 100%;
         max-width: 1024px;
+
 
     }
     display: flex;
@@ -92,7 +94,7 @@ export const Links = styled.div`
 
     & a{
         color: rgba(31,45,61,.5);
-        font-size: 30px;
+        font-size: 1.2rem;
         text-decoration: none;
         transition: 0.2s;
         font-weight: 600;
@@ -197,9 +199,9 @@ export const SideBar = styled.div`
 
 export const NavbarDropdown = styled.div`
     position: absolute;
-    left: 10px;
-    bottom: -244px;
-    width: 225px;
+    left: -10px;
+    bottom: -190px;
+    width: fit-content;
     height: auto;
     background-color: #ffffff;
     box-shadow: 0 0 1.25rem rgba(31,45,61,.08);
@@ -220,7 +222,7 @@ export const NavItem = styled.p`
 
 
     &:hover{
-        border-bottom: 2px solid #2684ff;
+    border-bottom: 2px solid ${WLF_PURPLE};
     }
 
     &:hover a{
@@ -243,7 +245,7 @@ export const DropdownItem = styled.p`
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 25px;
-    padding-right: 15px;
+    padding-right: 25px;
     display: flex;
     transition: 0.1s;
     border-radius: 5px;
