@@ -70,7 +70,7 @@ const About = () => {
   return (
     <MetaContainer>
       <Navbar />
-      <div style={{width: "100%", minHeight: "65vh"}}>
+      <div style={{width: "100%", minHeight: "65vh", maxWidth: '1024px'}}>
         <AboutDescription>
           <div>
             <HighlightStyle1
@@ -108,7 +108,7 @@ const About = () => {
           <HeaderImage src={Swing} />
         </AboutDescription>
       </div>
-      <div style={{width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyPurple})`, backgroundSize: 'cover', paddingBottom: 100}}>
+      <div style={{display: "flex", justifyContent: "center", width: "100%", minHeight: "85vh", backgroundImage: `url(${WavyPurple})`, backgroundSize: 'cover', paddingBottom: 100}}>
         <MediumContainer>
           <MediumImage src={Beach} />
           <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
@@ -141,7 +141,7 @@ const About = () => {
           </div>
         </MediumContainer>
       </div>
-      <div style={{position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyOrange})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
+      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${WavyOrange})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
         <MediumContainer>
           <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
             <Highlight
@@ -176,7 +176,7 @@ const About = () => {
           <MediumImage src={FerrisWheel} />
         </MediumContainer>
       </div>
-      <div style={{position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyWhite})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
+      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${WavyWhite})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
         <br /><br />
         <MediumContainer>
           <DescItem>
@@ -211,7 +211,7 @@ const About = () => {
           </DescItem>
         </MediumContainer>
       </div>
-      <div style={{position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyTurquoise})`, backgroundSize: 'cover', marginTop: -100}}>
+      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyTurquoise})`, backgroundSize: 'cover', marginTop: -100}}>
         <MediumContainer>
           <MediumImage src={WhyWave} />
           <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
@@ -245,7 +245,7 @@ const About = () => {
           </div>
         </MediumContainer>
       </div>
-      <div style={{backgroundColor: Colors.WLF_PURPLE}} id="updates">
+      <div style={{display: "flex", justifyContent: "center", backgroundColor: Colors.WLF_PURPLE, width: "100%"}} id="updates">
         <MediumContainer>
             <Typography.Header style={{color: 'white', fontSize: 28, marginBottom: 30}}> Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</Typography.Header>
             {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit,
