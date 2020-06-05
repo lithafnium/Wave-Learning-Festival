@@ -22,7 +22,7 @@ const CourseFinancialLiteracy = () => {
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
-                  <b>Taught by: </b>Maria Fernanda Estrada<br/>
+                  <b>Taught by: </b>Maria Fernanda Estrada, Onder Kilinc<br/>
                   <b>Teacher Bio: </b>Hello, my name is Maria Estrada and I am a rising sophomore at Williams College. I am teaching this course because growing up as a first-generation student, financial literacy has proven to be of the utmost importance. The skills I aim to promote will be important for the rest of the students' lives as they navigate budgeting and financial skills. I hope to bring awareness to the existent financial literacy gap among the youth. I enjoy reading, listening to podcasts, and cooking!
                   </p>
                   <h1>Register for this course!</h1>
