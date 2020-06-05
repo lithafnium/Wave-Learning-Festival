@@ -103,6 +103,14 @@ const About = () => {
                   <p>Teachers</p>
                 </Button>
               </a>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginTop: "50px",
+              }}
+            >
               <a href="/join" class="sign-up-link">
                 <Button>
                   <p>Join</p>
