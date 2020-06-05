@@ -245,7 +245,7 @@ const About = () => {
           </div>
         </MediumContainer>
       </div>
-      <div style={{backgroundColor: Colors.WLF_PURPLE}} id="newsletter">
+      <div style={{backgroundColor: Colors.WLF_PURPLE}} id="updates">
         <MediumContainer>
             <Typography.Header style={{color: 'white', fontSize: 28, marginBottom: 30}}> Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</Typography.Header>
             {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit,
