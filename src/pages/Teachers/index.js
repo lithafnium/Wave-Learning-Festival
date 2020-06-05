@@ -35,12 +35,12 @@ const Teachers = () => {
                     Wave is an opportunity to gain valuable teaching and leadership experience
                     while sharing your passions with a wide audience. The flexibility of the
                     time commitment allows you to volunteer while also pursuing other summer
-                    experiences. No prior teaching experience is required, and you will receive help 
+                    experiences. No prior teaching experience is required, and you will receive help
                     in making your class come to life!
                     </Typography.BodyText>
-                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>Apply by 6/12 to be included in the second wave!</Typography.Header>
+                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>Apply by 6/12 to be included in the third wave!</Typography.Header>
                     <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 20}}>
-                    Due to overwhelming interest in teaching, we may push your class to a later wave. 
+                    Due to overwhelming interest in teaching, we may push your class to a later wave.
                     Thank you for your patience!
                     </Typography.BodyText>
 

@@ -13,12 +13,12 @@ const CourseFinancialLiteracy = () => {
             <Container>
                 <ContainerInner>
                 <h1>AI in Healthcare</h1>
-                  <p> Updated Soon!
+                  <p> AI in Healthcare serves as an introduction to how Artificial Intelligence is transforming the healthcare industry. It will cover the basics of machine learning and artificial intelligence, the history behind it, and some of the mathematical techniques used in the algorithms. It will explore the applications of AI in healthcare ranging from AI Robot-assisted surgery to automating processes in healthcare like tracking hospital waiting times while prioritizing patient illnesses. Finally, it will walk you through high-level steps on how one can create an AI-based application to predict cancer using data from the Cancer Genome Atlas.
                   </p>
                   <p style={{clear: 'right'}}>
-                  <b>Class Date: </b> June 15-June 26
-                  <br/><b>Format: </b> Monday, Tuesday, Wednesday, Thursday, Friday
-                  <br/><b>Time (EDT): </b> 12pm-1pm
+                  <b>Class Date: </b> 06/15/2020 - 06/26/2020
+                  <br/><b>Format: </b> Monday and Wednesday
+                  <br/><b>Time (EDT): </b> 6pm-7pm
                   </p>
                   <p>
                   <img src={Profile} class="img-left"/>
