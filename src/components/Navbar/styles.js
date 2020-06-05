@@ -3,12 +3,14 @@ import { device } from '../../theme'
 
 export const NavbarContainer = styled.header`
     font-family: 'Mukta Mahee', sans-serif;
-    width: 100%;
+    width: calc(~"100% - 60px");
     height: 120px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     z-index: 20;
     position: relative;
+    margin-left: 60px;
+
     @media ${device.mobileS}{
         margin-bottom: 150px;
     }
@@ -195,9 +197,9 @@ export const SideBar = styled.div`
 
 export const NavbarDropdown = styled.div`
     position: absolute;
-    left: -60px;
-    bottom: -160px;
-    width: 150px;
+    left: 10px;
+    bottom: -244px;
+    width: 225px;
     height: auto;
     background-color: #ffffff;
     box-shadow: 0 0 1.25rem rgba(31,45,61,.08);
