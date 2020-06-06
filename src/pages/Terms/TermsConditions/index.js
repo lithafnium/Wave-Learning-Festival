@@ -10,7 +10,7 @@ const TermsConditions = () => {
             <Container>
                 <ContainerInner>
                     <h1>Terms And Conditions</h1>
-                    <p><b>Last Updated: May 22, 2020</b></p>
+                    <p><b>Last Updated: June 5th, 2020</b></p>
                     <h2>Introduction:</h2>
                     <p>
                         Welcome to Wave Learning Festival! Below, you will find the Terms and Conditions
@@ -86,6 +86,7 @@ const TermsConditions = () => {
                       <li>Having their microphones disabled upon entering a class. Student microphones may be unmuted at the discretion of the teacher (through features such as the “raise hand” function).</li>
                       <li>Using the chat function solely for questions, conversation, and dialogue related to the course material and/or discussions taking place during the course.</li>
                       <li>Turning off their webcams upon entering a class. Any student who uses their webcam during a class consents to having their picture used as part of a class screenshot as described in our <a href="/privacy-policy">Privacy Policy</a></li>
+                      <li>Automatically be subscribed to WLF emails and/or newsletters pertaining to current and/or future courses and offerings by WLF.</li>
                     </ul>
                     <h2>User Account:</h2>
                     <p>
