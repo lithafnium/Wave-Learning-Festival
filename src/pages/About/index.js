@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import {
   HeaderImage,
   AboutDescription,
@@ -18,50 +18,50 @@ import {
   Error,
   Popup,
 } from "./styles";
-import { Colors, Typography } from "../../styles";
+import { Colors, Typography } from "@/styles";
 import "./styles.css";
 import * as Assets from "./assets";
-import {FirebaseContext} from '../../firebaseContext';
+import { FirebaseContext } from "@/firebaseContext";
 
 const About = () => {
-  const [name, updateName] = useState('')
-  const [email, updateEmail] = useState('')
-  const [nameError, toggleName] = useState(false)
-  const [emailError, toggleEmail] = useState(false)
-  const [subscribed, toggleSubscribed] = useState(false)
-  const {db} = useContext(FirebaseContext)
+  const [name, updateName] = useState("");
+  const [email, updateEmail] = useState("");
+  const [nameError, toggleName] = useState(false);
+  const [emailError, toggleEmail] = useState(false);
+  const [subscribed, toggleSubscribed] = useState(false);
+  const { db } = useContext(FirebaseContext);
 
   const subscribe = () => {
-      toggleEmail(false)
-      toggleName(false)
-      let valid = true
+    toggleEmail(false);
+    toggleName(false);
+    let valid = true;
 
-      if(name.length === 0){
-          toggleName(true)
-          valid = false
-      }
-      if(email.length === 0){
-          toggleEmail(true)
-          valid = false
-      }
+    if (name.length === 0) {
+      toggleName(true);
+      valid = false;
+    }
+    if (email.length === 0) {
+      toggleEmail(true);
+      valid = false;
+    }
 
-      if(db && valid){
-          db.collection('Newsletter').add({
-              name,
-              email
-          }).then(toggleSubscribed(true))
-      }
-  }
+    if (db && valid) {
+      db.collection("Newsletter")
+        .add({
+          name,
+          email,
+        })
+        .then(toggleSubscribed(true));
+    }
+  };
 
   return (
     <MetaContainer>
       <Navbar />
-      <div style={{width: "100%", minHeight: "65vh", maxWidth: '1024px'}}>
+      <div style={{ width: "100%", minHeight: "65vh", maxWidth: "1024px" }}>
         <AboutDescription>
           <div>
-            <HighlightStyle1
-              src={Assets.Highlight1}
-            />
+            <HighlightStyle1 src={Assets.Highlight1} />
             <Typography.Header style={{ position: "relative", zIndex: 2 }}>
               Make Waves With Us!
             </Typography.Header>
@@ -94,10 +94,20 @@ const About = () => {
           <HeaderImage src={Assets.Swing} />
         </AboutDescription>
       </div>
-      <div style={{display: "flex", justifyContent: "center", width: "100%", minHeight: "85vh", backgroundImage: `url(${Assets.WavyPurple})`, backgroundSize: 'cover', paddingBottom: 100}}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          minHeight: "85vh",
+          backgroundImage: `url(${Assets.WavyPurple})`,
+          backgroundSize: "cover",
+          paddingBottom: 100,
+        }}
+      >
         <MediumContainer>
           <MediumImage src={Assets.Beach} />
-          <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
+          <div style={{ gridColumn: "span 2", alignSelf: "center" }}>
             <Highlight
               src={Assets.Highlight2}
               style={{
@@ -119,17 +129,31 @@ const About = () => {
             <Typography.BodyText
               style={{ color: "white", fontSize: 18, fontWeight: "100" }}
             >
-              We believe that summer should be a time for creativity, exploration, and academic excitement outside the classroom.
-              So while traditional summer programs are on halt, Wave Learning Festival is bringing all the magic and engagement
-              of a summer camp right to your home. We hope to provide students resources that help make this time as productive
-              and engaging as possible.
+              We believe that summer should be a time for creativity,
+              exploration, and academic excitement outside the classroom. So
+              while traditional summer programs are on halt, Wave Learning
+              Festival is bringing all the magic and engagement of a summer camp
+              right to your home. We hope to provide students resources that
+              help make this time as productive and engaging as possible.
             </Typography.BodyText>
           </div>
         </MediumContainer>
       </div>
-      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${Assets.WavyOrange})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          position: "relative",
+          width: "100%",
+          minHeight: "85vh",
+          backgroundImage: `url(${Assets.WavyOrange})`,
+          backgroundSize: "cover",
+          marginTop: -100,
+          paddingBottom: 100,
+        }}
+      >
         <MediumContainer>
-          <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
+          <div style={{ gridColumn: "span 2", alignSelf: "center" }}>
             <Highlight
               src={Assets.Highlight3}
               style={{
@@ -162,45 +186,85 @@ const About = () => {
           <MediumImage src={Assets.FerrisWheel} />
         </MediumContainer>
       </div>
-      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${Assets.WavyWhite})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
-        <br /><br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          position: "relative",
+          width: "100%",
+          minHeight: "85vh",
+          backgroundImage: `url(${Assets.WavyWhite})`,
+          backgroundSize: "cover",
+          marginTop: -100,
+          paddingBottom: 100,
+        }}
+      >
+        <br />
+        <br />
         <MediumContainer>
           <DescItem>
-            <DescImage src={Assets.Icon1}/>
-            <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
+            <DescImage src={Assets.Icon1} />
+            <Typography.Header
+              style={{ fontSize: 20, color: Colors.WLF_BLACK }}
+            >
               Never the Same
             </Typography.Header>
-            <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
-              Choose from over 25 different seminars covering everything from STEM to performing arts.
-              Love trying new things? New waves of classes and seminar leaders get released every 2 weeks.
+            <Typography.BodyText
+              style={{ fontSize: 16, color: Colors.WLF_BLACK }}
+            >
+              Choose from over 25 different seminars covering everything from
+              STEM to performing arts. Love trying new things? New waves of
+              classes and seminar leaders get released every 2 weeks.
             </Typography.BodyText>
           </DescItem>
           <DescItem>
-          <DescImage src={Assets.Icon2}/>
-            <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
+            <DescImage src={Assets.Icon2} />
+            <Typography.Header
+              style={{ fontSize: 20, color: Colors.WLF_BLACK }}
+            >
               Exclusive Seminar Leaders
             </Typography.Header>
-            <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
-              Seminars are hosted by talented college students across campuses such as Harvard, Stanford, MIT, and so many more.
-              Our seminar leaders love teaching and want to introduce you to their favorite passion projects and subjects!
+            <Typography.BodyText
+              style={{ fontSize: 16, color: Colors.WLF_BLACK }}
+            >
+              Seminars are hosted by talented college students across campuses
+              such as Harvard, Stanford, MIT, and so many more. Our seminar
+              leaders love teaching and want to introduce you to their favorite
+              passion projects and subjects!
             </Typography.BodyText>
           </DescItem>
           <DescItem>
-            <DescImage src={Assets.Icon3}/>
-            <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
+            <DescImage src={Assets.Icon3} />
+            <Typography.Header
+              style={{ fontSize: 20, color: Colors.WLF_BLACK }}
+            >
               Have a Great Summer
             </Typography.Header>
-            <Typography.BodyText style={{fontSize: 16, color: Colors.WLF_BLACK}}>
-              Stay connected with peers who share your intellectual interests, and participate in an open, welcoming environment
-              -- all while doing this remotely and free of charge.
+            <Typography.BodyText
+              style={{ fontSize: 16, color: Colors.WLF_BLACK }}
+            >
+              Stay connected with peers who share your intellectual interests,
+              and participate in an open, welcoming environment -- all while
+              doing this remotely and free of charge.
             </Typography.BodyText>
           </DescItem>
         </MediumContainer>
       </div>
-      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${Assets.WavyTurquoise})`, backgroundSize: 'cover', marginTop: -100}}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          position: "relative",
+          width: "100%",
+          minHeight: "65vh",
+          backgroundImage: `url(${Assets.WavyTurquoise})`,
+          backgroundSize: "cover",
+          marginTop: -100,
+        }}
+      >
         <MediumContainer>
           <MediumImage src={Assets.WhyWave} />
-          <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
+          <div style={{ gridColumn: "span 2", alignSelf: "center" }}>
             <Highlight
               src={Assets.Highlight4}
               style={{
@@ -223,37 +287,60 @@ const About = () => {
             <Typography.BodyText
               style={{ color: "white", fontSize: 18, fontWeight: "100" }}
             >
-              The global COVID-19 pandemic has disrupted education worldwide, and in many cases, resulted in the loss of many
-              critical learning opportunities. We hope that providing these fun and diverse classes can help students stay engaged
-              and interact with fellow students when they're stuck at home. For a few hours every day, students can take a break with
-              a project they love.
+              The global COVID-19 pandemic has disrupted education worldwide,
+              and in many cases, resulted in the loss of many critical learning
+              opportunities. We hope that providing these fun and diverse
+              classes can help students stay engaged and interact with fellow
+              students when they're stuck at home. For a few hours every day,
+              students can take a break with a project they love.
             </Typography.BodyText>
           </div>
         </MediumContainer>
       </div>
-      <div style={{display: "flex", justifyContent: "center", backgroundColor: Colors.WLF_PURPLE, width: "100%"}} id="updates">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          backgroundColor: Colors.WLF_PURPLE,
+          width: "100%",
+        }}
+        id="updates"
+      >
         <MediumContainer>
-            <Typography.Header style={{color: 'white', fontSize: 28, marginBottom: 30}}> Sign up for updates on future waves! Be the first to register for NEW courses and hear about special guests!</Typography.Header>
-            {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit,
+          <Typography.Header
+            style={{ color: "white", fontSize: 28, marginBottom: 30 }}
+          >
+            {" "}
+            Sign up for updates on future waves! Be the first to register for
+            NEW courses and hear about special guests!
+          </Typography.Header>
+          {/* {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit,
                 we don't have the funds to establish a domain so we need to ensure
                 that our emails aren't sent to your spambox. Please follow the
                 directions sent to your email! We'd really appreciate it.</p>
                 <Triangle/>
                 </Popup>} */}
           <NewsLetter>
-              <Input placeholder="Name"
-                      value={name}
-                      onChange={e => updateName(e.target.value)}
-                      />
-              {nameError && <Error>Please enter a name</Error>}
-              <p></p>
-              <Input placeholder="Email"
-                      value={email}
-                      onChange={e=> updateEmail(e.target.value)}/>
-              {emailError && <Error>Please enter an email</Error>}
-              <Button disabled={subscribed} onClick={() => subscribe()} style={{marginTop: 40}}>
-                  <p>{subscribed ? 'Subscribed!' : 'Subscribe'}</p>
-              </Button>
+            <Input
+              placeholder="Name"
+              value={name}
+              onChange={(e) => updateName(e.target.value)}
+            />
+            {nameError && <Error>Please enter a name</Error>}
+            <p></p>
+            <Input
+              placeholder="Email"
+              value={email}
+              onChange={(e) => updateEmail(e.target.value)}
+            />
+            {emailError && <Error>Please enter an email</Error>}
+            <Button
+              disabled={subscribed}
+              onClick={() => subscribe()}
+              style={{ marginTop: 40 }}
+            >
+              <p>{subscribed ? "Subscribed!" : "Subscribe"}</p>
+            </Button>
           </NewsLetter>
         </MediumContainer>
       </div>

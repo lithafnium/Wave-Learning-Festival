@@ -13,7 +13,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import { Colors, Typography } from "../../styles";
+import { Colors, Typography } from "@/styles";
 
 const Footer = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../../../components/Navbar'
-import Footer from '../../../components/Footer'
-import { Container, ContainerInner } from '../../../globalStyles'
-import {Colors, Typography} from '../../../styles';
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import { Container, ContainerInner } from '@/globalStyles'
+import {Colors, Typography} from '@/styles'
 
 const FAQStudents = () => {
     return(
