@@ -10,9 +10,7 @@ export const NavbarContainer = styled.header`
     justify-content: center;
     /* justify-content: left; */
     z-index: 20;
-    position: relative;
-    margin-left: 60px;
-    margin-right: 60px; 
+    position: relative; 
 
     @media ${device.mobileS}{
         /* margin-bottom: 150px; */
@@ -27,8 +25,8 @@ export const NavbarContainer = styled.header`
     }
 
     @media ${device.laptop} {
-
-
+        margin-left: 60px;
+        margin-right: 60px;
     }
 
 `

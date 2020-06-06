@@ -138,13 +138,13 @@ export const HighlightStyle1 = styled.img`
         top: 5px;
         left: 180px;
     }
-    @media ${device.laptop} and (min-width: 500px) {
+    @media ${device.laptop} and (min-width: 776px) {
         top: 5px;
-        left: 125px;
+        left: 145px;
     }
-    @media ${device.laptop} and (max-width: 500px) {
+    @media only screen and (max-width: 776px) {
         top: 5px;
-        left: 190px;
+        left: 150px;
     }
 `
 
