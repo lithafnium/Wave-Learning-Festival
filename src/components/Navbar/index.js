@@ -121,10 +121,12 @@ const Navbar = () => {
                     */}
         </Links>
         <Hamburger slide={slide} onClick={() => toggleSlide(!slide)}>
-          <Bar num={0} rotate1={slide && true} slide={slide} />
-          <Bar num={2} rotate2={slide && true} slide={slide} />
-          <Bar num={1} rotate3={slide && true} slide={slide} />
+          <div style={{backgroundColor: 'rgb(240,240,240)', width: 40, height: 40, borderRadius: 20, marginLeft: -5, marginTop: -4, position: 'absolute', zIndex: 1}}></div>
+          <Bar num={0} rotate1={slide && true} slide={slide} style={{position: 'relative', zIndex: 2}}/>
+          <Bar num={2} rotate2={slide && true} slide={slide} style={{position: 'relative', zIndex: 3}}/>
+          <Bar num={1} rotate3={slide && true} slide={slide} style={{position: 'relative', zIndex: 2}}/>
         </Hamburger>
+        
         <SideBar show={slide}>
           <Brand
             style={{ marginLeft: "15px", marginBottom: "20px", width: "9em" }}

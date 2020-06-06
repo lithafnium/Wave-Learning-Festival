@@ -21,10 +21,6 @@ export const NavbarContainer = styled.header`
   @media ${device.tabletL} {
   }
 
-  @media ${device.laptop} {
-    margin-left: 60px;
-    margin-right: 60px;
-  }
 `;
 
 export const NavbarInner = styled.div`
@@ -76,7 +72,7 @@ export const Links = styled.div`
     display: none;
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: flex;
     align-items: center;
   }
@@ -127,9 +123,15 @@ export const Hamburger = styled.div`
   @media ${device.mobileS} {
     display: block;
   }
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: none;
   }
+
+  position: fixed;
+  right: 40px;
+  background-color: 'white';
+  width: 30px;
+  height: 30px;
 
   transform: ${(props) => (props.slide ? "translateX(-180px)" : null)};
 `;
