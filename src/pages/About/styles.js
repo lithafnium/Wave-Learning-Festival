@@ -20,7 +20,24 @@ export const AboutDescription = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: center;
     align-content: center;
-    padding: 60px;
+    @media ${device.mobileS} {
+        padding: 60px 20px;
+    }
+    @media ${device.mobileM} {
+        padding: 60px 20px;
+    }
+    @media ${device.mobileL} {
+        padding: 60px 20px;
+    }
+    @media ${device.tablet} {
+        padding: 60px 20px;
+    }
+    @media ${device.tabletL} {
+        padding: 60px 20px;
+    }
+    @media ${device.laptop} {
+        padding: 60px 20px;
+    }
 `
 
 export const HeaderImage = styled.img`
@@ -37,11 +54,28 @@ export const MediumContainer = styled.div`
     position: relative;
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-content: center;
     align-content: center;
     justify-items: center;
-    padding: 60px;
+    @media ${device.mobileS} {
+        padding: 80px 20px;
+    }
+    @media ${device.mobileM} {
+        padding: 80px 20px;
+    }
+    @media ${device.mobileL} {
+        padding: 80px 20px;
+    }
+    @media ${device.tablet} {
+        padding: 60px 20px;
+    }
+    @media ${device.tabletL} {
+        padding: 60px 20px;
+    }
+    @media ${device.laptop} {
+        padding: 60px 20px;
+    }
 `
 
 export const MediumImage = styled.img`
@@ -49,7 +83,7 @@ export const MediumImage = styled.img`
     height: auto;
     align-self: center;
     justify-self: center;
-    padding: 20px;
+    padding: 20px 0px;
 `
 
 export const Image = styled.img`
@@ -90,7 +124,7 @@ export const HighlightStyle1 = styled.img`
     }
     @media ${device.mobileM} {
         top: 5px;
-        left: 170px;
+        left: 150px;
     }
     @media ${device.mobileL} {
         top: 5px;
@@ -98,7 +132,7 @@ export const HighlightStyle1 = styled.img`
     }
     @media ${device.tablet} {
         top: 5px;
-        left: 180px;
+        left: 150px;
     }
     @media ${device.tabletL} {
         top: 5px;
@@ -106,11 +140,11 @@ export const HighlightStyle1 = styled.img`
     }
     @media ${device.laptop} and (min-width: 500px) {
         top: 5px;
-        left: 180px;
+        left: 125px;
     }
     @media ${device.laptop} and (max-width: 500px) {
         top: 5px;
-        left: 180px;
+        left: 190px;
     }
 `
 

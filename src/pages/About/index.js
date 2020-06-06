@@ -20,22 +20,8 @@ import {
 } from "./styles";
 import { Colors, Typography } from "../../styles";
 import "./styles.css";
-import Swing from "./swing_animation.gif";
-import Highlight1 from "./highlight_1.svg";
-import Highlight2 from "./highlight_2.svg";
-import Highlight3 from "./highlight_3.svg";
-import Highlight4 from "./highlight_4.svg";
-import Beach from "./beach.svg";
-import FerrisWheel from "./ferriswheel.svg";
-import Icon1 from './icon_1.svg';
-import Icon2 from './icon_2.svg';
-import Icon3 from './icon_3.svg';
-import WhyWave from './whywave.svg';
-import WavyOrange from './wavy_orange.svg';
-import WavyPurple from './wavy_purple.svg';
-import WavyTurquoise from './wavy_turquoise.svg';
-import WavyWhite from './wavy_white.svg';
-import {FirebaseContext} from '../../firebaseContext'
+import * as Assets from "./assets";
+import {FirebaseContext} from '../../firebaseContext';
 
 const About = () => {
   const [name, updateName] = useState('')
@@ -74,7 +60,7 @@ const About = () => {
         <AboutDescription>
           <div>
             <HighlightStyle1
-              src={Highlight1}
+              src={Assets.Highlight1}
             />
             <Typography.Header style={{ position: "relative", zIndex: 2 }}>
               Make Waves With Us!
@@ -105,15 +91,15 @@ const About = () => {
               </a>
             </div>
           </div>
-          <HeaderImage src={Swing} />
+          <HeaderImage src={Assets.Swing} />
         </AboutDescription>
       </div>
-      <div style={{display: "flex", justifyContent: "center", width: "100%", minHeight: "85vh", backgroundImage: `url(${WavyPurple})`, backgroundSize: 'cover', paddingBottom: 100}}>
+      <div style={{display: "flex", justifyContent: "center", width: "100%", minHeight: "85vh", backgroundImage: `url(${Assets.WavyPurple})`, backgroundSize: 'cover', paddingBottom: 100}}>
         <MediumContainer>
-          <MediumImage src={Beach} />
+          <MediumImage src={Assets.Beach} />
           <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
             <Highlight
-              src={Highlight2}
+              src={Assets.Highlight2}
               style={{
                 width: 160,
                 height: 60,
@@ -141,11 +127,11 @@ const About = () => {
           </div>
         </MediumContainer>
       </div>
-      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${WavyOrange})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
+      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${Assets.WavyOrange})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
         <MediumContainer>
           <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
             <Highlight
-              src={Highlight3}
+              src={Assets.Highlight3}
               style={{
                 width: 160,
                 height: 35,
@@ -173,14 +159,14 @@ const About = () => {
               some digital painting skills. The possibilities are endless!
             </Typography.BodyText>
           </div>
-          <MediumImage src={FerrisWheel} />
+          <MediumImage src={Assets.FerrisWheel} />
         </MediumContainer>
       </div>
-      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${WavyWhite})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
+      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "85vh", backgroundImage: `url(${Assets.WavyWhite})`, backgroundSize: 'cover', marginTop: -100, paddingBottom: 100}}>
         <br /><br />
         <MediumContainer>
           <DescItem>
-            <DescImage src={Icon1}/>
+            <DescImage src={Assets.Icon1}/>
             <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
               Never the Same
             </Typography.Header>
@@ -190,7 +176,7 @@ const About = () => {
             </Typography.BodyText>
           </DescItem>
           <DescItem>
-          <DescImage src={Icon2}/>
+          <DescImage src={Assets.Icon2}/>
             <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
               Exclusive Seminar Leaders
             </Typography.Header>
@@ -200,7 +186,7 @@ const About = () => {
             </Typography.BodyText>
           </DescItem>
           <DescItem>
-            <DescImage src={Icon3}/>
+            <DescImage src={Assets.Icon3}/>
             <Typography.Header style={{fontSize: 20, color: Colors.WLF_BLACK}}>
               Have a Great Summer
             </Typography.Header>
@@ -211,12 +197,12 @@ const About = () => {
           </DescItem>
         </MediumContainer>
       </div>
-      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${WavyTurquoise})`, backgroundSize: 'cover', marginTop: -100}}>
+      <div style={{display: "flex", justifyContent: "center", position: 'relative', width: "100%", minHeight: "65vh", backgroundImage: `url(${Assets.WavyTurquoise})`, backgroundSize: 'cover', marginTop: -100}}>
         <MediumContainer>
-          <MediumImage src={WhyWave} />
+          <MediumImage src={Assets.WhyWave} />
           <div style={{gridColumn: "span 2", alignSelf: 'center'}}>
             <Highlight
-              src={Highlight4}
+              src={Assets.Highlight4}
               style={{
                 width: 205,
                 height: 35,
