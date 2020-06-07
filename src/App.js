@@ -271,6 +271,9 @@ function App () {
               <CourseSignUp />
             </Route>
             <Route path="/:slug" component={CoursePage} />
+            <Route path="/edit-profile">
+              <EditProfile />
+            </Route>
             <Route path="/">
               <About />
             </Route>
