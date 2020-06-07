@@ -118,6 +118,9 @@ function App() {
             <Route path="/dashboard">
               <Dashboard />
             </Route>
+            <Route path="/edit-profile">
+              <EditProfile />
+            </Route>
             <Route path="/">
               <About />
             </Route>
