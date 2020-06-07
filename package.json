@@ -20,11 +20,11 @@
   },
   "scripts": {
     "dev": "craco start",
-    "start": "craco -s build",
+    "start": "serve -s build",
     "build": "craco build",
     "test": "craco test --env=jsdom",
     "eject": "craco eject",
-    "heroku-postbuild": "craco build"
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
