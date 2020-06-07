@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
-import { Container, ContainerInner } from "../../globalStyles"
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import { Container, ContainerInner } from "@/globalStyles"
 import './styles.css'
-import {Colors, Typography} from "../../styles";
+import {Colors, Typography} from "@/styles
 
 import LearnCancer from "./headshot/how-cancer-works.jpg"
 import LearnPython from "./headshot/learn-python.png"

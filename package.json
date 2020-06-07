@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^5.6.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "craco-alias": "^2.1.1",
     "firebase": "^7.14.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -17,12 +19,12 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "dev": "craco start",
+    "start": "craco -s build",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
+    "eject": "craco eject",
+    "heroku-postbuild": "craco build"
   },
   "eslintConfig": {
     "extends": "react-app"
