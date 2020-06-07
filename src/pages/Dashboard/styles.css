@@ -8,10 +8,12 @@
 }
 
 .course {
-  width: 33.3%;
+  width: 28%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
+  margin-right: 50px;
+  margin-bottom: 50px;
   outline: 2px solid black;
 }
