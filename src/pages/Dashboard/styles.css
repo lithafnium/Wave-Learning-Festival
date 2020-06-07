@@ -1,0 +1,17 @@
+
+.row {
+  text-align: center;
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  outline: 2px solid black;
+}
