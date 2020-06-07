@@ -38,6 +38,60 @@ const Dashboard = () => {
                 <b><a href="about:blank">Zoom Link</a></b>
                 </p>
               </div>
+              <div class="course">
+                <p>
+                <b>Course Name: </b><a href="/course-learn-python">Learn Python</a><br/>
+                <b>Instructor: </b>Fatima-Zahra Chriha<br/>
+                <b>Instructor Location: </b>Lodi, NJ, USA<br/>
+                <b><a href="about:blank">Course Documents</a></b><br/>
+                <b><a href="about:blank">Zoom Link</a></b>
+                </p>
+              </div>
+              <div class="course">
+                <p>
+                <b>Course Name: </b><a href="/course-learn-python">Learn Python</a><br/>
+                <b>Instructor: </b>Fatima-Zahra Chriha<br/>
+                <b>Instructor Location: </b>Lodi, NJ, USA<br/>
+                <b><a href="about:blank">Course Documents</a></b><br/>
+                <b><a href="about:blank">Zoom Link</a></b>
+                </p>
+              </div>
+              <div class="course">
+                <p>
+                <b>Course Name: </b><a href="/course-learn-python">Learn Python</a><br/>
+                <b>Instructor: </b>Fatima-Zahra Chriha<br/>
+                <b>Instructor Location: </b>Lodi, NJ, USA<br/>
+                <b><a href="about:blank">Course Documents</a></b><br/>
+                <b><a href="about:blank">Zoom Link</a></b>
+                </p>
+              </div>
+              <div class="course">
+                <p>
+                <b>Course Name: </b><a href="/course-learn-python">Learn Python</a><br/>
+                <b>Instructor: </b>Fatima-Zahra Chriha<br/>
+                <b>Instructor Location: </b>Lodi, NJ, USA<br/>
+                <b><a href="about:blank">Course Documents</a></b><br/>
+                <b><a href="about:blank">Zoom Link</a></b>
+                </p>
+              </div>
+              <div class="course">
+                <p>
+                <b>Course Name: </b><a href="/course-learn-python">Learn Python</a><br/>
+                <b>Instructor: </b>Fatima-Zahra Chriha<br/>
+                <b>Instructor Location: </b>Lodi, NJ, USA<br/>
+                <b><a href="about:blank">Course Documents</a></b><br/>
+                <b><a href="about:blank">Zoom Link</a></b>
+                </p>
+              </div>
+              <div class="course">
+                <p>
+                <b>Course Name: </b><a href="/course-learn-python">Learn Python</a><br/>
+                <b>Instructor: </b>Fatima-Zahra Chriha<br/>
+                <b>Instructor Location: </b>Lodi, NJ, USA<br/>
+                <b><a href="about:blank">Course Documents</a></b><br/>
+                <b><a href="about:blank">Zoom Link</a></b>
+                </p>
+              </div>
             </div>
 
             </ContainerInner>
