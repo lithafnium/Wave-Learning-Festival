@@ -19,7 +19,7 @@ const Dashboard = () => {
             <p><b>Parent's Email: </b>parentemail@parentdomain.domainname</p>
             <p><b>Parent's Phone: </b>6502983233</p>
             <p><b>School: </b>Williams College</p>
-            <p><b>Country: <b>United States</b></p>
+            <p><b>Country: </b>United States</p>
             <p><b>Address: </b>123 Main Street, Palo Alto, CA 94306</p>
 
             <br/><br/>

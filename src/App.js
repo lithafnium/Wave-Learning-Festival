@@ -69,6 +69,10 @@ import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
 import CourseSignUp from './pages/Courses/CourseSignUp'
 import CoursePage from './pages/Courses/CoursePages'
+
+import Dashboard from './pages/Dashboard'
+import EditProfile from './pages/Dashboard/EditProfile'
+
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
