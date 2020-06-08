@@ -2,12 +2,16 @@ html {
   box-sizing: border-box;
 }
 
+.school {
+  margin-top: -0.75em;
+}
+
 .container {
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 0;
-  padding-bottom: 80px;
+  margin-bottom: -3.5em;
 }
 
 *,
@@ -18,20 +22,22 @@ html {
 
 .row {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
   width: 100%;
   max-width: 1024px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.team-member {
+.course {
   float: left;
   display: table-row;
 }
 
-.team-member img {
+.image-container {
+  /* position: relative; */
+}
+
+.course img {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
@@ -40,7 +46,6 @@ html {
   display: block;
 }
 
-.card::after,
 .row::after {
   content: "";
   clear: both;
@@ -51,9 +56,10 @@ html {
   width: 33.3%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 16px;
   padding: 0 8px;
+  height: 350px;
 }
 
 @media screen and (max-width: 650px) {
@@ -64,7 +70,7 @@ html {
 
 @media screen and (min-width: 320px) {
   .container {
-    margin-top: -150px;
+    margin-top: 0px;
   }
 }
 
@@ -78,13 +84,33 @@ html {
   text-align: center;
 }
 
-.desc {
+.teacher {
   color: #666666;
   text-align: center;
-  font-weight: bold;
 }
 
-.school {
-  color: #666666;
+.text {
+  color: white;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  text-align: left;
+}
+
+h1 {
+  color: #2684ff;
 }

@@ -154,22 +154,45 @@ export const Bar = styled.p`
 `;
 
 export const SideBar = styled.div`
-  position: fixed;
-  top: 0;
-  max-height: 100vh;
-  height: 100%;
-  width: 200px;
-  right: ${(props) => (props.show ? "0" : "calc(-200px)")};
-  background-color: #ffffff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: fixed;
+    top: 0;
+    max-height: 100vh;
+	height: 100%;
+    width: 200px;
+    right: ${props => (props.show ? '0' : 'calc(-200px)')};
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
-  padding-top: 50px;
+    padding-top: 50px;
 
-  & a {
-    color: rgba(31, 45, 61, 0.5);
-    font-size: 16px;
-    text-decoration: none;
+    & a{
+        color: rgba(31,45,61,.5);
+        font-size: 16px;
+        text-decoration: none;
+        transition: 0.2s;
+        font-weight: 600;
+    }
+    & a:hover{
+        color: rgba(31,45,61,1);
+    }
+
+    & p{
+        margin-bottom: 15px;
+    }
+`
+
+
+
+
+export const NavbarDropdown = styled.div`
+    position: absolute;
+    left: -10px;
+    bottom: -190px
+    width: fit-content;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 1.25rem rgba(31,45,61,.08);
     transition: 0.2s;
     font-weight: 600;
   }
@@ -182,18 +205,6 @@ export const SideBar = styled.div`
   }
 `;
 
-export const NavbarDropdown = styled.div`
-  position: absolute;
-  left: -10px;
-  bottom: -190px;
-  width: fit-content;
-  height: auto;
-  background-color: #ffffff;
-  box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.08);
-  transition: 0.2s;
-  border-radius: 10px;
-`;
-
 export const NavItem = styled.p`
   position: relative;
   margin: 0px;
@@ -202,6 +213,7 @@ export const NavItem = styled.p`
   transition: 0.2s;
   width: fit-content;
   border-bottom: 2px solid white;
+  text-align: center;
 
   &:hover {
     border-bottom: 2px solid ${WLF_PURPLE};
