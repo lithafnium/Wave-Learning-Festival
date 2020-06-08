@@ -188,7 +188,7 @@ export const SideBar = styled.div`
 export const NavbarDropdown = styled.div`
     position: absolute;
     left: -10px;
-    bottom: -190px
+    bottom: -190px;
     width: fit-content;
     height: auto;
     background-color: #ffffff;
