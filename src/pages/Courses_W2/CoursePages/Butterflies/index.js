@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../../../../components/Navbar'
-import Footer from '../../../../components/Footer'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import '../styles.css'
-import { Container, ContainerInner } from '../../../../globalStyles'
+import { Container, ContainerInner } from '@/globalStyles'
 
 import Profile from "../../teacherheadshots/Callia Chuang.jpg"
 import ProfileTwo from "../../teacherheadshots/Talia Blatt.JPG"

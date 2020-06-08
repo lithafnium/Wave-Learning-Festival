@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { device } from "../../theme";
-import { Colors } from "../../styles";
+import { device } from "@/theme";
+import { Colors } from "@/styles";
 
 export const FooterContainer = styled.footer`
   width: 100%;
