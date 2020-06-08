@@ -28,7 +28,8 @@ import LogoText from './logoText.png'
 import LogoTextFull from './logoTextFull.svg'
 
 const Navbar = () => {
-    const [show, setShown] = useState(false)
+    const [faqshow, setfaqshow] = useState(false)
+    const [coursesShow, setCoursesShow] = useState(false)
     const [slide, toggleSlide] = useState(false)
     return (
         <NavbarContainer>
@@ -42,11 +43,19 @@ const Navbar = () => {
                     <NavItem>
                         <Link to='/team'>About Us</Link>
                     </NavItem>
-                    <NavItem>
-                        <Link to='/teachers'>Teachers</Link>
-                    </NavItem>
-                    <NavItem>
+                    <NavItem onMouseEnter={() => setCoursesShow(true)}
+                             onMouseLeave={() => setCoursesShow(false)} >
                         <Link to='/courses'>Courses</Link>
+                       {coursesShow && <NavbarDropdown>
+                        <Link to='/teachers'>
+                            <DropdownItem>
+                                <IconContext.Provider value={{ color: WLF_PURPLE, style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                    <div><FaUserAlt/></div>
+                                </IconContext.Provider>
+                                Teachers
+                            </DropdownItem>
+                        </Link>
+                        </NavbarDropdown>}
                     </NavItem>
                     <NavItem>
                         <Link to='/join'>Join</Link>
@@ -54,12 +63,12 @@ const Navbar = () => {
                     <NavItem>
                         <Link to='/blog'>Blog</Link>
                     </NavItem>
-                    <NavItem onMouseEnter={() => setShown(true)}
-                              onMouseLeave={() => setShown(false)} >
+                    <NavItem onMouseEnter={() => setfaqshow(true)}
+                              onMouseLeave={() => setfaqshow(false)} >
                         <Link>
                             FAQ
                         </Link>
-                       {show &&
+                       {faqshow &&
                             <>
                             <NavbarDropdown>
                                 <Link to='/faq-students'>
@@ -123,6 +132,12 @@ const Navbar = () => {
                     </NavItem>
                     <NavItem>
                         <Link to='/courses'>Courses</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/join'>Join</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/blog'>Blog</Link>
                     </NavItem>
                     <NavItem>
                         <Link to='/faq-teachers'>
