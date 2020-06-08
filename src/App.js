@@ -252,7 +252,7 @@ function App() {
             <Route path="/courseTesting">
               <CourseTesting />
             </Route>
-            <Route path="/:slug" component={CoursePage} />
+            <Route path="/:slug" component={CoursePage} />*/}
             <Route path="/">
               <About />
             </Route>

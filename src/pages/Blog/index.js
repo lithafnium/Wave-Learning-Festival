@@ -7,10 +7,7 @@ import {Colors, Typography} from "../../styles";
 import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
 import WaveLogo from './wave-learning-logo.png'
-<<<<<<< HEAD
 import BlogPost from './blogpost.js'
-=======
->>>>>>> Added Blog
 
 const Blog = () => {
   const {db} = useContext(FirebaseContext)
@@ -23,13 +20,7 @@ const Blog = () => {
       .then(function(querySnapshot) {
         let posts = [];
         querySnapshot.forEach(function(doc) {
-<<<<<<< HEAD
             if (doc.data().schema == "blogPost") {
-=======
-          console.log(doc.id, " => ", doc.data().schema);
-            if (doc.data().schema == "blogPost") {
-              console.log(doc.id, " => ", doc.data());
->>>>>>> Added Blog
               posts.push(doc);
             } 
         });
@@ -64,30 +55,12 @@ const Blog = () => {
             <ContainerInner>
             <h1>Blog</h1>
             <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
-<<<<<<< HEAD
               Welcome to Wave Learning Festival's Blog!
-=======
-              Welcome to Wave Learning Festivals Blog!
->>>>>>> Added Blog
             </Typography.BodyText>
             <div class="container">
             <div class="row">
             {blogPosts.map(post => (
-<<<<<<< HEAD
               <BlogPost doc={post}/>
-=======
-              <div class="column">
-              <a href={`${post.id}`}>
-                <div class="course">
-                  <div class="image-container">
-                    <img src={WaveLogo}/>
-                  </div>
-                    <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{post.data().title}</Typography.Header2>
-                    <Typography.BodyText style={{fontSize: 16}}>{post.data().date.substring(0, post.data().date.indexOf("T"))}</Typography.BodyText>
-                  </div>
-              </a>
-            </div>
->>>>>>> Added Blog
             ))}
         </div>
         </div>

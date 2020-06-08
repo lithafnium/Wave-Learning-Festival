@@ -21,10 +21,7 @@ html {
 }
 
 .row {
-<<<<<<< HEAD
-=======
   text-align: center;
->>>>>>> Added Blog
   width: 100%;
   max-width: 1024px;
   display: flex;
@@ -106,7 +103,6 @@ html {
   text-align: center;
 }
 
-<<<<<<< HEAD
 .card {
   background-color: white;
   padding: 20px;
@@ -115,8 +111,6 @@ html {
   text-align: left;
 }
 
-=======
->>>>>>> Added Blog
 h1 {
   color: #2684ff;
 }
