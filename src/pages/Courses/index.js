@@ -17,6 +17,11 @@ const Courses = () => {
   const WAVE = 1;
 
   if (db && loading && !courses.length) {
+<<<<<<< HEAD
+=======
+    /*getFirebase()
+      .database()*/
+>>>>>>> Added Blog
       db.collection("fl_content")
       .get()
       .then(function(querySnapshot) {
@@ -28,6 +33,12 @@ const Courses = () => {
               posts.push(doc);
             } 
         });
+<<<<<<< HEAD
+=======
+        //setImageRef(db.storage().ref().child('gs://wave-learning-festival.appspot.com/flamelink/media'))
+        
+        //setImageRef('gs://wave-learning-festival.appspot.com/flamelink/media')
+>>>>>>> Added Blog
         setCourses(posts);
         setLoading(false);
       })

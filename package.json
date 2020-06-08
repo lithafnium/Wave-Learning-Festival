@@ -8,8 +8,12 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "craco-alias": "^2.1.1",
     "firebase": "^7.14.4",
+=======
+    "firebase": "^7.15.0",
+>>>>>>> Added Blog
 =======
     "firebase": "^7.15.0",
 >>>>>>> Added Blog
