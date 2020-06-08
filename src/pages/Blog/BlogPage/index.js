@@ -2,38 +2,16 @@ import React, { useState, useContext } from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import { Container, ContainerInner } from "../../../globalStyles.js"
+import {Colors, Typography} from "../../../styles";
 import {FirebaseContext} from '../../../firebaseContext'
 import 'firebase/firestore'
 import WaveLogo from '../wave-learning-logo.png'
 
-var support = (function () {
-	if (!window.DOMParser) return false;
-	var parser = new DOMParser();
-	try {
-		parser.parseFromString('x', 'text/html');
-	} catch(err) {
-		return false;
-	}
-	return true;
-})();
+/**
+ * Blog Page creates a new page for an individual blog if there is overflow. 
+ */
 
-var stringToHTML = function (str) {
-
-	// If DOMParser is supported, use it
-	if (support) {
-		var parser = new DOMParser();
-		var doc = parser.parseFromString(str, 'text/html');
-		return doc.body;
-	}
-
-	// Otherwise, fallback to old-school method
-	var dom = document.createElement('div');
-	dom.innerHTML = str;
-	return dom;
-
-};
-
-const BlogPost = ({ match }) => {
+const BlogPage = ({ match }) => {
     const {db} = useContext(FirebaseContext)
     const slug = match.params.slug;
     const [title, setTitle] = useState('')
@@ -76,12 +54,14 @@ const BlogPost = ({ match }) => {
       <div>
           <Navbar/>
           <Container>
-              <ContainerInner>
-              <h1>{title}</h1>
-              <p style={{clear: 'right'}}>
+            <ContainerInner>
+              <h1 style={{'text-align': 'center'}}>{title}</h1>
+              <Typography.BodyText style={{clear: 'right', 'text-align': 'center', color: Colors.WLF_BLACK}}>
                 <b>Posted on: </b>{date.substring(0, date.indexOf("T"))}
-              </p>
-                {contentDetailed}
+              </Typography.BodyText>
+              <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
+                <td dangerouslySetInnerHTML={{__html: contentDetailed}} />
+              </Typography.BodyText>
             </ContainerInner>
           </Container>
           <Footer/>
@@ -89,4 +69,4 @@ const BlogPost = ({ match }) => {
   )
 }
 
-export default BlogPost
+export default BlogPage

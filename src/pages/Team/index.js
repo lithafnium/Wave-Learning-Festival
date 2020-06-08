@@ -28,21 +28,20 @@ import AlainDalma from "./headshot/alain-saal-dalma.jpg";
 import AmyShen from "./headshot/amy-shen.jpg";
 
 const Team = () => {
-  return (
-    <div>
-      <Navbar />
-      <div class="container">
-        <div class="row">
+    return(
+      <div>
+          <Navbar/>
+          <div class="container">
+          <div class="row">
           <div class="column">
             <div class="team-member">
               <img src={KarlyHou} />
-              <div class="card">
                 <Typography.Name>Karly Hou</Typography.Name>
                 <Typography.School>Harvard University, 2023</Typography.School>
                 <Typography.Position>Chair</Typography.Position>
               </div>
-            </div>
           </div>
+        </div>
           <div class="column">
             <div class="team-member">
               <img src={YaelLivneh} />
