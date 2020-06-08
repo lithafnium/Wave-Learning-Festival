@@ -40,10 +40,6 @@ html {
   display: block;
 }
 
-.card {
-  padding: 0 16px;
-}
-
 .card::after,
 .row::after {
   content: "";

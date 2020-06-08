@@ -37,12 +37,10 @@ const Team = () => {
             <div class="column">
               <div class="team-member">
                 <img src={KarlyHou} />
-                <div class="card">
                   <Typography.Name>Karly Hou</Typography.Name>
                   <Typography.School>Harvard University, 2023</Typography.School>
                   <Typography.Position>Chair</Typography.Position>
                 </div>
-              </div>
             </div>
             <div class="column">
               <div class="team-member">
