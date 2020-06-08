@@ -59,7 +59,10 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 import Join from './pages/Join'
-import CourseTesting from './pages/Courses/CoursePages'
+import Blog from './pages/Blog'
+import BlogPost from './pages/Blog/BlogPosts'
+import CourseTesting from './pages/Courses'
+import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
@@ -236,9 +239,14 @@ function App() {
             <Route path="/join">
               <Join />
             </Route>
+            <Route path="/blog">
+              <Blog />
+            </Route>
+            <Route path="/:slug" component={BlogPost} />
             <Route path="/courseTesting">
               <CourseTesting />
             </Route>
+            <Route path="/:slug" component={CoursePage} />
             <Route path="/">
               <About />
             </Route>

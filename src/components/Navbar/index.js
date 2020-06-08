@@ -23,6 +23,7 @@ import LogoText from "./logoText.png";
 import LogoTextFull from "./logoTextFull.svg";
 
 const Navbar = () => {
+<<<<<<< HEAD
   const [show, setShown] = useState(false);
   const [slide, toggleSlide] = useState(false);
   return (
@@ -113,6 +114,78 @@ const Navbar = () => {
             )}
           </NavItem>
           {/*
+=======
+    const [show, setShown] = useState(false)
+    const [slide, toggleSlide] = useState(false)
+    return (
+        <NavbarContainer>
+            <NavbarInner>
+                <BrandText src={LogoTextFull}/>
+                <Brand src={Logo}/>
+                <Links>
+                    <NavItem>
+                        <Link to='/'>Home</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/team'>About Us</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/teachers'>Teachers</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/courses'>Courses</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/join'>Join</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/blog'>Blog</Link>
+                    </NavItem>
+                    <NavItem onMouseEnter={() => setShown(true)}
+                              onMouseLeave={() => setShown(false)} >
+                        <Link>
+                            FAQ
+                        </Link>
+                       {show &&
+                            <>
+                            <NavbarDropdown>
+                                <Link to='/faq-students'>
+                                    <DropdownItem>
+                                        <IconContext.Provider value={{ color: WLF_PURPLE, style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                            <div>
+                                        <FaUserAlt/>
+                                        </div>
+                                    </IconContext.Provider>
+                                        Students
+                                    </DropdownItem>
+                                </Link>
+                                <Link to='/faq-parents'>
+                                    <DropdownItem>
+                                    <IconContext.Provider value={{ color: WLF_PURPLE, style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                            <div>
+                                            <FaUserFriends/>
+                                        </div>
+                                    </IconContext.Provider>
+                                        Parents
+                                    </DropdownItem>
+                                </Link>
+                                <Link to='/faq-teachers'>
+                                    <DropdownItem>
+                                    <IconContext.Provider value={{ color: WLF_PURPLE, style: { verticalAlign: 'middle', marginRight: '10px' } }}>
+                                            <div>
+                                            <FaChalkboardTeacher/>
+                                        </div>
+                                    </IconContext.Provider>
+                                        Teachers
+                                    </DropdownItem>
+                                </Link>
+
+                            </NavbarDropdown>
+                            </>
+                        }
+                    </NavItem>
+{/*
+>>>>>>> Added Blog
                     <Link to='/login'>
                         <Button>
                             Login

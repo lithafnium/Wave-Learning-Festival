@@ -1,0 +1,108 @@
+html {
+  box-sizing: border-box;
+}
+
+.school {
+  margin-top: -0.75em;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  margin-bottom: -3.5em;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.row {
+  text-align: center;
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course {
+  float: left;
+  display: table-row;
+}
+
+.image-container {
+  /* position: relative; */
+}
+
+.course img {
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  height: 350px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 786px) {
+  .container {
+    margin-top: 0px;
+  }
+}
+.name {
+  color: #000000;
+  text-align: center;
+}
+
+.teacher {
+  color: #666666;
+  text-align: center;
+}
+
+.text {
+  color: white;
+  font-size: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1 {
+  color: #2684ff;
+}
