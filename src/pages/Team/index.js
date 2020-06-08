@@ -41,7 +41,6 @@ const Team = () => {
                   <Typography.Position>Chair</Typography.Position>
                 </div>
             </div>
-          </div>
           <div class="column">
             <div class="team-member">
               <img src={YaelLivneh} />
@@ -240,6 +239,7 @@ const Team = () => {
               <Typography.Position>Co-Director of Business</Typography.Position>
             </div>
           </div>
+        </div>
         </div>
       <Footer />
     </div>

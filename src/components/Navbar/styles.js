@@ -205,18 +205,6 @@ export const NavbarDropdown = styled.div`
   }
 `;
 
-export const NavbarDropdown = styled.div`
-  position: absolute;
-  left: -10px;
-  bottom: -190px;
-  width: fit-content;
-  height: auto;
-  background-color: #ffffff;
-  box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.08);
-  transition: 0.2s;
-  border-radius: 10px;
-`;
-
 export const NavItem = styled.p`
   position: relative;
   margin: 0px;
@@ -225,6 +213,7 @@ export const NavItem = styled.p`
   transition: 0.2s;
   width: fit-content;
   border-bottom: 2px solid white;
+  text-align: center;
 
   &:hover {
     border-bottom: 2px solid ${WLF_PURPLE};
