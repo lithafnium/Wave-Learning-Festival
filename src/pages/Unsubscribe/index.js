@@ -5,21 +5,15 @@ import Footer from "@/components/Footer";
 import { FirebaseContext } from "@/firebaseContext";
 
 const Unsubscribe = () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
   const [email, updateEmail] = useState("");
   const [emailError, toggleError] = useState(false);
   const { db } = useContext(FirebaseContext);
   const [unsubscribed, toggleUnsubscribed] = useState(false);
-=======
-=======
->>>>>>> Added Blog
     console.log("OPENED")
     const [email, updateEmail] = useState('')
     const [emailError, toggleError] = useState(false)
     const { db } = useContext(FirebaseContext)
     const [unsubscribed, toggleUnsubscribed] = useState(false)
->>>>>>> Added Blog
 
   const unsubscribe = () => {
     toggleError(false);
