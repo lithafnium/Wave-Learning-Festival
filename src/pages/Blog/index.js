@@ -7,6 +7,7 @@ import {Colors, Typography} from "../../styles";
 import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
 import WaveLogo from './wave-learning-logo.png'
+import BlogPost from './blogpost.js'
 
 const Blog = () => {
   const {db} = useContext(FirebaseContext)
@@ -19,9 +20,7 @@ const Blog = () => {
       .then(function(querySnapshot) {
         let posts = [];
         querySnapshot.forEach(function(doc) {
-          console.log(doc.id, " => ", doc.data().schema);
             if (doc.data().schema == "blogPost") {
-              console.log(doc.id, " => ", doc.data());
               posts.push(doc);
             } 
         });
@@ -56,22 +55,12 @@ const Blog = () => {
             <ContainerInner>
             <h1>Blog</h1>
             <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
-              Welcome to Wave Learning Festivals Blog!
+              Welcome to Wave Learning Festival's Blog!
             </Typography.BodyText>
             <div class="container">
             <div class="row">
             {blogPosts.map(post => (
-              <div class="column">
-              <a href={`${post.id}`}>
-                <div class="course">
-                  <div class="image-container">
-                    <img src={WaveLogo}/>
-                  </div>
-                    <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{post.data().title}</Typography.Header2>
-                    <Typography.BodyText style={{fontSize: 16}}>{post.data().date.substring(0, post.data().date.indexOf("T"))}</Typography.BodyText>
-                  </div>
-              </a>
-            </div>
+              <BlogPost doc={post}/>
             ))}
         </div>
         </div>

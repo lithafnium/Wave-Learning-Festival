@@ -21,7 +21,6 @@ html {
 }
 
 .row {
-  text-align: center;
   width: 100%;
   max-width: 1024px;
   display: flex;
@@ -101,6 +100,14 @@ html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+  text-align: left;
 }
 
 h1 {
