@@ -181,7 +181,7 @@ const Courses = () => {
                     <p class="name">
                       An Introduction to the Applications of Computer Science
                     </p>
-                    <p class="teacher">Kevin Bao & Ian Zhang</p>
+                    <p class="teacher">Kevin Bao</p>
                     <p class="school">Henry M. Gunn High School '21</p>
                   </div>
                 </a>
