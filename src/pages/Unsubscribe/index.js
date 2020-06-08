@@ -5,6 +5,7 @@ import Footer from '../../components/Footer'
 import { FirebaseContext } from '../../firebaseContext'
 
 const Unsubscribe = () => {
+    console.log("OPENED")
     const [email, updateEmail] = useState('')
     const [emailError, toggleError] = useState(false)
     const { db } = useContext(FirebaseContext)

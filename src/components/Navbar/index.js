@@ -49,7 +49,10 @@ const Navbar = () => {
                         <Link to='/courses'>Courses</Link>
                     </NavItem>
                     <NavItem>
-                        <Link to='/join'>Join the Team</Link>
+                        <Link to='/join'>Join</Link>
+                    </NavItem>
+                    <NavItem>
+                        <Link to='/blog'>Blog</Link>
                     </NavItem>
                     <NavItem onMouseEnter={() => setShown(true)}
                               onMouseLeave={() => setShown(false)} >
