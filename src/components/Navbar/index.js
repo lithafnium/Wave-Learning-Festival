@@ -38,9 +38,12 @@ const Navbar = () => {
           <NavItem>
             <Link to="/team">About Us</Link>
           </NavItem>
+          <NavItem>
+            <Link to="/courses">Courses</Link>
+          </NavItem>
           <NavItem onMouseEnter={() => setCoursesShow(true)}
                    onMouseLeave={() => setCoursesShow(false)}>
-            <Link to="/courses">Courses</Link>
+            <Link>Apply</Link>
             {coursesShow && (<NavbarDropdown>
                 <Link to="/teachers">
                   <DropdownItem>
@@ -55,7 +58,23 @@ const Navbar = () => {
                     >
                       <div><FaChalkboardTeacher /></div>
                     </IconContext.Provider>
-                    Teachers
+                    Teach
+                  </DropdownItem>
+                </Link>
+                <Link to="/join">
+                  <DropdownItem>
+                    <IconContext.Provider
+                      value={{
+                        color: WLF_PURPLE,
+                        style: {
+                          verticalAlign: "middle",
+                          marginRight: "10px",
+                        },
+                      }}
+                    >
+                      <div><FaUserFriends /></div>
+                    </IconContext.Provider>
+                    Join the Team
                   </DropdownItem>
                 </Link>
                 </NavbarDropdown>
@@ -63,9 +82,6 @@ const Navbar = () => {
           </NavItem>
           <NavItem>
             <Link to="/blog">Blog</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/join">Join the Team</Link>
           </NavItem>
           <NavItem
             onMouseEnter={() => setFaqShow(true)}

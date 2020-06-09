@@ -195,6 +195,7 @@ export const NavbarDropdown = styled.div`
     box-shadow: 0 0 1.25rem rgba(31,45,61,.08);
     transition: 0.2s;
     font-weight: 600;
+    white-space: nowrap
   }
   & a:hover {
     color: rgba(31, 45, 61, 1);
