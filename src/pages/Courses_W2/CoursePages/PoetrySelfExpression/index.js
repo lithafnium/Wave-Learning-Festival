@@ -26,9 +26,11 @@ const CoursePoetry = () => {
             together. See you in the classroom!
           </p>
           <p style={{ clear: "right" }}>
-            <b>Class Date: </b> 06/20/2020
+            <b>Class Date: </b> June 20 - June 28 
             <br />
-            <b>Time (EDT): </b> 5pm - 6pm
+            <b>Format: </b> Saturdays, Sundays
+            <br />
+            <b>Time (EDT): </b> 6 pm
           </p>
           <p>
             <img src={Profile} class="img-left" />
