@@ -24,7 +24,7 @@ const CourseIntroCS = () => {
           <p style={{ clear: "right" }}>
             <b>Class Date + Time: </b> June 16 - June 25
             <br />
-            <b>Format: </b> Tuesday, Thursday
+            <b>Format: </b> Tuesday, Thursday, Saturdays
             <br />
             <b>Time (EDT): </b> 12pm - 1pm
           </p>
