@@ -34,7 +34,7 @@ const CourseStatisticalMachine = () => {
             <img src={Profile} class="img-left" />
             <b>Taught by: </b>Asher Noel (Harvard University '23)
             <br />
-            <b>Teacher Bio: </b> Updated Soon!
+            <b>Teacher Bio: </b> Hi! I’m Asher, a rising sophomore at Harvard University studying Computer Science and Statistics. My background includes astrophysics research, full-stack development, and data journalism, and I am a part of the newly-formed student-run Harvard machine learning research group. I look forward to spending my summer diving deep into NLP, and I can’t wait to share an introduction with wave!
           </p>
           <h1>Register for this course!</h1>
           <iframe
