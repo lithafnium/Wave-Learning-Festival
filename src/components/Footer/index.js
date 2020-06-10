@@ -50,7 +50,11 @@ const Footer = () => {
           </Typography.BodyText>
         </FooterLeft>
         <Social>
-          <Icon>
+          <Icon onClick={() =>
+            window.open(
+              "https://www.facebook.com/wavelf/",
+              "_blank"
+            )}>
             <IconContext.Provider
               value={{
                 color: "white",
