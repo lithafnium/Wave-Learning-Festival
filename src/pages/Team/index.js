@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import "./styles.css";
 
 import { Colors, Typography } from "@/styles";
+import * as Styles from "./styles";
 
 import BlenKedir from "./headshot/blen-beharu-kedir.png";
 import CarterMartindale from "./headshot/carter-martindale.jpg";
@@ -27,222 +27,177 @@ import MarkPekala from "./headshot/mark-pekala.jpg";
 import AlainDalma from "./headshot/alain-saal-dalma.jpg";
 import AmyShen from "./headshot/amy-shen.jpg";
 
+const teamData = [
+  {
+    name: "Karly Hou",
+    school: "Harvard University, 2023",
+    position: "Chair",
+    image: KarlyHou,
+  },
+  {
+    name: "Yael Livneh",
+    school: "Cal Poly SLO, 2023",
+    position: "Director of Logistics",
+    image: YaelLivneh,
+  },
+  {
+    name: "Salma Kamni",
+    school: "Stanford University, 2024",
+    position: "Associate Director of Logistics",
+    image: SalmaKamni,
+  },
+  {
+    name: "Simon Tao",
+    school: "Stanford University, 2022",
+    position: "Associate Director of Logistics",
+    image: SimonTao,
+  },
+  {
+    name: "Kevin Tan",
+    school: "Harvard University, 2023",
+    position: "Associate Director of Logistics",
+    image: KevinTan,
+  },
+  {
+    name: "Austin Li",
+    school: "Harvard University, 2023",
+    position: "Associate Director of Logistics",
+    image: AustinLi,
+  },
+  {
+    name: "Alain Saal-Dalma",
+    school: "Carnegie Mellon University, 2023",
+    position: "Associate Director of Logistics",
+    image: AlainDalma,
+  },
+  {
+    name: "Amy Shen",
+    school: "University of Pennsylvania, 2022",
+    position: "Associate Director of Logistics",
+    image: AmyShen,
+  },
+  {
+    name: "Steve Li",
+    school: "Harvard University, 2023",
+    position: "Co-Director of Tech",
+    image: SteveLi,
+  },
+  {
+    name: "Daniela Shuman",
+    school: "Harvard University, 2023",
+    position: "Co-Director of Tech",
+    image: DanielaShuman,
+  },
+  {
+    name: "Jonny Rogers",
+    school: "Williams College, 2023",
+    position: "Associate Director of Tech",
+    image: JonnyRogers,
+  },
+  {
+    name: "Mark Pekala",
+    school: "Harvard University, 2023",
+    position: "Associate Director of Tech",
+    image: MarkPekala,
+  },
+  {
+    name: "Iris Su",
+    school: "Harvard University, 2023",
+    position: "Director of PR",
+    image: IrisSu,
+  },
+  {
+    name: "Ruhi Mistry",
+    school: "UC Santa Cruz, 2024",
+    position: "Associate Director of PR",
+    image: RuhiMistry,
+  },
+  {
+    name: "Nikki Suzani",
+    school: "Henry M. Gunn High School, 2021",
+    position: "Associate Director of PR",
+    image: NikkiSuzani,
+  },
+  {
+    name: "Blen Kedir",
+    school: "Stanford University, 2023",
+    position: "Associate Director of PR",
+    image: BlenKedir,
+  },
+  {
+    name: "Joshua Chen",
+    school: "University of Pennsylvania, 2022",
+    position: "Associate Director of PR",
+    image: JoshuaChen,
+  },
+  {
+    name: "Sandra Chiu",
+    school: "Northwestern, 2023",
+    position: "Director of Media and Design",
+    image: SandraChiu,
+  },
+  {
+    name: "Jeffrey Yao",
+    school: "Rhode Island School of Design, 2022",
+    position: "Associate Director of Media and Design",
+    image: JeffreyYao,
+  },
+  {
+    name: 'blank',
+  },
+  {
+    name: "Chase Souder",
+    school: "Harvard University, 2023",
+    position: "Co-Director of Business",
+    image: ChaseSouder,
+  },
+  {
+    name: "Carter Martindale",
+    school: "Harvard University, 2023",
+    position: "Co-Director of Business",
+    image: CarterMartindale,
+  },
+]
+
+function getColor(position) {
+  if (position === "Chair") {
+    return Colors.WLF_PURPLE;
+  } else if (position === "Director of Logistics" || position === "Associate Director of Logistics") {
+    return Colors.WLF_TURQOUISE;
+  } else if (position === "Co-Director of Tech" || position === "Associate Director of Tech") {
+    return Colors.WLF_YELLOW;
+  } else if (position === "Director of PR" || position === "Associate Director of PR") {
+    return Colors.WLF_ORANGE;
+  } else if (position === "Director of Media and Design" || position === "Associate Director of Media and Design") {
+    return Colors.WLF_PURPLE;
+  } else {
+    return Colors.WLF_TURQOUISE
+  }
+}
+
+const PersonIcon = (person) => {
+  if (person.name === "blank") return <div />
+  return (
+    <Styles.PersonBackground>
+      <Styles.PersonImage src={person.image} style={{borderColor: getColor(person.position)}}/>
+      <Typography.Name>{person.name}</Typography.Name>
+      <Typography.School>{person.school}</Typography.School>
+      <Typography.Position>{person.position}</Typography.Position>
+    </Styles.PersonBackground>
+  )
+}
+
 const Team = () => {
     return(
-        <div>
-          <Navbar/>
-          <div class="container">
-            <div class="row">
-            <div class="column">
-              <div class="team-member">
-                <img src={KarlyHou} />
-                  <Typography.Name>Karly Hou</Typography.Name>
-                  <Typography.School>Harvard University, 2023</Typography.School>
-                  <Typography.Position>Chair</Typography.Position>
-                </div>
-            </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={YaelLivneh} />
-              <Typography.Name>Yael Livneh</Typography.Name>
-              <Typography.School>Cal Poly SLO, 2023</Typography.School>
-              <Typography.Position>Director of Logistics</Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={SalmaKamni} />
-              <Typography.Name>Salma Kamni</Typography.Name>
-              <Typography.School>Stanford University, 2024</Typography.School>
-              <Typography.Position>
-                Associate Director of Logistics
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={SimonTao} />
-              <Typography.Name>Simon Tao</Typography.Name>
-              <Typography.School>Stanford University, 2022</Typography.School>
-              <Typography.Position>
-                Associate Director of Logistics
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={KevinTan} />
-              <Typography.Name>Kevin Tan</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>
-                Associate Director of Logistics
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={AustinLi} />
-              <Typography.Name>Austin Li</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>
-                Associate Director of Logistics
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={AlainDalma} />
-              <Typography.Name>Alain Saal-Dalma</Typography.Name>
-              <Typography.School>
-                Carnegie Mellon University, 2023
-              </Typography.School>
-              <Typography.Position>
-                Associate Director of Logistics
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={AmyShen} />
-              <Typography.Name>Amy Shen</Typography.Name>
-              <Typography.School>
-                University of Pennsylvania, 2022
-              </Typography.School>
-              <Typography.Position>
-                Associate Director of Logistics
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={SteveLi} />
-              <Typography.Name>Steve Li</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>Co-Director of Tech</Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={DanielaShuman} />
-              <Typography.Name>Daniela Shuman</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>Co-Director of Tech</Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={JonnyRogers} />
-              <Typography.Name>Jonny Rogers</Typography.Name>
-              <Typography.School>Williams College, 2023</Typography.School>
-              <Typography.Position>
-                Associate Director of Tech
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={MarkPekala} />
-              <Typography.Name>Mark Pekala</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>
-                Associate Director of Tech
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={IrisSu} />
-              <Typography.Name>Iris Su</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>Director of PR</Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={RuhiMistry} />
-              <Typography.Name>Ruhi Mistry</Typography.Name>
-              <Typography.School>UC Santa Cruz, 2024</Typography.School>
-              <Typography.Position>
-                Associate Director of PR
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={NikkiSuzani} />
-              <Typography.Name>Nikki Suzani</Typography.Name>
-              <Typography.School>
-                Henry M. Gunn High School, 2021
-              </Typography.School>
-              <Typography.Position>
-                Associate Director of PR
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={BlenKedir} />
-              <Typography.Name>Blen Kedir</Typography.Name>
-              <Typography.School>Stanford University, 2023</Typography.School>
-              <Typography.Position>
-                Associate Director of PR
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={JoshuaChen} />
-              <Typography.Name>Joshua Chen</Typography.Name>
-              <Typography.School>
-                University of Pennsylvania, 2022
-              </Typography.School>
-              <Typography.Position>
-                Associate Director of PR
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={SandraChiu} />
-              <Typography.Name>Sandra Chiu</Typography.Name>
-              <Typography.School>Northwestern, 2023</Typography.School>
-              <Typography.Position>
-                Director of Media and Design
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={JeffreyYao} />
-              <Typography.Name>Jeffrey Yao</Typography.Name>
-              <Typography.School>
-                Rhode Island School of Design, 2022
-              </Typography.School>
-              <Typography.Position>
-                Associate Director of Media and Design
-              </Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={ChaseSouder} />
-              <Typography.Name>Chase Souder</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>Co-Director of Business</Typography.Position>
-            </div>
-          </div>
-          <div class="column">
-            <div class="team-member">
-              <img src={CarterMartindale} />
-              <Typography.Name>Carter Martindale</Typography.Name>
-              <Typography.School>Harvard University, 2023</Typography.School>
-              <Typography.Position>Co-Director of Business</Typography.Position>
-            </div>
-          </div>
-        </div>
-        </div>
-      <Footer />
-    </div>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <Navbar/>
+        <Styles.TeamRow>
+          {teamData.map((person) => {
+            return PersonIcon(person);
+          })}
+        </Styles.TeamRow>
+        <Footer />
+      </div>
   );
 };
 
