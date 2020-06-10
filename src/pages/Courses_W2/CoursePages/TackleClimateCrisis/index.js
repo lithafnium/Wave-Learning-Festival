@@ -33,7 +33,7 @@ const CourseClimateCrisis = () => {
             <br />
             <b>Format: </b> Monday, Wednesday, and Friday
             <br />
-            <b>Time (EDT): </b> 4pm - 5pm
+            <b>Time (EDT): </b> 7pm - 8pm
           </p>
           <p>
             <div class="bios">
