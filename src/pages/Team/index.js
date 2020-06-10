@@ -30,7 +30,7 @@ import AmyShen from "./headshot/amy-shen.jpg";
 const teamData = [
   {
     name: "Karly Hou",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Chair",
     image: KarlyHou,
   },
@@ -42,25 +42,25 @@ const teamData = [
   },
   {
     name: "Salma Kamni",
-    school: "Stanford University, 2024",
+    school: "Stanford 2024",
     position: "Associate Director of Logistics",
     image: SalmaKamni,
   },
   {
     name: "Simon Tao",
-    school: "Stanford University, 2022",
+    school: "Stanford 2022",
     position: "Associate Director of Logistics",
     image: SimonTao,
   },
   {
     name: "Kevin Tan",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Associate Director of Logistics",
     image: KevinTan,
   },
   {
     name: "Austin Li",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Associate Director of Logistics",
     image: AustinLi,
   },
@@ -78,13 +78,13 @@ const teamData = [
   },
   {
     name: "Steve Li",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Co-Director of Tech",
     image: SteveLi,
   },
   {
     name: "Daniela Shuman",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Co-Director of Tech",
     image: DanielaShuman,
   },
@@ -96,13 +96,13 @@ const teamData = [
   },
   {
     name: "Mark Pekala",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Associate Director of Tech",
     image: MarkPekala,
   },
   {
     name: "Iris Su",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Director of PR",
     image: IrisSu,
   },
@@ -120,7 +120,7 @@ const teamData = [
   },
   {
     name: "Blen Kedir",
-    school: "Stanford University, 2023",
+    school: "Stanford 2023",
     position: "Associate Director of PR",
     image: BlenKedir,
   },
@@ -147,13 +147,13 @@ const teamData = [
   },
   {
     name: "Chase Souder",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Co-Director of Business",
     image: ChaseSouder,
   },
   {
     name: "Carter Martindale",
-    school: "Harvard University, 2023",
+    school: "Harvard 2023",
     position: "Co-Director of Business",
     image: CarterMartindale,
   },
