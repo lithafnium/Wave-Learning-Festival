@@ -143,15 +143,6 @@ const teamData = [
     image: JeffreyYao,
   },
   {
-    name: 'blank',
-  },
-  {
-    name: "Chase Souder",
-    school: "Harvard 2023",
-    position: "Co-Director of Business",
-    image: ChaseSouder,
-  },
-  {
     name: "Carter Martindale",
     school: "Harvard 2023",
     position: "Co-Director of Business",
