@@ -45,9 +45,9 @@ const Courses = () => {
       <Container>
         <ContainerInner>
 
-<div class="progressbar">
-    <img src= {ProgressWithTitle} width="927" height="418.5" alt = "centered image" />
-</div>
+	<div class="progressbar">
+   	 <img src= {ProgressWithTitle} alt = "centered image" />
+	</div>
 		
           <p>
             We are excited to offer 26 courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our

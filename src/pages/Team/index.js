@@ -22,7 +22,7 @@ import SimonTao from "./headshot/simon-tao.jpg";
 import SteveLi from "./headshot/steve-li.jpg";
 import YaelLivneh from "./headshot/yael-livneh.jpg";
 import JoshuaChen from "./headshot/joshua-chen.png";
-import AustinLi from "./headshot/austin-li.jpg";
+import AustinLi from "./headshot/austin-li.jpeg";
 import MarkPekala from "./headshot/mark-pekala.jpg";
 import AlainDalma from "./headshot/alain-saal-dalma.jpg";
 import AmyShen from "./headshot/amy-shen.jpg";
