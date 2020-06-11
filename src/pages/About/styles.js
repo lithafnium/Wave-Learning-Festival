@@ -188,7 +188,7 @@ export const NewsLetter = styled.div`
     width: 80%;
   }
   @media ${device.tablet} {
-    width: 40%;
+    width: 60%;
   }
   display: flex;
   flex-direction: column;
@@ -219,18 +219,19 @@ export const Input = styled.input`
 `;
 
 export const Popup = styled.div`
-  background-color: #2684ff;
+  /* background-color: #2684ff; */
   padding: 20px;
   box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.3);
-  border-radius: 5px;
+  border-radius: 15px;
   position: relative;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
   transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: ${(props) => (props.subscribed ? "1" : "0")};
 
   & p {
     margin: 0px;
     color: #fff;
+    font-size: 0.9rem;
   }
 `;
 
