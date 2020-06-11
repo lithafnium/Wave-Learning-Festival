@@ -172,10 +172,16 @@ export const Button = styled.div`
   align-items: center;
   width: fit-content;
   border-radius: 10px;
+  transition: 0.15s; 
 
   & p {
     margin: 0px;
     font-size: 1.2em;
+  }
+
+  &:hover{
+    cursor: pointer;
+    opacity: 0.9; 
   }
 `;
 
