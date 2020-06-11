@@ -30,6 +30,8 @@ import Joy from "./headshot/Where ad why is joy.png";
 import MakingAsian from "./headshot/Making Asian America.jpg";
 import PublicSpeaking from "./headshot/Public speaking.jpg";
 
+
+
 const Courses = () => {
   return (
     <div>
