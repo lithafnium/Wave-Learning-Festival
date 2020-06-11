@@ -119,13 +119,9 @@ html {
 }
 
 .progressbar {
-        text-align: center;
+   text-align: center;
 }
-img { 
-width: 80%; 
-height: auto; 
-object-fit: contain; 
-} 
+
 
 
 h1{
