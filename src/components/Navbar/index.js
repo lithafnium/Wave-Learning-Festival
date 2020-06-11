@@ -185,6 +185,9 @@ const Navbar = () => {
             <Link to="/blog">Blog</Link>
           </NavItem>
           <NavItem>
+            <Link to="/join">Join the Team</Link>
+          </NavItem>
+          <NavItem>
             <Link to="/faq-teachers">Teachers FAQ</Link>
           </NavItem>
           <NavItem>
@@ -193,10 +196,6 @@ const Navbar = () => {
           <NavItem>
             <Link to="/faq-parents">Parents FAQ</Link>
           </NavItem>
-
-          <Link to="/login">
-            <Button>Login</Button>
-          </Link>
         </SideBar>
       </NavbarInner>
     </NavbarContainer>

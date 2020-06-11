@@ -133,13 +133,13 @@ export const Hamburger = styled.div`
   width: 30px;
   height: 30px;
 
-  transform: ${(props) => (props.slide ? "translateX(-180px)" : null)};
+  transform: ${(props) => (props.slide ? "translateX(-40vw)" : null)};
 `;
 
 export const Bar = styled.p`
-  border-radius: 10px;
+  border-radius: 25px;
   height: 3px;
-  background-color: #2684ff;
+  background-color: #50B0A0;
   margin: 6px 0;
   transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
   width: ${(props) => 30 - props.num * 7 + "px"};
@@ -158,8 +158,8 @@ export const SideBar = styled.div`
     top: 0;
     max-height: 100vh;
 	height: 100%;
-    width: 200px;
-    right: ${props => (props.show ? '0' : 'calc(-200px)')};
+    width: calc(40%);
+    right: ${props => (props.show ? '0' : 'calc(-40%)')};
     background-color: #ffffff;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -187,7 +187,7 @@ export const SideBar = styled.div`
 
 export const NavbarDropdown = styled.div`
     position: absolute;
-    left: -10px;
+    left: -50px;
     width: fit-content;
     height: auto;
     background-color: #ffffff;
@@ -201,7 +201,7 @@ export const NavbarDropdown = styled.div`
   }
 
   & p {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
   }
 `;
 
