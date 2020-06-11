@@ -29,9 +29,9 @@ const CourseClimateCrisis = () => {
             climate change.
           </p>
           <p style={{ clear: "right" }}>
-            <b>Class Date: </b> June 15 - June 26
+            <b>Class Date: </b> 06/16/2020 - 06/25/2020
             <br />
-            <b>Format: </b> Monday, Wednesday, and Friday
+            <b>Format: </b> Tuesday, Thursday
             <br />
             <b>Time (EDT): </b> 7pm - 8pm
           </p>
