@@ -30,6 +30,10 @@ import Joy from "./headshot/Where ad why is joy.png";
 import MakingAsian from "./headshot/Making Asian America.jpg";
 import PublicSpeaking from "./headshot/Public speaking.jpg";
 
+import ProgressBar1 from "./wlf_progressbar/wlf_progressbar-01.png";
+import ProgressBar2 from "./wlf_progressbar/wlf_progressbar-02.png";
+import ProgressBar3 from "./wlf_progressbar/wlf_progressbar-03.png";
+import ProgressBar4 from "./wlf_progressbar/wlf_progressbar-04.png";
 
 
 const Courses = () => {
@@ -38,6 +42,7 @@ const Courses = () => {
       <Navbar />
       <Container>
         <ContainerInner>
+
           <p>
             We are excited to offer 26 courses across a variety of subjects for Wave Two. Our
             volunteer educators have worked hard to prepare engaging and

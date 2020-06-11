@@ -45,7 +45,7 @@ const FAQStudents = () => {
           </Typography.Header2>
           <Typography.BodyText>
             For Wave Two you will be enrolled in 1-3 courses depending on 
-            class sizes and demand. Out of respect for our teachers who
+            class sizes and availability. Out of respect for our teachers who
             have volunteered their time, please attend all classes that you are
             able to be placed in.
           </Typography.BodyText>
