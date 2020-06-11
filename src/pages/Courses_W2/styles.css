@@ -4,6 +4,15 @@ html {
 
 .school {
   margin-top: -0.75em;
+  color: #666666;
+}
+
+.bios {
+  display: table;
+}
+
+.bio {
+  display: table-row;
 }
 
 .container{

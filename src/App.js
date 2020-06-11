@@ -49,6 +49,8 @@ import CourseCampaignsElections from './pages/Courses_W2/CoursePages/CampaignsEl
 import CourseGreatNumbers from './pages/Courses_W2/CoursePages/GreatNumbers'
 import CourseSignLanguage2 from './pages/Courses_W2/CoursePages/AmericanSignLanguage'
 import CourseAIHealthcare from './pages/Courses_W2/CoursePages/AIHealthcare'
+import CourseMakingAsian from './pages/Courses_W2/CoursePages/MakingAsian'
+import CoursePublicSpeaking from './pages/Courses_W2/CoursePages/PublicSpeaking'
 
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
@@ -56,6 +58,11 @@ import TeacherAgreement from './pages/Terms/TeacherAgreement'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
+import Join from './pages/Join'
+import Blog from './pages/Blog'
+import BlogPage from './pages/Blog/BlogPage'
+import CourseTesting from './pages/Courses'
+import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
@@ -82,6 +89,9 @@ function App() {
             </Route>
             <Route path="/courses">
               <Courses />
+            </Route>
+            <Route path="/join">
+              <Join />
             </Route>
 
             {/* wave 1 */}
@@ -201,6 +211,12 @@ function App() {
             <Route path="/course-ai-in-healthcare">
               <CourseAIHealthcare/>
             </Route>
+            <Route path="/course-making-asian">
+              <CourseMakingAsian/>
+            </Route>
+            <Route path="/course-public-speaking">
+              <CoursePublicSpeaking/>
+            </Route>
 
             <Route path="/terms-conditions">
               <TermsAndConditions />
@@ -220,6 +236,19 @@ function App() {
             <Route path="/unsubscribe">
               <Unsubscribe />
             </Route>
+            <Route path="/join">
+              <Join />
+            </Route>
+            <Route path="/blog">
+              <Blog />
+            </Route>
+            {/* Routing for each blog post */}
+            {/*<Route path="/:slug" component={BlogPage} />*/}
+            {/*Routing for new course pages*/}
+            {/*<Route path="/courseTesting">
+              <CourseTesting />
+            </Route>
+            <Route path="/:slug" component={CoursePage} />*/}
             <Route path="/">
               <About />
             </Route>

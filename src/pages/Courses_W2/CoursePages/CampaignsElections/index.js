@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../../../../components/Navbar'
-import Footer from '../../../../components/Footer'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import '../styles.css'
-import { Container, ContainerInner } from '../../../../globalStyles'
+import { Container, ContainerInner } from '@/globalStyles'
 
 import Profile from "../../teacherheadshots/Willow Taylor Chiang Yang.jpg"
 
@@ -14,8 +14,9 @@ const CourseCampaignsElections = () => {
                 <ContainerInner>
                 <h1>Campaigns and Elections 101</h1>
                   <p>
-                  Ever been confused about the difference between PACs and superPACs or delegates and superdelegates? Wondered what "election fraud" actually entails? Attempted to puzzle through an article that throws around political vocabulary you just don't quite get? This course will give you all the bare-bones information you need to know about campaigns and elections, presidential and otherwise! The goal of the course is to provide you with the basis to understand those articles and podcasts so that you can critically think about the larger concepts during this election year. While there are no prerequisites or minimum grade requirements, it is strongly encouraged to have a rudimentary understanding of the US government and to be somewhat caught up in political news. 
+                  Ever been confused about the difference between PACs and superPACs or delegates and superdelegates? Wondered what "election fraud" actually entails? Attempted to puzzle through an article that throws around political vocabulary you just don't quite get? This course will give you all the bare-bones information you need to know about campaigns and elections, presidential and otherwise! The goal of the course is to provide you with the basis to understand those articles and podcasts so that you can critically think about the larger concepts during this election year. While there are no prerequisites or minimum grade requirements, it is strongly encouraged to have a rudimentary understanding of the US government and to be somewhat caught up in political news.
                   <br/><br/>Please feel free to email me if you have any questions or comments! (willowtaylorcy@gmail.com)
+                  <br/><b>Target Audience: </b>8th - 10th Graders
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/15/2020 - 06/26/2020

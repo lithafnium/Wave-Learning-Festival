@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from '../../../../components/Navbar'
-import Footer from '../../../../components/Footer'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import '../styles.css'
-import { Container, ContainerInner } from '../../../../globalStyles'
+import { Container, ContainerInner } from '@/globalStyles'
 
-import Profile from "../../teacherheadshots/anonymous-profile.png"
+import Profile from "../../teacherheadshots/Margaret Lu.JPG"
 
 const CourseCinema = () => {
     return(
@@ -15,6 +15,7 @@ const CourseCinema = () => {
                 <h1>An Overview of American Cinema: 1945 - Present</h1>
                   <p>
                   Margaret’s course “An Overview of American Cinema: 1945 - Present” studies some of the greatest and most influential films in the history of the United States. Directors that will be watched and discussed range from Alfred Hitchcock to Francis Ford Coppola, and our analysis will explore the aesthetic, historical, and cultural significance of their cinematic masterpieces. Ultimately, this course aims to both increase students’ knowledge of cinematic history and their capacity for artistic appreciation.
+                  <br/><b>Target Audience: </b>9th - 12th Graders
                   </p>
                   <p style={{clear: 'right'}}>
                   <b>Class Date: </b> 06/16/2020 - 06/27/2020
