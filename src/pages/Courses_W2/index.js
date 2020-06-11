@@ -34,6 +34,8 @@ import ProgressBar1 from "./wlf_progressbar/wlf_progressbar-01.png";
 import ProgressBar2 from "./wlf_progressbar/wlf_progressbar-02.png";
 import ProgressBar3 from "./wlf_progressbar/wlf_progressbar-03.png";
 import ProgressBar4 from "./wlf_progressbar/wlf_progressbar-04.png";
+import ProgressWithTitle from "./wlf_progressbar/ProgressTitle.png";
+
 
 
 const Courses = () => {
@@ -43,17 +45,21 @@ const Courses = () => {
       <Container>
         <ContainerInner>
 
+<div class="progressbar">
+    <img src= {ProgressWithTitle} alt = "centered image"/>
+</div>
+		
           <p>
-            We are excited to offer 26 courses across a variety of subjects for Wave Two. Our
+            We are excited to offer 26 courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our
             volunteer educators have worked hard to prepare engaging and
             thoughtful curricula, and can't wait to share their passions with
             you. Click each course for more info, and feel free to send any
             questions to{" "}
             <a href="mailto:wavelf.logistics@gmail.com">
               wavelf.logistics@gmail.com
-            </a>
-            .
+            </a><br /><br /><br />
           </p>
+	  
           <div class="container">
             <div class="row">
               <div class="column">
