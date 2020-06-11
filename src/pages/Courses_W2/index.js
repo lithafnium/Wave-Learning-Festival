@@ -52,7 +52,7 @@ const Courses = () => {
           <p>
             We are excited to offer 26 courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our
             volunteer educators have worked hard to prepare engaging and
-            thoughtful curricula, and can't wait to share their passions with
+            thoughtful curricula and can't wait to share their passions with
             you. Click each course for more info, and feel free to send any
             questions to{" "}
             <a href="mailto:wavelf.logistics@gmail.com">
