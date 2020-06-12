@@ -22,7 +22,7 @@ import SimonTao from "./headshot/simon-tao.jpg";
 import SteveLi from "./headshot/steve-li.jpg";
 import YaelLivneh from "./headshot/yael-livneh.jpg";
 import JoshuaChen from "./headshot/joshua-chen.png";
-import AustinLi from "./headshot/austin-li.jpg";
+import AustinLi from "./headshot/austin-li.jpeg";
 import MarkPekala from "./headshot/mark-pekala.jpg";
 import AlainDalma from "./headshot/alain-saal-dalma.jpg";
 import AmyShen from "./headshot/amy-shen.jpg";
@@ -36,7 +36,7 @@ const teamData = [
   },
   {
     name: "Yael Livneh",
-    school: "Cal Poly SLO, 2023",
+    school: "Cal Poly SLO 2023",
     position: "Director of Logistics",
     image: YaelLivneh,
   },
@@ -66,13 +66,13 @@ const teamData = [
   },
   {
     name: "Alain Saal-Dalma",
-    school: "Carnegie Mellon University, 2023",
+    school: "Carnegie Mellon University 2023",
     position: "Associate Director of Logistics",
     image: AlainDalma,
   },
   {
     name: "Amy Shen",
-    school: "University of Pennsylvania, 2022",
+    school: "University of Pennsylvania 2022",
     position: "Associate Director of Logistics",
     image: AmyShen,
   },
@@ -90,7 +90,7 @@ const teamData = [
   },
   {
     name: "Jonny Rogers",
-    school: "Williams College, 2023",
+    school: "Williams College 2023",
     position: "Associate Director of Tech",
     image: JonnyRogers,
   },
@@ -108,13 +108,13 @@ const teamData = [
   },
   {
     name: "Ruhi Mistry",
-    school: "UC Santa Cruz, 2024",
+    school: "UC Santa Cruz 2024",
     position: "Associate Director of PR",
     image: RuhiMistry,
   },
   {
     name: "Nikki Suzani",
-    school: "Henry M. Gunn High School, 2021",
+    school: "Henry M. Gunn High School 2021",
     position: "Associate Director of PR",
     image: NikkiSuzani,
   },
@@ -126,19 +126,19 @@ const teamData = [
   },
   {
     name: "Joshua Chen",
-    school: "University of Pennsylvania, 2022",
+    school: "University of Pennsylvania 2022",
     position: "Associate Director of PR",
     image: JoshuaChen,
   },
   {
     name: "Sandra Chiu",
-    school: "Northwestern, 2023",
+    school: "Northwestern 2023",
     position: "Director of Media and Design",
     image: SandraChiu,
   },
   {
     name: "Jeffrey Yao",
-    school: "Rhode Island School of Design, 2022",
+    school: "Rhode Island School of Design 2022",
     position: "Associate Director of Media and Design",
     image: JeffreyYao,
   },

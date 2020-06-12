@@ -56,7 +56,7 @@ const Courses = () => {
             <Navbar/>
             <Container>
             <ContainerInner>
-            <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
+            <Typography.BodyText style={{color: Colors.WLF_BLACK }}>
               For our inaugural wave, we are excited to offer {courses.length} courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
             </Typography.BodyText>
             <div class="container">

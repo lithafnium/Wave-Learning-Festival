@@ -313,10 +313,7 @@ const About = () => {
             {" "}
             Sign up for updates on future waves! Be the first to register for
             NEW courses and hear about special guests!
-            {subscribed && <Popup subscribed={subscribed}><p>We need your help with something: As a student-run nonprofit,
-                we don't have the funds to establish a domain so we need to ensure
-                that our emails aren't sent to your spambox. Please follow the
-                directions sent to your email! We'd really appreciate it.</p>
+            {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates.</p>
                 </Popup>}
           </Typography.Header>
           <NewsLetter>

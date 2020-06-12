@@ -33,12 +33,19 @@ const FAQStudents = () => {
           </Typography.BodyText>
           <br />
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
-            How many classes can I enroll in?
+            How many classes can I register for?
           </Typography.Header2>
           <Typography.BodyText>
-            Feel free to register for any and all classes that interest you!
-            However, if a class is overbooked, we may prioritize students that
-            are not yet enrolled in others. Out of respect for our teachers who
+            For our current Wave Two, you are able to register for up to three courses!
+            We will prioritize your first choice in the registration form. 
+          </Typography.BodyText>
+          <br />
+	<Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
+            How many classes will I be enrolled in?
+          </Typography.Header2>
+          <Typography.BodyText>
+            For Wave Two you will be enrolled in 1-3 courses depending on 
+            class sizes and availability. Out of respect for our teachers who
             have volunteered their time, please attend all classes that you are
             able to be placed in.
           </Typography.BodyText>

@@ -118,6 +118,18 @@ html {
   text-align: center;
 }
 
+.progressbar {
+   text-align: center;
+}
+
+.progressbar img{
+   width: 70%;
+   height: auto;
+}
+
+
 h1{
   color: #2684ff;
 }
+
+
