@@ -46,7 +46,7 @@ const Courses = () => {
         <ContainerInner>
 
 	<div class="progressbar">
-   	 <img src= {ProgressWithTitle} alt = "centered image" />
+   	 <img src= {ProgressBar3} alt = "centered image" />
 	</div>
 		
           <p>
