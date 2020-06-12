@@ -145,7 +145,7 @@ const teamData = [
   {
     name: "Carter Martindale",
     school: "Harvard 2023",
-    position: "Co-Director of Business",
+    position: "Director of Business",
     image: CarterMartindale,
   },
 ]
