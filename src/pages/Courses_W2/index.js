@@ -416,10 +416,10 @@ const Courses = () => {
                       How to be Persuasive: An Intro to the Art of Public
                       Speaking
                     </p>
-                    <p class="teacher">Kevin Xu & Kelly Shen</p>
+                    <p class="teacher">Kevin Xu, Kelly Shen, & David Feng</p>
                     <p class="school">
-                      University of Pennsylvania '22, University of Pennsylvania
-                      '23
+                      UPenn '22, UPenn '23, UPenn '24
+                      
                     </p>
                   </div>
                 </a>

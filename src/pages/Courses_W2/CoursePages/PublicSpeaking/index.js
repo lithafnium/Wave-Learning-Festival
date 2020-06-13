@@ -6,6 +6,7 @@ import { Container, ContainerInner } from "@/globalStyles";
 
 import Profile from "../../teacherheadshots/Kevin Xu.jpg";
 import ProfileTwo from "../../teacherheadshots/Kelly Shen.jpg";
+import ProfileThree from "../../teacherheadshots/David Feng.jpg";
 
 const CoursePublicSpeaking = () => {
   return (
@@ -70,6 +71,15 @@ const CoursePublicSpeaking = () => {
                 and work with students to develop their public speaking skills!
               </p>
             </div>
+<div class="bio">
+              <p>
+                <img src={ProfileThree} class="img-left" />
+                <b>Taught by: </b>David Feng
+                <br />
+                <b>Teacher Bio: </b>My name is David Feng, and I’m a rising freshman at the University of Pennsylvania. I grew up in the San Francisco Bay Area, and my favorite pastimes include playing basketball, backpacking, and fly fishing. I also love teaching and working with kids! During my four years in high school, I competed as a Congressional debater but also worked as the head coach of the speech and debate program at Lawson Middle School. Participating in speech and debate has not only helped me meet and befriend fellow debaters from all across the country but also trained me to become a more informed citizen, a better critical thinker, and a better communicator. I’m so pumped to help teach this class!
+              </p>
+            </div>
+
           </div>
           <h1>Register for this course!</h1>
           <iframe
