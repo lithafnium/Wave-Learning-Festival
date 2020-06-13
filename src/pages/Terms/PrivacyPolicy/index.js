@@ -53,7 +53,7 @@ const Teachers = () => {
             .
           </p>
           <p>
-            We ask all students to turn off their cameras upon entering a class.
+            Students may turn their cameras on or off during a lesson at their own discretion. Video usage may be encouraged for classes that benefit from participation, such as a public speaking or ASL class.
             Any student who has their webcam on during a class agrees to having
             their picture taken (as part of a class screenshot or other
             photograph) and used by WLF for any purposes pursuant to our goals,
