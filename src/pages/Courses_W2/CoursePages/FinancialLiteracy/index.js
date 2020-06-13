@@ -12,14 +12,14 @@ const CourseFinancialLiteracy = () => {
       <Navbar />
       <Container>
         <ContainerInner>
-          <h1>Financial Literacy</h1>
-          <p> Updated Soon!</p>
+          <h1>Securing the Bag: Budgeting 101</h1>
+          <p> Navigating “real-world” finances can be challenging and convoluted, so familiarity with budgeting is pivotal to long-term fiscal independence. We will introduce the ins-and-outs of loans, checking, saving, and credit bank accounts. How can you utilize tools at your disposal to secure the <i>future bag?</i></p>
           <p style={{ clear: "right" }}>
             <b>Class Date: </b> 06/16/2020 - 06/25/2020
             <br />
             <b>Format: </b> Tuesday, Thursday
             <br />
-            <b>Time (EDT): </b> 3pm - 4pm
+            <b>Time (EDT): </b> 1pm - 1:45pm
           </p>
           <p>
             <img src={Profile} class="img-left" />
