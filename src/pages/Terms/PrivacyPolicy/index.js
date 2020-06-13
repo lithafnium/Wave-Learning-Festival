@@ -11,7 +11,7 @@ const Teachers = () => {
         <ContainerInner>
           <h1>Privacy Policy</h1>
           <p>
-            <b>Last Updated: May 22, 2020</b>
+            <b>Last Updated: June 13, 2020</b>
           </p>
           <h2>Introduction:</h2>
           <p>
