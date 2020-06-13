@@ -27,11 +27,11 @@ const CourseFinancialLiteracy = () => {
             cancer using data from the Cancer Genome Atlas.
           </p>
           <p style={{ clear: "right" }}>
-            <b>Class Date: </b> 06/15/2020 - 06/26/2020
+            <b>Class Date: </b> 06/15/2020 - 06/24/2020
             <br />
             <b>Format: </b> Monday and Wednesday
             <br />
-            <b>Time (EDT): </b> 6pm-7pm
+            <b>Time (EDT): </b> 9-10pm
           </p>
           <p>
             <img src={Profile} class="img-left" />
