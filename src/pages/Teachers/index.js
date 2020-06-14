@@ -8,13 +8,14 @@ import Logo from "./logo.png"
 
 const Teachers = () => {
   return (
-    <div>
+    <div style={{overflow: 'hidden', position: 'relative'}}>
       <Navbar />
       <Styles.TeacherBackground>
+        <div style={{maxWidth: 800}}>
         <Typography.Header color={Colors.WLF_YELLOW}>
           Teachers
         </Typography.Header>
-        <Typography.BodyText color="white" fontSize="20px" style={{marginBottom: 20}}>
+        <Typography.BodyText color="white" fontSize="20px" style={{marginBottom: 30}}>
           Want to share your passions with students worldwide? Apply to be a teacher for Wave Learning Festival!
         </Typography.BodyText>
         <Typography.BodyText color="white" fontSize="20px">
@@ -34,7 +35,7 @@ const Teachers = () => {
             </Typography.Header>
           </Styles.TestimonialItem>
         </Styles.TestimonialBackground>
-        <Typography.BodyText color="white" fontSize="20px" style={{marginBottom: 20}}>
+        <Typography.BodyText color="white" fontSize="20px" style={{marginBottom: 30}}>
           The global pandemic has changed what education and summer
           programs look like, and in some cases, completely shut them down.
           By providing fun and diverse live classes, we hope to help students
@@ -55,21 +56,22 @@ const Teachers = () => {
             Apply Now!
           </Typography.Header>
         </Styles.ApplyButton>
+        </div>
       </Styles.TeacherBackground>
-      <img src={Logo} alt="logo" style={{
+      <Styles.LogoBackground src={Logo} alt="logo" style={{
         position: 'absolute',
         width: 300,
         height: 300,
         transform: 'rotate(-35deg)',
-        top: '150%',
+        top: '60%',
         left: -100,
       }}/>
-      <img src={Logo} alt="logo" style={{
+      <Styles.LogoBackground src={Logo} alt="logo" style={{
         position: 'absolute',
         width: 300,
         height: 300,
         transform: 'rotate(-235deg)',
-        top: '50%',
+        top: '20%',
         right: -150,
       }}/>
       <Footer />

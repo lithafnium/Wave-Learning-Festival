@@ -4,12 +4,28 @@ import {Colors} from "@/styles";
 import { device } from "@/theme";
 
 export const TeacherBackground = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url(${WavyTeachers});
   background-size: cover;
   width: 100vw;
-  padding: 100px 300px;
+  min-width: 320px;
   margin-bottom: -10px;
   margin-left: -2px;
+  overflow: hidden;
+  @media ${device.mobileS} {
+    padding: 100px 50px;
+  }
+  @media ${device.mobileM} {
+    padding: 100px 50px;
+  }
+  @media ${device.tablet} {
+    padding: 100px 100px;
+  }
+  @media ${device.laptop} {
+    padding: 100px 300px;
+  }
 `
 
 export const TestimonialBackground = styled.div`
@@ -44,5 +60,17 @@ export const ApplyButton = styled.div`
   transition: all 0.1s ease;
   &:hover {
     background-color: ${Colors.WLF_ORANGE};
+  }
+`
+
+export const LogoBackground = styled.img`
+  @media ${device.mobileS} {
+    display: none;
+  }
+  @media ${device.tablet} {
+    display: none;
+  }
+  @media ${device.laptop} {
+    display: flex;
   }
 `
