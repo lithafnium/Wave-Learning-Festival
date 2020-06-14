@@ -5,6 +5,8 @@ import * as Styles from "./styles";
 import TeacherPic from "./teacher.jpg";
 import { Colors, Typography } from "@/styles";
 import Logo from "./logo.png"
+import { FirebaseContext } from "@/firebaseContext";
+import { BodyText } from "@/styles/Typography";
 
 const TeacherHome = ({setPage}) => {
   return (<>
@@ -86,12 +88,12 @@ const renderReferralOption = ({option, teacherData, setTeacherData}) => (
       <div style={{height: 40}}>
         {option === "Other" && 
           <Styles.Input
-            value={teacherData.name}
+            value={teacherData.otherReferral}
             onChange={event => {
               const value = event.target.value;
               setTeacherData(prevData => ({
                 ...prevData,
-                name: value,
+                otherReferral: value,
               }));
             }}
           />
@@ -102,13 +104,14 @@ const renderReferralOption = ({option, teacherData, setTeacherData}) => (
 );
 
 const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
+  console.log(teacherData.referral);
   const valid =
     teacherData.name !== "" &&
     teacherData.email !== "" &&
     teacherData.school !== "" &&
     teacherData.gradYear !== "" &&
     teacherData.pronouns !== "" &&
-    teacherData.referral !== "";
+    teacherData.referral.length > 0;
   return (<div style={{width: "100%"}}>
     <Typography.Header color={Colors.WLF_YELLOW}>
       Teacher Information
@@ -470,7 +473,7 @@ const renderInDemandOption = ({option, teacherData, setTeacherData}) => (
   </Styles.RadioInputBackground>
 );
 
-const FinalInput = ({setPage, teacherData, setTeacherData}) => {
+const FinalInput = ({setPage, teacherData, setTeacherData, submit}) => {
   return (<div style={{width: "100%"}}>
     <Typography.Header color={Colors.WLF_YELLOW}>
       More Ways to Engage
@@ -501,17 +504,34 @@ const FinalInput = ({setPage, teacherData, setTeacherData}) => {
         </Typography.Header>
       </Styles.Button>
       <div style={{flex: 1}} />
-      <Styles.Button onClick={() => setPage("home")}>
+      <Styles.Button onClick={() => {
+        submit();
+        setPage("thanks");
+      }}>
         <Typography.Header color="white" fontSize="24px">
-          Next
+          Submit
         </Typography.Header>
       </Styles.Button>
     </div>
   </div>);
 }
 
+const Thanks = ({setPage}) => (
+  <>
+    <Typography.Header color={Colors.WLF_YELLOW}>You're application to teach has been received.</Typography.Header>
+    <Typography.Header2 color="white">Thank you for applying!</Typography.Header2>
+    <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+      <Styles.Button onClick={() => setPage("home")}>
+        <Typography.Header color="white" fontSize="24px">
+          Back to Teacher Page
+        </Typography.Header>
+      </Styles.Button>
+    </div>
+  </>
+);
+
 const Teachers = () => {
-  const [page, setPage] = useState("teacherData");
+  const [page, setPage] = useState("thanks");
   const [teacherData, setTeacherData] = useState({
     name: "",
     email: "",
@@ -520,6 +540,7 @@ const Teachers = () => {
     pronouns: "",
     inDemand: [],
     referral: [],
+    otherReferral: "",
     comment: "",
   });
   const [coData, setCoData] = useState({
@@ -538,6 +559,74 @@ const Teachers = () => {
     times: "",
     qualified: "",
   });
+  const { db } = useContext(FirebaseContext);
+
+  const resetData = () => {
+    setTeacherData({
+      name: "",
+      email: "",
+      school: "",
+      gradYear: "",
+      pronouns: "",
+      inDemand: [],
+      referral: [],
+      otherReferral: "",
+      comment: "",
+    });
+    setCoData({
+      name: "",
+      email: "",
+      school: "",
+      gradYear: "",
+      pronouns: "",
+    });
+    setClassData({
+      title: "",
+      description: "",
+      grade: "",
+      schedule: "",
+      runTime: "",
+      times: "",
+      qualified: "",
+    })
+  }
+
+  const submit = () => {
+    const newReferral = teacherData.referral;
+    if (newReferral.indexOf("Other") > 0) {
+      newReferral.referral.push(teacherData.otherReferral);
+    }
+    db.collection("TeacherApplications")
+      .add({
+        teacher: {
+          comment: teacherData.comment,
+          email: teacherData.email,
+          gradYear: teacherData.gradYear,
+          inDemand: teacherData.inDemand,
+          name: teacherData.name,
+          pronouns: teacherData.pronouns,
+          referral: newReferral,
+          school: teacherData.school,
+        },
+        coteacher: {
+          email: coData.email,
+          gradYear: coData.gradYear,
+          name: coData.name,
+          pronouns: coData.pronouns,
+          school: coData.school,
+        },
+        class: {
+          description: classData.description,
+          grade: classData.grade,
+          qualified: classData.qualified,
+          runTime: classData.runTime,
+          schedule: classData.schedule,
+          times: classData.times,
+          title: classData.title,
+        }
+      });
+    resetData();
+  }
 
   return (
     <div style={{overflow: 'hidden', position: 'relative'}}>
@@ -548,7 +637,8 @@ const Teachers = () => {
           {page === "teacherData" && TeacherDataInput({setPage, teacherData, setTeacherData})}
           {page === "coData" && CoDataInput({setPage, coData, setCoData})}
           {page === "classData" && ClassDataInput({setPage, classData, setClassData})}
-          {page === "final" && FinalInput({setPage, teacherData, setTeacherData})}
+          {page === "final" && FinalInput({setPage, teacherData, setTeacherData, submit})}
+          {page === "thanks" && Thanks({setPage})}
         </div>
       </Styles.TeacherBackground>
       <Styles.LogoBackground src={Logo} alt="logo" style={{
