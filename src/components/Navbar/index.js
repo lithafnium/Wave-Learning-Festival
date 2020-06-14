@@ -23,6 +23,7 @@ import LogoText from "./logoText.png";
 import LogoTextFull from "./logoTextFull.svg";
 
 const Navbar = () => {
+  const [applyShow, setApplyShow] = useState(false);
   const [coursesShow, setCoursesShow] = useState(false);
   const [faqShow, setFaqShow] = useState(false);
   const [slide, toggleSlide] = useState(false);
@@ -38,13 +39,49 @@ const Navbar = () => {
           <NavItem>
             <Link to="/team">About Us</Link>
           </NavItem>
-          <NavItem>
-            <Link to="/courses">Courses</Link>
-          </NavItem>
           <NavItem onMouseEnter={() => setCoursesShow(true)}
                    onMouseLeave={() => setCoursesShow(false)}>
-            <Link>Apply</Link>
+            <Link>Courses</Link>
             {coursesShow && (<NavbarDropdown>
+                <Link to="/courses">
+                  <DropdownItem>
+                    <IconContext.Provider
+                      value={{
+                        color: WLF_PURPLE,
+                        style: {
+                          verticalAlign: "middle",
+                          marginRight: "10px",
+                        },
+                      }}
+                    >
+                      <div><FaChalkboardTeacher /></div>
+                    </IconContext.Provider>
+                    Current
+                  </DropdownItem>
+                </Link>
+                <Link to="/courses-archive">
+                  <DropdownItem>
+                    <IconContext.Provider
+                      value={{
+                        color: WLF_PURPLE,
+                        style: {
+                          verticalAlign: "middle",
+                          marginRight: "10px",
+                        },
+                      }}
+                    >
+                      <div><FaChalkboardTeacher /></div>
+                    </IconContext.Provider>
+                    Archive
+                  </DropdownItem>
+                </Link>
+                </NavbarDropdown>
+            )}
+          </NavItem>
+          <NavItem onMouseEnter={() => setApplyShow(true)}
+                   onMouseLeave={() => setApplyShow(false)}>
+            <Link>Apply</Link>
+            {applyShow && (<NavbarDropdown>
                 <Link to="/teachers">
                   <DropdownItem>
                     <IconContext.Provider

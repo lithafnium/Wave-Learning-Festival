@@ -8,6 +8,7 @@ import FAQStudents from './pages/FAQ/Students'
 import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses_W2'
+import CoursesArchive from './pages/Courses_W1'
 
 // wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
@@ -61,7 +62,7 @@ import Unsubscribe from './pages/Unsubscribe'
 import Join from './pages/Join'
 import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
-import CourseTesting from './pages/Courses'
+//import CourseTesting from './pages/Courses'
 import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
@@ -89,6 +90,12 @@ function App() {
             </Route>
             <Route path="/courses">
               <Courses />
+            </Route>
+            <Route path="/courses-archive">
+              <CoursesArchive />
+            </Route>
+            <Route path="/blog">
+              <Blog />
             </Route>
             <Route path="/join">
               <Join />
@@ -247,8 +254,8 @@ function App() {
             {/*Routing for new course pages*/}
             {/*<Route path="/courseTesting">
               <CourseTesting />
-            </Route>
-            <Route path="/:slug" component={CoursePage} />*/}
+            </Route>*/}
+            <Route path="/:slug" component={CoursePage} />
             <Route path="/">
               <About />
             </Route>
