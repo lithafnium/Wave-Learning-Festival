@@ -531,7 +531,7 @@ const Thanks = ({setPage}) => (
 );
 
 const Teachers = () => {
-  const [page, setPage] = useState("thanks");
+  const [page, setPage] = useState("home");
   const [teacherData, setTeacherData] = useState({
     name: "",
     email: "",
