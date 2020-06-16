@@ -19,7 +19,7 @@ const CourseFinancialLiteracy = () => {
             <br />
             <b>Format: </b> Tuesday, Thursday
             <br />
-            <b>Time (EDT): </b> 1pm - 1:45pm
+            <b>Time (EDT): </b> 4pm - 5pm 
           </p>
           <p>
             <img src={Profile} class="img-left" />
