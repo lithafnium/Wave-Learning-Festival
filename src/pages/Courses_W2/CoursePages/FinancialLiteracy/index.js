@@ -23,7 +23,7 @@ const CourseFinancialLiteracy = () => {
           </p>
           <p>
             <img src={Profile} class="img-left" />
-            <b>Taught by: </b>Maria Fernanda Estrada, Onder Kilinc
+            <b>Taught by: </b>Maria Fernanda Estrada
             <br />
             <b>Teacher Bio: </b>Hello, my name is Maria Estrada and I am a
             rising sophomore at Williams College. I am teaching this course

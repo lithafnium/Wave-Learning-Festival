@@ -83,7 +83,7 @@ const Courses = () => {
                       <img src={FinancialLiteracy} />
                     </div>
                     <p class="name">Securing the Bag: Budgeting 101</p>
-                    <p class="teacher">Maria Fernanda Estrada & Onder Kilinc</p>
+                    <p class="teacher">Maria Fernanda Estrada</p>
                     <p class="school">Williams College '23</p>
                   </div>
                 </a>
