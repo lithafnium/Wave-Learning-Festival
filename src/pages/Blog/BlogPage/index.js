@@ -31,14 +31,12 @@ const BlogPage = ({ match }) => {
       );
 
     }
-    console.log("Testing")
     if(db){
       console.log("REACHED DB");
-      const courses = db.collection('fl_content').doc(slug);//'9nA09uxTNz8S6Jgjyfn3');
+      const courses = db.collection('fl_content').doc(slug);
       courses.get().then(function(doc) {
         if (doc.exists) {
            const data = doc.data();
-           //setDocData(doc);
            setTitle(data.title);
            setContent(data.content);
            setDate(data.date);

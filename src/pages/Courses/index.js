@@ -14,6 +14,8 @@ const Courses = () => {
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
   const [imageRef, setImageRef] = useState('');
+
+  /* Set Current Wave */
   const WAVE = 1;
 
   if (db && loading && !courses.length) {
