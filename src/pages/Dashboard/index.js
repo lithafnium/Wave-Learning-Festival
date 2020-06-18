@@ -2,9 +2,14 @@ import React from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
+import {FirebaseContext} from '../../firebaseContext'
 import './styles.css'
 
 const Dashboard = () => {
+    const db = useContext(FirebaseContext);
+    const [loading, setLoading] = useState(true);
+    const [blogPosts, setBlogPosts] = useState([]);
+
     return(
         <div>
             <Navbar/>
@@ -99,7 +104,7 @@ const Dashboard = () => {
 
             <Footer/>
         </div>
-    )
+    );
 }
 
 export default Dashboard
