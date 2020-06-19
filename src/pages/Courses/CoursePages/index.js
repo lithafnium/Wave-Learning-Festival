@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import { Container, ContainerInner } from "../../../globalStyles.js"
@@ -6,15 +6,21 @@ import {Colors, Typography} from "../../../styles";
 import {FirebaseContext} from '../../../firebaseContext'
 import 'firebase/firestore'
 
-import Teacher from './teacher'
+import Teacher from './teacher.js'
 
 const CoursePage = ({ match }) => {
     const { db, storage } = useContext(FirebaseContext)
     const slug = match.params.slug;
     const [loading, setLoading] = useState(true);
-    const [courseTitle, setCourseTitle] = useState('')
-    const [courseDescription, setCourseDescription] = useState('')
-    const [classDateTime, setClassDateTime] = useState('')
+
+    //Course Objects
+    const [courseTitle, setCourseTitle] = useState('');
+    const [courseDescription, setCourseDescription] = useState('');
+    const [prereqs, setPrereqs] = useState('');
+    const [targetAudience, setTargetAudience] = useState('');
+    const [classDates, setClassDates] = useState('');
+    const [classDays, setClassDays] = useState('');
+    const [classTime, setClassTime] = useState('');
 
     //Teacher Objects
     const [teachers, setTeachers] = useState([]);
@@ -43,18 +49,34 @@ const CoursePage = ({ match }) => {
       .then(function(doc) {
         if (doc.exists) {
           const data = doc.data();
+
+          //This will all move to a course object
           if (!courseTitle) {
             setCourseTitle(data.courseTitle);
           }
           if (!courseDescription) {
             setCourseDescription(data.courseDescription);
           }
-          if (!classDateTime) {
-            setClassDateTime(data.classDateTime);
+          if (!prereqs) {
+            setPrereqs(data.prereqs);
+          }
+          if (!targetAudience) {
+            setTargetAudience(data.targetAudience);
+          }
+          if (!classDates) {
+            setClassDates(data.classDates);
+          }
+          if (!classDays) {
+            setClassDays(data.classDays);
+          }
+          if (!classTime) {
+            setClassTime(data.classTime);
           }
           
-          //Deal with Teachers: 
+          //Deal with Teachers; currently only handles two teachers
           if (teachers.length == 0) {
+          
+          const teacherObjs = [];
 
           const teacher1 = new Teacher (
             db, 
@@ -65,26 +87,31 @@ const CoursePage = ({ match }) => {
             data.teachers.teacher1Headshot[0]
           );
 
-          const teacher2 = new Teacher (
-            db, 
-            storage,
-            data.teachers.teacher2Name, 
-            data.teachers.teacher2chool, 
-            data.teachers.teacher2Bio, 
-            data.teachers.teacher2Headshot[0]
-          );
-
           teacher1.getPic().then(function(url) {
             setHeadshot1(url);
           })
           .catch(console.log);
 
-          teacher2.getPic().then(function(url) {
-            setHeadshot2(url);
-          })
-          .catch(console.log);
-        
-        setTeachers([teacher1, teacher2]);
+          teacherObjs.push(teacher1);
+
+          if (data.teachers.teacher2Name) {
+            const teacher2 = new Teacher (
+              db, 
+              storage,
+              data.teachers.teacher2Name, 
+              data.teachers.teacher2chool, 
+              data.teachers.teacher2Bio, 
+              data.teachers.teacher2Headshot[0]
+            );
+
+            teacher2.getPic().then(function(url) {
+              setHeadshot2(url);
+            })
+            .catch(console.log);
+
+            teacherObjs.push(teacher2);
+          }
+          setTeachers(teacherObjs);
         }
 
         } else {
@@ -96,7 +123,14 @@ const CoursePage = ({ match }) => {
       });
             
       setLoading(false);
+      console.log(teachers);
     }
+
+    /*useEffect(() => {
+      const courseObj = new Course(data, db, storage);
+      console.log(courseObj);
+      setCourse(courseObj);
+    });*/
 
     return (
       <div>
@@ -106,30 +140,45 @@ const CoursePage = ({ match }) => {
               <h1>{courseTitle}</h1>
                 <p>
                 {courseDescription}
+                {prereqs && 
+                  <><br/><b>Prerequisites: </b>{prereqs}</>}
+                {targetAudience && 
+                  <><br/><b>Target Audience: </b>{targetAudience}</>}
                 </p>
                 <p style={{clear: 'right'}}>
-                <b>Class Date + Time: </b>{classDateTime}
+                {classDates && classDays && classTime && 
+                  <>  
+                  <b>Class Dates: </b>{classDates}
+                  <b><br/>Class Weekdays: </b>{classDays}
+                  <b><br/>Time (EDT): </b>{classTime}
+                  </>}
                 </p>
-                
-                {teachers.map(teacher => (
+
+                {teachers.length > 0 &&
                   <div class="teacher-container">
-                    <p> 
-                    <img src={headshot1} class="img-left"/>
-                    <b>Taught by: </b>{teacher.name}<br/>
-                    <b>Teacher Bio: </b>{teacher.bio}
+                      <p>
+                      <img src={headshot1} class="img-left"/>
+                      <b>Taught by: </b>{teachers[0].name}<br/> 
+                      <b>Teacher Bio: </b>{teachers[0].bio}
+                      </p>
+                  </div>} 
+                {teachers.length > 1 &&
+                  <div class="teacher-container">
+                    <p>
+                    <img src={headshot2} class="img-left"/>
+                    <b>Taught by: </b>{teachers[1].name}<br/> 
+                    <b>Teacher Bio: </b>{teachers[1].bio}
                     </p>
-                  </div>
-                ))}
+                  </div>}
 
                 <h1>Register for this course!</h1>
-                  <iframe
-                title="form"
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
-                width="100%"
-                height="500"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true" 
+                  width="700" 
+                  height="520" 
+                  frameborder="0" 
+                  marginheight="0" 
+                  marginwidth="0">
+                  Loading…</iframe>
             </ContainerInner>
           </Container>
           <Footer/>

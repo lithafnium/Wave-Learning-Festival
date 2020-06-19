@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Container, ContainerInner } from "../../../globalStyles.js"
 import {FirebaseContext} from '../../../firebaseContext'
 import 'firebase/firestore'
@@ -7,8 +7,11 @@ import WaveLogo from '../../Blog/wave-learning-logo.png'
 import Teacher from './teacher.js'
 
 export default class Course {
-  constructor(data) {
-    this.title = data.courseTitle
+  constructor(data, db, storage) {
+    console.log(data);
+    this.db = db;
+    this.storage = storage;
+    this.title = data.courseTitle;
     this.description = data.courseDescription;
     this.teachers = [];
     this.prereqs = data.prereqs;
@@ -18,6 +21,8 @@ export default class Course {
     this.dates = data.classDates;
     this.days = data.classDays;
     this.time = data.classTime;
+
+    this.pic = data.picture[0];
 
     if (!this.teachers) {
       const teacher1 = new Teacher (
@@ -29,28 +34,24 @@ export default class Course {
         data.teachers.teacher1Headshot[0]
       );
 
-      const teacher2 = new Teacher (
-        db, 
-        storage,
-        data.teachers.teacher2Name, 
-        data.teachers.teacher2chool, 
-        data.teachers.teacher2Bio, 
-        data.teachers.teacher2Headshot[0]
-      );
-
-      teacher1.getPic().then(function(url) {
-        setHeadshot1(url);
-      })
-      .catch(console.log);
-
-      teacher2.getPic().then(function(url) {
-        setHeadshot2(url);
-      })
-      .catch(console.log);
+      if (data.teachers.teacher2Name)
+      {
+        const teacher2 = new Teacher (
+          db, 
+          storage,
+          data.teachers.teacher2Name, 
+          data.teachers.teacher2chool, 
+          data.teachers.teacher2Bio, 
+          data.teachers.teacher2Headshot[0]
+        );
+        this.teachers = [teacher1,teacher2];
       }
-
-    return this;
+      else {
+        this.teachers = [teacher1];
+      }
   }
+  return this;
+}
 
   getPic = () => {
     const currentStorage = this.storage;
@@ -75,5 +76,4 @@ export default class Course {
       return WaveLogo;
     });
   };
-
 }

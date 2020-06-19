@@ -10,27 +10,54 @@ import 'firebase/firestore'
 import WaveLogo from '../Blog/wave-learning-logo.png'
 
 const Courses = () => {
-  const {db} = useContext(FirebaseContext)
+  const { db, storage } = useContext(FirebaseContext)
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
+  const [coursePics, setCoursePics] = useState([]);
   const [imageRef, setImageRef] = useState('');
 
   /* Set Current Wave */
-  const WAVE = 1;
+  const WAVE = 3;
 
   if (db && loading && !courses.length) {
       db.collection("fl_content")
       .get()
       .then(function(querySnapshot) {
-        let posts = [];
+        let courses = [];
+        let coursePicsObj = [];
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
             console.log(doc.id, " => ", doc.data());
             if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
-              posts.push(doc);
+              courses.push(doc);
+                //Access Reference String
+                db.doc(doc.data().picture[0].path).get()
+                  .then(function(picture) {
+                    if (picture.exists) {
+                      //Access Image URL from Storage
+                      storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
+                        .then(function(url) {
+                          coursePicsObj.push(url.promise);  
+                        }).catch(function(error) {
+                          console.log("Error in download URL");
+                          coursePicsObj.push(WaveLogo);
+                        });
+                        console.log(coursePicsObj.length);
+                    } 
+                    else {
+                      console.log("No such document!");
+                      coursePicsObj.push(WaveLogo);
+                    }
+                  }).catch(function(error) {
+                    console.log("Error getting document:", error);
+                    coursePicsObj.push(WaveLogo);
+                  });
+                  console.log(coursePicsObj.length);
             } 
         });
-        setCourses(posts);
+        setCourses(courses);
+        console.log("COURSE PICS LENGTH:" + coursePicsObj.length)
+        setCoursePics(coursePicsObj);
         setLoading(false);
       })
       .catch(function(error) {
@@ -63,7 +90,7 @@ const Courses = () => {
             </Typography.BodyText>
             <div class="container">
             <div class="row">
-            {courses.map(course => (
+            {courses.map( (course, index) => (
               <div class="column">
                 <a href={`${course.id}`}>
                   <div class="course">
