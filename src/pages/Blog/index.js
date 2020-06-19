@@ -22,7 +22,7 @@ const Blog = () => {
         querySnapshot.forEach(function(doc) {
             if (doc.data().schema == "blogPost") {
               posts.push(doc);
-            } 
+            }
         });
         setBlogPosts(posts);
         setLoading(false);
