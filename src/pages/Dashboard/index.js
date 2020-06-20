@@ -7,6 +7,21 @@ import './styles.css'
 import 'firebase/firestore'
 import firebase from 'firebase'
 
+var namifyCourse = function(course) { // please change this later lol
+  var teacher1 = course.teacher1Name;
+  var teacher2 = course.teacher2Name;
+  var teacher3 = course.teacher3Name;
+
+  var result = teacher1;
+  if (teacher2 != "") {
+    result += ", " + teacher2;
+  }
+  if (teacher3 != "") {
+    result += ", " + teacher3;
+  }
+  return result;
+};
+
 const Dashboard = () => {
     const [loading, setLoading] = useState(true);
     const [calledOnce, setCalledOnce] = useState(false);
@@ -34,8 +49,25 @@ const Dashboard = () => {
             });
             // console.log(students.length + " " + calledOnce);
             if (students.length > 0) {
+              var coursesResult = [];
               setStudent(students[0].data());
-              setLoading(false);
+              var theStudent = students[0];
+              db.collection("courseAssignments").where("student", "==", "students2/" + theStudent.key).get().then(function(snapshot) {
+                snapshot.forEach(function(snap) {
+                  var courseId = snap.data().course;
+                  db.doc(courseId).get().then(function(snapshot) {
+                    var courses = [];
+                    snapshot.forEach(function(snap) {
+                      courses.push(snap);
+                    });
+                    if (courses.length > 0) {
+                      coursesResult.push(courses[0].data());
+                    }
+                  });
+                });
+                setCourses(coursesResult);
+                setLoading(false);
+              });
             }
           });
         } else {
@@ -106,7 +138,8 @@ const Dashboard = () => {
           </>);
 
       }
-      else if (student) {
+
+      if (student) {
       return (<>
           <div>
               <Navbar/>
@@ -127,16 +160,19 @@ const Dashboard = () => {
                 <option value="wave2" selected="selected">Wave 2</option>
                 <option value="wave1">Wave 1</option>
               </select>
+
               <div class="row">
-                <div class="course">
-                  <p>
-                  <b>Course Name: </b><a href="/course-learn-python">Learn Python</a><br/>
-                  <b>Instructor: </b>Fatima-Zahra Chriha<br/>
-                  <b>Dates/Times: </b>every time.<br/>
-                  <b><a href="about:blank">Course Documents</a></b><br/>
-                  <b><a href="about:blank">Zoom Link</a></b>
-                  </p>
-                </div>
+                {courses.map(course => (
+                  <div class="course">
+                    <p>
+                    <b>Course Name: </b><a href="/course-learn-python">{course.courseTitle}</a><br/>
+                    <b>Instructor: </b>{namify(course)}<br/>
+                    <b>Dates/Times: </b>every time.<br/>
+                    <b><a href="about:blank">Course Documents</a></b><br/>
+                    <b><a href="about:blank">Zoom Link</a></b>
+                    </p>
+                  </div>
+                ))}
               </div>
 
               </ContainerInner>
@@ -145,24 +181,19 @@ const Dashboard = () => {
               <Footer/>
           </div>
           </>);
-        } else {
-
-            return (
-              <>
-                <Navbar/>
-                <Container>
-                <ContainerInner>
-                <p>Loading information for {user.email}...</p>
-                </ContainerInner>
-                </Container>
-
-                <Footer/>
-              </>);
         }
 
+        return (
+          <>
+            <Navbar/>
+            <Container>
+            <ContainerInner>
+            <p>Loading information for {user.email}...</p>
+            </ContainerInner>
+            </Container>
 
-
-
+            <Footer/>
+          </>);
 
 }
 
