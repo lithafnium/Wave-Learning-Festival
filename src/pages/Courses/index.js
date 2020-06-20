@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
@@ -19,49 +19,61 @@ const Courses = () => {
   /* Set Current Wave */
   const WAVE = 3;
 
+  async function getPhotoUrl(picture) {
+    await storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
+      .then(function(url) {
+          //setCoursePics(coursePics => [...coursePics, url]);
+          console.log("PICTURE REACHED: " + url)
+          return url;
+      }).catch(function(error) {
+        console.log("Error in download URL");
+        return WaveLogo
+      });
+  }
+
+  async function getPhotoData(doc){
+    if (doc.data().picture.length > 0) {
+      await db.doc(doc.data().picture[0].path).get()
+        .then(function(picture) {
+          if (picture.exists) {
+            //Access Image URL from Storage
+            return getPhotoUrl(picture);            
+          } 
+          else {
+            console.log("No such document!");
+              //setCoursePics(coursePics => [...coursePics, WaveLogo]);
+              return WaveLogo;
+          }
+        }).catch(function(error) {
+          console.log("Error getting document:", error);
+            //setCoursePics(coursePics => [...coursePics, WaveLogo]);
+            return WaveLogo;
+        });
+      }
+      return WaveLogo
+    }
+
   if (db && loading && !courses.length) {
       db.collection("fl_content")
       .get()
       .then(function(querySnapshot) {
         let courses = [];
-        let coursePicsObj = [];
+        //let coursePics = [];
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-            if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
-              courses.push(doc);
-                //Access Reference String
-                db.doc(doc.data().picture[0].path).get()
-                  .then(function(picture) {
-                    if (picture.exists) {
-                      //Access Image URL from Storage
-                      storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
-                        .then(function(url) {
-                          coursePicsObj.push(url.promise);  
-                        }).catch(function(error) {
-                          console.log("Error in download URL");
-                          coursePicsObj.push(WaveLogo);
-                        });
-                        console.log(coursePicsObj.length);
-                    } 
-                    else {
-                      console.log("No such document!");
-                      coursePicsObj.push(WaveLogo);
-                    }
-                  }).catch(function(error) {
-                    console.log("Error getting document:", error);
-                    coursePicsObj.push(WaveLogo);
-                  });
-                  console.log(coursePicsObj.length);
-            } 
+          if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
+            if(courses.length >= coursePics.length) {
+              getPhotoData(doc).then(function(url) {
+                console.log("URL => " + url);
+                //setCoursePics(coursePics => [...coursePics, url]);
+            }).catch(console.log);}
+            courses.push(doc);
+          } 
         });
         setCourses(courses);
-        console.log("COURSE PICS LENGTH:" + coursePicsObj.length)
-        setCoursePics(coursePicsObj);
         setLoading(false);
       })
       .catch(function(error) {
-          console.log("Error getting documents: ", error);
+          console.log("Ex rror getting documents: ", error);
       });
   }
 
@@ -98,12 +110,20 @@ const Courses = () => {
                       <img src={WaveLogo}/>
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
-                    <Typography.BodyText style={{fontSize: 16}}>{course.data().teacherName}</Typography.BodyText>
-                    <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teacherSchool}</Typography.BodyText>
+                    {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
+                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name}</Typography.BodyText>
+                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School}</Typography.BodyText></>}
+                    {course.data().teachers.teacher1Name && course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
+                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name} and {course.data().teachers.teacher2Name}</Typography.BodyText>
+                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School} and {course.data().teachers.teacher2School}</Typography.BodyText></>}
+                    {course.data().teachers.teacher1Name && course.data().teachers.teacher2Name && course.data().teachers.teacher3Name &&
+                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name}, {course.data().teachers.teacher2Name}, and {course.data().teachers.teacher3Name}</Typography.BodyText>
+                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School}, {course.data().teachers.teacher2School}, and {course.data().teachers.teacher3School}</Typography.BodyText></>}
                   </div>
                 </a>
               </div>
             ))}
+            
         </div>
         </div>
         <Typography.Header style={{color: Colors.WLF_PURPLE}}>Course Schedule</Typography.Header>
@@ -111,19 +131,18 @@ const Courses = () => {
             src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
           </iframe>  
-          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 5/23 to take a class in the first wave!</Typography.Header>
+          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 7/1 to take a class in the third wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
             Sign-ups are on a first-come-first-serve basis. If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
           </Typography.BodyText>
-            <iframe
-              title="form"
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
-              width="100%"
-              height="400"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0">Loading…
-            </iframe>
+          <iframe 
+            title="form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true" 
+            width="100%"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">Loading…</iframe>
             </ContainerInner>
           </Container>
             <Footer/>

@@ -26,6 +26,7 @@ const CoursePage = ({ match }) => {
     const [teachers, setTeachers] = useState([]);
     const [headshot1, setHeadshot1] = useState("");
     const [headshot2, setHeadshot2] = useState("");
+    const [headshot3, setHeadshot3] = useState("");
 
     if (loading && (!db || !storage)) {
       return (
@@ -99,7 +100,7 @@ const CoursePage = ({ match }) => {
               db, 
               storage,
               data.teachers.teacher2Name, 
-              data.teachers.teacher2chool, 
+              data.teachers.teacher2School, 
               data.teachers.teacher2Bio, 
               data.teachers.teacher2Headshot[0]
             );
@@ -110,6 +111,8 @@ const CoursePage = ({ match }) => {
             .catch(console.log);
 
             teacherObjs.push(teacher2);
+
+            
           }
           setTeachers(teacherObjs);
         }
@@ -125,12 +128,6 @@ const CoursePage = ({ match }) => {
       setLoading(false);
       console.log(teachers);
     }
-
-    /*useEffect(() => {
-      const courseObj = new Course(data, db, storage);
-      console.log(courseObj);
-      setCourse(courseObj);
-    });*/
 
     return (
       <div>
@@ -171,14 +168,24 @@ const CoursePage = ({ match }) => {
                     </p>
                   </div>}
 
+                {teachers.length > 2 &&
+                <div class="teacher-container">
+                  <p>
+                  <img src={headshot3} class="img-left"/>
+                  <b>Taught by: </b>{teachers[2].name}<br/> 
+                  <b>Teacher Bio: </b>{teachers[2].bio}
+                  </p>
+                </div>}
+
                 <h1>Register for this course!</h1>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true" 
-                  width="700" 
-                  height="520" 
-                  frameborder="0" 
-                  marginheight="0" 
-                  marginwidth="0">
-                  Loading…</iframe>
+                <iframe 
+                  title="form"
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true" 
+                  width="100%"
+                  height="500"
+                  frameborder="0"
+                  marginheight="0"
+                  marginwidth="0">Loading…</iframe>
             </ContainerInner>
           </Container>
           <Footer/>
