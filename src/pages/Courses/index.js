@@ -44,6 +44,11 @@ import Journey from './W3-CourseImages/the hero_s journey.jpg'
 import Stars from './W3-CourseImages/to the stars and beyond.jpg'
 import Unity from './W3-CourseImages/unity.png'
 import WesternArt from './W3-CourseImages/western art history.jpg'
+import GreatSpeeches from './W3-CourseImages/Great speeches.png'
+import PublicSpeaking from './W3-CourseImages/Public speaking.jpg'
+import ArtOfLaughs from './W3-CourseImages/Stand-up.png'
+import HistorysTopHits from './W3-CourseImages/western-music.png'
+import ASL from './W3-CourseImages/introduction-to-american-sign-language.png'
 
 //import ASL 
 //import greatspeeches
@@ -169,7 +174,7 @@ const Courses = () => {
             </div>
 		
             <Typography.BodyText style={{color: Colors.WLF_BLACK }}>
-            We are excited to offer {courses.length} courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our
+            We are excited to offer {courses.length} courses across a variety of subjects for Wave Three running from July 6th to July 17th. Our
             volunteer educators have worked hard to prepare engaging and
             thoughtful curricula and can't wait to share their passions with
             you. Click each course for more info, and feel free to send any
@@ -250,17 +255,17 @@ const Courses = () => {
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/Hv1W67YAJSbCYOf2pArN" &&
                       <img src={WesternArt}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/BiDZUinL1SvSn9l4M4b6" &&
-                      <img src={WaveLogo}/>}
+                      <img src={ASL}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/o9CUbGBQHh1KBBBhx1fz" &&
-                      <img src={WaveLogo}/>}
+                      <img src={GreatSpeeches}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AVLNMVBHJYmMiK7T6S6d" &&
-                      <img src={WaveLogo}/>}
+                      <img src={HistorysTopHits}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/TRYtJYbnKuuA68vpufge" &&
-                      <img src={WaveLogo}/>}
+                      <img src={Unity}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/o2qLfyGx9ecs2LbZNkgr" &&
-                      <img src={WaveLogo}/>}
+                      <img src={ArtOfLaughs}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/05nsl0JBq97UHnDnGb8D" &&
-                      <img src={WaveLogo}/>}
+                      <img src={PublicSpeaking}/>}
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
                     {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
@@ -284,9 +289,9 @@ const Courses = () => {
             src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
           </iframe>  
-          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 7/1 to take a class in the third wave!</Typography.Header>
+          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 6/30 to take a class in the third wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
-            Sign-ups are on a first-come-first-serve basis. If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
+             If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
           </Typography.BodyText>
           <iframe 
             title="form"

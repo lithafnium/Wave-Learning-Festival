@@ -177,15 +177,7 @@ const CoursePage = ({ match }) => {
                   </p>
                 </div>}
 
-                <h1>Register for this course!</h1>
-                <iframe 
-                  title="form"
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true" 
-                  width="100%"
-                  height="500"
-                  frameborder="0"
-                  marginheight="0"
-                  marginwidth="0">Loading…</iframe>
+           
             </ContainerInner>
           </Container>
           <Footer/>
