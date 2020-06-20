@@ -7,7 +7,7 @@ import './styles.css'
 import 'firebase/firestore'
 import firebase from 'firebase'
 
-var namifyCourse = function(course) { // please change this later lol
+var namify = function(course) { // please change this later lol
   var teacher1 = course.teacher1Name;
   var teacher2 = course.teacher2Name;
   var teacher3 = course.teacher3Name;
@@ -51,22 +51,30 @@ const Dashboard = () => {
             if (students.length > 0) {
               var coursesResult = [];
               setStudent(students[0].data());
-              var theStudent = students[0];
-              db.collection("courseAssignments").where("student", "==", "students2/" + theStudent.key).get().then(function(snapshot) {
+              var theStudent = students[0].data();
+              db.collection("courseAssignments").where("student", "==", theStudent.id).get().then(function(snapshot) {
+                var numCourses = 0;
+                var currentlyCounted = 0;
                 snapshot.forEach(function(snap) {
+                  // console.log("hello " + snap.data().course);
+                  numCourses++;
                   var courseId = snap.data().course;
-                  db.doc(courseId).get().then(function(snapshot) {
+                  db.collection("fl_content").where("id", "==", courseId).get().then(function(snapshot) {
+                    currentlyCounted++;
                     var courses = [];
                     snapshot.forEach(function(snap) {
                       courses.push(snap);
                     });
                     if (courses.length > 0) {
+                      // console.log("hello " + courses[0].data().courseTitle);
                       coursesResult.push(courses[0].data());
+                    }
+                    if (currentlyCounted == numCourses) {
+                      setCourses(coursesResult);
+                      setLoading(false);
                     }
                   });
                 });
-                setCourses(coursesResult);
-                setLoading(false);
               });
             }
           });
@@ -165,11 +173,11 @@ const Dashboard = () => {
                 {courses.map(course => (
                   <div class="course">
                     <p>
-                    <b>Course Name: </b><a href="/course-learn-python">{course.courseTitle}</a><br/>
-                    <b>Instructor: </b>{namify(course)}<br/>
-                    <b>Dates/Times: </b>every time.<br/>
-                    <b><a href="about:blank">Course Documents</a></b><br/>
-                    <b><a href="about:blank">Zoom Link</a></b>
+                    <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}</a><br/>
+                    <b>Instructor: </b>{namify(course.teachers)}<br/>
+                    <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+                    <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
+                    <b><a href={course.zoomLink}>Zoom Link</a></b>
                     </p>
                   </div>
                 ))}
