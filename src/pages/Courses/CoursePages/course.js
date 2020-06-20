@@ -22,7 +22,7 @@ export default class Course {
     this.days = data.classDays;
     this.time = data.classTime;
 
-    this.pic = data.picture[0];
+    this.pic = './W3-CourseImages/' + course.data().picture[0].replace('fl_files', '') + '.png';
 
     if (!this.teachers) {
       const teacher1 = new Teacher (
@@ -33,7 +33,6 @@ export default class Course {
         data.teachers.teacher1Bio, 
         data.teachers.teacher1Headshot[0]
       );
-
       if (data.teachers.teacher2Name)
       {
         const teacher2 = new Teacher (

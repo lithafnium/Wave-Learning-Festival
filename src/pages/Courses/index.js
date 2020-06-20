@@ -8,6 +8,43 @@ import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
+import ProgressBar from './w3_progressbar-01.png'
+import Image from './W3-CourseImages/SvNojEXivXUOOoRIGfjo.png'
+
+import Acapella from './W3-CourseImages/acapella.jpg'
+import WomansWear from './W3-CourseImages/american womenswear.jpg'
+import Medicine from './W3-CourseImages/ancient medicine.jpg'
+import Anthropology from './W3-CourseImages/anthropology.png'
+import AroundWorld from './W3-CourseImages/around the world through film.jpg'
+import Spanish from './W3-CourseImages/basic spanish.jpg'
+import Chemistry from './W3-CourseImages/chemistry.jpg'
+import Coffee from './W3-CourseImages/coffee.jpg'
+import Corona from './W3-CourseImages/corona ad anxiety.png'
+import DeathOfPrint from './W3-CourseImages/death of print.jpg'
+import HumanBrain from './W3-CourseImages/exploring the human brain.jpg'
+import Investing from './W3-CourseImages/fundamentals of investing.jpg'
+import GOAT from './W3-CourseImages/GOAT.jpg'
+import Cancer from './W3-CourseImages/how cancer works.jpg'
+import StuffWorks from './W3-CourseImages//how stuff works.jpg'
+import Cardiothoracic from './W3-CourseImages/intro to cardiothoracic system.jpg'
+import CreativeWriting from './W3-CourseImages/intro to creative writing.jpg'
+import Epidemiology from './W3-CourseImages/intro to epidemiology.jpg'
+import Film from './W3-CourseImages/intro to film.png'
+import Java from './W3-CourseImages/intro to java.jpg'
+import Macedonian from './W3-CourseImages/intro to Macedonian language.jpg'
+import Mechanics from './W3-CourseImages/intro to mechanics.jpg'
+import Physics from './W3-CourseImages/intro to physics.jpg'
+import Python from './W3-CourseImages/intro to python.png'
+import Israel from './W3-CourseImages/israel.jpg'
+import MedicalEthics from './W3-CourseImages/medical ethics.jpg'
+import QuantumComputing from './W3-CourseImages/quantum computing.jpg'
+import Quaranzines from './W3-CourseImages/quaranzines.jpg'
+import Quran from './W3-CourseImages/quran.jpg'
+import Sharks from './W3-CourseImages/sharks.jpg'
+import Journey from './W3-CourseImages/the hero_s journey.jpg'
+import Stars from './W3-CourseImages/to the stars and beyond.jpg'
+import Unity from './W3-CourseImages/unity.png'
+import WesternArt from './W3-CourseImages/western art history.jpg'
 
 const Courses = () => {
   const { db, storage } = useContext(FirebaseContext)
@@ -23,7 +60,6 @@ const Courses = () => {
     await storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
       .then(function(url) {
           //setCoursePics(coursePics => [...coursePics, url]);
-          console.log("PICTURE REACHED: " + url)
           return url;
       }).catch(function(error) {
         console.log("Error in download URL");
@@ -61,11 +97,11 @@ const Courses = () => {
         //let coursePics = [];
         querySnapshot.forEach(function(doc) {
           if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
-            if(courses.length >= coursePics.length) {
+            /*if(courses.length >= coursePics.length) {
               getPhotoData(doc).then(function(url) {
                 console.log("URL => " + url);
                 //setCoursePics(coursePics => [...coursePics, url]);
-            }).catch(console.log);}
+            }).catch(console.log);}*/
             courses.push(doc);
           } 
         });
@@ -76,6 +112,31 @@ const Courses = () => {
           console.log("Ex rror getting documents: ", error);
       });
   }
+
+  /*if (loading && !coursePics.length) {
+    let coursePicURL = [];
+    courses.forEach(function (course) {
+      if (course.data().picture.length > 0 && course.data().picture[0].path.replace('fl_files/', '') == 'SvNojEXivXUOOoRIGfjo') {
+        console.log("Reached COURSE!" + '/W3-CourseImages/' + course.data().picture[0].path.replace('fl_files/', '') + '.png');
+        console.log("ACTUAL: src/pages/Courses/W3-CourseImages/SvNojEXivXUOOoRIGfjo.png");
+        coursePicURL.push('/W3-CourseImages/' + course.data().picture[0].path.replace('fl_files/', '') + '.png');
+      }
+      else {
+        coursePicURL.push("../Blog/wave-learning-logo.png");
+      }  
+    })
+    setCoursePics(coursePicURL);
+  }
+
+  function getLocalPic(course) {
+    if (course.data().picture.length > 0 && course.data().picture[0].path.replace('fl_files/', '') == 'SvNojEXivXUOOoRIGfjo') {
+      console.log("ACTUAL: src/pages/Courses/W3-CourseImages/SvNojEXivXUOOoRIGfjo.png");
+      return '/W3-CourseImages/' + course.data().picture[0].path.replace('fl_files/', '') + '.png';
+    }
+    else {
+      return "../Blog/wave-learning-logo.png";
+    }
+  }*/
 
   if (loading) {
     return (
@@ -97,8 +158,19 @@ const Courses = () => {
             <Navbar/>
             <Container>
             <ContainerInner>
+            <div class="progressbar">
+              <img src= {ProgressBar} alt = "centered image" />
+            </div>
+		
             <Typography.BodyText style={{color: Colors.WLF_BLACK }}>
-              For our inaugural wave, we are excited to offer {courses.length} courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
+            We are excited to offer {courses.length} courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our
+            volunteer educators have worked hard to prepare engaging and
+            thoughtful curricula and can't wait to share their passions with
+            you. Click each course for more info, and feel free to send any
+            questions to{" "}
+            <a href="mailto:wavelf.logistics@gmail.com">
+              wavelf.logistics@gmail.com
+            </a><br /><br /><br />
             </Typography.BodyText>
             <div class="container">
             <div class="row">
@@ -107,7 +179,76 @@ const Courses = () => {
                 <a href={`${course.id}`}>
                   <div class="course">
                     <div class="image-container">
-                      <img src={WaveLogo}/>
+                    {course.data().picture.length == 0  &&                      
+                      <img src={WaveLogo}/>}
+                    {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Acapella}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={WomansWear}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Medicine}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Anthropology}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={AroundWorld}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Spanish}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Chemistry}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Coffee}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Corona}/>}
+                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={DeathOfPrint}/>}
+                    {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={HumanBrain}/>}
+                    {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Investing}/>}
+                    {course.data().picture[0].path == "fl_files/2RfiIPmXezZQxEaoAfVR" &&
+                      <img src={GOAT}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Cancer}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={StuffWorks}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Cardiothoracic}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={CreativeWriting}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Epidemiology}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Film}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Java}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Macedonian}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Mechanics}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Physics}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Python}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Israel}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={MedicalEthics}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={QuantumComputing}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Quaranzines}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Quran}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Sharks}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Journey}/>}
+                      {course.data().picture[0].path == "fl_files/KUSEUsPdaFh2I95faoU1" &&
+                      <img src={Stars}/>}
+                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={Unity}/>}
+                      {course.data().picture[0].path == "fl_files/Hv1W67YAJSbCYOf2pArN" &&
+                      <img src={WesternArt}/>}
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
                     {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
