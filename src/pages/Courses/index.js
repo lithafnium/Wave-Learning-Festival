@@ -9,9 +9,8 @@ import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
 import ProgressBar from './w3_progressbar-01.png'
-import Image from './W3-CourseImages/SvNojEXivXUOOoRIGfjo.png'
 
-import Acapella from './W3-CourseImages/acapella.jpg'
+import Acapella from './W3-CourseImages/acappella.jpg'
 import WomansWear from './W3-CourseImages/american womenswear.jpg'
 import Medicine from './W3-CourseImages/ancient medicine.jpg'
 import Anthropology from './W3-CourseImages/anthropology.png'
@@ -22,7 +21,7 @@ import Coffee from './W3-CourseImages/coffee.jpg'
 import Corona from './W3-CourseImages/corona ad anxiety.png'
 import DeathOfPrint from './W3-CourseImages/death of print.jpg'
 import HumanBrain from './W3-CourseImages/exploring the human brain.jpg'
-import Investing from './W3-CourseImages/fundamentals of investing.jpg'
+import Investing from './W3-CourseImages/fundementals of investing.jpg'
 import GOAT from './W3-CourseImages/GOAT.jpg'
 import Cancer from './W3-CourseImages/how cancer works.jpg'
 import StuffWorks from './W3-CourseImages//how stuff works.jpg'
@@ -45,6 +44,13 @@ import Journey from './W3-CourseImages/the hero_s journey.jpg'
 import Stars from './W3-CourseImages/to the stars and beyond.jpg'
 import Unity from './W3-CourseImages/unity.png'
 import WesternArt from './W3-CourseImages/western art history.jpg'
+
+//import ASL 
+//import greatspeeches
+//import WesternMusic 
+//import GameDesign
+//import laughs
+//import PublicSpeaking
 
 const Courses = () => {
   const { db, storage } = useContext(FirebaseContext)
@@ -97,11 +103,11 @@ const Courses = () => {
         //let coursePics = [];
         querySnapshot.forEach(function(doc) {
           if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
-            /*if(courses.length >= coursePics.length) {
+            if(courses.length >= coursePics.length) {
               getPhotoData(doc).then(function(url) {
                 console.log("URL => " + url);
                 //setCoursePics(coursePics => [...coursePics, url]);
-            }).catch(console.log);}*/
+            }).catch(console.log);}
             courses.push(doc);
           } 
         });
@@ -179,76 +185,82 @@ const Courses = () => {
                 <a href={`${course.id}`}>
                   <div class="course">
                     <div class="image-container">
-                    {course.data().picture.length == 0  &&                      
+                      {course.data().picture.length == 0  &&                      
                       <img src={WaveLogo}/>}
-                    {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AFL06BDO1GbZtH7sxnsQ" &&
                       <img src={Acapella}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
                       <img src={WomansWear}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/S8hix2rwaj3J37xO6m4M" &&
                       <img src={Medicine}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/SvNojEXivXUOOoRIGfjo" &&
                       <img src={Anthropology}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/aNvIEIt5gg8na7xMtY5a" &&
                       <img src={AroundWorld}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/gVPySgwdZCy0btecQpkZ" &&
                       <img src={Spanish}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
                       <img src={Chemistry}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AePNPPhSK67SOvKNZJ9v" &&
                       <img src={Coffee}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/fKjST9ea5T9ZGfQuxnvt" &&
                       <img src={Corona}/>}
-                      {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/S4StMeJKeHJMcB3cREIZ" &&
                       <img src={DeathOfPrint}/>}
-                    {course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/nO4k8Ub7UXDmGO9NsbNT" &&
                       <img src={HumanBrain}/>}
-                    {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/Sre7xzKuFDuyECMyBBTZ" &&
                       <img src={Investing}/>}
-                    {course.data().picture[0].path == "fl_files/2RfiIPmXezZQxEaoAfVR" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/2RfiIPmXezZQxEaoAfVR" &&
                       <img src={GOAT}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/ro3py83vOizom20uJ5v2" &&
                       <img src={Cancer}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/SOeo2eoNTPMc3F9YphXZ" &&
                       <img src={StuffWorks}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/umhs2jIY0z61SOIwNJmz" &&
                       <img src={Cardiothoracic}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/ADfRuIr4wsDLemXWSYlq" &&
                       <img src={CreativeWriting}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/1hSjNETqUPv4fSPJubJu" &&
                       <img src={Epidemiology}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/lPa54EZCkomTbaOwkFmX" &&
                       <img src={Film}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/NHMtmq7G5qVjtgDjPXcP" &&
                       <img src={Java}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/ciEVVVzwLlqzMz9XGlB3" &&
                       <img src={Macedonian}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
-                      <img src={Mechanics}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
-                      <img src={Physics}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/8E7rYYGoGxkMVhgcP91O" &&
                       <img src={Python}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/kDN4xVzihWlpkaUKwym3" &&
                       <img src={Israel}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/HiyJhPxyUluJPnTRZeIk" &&
                       <img src={MedicalEthics}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/HKoTwH9aKm4kx7j0KtAP" &&
                       <img src={QuantumComputing}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/nrgo1cS9y9LdBkNCZyiK" &&
                       <img src={Quaranzines}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/oRyak2fOujhoFPFZUIoO" &&
                       <img src={Quran}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/RYYBvRqZzzTjJucbMosb" &&
                       <img src={Sharks}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/LIwwOGX1ERkFLlwnxuDm" &&
                       <img src={Journey}/>}
-                      {course.data().picture[0].path == "fl_files/KUSEUsPdaFh2I95faoU1" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/KUSEUsPdaFh2I95faoU1" &&
                       <img src={Stars}/>}
-                      {course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
-                      <img src={Unity}/>}
-                      {course.data().picture[0].path == "fl_files/Hv1W67YAJSbCYOf2pArN" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/Hv1W67YAJSbCYOf2pArN" &&
                       <img src={WesternArt}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/BiDZUinL1SvSn9l4M4b6" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/o9CUbGBQHh1KBBBhx1fz" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AVLNMVBHJYmMiK7T6S6d" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/TRYtJYbnKuuA68vpufge" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/o2qLfyGx9ecs2LbZNkgr" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/05nsl0JBq97UHnDnGb8D" &&
+                      <img src={WaveLogo}/>}
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
                     {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
