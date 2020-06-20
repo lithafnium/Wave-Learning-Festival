@@ -19,11 +19,11 @@ const CourseFinancialLiteracy = () => {
             <br />
             <b>Format: </b> Tuesday, Thursday
             <br />
-            <b>Time (EDT): </b> 1pm - 1:45pm
+            <b>Time (EDT): </b> 4pm - 5pm 
           </p>
           <p>
             <img src={Profile} class="img-left" />
-            <b>Taught by: </b>Maria Fernanda Estrada, Onder Kilinc
+            <b>Taught by: </b>Maria Fernanda Estrada
             <br />
             <b>Teacher Bio: </b>Hello, my name is Maria Estrada and I am a
             rising sophomore at Williams College. I am teaching this course

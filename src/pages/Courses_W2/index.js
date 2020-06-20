@@ -44,11 +44,11 @@ const Courses = () => {
       <Navbar />
       <Container>
         <ContainerInner>
-
+  <div class="progress-container">
 	<div class="progressbar">
-   	 <img src= {ProgressBar3} alt = "centered image" />
 	</div>
-		
+  </div>
+
           <p>
             We are excited to offer 26 courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our
             volunteer educators have worked hard to prepare engaging and
@@ -59,7 +59,7 @@ const Courses = () => {
               wavelf.logistics@gmail.com
             </a><br /><br /><br />
           </p>
-	  
+
           <div class="container">
             <div class="row">
               <div class="column">
@@ -83,7 +83,7 @@ const Courses = () => {
                       <img src={FinancialLiteracy} />
                     </div>
                     <p class="name">Securing the Bag: Budgeting 101</p>
-                    <p class="teacher">Maria Fernanda Estrada & Onder Kilinc</p>
+                    <p class="teacher">Maria Fernanda Estrada</p>
                     <p class="school">Williams College '23</p>
                   </div>
                 </a>
@@ -419,7 +419,7 @@ const Courses = () => {
                     <p class="teacher">Kevin Xu, Kelly Shen, & David Feng</p>
                     <p class="school">
                       UPenn '22, UPenn '23, UPenn '24
-                      
+
                     </p>
                   </div>
                 </a>

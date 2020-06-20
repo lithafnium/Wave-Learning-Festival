@@ -120,16 +120,22 @@ html {
 
 .progressbar {
    text-align: center;
+   display: inline-block;
+   background-image: url("./wlf_progressbar/wlf_progressbar-04.png");
+   background-size: 100% 100%;
+   width: 717px;
+   height: 260px;
+}
+
+.progress-container {
+  text-align: center;
 }
 
 .progressbar img{
-   width: 70%;
-   height: auto;
+   visibility: hidden;
 }
 
 
 h1{
   color: #2684ff;
 }
-
-

@@ -49,13 +49,12 @@ const Teachers = () => {
             life!
           </Typography.BodyText>
           <Typography.Header style={{ color: Colors.WLF_PURPLE }}>
-            Apply by 6/12 to be included in the third wave!
+            Apply by 6/26 to be included in the fourth wave!
           </Typography.Header>
           <Typography.BodyText
             style={{ color: Colors.WLF_BLACK, marginBottom: 20 }}
           >
-            Due to overwhelming interest in teaching, we may push your class to
-            a later wave. Thank you for your patience!
+            
           </Typography.BodyText>
 
           <iframe
