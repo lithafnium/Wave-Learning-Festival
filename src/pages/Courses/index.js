@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
@@ -9,33 +9,141 @@ import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
 import Checkbox from '../../../components/Checkbox'
+import ProgressBar from './w3_progressbar-01.png'
+
+import Acapella from './W3-CourseImages/acappella.jpg'
+import WomansWear from './W3-CourseImages/american womenswear.jpg'
+import Medicine from './W3-CourseImages/ancient medicine.jpg'
+import Anthropology from './W3-CourseImages/anthropology.png'
+import AroundWorld from './W3-CourseImages/around the world through film.jpg'
+import Spanish from './W3-CourseImages/basic spanish.jpg'
+import Chemistry from './W3-CourseImages/chemistry.jpg'
+import Coffee from './W3-CourseImages/coffee.jpg'
+import Corona from './W3-CourseImages/corona ad anxiety.png'
+import DeathOfPrint from './W3-CourseImages/death of print.jpg'
+import HumanBrain from './W3-CourseImages/exploring the human brain.jpg'
+import Investing from './W3-CourseImages/fundementals of investing.jpg'
+import GOAT from './W3-CourseImages/GOAT.jpg'
+import Cancer from './W3-CourseImages/how cancer works.jpg'
+import StuffWorks from './W3-CourseImages//how stuff works.jpg'
+import Cardiothoracic from './W3-CourseImages/intro to cardiothoracic system.jpg'
+import CreativeWriting from './W3-CourseImages/intro to creative writing.jpg'
+import Epidemiology from './W3-CourseImages/intro to epidemiology.jpg'
+import Film from './W3-CourseImages/intro to film.png'
+import Java from './W3-CourseImages/intro to java.jpg'
+import Macedonian from './W3-CourseImages/intro to Macedonian language.jpg'
+import Mechanics from './W3-CourseImages/intro to mechanics.jpg'
+import Physics from './W3-CourseImages/intro to physics.jpg'
+import Python from './W3-CourseImages/intro to python.png'
+import Israel from './W3-CourseImages/israel.jpg'
+import MedicalEthics from './W3-CourseImages/medical ethics.jpg'
+import QuantumComputing from './W3-CourseImages/quantum computing.jpg'
+import Quaranzines from './W3-CourseImages/quaranzines.jpg'
+import Quran from './W3-CourseImages/quran.jpg'
+import Sharks from './W3-CourseImages/sharks.jpg'
+import Journey from './W3-CourseImages/the hero_s journey.jpg'
+import Stars from './W3-CourseImages/to the stars and beyond.jpg'
+import Unity from './W3-CourseImages/unity.png'
+import WesternArt from './W3-CourseImages/western art history.jpg'
+
+//import ASL 
+//import greatspeeches
+//import WesternMusic 
+//import GameDesign
+//import laughs
+//import PublicSpeaking
 
 const Courses = () => {
-  const {db} = useContext(FirebaseContext)
+  const { db, storage } = useContext(FirebaseContext)
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
+  const [coursePics, setCoursePics] = useState([]);
   const [imageRef, setImageRef] = useState('');
-  const WAVE = 1;
+
+  /* Set Current Wave */
+  const WAVE = 3;
+
+  async function getPhotoUrl(picture) {
+    await storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
+      .then(function(url) {
+          //setCoursePics(coursePics => [...coursePics, url]);
+          return url;
+      }).catch(function(error) {
+        console.log("Error in download URL");
+        return WaveLogo
+      });
+  }
+
+  async function getPhotoData(doc){
+    if (doc.data().picture.length > 0) {
+      await db.doc(doc.data().picture[0].path).get()
+        .then(function(picture) {
+          if (picture.exists) {
+            //Access Image URL from Storage
+            return getPhotoUrl(picture);            
+          } 
+          else {
+            console.log("No such document!");
+              //setCoursePics(coursePics => [...coursePics, WaveLogo]);
+              return WaveLogo;
+          }
+        }).catch(function(error) {
+          console.log("Error getting document:", error);
+            //setCoursePics(coursePics => [...coursePics, WaveLogo]);
+            return WaveLogo;
+        });
+      }
+      return WaveLogo
+    }
 
   if (db && loading && !courses.length) {
       db.collection("fl_content")
       .get()
       .then(function(querySnapshot) {
-        let posts = [];
+        let courses = [];
+        //let coursePics = [];
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-            if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
-              posts.push(doc);
-            } 
+          if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
+            if(courses.length >= coursePics.length) {
+              getPhotoData(doc).then(function(url) {
+                console.log("URL => " + url);
+                //setCoursePics(coursePics => [...coursePics, url]);
+            }).catch(console.log);}
+            courses.push(doc);
+          } 
         });
-        setCourses(posts);
+        setCourses(courses);
         setLoading(false);
       })
       .catch(function(error) {
-          console.log("Error getting documents: ", error);
+          console.log("Ex rror getting documents: ", error);
       });
   }
+
+  /*if (loading && !coursePics.length) {
+    let coursePicURL = [];
+    courses.forEach(function (course) {
+      if (course.data().picture.length > 0 && course.data().picture[0].path.replace('fl_files/', '') == 'SvNojEXivXUOOoRIGfjo') {
+        console.log("Reached COURSE!" + '/W3-CourseImages/' + course.data().picture[0].path.replace('fl_files/', '') + '.png');
+        console.log("ACTUAL: src/pages/Courses/W3-CourseImages/SvNojEXivXUOOoRIGfjo.png");
+        coursePicURL.push('/W3-CourseImages/' + course.data().picture[0].path.replace('fl_files/', '') + '.png');
+      }
+      else {
+        coursePicURL.push("../Blog/wave-learning-logo.png");
+      }  
+    })
+    setCoursePics(coursePicURL);
+  }
+
+  function getLocalPic(course) {
+    if (course.data().picture.length > 0 && course.data().picture[0].path.replace('fl_files/', '') == 'SvNojEXivXUOOoRIGfjo') {
+      console.log("ACTUAL: src/pages/Courses/W3-CourseImages/SvNojEXivXUOOoRIGfjo.png");
+      return '/W3-CourseImages/' + course.data().picture[0].path.replace('fl_files/', '') + '.png';
+    }
+    else {
+      return "../Blog/wave-learning-logo.png";
+    }
+  }*/
 
   if (loading) {
     return (
@@ -57,25 +165,119 @@ const Courses = () => {
             <Navbar/>
             <Container>
             <ContainerInner>
+            <div class="progressbar">
+              <img src= {ProgressBar} alt = "centered image" />
+            </div>
+		
             <Typography.BodyText style={{color: Colors.WLF_BLACK }}>
-              For our inaugural wave, we are excited to offer {courses.length} courses across a variety of subjects. Our volunteer educators have worked hard to prepare engaging and thoughtful curricula, and can't wait to share their passions with you. Click each course for more info, and feel free to send any questions to <a href="mailto:wavelf.logistics@gmail.com">wavelf.logistics@gmail.com</a>.
+            We are excited to offer {courses.length} courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our
+            volunteer educators have worked hard to prepare engaging and
+            thoughtful curricula and can't wait to share their passions with
+            you. Click each course for more info, and feel free to send any
+            questions to{" "}
+            <a href="mailto:wavelf.logistics@gmail.com">
+              wavelf.logistics@gmail.com
+            </a><br /><br /><br />
             </Typography.BodyText>
             <div class="container">
             <div class="row">
-            {courses.map(course => (
+            {courses.map( (course, index) => (
               <div class="column">
                 <a href={`${course.id}`}>
                   <div class="course">
                     <div class="image-container">
-                      <img src={WaveLogo}/>
+                      {course.data().picture.length == 0  &&                      
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AFL06BDO1GbZtH7sxnsQ" &&
+                      <img src={Acapella}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/4k7o8dYEXnp0075763oU" &&
+                      <img src={WomansWear}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/S8hix2rwaj3J37xO6m4M" &&
+                      <img src={Medicine}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/SvNojEXivXUOOoRIGfjo" &&
+                      <img src={Anthropology}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/aNvIEIt5gg8na7xMtY5a" &&
+                      <img src={AroundWorld}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/gVPySgwdZCy0btecQpkZ" &&
+                      <img src={Spanish}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/u5HlO1Cq5ZVFrPYjecEV" &&
+                      <img src={Chemistry}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AePNPPhSK67SOvKNZJ9v" &&
+                      <img src={Coffee}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/fKjST9ea5T9ZGfQuxnvt" &&
+                      <img src={Corona}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/S4StMeJKeHJMcB3cREIZ" &&
+                      <img src={DeathOfPrint}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/nO4k8Ub7UXDmGO9NsbNT" &&
+                      <img src={HumanBrain}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/Sre7xzKuFDuyECMyBBTZ" &&
+                      <img src={Investing}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/2RfiIPmXezZQxEaoAfVR" &&
+                      <img src={GOAT}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/ro3py83vOizom20uJ5v2" &&
+                      <img src={Cancer}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/SOeo2eoNTPMc3F9YphXZ" &&
+                      <img src={StuffWorks}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/umhs2jIY0z61SOIwNJmz" &&
+                      <img src={Cardiothoracic}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/ADfRuIr4wsDLemXWSYlq" &&
+                      <img src={CreativeWriting}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/1hSjNETqUPv4fSPJubJu" &&
+                      <img src={Epidemiology}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/lPa54EZCkomTbaOwkFmX" &&
+                      <img src={Film}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/NHMtmq7G5qVjtgDjPXcP" &&
+                      <img src={Java}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/ciEVVVzwLlqzMz9XGlB3" &&
+                      <img src={Macedonian}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/8E7rYYGoGxkMVhgcP91O" &&
+                      <img src={Python}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/kDN4xVzihWlpkaUKwym3" &&
+                      <img src={Israel}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/HiyJhPxyUluJPnTRZeIk" &&
+                      <img src={MedicalEthics}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/HKoTwH9aKm4kx7j0KtAP" &&
+                      <img src={QuantumComputing}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/nrgo1cS9y9LdBkNCZyiK" &&
+                      <img src={Quaranzines}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/oRyak2fOujhoFPFZUIoO" &&
+                      <img src={Quran}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/RYYBvRqZzzTjJucbMosb" &&
+                      <img src={Sharks}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/LIwwOGX1ERkFLlwnxuDm" &&
+                      <img src={Journey}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/KUSEUsPdaFh2I95faoU1" &&
+                      <img src={Stars}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/Hv1W67YAJSbCYOf2pArN" &&
+                      <img src={WesternArt}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/BiDZUinL1SvSn9l4M4b6" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/o9CUbGBQHh1KBBBhx1fz" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AVLNMVBHJYmMiK7T6S6d" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/TRYtJYbnKuuA68vpufge" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/o2qLfyGx9ecs2LbZNkgr" &&
+                      <img src={WaveLogo}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/05nsl0JBq97UHnDnGb8D" &&
+                      <img src={WaveLogo}/>}
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
-                    <Typography.BodyText style={{fontSize: 16}}>{course.data().teacherName}</Typography.BodyText>
-                    <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teacherSchool}</Typography.BodyText>
+                    {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
+                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name}</Typography.BodyText>
+                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School}</Typography.BodyText></>}
+                    {course.data().teachers.teacher1Name && course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
+                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name} and {course.data().teachers.teacher2Name}</Typography.BodyText>
+                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School} and {course.data().teachers.teacher2School}</Typography.BodyText></>}
+                    {course.data().teachers.teacher1Name && course.data().teachers.teacher2Name && course.data().teachers.teacher3Name &&
+                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name}, {course.data().teachers.teacher2Name}, and {course.data().teachers.teacher3Name}</Typography.BodyText>
+                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School}, {course.data().teachers.teacher2School}, and {course.data().teachers.teacher3School}</Typography.BodyText></>}
                   </div>
                 </a>
               </div>
             ))}
+            
         </div>
         </div>
         <Typography.Header style={{color: Colors.WLF_PURPLE}}>Course Schedule</Typography.Header>
@@ -83,19 +285,18 @@ const Courses = () => {
             src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
           </iframe>  
-          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 5/23 to take a class in the first wave!</Typography.Header>
+          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 7/1 to take a class in the third wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
             Sign-ups are on a first-come-first-serve basis. If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
           </Typography.BodyText>
-            <iframe
-              title="form"
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdEci1eOpQ8IvYSFCxsgQOXfKL5LpJhZRWvfBLrrzAPrgyuZw/viewform?embedded=true"
-              width="100%"
-              height="400"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0">Loading…
-            </iframe>
+          <iframe 
+            title="form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true" 
+            width="100%"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">Loading…</iframe>
             </ContainerInner>
           </Container>
             <Footer/>

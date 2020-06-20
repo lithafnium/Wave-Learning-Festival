@@ -39,35 +39,6 @@ export const Input = styled.input`
     }
 `
 
-export const Subscribe = styled.button`
-    border: none;
-    
-    background-color: #2684ff;
-    color: white; 
-    padding: 12px 30px 12px 30px;
-    border-radius: 50px; 
-    font-size: 1rem; 
-    width: 50%; 
-    text-align: center; 
-    margin-top: 1rem; 
-    margin-bottom: 1rem;
-    transition: 0.15s;  
-
-    &:hover{
-        opacity: 0.8; 
-        cursor: pointer;
-    }
-
-    &:focus{
-        outline: none;
-    }
-
-    &:disabled{
-        cursor: default; 
-        opacity: 0.8; 
-    }
-`
-
 export const Error = styled.p`
     color: #ff5630; 
     font-size: 0.9rem; 

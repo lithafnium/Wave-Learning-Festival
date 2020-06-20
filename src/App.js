@@ -7,7 +7,7 @@ import Team from './pages/Team'
 import FAQStudents from './pages/FAQ/Students'
 import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
-import Courses from './pages/Courses_W2'
+import Courses from './pages/Courses'
 import CoursesArchive from './pages/Courses_W1'
 
 // wave 1
@@ -62,7 +62,7 @@ import Unsubscribe from './pages/Unsubscribe'
 import Join from './pages/Join'
 import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
-//import CourseTesting from './pages/Courses'
+import CourseTesting from './pages/Courses'
 import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
@@ -249,12 +249,6 @@ function App() {
             <Route path="/blog">
               <Blog />
             </Route>
-            {/* Routing for each blog post */}
-            {/*<Route path="/:slug" component={BlogPage} />*/}
-            {/*Routing for new course pages*/}
-            {/*<Route path="/courseTesting">
-              <CourseTesting />
-            </Route>*/}
             <Route path="/:slug" component={CoursePage} />
             <Route path="/">
               <About />
