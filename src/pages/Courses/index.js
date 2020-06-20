@@ -8,6 +8,7 @@ import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
+import Checkbox from '../../../components/Checkbox'
 
 const Courses = () => {
   const {db} = useContext(FirebaseContext)

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles";
@@ -36,9 +36,23 @@ import ProgressBar3 from "./wlf_progressbar/wlf_progressbar-03.png";
 import ProgressBar4 from "./wlf_progressbar/wlf_progressbar-04.png";
 import ProgressWithTitle from "./wlf_progressbar/ProgressTitle.png";
 
-
+import Filter from '../../components/Filter'
+import Checkbox from '../../components/Checkbox'
+import Chip from '../../components/Chip'
+import { Colors } from "@/styles";
 
 const Courses = () => {
+  const [filteredItems, updateFiltered] = useState([])
+  
+  const addFilter = (text, color) => {
+    updateFiltered(filteredItems => [...filteredItems, {text, color}])
+
+  }
+
+  const removeFilter = (text, color) => {
+    updateFiltered(filteredItems.filter(item => item.text !== text))
+  }
+
   return (
     <div>
       <Navbar />
@@ -59,7 +73,11 @@ const Courses = () => {
               wavelf.logistics@gmail.com
             </a><br /><br /><br />
           </p>
+          
 
+<div class = "row"> 
+  <Filter addFilter={addFilter} removeFilter={removeFilter} filteredItems={filteredItems}/>
+</div>
           <div class="container">
             <div class="row">
               <div class="column">
