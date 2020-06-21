@@ -4,7 +4,6 @@ import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
 import './styles.css'
 import {Colors, Typography} from "../../styles";
-import { Button } from "./styles"
 import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
 
@@ -52,10 +51,11 @@ import HistorysTopHits from './W3-CourseImages/western-music.png'
 import ASL from './W3-CourseImages/introduction-to-american-sign-language.png'
 import Environmental from './W3-CourseImages/Climate crisis.png'
 import DrugDevelopment from './W3-CourseImages/drug development.jpg'
+import Computers from './W3-CourseImages/computers.jpg'
 
-//import ASL
+//import ASL 
 //import greatspeeches
-//import WesternMusic
+//import WesternMusic 
 //import GameDesign
 //import laughs
 //import PublicSpeaking
@@ -87,8 +87,8 @@ const Courses = () => {
         .then(function(picture) {
           if (picture.exists) {
             //Access Image URL from Storage
-            return getPhotoUrl(picture);
-          }
+            return getPhotoUrl(picture);            
+          } 
           else {
             console.log("No such document!");
               //setCoursePics(coursePics => [...coursePics, WaveLogo]);
@@ -117,7 +117,7 @@ const Courses = () => {
                 //setCoursePics(coursePics => [...coursePics, url]);
             }).catch(console.log);}
             courses.push(doc);
-          }
+          } 
         });
         setCourses(courses);
         setLoading(false);
@@ -137,7 +137,7 @@ const Courses = () => {
       }
       else {
         coursePicURL.push("../Blog/wave-learning-logo.png");
-      }
+      }  
     })
     setCoursePics(coursePicURL);
   }
@@ -159,7 +159,7 @@ const Courses = () => {
       <Container>
       <ContainerInner>
         <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
-          Loading...
+          Loading...  
         </Typography.BodyText>
       </ContainerInner>
       </Container>
@@ -175,7 +175,7 @@ const Courses = () => {
             <div class="progressbar">
               <img src= {ProgressBar} alt = "centered image" />
             </div>
-
+		
             <Typography.BodyText style={{color: Colors.WLF_BLACK }}>
             We are excited to offer {courses.length} courses across a variety of subjects for Wave Three running from July 6th to July 17th. Our
             volunteer educators have worked hard to prepare engaging and
@@ -184,16 +184,8 @@ const Courses = () => {
             questions to{" "}
             <a href="mailto:wavelf.logistics@gmail.com">
               wavelf.logistics@gmail.com
-            </a>
-            <br /> <br />
-            <b>Note:</b> More courses are coming out in a few days! Stay tuned.
-            <br /><br /><br />
-            </Typography.BodyText>
-            <a href="#coursereg" class="sign-up-link">
-              <Button>
-                <p>Register Now!</p>
-              </Button>
             </a><br /><br /><br />
+            </Typography.BodyText>
             <div class="container">
             <div class="row">
             {courses.map( (course, index) => (
@@ -201,7 +193,7 @@ const Courses = () => {
                 <a href={`${course.id}`}>
                   <div class="course">
                     <div class="image-container">
-                      {course.data().picture.length == 0  &&
+                      {course.data().picture.length == 0  &&                      
                       <img src={WaveLogo}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/AFL06BDO1GbZtH7sxnsQ" &&
                       <img src={Acapella}/>}
@@ -285,6 +277,8 @@ const Courses = () => {
                       <img src={Environmental}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/Z0eHgdYSnEtbG8OAbdSn" &&
                       <img src={DrugDevelopment}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/6k4sn40qu1xhdlkiglqQ" &&
+                      <img src={Computers}/>}
 
 
 
@@ -304,21 +298,21 @@ const Courses = () => {
                 </a>
               </div>
             ))}
-
+            
         </div>
         </div>
         <Typography.Header style={{color: Colors.WLF_PURPLE}}>Course Schedule</Typography.Header>
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
+          <iframe 
+            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
-          </iframe>
-          <Typography.Header id="coursereg" style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 6/30 to take a class in the third wave!</Typography.Header>
+          </iframe>  
+          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 6/30 to take a class in the third wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
              If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
           </Typography.BodyText>
-          <iframe
+          <iframe 
             title="form"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform?embedded=true" 
             width="100%"
             height="500"
             frameborder="0"
