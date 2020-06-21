@@ -8,7 +8,7 @@ import {FirebaseContext} from '../../../firebaseContext'
 import 'firebase/firestore'
 
 import Teacher from './teacher.js'
-import TeachersComponent from './teachers-component.js'
+//import TeachersComponent from './teachers-component.js'
 
 const CoursePage = ({ match }) => {
     const { db, storage } = useContext(FirebaseContext)
