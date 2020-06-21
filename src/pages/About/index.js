@@ -89,6 +89,11 @@ const About = () => {
                   <p>Teachers</p>
                 </Button>
               </a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" target="_blank" class="sign-up-link">
+                <Button>
+                  <p>Register Now!</p>
+                </Button>
+              </a>
             </div>
           </div>
           <HeaderImage src={Assets.Swing} />
