@@ -116,8 +116,8 @@ export const Highlight = styled.img`
 export const HighlightStyle1 = styled.img`
   position: absolute;
   z-index: 1;
-  width: 140px;
-  height: 200px;
+  width: 135px;
+  height: 210px;
   @media ${device.mobileS} {
     top: 5px;
     left: 140px;
