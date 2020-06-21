@@ -68,6 +68,7 @@ const Courses = () => {
   const { db, storage } = useContext(FirebaseContext)
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([])
   const [coursePics, setCoursePics] = useState([]);
   const [imageRef, setImageRef] = useState('');
   const [filteredItems, updateFiltered] = useState([])
@@ -134,14 +135,32 @@ const Courses = () => {
           } 
         });
         setCourses(courses);
+        setFilteredCourses(courses);
         setLoading(false);
       })
       .catch(function(error) {
           console.log("Ex rror getting documents: ", error);
       });
-  }
+    }
 
-  })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [db, loading, courses])
+
+  useEffect(() => {
+    if(filteredItems.length === 0){
+      setFilteredCourses(courses)
+    } else{
+      setFilteredCourses(courses.filter(course => {
+        for(let i = 0; i < filteredItems.length; i++){
+          if(course.data().courseCategory === filteredItems[i].text){
+            return true
+          }
+        }
+        return false
+      }))
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredItems])
 
 
   /*if (loading && !coursePics.length) {
@@ -208,7 +227,7 @@ const Courses = () => {
             </div>
             <div class="container">
             <div class="row">
-            {courses.map( (course, index) => (
+            {filteredCourses.map( (course, index) => (
               <div class="column">
                 <a href={`${course.id}`}>
                   <div class="course">

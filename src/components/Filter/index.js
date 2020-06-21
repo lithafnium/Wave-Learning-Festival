@@ -20,7 +20,7 @@ const Filter = ({ filteredItems, addFilter, removeFilter }) => {
             </div>
             
             <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_PURPLE} text = "Science and Tech" value = "tech"/>
-            <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "Aesthetics and Culture" value = "culture"/>
+            <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "Aesthetics and Culture" value = "aesthetics"/>
             <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_TURQOUISE} text = "History, Society, and Individuals" value = "history"/>
         </Container>
     )
