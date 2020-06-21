@@ -8,7 +8,6 @@ import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
-import Checkbox from '../../../components/Checkbox'
 import ProgressBar from './w3_progressbar-01.png'
 
 import Acapella from './W3-CourseImages/acappella.jpg'
@@ -52,6 +51,7 @@ import WesternArt from './W3-CourseImages/western art history.jpg'
 //import GameDesign
 //import laughs
 //import PublicSpeaking
+import Filter from '../../components/Filter'
 
 const Courses = () => {
   const { db, storage } = useContext(FirebaseContext)
@@ -59,6 +59,15 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [coursePics, setCoursePics] = useState([]);
   const [imageRef, setImageRef] = useState('');
+  const [filteredItems, updateFiltered] = useState([])
+  
+  const addFilter = (text, color) => {
+    updateFiltered(filteredItems => [...filteredItems, {text, color}])
+  }
+
+  const removeFilter = (text, color) => {
+    updateFiltered(filteredItems.filter(item => item.text !== text))
+  }
 
   /* Set Current Wave */
   const WAVE = 3;
@@ -96,7 +105,8 @@ const Courses = () => {
       return WaveLogo
     }
 
-  if (db && loading && !courses.length) {
+  useEffect(() => {
+    if (db && loading && !courses.length) {
       db.collection("fl_content")
       .get()
       .then(function(querySnapshot) {
@@ -119,6 +129,9 @@ const Courses = () => {
           console.log("Ex rror getting documents: ", error);
       });
   }
+
+  })
+
 
   /*if (loading && !coursePics.length) {
     let coursePicURL = [];
@@ -179,6 +192,9 @@ const Courses = () => {
               wavelf.logistics@gmail.com
             </a><br /><br /><br />
             </Typography.BodyText>
+            <div class = "row"> 
+              <Filter addFilter={addFilter} removeFilter={removeFilter} filteredItems={filteredItems}/>
+            </div>
             <div class="container">
             <div class="row">
             {courses.map( (course, index) => (
