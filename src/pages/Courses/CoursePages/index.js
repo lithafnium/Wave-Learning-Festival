@@ -180,8 +180,6 @@ const CoursePage = ({ match }) => {
                     <p>Register Now!</p>
                   </Button>
                 </a>
-
-
             </ContainerInner>
           </Container>
           <Footer/>
