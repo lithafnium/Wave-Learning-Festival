@@ -63,13 +63,24 @@ import PublicPolicy from './W3-CourseImages/public policy.jpg'
 //import GameDesign
 //import laughs
 //import PublicSpeaking
+import Filter from '../../components/Filter'
 
 const Courses = () => {
   const { db, storage } = useContext(FirebaseContext)
   const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([])
   const [coursePics, setCoursePics] = useState([]);
   const [imageRef, setImageRef] = useState('');
+  const [filteredItems, updateFiltered] = useState([])
+  
+  const addFilter = (text, color) => {
+    updateFiltered(filteredItems => [...filteredItems, {text, color}])
+  }
+
+  const removeFilter = (text, color) => {
+    updateFiltered(filteredItems.filter(item => item.text !== text))
+  }
 
   /* Set Current Wave */
   const WAVE = 3;
@@ -107,7 +118,8 @@ const Courses = () => {
       return WaveLogo
     }
 
-  if (db && loading && !courses.length) {
+  useEffect(() => {
+    if (db && loading && !courses.length) {
       db.collection("fl_content")
       .get()
       .then(function(querySnapshot) {
@@ -124,12 +136,33 @@ const Courses = () => {
           } 
         });
         setCourses(courses);
+        setFilteredCourses(courses);
         setLoading(false);
       })
       .catch(function(error) {
           console.log("Ex rror getting documents: ", error);
       });
-  }
+    }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [db, loading, courses])
+
+  useEffect(() => {
+    if(filteredItems.length === 0){
+      setFilteredCourses(courses)
+    } else{
+      setFilteredCourses(courses.filter(course => {
+        for(let i = 0; i < filteredItems.length; i++){
+          if(course.data().courseCategory === filteredItems[i].text){
+            return true
+          }
+        }
+        return false
+      }))
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredItems])
+
 
   /*if (loading && !coursePics.length) {
     let coursePicURL = [];
@@ -190,9 +223,12 @@ const Courses = () => {
               wavelf.logistics@gmail.com
             </a><br /><br /><br />
             </Typography.BodyText>
+            <div class = "row"> 
+              <Filter addFilter={addFilter} removeFilter={removeFilter} filteredItems={filteredItems}/>
+            </div>
             <div class="container">
             <div class="row">
-            {courses.map( (course, index) => (
+            {filteredCourses.map( (course, index) => (
               <div class="column">
                 <a href={`${course.id}`}>
                   <div class="course">
@@ -289,8 +325,9 @@ const Courses = () => {
                       <img src={STEM}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/MyPs5rX8EV1Tw1NoXCyR" &&
                       <img src={RacistAmerica}/>}
-		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/OCgph6Rw77j6Ea4kIDlj" &&
+                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/OCgph6Rw77j6Ea4kIDlj" &&
                       <img src={PublicPolicy}/>}
+
 
 
                     </div>
