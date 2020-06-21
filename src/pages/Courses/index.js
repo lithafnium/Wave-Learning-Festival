@@ -293,7 +293,7 @@ const Courses = () => {
           </iframe>  
           <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 6/30 to take a class in the third wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
-             If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
+             Course registration is no longer first-come-first-served. Please submit your registrations by 6/30 to be considered! If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
           </Typography.BodyText>
           <iframe 
             title="form"
