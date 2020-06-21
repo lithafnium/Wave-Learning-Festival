@@ -8,6 +8,7 @@ import {FirebaseContext} from '../../../firebaseContext'
 import 'firebase/firestore'
 
 import Teacher from './teacher.js'
+import TeachersComponent from './teachers-component.js'
 
 const CoursePage = ({ match }) => {
     const { db, storage } = useContext(FirebaseContext)
@@ -18,10 +19,12 @@ const CoursePage = ({ match }) => {
     const [courseTitle, setCourseTitle] = useState('');
     const [courseDescription, setCourseDescription] = useState('');
     const [prereqs, setPrereqs] = useState('');
+    const [classSize, setClassSize] = useState('');
     const [targetAudience, setTargetAudience] = useState('');
     const [classDates, setClassDates] = useState('');
     const [classDays, setClassDays] = useState('');
     const [classTime, setClassTime] = useState('');
+    const [teachersObj, setTeachersObj] = useState('');
 
     //Teacher Objects
     const [teachers, setTeachers] = useState([]);
@@ -62,6 +65,9 @@ const CoursePage = ({ match }) => {
           if (!prereqs) {
             setPrereqs(data.prereqs);
           }
+          if (!classSize) {
+            setClassSize(data.maxClassSize);
+          }
           if (!targetAudience) {
             setTargetAudience(data.targetAudience);
           }
@@ -74,6 +80,9 @@ const CoursePage = ({ match }) => {
           if (!classTime) {
             setClassTime(data.classTime);
           }
+          if (!teachersObj) {
+            setTeachersObj(data.teachers);
+          }
 
           //Deal with Teachers; currently only handles two teachers
           if (teachers.length == 0) {
@@ -81,15 +90,13 @@ const CoursePage = ({ match }) => {
           const teacherObjs = [];
 
           const teacher1 = new Teacher (
-            db,
-            storage,
             data.teachers.teacher1Name,
             data.teachers.teacher1School,
             data.teachers.teacher1Bio,
             data.teachers.teacher1Headshot[0]
           );
 
-          teacher1.getPic().then(function(url) {
+          teacher1.getPic(db, storage).then(function(url) {
             setHeadshot1(url);
           })
           .catch(console.log);
@@ -98,15 +105,13 @@ const CoursePage = ({ match }) => {
 
           if (data.teachers.teacher2Name) {
             const teacher2 = new Teacher (
-              db,
-              storage,
               data.teachers.teacher2Name,
               data.teachers.teacher2School,
               data.teachers.teacher2Bio,
               data.teachers.teacher2Headshot[0]
             );
 
-            teacher2.getPic().then(function(url) {
+            teacher2.getPic(db, storage).then(function(url) {
               setHeadshot2(url);
             })
             .catch(console.log);
@@ -140,6 +145,8 @@ const CoursePage = ({ match }) => {
                 {courseDescription}
                 {prereqs &&
                   <><br/><b>Prerequisites: </b>{prereqs}</>}
+                {classSize &&
+                <><br/><b>Max Class Size: </b>{classSize}</>}
                 {targetAudience &&
                   <><br/><b>Target Audience: </b>{targetAudience}</>}
                 </p>
@@ -151,7 +158,6 @@ const CoursePage = ({ match }) => {
                   <b><br/>Time (EDT): </b>{classTime}
                   </>}
                 </p>
-
                 {teachers.length > 0 &&
                   <div class="teacher-container">
                       <p>
@@ -168,15 +174,6 @@ const CoursePage = ({ match }) => {
                     <b>Teacher Bio: </b>{teachers[1].bio}
                     </p>
                   </div>}
-
-                {teachers.length > 2 &&
-                <div class="teacher-container">
-                  <p>
-                  <img src={headshot3} class="img-left"/>
-                  <b>Taught by: </b>{teachers[2].name}<br/>
-                  <b>Teacher Bio: </b>{teachers[2].bio}
-                  </p>
-                </div>}
 
                 <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" class="sign-up-link">
                   <Button>
