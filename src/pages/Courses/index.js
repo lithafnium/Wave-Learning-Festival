@@ -53,6 +53,7 @@ import Environmental from './W3-CourseImages/Climate crisis.png'
 import DrugDevelopment from './W3-CourseImages/drug development.jpg'
 import Computers from './W3-CourseImages/computers.jpg'
 import Mongolia from './W3-CourseImages/mongolia.jpg'
+import STEM from './W3-CourseImages/stem for social good.jpg'
 
 //import ASL 
 //import greatspeeches
@@ -282,7 +283,8 @@ const Courses = () => {
                       <img src={Computers}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/EsQe9zKtBpWcSot9dt2M" &&
                       <img src={Mongolia}/>}
-
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/VaMIXr7M6BJjMwWBGbOe" &&
+                      <img src={STEM}/>}
 
 
 
