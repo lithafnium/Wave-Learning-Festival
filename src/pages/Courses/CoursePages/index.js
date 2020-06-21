@@ -3,10 +3,12 @@ import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import { Container, ContainerInner } from "../../../globalStyles.js"
 import {Colors, Typography} from "../../../styles";
+import { Button } from "../styles";
 import {FirebaseContext} from '../../../firebaseContext'
 import 'firebase/firestore'
 
 import Teacher from './teacher.js'
+//import TeachersComponent from './teachers-component.js'
 
 const CoursePage = ({ match }) => {
     const { db, storage } = useContext(FirebaseContext)
@@ -17,10 +19,12 @@ const CoursePage = ({ match }) => {
     const [courseTitle, setCourseTitle] = useState('');
     const [courseDescription, setCourseDescription] = useState('');
     const [prereqs, setPrereqs] = useState('');
+    const [classSize, setClassSize] = useState('');
     const [targetAudience, setTargetAudience] = useState('');
     const [classDates, setClassDates] = useState('');
     const [classDays, setClassDays] = useState('');
     const [classTime, setClassTime] = useState('');
+    const [teachersObj, setTeachersObj] = useState('');
 
     //Teacher Objects
     const [teachers, setTeachers] = useState([]);
@@ -35,7 +39,7 @@ const CoursePage = ({ match }) => {
         <Container>
         <ContainerInner>
           <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
-            Loading...  
+            Loading...
           </Typography.BodyText>
         </ContainerInner>
         </Container>
@@ -61,6 +65,9 @@ const CoursePage = ({ match }) => {
           if (!prereqs) {
             setPrereqs(data.prereqs);
           }
+          if (!classSize) {
+            setClassSize(data.maxClassSize);
+          }
           if (!targetAudience) {
             setTargetAudience(data.targetAudience);
           }
@@ -73,22 +80,23 @@ const CoursePage = ({ match }) => {
           if (!classTime) {
             setClassTime(data.classTime);
           }
-          
+          if (!teachersObj) {
+            setTeachersObj(data.teachers);
+          }
+
           //Deal with Teachers; currently only handles two teachers
           if (teachers.length == 0) {
-          
+
           const teacherObjs = [];
 
           const teacher1 = new Teacher (
-            db, 
-            storage,
-            data.teachers.teacher1Name, 
-            data.teachers.teacher1School, 
-            data.teachers.teacher1Bio, 
+            data.teachers.teacher1Name,
+            data.teachers.teacher1School,
+            data.teachers.teacher1Bio,
             data.teachers.teacher1Headshot[0]
           );
 
-          teacher1.getPic().then(function(url) {
+          teacher1.getPic(db, storage).then(function(url) {
             setHeadshot1(url);
           })
           .catch(console.log);
@@ -97,22 +105,20 @@ const CoursePage = ({ match }) => {
 
           if (data.teachers.teacher2Name) {
             const teacher2 = new Teacher (
-              db, 
-              storage,
-              data.teachers.teacher2Name, 
-              data.teachers.teacher2School, 
-              data.teachers.teacher2Bio, 
+              data.teachers.teacher2Name,
+              data.teachers.teacher2School,
+              data.teachers.teacher2Bio,
               data.teachers.teacher2Headshot[0]
             );
 
-            teacher2.getPic().then(function(url) {
+            teacher2.getPic(db, storage).then(function(url) {
               setHeadshot2(url);
             })
             .catch(console.log);
 
             teacherObjs.push(teacher2);
 
-            
+
           }
           setTeachers(teacherObjs);
         }
@@ -124,7 +130,7 @@ const CoursePage = ({ match }) => {
       }).catch(function(error) {
           console.log("Error getting document:", error);
       });
-            
+
       setLoading(false);
       console.log(teachers);
     }
@@ -137,47 +143,43 @@ const CoursePage = ({ match }) => {
               <h1>{courseTitle}</h1>
                 <p>
                 {courseDescription}
-                {prereqs && 
+                {prereqs &&
                   <><br/><b>Prerequisites: </b>{prereqs}</>}
-                {targetAudience && 
+                {classSize &&
+                <><br/><b>Max Class Size: </b>{classSize}</>}
+                {targetAudience &&
                   <><br/><b>Target Audience: </b>{targetAudience}</>}
                 </p>
                 <p style={{clear: 'right'}}>
-                {classDates && classDays && classTime && 
-                  <>  
+                {classDates && classDays && classTime &&
+                  <>
                   <b>Class Dates: </b>{classDates}
                   <b><br/>Class Weekdays: </b>{classDays}
                   <b><br/>Time (EDT): </b>{classTime}
                   </>}
                 </p>
-
                 {teachers.length > 0 &&
                   <div class="teacher-container">
                       <p>
                       <img src={headshot1} class="img-left"/>
-                      <b>Taught by: </b>{teachers[0].name}<br/> 
+                      <b>Taught by: </b>{teachers[0].name}<br/>
                       <b>Teacher Bio: </b>{teachers[0].bio}
                       </p>
-                  </div>} 
+                  </div>}
                 {teachers.length > 1 &&
                   <div class="teacher-container">
                     <p>
                     <img src={headshot2} class="img-left"/>
-                    <b>Taught by: </b>{teachers[1].name}<br/> 
+                    <b>Taught by: </b>{teachers[1].name}<br/>
                     <b>Teacher Bio: </b>{teachers[1].bio}
                     </p>
                   </div>}
 
-                {teachers.length > 2 &&
-                <div class="teacher-container">
-                  <p>
-                  <img src={headshot3} class="img-left"/>
-                  <b>Taught by: </b>{teachers[2].name}<br/> 
-                  <b>Teacher Bio: </b>{teachers[2].bio}
-                  </p>
-                </div>}
-
-           
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" class="sign-up-link">
+                  <Button>
+                    <p>Register Now!</p>
+                  </Button>
+                </a>
             </ContainerInner>
           </Container>
           <Footer/>

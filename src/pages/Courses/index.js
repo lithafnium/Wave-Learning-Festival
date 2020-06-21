@@ -49,6 +49,12 @@ import PublicSpeaking from './W3-CourseImages/Public speaking.jpg'
 import ArtOfLaughs from './W3-CourseImages/Stand-up.png'
 import HistorysTopHits from './W3-CourseImages/western-music.png'
 import ASL from './W3-CourseImages/introduction-to-american-sign-language.png'
+import Environmental from './W3-CourseImages/Climate crisis.png'
+import DrugDevelopment from './W3-CourseImages/drug development.jpg'
+import Computers from './W3-CourseImages/computers.jpg'
+import Mongolia from './W3-CourseImages/mongolia.jpg'
+import STEM from './W3-CourseImages/stem for social good.jpg'
+import RacistAmerica from './W3-CourseImages/racist america.jpg'
 
 //import ASL 
 //import greatspeeches
@@ -285,6 +291,23 @@ const Courses = () => {
                       <img src={PublicSpeaking}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/rZRGXnvjFTSmZpCCyaaC" &&
                       <img src={Physics}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/hu5vnQy3YLytJuS3zL90" &&
+                      <img src={Mechanics}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/uI6pEi6Aj9yp754Gzhys" &&
+                      <img src={Environmental}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/Z0eHgdYSnEtbG8OAbdSn" &&
+                      <img src={DrugDevelopment}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/6k4sn40qu1xhdlkiglqQ" &&
+                      <img src={Computers}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/EsQe9zKtBpWcSot9dt2M" &&
+                      <img src={Mongolia}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/VaMIXr7M6BJjMwWBGbOe" &&
+                      <img src={STEM}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/MyPs5rX8EV1Tw1NoXCyR" &&
+                      <img src={RacistAmerica}/>}
+
+
+
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
                     {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&

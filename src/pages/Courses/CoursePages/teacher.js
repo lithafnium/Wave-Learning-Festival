@@ -7,9 +7,7 @@ import WaveLogo from '../../Blog/wave-learning-logo.png'
 import { resolve } from 'dns'
 
 export default class Teacher {
-  constructor(db, storage, name, school, bio, headshotFile) {
-    this.db = db;
-    this.storage = storage;
+  constructor(name, school, bio, headshotFile) {
     this.name = name;
     this.school = school;
     this.bio = bio;
@@ -18,14 +16,14 @@ export default class Teacher {
     return this;
   }
 
-  getPic = () => {
-    const currentStorage = this.storage;
+  getPic = (db, storage) => {
+    //const currentStorage = this.storage;
     //Access Reference String
-    return this.db.doc(this.pic.path).get()
+    return db.doc(this.pic.path).get()
       .then(function(headshot) {
         if (headshot.exists) {
           //Access Image URL from Storage
-          return currentStorage.child('flamelink/media/' + headshot.data().file).getDownloadURL()
+          return storage.child('flamelink/media/' + headshot.data().file).getDownloadURL()
             .then(function(url) {
               return url;
             }).catch(function(error) {
