@@ -4,6 +4,7 @@ import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
 import './styles.css'
 import {Colors, Typography} from "../../styles";
+import { Button } from "./styles"
 import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
 
@@ -193,7 +194,6 @@ const Courses = () => {
                 <p>Register Now!</p>
               </Button>
             </a><br /><br /><br />
-            </Typography.BodyText>
             <div class="container">
             <div class="row">
             {courses.map( (course, index) => (
@@ -312,7 +312,7 @@ const Courses = () => {
             src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
           </iframe>
-          <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 6/30 to take a class in the third wave!</Typography.Header>
+          <Typography.Header id="coursereg" style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 6/30 to take a class in the third wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
              If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
           </Typography.BodyText>
