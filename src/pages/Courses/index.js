@@ -55,6 +55,7 @@ import Computers from './W3-CourseImages/computers.jpg'
 import Mongolia from './W3-CourseImages/mongolia.jpg'
 import STEM from './W3-CourseImages/stem for social good.jpg'
 import RacistAmerica from './W3-CourseImages/racist america.jpg'
+import PublicPolicy from './W3-CourseImages/public policy.jpg'
 
 //import ASL 
 //import greatspeeches
@@ -324,6 +325,8 @@ const Courses = () => {
                       <img src={STEM}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/MyPs5rX8EV1Tw1NoXCyR" &&
                       <img src={RacistAmerica}/>}
+                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/OCgph6Rw77j6Ea4kIDlj" &&
+                      <img src={PublicPolicy}/>}
 
 
 
