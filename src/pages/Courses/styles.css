@@ -119,4 +119,9 @@ h1 {
   color: #2684ff;
 }
 
+.progressbar img{
+  width: 100%; 
+  height: auto
+}
+
 
