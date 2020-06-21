@@ -52,6 +52,7 @@ import ASL from './W3-CourseImages/introduction-to-american-sign-language.png'
 import Environmental from './W3-CourseImages/Climate crisis.png'
 import DrugDevelopment from './W3-CourseImages/drug development.jpg'
 import Computers from './W3-CourseImages/computers.jpg'
+import Mongolia from './W3-CourseImages/mongolia.jpg'
 
 //import ASL 
 //import greatspeeches
@@ -279,6 +280,8 @@ const Courses = () => {
                       <img src={DrugDevelopment}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/6k4sn40qu1xhdlkiglqQ" &&
                       <img src={Computers}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/EsQe9zKtBpWcSot9dt2M" &&
+                      <img src={Mongolia}/>}
 
 
 
@@ -308,7 +311,7 @@ const Courses = () => {
           </iframe>  
           <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 6/30 to take a class in the third wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
-             If you are unavailable for this wave, sign up for <a href = "http://www.wavelf.org/#updates">updates</a> to be the first to register for future waves!
+             If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!
           </Typography.BodyText>
           <iframe 
             title="form"
