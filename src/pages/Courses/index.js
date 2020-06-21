@@ -182,7 +182,10 @@ const Courses = () => {
             questions to{" "}
             <a href="mailto:wavelf.logistics@gmail.com">
               wavelf.logistics@gmail.com
-            </a><br /><br /><br />
+            </a>
+            <br /> <br />
+            <b>Note:</b> More courses are coming out in a few days! Stay tuned.
+            <br /><br /><br />
             </Typography.BodyText>
             <a href="#coursereg" class="sign-up-link">
               <Button>
