@@ -18,7 +18,12 @@ const FAQStudents = () => {
             When will classes start?
           </Typography.Header2>
           <Typography.BodyText>
-            The first wave of classes will begin May 25th.
+            Here is the current class schedule for waves 1-5: <br /><br />
+            Wave One: 5/25 - 6/5 <br />
+            Wave Two: 6/15 - 6/26 <br />
+            Wave Three: 7/6 - 7/24 <br />
+            Wave Four: 7/27 - 8/14 <br />
+            Wave Five: 8/17 - 8/28 <br />
           </Typography.BodyText>
           <br />
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
