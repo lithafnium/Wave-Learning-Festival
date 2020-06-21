@@ -268,6 +268,8 @@ const Courses = () => {
                       <img src={PublicSpeaking}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/rZRGXnvjFTSmZpCCyaaC" &&
                       <img src={Physics}/>}
+		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/hu5vnQy3YLytJuS3zL90" &&
+                      <img src={Mechanics}/>}
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
                     {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
