@@ -58,6 +58,7 @@ import STEM from './W3-CourseImages/stem for social good.jpg'
 import RacistAmerica from './W3-CourseImages/racist america.jpg'
 import PublicPolicy from './W3-CourseImages/public policy.jpg'
 import Counseling from './W3-CourseImages/counseling.jpg'
+import Crafting from './W3-CourseImages/crafting.jpg'
 
 //import ASL
 //import greatspeeches
@@ -332,10 +333,12 @@ const Courses = () => {
                       <img src={STEM}/>}
 		      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/MyPs5rX8EV1Tw1NoXCyR" &&
                       <img src={RacistAmerica}/>}
-                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/OCgph6Rw77j6Ea4kIDlj" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/OCgph6Rw77j6Ea4kIDlj" &&
                       <img src={PublicPolicy}/>}
-                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/0nGsisG74XaAxipuBlj1" &&
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/0nGsisG74XaAxipuBlj1" &&
                       <img src={Counseling}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/CpIQKvdTr8bfLuvumRp0" &&
+                      <img src={Crafting}/>}
 
 
 
