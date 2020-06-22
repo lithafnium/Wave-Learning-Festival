@@ -2,22 +2,28 @@ import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import { Container, ContainerInner } from "../../../globalStyles.js"
-import {Colors, Typography} from "../../../styles";
+import { Colors, Typography } from "../../../styles";
 import { Button } from "../styles";
-import {FirebaseContext} from '../../../firebaseContext'
+import { FirebaseContext } from '../../../firebaseContext'
 import 'firebase/firestore'
+import { Icon, Property } from "./styles";
+import { FaBookOpen } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 import Teacher from './teacher.js'
+import Syllabus from './syllabus.js'
 import TeachersComponent from './teachers-component.js'
 
 const CoursePage = ({ match }) => {
     const { db, storage } = useContext(FirebaseContext)
     const slug = match.params.slug;
     const [loading, setLoading] = useState(true);
+    const [showSyllabus, setShowSyllabus] = useState(false);
 
     //Course Objects
     const [courseTitle, setCourseTitle] = useState('');
     const [courseDescription, setCourseDescription] = useState('');
+    const [syllabus, setSyllabus] = useState('');
     const [prereqs, setPrereqs] = useState('');
     const [classSize, setClassSize] = useState('');
     const [targetAudience, setTargetAudience] = useState('');
@@ -54,14 +60,15 @@ const CoursePage = ({ match }) => {
       .then(function(doc) {
         if (doc.exists) {
           const data = doc.data();
-
           //This will all move to a course object
           if (!courseTitle) {
-            console.log("COURSE TITLE");
             setCourseTitle(data.courseTitle);
           }
           if (!courseDescription) {
             setCourseDescription(data.courseDescription);
+          }
+          if (!syllabus) {
+            setSyllabus(data.syllabusHtml);
           }
           if (!prereqs) {
             setPrereqs(data.prereqs);
@@ -82,7 +89,6 @@ const CoursePage = ({ match }) => {
             setClassTime(data.classTime);
           }
           if (!teachersObj) {
-            console.log(data.teachers);
             setTeachersObj(data.teachers);
           }
         } else {
@@ -96,6 +102,11 @@ const CoursePage = ({ match }) => {
       setLoading(false);
     }
 
+    const toggleSyllabus = () => {
+      console.log("SYLLABUS CLICKED");
+      setShowSyllabus(!showSyllabus)
+    }
+
     return (
       <div>
           <Navbar/>
@@ -106,8 +117,22 @@ const CoursePage = ({ match }) => {
                 {courseDescription}
                 {prereqs &&
                   <><br/><b>Prerequisites: </b>{prereqs}</>}
+                {syllabus &&
+                  <Property>
+                    <br/><b>Syllabus: </b>
+                    <Icon onClick={toggleSyllabus}>
+                      <IconContext.Provider
+                        value={{color: "black", size: "1em", 
+                                style: { verticalAlign: "middle" },
+                              }}>
+                        <div> <FaBookOpen /> </div>
+                      </IconContext.Provider>
+                    </Icon>
+                  </Property>}
+                {showSyllabus && 
+                <Syllabus syllabus={syllabus} onClose={toggleSyllabus}/>}
                 {classSize &&
-                <><br/><b>Max Class Size: </b>{classSize}</>}
+                <><b>Max Class Size: </b>{classSize}</>}
                 {targetAudience &&
                   <><br/><b>Target Audience: </b>{targetAudience}</>}
                 </p>

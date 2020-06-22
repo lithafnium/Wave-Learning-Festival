@@ -26,10 +26,7 @@ const Teachers = ( {teachersObj} ) => {
     const [headshot6, setHeadshot6] = useState('');
     const [headshot7, setHeadshot7] = useState('');
 
-    console.log(teachersObj);
-
     if (db && loading && teachersObj) {
-      console.log("TEACHER OBJ: ", teachersObj);
       const teacherObjs = [];
       const headshotUrls = [];
       
@@ -42,12 +39,9 @@ const Teachers = ( {teachersObj} ) => {
       );
 
       teacher1.getPic(db, storage).then(function(url) {
-        console.log(url)
-        //headshotUrls.push(url);
         setHeadshot1(url);
       })
       .catch(console.log);
-      console.log("REACHED TEACHER")
       teacherObjs.push(teacher1);
     }
 
@@ -61,7 +55,6 @@ const Teachers = ( {teachersObj} ) => {
 
       teacher2.getPic(db, storage).then(function(url) {
         setHeadshot2(url);
-        //headshotUrls.push(url);
       })
       .catch(console.log);
       teacherObjs.push(teacher2);
@@ -143,11 +136,9 @@ const Teachers = ( {teachersObj} ) => {
       .catch(console.log);
       teacherObjs.push(teacher7);
     }
-    console.log(headshotUrls.length);
     setTeachers(teacherObjs);
     setLoading(false);
   }
-    console.log(teachers);
 
     return (
       <div>
