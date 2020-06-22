@@ -59,6 +59,7 @@ import RacistAmerica from './W3-CourseImages/racist america.jpg'
 import PublicPolicy from './W3-CourseImages/public policy.jpg'
 import Counseling from './W3-CourseImages/counseling.jpg'
 import Crafting from './W3-CourseImages/crafting.jpg'
+import Precalc from './W3-CourseImages/precalc.jpg'
 
 //import ASL
 //import greatspeeches
@@ -339,7 +340,8 @@ const Courses = () => {
                       <img src={Counseling}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/CpIQKvdTr8bfLuvumRp0" &&
                       <img src={Crafting}/>}
-
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/ertRw2zDLwBL6IG26doZ" &&
+                      <img src={Precalc}/>}
 
 
                     </div>
