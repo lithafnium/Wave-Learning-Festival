@@ -57,12 +57,6 @@ import STEM from './W3-CourseImages/stem for social good.jpg'
 import RacistAmerica from './W3-CourseImages/racist america.jpg'
 import PublicPolicy from './W3-CourseImages/public policy.jpg'
 
-//import ASL 
-//import greatspeeches
-//import WesternMusic 
-//import GameDesign
-//import laughs
-//import PublicSpeaking
 import Filter from '../../components/Filter'
 
 const Courses = () => {
@@ -106,12 +100,10 @@ const Courses = () => {
           } 
           else {
             console.log("No such document!");
-              //setCoursePics(coursePics => [...coursePics, WaveLogo]);
               return WaveLogo;
           }
         }).catch(function(error) {
           console.log("Error getting document:", error);
-            //setCoursePics(coursePics => [...coursePics, WaveLogo]);
             return WaveLogo;
         });
       }
@@ -127,11 +119,10 @@ const Courses = () => {
         //let coursePics = [];
         querySnapshot.forEach(function(doc) {
           if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
-            if(courses.length >= coursePics.length) {
+            /*if(courses.length >= coursePics.length) {
               getPhotoData(doc).then(function(url) {
                 console.log("URL => " + url);
-                //setCoursePics(coursePics => [...coursePics, url]);
-            }).catch(console.log);}
+            }).catch(console.log);}*/
             courses.push(doc);
           } 
         });
@@ -327,9 +318,6 @@ const Courses = () => {
                       <img src={RacistAmerica}/>}
                        {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/OCgph6Rw77j6Ea4kIDlj" &&
                       <img src={PublicPolicy}/>}
-
-
-
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
                     {course.data().teachers.teacher1Name && !course.data().teachers.teacher2Name && !course.data().teachers.teacher3Name &&
@@ -339,8 +327,8 @@ const Courses = () => {
                       <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name} and {course.data().teachers.teacher2Name}</Typography.BodyText>
                       <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School} and {course.data().teachers.teacher2School}</Typography.BodyText></>}
                     {course.data().teachers.teacher1Name && course.data().teachers.teacher2Name && course.data().teachers.teacher3Name &&
-                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name}, {course.data().teachers.teacher2Name}, and {course.data().teachers.teacher3Name}</Typography.BodyText>
-                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School}, {course.data().teachers.teacher2School}, and {course.data().teachers.teacher3School}</Typography.BodyText></>}
+                      <><Typography.BodyText style={{fontSize: 16}}>{course.data().teachers.teacher1Name}, {course.data().teachers.teacher2Name}, and more!</Typography.BodyText>
+                      <Typography.BodyText style={{fontSize: 16, color: Colors.GRAY}}>{course.data().teachers.teacher1School}, {course.data().teachers.teacher2School}, and more!</Typography.BodyText></>}
                   </div>
                 </a>
               </div>

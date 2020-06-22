@@ -19,6 +19,9 @@ export default class Teacher {
   getPic = (db, storage) => {
     //const currentStorage = this.storage;
     //Access Reference String
+    if (!db || !storage) {
+      return WaveLogo;
+    }
     return db.doc(this.pic.path).get()
       .then(function(headshot) {
         if (headshot.exists) {

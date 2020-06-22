@@ -8,7 +8,7 @@ import {FirebaseContext} from '../../../firebaseContext'
 import 'firebase/firestore'
 
 import Teacher from './teacher.js'
-//import TeachersComponent from './teachers-component.js'
+import TeachersComponent from './teachers-component.js'
 
 const CoursePage = ({ match }) => {
     const { db, storage } = useContext(FirebaseContext)
@@ -57,6 +57,7 @@ const CoursePage = ({ match }) => {
 
           //This will all move to a course object
           if (!courseTitle) {
+            console.log("COURSE TITLE");
             setCourseTitle(data.courseTitle);
           }
           if (!courseDescription) {
@@ -81,48 +82,9 @@ const CoursePage = ({ match }) => {
             setClassTime(data.classTime);
           }
           if (!teachersObj) {
+            console.log(data.teachers);
             setTeachersObj(data.teachers);
           }
-
-          //Deal with Teachers; currently only handles two teachers
-          if (teachers.length == 0) {
-
-          const teacherObjs = [];
-
-          const teacher1 = new Teacher (
-            data.teachers.teacher1Name,
-            data.teachers.teacher1School,
-            data.teachers.teacher1Bio,
-            data.teachers.teacher1Headshot[0]
-          );
-
-          teacher1.getPic(db, storage).then(function(url) {
-            setHeadshot1(url);
-          })
-          .catch(console.log);
-
-          teacherObjs.push(teacher1);
-
-          if (data.teachers.teacher2Name) {
-            const teacher2 = new Teacher (
-              data.teachers.teacher2Name,
-              data.teachers.teacher2School,
-              data.teachers.teacher2Bio,
-              data.teachers.teacher2Headshot[0]
-            );
-
-            teacher2.getPic(db, storage).then(function(url) {
-              setHeadshot2(url);
-            })
-            .catch(console.log);
-
-            teacherObjs.push(teacher2);
-
-
-          }
-          setTeachers(teacherObjs);
-        }
-
         } else {
             // doc.data() will be undefined in this case
             console.log("No teachers!");
@@ -130,9 +92,8 @@ const CoursePage = ({ match }) => {
       }).catch(function(error) {
           console.log("Error getting document:", error);
       });
-
+      console.log(teachersObj);
       setLoading(false);
-      console.log(teachers);
     }
 
     return (
@@ -158,23 +119,9 @@ const CoursePage = ({ match }) => {
                   <b><br/>Time (EDT): </b>{classTime}
                   </>}
                 </p>
-                {teachers.length > 0 &&
-                  <div class="teacher-container">
-                      <p>
-                      <img src={headshot1} class="img-left"/>
-                      <b>Taught by: </b>{teachers[0].name}<br/>
-                      <b>Teacher Bio: </b>{teachers[0].bio}
-                      </p>
-                  </div>}
-                {teachers.length > 1 &&
-                  <div class="teacher-container">
-                    <p>
-                    <img src={headshot2} class="img-left"/>
-                    <b>Taught by: </b>{teachers[1].name}<br/>
-                    <b>Teacher Bio: </b>{teachers[1].bio}
-                    </p>
-                  </div>}
 
+                <TeachersComponent teachersObj={teachersObj}/>
+                
                 <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" class="sign-up-link">
                   <Button>
                     <p>Register Now!</p>
