@@ -61,6 +61,7 @@ import Counseling from './W3-CourseImages/counseling.jpg'
 import Crafting from './W3-CourseImages/crafting.jpg'
 import Precalc from './W3-CourseImages/precalc.jpg'
 import MusicAnalysis from './W3-CourseImages/20th century.jpg'
+import DigitalArt from './W3-CourseImages/digital art.jpg'
 
 //import ASL
 //import greatspeeches
@@ -345,7 +346,8 @@ const Courses = () => {
                       <img src={Precalc}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/1zhNqidH5LoQNkGhp7Eu" &&
                       <img src={MusicAnalysis}/>}
-
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/oBuREHQ0xm4dbvRe658S" &&
+                      <img src={DigitalArt}/>}
 
 
 
