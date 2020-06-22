@@ -38,7 +38,7 @@ const Blog = () => {
       <Navbar/>
       <Container>
       <ContainerInner>
-        <h1>Blog</h1>
+        <Typography.Header style={{ color: Colors.WLF_PURPLE }}>Blog</Typography.Header>
           <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
             Loading...
           </Typography.BodyText>
@@ -53,7 +53,7 @@ const Blog = () => {
             <Navbar/>
             <Container>
             <ContainerInner>
-            <h1>Blog</h1>
+            <Typography.Header style={{ color: Colors.WLF_PURPLE }}>Blog</Typography.Header>
             <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
               Welcome to Wave Learning Festival's Blog!
             </Typography.BodyText>

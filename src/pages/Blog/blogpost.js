@@ -20,7 +20,7 @@ const BlogPost = (props) => {
 
     return (
       <div class="card">
-        <h1 style={{'text-align': 'center'}}>{data.title}</h1>
+        <Typography.Header style={{'text-align': 'center'}}>{data.title}</Typography.Header>
         <Typography.BodyText style={{clear: 'right', 'text-align': 'center', color: Colors.WLF_BLACK}}>
           <b>Posted on: </b>{data.date.substring(0, data.date.indexOf("T"))}
         </Typography.BodyText>

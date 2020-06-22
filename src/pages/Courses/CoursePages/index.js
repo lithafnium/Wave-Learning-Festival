@@ -101,7 +101,7 @@ const CoursePage = ({ match }) => {
           <Navbar/>
           <Container>
               <ContainerInner>
-              <h1>{courseTitle}</h1>
+              <Typography.Header style={{color: Colors.WLF_PURPLE}}>{courseTitle}</Typography.Header>
                 <p>
                 {courseDescription}
                 {prereqs &&
