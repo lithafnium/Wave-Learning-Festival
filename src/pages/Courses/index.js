@@ -63,6 +63,7 @@ import Precalc from './W3-CourseImages/precalc.jpg'
 import MusicAnalysis from './W3-CourseImages/20th century.jpg'
 import DigitalArt from './W3-CourseImages/digital art.jpg'
 import Crossword from './W3-CourseImages/crossword.jpg'
+import Japanese from './W3-CourseImages/japanese.jpg'
 
 import Filter from '../../components/Filter'
 
@@ -342,6 +343,8 @@ const Courses = () => {
                       <img src={DigitalArt}/>}
                       {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/6ZkKPkUyQIWar66ncUOM" &&
                       <img src={Crossword}/>}
+                      {course.data().picture.length > 0 && course.data().picture[0].path == "fl_files/6IpfD9AJmFSEoxXG1uPS" &&
+                      <img src={Japanese}/>}
 
                     </div>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK}}>{course.data().courseTitle}</Typography.Header2>
