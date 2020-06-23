@@ -65,6 +65,7 @@ export const PopUp = styled.div`
     right: 0;
     bottom: 0;
     margin: auto;
+    background-color: rgba(0,0,0,0.2)
 `
 
 export const PopUpInner = styled.div`
@@ -77,4 +78,17 @@ export const PopUpInner = styled.div`
     border-radius: 20px;
     background: white;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+`
+
+export const Text = styled.div`
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 75%;
+    overflow: auto;
+    padding: 5px;
+`
+
+export const Heading = styled.div`
+    display: flex;
+    margin: 10px;
 `

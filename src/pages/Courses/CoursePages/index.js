@@ -132,7 +132,7 @@ const CoursePage = ({ match }) => {
                 {showSyllabus && 
                 <Syllabus syllabus={syllabus} onClose={toggleSyllabus}/>}
                 {classSize &&
-                <><b>Max Class Size: </b>{classSize}</>}
+                <><br/><b>Max Class Size: </b>{classSize}</>}
                 {targetAudience &&
                   <><br/><b>Target Audience: </b>{targetAudience}</>}
                 </p>
