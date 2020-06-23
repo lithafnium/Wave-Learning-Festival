@@ -115,7 +115,7 @@ const CoursePage = ({ match }) => {
                 {classDates && classDays && classTime &&
                   <>
                   <b>Class Dates: </b>{classDates}
-                  <b><br/>Class Weekdays: </b>{classDays}
+                  <b><br/>Class Days: </b>{classDays}
                   <b><br/>Time (EDT): </b>{classTime}
                   </>}
                 </p>
