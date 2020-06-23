@@ -213,14 +213,14 @@ const Courses = () => {
             </div>
 
             <Typography.BodyText style={{color: Colors.WLF_BLACK }}>
-            We are excited to offer {courses.length} courses across a variety of subjects for Wave Three running from July 6th to July 17th. Our
+            We are excited to offer <strong>{courses.length} courses</strong> across a variety of subjects for Wave Three running from <strong>July 6th to July 24th</strong>. Our
             volunteer educators have worked hard to prepare engaging and
             thoughtful curricula and can't wait to share their passions with
-            you. Click each course for more info, and feel free to send any
+            you. Feel free to send any
             questions to{" "}
             <a href="mailto:wavelf.logistics@gmail.com">
               wavelf.logistics@gmail.com
-            </a><br /><br /><br />
+            </a><p></p>Click each course for more info –– note the target audience range, course times (in EDT), and class maxes.<br /><br /><br />
             </Typography.BodyText>
             <a href="#coursereg" class="sign-up-link">
               <Button>
