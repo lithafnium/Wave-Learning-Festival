@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
+import PopUpHTML from '../../../components/PopUp/PopUpHTML.js'
 import { Container, ContainerInner } from "../../../globalStyles.js"
 import { Colors, Typography } from "../../../styles";
 import { Button } from "../styles";
@@ -10,8 +11,6 @@ import { Icon, Property } from "./styles";
 import { FaBookOpen } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-import Teacher from './teacher.js'
-import Syllabus from './syllabus.js'
 import TeachersComponent from './teachers-component.js'
 
 const CoursePage = ({ match }) => {
@@ -130,7 +129,7 @@ const CoursePage = ({ match }) => {
                     </Icon>
                   </Property>}
                 {showSyllabus && 
-                <Syllabus syllabus={syllabus} onClose={toggleSyllabus}/>}
+                  <PopUpHTML title={"Syllabus"} content={syllabus} onClose={toggleSyllabus}/>}
                 {classSize &&
                 <><br/><b>Max Class Size: </b>{classSize}</>}
                 {targetAudience &&

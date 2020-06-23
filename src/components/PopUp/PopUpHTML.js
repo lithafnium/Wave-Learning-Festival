@@ -1,17 +1,28 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Icon, Property } from "./styles";
-import {Colors, Typography} from "../../../styles";
+import { Colors, Typography } from "../../styles";
 import { MdClose } from "react-icons/md";
 import { IconContext } from "react-icons";
 import { PopUp, PopUpInner, Text, Heading } from "./styles";
 
 /**
  * 
- * @param {String} Syllabus
- * @param {function} onClose
+ * @param {String} content HTML string to be deconstructed and displayed in popup. 
+ * @param {String} title Title of pop-up
+ * @param {function} onClose Function that gets called with onClick of X icon. 
  */
 
-const Syllabus = ( props ) => {
+const PopUpHTML = ( props ) => {
+
+  const [content, setContent] = useState('');
+
+  //Cleaning up extra formatting
+  if (!content) {
+    const removedColor = props.content.replace(/color: rgb(0,0,0);/g, "")
+      const removedFont = removedColor.replace(/font-family: Times New Roman;/g, "")
+      console.log(removedFont);
+    setContent(removedFont);
+  }
 
     return (
       <PopUp>
@@ -29,14 +40,16 @@ const Syllabus = ( props ) => {
           </Icon>
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, 
                                       fontSize: 25, textAlign: 'center', marginLeft: 30}}>
-          Syllabus</Typography.Header2>
+          {props.title}</Typography.Header2>
           </Heading>
           <Text>
-            <td dangerouslySetInnerHTML={{__html: props.syllabus}} />
+            <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
+              <td dangerouslySetInnerHTML={{__html: content}} />
+            </Typography.BodyText>
           </Text>
         </PopUpInner>
       </PopUp>
   )
 }
 
-export default Syllabus
+export default PopUpHTML
