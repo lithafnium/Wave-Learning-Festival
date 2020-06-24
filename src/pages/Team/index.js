@@ -127,7 +127,7 @@ const teamData = [
   {
     name: "Joshua Chen",
     school: "University of Pennsylvania 2022",
-    position: "Associate Director of PR",
+    position: "Director of Marketing",
     image: JoshuaChen,
   },
   {
