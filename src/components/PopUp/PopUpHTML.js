@@ -18,10 +18,7 @@ const PopUpHTML = ( props ) => {
 
   //Cleaning up extra formatting
   if (!content) {
-    const removedColor = props.content.replace(/color: rgb(0,0,0);/g, "")
-    const removedFont = removedColor.replace(/font-family: Times New Roman;/g, "")
-    console.log(removedFont);
-    setContent(removedFont);
+    setContent(props.content.replace(/style="[a-zA-Z0-9:;\.\s\(\)\-\,]*"/gi, ""));
   }
 
     return (

@@ -12,10 +12,8 @@ const BlogPost = (props) => {
     const [contentDetailed, setContent] = useState(data.contentDetailed)
     
     //Cleaning Formatting
-    if (contentDetailed.includes('color: rgb(0,0,0);') || contentDetailed.includes('font-family: Arial;')) {
-      const removedColor = contentDetailed.replace("color: rgb(0,0,0);", "")
-      const removedFont = removedColor.replace("font-family: Arial;", "")
-      setContent(removedFont)
+    if (contentDetailed.includes('color: rgb(0,0,0);') || contentDetailed.includes('font-family:')) {
+      setContent(contentDetailed.replace(/style="[a-zA-Z0-9:;\.\s\(\)\-\,]*"/gi, ""));
     }
 
     return (
