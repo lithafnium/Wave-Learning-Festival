@@ -6,7 +6,6 @@ import './styles.css'
 import {Colors, Typography} from "../../styles";
 import {FirebaseContext} from '../../firebaseContext'
 import 'firebase/firestore'
-import WaveLogo from './wave-learning-logo.png'
 import BlogPost from './blogpost.js'
 
 const Blog = () => {
