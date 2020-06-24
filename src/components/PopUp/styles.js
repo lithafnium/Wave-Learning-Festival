@@ -40,6 +40,7 @@ export const PopUp = styled.div`
     right: 0;
     bottom: 0;
     margin: auto;
+    background-color: rgba(0,0,0,0.2)
 `
 
 export const PopUpInner = styled.div`
