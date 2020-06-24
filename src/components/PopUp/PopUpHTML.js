@@ -19,8 +19,8 @@ const PopUpHTML = ( props ) => {
   //Cleaning up extra formatting
   if (!content) {
     const removedColor = props.content.replace(/color: rgb(0,0,0);/g, "")
-      const removedFont = removedColor.replace(/font-family: Times New Roman;/g, "")
-      console.log(removedFont);
+    const removedFont = removedColor.replace(/font-family: Times New Roman;/g, "")
+    console.log(removedFont);
     setContent(removedFont);
   }
 
@@ -43,9 +43,9 @@ const PopUpHTML = ( props ) => {
           {props.title}</Typography.Header2>
           </Heading>
           <Text>
-            <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
+              <p>
               <td dangerouslySetInnerHTML={{__html: content}} />
-            </Typography.BodyText>
+              </p>
           </Text>
         </PopUpInner>
       </PopUp>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from "@/theme";
 
 export const Container = styled.div`
     width: 100%; 
@@ -39,27 +40,43 @@ export const PopUp = styled.div`
     right: 0;
     bottom: 0;
     margin: auto;
-    background-color: rgba(0,0,0,0.2)
 `
 
 export const PopUpInner = styled.div`
     position: absolute;
-    left: 25%;
-    right: 25%;
-    top: 25%;
-    bottom: 25%;
     margin: auto;
     border-radius: 20px;
     background: white;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+
+    @media ${device.mobileS} {
+        top: 15%;
+        width: 100%;
+        height: 80%;
+    }
+    @media ${device.mobileM} {
+        top: 15%;
+        width: 100%;
+        height: 80%;
+    }
+    @media ${device.laptop} {
+        left: 25%;
+        right: 25%;
+        top: 25%;
+        bottom: 25%;
+        width: auto;
+    }
 `
 
 export const Text = styled.div`
+    background:linear-gradient(transparent 150px, white);
     margin-left: 20px;
     margin-right: 20px;
     height: 75%;
     overflow: auto;
-    padding: 5px;
+    @media ${device.laptop} {
+        padding: 5px;
+    }
 `
 
 export const Heading = styled.div`
