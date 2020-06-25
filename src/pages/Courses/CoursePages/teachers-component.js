@@ -29,7 +29,7 @@ const Teachers = ( {teachersObj} ) => {
     if (db && loading && teachersObj) {
       const teacherObjs = [];
       const headshotUrls = [];
-      
+
       if (teachersObj.teacher1Headshot) {
       const teacher1 = new Teacher (
         teachersObj.teacher1Name,
@@ -143,26 +143,26 @@ const Teachers = ( {teachersObj} ) => {
     return (
       <div>
         {teachers.map( (teacher, index) => (
-          <div class="teacher-container">
+          <div className="teacher-container" key={teacher.name}>
             <p>
             {(() => {
               switch (index) {
                 case 0 :
-                  return <img src={headshot1} class="img-left"/>;
+                  return <img src={headshot1} className="img-left"/>;
                 case 1 :
-                  return <img src={headshot2} class="img-left"/>;
+                  return <img src={headshot2} className="img-left"/>;
                 case 2 :
-                  return <img src={headshot3} class="img-left"/>;
+                  return <img src={headshot3} className="img-left"/>;
                 case 3 :
-                  return <img src={headshot4} class="img-left"/>;
+                  return <img src={headshot4} className="img-left"/>;
                 case 4 :
-                  return <img src={headshot5} class="img-left"/>;
+                  return <img src={headshot5} className="img-left"/>;
                 case 5 :
-                  return <img src={headshot6} class="img-left"/>;
+                  return <img src={headshot6} className="img-left"/>;
                 case 6 :
-                  return <img src={headshot7} class="img-left"/>;
+                  return <img src={headshot7} className="img-left"/>;
                 default:
-                  return <img src={WaveLogo} class="img-left"/>;
+                  return <img src={WaveLogo} className="img-left"/>;
               }
             })()}
             <b>Taught by: </b>{teacher.name}<br/>

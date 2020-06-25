@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "craco": "0.0.3",
     "craco-alias": "^2.1.1",
-    "firebase": "^7.15.0",
+    "firebase": "^7.15.4",
     "nodemailer": "^6.4.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

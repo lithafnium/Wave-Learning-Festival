@@ -59,6 +59,7 @@ const CoursePage = ({ match }) => {
       .then(function(doc) {
         if (doc.exists) {
           const data = doc.data();
+          console.log("here data:", data)
           //This will all move to a course object
           if (!courseTitle) {
             setCourseTitle(data.courseTitle);
@@ -112,7 +113,6 @@ const CoursePage = ({ match }) => {
           <Container>
               <ContainerInner>
               <Typography.Header style={{color: Colors.WLF_PURPLE}}>{courseTitle}</Typography.Header>
-                <p>
                 {courseDescription}
                 {prereqs &&
                   <><br/><b>Prerequisites: </b>{prereqs}</>}
@@ -121,20 +121,19 @@ const CoursePage = ({ match }) => {
                     <br/><b>Syllabus: </b>
                     <Icon onClick={toggleSyllabus}>
                       <IconContext.Provider
-                        value={{color: "black", size: "1em", 
+                        value={{color: "black", size: "1em",
                                 style: { verticalAlign: "middle" },
                               }}>
                         <div> <FaBookOpen /> </div>
                       </IconContext.Provider>
                     </Icon>
                   </Property>}
-                {showSyllabus && 
+                {showSyllabus &&
                   <PopUpHTML title={"Syllabus"} content={syllabus} onClose={toggleSyllabus}/>}
                 {classSize &&
                 <><br/><b>Max Class Size: </b>{classSize}</>}
                 {targetAudience &&
                   <><br/><b>Target Audience: </b>{targetAudience}</>}
-                </p>
                 <p style={{clear: 'right'}}>
                 {classDates && classDays && classTime &&
                   <>
@@ -145,8 +144,8 @@ const CoursePage = ({ match }) => {
                 </p>
 
                 <TeachersComponent teachersObj={teachersObj}/>
-                
-                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" class="sign-up-link">
+
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" className="sign-up-link">
                   <Button>
                     <p>Register Now!</p>
                   </Button>
