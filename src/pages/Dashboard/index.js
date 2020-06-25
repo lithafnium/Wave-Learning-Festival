@@ -147,6 +147,19 @@ const Dashboard = () => {
 
       }
 
+      var allCourses = courses.map(course => (
+        <div class="course">
+          <p>
+          <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}</a><br/>
+          <b>Instructor: </b>{namify(course.teachers)}<br/>
+          <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+          <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
+          <b><a href={course.zoomLink}>Zoom Link</a></b>
+          </p>
+        </div>
+      ));
+      var currentWave = 3;
+
       if (student) {
       return (<>
           <div>
@@ -165,22 +178,13 @@ const Dashboard = () => {
               <br/><br/>
               <h1>Classes</h1>
               <select name="wave" id="wave">
-                <option value="wave2" selected="selected">Wave 2</option>
+                <option value="wave3" selected="selected">Wave 3</option>
+                <option value="wave1">Wave 2</option>
                 <option value="wave1">Wave 1</option>
               </select>
 
               <div class="row">
-                {courses.map(course => (
-                  <div class="course">
-                    <p>
-                    <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}</a><br/>
-                    <b>Instructor: </b>{namify(course.teachers)}<br/>
-                    <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
-                    <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
-                    <b><a href={course.zoomLink}>Zoom Link</a></b>
-                    </p>
-                  </div>
-                ))}
+                {}
               </div>
 
               </ContainerInner>
