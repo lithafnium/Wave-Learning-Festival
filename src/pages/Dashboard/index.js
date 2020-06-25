@@ -6,6 +6,8 @@ import {FirebaseContext} from '../../firebaseContext'
 import './styles.css'
 import 'firebase/firestore'
 import firebase from 'firebase'
+import $ from 'jquery'
+import ReactDOMServer from 'react-dom/server';
 
 var namify = function(course) { // please change this later lol
   var teacher1 = course.teacher1Name;
@@ -21,6 +23,28 @@ var namify = function(course) { // please change this later lol
   }
   return result;
 };
+
+var calcDisplay = function(courses, wave) {
+  // console.log("uh");
+  var result = [];
+  for (var i = 0; i < courses.length; i++) {
+    var course = courses[i];
+    // console.log(course.wave.toString() + "!=" + wave.toString())
+    if (course.wave.toString() == wave.toString()) {
+      result.push(<div class="course">
+        <p>
+        <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}</a><br/>
+        <b>Instructor: </b>{namify(course.teachers)}<br/>
+        <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+        <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
+        <b><a href={course.zoomLink}>Zoom Link</a></b>
+        </p>
+      </div>);
+      // console.log("adding course");
+    }
+  }
+  return result;
+}
 
 const Dashboard = () => {
     const [loading, setLoading] = useState(true);
@@ -147,52 +171,55 @@ const Dashboard = () => {
 
       }
 
-      var allCourses = courses.map(course => (
-        <div class="course">
-          <p>
-          <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}</a><br/>
-          <b>Instructor: </b>{namify(course.teachers)}<br/>
-          <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
-          <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
-          <b><a href={course.zoomLink}>Zoom Link</a></b>
-          </p>
-        </div>
-      ));
       var currentWave = 3;
-
       if (student) {
-      return (<>
-          <div>
-              <Navbar/>
-              <Container>
-              <ContainerInner>
+        var toDisplay = calcDisplay(courses, currentWave);
+        var classes = (<select defaultValue="3" name="wave" id="wave">
+          <option value="3">Wave 3</option>
+          <option value="2">Wave 2</option>
+          <option value="1">Wave 1</option>
+        </select>);
 
-              <h1>Profile</h1>
-              <p><a href="/dashboard/edit-profile">Edit</a></p>
-              <p><b>Name: </b>{student.name}</p>
-              <p><b>Email: </b>{student.email}</p>
-              <p><b>Parent Name: </b>{student.parentName}</p>
-              <p><b>Parent Email: </b>{student.parentEmail}</p>
-              <p><b>School: </b>{student.school}</p>
+        $(document).ready(function() {
+          // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
+          $(document).on('change', "#wave", function(e) {
+            var newWave = e.target.value;
+            // console.log("new wave: " + newWave);
+            toDisplay = calcDisplay(courses, newWave);
+            // console.log(toDisplay);
+            document.getElementById("list-of-courses").innerHTML = ReactDOMServer.renderToString(toDisplay);
+          })
+          // console.log("hi");
+        });
 
-              <br/><br/>
-              <h1>Classes</h1>
-              <select name="wave" id="wave">
-                <option value="wave3" selected="selected">Wave 3</option>
-                <option value="wave1">Wave 2</option>
-                <option value="wave1">Wave 1</option>
-              </select>
+        return (<>
+            <div>
+                <Navbar/>
+                <Container>
+                <ContainerInner>
 
-              <div class="row">
-                {}
-              </div>
+                <h1>Profile</h1>
+                <p><a href="/dashboard/edit-profile">Edit</a></p>
+                <p><b>Name: </b>{student.name}</p>
+                <p><b>Email: </b>{student.email}</p>
+                <p><b>Parent Name: </b>{student.parentName}</p>
+                <p><b>Parent Email: </b>{student.parentEmail}</p>
+                <p><b>School: </b>{student.school}</p>
 
-              </ContainerInner>
-              </Container>
+                <br/><br/>
+                <h1>Classes</h1>
+                {classes}
 
-              <Footer/>
-          </div>
-          </>);
+                <div class="row" id="list-of-courses">
+                  {toDisplay}
+                </div>
+
+                </ContainerInner>
+                </Container>
+
+                <Footer/>
+            </div>
+            </>);
         }
 
         return (

@@ -10,6 +10,7 @@
     "craco": "0.0.3",
     "craco-alias": "^2.1.1",
     "firebase": "^7.15.0",
+    "jquery": "^3.5.1",
     "nodemailer": "^6.4.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
