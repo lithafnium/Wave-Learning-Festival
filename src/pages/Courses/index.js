@@ -64,6 +64,7 @@ import MusicAnalysis from './W3-CourseImages/20th century.jpg'
 import DigitalArt from './W3-CourseImages/digital art.jpg'
 import Crossword from './W3-CourseImages/crossword.jpg'
 import Japanese from './W3-CourseImages/japanese.jpg'
+import Adya from './W3-CourseImages/adya.jpg'
 
 import Filter from '../../components/Filter'
 
@@ -220,7 +221,7 @@ const Courses = () => {
             questions to{" "}
             <a href="mailto:wavelf.logistics@gmail.com">
               wavelf.logistics@gmail.com
-            </a><p></p>Click each course for more info –– note the target audience range, course times (in EDT), and class maxes.<br /><br /><br />
+            </a><p></p>Click each course for more info –– note the target audience range, course times, and class maxes.<br /><br /><br />
             </Typography.BodyText>
             <a href="#coursereg" class="sign-up-link">
               <Button>
