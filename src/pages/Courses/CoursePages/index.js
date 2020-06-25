@@ -59,7 +59,8 @@ const CoursePage = ({ match }) => {
       .then(function(doc) {
         if (doc.exists) {
           const data = doc.data();
-          console.log("here data:", data)
+          // console.log("here data:", data)
+
           //This will all move to a course object
           if (!courseTitle) {
             setCourseTitle(data.courseTitle);
@@ -86,7 +87,15 @@ const CoursePage = ({ match }) => {
             setClassDays(data.classDays);
           }
           if (!classTime) {
-            setClassTime(data.classTime);
+            console.log("Class time in EDT:", data.classTime)
+            const [startTimeString, hyphen, endTimeString] = data.classTime.split(' ');
+
+            const startTime = convertHoursToLocalTime(startTimeString);
+            const endTime = convertHoursToLocalTime(endTimeString);
+            // console.log("start time:", startTime.toLocaleTimeString('en-US'));
+            // console.log("end time:", endTime.toLocaleTimeString('en-US'));
+
+            setClassTime(`${startTime.toLocaleTimeString('en-US')} - ${endTime.toLocaleTimeString('en-US')}`)
           }
           if (!teachersObj) {
             setTeachersObj(data.teachers);
@@ -106,6 +115,32 @@ const CoursePage = ({ match }) => {
       console.log("SYLLABUS CLICKED");
       setShowSyllabus(!showSyllabus)
     }
+
+    const convertHoursToLocalTime = (timeString) => {
+      //calculate offset between local time and EDT
+      const date = new Date();
+      const invdate = new Date(date.toLocaleString('en-US', {
+        timeZone: "America/New_York" // test with Pacific/Honolulu
+      }));
+      const timezoneOffset = date.getTime() - invdate.getTime();
+
+      //use timezone offset to calculate hour change
+      const [hourString, remaining] = timeString.split(":");
+      const minutes = parseInt(remaining.substr(0, 2));
+
+      let dateTimeInLocal = new Date();
+      dateTimeInLocal.setHours(0, 0, 0, 0);
+
+      let hours = parseInt(hourString);
+      if (remaining.includes("pm")) {
+        hours += 12;
+      }
+      const totalMillis = ((hours * 60) + minutes) * 60 * 1000;
+
+      return new Date(dateTimeInLocal.getTime() + totalMillis + timezoneOffset);
+    }
+
+    const timezoneCode = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
 
     return (
       <div>
@@ -139,7 +174,7 @@ const CoursePage = ({ match }) => {
                   <>
                   <b>Class Dates: </b>{classDates}
                   <b><br/>Class Days: </b>{classDays}
-                  <b><br/>Time (EDT): </b>{classTime}
+                  <b><br/>Time ({timezoneCode}): </b>{classTime}
                   </>}
                 </p>
 
