@@ -49,12 +49,12 @@ const Teachers = () => {
             life!
           </Typography.BodyText>
           <Typography.Header style={{ color: Colors.WLF_PURPLE }}>
-            Apply by 6/26 to be included in the fourth wave!
+            Apply by 7/1 to be included in the fourth wave!
           </Typography.Header>
           <Typography.BodyText
             style={{ color: Colors.WLF_BLACK, marginBottom: 20 }}
           >
-            
+
           </Typography.BodyText>
 
           <iframe
