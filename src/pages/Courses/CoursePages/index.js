@@ -95,7 +95,10 @@ const CoursePage = ({ match }) => {
             // console.log("start time:", startTime.toLocaleTimeString('en-US'));
             // console.log("end time:", endTime.toLocaleTimeString('en-US'));
 
-            setClassTime(`${startTime.toLocaleTimeString('en-US')} - ${endTime.toLocaleTimeString('en-US')}`)
+            var startTimeNoSec = noSeconds(startTime);
+            var endTimeNoSec = noSeconds(endTime);
+
+            setClassTime(`${startTimeNoSec} - ${endTimeNoSec}`);
           }
           if (!teachersObj) {
             setTeachersObj(data.teachers);
@@ -116,6 +119,11 @@ const CoursePage = ({ match }) => {
       setShowSyllabus(!showSyllabus)
     }
 
+    const noSeconds = (time) => {
+      var timeSplit = time.toLocaleTimeString('en-US').split(":");
+      return timeSplit[0] + ":" + timeSplit[1] + timeSplit[2].substr(2);
+    };
+
     const convertHoursToLocalTime = (timeString) => {
       //calculate offset between local time and EDT
       const date = new Date();
@@ -133,6 +141,7 @@ const CoursePage = ({ match }) => {
 
       let hours = parseInt(hourString);
       if (remaining.includes("pm")) {
+        hours %= 12;
         hours += 12;
       }
       const totalMillis = ((hours * 60) + minutes) * 60 * 1000;
