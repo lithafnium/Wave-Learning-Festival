@@ -217,9 +217,9 @@ const About = () => {
             <Typography.BodyText
               style={{ fontSize: 16, color: Colors.WLF_BLACK }}
             >
-              Choose from over 25 different seminars covering everything from
+              Choose from over 53 different seminars covering everything from
               STEM to performing arts. Love trying new things? New waves of
-              classes and seminar leaders get released every 2 weeks.
+              classes and seminar leaders get released every 3 weeks.
             </Typography.BodyText>
           </DescItem>
           <DescItem>
