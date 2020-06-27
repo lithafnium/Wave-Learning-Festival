@@ -44,6 +44,49 @@ var calcDisplay = function(courses, wave) {
     }
   }
   return result;
+};
+
+var genFrag = function(label, data) {
+  return {
+    "label": label,
+    "data": data
+  };
+};
+
+var fragHtml = function(info) {
+    return (<p class="profile-item"><b><span class="label">{info.label}</span>: </b><span class="data">{info.data}</span>&nbsp;&nbsp;<button type="button">Edit</button></p>);
+};
+
+var genEdit = function(info) {
+  return (<p class="profile-item-edit"><b><span class="label">{info.label}</span>: </b> <input class="edit-field" type="text" value={info.data} /><button type="button">Submit</button></p>);
+};
+
+var generateStudentInfo = function(student) {
+  return [
+    genFrag("Name", student.name),
+    genFrag("Email", student.email),
+    genFrag("Parent Name", student.parentName),
+    genFrag("Parent Email", student.parentEmail),
+    genFrag("School", student.school)
+  ];
+};
+
+var changing = function(label, data, student) {
+  var result = student;
+  var fieldName = "nothing";
+  if (label === "Name") {
+    fieldName = "name";
+  } else if (label === "Email") {
+    fieldName = "email";
+  } else if (label === "Parent Name") {
+    fieldName = "parentName";
+  } else if (label === "Parent Email") {
+    fieldName = "parentEmail";
+  } else if (label === "School") {
+    fieldName = "school";
+  }
+  result[fieldName] = data;
+  return result;
 }
 
 const Dashboard = () => {
@@ -179,6 +222,7 @@ const Dashboard = () => {
           <option value="2">Wave 2</option>
           <option value="1">Wave 1</option>
         </select>);
+        var studentInfo = generateStudentInfo(student);
 
         $(document).ready(function() {
           // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
@@ -188,7 +232,26 @@ const Dashboard = () => {
             toDisplay = calcDisplay(courses, newWave);
             // console.log(toDisplay);
             document.getElementById("list-of-courses").innerHTML = ReactDOMServer.renderToString(toDisplay);
-          })
+          });
+          $(document).on("click", ".profile-item button", function(e) {
+            var label = $(this).parent().find(".label").html();
+            var data = $(this).parent().find(".data").html();
+            $(this).parent().after(ReactDOMServer.renderToString(genEdit({"label": label, "data": data})));
+            var editing = $(this).parent().next();
+            // console.log(editing.find("*"));
+            editing.find(".edit-field").focus();
+            editing.find(".edit-field").select();
+            $(this).parent().remove();
+          });
+          $(document).on("click", ".profile-item-edit button", function(e) {
+            var label = $(this).parent().find(".label").html();
+            var newData = $(this).parent().find(".edit-field").val();
+            var change = changing(label, newData, student);
+            // console.log(change);
+            db.doc('students2/' + student.id).set(change);
+            $(this).parent().after(ReactDOMServer.renderToString(fragHtml({"label": label, "data": newData})));
+            $(this).parent().remove();
+          });
           // console.log("hi");
         });
 
@@ -199,12 +262,7 @@ const Dashboard = () => {
                 <ContainerInner>
 
                 <h1>Profile</h1>
-                <p><a href="/dashboard/edit-profile">Edit</a></p>
-                <p><b>Name: </b>{student.name}</p>
-                <p><b>Email: </b>{student.email}</p>
-                <p><b>Parent Name: </b>{student.parentName}</p>
-                <p><b>Parent Email: </b>{student.parentEmail}</p>
-                <p><b>School: </b>{student.school}</p>
+                {studentInfo.map(fragHtml)}
 
                 <br/><br/>
                 <h1>Classes</h1>

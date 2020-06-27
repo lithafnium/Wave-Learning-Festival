@@ -14,8 +14,7 @@ const EditProfile = () => {
             <h1>Edit Profile</h1>
             <p><b>Name: </b>Jonny Rogers</p>
             <p><b>Email: </b>jsr7@williams.edu</p>
-            <p><b>Phone: </b>6502836176</p>
-            <p><b>Parent's Email: </b>parentemail@parentdomain.domainname</p>
+            <p><b>Parent's Name: </b>parentemail@parentdomain.domainname</p>
             <p><b>Parent's Phone: </b>6502983233</p>
             <p><b>School: </b>Williams College</p>
             <p><b>Country: </b>United States</p>
@@ -23,9 +22,9 @@ const EditProfile = () => {
 
             <form>
 
-              <label for="name"><b>Name: </b></label>
-              <input type="text" id="name" name="name"></input><br/>
-              <label for="name"><b>Name: </b></label>
+              <b>Name: </b>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="name" name="name"></input><br/><br/>
+              <b>Email: </b>
               <input type="text" id="email" name="name"></input><br/>
               <label for="name"><b>Name: </b></label>
               <input type="text" id="phone" name="name"></input><br/>
