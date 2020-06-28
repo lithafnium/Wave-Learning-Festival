@@ -8,7 +8,8 @@ import FAQStudents from './pages/FAQ/Students'
 import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses'
-import CoursesArchive from './pages/Courses_W1'
+// import CoursesArchive from './pages/Courses_W1'
+import CoursesArchive from './pages/CoursesArchive'
 
 // wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
