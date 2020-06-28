@@ -61,7 +61,6 @@ import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 
 import Dashboard from './pages/Dashboard'
-import EditProfile from './pages/Dashboard/EditProfile'
 import Join from './pages/Join'
 import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'

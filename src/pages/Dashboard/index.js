@@ -31,7 +31,7 @@ var calcDisplay = function(courses, wave) {
     var course = courses[i];
     // console.log(course.wave.toString() + "!=" + wave.toString())
     if (course.wave.toString() == wave.toString()) {
-      result.push(<div class="course">
+      result.push(<div class="course-dash">
         <p>
         <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}</a><br/>
         <b>Instructor: </b>{namify(course.teachers)}<br/>
@@ -268,7 +268,7 @@ const Dashboard = () => {
                 <h1>Classes</h1>
                 {classes}
 
-                <div class="row" id="list-of-courses">
+                <div class="row-dash" id="list-of-courses">
                   {toDisplay}
                 </div>
 

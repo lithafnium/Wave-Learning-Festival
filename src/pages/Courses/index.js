@@ -26,7 +26,7 @@ const Courses = () => {
             console.log(doc.id, " => ", doc.data());
             if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
               posts.push(doc);
-            } 
+            }
         });
         setCourses(posts);
         setLoading(false);
@@ -43,7 +43,7 @@ const Courses = () => {
       <Container>
       <ContainerInner>
         <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
-          Loading...  
+          Loading...
         </Typography.BodyText>
       </ContainerInner>
       </Container>
@@ -78,10 +78,10 @@ const Courses = () => {
         </div>
         </div>
         <Typography.Header style={{color: Colors.WLF_PURPLE}}>Course Schedule</Typography.Header>
-          <iframe 
-            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston" 
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
             style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
-          </iframe>  
+          </iframe>
           <Typography.Header style={{color: Colors.WLF_PURPLE, marginTop: 50}}>Register by 5/23 to take a class in the first wave!</Typography.Header>
 	        <Typography.BodyText style={{color: Colors.WLF_BLACK, marginBottom: 50}}>
             Sign-ups are on a first-come-first-serve basis. If you are unavailable for this wave, sign up for <a href = "www.wavelf.org/#newsletter">updates</a> to be the first to register for future waves!

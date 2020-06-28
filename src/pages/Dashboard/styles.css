@@ -1,5 +1,5 @@
 
-.row {
+.row-dash {
   text-align: center;
   width: 100%;
   max-width: 1024px;
@@ -7,7 +7,7 @@
   flex-wrap: wrap;
 }
 
-.course {
+.course-dash {
   width: 28%;
   display: flex;
   justify-content: center;
