@@ -54,7 +54,7 @@ var genFrag = function(label, data) {
 };
 
 var fragHtml = function(info) {
-    return (<p class="profile-item"><b><span class="label">{info.label}</span>: </b><span class="data">{info.data}</span>&nbsp;&nbsp;<button type="button">Edit</button></p>);
+    return (<p class="profile-item"><b><span class="label">{info.label}</span>: </b><span class="data">{info.data}</span>{/*&nbsp;&nbsp;<button type="button">Edit</button>*/}</p>);
 };
 
 var genEdit = function(info) {
