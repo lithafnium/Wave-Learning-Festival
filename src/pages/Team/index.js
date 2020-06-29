@@ -28,8 +28,8 @@ import AlainDalma from "./headshot/alain-saal-dalma.jpg";
 import AmyShen from "./headshot/amy-shen.jpg";
 
 const CHAIR = "Chair";
-const DIRECTOR_LOGISTICS = "Director of Logistics";
-const ASSOC_DIRECTOR_LOGISTICS = "Associate Director of Logistics";
+const DIRECTOR_LOGISTICS = "Director of Operations";
+const ASSOC_DIRECTOR_LOGISTICS = "Associate Director of Operations";
 const CO_DIRECTOR_TECH = "Co-Director of Tech";
 const ASSOC_DIRECTOR_TECH = "Associate Director of Tech";
 const DIRECTOR_PR = "Director of PR";
