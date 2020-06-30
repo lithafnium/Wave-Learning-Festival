@@ -11,7 +11,7 @@ const Teachers = () => {
         <ContainerInner>
           <h1>Privacy Policy</h1>
           <p>
-            <b>Last Updated: June 13, 2020</b>
+            <b>Last Updated: June 30, 2020</b>
           </p>
           <h2>Introduction:</h2>
           <p>
@@ -119,18 +119,21 @@ const Teachers = () => {
                 contain personally identifiable information.
               </p>
               <p>
-                Throughout our courses, our teachers and/or directors may decide
-                to take screenshots or photographs of the classes to use for
-                social media campaigns and advertising. By using your webcam you
-                agree to allow WLF to take such screenshots and photos, and post
-                pictures with your face (and any other information visible while
-                using the online learning platform, such as a username if using
-                Zoom) on any social media accounts or websites that we see fit.
-                Such posts will only be pursuant to our goals at WLF, and we
-                will strive to conceal any unnecessary information. If at any
-                time you wish to opt out of these pictures, please turn off your
-                webcam and/or change your visible username prior to a teacher or
-                director taking a picture.
+              Students may turn their cameras on or off during a lesson at their own discretion. 
+              Video usage may be encouraged for classes that benefit from participation, such as a 
+              public speaking or ASL class.  Any student who has their webcam on during a class 
+              agrees to having their picture taken (as part of a class screenshot or other photograph) 
+              and used by WLF for any purposes pursuant to our goals, such as advertising our services 
+              on social media or other online platforms. Such posts may include pictures of your face 
+              and any other information visible while using the online learning platform, such as your 
+              username if using Zoom. Students should also be aware that, unless otherwise stated, 
+              courses will be recorded by a Wave team member and uploaded to Youtube through a WLF 
+              account. By enrolling in a Wave course, students (and/or  a student’s legal guardian who 
+              approved student registration) are consenting to such recordings. These recordings will 
+              include both audio and visual material, meaning students’ comments during the course will 
+              also be recorded. If at any time you wish to opt out of these pictures and recordings, 
+              please turn off your webcam and/or change your visible username upon entering a class. 
+              Students or legal guardians may also reach out to WLF to explicitly opt out of any or all recordings. 
               </p>
             </li>
           </ul>

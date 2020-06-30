@@ -11,7 +11,7 @@ const TermsConditions = () => {
         <ContainerInner>
           <h1>Terms And Conditions</h1>
           <p>
-            <b>Last Updated: June 5th, 2020</b>
+            <b>Last Updated: June 30th, 2020</b>
           </p>
           <h2>Introduction:</h2>
           <p>
@@ -207,7 +207,8 @@ const TermsConditions = () => {
           </p>
           <h2>Intellectual Property Rights:</h2>
           <p>
-            The Services and their entire contents, features, and functionality
+            The Services and their entire contents (including course recordings and WLF’s Youtube Channel), 
+            features, and functionality
             are owned by WLF, its licensors, or other providers of such material
             and are protected by copyright, trademark, patent, trade secret, and
             other intellectual property or proprietary rights laws. You may not
