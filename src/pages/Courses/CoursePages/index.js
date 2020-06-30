@@ -95,7 +95,7 @@ const CoursePage = ({ match }) => {
             //console.log("start time:", startTime.toLocaleTimeString('en-US'));
             //console.log("end time:", endTime.toLocaleTimeString('en-US'));
             
-            if (startTime == ' Invalid Date' || endTime == ' Invalid Date') {
+            if (!startTime.toLocaleTimeString('en-US').includes('Invalid Date') || !endTime.toLocaleTimeString('en-US').includes('Invalid Date') ){
               var startTimeNoSec = noSeconds(startTime);
               var endTimeNoSec = noSeconds(endTime);
 
@@ -187,7 +187,7 @@ const CoursePage = ({ match }) => {
                   <>
                   <b>Class Dates: </b>{classDates}
                   <b><br/>Class Days: </b>{classDays}
-                  <b><br/>Time ({timezoneCode}): </b>{classTime}
+                  <b><br/>Time ({classTime.includes("EDT") ? "EDT" : timezoneCode}): </b>{classTime}
                   </>}
                 </p>
 
