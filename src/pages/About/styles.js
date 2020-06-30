@@ -169,6 +169,7 @@ export const Button = styled.div`
   color: white;
   padding: 12.5px 25px 12.5px 25px;
   margin-right: 20px;
+  margin-top: 20px; 
   align-items: center;
   width: fit-content;
   border-radius: 10px;

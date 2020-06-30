@@ -20,7 +20,7 @@ import { IconContext } from "react-icons";
 import { FaUserAlt, FaChalkboardTeacher, FaUserFriends } from "react-icons/fa";
 import Logo from "./logo.svg";
 import LogoText from "./logoText.png";
-import LogoTextFull from "./logoTextFull.svg";
+import LogoTextFull from "./logo with type.svg";
 
 const Navbar = () => {
   const [applyShow, setApplyShow] = useState(false);
