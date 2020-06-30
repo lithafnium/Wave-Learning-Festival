@@ -77,6 +77,7 @@ const About = () => {
                 display: "flex",
                 flexDirection: "row",
                 marginTop: "50px",
+                flexWrap: 'wrap'
               }}
             >
               <a href="/courses" class="sign-up-link">
