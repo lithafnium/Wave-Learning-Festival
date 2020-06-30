@@ -92,13 +92,18 @@ const CoursePage = ({ match }) => {
 
             const startTime = convertHoursToLocalTime(startTimeString);
             const endTime = convertHoursToLocalTime(endTimeString);
-            // console.log("start time:", startTime.toLocaleTimeString('en-US'));
-            // console.log("end time:", endTime.toLocaleTimeString('en-US'));
+            //console.log("start time:", startTime.toLocaleTimeString('en-US'));
+            //console.log("end time:", endTime.toLocaleTimeString('en-US'));
+            
+            if (startTime == ' Invalid Date' || endTime == ' Invalid Date') {
+              var startTimeNoSec = noSeconds(startTime);
+              var endTimeNoSec = noSeconds(endTime);
 
-            var startTimeNoSec = noSeconds(startTime);
-            var endTimeNoSec = noSeconds(endTime);
-
-            setClassTime(`${startTimeNoSec} - ${endTimeNoSec}`);
+              setClassTime(`${startTimeNoSec} - ${endTimeNoSec}`);
+            }
+            else {
+              setClassTime(data.classTime + " (Times are in EDT)");
+            }
           }
           if (!teachersObj) {
             setTeachersObj(data.teachers);
@@ -110,7 +115,6 @@ const CoursePage = ({ match }) => {
       }).catch(function(error) {
           console.log("Error getting document:", error);
       });
-      console.log(teachersObj);
       setLoading(false);
     }
 
