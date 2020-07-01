@@ -238,7 +238,7 @@ export const Popup = styled.div`
   & p {
     margin: 0px;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 `;
 

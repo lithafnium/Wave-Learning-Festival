@@ -90,7 +90,7 @@ const About = () => {
                   <p>Teachers</p>
                 </Button>
               </a>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" target="_blank" class="sign-up-link">
+              <a href="#updates" class="sign-up-link">
                 <Button>
                   <p>Register Now!</p>
                 </Button>
@@ -319,6 +319,7 @@ const About = () => {
             {" "}
             Sign up for updates on future waves! Be the first to register for
             NEW courses and hear about special guests!
+            <Popup subscribed = {true}><p>Currently student registration for Wave 3 is closed. In the meantime, sign up for updates to receive email updates when registration opens for Wave 4 and onward!</p></Popup>
             {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates.</p>
                 </Popup>}
           </Typography.Header>
