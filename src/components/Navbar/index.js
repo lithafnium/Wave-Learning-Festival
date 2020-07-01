@@ -202,10 +202,10 @@ const Navbar = () => {
         </Hamburger>
         
         <SideBar show={slide}>
-          <Brand
+          {/* <Brand
             style={{ marginLeft: "15px", marginBottom: "20px", width: "9em" }}
             src={LogoText}
-          />
+          /> */}
           <NavItem>
             <Link to="/">Home</Link>
           </NavItem>
