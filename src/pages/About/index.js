@@ -318,7 +318,7 @@ const About = () => {
           >
             {" "}
             Sign up here to get alerted and be the first to register for Wave 4!
-            //<Popup subscribed = {true}><p>Currently student registration for Wave 3 is closed. In the meantime, sign up for updates to receive email updates when registration opens for Wave 4 and onward!</p></Popup>
+            <Popup subscribed = {true}><p>Registration is currently closed. Registration for the new wave begins July 14--sign up and we will alert you as soon as courses open! Click <a href="http://www.wavelf.org/courses">here</a> to see what we plan to offer!</p></Popup>
             {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates. Furthermore, click on "Courses" at the top of our webpage to check out the courses we'll be offering!</p>
                 </Popup>}
           </Typography.Header>
