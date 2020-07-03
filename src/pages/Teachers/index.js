@@ -63,7 +63,7 @@ const TeacherHome = ({setPage}) => {
 const REFERRAL_OPTIONS = [
   "From a Facebook group",
   "From a friend or family member",
-  "From a social media page (Facebook page/Twitter/LinkedIn",
+  "From a social media page (Facebook page/Twitter/LinkedIn)",
   "From a Google search",
   "Other",
 ];
@@ -86,7 +86,7 @@ const renderReferralOption = ({option, teacherData, setTeacherData}) => (
     <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',}}>
       <Typography.BodyText color="white">{option}</Typography.BodyText>
       <div style={{height: 40}}>
-        {option === "Other" && 
+        {option === "Other" &&
           <Styles.Input
             value={teacherData.otherReferral}
             onChange={event => {
@@ -119,7 +119,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Name
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={teacherData.name}
       onChange={event => {
         const value = event.target.value;
@@ -132,7 +132,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Email (.edu preferrable)
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={teacherData.email}
       onChange={event => {
         const value = event.target.value;
@@ -145,7 +145,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       High School / University
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={teacherData.school}
       onChange={event => {
         const value = event.target.value;
@@ -158,7 +158,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Graduation Year
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={teacherData.gradYear}
       onChange={event => {
         const value = event.target.value;
@@ -171,7 +171,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Preferred Gender Pronouns (she/her/hers, he/him/his, they/them,their, etc.)
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={teacherData.pronouns}
       onChange={event => {
         const value = event.target.value;
@@ -227,7 +227,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Name
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={coData.name}
       onChange={event => {
         const value = event.target.value;
@@ -240,7 +240,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Email (.edu preferrable)
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={coData.email}
       onChange={event => {
         const value = event.target.value;
@@ -253,7 +253,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       High School / University
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={coData.school}
       onChange={event => {
         const value = event.target.value;
@@ -266,7 +266,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Graduation Year
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={coData.gradYear}
       onChange={event => {
         const value = event.target.value;
@@ -279,7 +279,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Preferred Gender Pronouns (she/her/hers, he/him/his, they/them,their, etc.)
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={coData.pronouns}
       onChange={event => {
         const value = event.target.value;
@@ -321,7 +321,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Class Title / Topic
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={classData.title}
       onChange={event => {
         const value = event.target.value;
@@ -336,10 +336,10 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
     </Typography.Header2>
     <Typography.BodyText color="white">
       What topics will you go over in this course? How do you plan to split the content
-      over time? Do students need to have any knowledge/skills going in? How will you 
+      over time? Do students need to have any knowledge/skills going in? How will you
       engage students?
     </Typography.BodyText>
-    <Styles.BigInput 
+    <Styles.BigInput
       value={classData.description}
       onChange={event => {
         const value = event.target.value;
@@ -352,7 +352,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       What grade range is this class most appropriate for?
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={classData.grade}
       onChange={event => {
         const value = event.target.value;
@@ -366,10 +366,10 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       Schedule
     </Typography.Header2>
     <Typography.BodyText color="white">
-      How long would you like this class to last (1 week, 2 weeks, or longer)? 
+      How long would you like this class to last (1 week, 2 weeks, or longer)?
       How often would you like the class to meet (daily, MWF, etc)?
     </Typography.BodyText>
-    <Styles.Input 
+    <Styles.Input
       value={classData.schedule}
       onChange={event => {
         const value = event.target.value;
@@ -386,7 +386,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       How long will each session be (45 min, 1 hour, 90 min, etc)?
       Feel free to make the class as long as you would like, but keep it under 3 hours.
     </Typography.BodyText>
-    <Styles.Input 
+    <Styles.Input
       value={classData.runTime}
       onChange={event => {
         const value = event.target.value;
@@ -402,7 +402,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
     <Typography.BodyText color="white">
       Times in EDT, please.
     </Typography.BodyText>
-    <Styles.Input 
+    <Styles.Input
       value={classData.times}
       onChange={event => {
         const value = event.target.value;
@@ -419,7 +419,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       Relevant topical experience and/or experience teaching/working with youth.
       Flex on us!
     </Typography.BodyText>
-    <Styles.Input 
+    <Styles.Input
       value={classData.qualified}
       onChange={event => {
         const value = event.target.value;
@@ -487,7 +487,7 @@ const FinalInput = ({setPage, teacherData, setTeacherData, submit}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Thank you so much! Anything to add?
     </Typography.Header2>
-    <Styles.Input 
+    <Styles.Input
       value={teacherData.comment}
       onChange={event => {
         const value = event.target.value;
