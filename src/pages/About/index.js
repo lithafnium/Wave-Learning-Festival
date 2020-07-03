@@ -90,7 +90,7 @@ const About = () => {
                   <p>Teachers</p>
                 </Button>
               </a>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" target="_blank" class="sign-up-link">
+              <a href="#updates" class="sign-up-link">
                 <Button>
                   <p>Register Now!</p>
                 </Button>
@@ -317,9 +317,9 @@ const About = () => {
             style={{ color: "white", fontSize: 28, marginBottom: 30 }}
           >
             {" "}
-            Sign up for updates on future waves! Be the first to register for
-            NEW courses and hear about special guests!
-            {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates.</p>
+            Sign up here to get alerted and be the first to register for Wave 4!
+            <Popup subscribed = {true}><p>Registration is currently closed but opens again soon on July 14--enter your email and we will alert you as soon as courses open! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
+            {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates. Furthermore, click on "Courses" at the top of our webpage to check out the courses we'll be offering!</p>
                 </Popup>}
           </Typography.Header>
           <NewsLetter>

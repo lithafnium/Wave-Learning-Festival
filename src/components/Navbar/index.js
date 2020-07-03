@@ -20,7 +20,7 @@ import { IconContext } from "react-icons";
 import { FaUserAlt, FaChalkboardTeacher, FaUserFriends } from "react-icons/fa";
 import Logo from "./logo.svg";
 import LogoText from "./logoText.png";
-import LogoTextFull from "./logo with type.svg";
+import LogoTextFull from "./logo with type (1).svg";
 
 const Navbar = () => {
   const [applyShow, setApplyShow] = useState(false);
@@ -202,10 +202,10 @@ const Navbar = () => {
         </Hamburger>
         
         <SideBar show={slide}>
-          <Brand
+          {/* <Brand
             style={{ marginLeft: "15px", marginBottom: "20px", width: "9em" }}
             src={LogoText}
-          />
+          /> */}
           <NavItem>
             <Link to="/">Home</Link>
           </NavItem>
