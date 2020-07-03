@@ -62,6 +62,7 @@ import Unsubscribe from './pages/Unsubscribe'
 import Join from './pages/Join'
 import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
+import CourseSignUp from './pages/Courses/CourseSignUp'
 //import CourseTesting from './pages/Courses'
 import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
@@ -248,6 +249,9 @@ function App() {
             </Route>
             <Route path="/blog">
               <Blog />
+            </Route>
+            <Route path="/course-sign-up">
+              <CourseSignUp />
             </Route>
             {/* Routing for each blog post */}
             {/*<Route path="/:slug" component={BlogPage} />*/}
