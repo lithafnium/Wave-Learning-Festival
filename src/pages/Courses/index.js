@@ -71,11 +71,12 @@ import Filter from '../../components/Filter'
 const Courses = () => {
   const { db, storage } = useContext(FirebaseContext)
   const [loading, setLoading] = useState(true);
-  const [courses, setCourses] = useState([]);
+  const [courses, updateCourses] = useState([]);
   const [filteredCourses, setFilteredCourses] = useState([])
   const [coursePics, setCoursePics] = useState([]);
   const [imageRef, setImageRef] = useState('');
   const [filteredItems, updateFiltered] = useState([])
+  const [search, searchItems] = useState('')
 
   const addFilter = (text, color) => {
     updateFiltered(filteredItems => [...filteredItems, {text, color}])
@@ -84,70 +85,69 @@ const Courses = () => {
   const removeFilter = (text, color) => {
     updateFiltered(filteredItems.filter(item => item.text !== text))
   }
-
-  /* Set Current Wave */
-  const WAVE = 3;
-
-  async function getPhotoUrl(picture) {
-    await storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
-      .then(function(url) {
-          //setCoursePics(coursePics => [...coursePics, url]);
-          return url;
-      }).catch(function(error) {
-        console.log("Error in download URL");
-        return WaveLogo
-      });
+  const categories = {
+    "tech": "Science and Tech", 
+    "aesthetics": "Aesthetics and Culture",
+    "history": "History, Society, and Individuals"
   }
 
-  async function getPhotoData(doc){
-    if (doc.data().picture.length > 0) {
-      await db.doc(doc.data().picture[0].path).get()
-        .then(function(picture) {
-          if (picture.exists) {
-            //Access Image URL from Storage
-            return getPhotoUrl(picture);
-          }
-          else {
-            console.log("No such document!");
-              return WaveLogo;
-          }
-        }).catch(function(error) {
-          console.log("Error getting document:", error);
-            return WaveLogo;
-        });
+  /* Set Current Wave */ 
+  const WAVE = 3;
+
+    useEffect(() => {
+      if(db) {
+        db.collection('fl_content').get().then(function(querySnapshot){
+          querySnapshot.forEach(async function(doc) {
+            if (doc.data().schema == "coursePage" && doc.data().wave < WAVE) {
+              db.doc(doc.data().picture[0].path).get().then(async function(picture) {
+                if (picture.exists) {
+                  storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
+                    .then(function(url) {
+                      let teachers = []
+                      if(doc.data().teachers.teacher1Name){
+                        teachers.push(doc.data().teachers.teacher1Name)
+                      } 
+                      if(doc.data().teachers.teacher2Name){
+                        teachers.push(doc.data().teachers.teacher2Name)
+                      } 
+                      if(doc.data().teachers.teacher3Name){
+                        teachers.push(doc.data().teachers.teacher3Name)
+                      } 
+                      if(doc.data().teachers.teacher4Name){
+                        teachers.push(doc.data().teachers.teacher4Name)
+                      } 
+                      if(doc.data().teachers.teacher5Name){
+                        teachers.push(doc.data().teachers.teacher5Name)
+                      } 
+                      if(doc.data().teachers.teacher6Name){
+                        teachers.push(doc.data().teachers.teacher6Name)
+                      } 
+                      if(doc.data().teachers.teacher7Name){
+                        teachers.push(doc.data().teachers.teacher7Name)
+                      } 
+                      const course = {
+                        title: doc.data().courseTitle,
+                        category: categories[doc.data().courseCategory],
+                        image: url,
+                        description: doc.data().courseDescription,
+                        teachers
+                        }
+                        updateCourses(courses => [...courses, course])
+                      })
+                    }
+                  })
+                }
+              })
+              setLoading(true)
+          })
       }
-      return WaveLogo
-    }
-
-  useEffect(() => {
-    if (db && loading && !courses.length) {
-      db.collection("fl_content")
-      .get()
-      .then(function(querySnapshot) {
-        let courses = [];
-        //let coursePics = [];
-        querySnapshot.forEach(function(doc) {
-          if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
-            /*if(courses.length >= coursePics.length) {
-              getPhotoData(doc).then(function(url) {
-                console.log("URL => " + url);
-            }).catch(console.log);}*/
-            courses.push(doc);
-          }
-        });
-        setCourses(courses);
-        setFilteredCourses(courses);
-        setLoading(false);
-      })
-      .catch(function(error) {
-          console.log("Ex rror getting documents: ", error);
-      });
-    }
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [db, loading, courses])
+  }, [db, storage])
 
   useEffect(() => {
+    if(search.length !== 0){
+      setFilteredCourses(courses.filter(course => course.data().courseTitle.includes(search)))
+    }
     if(filteredItems.length === 0){
       setFilteredCourses(courses)
     } else{
@@ -161,7 +161,7 @@ const Courses = () => {
       }))
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filteredItems])
+  }, [filteredItems, search])
 
 
   /*if (loading && !coursePics.length) {
@@ -229,7 +229,12 @@ const Courses = () => {
               </Button>
             </a><br /><br /><br />
             <div class = "row">
-              <Filter addFilter={addFilter} removeFilter={removeFilter} filteredItems={filteredItems}/>
+              <Filter 
+                addFilter={addFilter} 
+                removeFilter={removeFilter} 
+                searchItems={searchItems}
+                filteredItems={filteredItems}
+                />
             </div>
             <div class="container">
             <div class="row">
