@@ -23,7 +23,7 @@ const CoursesArchive = () => {
         if(db) {
             db.collection('fl_content').get().then(function(querySnapshot){
                 querySnapshot.forEach(async function(doc) {
-                    if (doc.data().schema == "coursePage" && doc.data().wave == WAVE) {
+                    if (doc.data().schema == "coursePage" && doc.data().wave < WAVE) {
                         db.doc(doc.data().picture[0].path).get().then(async function(picture) {
                             if (picture.exists) {
                                 storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
@@ -56,7 +56,7 @@ const CoursesArchive = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>Wave 3</Typography.Header>
+                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>Wave 2 and Wave 1</Typography.Header>
                     <Header>
                         <Title><p>Course Title</p></Title>
                         <Teachers><p>Teachers</p></Teachers>
