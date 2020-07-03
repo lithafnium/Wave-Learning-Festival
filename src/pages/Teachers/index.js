@@ -518,7 +518,7 @@ const FinalInput = ({setPage, teacherData, setTeacherData, submit}) => {
 
 const Thanks = ({setPage}) => (
   <>
-    <Typography.Header color={Colors.WLF_YELLOW}>You're application to teach has been received.</Typography.Header>
+    <Typography.Header color={Colors.WLF_YELLOW}>Your application to teach has been received.</Typography.Header>
     <Typography.Header2 color="white">Thank you for applying!</Typography.Header2>
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
       <Form.Button onClick={() => setPage("home")}>
