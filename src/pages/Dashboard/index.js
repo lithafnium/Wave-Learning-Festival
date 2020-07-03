@@ -107,6 +107,7 @@ const Dashboard = () => {
           setTheError(error);
           setLoading(false);
       }).then(function(result) {
+        console.log(result.user.uid);
         setUser(result.user);
         if (result.user) {
           db.collection("students2").where("userID", "==", result.user.uid).get().then(function(snapshot) {
@@ -119,6 +120,7 @@ const Dashboard = () => {
               var coursesResult = [];
               setStudent(students[0].data());
               var theStudent = students[0].data();
+              console.log(theStudent.id);
               db.collection("courseAssignments").where("student", "==", theStudent.id).get().then(function(snapshot) {
                 var numCourses = 0;
                 var currentlyCounted = 0;
@@ -132,10 +134,7 @@ const Dashboard = () => {
                     snapshot.forEach(function(snap) {
                       courses.push(snap);
                     });
-                    if (courses.length > 0) {
-                      // console.log("hello " + courses[0].data().courseTitle);
-                      coursesResult.push(courses[0].data());
-                    }
+                    coursesResult.push(courses[0].data());
                     if (currentlyCounted == numCourses) {
                       setCourses(coursesResult);
                       setLoading(false);
