@@ -4,12 +4,11 @@ import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles"
 import { FirebaseContext } from '../../firebaseContext'
 import {Colors, Typography} from "@/styles"
-import { ListContainer, Card, Header, Title, Teachers, Category, CardCompressed } from './styles'
+import { ListContainer, Header, Title, Teachers} from './styles'
 import CourseCard from './components/CourseCard'
 const CoursesArchive = () => {
     const { db, storage } = useContext(FirebaseContext)
     const [courses, updateCourses] = useState([])
-    const [courseImages, updateImages] = useState([])
     const [loading, setLoading] = useState(false)
     const WAVE = 3
     const categories = {
@@ -21,19 +20,47 @@ const CoursesArchive = () => {
     
     useEffect(() => {
         if(db) {
-            db.collection('fl_content').get().then(function(querySnapshot){
-                querySnapshot.forEach(async function(doc) {
-                    if (doc.data().schema == "coursePage" && doc.data().wave < WAVE) {
-                        db.doc(doc.data().picture[0].path).get().then(async function(picture) {
-                            if (picture.exists) {
-                                storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
-                                .then(function(url) {
-                                    updateCourses(courses => [...courses, doc])
-                                    updateImages(courseImages => [...courseImages, url])
-                                })
-                            }
+          db.collection('fl_content').get().then(function(querySnapshot){
+            querySnapshot.forEach(async function(doc) {
+              if (doc.data().schema == "coursePage" && doc.data().wave < WAVE) {
+                db.doc(doc.data().picture[0].path).get().then(async function(picture) {
+                  if (picture.exists) {
+                    storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
+                      .then(function(url) {
+                        let teachers = []
+                        if(doc.data().teachers.teacher1Name){
+                          teachers.push(doc.data().teachers.teacher1Name)
+                        } 
+                        if(doc.data().teachers.teacher2Name){
+                          teachers.push(doc.data().teachers.teacher2Name)
+                        } 
+                        if(doc.data().teachers.teacher3Name){
+                          teachers.push(doc.data().teachers.teacher3Name)
+                        } 
+                        if(doc.data().teachers.teacher4Name){
+                          teachers.push(doc.data().teachers.teacher4Name)
+                        } 
+                        if(doc.data().teachers.teacher5Name){
+                          teachers.push(doc.data().teachers.teacher5Name)
+                        } 
+                        if(doc.data().teachers.teacher6Name){
+                          teachers.push(doc.data().teachers.teacher6Name)
+                        } 
+                        if(doc.data().teachers.teacher7Name){
+                          teachers.push(doc.data().teachers.teacher7Name)
+                        } 
+                        const course = {
+                          title: doc.data().courseTitle,
+                          category: categories[doc.data().courseCategory],
+                          image: url,
+                          description: doc.data().courseDescription,
+                          teachers
+                          }
+                          updateCourses(courses => [...courses, course])
                         })
-                    }
+                      }
+                    })
+                  }
                 })
                 setLoading(true)
             })
@@ -49,7 +76,7 @@ const CoursesArchive = () => {
                 </ContainerInner>
             </Container>
             <Footer/>
-        </div>)
+        </div>)   
     }
     return(
         <div>
@@ -63,36 +90,15 @@ const CoursesArchive = () => {
                     </Header>   
                     <ListContainer>
                         {courses.map((course, index) => {
-                            let teachers = []
-                            if(course.data().teachers.teacher1Name){
-                                teachers.push(course.data().teachers.teacher1Name)
-                            } 
-                            if(course.data().teachers.teacher2Name){
-                                teachers.push(course.data().teachers.teacher2Name)
-                            } 
-                            if(course.data().teachers.teacher3Name){
-                                teachers.push(course.data().teachers.teacher3Name)
-                            } 
-                            if(course.data().teachers.teacher4Name){
-                                teachers.push(course.data().teachers.teacher4Name)
-                            } 
-                            if(course.data().teachers.teacher5Name){
-                                teachers.push(course.data().teachers.teacher5Name)
-                            } 
-                            if(course.data().teachers.teacher6Name){
-                                teachers.push(course.data().teachers.teacher6Name)
-                            } 
-                            if(course.data().teachers.teacher7Name){
-                                teachers.push(course.data().teachers.teacher7Name)
-                            } 
-                            
+                            const { title, category, image, description, teachers } = course 
                             return(
-                                <CourseCard color={colors[index % 4]} 
-                                      title = {course.data().courseTitle} 
-                                      teachers = {teachers} 
-                                      category = {categories[course.data().courseCategory]}
-                                      image = {courseImages[index]}
-                                      description = {course.data().courseDescription}/>
+                                <CourseCard 
+                                  color={colors[index % 4]} 
+                                  title = {title} 
+                                  teachers = {teachers} 
+                                  category = {category}
+                                  image = {image}
+                                  description = {description}/>
                             )
                         })}   
                     </ListContainer>
