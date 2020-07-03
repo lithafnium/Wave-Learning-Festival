@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import * as Styles from "./styles";
 import TeacherPic from "./teacher.jpg";
-import { Colors, Typography } from "@/styles";
+import { Colors, Typography, Form } from "@/styles";
 import Logo from "./logo.png"
 import { FirebaseContext } from "@/firebaseContext";
 import { BodyText } from "@/styles/Typography";
@@ -50,11 +50,11 @@ const TeacherHome = ({setPage}) => {
       required, and you will receive help in making your class come to life!
     </Typography.BodyText>
     <div style={{display: 'flex', flexDirection: 'row'}}>
-      <Styles.Button onClick={() => setPage("teacherData")}>
+      <Form.Button onClick={() => setPage("teacherData")}>
         <Typography.Header color="white" fontSize="24px">
           Apply Now!
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
       <div style={{flex: 1}} />
     </div>
   </>)
@@ -69,7 +69,7 @@ const REFERRAL_OPTIONS = [
 ];
 
 const renderReferralOption = ({option, teacherData, setTeacherData}) => (
-  <Styles.RadioInputBackground onClick={() => {
+  <Form.RadioInputBackground onClick={() => {
     const newData = teacherData.referral;
     const ix = newData.indexOf(option);
     if (ix >= 0) {
@@ -82,12 +82,12 @@ const renderReferralOption = ({option, teacherData, setTeacherData}) => (
       referral: newData,
     }));
   }}>
-    <Styles.RadioInputButton many={true} selected={teacherData.referral.indexOf(option) >= 0}/>
+    <Form.RadioInputButton many={true} selected={teacherData.referral.indexOf(option) >= 0}/>
     <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',}}>
       <Typography.BodyText color="white">{option}</Typography.BodyText>
       <div style={{height: 40}}>
         {option === "Other" &&
-          <Styles.Input
+          <Form.Input
             value={teacherData.otherReferral}
             onChange={event => {
               const value = event.target.value;
@@ -100,7 +100,7 @@ const renderReferralOption = ({option, teacherData, setTeacherData}) => (
         }
       </div>
     </div>
-  </Styles.RadioInputBackground>
+  </Form.RadioInputBackground>
 );
 
 const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
@@ -119,7 +119,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Name
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={teacherData.name}
       onChange={event => {
         const value = event.target.value;
@@ -132,7 +132,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Email (.edu preferrable)
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={teacherData.email}
       onChange={event => {
         const value = event.target.value;
@@ -145,7 +145,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       High School / University
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={teacherData.school}
       onChange={event => {
         const value = event.target.value;
@@ -158,7 +158,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Graduation Year
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={teacherData.gradYear}
       onChange={event => {
         const value = event.target.value;
@@ -171,7 +171,7 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Preferred Gender Pronouns (she/her/hers, he/him/his, they/them,their, etc.)
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={teacherData.pronouns}
       onChange={event => {
         const value = event.target.value;
@@ -188,17 +188,17 @@ const TeacherDataInput = ({setPage, teacherData, setTeacherData}) => {
       renderReferralOption({option: value, teacherData, setTeacherData})
     ))}
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Styles.Button onClick={() => setPage("home")}>
+      <Form.Button onClick={() => setPage("home")}>
         <Typography.Header color="white" fontSize="24px">
           Cancel
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
       <div style={{flex: 1}} />
-      <Styles.Button onClick={() => setPage("coData")} enabled={valid}>
+      <Form.Button onClick={() => setPage("coData")} enabled={valid}>
         <Typography.Header color="white" fontSize="24px">
           Next
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
     </div>
   </div>);
 }
@@ -227,7 +227,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Name
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={coData.name}
       onChange={event => {
         const value = event.target.value;
@@ -240,7 +240,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Email (.edu preferrable)
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={coData.email}
       onChange={event => {
         const value = event.target.value;
@@ -253,7 +253,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       High School / University
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={coData.school}
       onChange={event => {
         const value = event.target.value;
@@ -266,7 +266,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Graduation Year
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={coData.gradYear}
       onChange={event => {
         const value = event.target.value;
@@ -279,7 +279,7 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Preferred Gender Pronouns (she/her/hers, he/him/his, they/them,their, etc.)
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={coData.pronouns}
       onChange={event => {
         const value = event.target.value;
@@ -290,17 +290,17 @@ const CoDataInput = ({setPage, coData, setCoData}) => {
       }}
     />
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Styles.Button onClick={() => setPage("teacherData")}>
+      <Form.Button onClick={() => setPage("teacherData")}>
         <Typography.Header color="white" fontSize="24px">
           Back
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
       <div style={{flex: 1}} />
-      <Styles.Button onClick={() => setPage("classData")} enabled={valid}>
+      <Form.Button onClick={() => setPage("classData")} enabled={valid}>
         <Typography.Header color="white" fontSize="24px">
           Next
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
     </div>
   </div>);
 }
@@ -321,7 +321,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Class Title / Topic
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={classData.title}
       onChange={event => {
         const value = event.target.value;
@@ -339,7 +339,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       over time? Do students need to have any knowledge/skills going in? How will you
       engage students?
     </Typography.BodyText>
-    <Styles.BigInput
+    <Form.BigInput
       value={classData.description}
       onChange={event => {
         const value = event.target.value;
@@ -352,7 +352,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
     <Typography.Header2 color="white" fontSize="24px">
       What grade range is this class most appropriate for?
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={classData.grade}
       onChange={event => {
         const value = event.target.value;
@@ -369,7 +369,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       How long would you like this class to last (1 week, 2 weeks, or longer)?
       How often would you like the class to meet (daily, MWF, etc)?
     </Typography.BodyText>
-    <Styles.Input
+    <Form.Input
       value={classData.schedule}
       onChange={event => {
         const value = event.target.value;
@@ -386,7 +386,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       How long will each session be (45 min, 1 hour, 90 min, etc)?
       Feel free to make the class as long as you would like, but keep it under 3 hours.
     </Typography.BodyText>
-    <Styles.Input
+    <Form.Input
       value={classData.runTime}
       onChange={event => {
         const value = event.target.value;
@@ -402,7 +402,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
     <Typography.BodyText color="white">
       Times in EDT, please.
     </Typography.BodyText>
-    <Styles.Input
+    <Form.Input
       value={classData.times}
       onChange={event => {
         const value = event.target.value;
@@ -419,7 +419,7 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       Relevant topical experience and/or experience teaching/working with youth.
       Flex on us!
     </Typography.BodyText>
-    <Styles.Input
+    <Form.Input
       value={classData.qualified}
       onChange={event => {
         const value = event.target.value;
@@ -430,17 +430,17 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       }}
     />
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Styles.Button onClick={() => setPage("coData")}>
+      <Form.Button onClick={() => setPage("coData")}>
         <Typography.Header color="white" fontSize="24px">
           Back
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
       <div style={{flex: 1}} />
-      <Styles.Button onClick={() => setPage("final")} enabled={valid}>
+      <Form.Button onClick={() => setPage("final")} enabled={valid}>
         <Typography.Header color="white" fontSize="24px">
           Next
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
     </div>
   </div>);
 }
@@ -455,7 +455,7 @@ const IN_DEMAND_OPTIONS = [
 ]
 
 const renderInDemandOption = ({option, teacherData, setTeacherData}) => (
-  <Styles.RadioInputBackground onClick={() => {
+  <Form.RadioInputBackground onClick={() => {
     const newData = teacherData.inDemand;
     const ix = newData.indexOf(option);
     if (ix >= 0) {
@@ -468,9 +468,9 @@ const renderInDemandOption = ({option, teacherData, setTeacherData}) => (
       inDemand: newData,
     }));
   }}>
-    <Styles.RadioInputButton many={true} selected={teacherData.inDemand.indexOf(option) >= 0}/>
+    <Form.RadioInputButton many={true} selected={teacherData.inDemand.indexOf(option) >= 0}/>
     <Typography.BodyText color="white">{option}</Typography.BodyText>
-  </Styles.RadioInputBackground>
+  </Form.RadioInputBackground>
 );
 
 const FinalInput = ({setPage, teacherData, setTeacherData, submit}) => {
@@ -487,7 +487,7 @@ const FinalInput = ({setPage, teacherData, setTeacherData, submit}) => {
     <Typography.Header2 color="white" fontSize="24px">
       Thank you so much! Anything to add?
     </Typography.Header2>
-    <Styles.Input
+    <Form.Input
       value={teacherData.comment}
       onChange={event => {
         const value = event.target.value;
@@ -498,20 +498,20 @@ const FinalInput = ({setPage, teacherData, setTeacherData, submit}) => {
       }}
     />
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Styles.Button onClick={() => setPage("classData")}>
+      <Form.Button onClick={() => setPage("classData")}>
         <Typography.Header color="white" fontSize="24px">
           Back
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
       <div style={{flex: 1}} />
-      <Styles.Button onClick={() => {
+      <Form.Button onClick={() => {
         submit();
         setPage("thanks");
       }}>
         <Typography.Header color="white" fontSize="24px">
           Submit
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
     </div>
   </div>);
 }
@@ -521,11 +521,11 @@ const Thanks = ({setPage}) => (
     <Typography.Header color={Colors.WLF_YELLOW}>You're application to teach has been received.</Typography.Header>
     <Typography.Header2 color="white">Thank you for applying!</Typography.Header2>
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Styles.Button onClick={() => setPage("home")}>
+      <Form.Button onClick={() => setPage("home")}>
         <Typography.Header color="white" fontSize="24px">
           Back to Teacher Page
         </Typography.Header>
-      </Styles.Button>
+      </Form.Button>
     </div>
   </>
 );
