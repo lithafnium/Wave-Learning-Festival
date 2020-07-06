@@ -9,7 +9,7 @@ import { Button } from "./styles"
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
-import ProgressBar from './w3_progressbar-03.png'
+import ProgressBar from './w3_progressbar-04.png'
 
 import Acapella from './W3-CourseImages/acappella.jpg'
 import WomansWear from './W3-CourseImages/american womenswear.jpg'
