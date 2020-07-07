@@ -13,8 +13,8 @@ const Home = (setPage, student) => {
     <Typography.Header color={Colors.WLF_YELLOW}>
       Course Signup
     </Typography.Header>
-    <Typography.BodyText>
-      Currently signed up as {student.name}.
+    <Typography.BodyText color="white">
+      Currently signed in as {student.name}.
     </Typography.BodyText>
     </>
   );
@@ -51,10 +51,8 @@ const CourseSignUp = () => {
     setCalledOnce(true);
     firebase.auth().signInWithEmailAndPassword("jsr7@williams.edu", "cheesemaker123").catch(function(error) { // DELETE THIS LATER
       setPage("error");
-      console.log("nuh");
     }).then(function(result) {
       if (result) {
-        console.log("yuh");
         setUser(result.user);
         db.collection("students2").where("userID", "==", result.user.uid).get().then(function(snapshot) {
           var students = [];
