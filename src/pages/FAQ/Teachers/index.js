@@ -27,14 +27,6 @@ const FAQStudents = () => {
           </Typography.BodyText>
           <br />
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
-            When will future waves be?
-          </Typography.Header2>
-          <Typography.BodyText>
-            All subsequent waves after the initial wave on May 25th will start
-            every two weeks.
-          </Typography.BodyText>
-          <br />
-          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             How long will my teaching session be?
           </Typography.Header2>
           <Typography.BodyText>

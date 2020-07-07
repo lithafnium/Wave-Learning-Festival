@@ -16,13 +16,14 @@ const CoursesArchive = () => {
         "aesthetics": "Aesthetics and Culture",
         "history": "History, Society, and Individuals"
     }
+    const waves = ["1", "2", "3"]
     const colors = [Colors.WLF_ORANGE, Colors.WLF_PURPLE, Colors.WLF_TURQOUISE, Colors.WLF_YELLOW]
     
     useEffect(() => {
         if(db) {
           db.collection('fl_content').get().then(function(querySnapshot){
             querySnapshot.forEach(async function(doc) {
-              if (doc.data().schema == "coursePage" && doc.data().wave < WAVE) {
+              if (doc.data().schema == "coursePage") {
                 db.doc(doc.data().picture[0].path).get().then(async function(picture) {
                   if (picture.exists) {
                     storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
@@ -54,8 +55,9 @@ const CoursesArchive = () => {
                           category: categories[doc.data().courseCategory],
                           image: url,
                           description: doc.data().courseDescription,
-                          teachers
-                          }
+                          teachers,
+                          wave: doc.data().wave
+                         }
                           updateCourses(courses => [...courses, course])
                         })
                       }
@@ -83,25 +85,34 @@ const CoursesArchive = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>Wave 2 and Wave 1</Typography.Header>
-                    <Header>
-                        <Title><p>Course Title</p></Title>
-                        <Teachers><p>Teachers</p></Teachers>
-                    </Header>   
-                    <ListContainer>
-                        {courses.map((course, index) => {
-                            const { title, category, image, description, teachers } = course 
-                            return(
-                                <CourseCard 
-                                  color={colors[index % 4]} 
-                                  title = {title} 
-                                  teachers = {teachers} 
-                                  category = {category}
-                                  image = {image}
-                                  description = {description}/>
-                            )
-                        })}   
-                    </ListContainer>
+                   {
+                     waves.map(waveNum =>{
+                       return(
+                         <div>
+                           <Typography.Header style={{color: Colors.WLF_PURPLE}}>Wave {waveNum}</Typography.Header>
+                          <Header>
+                              <Title><p>Course Title</p></Title>
+                              <Teachers><p>Teachers</p></Teachers>
+                          </Header>   
+                          <ListContainer>
+                              {courses.map((course, index) => {
+                                  const { wave, title, category, image, description, teachers } = course 
+                                  if(wave === waveNum){
+                                  return(
+                                      <CourseCard 
+                                        color={colors[index % 4]} 
+                                        title = {title} 
+                                        teachers = {teachers} 
+                                        category = {category}
+                                        image = {image}
+                                        description = {description}/>
+                                  )}
+                              })}   
+                          </ListContainer>
+                         </div>
+                       )
+                     })
+                    }
                 </ContainerInner>
             </Container>
             <Footer/>
