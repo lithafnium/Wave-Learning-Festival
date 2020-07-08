@@ -37,9 +37,11 @@ export const Title = styled.div`
     flex-wrap: wrap; 
 `
 
-export const Teachers = styled.div`
+export const Heading = styled.div`
     flex-grow: 3; 
     flex-basis: 0;
     display: flex; 
     align-items: center; 
+    margin-left: 0.5em; 
+    margin-right: 0.5em; 
 `

@@ -105,7 +105,8 @@ const CoursesArchive = () => {
                                         teachers = {teachers} 
                                         category = {category}
                                         image = {image}
-                                        description = {description}/>
+                                        description = {description}
+                                        archive = {true}/>
                                   )}
                               })}   
                           </ListContainer>
