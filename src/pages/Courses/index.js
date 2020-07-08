@@ -5,7 +5,7 @@ import { Container, ContainerInner } from "../../globalStyles"
 import './styles.css'
 import {Colors, Typography} from "../../styles";
 import {FirebaseContext} from '../../firebaseContext'
-import { Button, Header, Title, Teachers } from "./styles"
+import { Button, Header, Title, Heading } from "./styles"
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
@@ -177,7 +177,7 @@ const Courses = () => {
             </div>
             <Header>
               <Title><p>Course Title</p></Title>
-              <Teachers><p>Teachers</p></Teachers>
+              <Heading><p>Dates</p></Heading>
             </Header> 
             {filteredCourses.map( (course, index) => {
               const {title, teachers, image, description, classDates, time, targetAudience, classDays, id} = course

@@ -113,7 +113,7 @@ export const CourseImage = styled.div`
         width: 100%; 
     }
     @media ${device.tablet} {
-        width: 40%; 
+        width: 30%; 
     }
 `
 
@@ -123,7 +123,7 @@ export const CourseInfo = styled.div`
         width: 100%; 
     }
     @media ${device.tablet} {
-        width: 50%; 
+        width: 60%; 
     }
 
     & p{
@@ -173,3 +173,15 @@ export const Button = styled.button`
     outline: none;
   }
 `;
+
+export const HeadingCompressed = styled.div`
+    flex-grow: 3; 
+    flex-basis: 0;
+    display: flex; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    margin-left: 0.5em; 
+    margin-right: 0.5em; 
+    transition: 0.2s; 
+    opacity: ${props => props.show ? '0' : '1'};
+`
