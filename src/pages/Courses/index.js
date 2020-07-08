@@ -92,7 +92,8 @@ const Courses = () => {
                           teacher3Name: doc.data().teachers.teacher3Name,
                           teacher1School: doc.data().teachers.teacher1School,
                           teacher2School: doc.data().teachers.teacher2School, 
-                          teacher3School: doc.data().teachers.teache3School
+                          teacher3School: doc.data().teachers.teache3School,
+			  id: doc.data().id
                         }
                         updateCourses(courses => [...courses, course])
                         setFilteredCourses(filteredCourses => [...filteredCourses, course])
