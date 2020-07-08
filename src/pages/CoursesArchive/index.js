@@ -5,7 +5,7 @@ import { Container, ContainerInner } from "@/globalStyles"
 import { FirebaseContext } from '../../firebaseContext'
 import {Colors, Typography} from "@/styles"
 import { ListContainer, Header, Title, Teachers} from './styles'
-import CourseCard from './components/CourseCard'
+import CourseCard from '../../components/CourseCard'
 const CoursesArchive = () => {
     const { db, storage } = useContext(FirebaseContext)
     const [courses, updateCourses] = useState([])
