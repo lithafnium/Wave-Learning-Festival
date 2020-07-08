@@ -61,6 +61,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 import Join from './pages/Join'
+import Mission from './pages/Mission'
 import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
 import CourseTesting from './pages/Courses'
@@ -243,6 +244,9 @@ function App() {
             </Route>
             <Route path="/unsubscribe">
               <Unsubscribe />
+            </Route>
+            <Route path="/mission">
+              <Mission />
             </Route>
             <Route path="/join">
               <Join />

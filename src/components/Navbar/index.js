@@ -25,6 +25,7 @@ import LogoTextFull from "./logo with type (1).svg";
 const Navbar = () => {
   const [applyShow, setApplyShow] = useState(false);
   const [coursesShow, setCoursesShow] = useState(false);
+  const [aboutShow, setAboutShow] = useState(false);
   const [faqShow, setFaqShow] = useState(false);
   const [slide, toggleSlide] = useState(false);
   return (
@@ -36,8 +37,44 @@ const Navbar = () => {
           <NavItem>
             <Link to="/">Home</Link>
           </NavItem>
-          <NavItem>
-            <Link to="/team">About Us</Link>
+          <NavItem onMouseEnter={() => setAboutShow(true)}
+                   onMouseLeave={() => setAboutShow(false)}>
+            <Link>About Us</Link>
+            {aboutShow && (<NavbarDropdown>
+                <Link to="/mission">
+                  <DropdownItem>
+                    <IconContext.Provider
+                      value={{
+                        color: WLF_PURPLE,
+                        style: {
+                          verticalAlign: "middle",
+                          marginRight: "10px",
+                        },
+                      }}
+                    >
+                      <div><FaChalkboardTeacher /></div>
+                    </IconContext.Provider>
+                    Mission and Values
+                  </DropdownItem>
+                </Link>
+                <Link to="/team">
+                  <DropdownItem>
+                    <IconContext.Provider
+                      value={{
+                        color: WLF_PURPLE,
+                        style: {
+                          verticalAlign: "middle",
+                          marginRight: "10px",
+                        },
+                      }}
+                    >
+                      <div><FaUserFriends /></div>
+                    </IconContext.Provider>
+                    Meet the Team
+                  </DropdownItem>
+                </Link>
+                </NavbarDropdown>
+            )}
           </NavItem>
           <NavItem onMouseEnter={() => setCoursesShow(true)}
                    onMouseLeave={() => setCoursesShow(false)}>
