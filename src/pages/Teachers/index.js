@@ -598,32 +598,28 @@ const Teachers = () => {
     }
     db.collection("TeacherApplications")
       .add({
-        teacher: {
-          comment: teacherData.comment,
-          email: teacherData.email,
-          gradYear: teacherData.gradYear,
-          inDemand: teacherData.inDemand,
-          name: teacherData.name,
-          pronouns: teacherData.pronouns,
-          referral: newReferral,
-          school: teacherData.school,
-        },
-        coteacher: {
-          email: coData.email,
-          gradYear: coData.gradYear,
-          name: coData.name,
-          pronouns: coData.pronouns,
-          school: coData.school,
-        },
-        class: {
-          description: classData.description,
-          grade: classData.grade,
-          qualified: classData.qualified,
-          runTime: classData.runTime,
-          schedule: classData.schedule,
-          times: classData.times,
-          title: classData.title,
-        }
+        comment: teacherData.comment,
+        email: teacherData.email,
+        gradYear: teacherData.gradYear,
+        inDemand: teacherData.inDemand,
+        name: teacherData.name,
+        pronouns: teacherData.pronouns,
+        referral: newReferral,
+        school: teacherData.school,
+        
+        co_email: coData.email,
+        co_gradYear: coData.gradYear,
+        co_name: coData.name,
+        co_pronouns: coData.pronouns,
+        co_school: coData.school,
+
+        description: classData.description,
+        grade: classData.grade,
+        qualified: classData.qualified,
+        runTime: classData.runTime,
+        schedule: classData.schedule,
+        times: classData.times,
+        title: classData.title,
       });
     resetData();
   }
