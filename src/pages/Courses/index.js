@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import { Container, ContainerInner } from "../../globalStyles"
+import { Container, ContainerInner } from '../../globalStyles'
 import './styles.css'
-import {Colors, Typography} from "../../styles";
-import {FirebaseContext} from '../../firebaseContext'
-import { Button, Header, Title, Heading } from "./styles"
+import { Colors, Typography } from '../../styles'
+import { FirebaseContext } from '../../firebaseContext'
+import { Button, Header, Title, Heading } from './styles'
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
@@ -16,108 +16,107 @@ import CourseCard from '../../components/CourseCard'
 
 const Courses = () => {
   const { db, storage } = useContext(FirebaseContext)
-  const [loading, setLoading] = useState(true);
-  const [courses, updateCourses] = useState([]);
+  const [loading, setLoading] = useState(false)
+  const [courses, updateCourses] = useState([])
   const [filteredCourses, setFilteredCourses] = useState([])
   const [filteredItems, updateFiltered] = useState([])
   const colors = [Colors.WLF_ORANGE, Colors.WLF_PURPLE, Colors.WLF_TURQOUISE, Colors.WLF_YELLOW]
 
   const addFilter = (text, color) => {
-    updateFiltered(filteredItems => [...filteredItems, {text, color}])
+    updateFiltered(filteredItems => [...filteredItems, { text, color }])
   }
 
   const removeFilter = (text, color) => {
     updateFiltered(filteredItems.filter(item => item.text !== text))
   }
   const categories = {
-    "tech": "Science and Tech", 
-    "aesthetics": "Aesthetics and Culture",
-    "history": "History, Society, and Individuals"
+    tech: 'Science and Tech',
+    aesthetics: 'Aesthetics and Culture',
+    history: 'History, Society, and Individuals'
   }
 
   const onSearch = (e) => {
-    if(e.length === 0){
+    if (e.length === 0) {
       setFilteredCourses(courses)
-    } else{
+    } else {
       setFilteredCourses(courses.filter(course => {
-        return course.title.toLowerCase().includes(e.toLowerCase()) ? true : false
+        return !!course.title.toLowerCase().includes(e.toLowerCase())
       }))
     }
   }
 
-  /* Set Current Wave */ 
-  const WAVE = "3";
+  /* Set Current Wave */
+  const WAVE = '4'
 
-    useEffect(() => {
-      if(db) {
-        db.collection('fl_content').get().then(function(querySnapshot){
-          querySnapshot.forEach(async function(doc) {
-            if (doc.data().schema == "coursePage" && doc.data().wave === WAVE) {
-              console.log(doc.data())
-              db.doc(doc.data().picture[0].path).get().then(async function(picture) {
-                if (picture.exists) {
-                  storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
-                    .then(function(url) {
-                      let teachers = []
-                      if(doc.data().teachers.teacher1Name){
-                        teachers.push(doc.data().teachers.teacher1Name)
-                      } 
-                      if(doc.data().teachers.teacher2Name){
-                        teachers.push(doc.data().teachers.teacher2Name)
-                      } 
-                      if(doc.data().teachers.teacher3Name){
-                        teachers.push(doc.data().teachers.teacher3Name)
-                      } 
-                      if(doc.data().teachers.teacher4Name){
-                        teachers.push(doc.data().teachers.teacher4Name)
-                      } 
-                      if(doc.data().teachers.teacher5Name){
-                        teachers.push(doc.data().teachers.teacher5Name)
-                      } 
-                      if(doc.data().teachers.teacher6Name){
-                        teachers.push(doc.data().teachers.teacher6Name)
-                      } 
-                      if(doc.data().teachers.teacher7Name){
-                        teachers.push(doc.data().teachers.teacher7Name)
-                      } 
-                        const course = {
-                          title: doc.data().courseTitle,
-                          category: doc.data().courseCategory,
-                          image: url,
-                          teachers,
-                          description: doc.data().courseDescription,
-                          teacher1Name: doc.data().teachers.teacher1Name,
-                          teacher2Name: doc.data().teachers.teacher2Name, 
-                          teacher3Name: doc.data().teachers.teacher3Name,
-                          teacher1School: doc.data().teachers.teacher1School,
-                          teacher2School: doc.data().teachers.teacher2School, 
-                          teacher3School: doc.data().teachers.teache3School,
-                          id: doc.data().id, 
-                          classDates: doc.data().classDates,
-                          time: doc.data().classTime,
-                          targetAudience: doc.data().targetAudience,
-                          classDays: doc.data().classDays
-                        }
-                        updateCourses(courses => [...courses, course])
-                        setFilteredCourses(filteredCourses => [...filteredCourses, course])
-                      })
+  useEffect(() => {
+    if (db) {
+      db.collection('fl_content').get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          if (doc.data().schema === 'coursePage' && doc.data().wave === WAVE) {
+            console.log(doc.data())
+            db.doc(doc.data().picture[0].path).get().then(function (picture) {
+              if (picture.exists) {
+                storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
+                  .then(function (url) {
+                    const teachers = []
+                    if (doc.data().teachers.teacher1Name) {
+                      teachers.push(doc.data().teachers.teacher1Name)
                     }
+                    if (doc.data().teachers.teacher2Name) {
+                      teachers.push(doc.data().teachers.teacher2Name)
+                    }
+                    if (doc.data().teachers.teacher3Name) {
+                      teachers.push(doc.data().teachers.teacher3Name)
+                    }
+                    if (doc.data().teachers.teacher4Name) {
+                      teachers.push(doc.data().teachers.teacher4Name)
+                    }
+                    if (doc.data().teachers.teacher5Name) {
+                      teachers.push(doc.data().teachers.teacher5Name)
+                    }
+                    if (doc.data().teachers.teacher6Name) {
+                      teachers.push(doc.data().teachers.teacher6Name)
+                    }
+                    if (doc.data().teachers.teacher7Name) {
+                      teachers.push(doc.data().teachers.teacher7Name)
+                    }
+                    const course = {
+                      title: doc.data().courseTitle,
+                      category: doc.data().courseCategory,
+                      image: url,
+                      teachers,
+                      description: doc.data().courseDescription,
+                      teacher1Name: doc.data().teachers.teacher1Name,
+                      teacher2Name: doc.data().teachers.teacher2Name,
+                      teacher3Name: doc.data().teachers.teacher3Name,
+                      teacher1School: doc.data().teachers.teacher1School,
+                      teacher2School: doc.data().teachers.teacher2School,
+                      teacher3School: doc.data().teachers.teache3School,
+                      id: doc.data().id,
+                      classDates: doc.data().classDates,
+                      time: doc.data().classTime,
+                      targetAudience: doc.data().targetAudience,
+                      classDays: doc.data().classDays
+                    }
+                    updateCourses(courses => [...courses, course])
+                    setFilteredCourses(filteredCourses => [...filteredCourses, course])
                   })
-                }
-              })
-              setLoading(true)
-          })
-      }
+              }
+            })
+          }
+        })
+      })
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [db, storage])
 
   useEffect(() => {
-    if(filteredItems.length === 0){
+    if (filteredItems.length === 0) {
       setFilteredCourses(courses)
-    } else{
+    } else {
       setFilteredCourses(courses.filter(course => {
-        for(let i = 0; i < filteredItems.length; i++){
-          if(course.category === filteredItems[i].text){
+        for (let i = 0; i < filteredItems.length; i++) {
+          if (course.category.includes(filteredItems[i].text)) {
             return true
           }
         }
@@ -127,80 +126,86 @@ const Courses = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filteredItems])
 
+  useEffect(() => {
+    if (courses.length >= 100) {
+      setLoading(true)
+    }
+  }, [courses])
 
   if (!loading) {
     return (
       <>
+        <Navbar/>
+        <Container>
+          <ContainerInner>
+            <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
+          Loading...
+            </Typography.BodyText>
+          </ContainerInner>
+        </Container>
+        <Footer/>
+      </>
+    )
+  }
+  return (
+    <div>
       <Navbar/>
       <Container>
-      <ContainerInner>
-        <Typography.BodyText style={{color: Colors.WLF_BLACK}}>
-          Loading...
-        </Typography.BodyText>
-      </ContainerInner>
-      </Container>
-      <Footer/>
-      </>
-    );
-  }
-    return(
-        <div>
-            <Navbar/>
-            <Container>
-            <ContainerInner>
-            <div class="progressbar">
-              <img src= {ProgressBar} alt = "centered image" />
-            </div>
+        <ContainerInner>
+          <div className="progressbar">
+            <img src= {ProgressBar} alt = "centered image" />
+          </div>
 
-            <Typography.BodyText style={{color: Colors.WLF_BLACK }}>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             We are excited to offer <strong>{courses.length} courses</strong> across a variety of subjects for Wave Three running from <strong>July 6th to July 24th</strong>. Our
             volunteer educators have worked hard to prepare engaging and
             thoughtful curricula and can't wait to share their passions with
             you. Feel free to send any
-            questions to{" "}
+            questions to{' '}
             <a href="mailto:wavelf.logistics@gmail.com">
               wavelf.logistics@gmail.com
             </a><p></p>Click each course for more info –– note the target audience range, course times, and class maxes.<br /><br /><br />
-            </Typography.BodyText>
-            <a href="#coursereg" class="sign-up-link">
-              <Button>
-                <p>Register Now!</p>
-              </Button>
-            </a>
-            <div class = "row">
-              <Filter 
-                addFilter={addFilter} 
-                removeFilter={removeFilter} 
-                searchItems={onSearch}
-                filteredItems={filteredItems}
-                />
-            </div>
-            <Header>
-              <Title><p>Course Title</p></Title>
-              <Heading><p>Dates</p></Heading>
-            </Header> 
-            {filteredCourses.map( (course, index) => {
-              const {title, teachers, image, description, classDates, time, targetAudience, classDays, id} = course
-              return(
-                <CourseCard
-                  title = {title}
-                  teachers = {teachers}
-                  image = {image}
-                  color = {colors[index % 4]}
-                  description = {description}
-                  classDates = {classDates}
-                  time = {time}
-                  targetAudience = {targetAudience}
-                  classDays = {classDays}
-                  courseId = {id}
-                />)
-              }
-            )}
-            </ContainerInner>
-          </Container>
-            <Footer/>
-        </div>
-    )
+          </Typography.BodyText>
+          <a href="#coursereg" className="sign-up-link">
+            <Button>
+              <p>Register Now!</p>
+            </Button>
+          </a>
+          <div className = "row">
+            <Filter
+              addFilter={addFilter}
+              removeFilter={removeFilter}
+              searchItems={onSearch}
+              filteredItems={filteredItems}
+            />
+          </div>
+          <Header>
+            <Title><p>Course Title</p></Title>
+            <Heading><p>Dates</p></Heading>
+          </Header>
+          {filteredCourses.map((course, index) => {
+            const { title, teachers, image, description, classDates, time, targetAudience, classDays, id } = course
+            return (
+              <CourseCard
+                key = {index}
+                title = {title}
+                teachers = {teachers}
+                image = {image}
+                color = {colors[index % 4]}
+                description = {description}
+                classDates = {classDates}
+                time = {time}
+                targetAudience = {targetAudience}
+                classDays = {classDays}
+                courseId = {id}
+              />)
+          }
+          )}
+        </ContainerInner>
+      </Container>
+      <Footer/>
+    </div>
+  )
 }
 
 export default Courses
