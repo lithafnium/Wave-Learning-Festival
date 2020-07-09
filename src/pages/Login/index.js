@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import {
@@ -7,9 +7,9 @@ import {
   Form,
   Input,
   Button,
-  ContainerInner,
-} from "./styles";
-import { Container } from "@/globalStyles";
+  ContainerInner
+} from './styles'
+import { Container } from '@/globalStyles'
 
 const Login = () => {
   return (
@@ -36,7 +36,7 @@ const Login = () => {
       </Container>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
