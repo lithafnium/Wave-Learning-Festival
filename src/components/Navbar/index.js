@@ -96,6 +96,22 @@ const Navbar = () => {
                     Current
                   </DropdownItem>
                 </Link>
+                <Link to="/courses-inprogress">
+                  <DropdownItem>
+                    <IconContext.Provider
+                      value={{
+                        color: WLF_PURPLE,
+                        style: {
+                          verticalAlign: "middle",
+                          marginRight: "10px",
+                        },
+                      }}
+                    >
+                      <div><FaChalkboardTeacher /></div>
+                    </IconContext.Provider>
+                    In Progress
+                  </DropdownItem>
+                </Link>
                 <Link to="/courses-archive">
                   <DropdownItem>
                     <IconContext.Provider
@@ -109,7 +125,7 @@ const Navbar = () => {
                     >
                       <div><FaChalkboardTeacher /></div>
                     </IconContext.Provider>
-                    Archive
+                    Past
                   </DropdownItem>
                 </Link>
                 </NavbarDropdown>

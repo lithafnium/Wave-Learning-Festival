@@ -8,8 +8,8 @@ import FAQStudents from './pages/FAQ/Students'
 import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses'
-// import CoursesArchive from './pages/Courses_W1'
-import CoursesArchive from './pages/CoursesArchive'
+import CoursesInProgress from './pages/Courses/CoursesInProgress'
+import CoursesArchive from './pages/Courses/CoursesArchive'
 
 // wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
@@ -92,6 +92,9 @@ function App() {
             </Route>
             <Route path="/courses">
               <Courses />
+            </Route>
+            <Route path="/courses-inprogress">
+              <CoursesInProgress />
             </Route>
             <Route path="/courses-archive">
               <CoursesArchive />

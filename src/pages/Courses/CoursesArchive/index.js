@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles"
-import { FirebaseContext } from '../../firebaseContext'
+import { FirebaseContext } from '../../../firebaseContext'
 import {Colors, Typography} from "@/styles"
 import { ListContainer, Header, Title, Teachers} from './styles'
-import CourseCard from '../../components/CourseCard'
+import CourseCard from '../../../components/CourseCard'
 const CoursesArchive = () => {
     const { db, storage } = useContext(FirebaseContext)
     const [courses, updateCourses] = useState([])
@@ -16,7 +16,7 @@ const CoursesArchive = () => {
         "aesthetics": "Aesthetics and Culture",
         "history": "History, Society, and Individuals"
     }
-    const waves = ["1", "2", "3"]
+    const waves = ["1", "2"]
     const colors = [Colors.WLF_ORANGE, Colors.WLF_PURPLE, Colors.WLF_TURQOUISE, Colors.WLF_YELLOW]
     
     useEffect(() => {
