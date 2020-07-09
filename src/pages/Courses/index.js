@@ -9,7 +9,7 @@ import { Button, Header, Title, Heading } from './styles'
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
-import ProgressBar from './w3_progressbar-04.png'
+import ProgressBar from './ProgressBars/w4_progressbar-01.png'
 
 import Filter from '../../components/Filter'
 import CourseCard from '../../components/CourseCard'

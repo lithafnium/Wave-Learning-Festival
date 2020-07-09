@@ -8,7 +8,7 @@ import {FirebaseContext} from '@/firebaseContext'
 import { Button, Header, Title, Heading } from "../styles"
 import 'firebase/firestore'
 
-import ProgressBar from '../w3_progressbar-04.png'
+import ProgressBar from '../ProgressBars/w3_progressbar-04.png'
 
 import Filter from '@/components/Filter'
 import CourseCard from '@/components/CourseCard'

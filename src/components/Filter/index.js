@@ -51,9 +51,7 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
         </CheckboxColumn>
         <CheckboxColumn>
           <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "Culture" value = "culture"/>
-          <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_TURQOUISE} text = "Aesthetics" value = "aesthetics"/>
           <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Math" value = "math"/>
-
         </CheckboxColumn>
       </CheckboxContainer>
 
