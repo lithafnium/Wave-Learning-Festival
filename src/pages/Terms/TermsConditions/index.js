@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles";
+import { Colors, Typography } from "@/styles";
 
 const TermsConditions = () => {
   return (
@@ -9,25 +10,25 @@ const TermsConditions = () => {
       <Navbar />
       <Container>
         <ContainerInner>
-          <h1>Terms And Conditions</h1>
-          <p>
+        <Typography.Header style={{color: Colors.WLF_PURPLE}}>Terms And Conditions</Typography.Header>
+          <Typography.BodyText>
             <b>Last Updated: June 30th, 2020</b>
-          </p>
-          <h2>Introduction:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Introduction:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             Welcome to Wave Learning Festival! Below, you will find the Terms
             and Conditions that govern your use of our website and all related
             services (the “Services”).
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             These Terms and Conditions (“Terms”) are a binding contract between
             you and the creators and organizers of Wave Learning Platform (“WLF”
             or “we”). Your access to and use of the Services are conditional
             upon your acceptance of and compliance with these Terms. By using
             the Services in any way, you agree to accept and comply with all of
             these Terms.
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText>
             <b>Note:</b> WLF is a service that connects teachers willing to
             conduct an online course on a subject of their choice (“Teachers”)
             with students who are registered by their parents to enroll in such
@@ -37,9 +38,9 @@ const TermsConditions = () => {
               students, and disclaims all liability with respect to these
               agreements to the maximum extent permitted by law.
             </b>
-          </p>
-          <h2>Modification:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Modification:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF reserves the right, at its sole discretion, to modify these
             Terms at any time and without prior notice. If we modify these
             Terms, we will either post a notification of the modification on our
@@ -48,9 +49,9 @@ const TermsConditions = () => {
             beginning of these Terms. It is your responsibility to check from
             time to time for updates. By continuing to access or use the
             Services, you accept and agree to be bound by any modified Terms.
-          </p>
-          <h2>Privacy Policy:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Privacy Policy:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             Our <a href="/privacy-policy">Privacy Policy</a> discusses how we
             collect, process, and disclose personal information through our
             Services. Please read that policy carefully. Please note that the
@@ -60,12 +61,12 @@ const TermsConditions = () => {
             use, and disclosure of personal information collected from children
             below the age of 13. For more information on these practices, please
             view our <a href="/privacy-policy">Privacy Policy</a>.
-          </p>
-          <h2>Eligibility:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Eligibility:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             <u>For Parents, Guardians, and Students:</u>
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             No student may use the Services unless they have been registered
             with the consent of a parent or legal guardian and provided the name
             and contact information of said parent/guardian. WLF may choose to
@@ -75,22 +76,22 @@ const TermsConditions = () => {
             provide verification services. WLF reserves all rights to take legal
             actions against anyone who misrepresents personal information or is
             otherwise untruthful about their identity.
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             <u>For Teachers:</u>
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             By using the Services or volunteering to be a teacher you agree to
             be bound by these Terms and the{" "}
             <a href="teacher-agreement">WLF teacher agreement.</a> You are
             solely responsible for your own conduct and use of the Services.
-          </p>
-          <h2>Acceptable Use:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Acceptable Use:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF hereby grants you permission to use the Services provided such
             use is in compliance with these Terms. You further specifically
             agree that you will not to use the Services:
-          </p>
+          </Typography.BodyText>
           <ul>
             <li>
               In any way that violates any federal, state, local, or
@@ -119,7 +120,7 @@ const TermsConditions = () => {
               of the foregoing).
             </li>
           </ul>
-          <p>Additionally, you agree not to:</p>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>Additionally, you agree not to:</Typography.BodyText>
           <ul>
             <li>
               Use the Services in any manner that could disable, overburden,
@@ -141,7 +142,7 @@ const TermsConditions = () => {
               Services.
             </li>
           </ul>
-          <p>Furthermore, students agree to:</p>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>Furthermore, students agree to:</Typography.BodyText>
           <ul>
             <li>
               Having their microphones disabled upon entering a class. Student
@@ -164,8 +165,8 @@ const TermsConditions = () => {
               pertaining to current and/or future courses and offerings by WLF.
             </li>
           </ul>
-          <h2>User Account:</h2>
-          <p>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>User Account:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             As a Teacher, or as someone signing up to be a student, you will be
             asked to provide certain registration details or other information.
             It is a condition of your use of the Services that all the
@@ -173,17 +174,17 @@ const TermsConditions = () => {
             not transfer your account to anyone else, and may not use the
             Services on behalf of an organization or entity without the express
             consent of WLF.
-          </p>
-          <h2>Termination:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Termination:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF has the right to terminate these Terms and your use of the
             Services at any time and without warning for failure to provide
             valid parental or guardian consent/contact information for a
             student’s use of the services, for any breach of these Terms, or if
             WLF determines in good faith that termination is necessary to
             protect the safety, security, or rights of any person.
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF has no obligation to post any User Content (as defined below)
             you may provide through the Services, and may take any action with
             respect to any User Content that we deem necessary or appropriate in
@@ -192,8 +193,8 @@ const TermsConditions = () => {
             right of any person or entity, threatens the personal safety of
             users of the Website or the public, or could create liability for
             WLF.
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             If you wish to delete your account, please email{" "}
             <a href="wavelearningfestival@gmail.com">
               wavelearningfestival@gmail.com
@@ -204,9 +205,9 @@ const TermsConditions = () => {
             suspension or termination of your account does not limit your rights
             under COPPA. Sections 5, 7, 8, 9, 10, 11, 12, 15, and 16 shall
             survive termination of these Terms.
-          </p>
-          <h2>Intellectual Property Rights:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Intellectual Property Rights:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             The Services and their entire contents (including course recordings and WLF’s Youtube Channel), 
             features, and functionality
             are owned by WLF, its licensors, or other providers of such material
@@ -217,8 +218,8 @@ const TermsConditions = () => {
             broadcast or otherwise exploit the Services, except as expressly
             permitted in these Terms. You have no right to sublicense the
             license rights granted in this section.
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             We may permit you to post, upload, publish, submit or transmit
             content, including but not limited to relevant teacher profile
             information and student account information (“User Content”). By
@@ -234,15 +235,15 @@ const TermsConditions = () => {
             licenses, consents and releases that are necessary to grant to WLF
             the license above. WLF is not responsible or liable to any party for
             the content or accuracy of any User Content.
-          </p>
-          <h2>Third Party Content:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Third Party Content:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             By using the Services, WLF may direct you to access third party
             websites, information, and services, including but not limited to
             third party websites, databases, networks, servers, systems,
             products or other services.
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             You hereby acknowledge that you use such third-party services at
             your own risk. WLF does not control such third-party websites and
             services, and cannot be held responsible for their content,
@@ -250,9 +251,9 @@ const TermsConditions = () => {
             or endorsement, express or implied, with respect to the legality,
             accuracy, quality, or authenticity of content, information, or
             services provided by such third-party services.
-          </p>
-          <h2>Feedback:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Feedback:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             We welcome and encourage you to provide feedback, comments and
             suggestions for improvements to the Services (“Feedback”). Such
             Feedback can be sent to WLF at
@@ -262,9 +263,9 @@ const TermsConditions = () => {
             . You agree that WLF has the right, but not the obligation, to use
             such Feedback without any obligation to provide you credit, royalty
             payment, or ownership interest in any changes made to the Services.
-          </p>
-          <h2>Warranties:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Warranties:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             You hereby acknowledge that you are using the Services at your own
             risk. The Services and content are provided “as is,” and WLF, its
             affiliates, and its third party service providers hereby disclaim
@@ -278,13 +279,13 @@ const TermsConditions = () => {
             there will be no failures, errors, or omissions or loss of
             transmitted information, or that no viruses or other malware will be
             transmitted through the Services.
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             Because some states do not permit disclaimer of implied warranties,
             you may have additional consumer rights under your local laws.
-          </p>
-          <h2>Limitation of Liability:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Limitation of Liability:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             To the fullest extent provided by law, in no event will the
             collective liability of WLF and its individual members and
             affiliates, and their licensors, service providers, employees,
@@ -293,27 +294,27 @@ const TermsConditions = () => {
             of the form of action, whether in contract, tort, or otherwise)
             exceed the greater of $20 or the amount you have paid WLF for use of
             the Services.
-          </p>
-          <h2>Notices:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Notices:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             Any notices or other communications permitted or required hereunder,
             including those regarding modifications to these Terms, will be
             given by WLF (a) via email (in each case to the address that you
             provide) or (b) by posting to the Services. It is your
             responsibility to regularly monitor your provided email and these
             Terms for any and all notices.
-          </p>
-          <h2>No Waiver:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>No Waiver:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             No waiver by WLF of any term or condition set out in these Terms and
             Conditions shall be deemed a further or continuing waiver of such
             term or condition, or a waiver of any other term or condition.
             Similarly, any failure of WLF to assert a right or provision under
             these Terms shall not constitute a waiver of such right or
             provision.
-          </p>
-          <h2>Assignment:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Assignment:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             You may not assign or transfer these Terms, by operation of law or
             otherwise, without WLF’s prior written consent. Any attempt by you
             to assign or transfer these Terms without such consent will be null
@@ -323,9 +324,9 @@ const TermsConditions = () => {
             successors and permitted assigns. These Terms do not and are not
             intended to confer any rights or remedies upon any person other than
             parties explicitly stated.
-          </p>
-          <h2>Governing Law:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Governing Law:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             These Terms (and any further rules, policies, or guidelines
             incorporated by reference) shall be governed and construed in
             accordance with the laws of the Commonwealth of Massachusetts,
@@ -333,9 +334,9 @@ const TermsConditions = () => {
             alleging breach of these Terms must be brought in a state or federal
             court in Middlesex, Massachusetts. Both parties agree to submit to
             the exclusive personal jurisdiction and venue of such courts.
-          </p>
-          <h2>Entire Agreement and Severability:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Entire Agreement and Severability:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             These Terms constitute the entire agreement between you and WLF
             regarding your use of the Services, and supersede all prior written
             or oral agreements. If any part of the Terms is held invalid or
@@ -343,15 +344,15 @@ const TermsConditions = () => {
             consistent with applicable law to reflect, as nearly as possible,
             the original intentions of WLF, and the remaining portions shall
             remain in full force and effect.
-          </p>
-          <h2>Contact Us:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Contact Us:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             If you have any questions about the Services, please do not hesitate
             to contact us at{" "}
             <a href="wavelearningfestival@gmail.com">
               wavelearningfestival@gmail.com
             </a>
-          </p>
+          </Typography.BodyText>
         </ContainerInner>
       </Container>
       <Footer />

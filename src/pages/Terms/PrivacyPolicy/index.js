@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles";
+import { Colors, Typography } from "@/styles";
 
 const Teachers = () => {
   return (
@@ -9,12 +10,12 @@ const Teachers = () => {
       <Navbar />
       <Container>
         <ContainerInner>
-          <h1>Privacy Policy</h1>
-          <p>
+          <Typography.Header style={{color: Colors.WLF_PURPLE}}>Privacy Policy</Typography.Header>
+          <Typography.BodyText>
             <b>Last Updated: June 30, 2020</b>
-          </p>
-          <h2>Introduction:</h2>
-          <p>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Introduction:</Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             At WLF we know you care about how your personal information is used
             and shared, and as such we take your privacy very seriously. Below
             you will find our Privacy Policy (the “Policy”), and by using or
@@ -22,16 +23,15 @@ const Teachers = () => {
             accept the practices and requirements outlined in this Policy. You
             also hereby consent to our collection, use, and sharing of your
             information in the following ways:
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText>
             Note: Unless otherwise indicated, all terms have the same definition
-            as in the
-            <a href="terms-conditions">WLF Terms and Conditions</a>.
-          </p>
-          <h2>
+            as in the <a href="terms-conditions">WLF Terms and Conditions</a>.
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Information That WLF Collects:</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF collects different information depending on whether you use the
             services as a teacher or as a student. As set forth in our{" "}
             <a href="terms-conditions"> Terms and Conditions</a>, WLF requires
@@ -51,8 +51,8 @@ const Teachers = () => {
               wavelearningfestival@gmail.com
             </a>
             .
-          </p>
-          <p>
+          </Typography.BodyText>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             Students may turn their cameras on or off during a lesson at their own discretion. Video usage may be encouraged for classes that benefit from participation, such as a public speaking or ASL class.
             Any student who has their webcam on during a class agrees to having
             their picture taken (as part of a class screenshot or other
@@ -63,12 +63,12 @@ const Teachers = () => {
             such as your username if using Zoom. Again, if at any time you wish
             to opt out of these pictures, please turn off your webcam and/or
             change your visible username upon entering a class.
-          </p>
-          <p>The information collected for all users is as follows:</p>
+          </Typography.BodyText>
+          <Typography.BodyText>The information collected for all users is as follows:</Typography.BodyText>
           <ul>
             <li>
-              <h2>Automatically Collected Information</h2>
-              <p>
+              <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Automatically Collected Information</Typography.Header2>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 Whenever you interact with our Services, we automatically
                 receive and record information from your browser or your device
                 that is transmitted as part of standard Internet traffic. This
@@ -78,11 +78,11 @@ const Teachers = () => {
                 browser or device to prevent or limit your device’s disclosure
                 of information, but this may prevent you from taking advantage
                 of some of our features.
-              </p>
+              </Typography.BodyText>
             </li>
             <li>
-              <h2>Cookies</h2>
-              <p>
+              <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Cookies</Typography.Header2>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 In order to keep you logged into the Services, WLF may use
                 “cookies,” or small files that WLF can send to your browser for
                 storage on your device. They make the use of these Services
@@ -91,11 +91,11 @@ const Teachers = () => {
                 Services. While most browsers allow you to disable cookies, we
                 recommend that you leave cookies enabled so as not to interfere
                 with the full functionality of these Services.
-              </p>
+              </Typography.BodyText>
             </li>
             <li>
-              <h2>Voluntarily Disclosed Information</h2>
-              <p>
+              <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Voluntarily Disclosed Information</Typography.Header2>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 When you use the Services, you will have the opportunity to
                 provide us with some information directly. For example, some
                 functions of the Services require you to register for an
@@ -103,22 +103,22 @@ const Teachers = () => {
                 your email address and desired password. We may also collect
                 other information you directly give us as you build your teacher
                 or student profile or verify your identity on the Services.
-              </p>
-              <p>
+              </Typography.BodyText>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 A very limited portion of the Services allow you to post or
                 transmit content (“User Content”). For example, a teacher will
                 submit User Content in order to build a profile. You may post
                 User Content at your sole discretion, but please note that some
                 User Content may be publicly available or viewable to others. Do
                 not post any sensitive personal information as User Content.
-              </p>
-              <p>
+              </Typography.BodyText>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 Periodically, WLF may send you surveys regarding the
                 functionality, effectiveness, or ease of access of the Services.
                 Such responses are voluntary, yet appreciated, however they may
                 contain personally identifiable information.
-              </p>
-              <p>
+              </Typography.BodyText>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
               Students may turn their cameras on or off during a lesson at their own discretion. 
               Video usage may be encouraged for classes that benefit from participation, such as a 
               public speaking or ASL class.  Any student who has their webcam on during a class 
@@ -134,38 +134,38 @@ const Teachers = () => {
               also be recorded. If at any time you wish to opt out of these pictures and recordings, 
               please turn off your webcam and/or change your visible username upon entering a class. 
               Students or legal guardians may also reach out to WLF to explicitly opt out of any or all recordings. 
-              </p>
+              </Typography.BodyText>
             </li>
           </ul>
-          <p>The information collected from students is as follows:</p>
+          <Typography.BodyText>The information collected from students is as follows:</Typography.BodyText>
           <ul>
             <li>
-              <h2>Information Collected at Registration:</h2>
-              <p>
+              <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Information Collected at Registration:</Typography.Header2>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 As set forth in our Terms of Service, we require the contact
                 information of a parent or guardian for each student signing up.
                 At registration, WLF collects a parent or guardian’s name and
                 email address as an identifier, and requests the user to create
                 a password in order to establish a user account. We also collect
                 your name, email, hometown, school, and grade.
-              </p>
+              </Typography.BodyText>
             </li>
           </ul>
-          <p>The information collected from teachers is as follows:</p>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>The information collected from teachers is as follows:</Typography.BodyText>
           <ul>
             <li>
-              <h2>Information Collected at Registration:</h2>
-              <p>
+              <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>Information Collected at Registration:</Typography.Header2>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 At registration, WLF collects your name, email, school, and
                 graduation year. Upon approval to teach a course, WLF also
                 collects a headshot and a short personal description.
-              </p>
+              </Typography.BodyText>
             </li>
           </ul>
-          <h2>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Use of Collected Information</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF uses the information collected as described above to develop and
             maintain the Services, comply with legal obligations, and for any
             purpose for which you provide consent. We may communicate with you
@@ -173,18 +173,18 @@ const Teachers = () => {
             practices and activity on the Services, inform you of changes to our
             policies and procedures, or to otherwise facilitate the operation of
             the Services.
-          </p>
-          <h2>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Disclosure of Information</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText>
             WLF may disclose the information above in the following
             circumstances:
-          </p>
+          </Typography.BodyText>
           <ul>
             <li>
               <i>Third-Party Services and Contractors</i> -
-              <p>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 WLF may employ other companies and people to perform tasks on
                 our behalf and, from time to time, may need to share your
                 information with them to provide services to you. For example,
@@ -194,52 +194,52 @@ const Teachers = () => {
                 service, and WLF has worked to confirm that these service
                 providers do not disclose information to others except as is
                 consistent with this Policy.
-              </p>
+              </Typography.BodyText>
             </li>
             <li>
               <i>Public Information</i> -
-              <p>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 a very limited amount of User Content is made available on the
                 Services, including information a teacher provides for their
                 profile. Please note that any information you submit in a public
                 portion of the site will be viewable by others. Accordingly,
                 only include information in such submissions that you are
                 comfortable sharing with third parties or the general public.
-              </p>
+              </Typography.BodyText>
             </li>
             <li>
               <i>Business Transfers</i> -
-              <p>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 if WLF is acquired by another association, goes into
                 dissolution, or otherwise transfers ownership or assets, WLF may
                 transfer the information it has as part of that transaction.
-              </p>
+              </Typography.BodyText>
             </li>
             <li>
               <i>Aggregate Usage Information and Analytics</i> -
-              <p>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 We may de-identify your personal information so that you are not
                 identified as an individual and use that information for any
                 business purpose, including for analyzing demographic and usage
                 information or to help identify new partners and companion
                 services
-              </p>
+              </Typography.BodyText>
             </li>
             <li>
               <i>Legal Compliance</i> -
-              <p>
+              <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
                 We reserve the right to access, read, and disclose any
                 information that we believe in our sole discretion is necessary
                 to comply with law or court order; enforce or apply our Terms of
                 Service and other agreements; or protect the rights, property,
                 or safety of WLF, our members, our users, or others.
-              </p>
+              </Typography.BodyText>
             </li>
           </ul>
-          <h2>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Data Security and Storage</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF recognizes the importance of data security and has implemented
             measures designed to protect the security, integrity, and
             confidentiality of your personal information. We endeavor to protect
@@ -250,11 +250,11 @@ const Teachers = () => {
             security of your information also depend on you. Certain parts of
             the Services are protected by a password, and it is your
             responsibility to keep that password confidential.
-          </p>
-          <h2>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Modification and Deletion of Information</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             You may access, and, in some cases, edit or delete your information
             through your account and profile settings. The information you can
             view, update, and delete may change over time. You may request that
@@ -264,11 +264,11 @@ const Teachers = () => {
             </a>
             . Please note that if you request removal of your information you
             may be unable to continue to utilize the Services.
-          </p>
-          <h2>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Parental Rights Under COPPA</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             WLF does not require a child or a child’s parents or guardians to
             disclose more information about the child than is reasonably
             necessary to participate in any part of the Services, and does not
@@ -277,7 +277,7 @@ const Teachers = () => {
             under “Disclosure of Information”. Parents and guardians, with a
             child or children under the age of 13, have certain rights that
             include the right to:
-          </p>
+          </Typography.BodyText>
           <ul>
             <li>Review their child’s personal information collected by WLF;</li>
             <li>
@@ -292,18 +292,18 @@ const Teachers = () => {
               with third parties that are not part of Services.
             </li>
           </ul>
-          <p>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             Parents may exercise any of these rights listed above by contacting
             WLF at{" "}
             <a href="wavelearningfestival@gmail.com">
               wavelearningfestival@gmail.com
             </a>
             .
-          </p>
-          <h2>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Changes to the Policy</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             It is our policy to post any changes we make to the Policy on this
             page. If we make material changes to how we treat our users'
             personal information, we will notify you by email to the address
@@ -312,18 +312,18 @@ const Teachers = () => {
             identified at the beginning of this Policy. You are responsible for
             ensuring we have an up-to-date active and deliverable email address
             for you.
-          </p>
-          <h2>
+          </Typography.BodyText>
+          <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             <u>Contact Information</u>
-          </h2>
-          <p>
+          </Typography.Header2>
+          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
             For any inquiries about this privacy policy and our privacy
             practices, contact us at{" "}
             <a href="wavelearningfestival@gmail.com">
               wavelearningfestival@gmail.com
             </a>
             .
-          </p>
+          </Typography.BodyText>
         </ContainerInner>
       </Container>
 

@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles";
+import { Colors, Typography } from "@/styles";
 
 const TermsConditions = () => {
   return (
@@ -9,8 +10,8 @@ const TermsConditions = () => {
       <Navbar />
       <Container>
         <ContainerInner>
-          <h1>Teacher Agreement</h1>
-          <p>By teaching at Wave, you agree to the following:</p>
+        <Typography.Header style={{color: Colors.WLF_PURPLE}}>Teacher Agreement</Typography.Header>
+          <Typography.BodyText>By teaching at Wave, you agree to the following:</Typography.BodyText>
           <ol>
             <li>
               I will be present at all the sessions I have agreed to teach. If
