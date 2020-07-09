@@ -366,8 +366,9 @@ const ClassDataInput = ({setPage, classData, setClassData}) => {
       Schedule
     </Typography.Header2>
     <Typography.BodyText color="white">
-      How long would you like this class to last (1 week, 2 weeks, or longer)? 
-      How often would you like the class to meet (daily, MWF, etc)?
+      How long would you like this class to last (1 week or 2 weeks)?
+      (Courses for Wave 5 must be 2 weeks or shorter) 
+      <br/>How often would you like the class to meet (daily, MWF, etc)?
     </Typography.BodyText>
     <Styles.Input 
       value={classData.schedule}
