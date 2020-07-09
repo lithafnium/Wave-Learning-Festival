@@ -29,7 +29,7 @@ const TeacherHome = ({setPage}) => {
           "I loved teaching and working with all these excited learners!"
         </Typography.Header>
         <Typography.Header color={Colors.WLF_YELLOW} fontSize="28px">
-          -Cecilia, wave 1 teacher
+          -Cecelia, Wave 1 teacher
         </Typography.Header>
       </Styles.TestimonialItem>
     </Styles.TestimonialBackground>
