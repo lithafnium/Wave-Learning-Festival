@@ -67,3 +67,15 @@ export const RadioInputButton = styled.div`
   background-color: ${({selected}) => selected ? Colors.WLF_YELLOW : 'rgba(0,0,0,0)'};
   transition: all 0.2s ease;
   `
+
+  export const Dropdown = styled.select`
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid ${Colors.WLF_YELLOW};
+    outline: none;
+    font-size: 20px;
+    font-family: 'Muli', sans-serif;
+    padding: 2px 10px;
+    margin-bottom: 20px;
+  `
