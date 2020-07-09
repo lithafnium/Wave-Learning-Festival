@@ -109,6 +109,7 @@ const renderOption = ({option}) => (
 var PAST_COURSES_OPTIONS = [
   "Yes, in Wave 1!",
   "Yes, in Wave 2!",
+  "Yes, in Wave 3!",
   "No"
 ];
 
@@ -117,16 +118,19 @@ var YES_NO = [
   "No"
 ];
 
-var GRADE_OPTIONS = [
-  "6th",
-  "7th",
-  "8th",
-  "9th",
-  "10th",
-  "11th",
-  "12th",
-  "Under 6th grade",
-  "In college or higher"
+var AGE_OPTIONS = [
+  "Under 10",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
 ];
 
 var WAYS_TO_HEAR = [
@@ -140,7 +144,7 @@ var WAYS_TO_HEAR = [
   "Other"
 ]
 
-var NUM_COURSES = ["1", "2", "3", "4"];
+var NUM_COURSES = ["1", "2", "3"];
 
 var YES = ["Yes"];
 
@@ -182,12 +186,12 @@ const Home = (setPage, studentData, setStudentData) => {
     ))}
 
     <Typography.Header2 color="white" fontSize="24px">
-      Grade (2019-2020 school year) / Nivel (año escolar 2019-2020)
+      Age / Edad
     </Typography.Header2>
     <Form.Dropdown
-      onChange={inputChanged("grade", setStudentData)}
+      onChange={inputChanged("age", setStudentData)}
     >
-      {GRADE_OPTIONS.map((value) => (
+      {AGE_OPTIONS.map((value) => (
         renderOption({option: value})
       ))}
     </Form.Dropdown>
@@ -257,10 +261,10 @@ const Home = (setPage, studentData, setStudentData) => {
     PLEASE READ BEFORE CONTINUING:
     </Typography.BodyText>
     <Typography.BodyText color="white">
-    Since we are offering more classes, you can register for up to 8 courses this Wave and be enrolled in up to 4!
+    Since we are offering more classes, you can register for up to 8 courses this Wave and be enrolled in up to 3!
     </Typography.BodyText>
     <Typography.BodyText color="white">
-    Please indicate the amount of courses you would ultimately like to be enrolled in (1-4 courses), and we will do our best to give you that amount. We will enroll you based on your priority ranking of the courses.
+    Please indicate the amount of courses you would ultimately like to be enrolled in (1-3 courses), and we will do our best to give you that amount. We will enroll you based on your priority ranking of the courses.
     </Typography.BodyText>
     <Typography.BodyText color="white">
     Please keep in mind the target age range, course meeting times, frequency, class sizes, and duration.
@@ -366,14 +370,8 @@ const Home = (setPage, studentData, setStudentData) => {
     </Form.Dropdown>
 
     <Typography.Header2 color="white" fontSize="24px">
-      I have read and agree to the Student Agreement / He leído y acepto el Acuerdo del estudiante
-    </Typography.Header2>
-    {YES.map((value) => (
-      renderSingleOption({key: "studentAgreement", option: value, studentData, setStudentData})
-    ))}
-
-    <Typography.Header2 color="white" fontSize="24px">
-      I have read and agree to the Terms and Conditions and Privacy Policy. / He leído y acepto los Términos y Condiciones y la Política de Privacidad.
+      I have read and agree to the <a href="/terms-conditions">Terms and Conditions</a>  
+      and <a href="/privacy-policy">Privacy Policy</a>. / He leído y acepto los Términos y Condiciones y la Política de Privacidad.
     </Typography.Header2>
     {YES.map((value) => (
       renderSingleOption({key: "termsConditions", option: value, studentData, setStudentData})
@@ -443,7 +441,7 @@ const CourseSignUp = () => {
     email: "",
     pastCourses: [],
     futureWaves: "",
-    grade: "",
+    age: "",
     parentName: "",
     parentEmail: "",
     country: "",
