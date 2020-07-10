@@ -468,7 +468,7 @@ const renderInDemandOption = ({ option, teacherData, setTeacherData }) => (
       inDemand: newData
     }))
   }}>
-    <Styles.RadioInputButton many={true} selected={teacherData.inDemand.indexOf(option) >= 0}/>
+    <Form.RadioInputButton many={true} selected={teacherData.inDemand.indexOf(option) >= 0}/>
     <Typography.BodyText color="white">{option}</Typography.BodyText>
   </Styles.RadioInputBackground>
 )
@@ -518,7 +518,7 @@ const FinalInput = ({ setPage, teacherData, setTeacherData, submit }) => {
 
 const Thanks = ({ setPage }) => (
   <>
-    <Typography.Header color={Colors.WLF_YELLOW}>You're application to teach has been received.</Typography.Header>
+    <Typography.Header color={Colors.WLF_YELLOW}>Your application to teach has been received.</Typography.Header>
     <Typography.Header2 color="white">Thank you for applying!</Typography.Header2>
     <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
       <Styles.Button onClick={() => setPage('home')}>
