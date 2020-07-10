@@ -130,11 +130,9 @@ var submit = function(db, studentData, setErrorMessage, setPage) {
   var submission = {...studentData};
   db.collection("StudentRegistrations").add(submission).then(function(ref) {
     firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
-      setPage("complete")
+      setPage("complete");
     }).catch(function(error) {
-      db.collection("StudentRegistrations").doc(ref.id).delete();
-      setErrorMessage(error.message);
-      setPage("error");
+      setPage("complete");
     });
     db.collection("StudentRegistrations").doc(ref.id).update({id: ref.id});
   });
