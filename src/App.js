@@ -57,6 +57,7 @@ import CoursePublicSpeaking from './pages/Courses_W2/CoursePages/PublicSpeaking'
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
 import TeacherAgreement from './pages/Terms/TeacherAgreement'
+import StudentAgreement from './pages/Terms/StudentAgreement'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
@@ -238,6 +239,9 @@ function App() {
             </Route>
             <Route path="/teacher-agreement">
               <TeacherAgreement />
+            </Route>
+            <Route path="/student-agreement">
+              <StudentAgreement />
             </Route>
             <Route path="/login">
               <Login />

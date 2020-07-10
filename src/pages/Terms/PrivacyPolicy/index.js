@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles";
 import { Colors, Typography } from "@/styles";
 
-const Teachers = () => {
+const PrivacyPolicy = () => {
   return (
     <div>
       <Navbar />
@@ -332,4 +332,4 @@ const Teachers = () => {
   );
 };
 
-export default Teachers;
+export default PrivacyPolicy;
