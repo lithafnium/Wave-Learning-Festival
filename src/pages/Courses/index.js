@@ -57,7 +57,6 @@ const Courses = () => {
   /* Set Current Wave */
   const WAVE = '4'
 
-
   useEffect(() => {
     if (db) {
       db.collection('fl_content').get().then(function (querySnapshot) {
@@ -70,25 +69,46 @@ const Courses = () => {
                   .then(function (url) {
                     const teachers = []
                     if (doc.data().teachers.teacher1Name) {
-                      teachers.push(doc.data().teachers.teacher1Name)
+                      teachers.push({
+                        name: doc.data().teachers.teacher1Name,
+                        school: doc.data().teachers.teacher1School
+                      })
                     }
                     if (doc.data().teachers.teacher2Name) {
-                      teachers.push(doc.data().teachers.teacher2Name)
+                      teachers.push({
+                        name: doc.data().teachers.teacher2Name,
+                        school: doc.data().teachers.teacher2School
+                      })
                     }
                     if (doc.data().teachers.teacher3Name) {
-                      teachers.push(doc.data().teachers.teacher3Name)
+                      teachers.push({
+                        name: doc.data().teachers.teacher3Name,
+                        school: doc.data().teachers.teacher3School
+                      })
                     }
                     if (doc.data().teachers.teacher4Name) {
-                      teachers.push(doc.data().teachers.teacher4Name)
+                      teachers.push({
+                        name: doc.data().teachers.teacher4Name,
+                        school: doc.data().teachers.teacher4School
+                      })
                     }
                     if (doc.data().teachers.teacher5Name) {
-                      teachers.push(doc.data().teachers.teacher5Name)
+                      teachers.push({
+                        name: doc.data().teachers.teacher5Name,
+                        school: doc.data().teachers.teacher5School
+                      })
                     }
                     if (doc.data().teachers.teacher6Name) {
-                      teachers.push(doc.data().teachers.teacher6Name)
+                      teachers.push({
+                        name: doc.data().teachers.teacher6Name,
+                        school: doc.data().teachers.teacher6School
+                      })
                     }
                     if (doc.data().teachers.teacher7Name) {
-                      teachers.push(doc.data().teachers.teacher7Name)
+                      teachers.push({
+                        name: doc.data().teachers.teacher7Name,
+                        school: doc.data().teachers.teacher7School
+                      })
                     }
                     const course = {
                       title: doc.data().courseTitle,
