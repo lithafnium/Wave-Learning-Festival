@@ -132,9 +132,10 @@ var submit = function(db, studentData, setErrorMessage, setPage) {
     firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
       setPage("complete")
     }).catch(function(error) {
-      db.collection("StudentRegistrations").doc(ref.id).delete();
+      /*db.collection("StudentRegistrations").doc(ref.id).delete();
       setErrorMessage(error.message);
-      setPage("error");
+      setPage("error");*/
+      setPage("complete")
     });
     db.collection("StudentRegistrations").doc(ref.id).update({id: ref.id});
   });
@@ -305,7 +306,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     Please keep in mind the target age range, course meeting times, frequency, class sizes, and duration.
     </Typography.BodyText>
     <Typography.Header2 color="white" fontSize="20px">
-      Check out our <a href="/courses/">Course List</a>!
+      Check out our <a href="/courses">Course List</a>!
     </Typography.Header2>
 
     <Typography.Header2 color="white" fontSize="24px">

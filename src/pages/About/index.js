@@ -218,7 +218,7 @@ const About = () => {
             <Typography.BodyText
               style={{ fontSize: 16, color: Colors.WLF_BLACK }}
             >
-              Choose from over 53 different seminars covering everything from
+              Choose from over <b>100</b> different seminars covering everything from
               STEM to performing arts. Love trying new things? New waves of
               classes and seminar leaders get released every 3 weeks.
             </Typography.BodyText>
@@ -318,7 +318,7 @@ const About = () => {
           >
             {' '}
             Sign up here to get alerted and be the first to register for Wave 4!
-            <Popup subscribed = {true}><p>Registration is currently closed but opens again soon on July 14--enter your email and we will alert you as soon as courses open! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
+            <Popup subscribed = {true}><p>Registration is currently open from July 10 - July 20 --enter your email and we will alert you as soon as courses open! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
             {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates. Furthermore, click on "Courses" at the top of our webpage to check out the courses we'll be offering!</p>
             </Popup>}
           </Typography.Header>
