@@ -36,10 +36,19 @@ const Courses = () => {
   }
 
   const onSearch = (e) => {
-    if (e.length === 0) {
+    if (e.length === 0 && filteredItems.length === 0) {
       setFilteredCourses(courses)
-    } else {
+    } else if (e.length === 0 && filteredItems.length !== 0) {
       setFilteredCourses(courses.filter(course => {
+        for (let i = 0; i < filteredItems.length; i++) {
+          if (course.category.includes(filteredItems[i].text)) {
+            return true
+          }
+        }
+        return false
+      }))
+    } else {
+      setFilteredCourses(filteredCourses.filter(course => {
         return !!course.title.toLowerCase().includes(e.toLowerCase())
       }))
     }
@@ -201,10 +210,10 @@ const Courses = () => {
               />)
           }
           )}
-        <Typography.Header style={{color: Colors.WLF_PURPLE}}>Course Schedule</Typography.Header>
+          <Typography.Header style={{ color: Colors.WLF_PURPLE }}>Course Schedule</Typography.Header>
           <iframe
             src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
-            style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
+            style={{ border: '0px', width: '100%', height: '600px', frameborder: '0px', scrolling: 'no' }}>
           </iframe>
         </ContainerInner>
       </Container>
