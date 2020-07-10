@@ -113,9 +113,6 @@ var fitsRequirements = function(studentData) {
     studentData.parentEmail != "" &&
     studentData.numCourses != "" &&
     studentData.firstCourse != "";
-  if (!result) {
-    console.log("nope");
-  }
   return result;
 };
 
@@ -123,7 +120,6 @@ var submit = function(db, studentData, setErrorMessage, setPage) {
   var submission = {...studentData};
   db.collection("StudentRegistrations").add(submission).then(function(ref) {
     firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
-      console.log("password: " + ref.id);
       setPage("complete")
     }).catch(function(error) {
       db.collection("StudentRegistrations").doc(ref.id).delete();
