@@ -303,7 +303,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     Please keep in mind the target age range, course meeting times, frequency, class sizes, and duration.
     </Typography.BodyText>
     <Typography.Header2 color="white" fontSize="20px">
-      Check out our <a href="/courses">Course List</a>!
+      Check out our <a href="/courses" target="_blank">Course List</a>!
     </Typography.Header2>
 
     <Typography.Header2 color="white" fontSize="24px">
