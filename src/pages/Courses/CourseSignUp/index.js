@@ -114,7 +114,15 @@ var fitsRequirements = function(studentData) {
     studentData.numCourses != "" &&
     studentData.firstCourse != "" &&
     studentData.termsConditions != "" &&
-    studentData.notInterested != "";
+    studentData.notInterested != "" &&
+    studentData.pastCourses &&
+    studentData.futureWaves != "" &&
+    studentData.age != "" &&
+    studentData.country != "" &&
+    studentData.city != "" &&
+    studentData.school != "" &&
+    studentData.studentAgreement != "" &&
+    studentData.howYouHear != "";
   return result;
 };
 
@@ -198,21 +206,21 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     />
 
     <Typography.Header2 color="white" fontSize="24px">
-      Have you taken courses with us before?
+      Have you taken courses with us before? *
     </Typography.Header2>
     {PAST_COURSES_OPTIONS.map((value) => (
       renderMultiOption({key: "pastCourses", option: value, studentData, setStudentData})
     ))}
 
     <Typography.Header2 color="white" fontSize="24px">
-      Let me know when registrations for future waves begin! / Notifícame de cursos nuevos!
+      Let me know when registrations for future waves begin! / Notifícame de cursos nuevos! *
     </Typography.Header2>
     {YES_NO.map((value) => (
       renderSingleOption({key: "futureWaves", option: value, studentData, setStudentData})
     ))}
 
     <Typography.Header2 color="white" fontSize="24px">
-      Age / Edad
+      Age / Edad *
     </Typography.Header2>
     <Form.Dropdown
       onChange={inputChanged("age", setStudentData)}
@@ -239,7 +247,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     />
 
     <Typography.Header2 color="white" fontSize="24px">
-      Country / País
+      Country / País *
     </Typography.Header2>
     <Form.Dropdown
       onChange={inputChanged("country", setStudentData)}
@@ -250,7 +258,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     </Form.Dropdown>
 
     <Typography.Header2 color="white" fontSize="24px">
-      City
+      City *
     </Typography.Header2>
     <Form.Input
       value={studentData.city}
@@ -259,7 +267,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
 
     {studentData.country === UNITED_STATES && <>
         <Typography.Header2 color="white" fontSize="24px">
-          State
+          State *
         </Typography.Header2>
         <Form.Dropdown
           onChange={inputChanged("state", setStudentData)}
@@ -272,7 +280,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     }
 
     <Typography.Header2 color="white" fontSize="24px">
-      School / Escuela
+      School / Escuela *
     </Typography.Header2>
     <Form.Input
       value={studentData.school}
@@ -396,6 +404,13 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     </Form.Dropdown>
 
     <Typography.Header2 color="white" fontSize="24px">
+      I have read and agree to the <a href="https://docs.google.com/document/d/1iGT0BOQhjxD4ANatAltk3sBW4wU1UtJ6_xhLwuguVsU/edit?usp=sharing">Student Agreement</a> / He leído y acepto el Acuerdo del estudiante
+    </Typography.Header2>
+    {YES.map((value) => (
+      renderSingleOption({key: "studentAgreement", option: value, studentData, setStudentData})
+    ))}
+
+    <Typography.Header2 color="white" fontSize="24px">
       I have read and agree to the <a href="/terms-conditions">Terms and Conditions</a>&nbsp;
        and <a href="/privacy-policy">Privacy Policy</a>. / He leído y acepto los <a href="/terms-conditions">Términos y Condiciones</a> y la <a href="/privacy-policy">Política de Privacidad</a>. *
     </Typography.Header2>
@@ -411,7 +426,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     ))}
 
     <Typography.Header2 color="white" fontSize="24px">
-      How did you hear about us? / ¿Cómo discubrió usted de nosotros?
+      How did you hear about us? / ¿Cómo discubrió usted de nosotros? *
     </Typography.Header2>
     {WAYS_TO_HEAR.map((value) => (
       renderMultiOption({key: "howYouHear", option: value, studentData, setStudentData})
