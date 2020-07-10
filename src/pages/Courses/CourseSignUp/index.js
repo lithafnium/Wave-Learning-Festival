@@ -112,7 +112,9 @@ var fitsRequirements = function(studentData) {
     studentData.parentName != "" &&
     studentData.parentEmail != "" &&
     studentData.numCourses != "" &&
-    studentData.firstCourse != "";
+    studentData.firstCourse != "" &&
+    studentData.termsConditions != "" &&
+    studentData.notInterested != "";
   return result;
 };
 
@@ -395,14 +397,14 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
 
     <Typography.Header2 color="white" fontSize="24px">
       I have read and agree to the <a href="/terms-conditions">Terms and Conditions</a>&nbsp;
-       and <a href="/privacy-policy">Privacy Policy</a>. / He leído y acepto los <a href="/terms-conditions">Términos y Condiciones</a> y la <a href="/privacy-policy">Política de Privacidad</a>.
+       and <a href="/privacy-policy">Privacy Policy</a>. / He leído y acepto los <a href="/terms-conditions">Términos y Condiciones</a> y la <a href="/privacy-policy">Política de Privacidad</a>. *
     </Typography.Header2>
     {YES.map((value) => (
       renderSingleOption({key: "termsConditions", option: value, studentData, setStudentData})
     ))}
 
     <Typography.Header2 color="white" fontSize="24px">
-      If I am placed in a class and decide I am no longer interested or able to take it, I will let Wave (wavelf.logistics@gmail.com) know at least 24 hours before the class start date. / Si yo recibe un lugar en una clase y decido a no tomarla, voy a notificar a WLF por lo menos 24 horas antes que el día de empezar.
+      If I am placed in a class and decide I am no longer interested or able to take it, I will let Wave (wavelf.logistics@gmail.com) know at least 24 hours before the class start date. / Si yo recibe un lugar en una clase y decido a no tomarla, voy a notificar a WLF por lo menos 24 horas antes que el día de empezar. *
     </Typography.Header2>
     {YES.map((value) => (
       renderSingleOption({key: "notInterested", option: value, studentData, setStudentData})
