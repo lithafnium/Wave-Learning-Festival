@@ -93,3 +93,12 @@ export const SearchIcon = styled.div`
   
 
 `
+
+export const CheckboxContainer = styled.div`
+  display: flex; 
+  flex-wrap: wrap; 
+`
+
+export const CheckboxColumn = styled.div`
+  margin-right: 1.5em; 
+`

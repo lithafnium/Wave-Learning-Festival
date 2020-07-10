@@ -8,7 +8,7 @@ export const Header = styled.div`
     padding: 0px 25px 0px 25px; 
 `
 export const Title = styled.div`
-    flex-grow: 3; 
+    flex-grow: 4; 
     flex-basis: 0;
     flex-wrap: wrap; 
 `

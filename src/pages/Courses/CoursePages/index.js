@@ -193,7 +193,7 @@ const CoursePage = ({ match }) => {
 
                 <TeachersComponent teachersObj={teachersObj}/>
 
-                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe8hslWrvKqf8FAA7-dljXimDtmS4kXAGetyZUybkIQHmCQLQ/viewform" className="sign-up-link">
+                <a target="_blank" href="/course-sign-up" className="sign-up-link">
                   <Button>
                     <p>Register Now!</p>
                   </Button>
