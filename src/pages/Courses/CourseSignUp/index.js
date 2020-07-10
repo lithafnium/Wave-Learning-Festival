@@ -136,6 +136,7 @@ var submit = function(db, studentData, setErrorMessage, setPage) {
       setErrorMessage(error.message);
       setPage("error");
     });
+    db.collection("StudentRegistrations").doc(ref.id).update({id: ref.id});
   });
 };
 
