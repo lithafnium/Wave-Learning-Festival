@@ -405,15 +405,15 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     </Form.Dropdown>
 
     <Typography.Header2 color="white" fontSize="24px">
-      I have read and agree to the <a href="https://docs.google.com/document/d/1iGT0BOQhjxD4ANatAltk3sBW4wU1UtJ6_xhLwuguVsU/edit?usp=sharing">Student Agreement</a> / He leído y acepto el Acuerdo del estudiante
+      I have read and agree to the <a href="/student-agreement" target="_blank">Student Agreement</a> / He leído y acepto el Acuerdo del estudiante
     </Typography.Header2>
     {YES.map((value) => (
       renderSingleOption({key: "studentAgreement", option: value, studentData, setStudentData})
     ))}
 
     <Typography.Header2 color="white" fontSize="24px">
-      I have read and agree to the <a href="/terms-conditions">Terms and Conditions</a>&nbsp;
-       and <a href="/privacy-policy">Privacy Policy</a>. / He leído y acepto los <a href="/terms-conditions">Términos y Condiciones</a> y la <a href="/privacy-policy">Política de Privacidad</a>. *
+      I have read and agree to the <a href="/terms-conditions" target="_blank">Terms and Conditions</a>&nbsp;
+       and <a href="/privacy-policy" target="_blank">Privacy Policy</a>. / He leído y acepto los <a href="/terms-conditions" target="_blank">Términos y Condiciones</a> y la <a href="/privacy-policy" target="_blank">Política de Privacidad</a>. *
     </Typography.Header2>
     {YES.map((value) => (
       renderSingleOption({key: "termsConditions", option: value, studentData, setStudentData})

@@ -47,10 +47,8 @@ const CourseCard = ({ title, teachers, category, color, image, description, clas
                         {classDates && <Heading><HeaderP>Class Dates: </HeaderP> <p> {classDates}</p></Heading>}
                         {classDays && <Heading><HeaderP>Class Days: </HeaderP> <p> {classDays}</p></Heading>}
                         {time && <Heading><HeaderP>Class Time: </HeaderP><p> {time}</p></Heading>}
-                        <Button onClick={() => window.location.href = `/${courseId}`} color = {color}>Learn More</Button>
-
+                        <Button onClick={() => window.open(`/${courseId}`, "_blank")} color = {color}>Learn More</Button>
                     </CourseInfo>
-                    
                 </CardExpanded>
             </AnimateHeight>
 
