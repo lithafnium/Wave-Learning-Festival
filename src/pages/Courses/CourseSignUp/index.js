@@ -169,6 +169,7 @@ var AGE_OPTIONS = [
 
 var WAYS_TO_HEAR = [
   "From a school/principal/superintendent",
+  "From a news outlet",
   "From a family friend",
   "From a Facebook group",
   "From another social media (Facebook page/Twitter/LinkedIn/etc.)",
