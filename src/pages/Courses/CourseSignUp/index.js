@@ -106,6 +106,33 @@ const renderOption = ({option}) => (
   <option value={option}>{option}</option>
 )
 
+var fitsRequirements = function(studentData) {
+  var result = studentData.name != "" &&
+    studentData.email != "" &&
+    studentData.parentName != "" &&
+    studentData.parentEmail != "" &&
+    studentData.numCourses != "" &&
+    studentData.firstCourse != "";
+  if (!result) {
+    console.log("nope");
+  }
+  return result;
+};
+
+var submit = function(db, studentData, setErrorMessage, setPage) {
+  var submission = {...studentData};
+  db.collection("StudentRegistrations").add(submission).then(function(ref) {
+    firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
+      console.log("password: " + ref.id);
+      setPage("complete")
+    }).catch(function(error) {
+      db.collection("StudentRegistrations").doc(ref.id).delete();
+      setErrorMessage(error.message);
+      setPage("error");
+    });
+  });
+};
+
 var PAST_COURSES_OPTIONS = [
   "Yes, in Wave 1!",
   "Yes, in Wave 2!",
@@ -119,6 +146,7 @@ var YES_NO = [
 ];
 
 var AGE_OPTIONS = [
+  "",
   "Under 10",
   "10",
   "11",
@@ -144,11 +172,11 @@ var WAYS_TO_HEAR = [
   "Other"
 ]
 
-var NUM_COURSES = ["1", "2", "3"];
+var NUM_COURSES = ["", "1", "2", "3"];
 
 var YES = ["Yes"];
 
-const Home = (setPage, studentData, setStudentData) => {
+const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWrongSubmission, setErrorMessage) => {
   return (
     <>
     <Typography.Header color={Colors.WLF_YELLOW}>
@@ -156,7 +184,7 @@ const Home = (setPage, studentData, setStudentData) => {
     </Typography.Header>
 
     <Typography.Header2 color="white" fontSize="24px">
-      Student Name (Full) / Nombre y Apellido
+      Student Name (Full) / Nombre y Apellido *
     </Typography.Header2>
     <Form.Input
       value={studentData.name}
@@ -164,7 +192,7 @@ const Home = (setPage, studentData, setStudentData) => {
     />
 
     <Typography.Header2 color="white" fontSize="24px">
-      Student Email / Correo electrónico
+      Student Email / Correo electrónico *
     </Typography.Header2>
     <Form.Input
       value={studentData.email}
@@ -197,7 +225,7 @@ const Home = (setPage, studentData, setStudentData) => {
     </Form.Dropdown>
 
     <Typography.Header2 color="white" fontSize="24px">
-      Parent/Guardian Name (Full) / Nombre de padre o madre
+      Parent/Guardian Name (Full) / Nombre de padre o madre *
     </Typography.Header2>
     <Form.Input
       value={studentData.parentName}
@@ -205,7 +233,7 @@ const Home = (setPage, studentData, setStudentData) => {
     />
 
     <Typography.Header2 color="white" fontSize="24px">
-      Parent/Guardian Email / Correo electrónico de padre o madre
+      Parent/Guardian Email / Correo electrónico de padre o madre *
     </Typography.Header2>
     <Form.Input
       value={studentData.parentEmail}
@@ -271,7 +299,7 @@ const Home = (setPage, studentData, setStudentData) => {
     </Typography.BodyText>
 
     <Typography.Header2 color="white" fontSize="24px">
-      How many courses would you like to be enrolled in?
+      How many courses would you like to be enrolled in? *
     </Typography.Header2>
     <Form.Dropdown
       onChange={inputChanged("numCourses", setStudentData)}
@@ -282,7 +310,7 @@ const Home = (setPage, studentData, setStudentData) => {
     </Form.Dropdown>
 
     <Typography.Header2 color="white" fontSize="24px">
-      What is your first choice course? / ¿Cual es tu primer curso de elección?
+      What is your first choice course? / ¿Cual es tu primer curso de elección? *
     </Typography.Header2>
     <Form.Dropdown
       onChange={inputChanged("firstCourse", setStudentData)}
@@ -370,8 +398,8 @@ const Home = (setPage, studentData, setStudentData) => {
     </Form.Dropdown>
 
     <Typography.Header2 color="white" fontSize="24px">
-      I have read and agree to the <a href="/terms-conditions">Terms and Conditions</a>  
-      and <a href="/privacy-policy">Privacy Policy</a>. / He leído y acepto los Términos y Condiciones y la Política de Privacidad.
+      I have read and agree to the <a href="/terms-conditions">Terms and Conditions</a>&nbsp;
+       and <a href="/privacy-policy">Privacy Policy</a>. / He leído y acepto los <a href="/terms-conditions">Términos y Condiciones</a> y la <a href="/privacy-policy">Política de Privacidad</a>.
     </Typography.Header2>
     {YES.map((value) => (
       renderSingleOption({key: "termsConditions", option: value, studentData, setStudentData})
@@ -399,10 +427,17 @@ const Home = (setPage, studentData, setStudentData) => {
       onChange={inputChanged("questions", setStudentData)}
     />
 
+    <Typography.BodyText color="white">
+      * Required field
+    </Typography.BodyText>
+
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
       <Form.Button onClick={() => {
-        // submit();
-        // setPage("thanks");
+        if (fitsRequirements(studentData)) {
+          submit(db, studentData, setErrorMessage, setPage);
+        } else {
+          setWrongSubmission(true)
+        }
       }}>
         <Typography.Header color="white" fontSize="24px">
           Submit
@@ -410,14 +445,18 @@ const Home = (setPage, studentData, setStudentData) => {
       </Form.Button>
     </div>
 
+    {wrongSubmission &&
+    <Typography.BodyText color="white">
+      Please fill out the required fields.
+    </Typography.BodyText>}
+
     </>
   );
 }
 
 const Complete = () => {
   return (
-    <div>
-    </div>
+    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up! Click <a href="/">here</a> to go back to the homepage.</Typography.Header>
   );
 }
 
@@ -427,15 +466,17 @@ const Loading = () => {
   );
 }
 
-const Error = () => {
+const Error = (errorMessage) => {
   return (
-    <Typography.Header color={Colors.WLF_YELLOW}>Error!</Typography.Header>
+    <Typography.Header color={Colors.WLF_YELLOW}>Error! {errorMessage}</Typography.Header>
   )
 }
 
 const CourseSignUp = () => {
   const [page, setPage] = useState("loading");
   const [calledOnce, setCalledOnce] = useState(false);
+  const [wrongSubmission, setWrongSubmission] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [studentData, setStudentData] = useState({
     name: "",
     email: "",
@@ -448,6 +489,7 @@ const CourseSignUp = () => {
     city: "",
     state: "",
     school: "",
+    numCourses: "",
     firstCourse: "",
     secondCourse: "",
     thirdCourse: "",
@@ -476,10 +518,10 @@ const CourseSignUp = () => {
       <Navbar />
       <Styles.SignupBackground>
         <div style={{maxWidth: 800}}>
-          {page === "home" && Home(setPage, studentData, setStudentData)}
+          {page === "home" && Home(db, setPage, studentData, setStudentData, wrongSubmission, setWrongSubmission, setErrorMessage)}
           {page === "complete" && Complete()}
           {page === "loading" && Loading()}
-          {page === "error" && Error()}
+          {page === "error" && Error(errorMessage)}
         </div>
       </Styles.SignupBackground>
       <Styles.LogoBackground src={Logo} alt="logo" style={{
