@@ -7,8 +7,9 @@ import Team from './pages/Team'
 import FAQStudents from './pages/FAQ/Students'
 import FAQParents from './pages/FAQ/Parents'
 import FAQTeachers from './pages/FAQ/Teachers'
-import Courses from './pages/Courses_W2'
-import CoursesArchive from './pages/Courses_W1'
+import Courses from './pages/Courses'
+import CoursesInProgress from './pages/Courses/CoursesInProgress'
+import CoursesArchive from './pages/Courses/CoursesArchive'
 
 // wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
@@ -56,14 +57,15 @@ import CoursePublicSpeaking from './pages/Courses_W2/CoursePages/PublicSpeaking'
 import TermsAndConditions from './pages/Terms/TermsConditions'
 import PrivacyPolicy from './pages/Terms/PrivacyPolicy'
 import TeacherAgreement from './pages/Terms/TeacherAgreement'
+import StudentAgreement from './pages/Terms/StudentAgreement'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 import Join from './pages/Join'
+import Mission from './pages/Mission'
 import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
 import CourseSignUp from './pages/Courses/CourseSignUp'
-//import CourseTesting from './pages/Courses'
 import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
@@ -91,6 +93,9 @@ function App() {
             </Route>
             <Route path="/courses">
               <Courses />
+            </Route>
+            <Route path="/courses-inprogress">
+              <CoursesInProgress />
             </Route>
             <Route path="/courses-archive">
               <CoursesArchive />
@@ -235,6 +240,9 @@ function App() {
             <Route path="/teacher-agreement">
               <TeacherAgreement />
             </Route>
+            <Route path="/student-agreement">
+              <StudentAgreement />
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
@@ -243,6 +251,9 @@ function App() {
             </Route>
             <Route path="/unsubscribe">
               <Unsubscribe />
+            </Route>
+            <Route path="/mission">
+              <Mission />
             </Route>
             <Route path="/join">
               <Join />
@@ -253,12 +264,6 @@ function App() {
             <Route path="/course-sign-up">
               <CourseSignUp />
             </Route>
-            {/* Routing for each blog post */}
-            {/*<Route path="/:slug" component={BlogPage} />*/}
-            {/*Routing for new course pages*/}
-            {/*<Route path="/courseTesting">
-              <CourseTesting />
-            </Route>*/}
             <Route path="/:slug" component={CoursePage} />
             <Route path="/">
               <About />

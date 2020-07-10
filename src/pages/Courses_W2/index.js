@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from "@/globalStyles";
@@ -36,19 +36,33 @@ import ProgressBar3 from "./wlf_progressbar/wlf_progressbar-03.png";
 import ProgressBar4 from "./wlf_progressbar/wlf_progressbar-04.png";
 import ProgressWithTitle from "./wlf_progressbar/ProgressTitle.png";
 
-
+import Filter from '../../components/Filter'
+import Checkbox from '../../components/Checkbox'
+import Chip from '../../components/Chip'
+import { Colors } from "@/styles";
 
 const Courses = () => {
+  const [filteredItems, updateFiltered] = useState([])
+  
+  const addFilter = (text, color) => {
+    updateFiltered(filteredItems => [...filteredItems, {text, color}])
+
+  }
+
+  const removeFilter = (text, color) => {
+    updateFiltered(filteredItems.filter(item => item.text !== text))
+  }
+
   return (
     <div>
       <Navbar />
       <Container>
         <ContainerInner>
-
+  <div class="progress-container">
 	<div class="progressbar">
-   	 <img src= {ProgressBar3} alt = "centered image" />
 	</div>
-		
+  </div>
+
           <p>
             We are excited to offer 26 courses across a variety of subjects for Wave Two running from June 15th to June 26th. Our
             volunteer educators have worked hard to prepare engaging and
@@ -59,7 +73,11 @@ const Courses = () => {
               wavelf.logistics@gmail.com
             </a><br /><br /><br />
           </p>
-	  
+          
+
+<div class = "row"> 
+  <Filter addFilter={addFilter} removeFilter={removeFilter} filteredItems={filteredItems}/>
+</div>
           <div class="container">
             <div class="row">
               <div class="column">
@@ -83,7 +101,7 @@ const Courses = () => {
                       <img src={FinancialLiteracy} />
                     </div>
                     <p class="name">Securing the Bag: Budgeting 101</p>
-                    <p class="teacher">Maria Fernanda Estrada & Onder Kilinc</p>
+                    <p class="teacher">Maria Fernanda Estrada</p>
                     <p class="school">Williams College '23</p>
                   </div>
                 </a>
@@ -419,7 +437,7 @@ const Courses = () => {
                     <p class="teacher">Kevin Xu, Kelly Shen, & David Feng</p>
                     <p class="school">
                       UPenn '22, UPenn '23, UPenn '24
-                      
+
                     </p>
                   </div>
                 </a>

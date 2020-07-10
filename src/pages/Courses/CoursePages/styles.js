@@ -39,37 +39,56 @@ export const Input = styled.input`
     }
 `
 
-export const Subscribe = styled.button`
-    border: none;
-    
-    background-color: #2684ff;
-    color: white; 
-    padding: 12px 30px 12px 30px;
-    border-radius: 50px; 
-    font-size: 1rem; 
-    width: 50%; 
-    text-align: center; 
-    margin-top: 1rem; 
-    margin-bottom: 1rem;
-    transition: 0.15s;  
-
-    &:hover{
-        opacity: 0.8; 
-        cursor: pointer;
-    }
-
-    &:focus{
-        outline: none;
-    }
-
-    &:disabled{
-        cursor: default; 
-        opacity: 0.8; 
-    }
-`
-
 export const Error = styled.p`
     color: #ff5630; 
     font-size: 0.9rem; 
     margin: 0px; 
+`
+
+export const Icon = styled.div`
+  margin-left: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+export const Property = styled.div`
+  display: flex;
+`;
+
+export const PopUp = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,0.2)
+`
+
+export const PopUpInner = styled.div`
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+`
+
+export const Text = styled.div`
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 75%;
+    overflow: auto;
+    padding: 5px;
+`
+
+export const Heading = styled.div`
+    display: flex;
+    margin: 10px;
 `

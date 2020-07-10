@@ -116,8 +116,8 @@ export const Highlight = styled.img`
 export const HighlightStyle1 = styled.img`
   position: absolute;
   z-index: 1;
-  width: 140px;
-  height: 200px;
+  width: 135px;
+  height: 210px;
   @media ${device.mobileS} {
     top: 5px;
     left: 140px;
@@ -169,6 +169,7 @@ export const Button = styled.div`
   color: white;
   padding: 12.5px 25px 12.5px 25px;
   margin-right: 20px;
+  margin-top: 20px; 
   align-items: center;
   width: fit-content;
   border-radius: 10px;
@@ -237,7 +238,7 @@ export const Popup = styled.div`
   & p {
     margin: 0px;
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 `;
 

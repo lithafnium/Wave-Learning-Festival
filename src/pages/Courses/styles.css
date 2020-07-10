@@ -11,7 +11,7 @@ html {
   display: flex;
   justify-content: center;
   z-index: 0;
-  margin-bottom: -3.5em;
+  margin-bottom: 3.5em
 }
 
 *,
@@ -33,8 +33,20 @@ html {
   display: table-row;
 }
 
-.image-container {
-  /* position: relative; */
+.img-left
+{
+  float: left;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;  
+  margin-right:15px;
+  margin-bottom: 20px;
+}
+
+.teacher-container
+{
+  clear: left;
+  text-align: left;
 }
 
 .course img {
@@ -106,3 +118,9 @@ html {
 h1 {
   color: #2684ff;
 }
+
+.progressbar img{
+  width: 100%; 
+  height: auto
+}
+
