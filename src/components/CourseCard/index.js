@@ -17,9 +17,9 @@ const CourseCard = ({ title, teachers, category, color, image, description, clas
 
         {archive && <Teachers show={show}>{teachers.map((teacher, index) => {
           if (index === teachers.length - 1) {
-            return <p>{teacher.name} ({teacher.school})</p>
+            return <p>{teacher.name} {teacher.school && `(${teacher.school})`}</p>
           } else {
-            return <p>{teacher.name} ({teacher.school}), </p>
+            return <p>{teacher.name} {teacher.school && `(${teacher.school})`}, </p>
           }
         })}</Teachers>}
         {classDates && <HeadingCompressed show = {show}><p> {classDates}</p></HeadingCompressed>}
@@ -36,9 +36,9 @@ const CourseCard = ({ title, teachers, category, color, image, description, clas
             <h3>Teachers:</h3>
             <Teachers>{teachers.map((teacher, index) => {
               if (index === teachers.length - 1) {
-                return <p>{teacher.name} ({teacher.school})</p>
+                return <p>{teacher.name} {teacher.school && `(${teacher.school})`}</p>
               } else {
-                return <p>{teacher.name} ({teacher.school}), </p>
+                return <p>{teacher.name} {teacher.school && `(${teacher.school})`}, </p>
               }
             })}
             </Teachers>
