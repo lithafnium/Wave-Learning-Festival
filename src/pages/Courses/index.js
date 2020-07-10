@@ -57,6 +57,7 @@ const Courses = () => {
   /* Set Current Wave */
   const WAVE = '4'
 
+
   useEffect(() => {
     if (db) {
       db.collection('fl_content').get().then(function (querySnapshot) {
