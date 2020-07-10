@@ -201,6 +201,11 @@ const Courses = () => {
               />)
           }
           )}
+        <Typography.Header style={{color: Colors.WLF_PURPLE}}>Course Schedule</Typography.Header>
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=8tk6cntof4tuog58lv572ikcp4%40group.calendar.google.com&ctz=America%2FBoston"
+            style={{'border': '0px', 'width':'100%', 'height':'600px', 'frameborder':'0px', 'scrolling':'no'}}>
+          </iframe>
         </ContainerInner>
       </Container>
       <Footer/>
