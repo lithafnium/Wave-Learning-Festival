@@ -127,7 +127,7 @@ const Courses = () => {
   }, [filteredItems])
 
   useEffect(() => {
-    if (courses.length >= 100) {
+    if (courses.length >= 25) {
       setLoading(true)
     }
   }, [courses])
