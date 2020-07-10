@@ -10,7 +10,7 @@ const FAQStudents = () => {
             <Navbar/>
             <Container>
                 <ContainerInner>
-                <Typography.Header style={{color: Colors.WLF_PURPLE}}>FAQ - Parents</Typography.Header>
+                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>FAQ - Parents</Typography.Header>
                     <br/>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK, fontSize: 20}}>How can I ensure the material is appropriate for my child?</Typography.Header2>
                     <Typography.BodyText>Each course’s description outlines the content that will be covered, as well as the suggested audience.</Typography.BodyText>
@@ -26,7 +26,7 @@ const FAQStudents = () => {
                     <br/>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK, fontSize: 20}}>I have more questions.</Typography.Header2>
                     <Typography.BodyText>Please direct all inquiries to <a href="mailto: wavelearningfestival@gmail.com">wavelearningfestival@gmail.com</a>, and we will get back to you as soon as possible!</Typography.BodyText>
-                    <p></p>
+                    <Typography.BodyText><br/>You may also sign up for our <a href="/#updates">Newsletter</a> with imporant updates about our progress!</Typography.BodyText>
                 </ContainerInner>
             </Container>
 

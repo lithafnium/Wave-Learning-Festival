@@ -120,6 +120,7 @@ const FAQStudents = () => {
             </a>
             .
           </Typography.BodyText>
+          <Typography.BodyText><br/>You may also sign up for our <a href="/#updates">Newsletter</a> with imporant updates about our progress!</Typography.BodyText>
         </ContainerInner>
       </Container>
 

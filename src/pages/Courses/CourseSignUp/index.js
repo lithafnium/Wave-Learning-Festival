@@ -292,7 +292,6 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     <Typography.Header2 color="white" fontSize="24px">
       REGISTER FOR COURSES
     </Typography.Header2>
-
     <Typography.BodyText color="white">
     PLEASE READ BEFORE CONTINUING:
     </Typography.BodyText>
@@ -305,6 +304,9 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     <Typography.BodyText color="white">
     Please keep in mind the target age range, course meeting times, frequency, class sizes, and duration.
     </Typography.BodyText>
+    <Typography.Header2 color="white" fontSize="20px">
+      Check out our <a href="/courses/">Course List</a>!
+    </Typography.Header2>
 
     <Typography.Header2 color="white" fontSize="24px">
       How many courses would you like to be enrolled in? *

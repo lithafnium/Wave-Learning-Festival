@@ -21,19 +21,6 @@ const Courses = () => {
   const [filteredItems, updateFiltered] = useState([])
   const colors = [Colors.WLF_ORANGE, Colors.WLF_PURPLE, Colors.WLF_TURQOUISE, Colors.WLF_YELLOW]
 
-  const addFilter = (text, color) => {
-    updateFiltered(filteredItems => [...filteredItems, {text, color}])
-  }
-
-  const removeFilter = (text, color) => {
-    updateFiltered(filteredItems.filter(item => item.text !== text))
-  }
-  const categories = {
-    "tech": "Science and Tech", 
-    "aesthetics": "Aesthetics and Culture",
-    "history": "History, Society, and Individuals"
-  }
-
   const onSearch = (e) => {
     if(e.length === 0){
       setFilteredCourses(courses)
@@ -166,14 +153,6 @@ const Courses = () => {
                 <p>Register Now!</p>
               </Button>
             </a>
-            <div class = "row">
-              <Filter 
-                addFilter={addFilter} 
-                removeFilter={removeFilter} 
-                searchItems={onSearch}
-                filteredItems={filteredItems}
-                />
-            </div>
             <Header>
               <Title><p>Course Title</p></Title>
               <Heading><p>Dates</p></Heading>
