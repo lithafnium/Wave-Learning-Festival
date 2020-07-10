@@ -90,7 +90,7 @@ const About = () => {
                   <p>Teachers</p>
                 </Button>
               </a>
-              <a href="#updates" className="sign-up-link">
+              <a href="/course-sign-up" className="sign-up-link">
                 <Button>
                   <p>Register Now!</p>
                 </Button>

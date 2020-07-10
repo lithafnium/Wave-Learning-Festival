@@ -161,7 +161,7 @@ const Courses = () => {
               wavelf.logistics@gmail.com
             </a><p></p>Click each course for more info –– note the target audience range, course times, and class maxes.<br /><br /><br />
             </Typography.BodyText>
-            <a href="#coursereg" class="sign-up-link">
+            <a href="/course-sign-up" class="sign-up-link">
               <Button>
                 <p>Register Now!</p>
               </Button>
