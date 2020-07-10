@@ -93,7 +93,7 @@ const Navbar = () => {
                     >
                       <div><FaChalkboardTeacher /></div>
                     </IconContext.Provider>
-                    Current
+                    New
                   </DropdownItem>
                 </Link>
                 <Link to="/courses-inprogress">
