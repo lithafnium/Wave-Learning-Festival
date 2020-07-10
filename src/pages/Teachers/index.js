@@ -198,7 +198,7 @@ const TeacherDataInput = ({ setPage, teacherData, setTeacherData }) => {
         <Typography.Header color="white" fontSize="24px">
           Next
         </Typography.Header>
-      </Form.Button>
+      </Styles.Button>
     </div>
   </div>)
 }
@@ -299,7 +299,7 @@ const CoDataInput = ({ setPage, coData, setCoData }) => {
         <Typography.Header color="white" fontSize="24px">
           Next
         </Typography.Header>
-      </Form.Button>
+      </Styles.Button>
     </div>
   </div>)
 }
@@ -440,7 +440,7 @@ const ClassDataInput = ({ setPage, classData, setClassData }) => {
         <Typography.Header color="white" fontSize="24px">
           Next
         </Typography.Header>
-      </Form.Button>
+      </Styles.Button>
     </div>
   </div>)
 }
@@ -511,7 +511,7 @@ const FinalInput = ({ setPage, teacherData, setTeacherData, submit }) => {
         <Typography.Header color="white" fontSize="24px">
           Submit
         </Typography.Header>
-      </Form.Button>
+      </Styles.Button>
     </div>
   </div>)
 }
@@ -525,7 +525,7 @@ const Thanks = ({ setPage }) => (
         <Typography.Header color="white" fontSize="24px">
           Back to Teacher Page
         </Typography.Header>
-      </Form.Button>
+      </Styles.Button>
     </div>
   </>
 )
