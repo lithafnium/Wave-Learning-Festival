@@ -47,9 +47,20 @@ const Courses = () => {
         }
         return false
       }))
+    } else if (filteredItems.length === 0) {
+      setFilteredCourses(courses.filter(course => {
+        return course.title.toLowerCase().includes(e.toLowerCase())
+      }))
     } else {
-      setFilteredCourses(filteredCourses.filter(course => {
-        return !!course.title.toLowerCase().includes(e.toLowerCase())
+      setFilteredCourses(courses.filter(course => {
+        for (let i = 0; i < filteredItems.length; i++) {
+          if (course.category.includes(filteredItems[i].text)) {
+            if (course.title.toLowerCase().includes(e.toLowerCase())) {
+              return true
+            }
+          }
+        }
+        return false
       }))
     }
   }
