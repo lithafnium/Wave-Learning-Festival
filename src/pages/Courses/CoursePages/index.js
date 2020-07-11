@@ -10,6 +10,7 @@ import 'firebase/firestore'
 import { Icon, Property } from "./styles";
 import { FaBookOpen } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import { getTimeDisplay, getTimezoneCode } from "@/components/CourseCard";
 
 import TeachersComponent from './teachers-component.js'
 
@@ -87,23 +88,7 @@ const CoursePage = ({ match }) => {
             setClassDays(data.classDays);
           }
           if (!classTime) {
-            console.log("Class time in EDT:", data.classTime)
-            const [startTimeString, hyphen, endTimeString] = data.classTime.split(' ');
-
-            const startTime = convertHoursToLocalTime(startTimeString);
-            const endTime = convertHoursToLocalTime(endTimeString);
-            //console.log("start time:", startTime.toLocaleTimeString('en-US'));
-            //console.log("end time:", endTime.toLocaleTimeString('en-US'));
-            
-            if (!startTime.toLocaleTimeString('en-US').includes('Invalid Date') || !endTime.toLocaleTimeString('en-US').includes('Invalid Date') ){
-              var startTimeNoSec = noSeconds(startTime);
-              var endTimeNoSec = noSeconds(endTime);
-
-              setClassTime(`${startTimeNoSec} - ${endTimeNoSec}`);
-            }
-            else {
-              setClassTime(data.classTime + " (Times are in EDT)");
-            }
+            setClassTime(getTimeDisplay(data.classTime));
           }
           if (!teachersObj) {
             setTeachersObj(data.teachers);
@@ -123,37 +108,7 @@ const CoursePage = ({ match }) => {
       setShowSyllabus(!showSyllabus)
     }
 
-    const noSeconds = (time) => {
-      var timeSplit = time.toLocaleTimeString('en-US').split(":");
-      return timeSplit[0] + ":" + timeSplit[1] + timeSplit[2].substr(2);
-    };
-
-    const convertHoursToLocalTime = (timeString) => {
-      //calculate offset between local time and EDT
-      const date = new Date();
-      const invdate = new Date(date.toLocaleString('en-US', {
-        timeZone: "America/New_York" // test with Pacific/Honolulu
-      }));
-      const timezoneOffset = date.getTime() - invdate.getTime();
-
-      //use timezone offset to calculate hour change
-      const [hourString, remaining] = timeString.split(":");
-      const minutes = parseInt(remaining.substr(0, 2));
-
-      let dateTimeInLocal = new Date();
-      dateTimeInLocal.setHours(0, 0, 0, 0);
-
-      let hours = parseInt(hourString);
-      if (remaining.includes("pm")) {
-        hours %= 12;
-        hours += 12;
-      }
-      const totalMillis = ((hours * 60) + minutes) * 60 * 1000;
-
-      return new Date(dateTimeInLocal.getTime() + totalMillis + timezoneOffset);
-    }
-
-    const timezoneCode = new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
+    const timezoneCode = getTimezoneCode();
 
     return (
       <div>
