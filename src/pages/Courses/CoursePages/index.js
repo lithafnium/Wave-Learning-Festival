@@ -10,7 +10,7 @@ import 'firebase/firestore'
 import { Icon, Property } from "./styles";
 import { FaBookOpen } from "react-icons/fa";
 import { IconContext } from "react-icons";
-import { getTimeDisplay, getTimezoneCode } from "@/components/CourseCard";
+import { getTimeDisplay, getTimezoneCode, shiftDay, shiftDayOfWeek } from "@/components/CourseCard";
 
 import TeachersComponent from './teachers-component.js'
 
@@ -56,6 +56,7 @@ const CoursePage = ({ match }) => {
 
     if(db && loading){
       const courses = db.collection('fl_content').doc(slug);
+      var offset = 0;
       courses.get()
       .then(function(doc) {
         if (doc.exists) {
@@ -88,7 +89,9 @@ const CoursePage = ({ match }) => {
             setClassDays(data.classDays);
           }
           if (!classTime) {
-            setClassTime(getTimeDisplay(data.classTime));
+            var arr = getTimeDisplay(data.classTime)
+            setClassTime(arr[1]);
+            offset = arr[0];
           }
           if (!teachersObj) {
             setTeachersObj(data.teachers);
@@ -109,6 +112,8 @@ const CoursePage = ({ match }) => {
     }
 
     const timezoneCode = getTimezoneCode();
+    setClassDates(shiftDay(classDates, offset));
+    setClassDays(shiftDayOfWeek(classDays, offset));
 
     return (
       <div>
