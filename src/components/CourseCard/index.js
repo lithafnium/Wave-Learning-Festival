@@ -62,7 +62,11 @@ export const shiftDayOfWeek = (dayString, amount) => {
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
+<<<<<<< HEAD
 const shiftSingleDay = (dayString, amount) => {
+=======
+export const shiftSingleDay = (dayString, amount) => {
+>>>>>>> b34d3fb4226415e3d405a4a18ec94ff4d622fe89
   var newDate = new Date(new Date(dayString) - -amount * 24 * 60 * 60 * 1000);
   return monthNames[newDate.getMonth()] + " " + newDate.getDate();
 }
