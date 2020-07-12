@@ -7,8 +7,6 @@ import { ListContainer, Card, Header, Title, Teachers, Category, CardCompressed,
 import AnimateHeight from 'react-animate-height'
 import WaveLogo from '../../pages/Blog/wave-learning-logo.png'
 
-
-
 const noSeconds = (time) => {
   var timeSplit = time.toLocaleTimeString('en-US').split(":");
   return timeSplit[0] + ":" + timeSplit[1] + timeSplit[2].substr(2);
@@ -45,38 +43,7 @@ const convertHoursToLocalTime = (timeString) => {
     dayOffset = -1;
   }
 
-  return [dayOffset, new Date(dateTimeInLocal.getTime() + totalMillis + timezoneOffset)];
-}
-
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-export const shiftDayOfWeek = (dayString, amount) => {
-  var arr = dayString.split(", ");
-  var resultArr = [];
-  for (var i = 0; i < arr.length; i++) {
-    resultArr.push(days[((days.indexOf(arr[i]) + amount) % days.length + days.length) % days.length]);
-  }
-  return resultArr.join(", ");
-}
-
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
-<<<<<<< HEAD
-const shiftSingleDay = (dayString, amount) => {
-=======
-export const shiftSingleDay = (dayString, amount) => {
->>>>>>> b34d3fb4226415e3d405a4a18ec94ff4d622fe89
-  var newDate = new Date(new Date(dayString) - -amount * 24 * 60 * 60 * 1000);
-  return monthNames[newDate.getMonth()] + " " + newDate.getDate();
-}
-
-export const shiftDay = (dayString, amount) => {
-  var arr = dayString.split(" - ");
-  if (arr.length == 1) {
-    return shiftSingleDay(arr[0], amount);
-  }
-  return shiftSingleDay(arr[0], amount) + " - " + shiftSingleDay(arr[1], amount);
+  return new Date(dateTimeInLocal.getTime() + totalMillis + timezoneOffset);
 }
 
 export const getTimeDisplay = (time) => {
@@ -88,8 +55,8 @@ export const getTimeDisplay = (time) => {
     try {
       const [startTimeString, hyphen, endTimeString] = time.split(' ');
 
-      var [offset, startTime] = convertHoursToLocalTime(startTimeString);
-      endTime = convertHoursToLocalTime(endTimeString)[1];
+      startTime= convertHoursToLocalTime(startTimeString);
+      endTime = convertHoursToLocalTime(endTimeString);
     } catch (TypeError) {
       return time + " (Times are in EDT)";
     }
@@ -100,9 +67,9 @@ export const getTimeDisplay = (time) => {
       var startTimeNoSec = noSeconds(startTime);
       var endTimeNoSec = noSeconds(endTime);
 
-      return [offset, `${startTimeNoSec} - ${endTimeNoSec}`];
+      return `${startTimeNoSec} - ${endTimeNoSec}`;
     }
-    return [offset, time + " (Times are in EDT)"];
+    return time + " (Times are in EDT)";
 }
 
 export const getTimezoneCode = () => {
@@ -113,10 +80,8 @@ const CourseCard = ({ title, teachers, category, color, image, description, clas
   const [show, toggleShow] = useState(false)
   useEffect(() => {
   })
-  var [offset, classTime] = getTimeDisplay(time);
+  var classTime = getTimeDisplay(time);
   var timezoneCode = getTimezoneCode();
-  classDays = shiftDayOfWeek(classDays, offset);
-  classDates = shiftDay(classDates, offset);
   return (
     <Card color = {color} onClick = {() => toggleShow(!show)}>
       <CardCompressed >
