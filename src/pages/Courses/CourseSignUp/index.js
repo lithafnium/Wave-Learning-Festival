@@ -127,7 +127,7 @@ var fitsRequirements = function(studentData) {
     studentData.school != "" &&
     studentData.studentAgreement != "" &&
     studentData.howYouHear != "";
-  return result || true;
+  return result;
 };
 
 var emailValidated = function(email) {
@@ -477,10 +477,11 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     </Typography.BodyText>
 
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Form.Button onClick={() => {
+      <Form.Button onClick={(event) => {
         if (fitsRequirements(studentData)) {
           if (emailValidated(studentData.email) &&
               emailValidated(studentData.parentEmail)) {
+              event.target.parentNode.removeChild(event.target);
               submit(db, studentData, setErrorMessage, setPage);
           } else {
             setWrongSubmission("Please input a valid email address.")
