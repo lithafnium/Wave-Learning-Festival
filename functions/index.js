@@ -290,7 +290,7 @@ Thank you for registering for Wave 4 of Wave Learning Festival--we’re so excit
 To make sure you get all of our updates, please add my email as a contact. In Gmail, you can do this 
 by hovering over my icon in this email and clicking "Add to Contacts". In other email services, you can 
 click on contacts and add my email manually. Please let us know if there are any problems!
-\nRegistration for Wave 4 continues until Monday, 7/20. You may edit your responses anytime until then! You will be notified of your course acceptances and waitlists on Wednesday, 7/22. 
+\nRegistration for Wave 4 continues until Monday, 7/20. You will be notified of your course acceptances and waitlists on Wednesday, 7/22. 
 \nThanks so much! If you have any questions, just reply and let me know! We’re excited to have you on board.
 
 Best,
