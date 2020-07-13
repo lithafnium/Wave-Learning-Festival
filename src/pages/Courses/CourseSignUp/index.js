@@ -18,7 +18,10 @@ var changeKey = function(prevData, key, value) {
 var inputChanged = function(key, setStudentData) {
 
   var result = (event) => {
-    const value = event.target.value;
+    var value = event.target.value;
+    if (key == "name_first" || key == "name_last") {
+      value = value.substring(0, 1).toUpperCase() + value.substring(1);
+    }
     setStudentData(prevData => {
       var result = {...prevData};
       result[key] = value;
@@ -107,7 +110,8 @@ const renderOption = ({option}) => (
 )
 
 var fitsRequirements = function(studentData) {
-  var result = studentData.name != "" &&
+  var result = studentData.name_first != "" &&
+    studentData.name_last != "" &&
     studentData.email != "" &&
     studentData.parentName != "" &&
     studentData.parentEmail != "" &&
@@ -190,11 +194,18 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     </Typography.Header>
 
     <Typography.Header2 color="white" fontSize="24px">
-      Student Name (Full) / Nombre y Apellido *
+      Student First Name / Nombre * 
     </Typography.Header2>
     <Form.Input
-      value={studentData.name}
-      onChange={inputChanged("name", setStudentData)}
+      value={studentData.name_first}
+      onChange={inputChanged("name_first", setStudentData)}
+    />
+    <Typography.Header2 color="white" fontSize="24px">
+      Student Last Name / Apellido *
+    </Typography.Header2>
+    <Form.Input
+      value={studentData.name_last}
+      onChange={inputChanged("name_last", setStudentData)}
     />
 
     <Typography.Header2 color="white" fontSize="24px">
@@ -493,7 +504,8 @@ const CourseSignUp = () => {
   const [wrongSubmission, setWrongSubmission] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [studentData, setStudentData] = useState({
-    name: "",
+    name_first: "",
+    name_last: "",
     email: "",
     pastCourses: [],
     futureWaves: "",
