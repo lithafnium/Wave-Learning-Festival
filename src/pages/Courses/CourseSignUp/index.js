@@ -230,6 +230,11 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     <Typography.Header2 color="white" fontSize="24px">
       Student Email / Correo electrónico *
     </Typography.Header2>
+    <Typography.BodyText color="white">
+      If possible, please use a personal email instead of a school email. <br/>
+      Parents: If you have multiple children signing up for courses, 
+      please make sure you input a different email per child here.
+    </Typography.BodyText>
     <Form.Input
       value={studentData.email}
       onChange={inputChanged("email", setStudentData)}
