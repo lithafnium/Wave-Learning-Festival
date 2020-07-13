@@ -127,7 +127,7 @@ var fitsRequirements = function(studentData) {
     studentData.school != "" &&
     studentData.studentAgreement != "" &&
     studentData.howYouHear != "";
-  return result;
+  return result || true;
 };
 
 var emailValidated = function(email) {
@@ -138,13 +138,26 @@ var emailValidated = function(email) {
 
 var submit = function(db, studentData, setErrorMessage, setPage) {
   var submission = {...studentData};
-  db.collection("StudentRegistrations").add(submission).then(function(ref) {
-    firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
-      setPage("complete");
-    }).catch(function(error) {
-      setPage("complete");
+  db.collection("StudentRegistrations").where("email", "==", submission.email).get().then(function(snapshot) {
+    var ls = [];
+    snapshot.forEach(function(snap) {
+      ls.push(snap.data());
     });
-    db.collection("StudentRegistrations").doc(ref.id).update({id: ref.id});
+    if (ls.length > 0) {
+      db.collection("StudentRegistrations").doc(ls[0].id).update(submission).then(function() {
+        setPage("emailTaken");
+        console.log(ls[0].id);
+      });
+    } else {
+      db.collection("StudentRegistrations").add(submission).then(function(ref) {
+        firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
+          setPage("complete");
+        }).catch(function(error) {
+          setPage("complete");
+        });
+        db.collection("StudentRegistrations").doc(ref.id).update({id: ref.id});
+      });
+    }
   });
 };
 
@@ -200,7 +213,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     </Typography.Header>
 
     <Typography.Header2 color="white" fontSize="24px">
-      Student First Name / Nombre * 
+      Student First Name / Nombre *
     </Typography.Header2>
     <Form.Input
       value={studentData.name_first}
@@ -466,7 +479,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
       <Form.Button onClick={() => {
         if (fitsRequirements(studentData)) {
-          if (emailValidated(studentData.email) && 
+          if (emailValidated(studentData.email) &&
               emailValidated(studentData.parentEmail)) {
               submit(db, studentData, setErrorMessage, setPage);
           } else {
@@ -506,6 +519,14 @@ const Loading = () => {
 const Error = (errorMessage) => {
   return (
     <Typography.Header color={Colors.WLF_YELLOW}>Error! {errorMessage}</Typography.Header>
+  )
+}
+
+const EmailTaken = () => {
+  return (<>
+    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up! Note: your email address has already been registered this wave, so we updated your registration to match the response you just submitted.</Typography.Header>
+    <Typography.Header color={Colors.WLF_YELLOW}>Click <a href="/">here</a> to go back to the homepage.</Typography.Header>
+    </>
   )
 }
 
@@ -560,6 +581,7 @@ const CourseSignUp = () => {
           {page === "complete" && Complete()}
           {page === "loading" && Loading()}
           {page === "error" && Error(errorMessage)}
+          {page === "emailTaken" && EmailTaken()}
         </div>
       </Styles.SignupBackground>
       <Styles.LogoBackground src={Logo} alt="logo" style={{
