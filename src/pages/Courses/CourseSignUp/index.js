@@ -130,6 +130,12 @@ var fitsRequirements = function(studentData) {
   return result;
 };
 
+var emailValidated = function(email) {
+  //Based on thouroughly tested regex
+  const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regexEmail.test(String(email));
+}
+
 var submit = function(db, studentData, setErrorMessage, setPage) {
   var submission = {...studentData};
   db.collection("StudentRegistrations").add(submission).then(function(ref) {
@@ -460,11 +466,16 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
       <Form.Button onClick={() => {
         if (fitsRequirements(studentData)) {
-          submit(db, studentData, setErrorMessage, setPage);
+          if (emailValidated(studentData.email) && 
+              emailValidated(studentData.parentEmail)) {
+              submit(db, studentData, setErrorMessage, setPage);
+          } else {
+            setWrongSubmission("Please input a valid email address.")
+          }
         } else {
-          setWrongSubmission(true)
+          setWrongSubmission("Please fill out the required fields.")
         }
-      }}>
+      }} enabled={fitsRequirements(studentData)}>
         <Typography.Header color="white" fontSize="24px">
           Submit
         </Typography.Header>
@@ -473,7 +484,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
 
     {wrongSubmission &&
     <Typography.BodyText color="white">
-      Please fill out the required fields.
+      {wrongSubmission}
     </Typography.BodyText>}
 
     </>
@@ -501,7 +512,7 @@ const Error = (errorMessage) => {
 const CourseSignUp = () => {
   const [page, setPage] = useState("loading");
   const [calledOnce, setCalledOnce] = useState(false);
-  const [wrongSubmission, setWrongSubmission] = useState(false);
+  const [wrongSubmission, setWrongSubmission] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [studentData, setStudentData] = useState({
     name_first: "",
