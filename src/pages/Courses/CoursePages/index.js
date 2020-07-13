@@ -156,7 +156,7 @@ const CoursePage = ({ match }) => {
     return new Date(dateTimeInLocal.getTime() + totalMillis + timezoneOffset)
   }
 
-  const timezoneCode = "EDT"; // new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2]
+  const timezoneCode = "Eastern Time"; // new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2]
 
   return (
     <div>

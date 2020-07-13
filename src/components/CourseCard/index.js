@@ -73,7 +73,7 @@ export const getTimeDisplay = (time) => {
 }
 
 export const getTimezoneCode = () => {
-  return "EDT"; // new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
+  return "Eastern Time"; // new Date().toLocaleTimeString('en-us',{timeZoneName:'short'}).split(' ')[2]
 }
 
 const CourseCard = ({ title, teachers, category, color, image, description, classDates, classDays, time, targetAudience, courseId, archive }) => {
