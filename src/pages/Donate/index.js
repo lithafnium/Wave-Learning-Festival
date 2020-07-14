@@ -23,6 +23,7 @@ const Donate = () => {
           As we are a fully volunteer run organization, offering free, accissible learning to all, 
           we appreciate any of the help we can get! If you have the means, please donate below. 
           Anything is highly appreciated! <br/>
+          <b>For now, we are taking donations from residents of California, New York, New Jersey, or Massachusetts.</b><br/>
         </Typography.BodyText>
         <Options>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
