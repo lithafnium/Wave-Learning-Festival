@@ -16,7 +16,9 @@ import {
   Input,
   NewsLetter,
   Error,
-  Popup
+  Popup,
+  FeaturedImage,
+  FeaturedLink
 } from './styles'
 import { Colors, Typography } from '@/styles'
 import './styles.css'
@@ -349,26 +351,50 @@ const About = () => {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'center',
-          backgroundColor: Colors.WLF_ORANGE,
+          flexDirection: 'column',
+          alignItems: 'center',
           width: '100%'
         }}
-        id="updates"
       >
-          <Typography.Header
-            style={{ color: 'white', fontSize: 28, marginBottom: 20, marginTop: 20}}
-          >
+        <Typography.Header
+          style={{ color: Colors.WLF_PURPLE, fontSize: 36, marginTop: 50 }}
+        >
+            As Featured In:
+        </Typography.Header>
+        <MediumContainer>
+          <FeaturedLink href="https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/"><FeaturedImage style={{ width: '60%' }} src={Assets.NBC}/></FeaturedLink>
+          <FeaturedLink href="https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/"><FeaturedImage style={{ width: '40%' }} src={Assets.HarvardCrimson}/></FeaturedLink>
+          <FeaturedLink href="https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz"><FeaturedImage style={{ width: '80%' }} src={Assets.DailyPenn}/></FeaturedLink>
+          <FeaturedLink href="https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Pasdena}/></FeaturedLink>
+          <FeaturedLink href="https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Monrovia}/></FeaturedLink>
+          <FeaturedLink href="https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Arcadia}/></FeaturedLink>
+        </MediumContainer>
+      </div>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: Colors.WLF_ORANGE,
+        width: '100%'
+      }}
+      id="updates"
+      >
+        <Typography.Header
+          style={{ color: 'white', fontSize: 28, marginBottom: 20, marginTop: 20 }}
+        >
             We are accepting Donations!
-          </Typography.Header>
-          <a href="/donate" className="sign-up-link">
-            <Button
-                style={{ marginTop: 40, backgroundColor: Colors.WLF_YELLOW, 
-                  marginTop: "20px",
-                  marginBottom: "20px",
-                  marginLeft: "30px"}}>
-                <p>Donate</p>
-            </Button>
-          </a>
+        </Typography.Header>
+        <a href="/donate" className="sign-up-link">
+          <Button
+            style={{
+              marginTop: 40,
+              backgroundColor: Colors.WLF_YELLOW,
+              marginTop: '20px',
+              marginBottom: '20px',
+              marginLeft: '30px'
+            }}>
+            <p>Donate</p>
+          </Button>
+        </a>
       </div>
       <Footer />
     </MetaContainer>
