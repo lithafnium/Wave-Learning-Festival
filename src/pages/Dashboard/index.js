@@ -164,7 +164,6 @@ const Dashboard = () => {
                 var currentNum = 0;
                 for (var i = 0; i < numCourses; i++) {
                   var current = courseData[i];
-                  console.log(current)
                   var courseId = current.courseID;
                   var isWaitlisted = current.waitlisted;
                   db.collection("fl_content").where("id", "==", courseId).get().then(function(snapshot) {
