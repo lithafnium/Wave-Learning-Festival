@@ -1,53 +1,33 @@
 import styled from 'styled-components'
-import { device } from '../../theme'
 
-export const Container = styled.div`
-    width: 100%; 
-    height: 100%; 
-    min-height: 80vh; 
-    display: flex; 
-    justify-content: center; 
-    @media ${device.mobileS}{
-        margin-top: -150px; 
-    }
-    @media ${device.tablet} {
-        margin-top: 0px; 
-
-    }
+export const Column = styled.div`
+    width: 50%; 
+    height: 100%;  
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
 `
 
-export const ContainerInner = styled.div`
-    margin-bottom: 5vh;
+export const Text = styled.div`
+    width: 100%;
+    margin-left: 20px;  
+`
 
-    @media ${device.mobileS} {
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        width: 80%; 
+export const ProfileItem = styled.div`
+    width: 100%;  
+    display: flex;
+    flex-direction: row;
+`
 
-    }
-
-    @media ${device.tablet} {
-        margin-top: 0; 
-        width: 80%;
-
-    }
-    @media ${device.tabletL} {
-        margin-top: 0; 
-        max-width: 768px;
-        width: 100%;
-
- 
-    }
-
-    @media ${device.laptop} {
-        max-width: 1024px;
-        width: 100%;
-
-    }
-
-    & h1{
-        color: #2684ff;
-    }
-
+export const Label = styled.p`
+    font-weight: bold;
+    color: white;
+`
+export const Data = styled.div`
+    color: white;
+    border-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    height: 50%;
+    width: 150px;
 `
