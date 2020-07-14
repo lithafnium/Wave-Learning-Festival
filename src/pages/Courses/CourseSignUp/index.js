@@ -230,6 +230,11 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     <Typography.Header2 color="white" fontSize="24px">
       Student Email / Correo electrónico *
     </Typography.Header2>
+    <Typography.BodyText color="white">
+      If possible, please use a personal email instead of a school email. <br/>
+      Parents: If you have multiple children signing up for courses, 
+      please make sure you input a different email per child here.
+    </Typography.BodyText>
     <Form.Input
       value={studentData.email}
       onChange={inputChanged("email", setStudentData)}
@@ -507,7 +512,13 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
 
 const Complete = () => {
   return (
-    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up! Click <a href="/">here</a> to go back to the homepage.</Typography.Header>
+    <div>
+    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
+    <Typography.BodyText color="white">
+      You and/or your parent should recieve a confirmation email shortly. <br/>
+      Click <a href="/">here</a> to go back to the homepage.
+    </Typography.BodyText>
+    </div>
   );
 }
 
@@ -525,8 +536,15 @@ const Error = (errorMessage) => {
 
 const EmailTaken = () => {
   return (<>
-    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up! Note: your email address has already been registered this wave, so we updated your registration to match the response you just submitted.</Typography.Header>
-    <Typography.Header color={Colors.WLF_YELLOW}>Click <a href="/">here</a> to go back to the homepage.</Typography.Header>
+    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
+    <Typography.BodyText color="white"> 
+      Note: your email address has already been registered this wave, 
+      so we updated your registration to match the response you just submitted.
+    </Typography.BodyText>
+    <Typography.BodyText color="white">
+      You and/or your parent should recieve a confirmation email shortly. <br/>
+      Click <a href="/">here</a> to go back to the homepage.
+    </Typography.BodyText>
     </>
   )
 }

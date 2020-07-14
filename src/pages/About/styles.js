@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Colors } from "@/styles";
-import { device } from "@/theme";
+import styled from 'styled-components'
+import { Colors } from '@/styles'
+import { device } from '@/theme'
 
 export const MetaContainer = styled.div`
   width: 100%;
@@ -10,7 +10,7 @@ export const MetaContainer = styled.div`
   @media ${device.laptop} {
     min-width: 400px;
   }
-`;
+`
 
 export const AboutDescription = styled.div`
   position: relative;
@@ -38,7 +38,7 @@ export const AboutDescription = styled.div`
   @media ${device.laptop} {
     padding: 60px 20px;
   }
-`;
+`
 
 export const HeaderImage = styled.img`
   width: 90%;
@@ -47,7 +47,7 @@ export const HeaderImage = styled.img`
   align-self: center;
   justify-self: center;
   padding: 20px;
-`;
+`
 
 export const MediumContainer = styled.div`
   max-width: 1024px;
@@ -58,6 +58,7 @@ export const MediumContainer = styled.div`
   justify-content: center;
   align-content: center;
   justify-items: center;
+  align-items: center; 
   @media ${device.mobileS} {
     padding: 80px 20px;
   }
@@ -76,7 +77,7 @@ export const MediumContainer = styled.div`
   @media ${device.laptop} {
     padding: 60px 20px;
   }
-`;
+`
 
 export const MediumImage = styled.img`
   width: 80%;
@@ -84,7 +85,7 @@ export const MediumImage = styled.img`
   align-self: center;
   justify-self: center;
   padding: 20px 0px;
-`;
+`
 
 export const Image = styled.img`
   @media ${device.mobileS} {
@@ -106,12 +107,12 @@ export const Image = styled.img`
   }
 
   height: auto;
-`;
+`
 
 export const Highlight = styled.img`
   position: absolute;
   z-index: 1;
-`;
+`
 
 export const HighlightStyle1 = styled.img`
   position: absolute;
@@ -146,7 +147,7 @@ export const HighlightStyle1 = styled.img`
     top: 5px;
     left: 150px;
   }
-`;
+`
 
 export const DescItem = styled.div`
   flex: 1;
@@ -155,13 +156,13 @@ export const DescItem = styled.div`
   text-align: center;
   margin: 0 40px;
   justify-content: flex-start;
-`;
+`
 
 export const DescImage = styled.img`
   height: 110px;
   width: auto;
   margin-bottom: 10px;
-`;
+`
 
 export const Button = styled.div`
   display: flex;
@@ -184,11 +185,11 @@ export const Button = styled.div`
     cursor: pointer;
     opacity: 0.9; 
   }
-`;
+`
 
 export const SubHeaderContainer = styled.div`
   width: 85%;
-`;
+`
 
 export const NewsLetter = styled.div`
   @media ${device.mobileS} {
@@ -203,7 +204,7 @@ export const NewsLetter = styled.div`
   & h2 {
     color: #2684ff;
   }
-`;
+`
 export const Input = styled.input`
   width: 100%;
   background-color: #fff;
@@ -223,7 +224,7 @@ export const Input = styled.input`
     border-color: rgba(38, 132, 255, 0.7);
     box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.08);
   }
-`;
+`
 
 export const Popup = styled.div`
   /* background-color: #2684ff; */
@@ -233,17 +234,26 @@ export const Popup = styled.div`
   position: relative;
   margin-top: 2rem;
   transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-  opacity: ${(props) => (props.subscribed ? "1" : "0")};
+  opacity: ${(props) => (props.subscribed ? '1' : '0')};
 
   & p {
     margin: 0px;
     color: #fff;
     font-size: 0.95rem;
   }
-`;
+`
 
 export const Error = styled.p`
   color: #ff5630;
   font-size: 0.9rem;
   margin: 0px;
-`;
+`
+
+export const FeaturedImage = styled.img`
+  height: auto; 
+  margin: 30px; 
+`
+export const FeaturedLink = styled.a`
+  display: flex; 
+  justify-content: center; 
+`
