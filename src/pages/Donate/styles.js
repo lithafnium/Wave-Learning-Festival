@@ -5,7 +5,7 @@ export const Options = styled.div`
   display: flex;
   justify-content: space-between;
   margin: auto;
-    
+
   @media ${device.mobileS} {
     flex-direction: column;
     align-items: center;
