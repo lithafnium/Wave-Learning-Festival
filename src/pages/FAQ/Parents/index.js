@@ -16,12 +16,16 @@ const FAQStudents = () => {
                     <Typography.BodyText>Each course’s description outlines the content that will be covered, as well as the suggested audience.</Typography.BodyText>
                     <br/>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK, fontSize: 20}}>How can I support Wave Learning Festival?</Typography.Header2>
-                    <Typography.BodyText>Wave runs on the goodwill of students hoping to look out for other students. Feel free to share this resource with anyone you think could benefit from taking a class or might be interested in teaching a class!</Typography.BodyText>
+                    <Typography.BodyText>
+                        Wave runs on the goodwill of students hoping to look out for other students. 
+                        Feel free to share this resource with anyone you think could benefit from taking a class or might be interested in teaching a class! <br/>
+                        We also accept donations <a href="/donate">here</a>, if you have the means!
+                    </Typography.BodyText>
                     <br/>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK, fontSize: 20}}>How will my student's privacy and safety be protected?</Typography.Header2>
                     <Typography.BodyText>
-                    We will CC parents in all email communications we send to students, and teachers will never meet one-on-one with any student or directly message any student under 18 years old without explicit consent from the parent. We will not distribute student or parent emails to outside parties under any circumstance without explicit consent from the student and parent.
-                    All of our teachers have been vetted.
+                        We will CC parents in all email communications we send to students, and teachers will never meet one-on-one with any student or directly message any student under 18 years old without explicit consent from the parent. We will not distribute student or parent emails to outside parties under any circumstance without explicit consent from the student and parent.
+                        All of our teachers have been vetted.
                     </Typography.BodyText>
                     <br/>
                     <Typography.Header2 style={{color: Colors.WLF_BLACK, fontSize: 20}}>I have more questions.</Typography.Header2>

@@ -346,6 +346,30 @@ const About = () => {
           </NewsLetter>
         </MediumContainer>
       </div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          backgroundColor: Colors.WLF_ORANGE,
+          width: '100%'
+        }}
+        id="updates"
+      >
+          <Typography.Header
+            style={{ color: 'white', fontSize: 28, marginBottom: 20, marginTop: 20}}
+          >
+            We are accepting Donations!
+          </Typography.Header>
+          <a href="/donate" className="sign-up-link">
+            <Button
+                style={{ marginTop: 40, backgroundColor: Colors.WLF_YELLOW, 
+                  marginTop: "20px",
+                  marginBottom: "20px",
+                  marginLeft: "30px"}}>
+                <p>Donate</p>
+            </Button>
+          </a>
+      </div>
       <Footer />
     </MetaContainer>
   )
