@@ -24,7 +24,15 @@ var namify = function(course) { // please change this later lol
   return result;
 };
 
-var calcDisplay = function(courses, wave) {
+var withdraw = function(student, course) {
+  if (confirm("Are you sure you want to drop\"course.courseTitle\"?")) {
+
+  } else {
+    // phew
+  }
+}
+
+var calcDisplay = function(courses, wave, student) {
   // console.log("uh");
   var result = [];
   for (var i = 0; i < courses.length; i++) {
@@ -33,11 +41,12 @@ var calcDisplay = function(courses, wave) {
     if (course.wave.toString() == wave.toString()) {
       result.push(<div class="course-dash">
         <p>
-        <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}</a><br/>
+        <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
         <b>Instructor: </b>{namify(course.teachers)}<br/>
         <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
         <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
         <b><a href={course.zoomLink}>Zoom Link</a></b>
+        <input type="button" onclick={withdraw(student, course)}>Withdraw</input>
         </p>
       </div>);
       // console.log("adding course");
@@ -66,8 +75,7 @@ var generateStudentInfo = function(student) {
     genFrag("Name", student.name),
     genFrag("Email", student.email),
     genFrag("Parent Name", student.parentName),
-    genFrag("Parent Email", student.parentEmail),
-    genFrag("School", student.school)
+    genFrag("Parent Email", student.parentEmail)
   ];
 };
 
@@ -107,7 +115,7 @@ const Dashboard = () => {
           setTheError(error);
           setLoading(false);
       }).then(function(result) {
-        console.log(result.user.uid);
+        // console.log(result.user.uid);
         setUser(result.user);
         if (result.user) {
           db.collection("students2").where("userID", "==", result.user.uid).get().then(function(snapshot) {
@@ -120,27 +128,35 @@ const Dashboard = () => {
               var coursesResult = [];
               setStudent(students[0].data());
               var theStudent = students[0].data();
-              console.log(theStudent.id);
               db.collection("courseAssignments").where("student", "==", theStudent.id).get().then(function(snapshot) {
-                var numCourses = 0;
                 var currentlyCounted = 0;
+                var courseData = [];
                 snapshot.forEach(function(snap) {
-                  // console.log("hello " + snap.data().course);
-                  numCourses++;
-                  var courseId = snap.data().course;
+                  courseData.push(snap.data());
+                });
+                var numCourses = courseData.length;
+                if (numCourses == 0) {
+                  setLoading(false);
+                }
+                // console.log("hello " + snap.data().course);
+                for (var i = 0; i < numCourses; i++) {
+                  var current = courseData[i];
+                  var courseId = current.data().course;
+                  var isWaitlisted = current.data().waitlisted;
                   db.collection("fl_content").where("id", "==", courseId).get().then(function(snapshot) {
-                    currentlyCounted++;
                     var courses = [];
                     snapshot.forEach(function(snap) {
                       courses.push(snap);
                     });
-                    coursesResult.push(courses[0].data());
-                    if (currentlyCounted == numCourses) {
+                    var toPush = courses[0].data();
+                    toPush.waitlisted = isWaitlisted;
+                    coursesResult.push(toPush);
+                    if (numCourses == i - 1) {
                       setCourses(coursesResult);
                       setLoading(false);
                     }
                   });
-                });
+                }
               });
             }
           });
@@ -213,10 +229,11 @@ const Dashboard = () => {
 
       }
 
-      var currentWave = 3;
+      var currentWave = 4;
       if (student) {
-        var toDisplay = calcDisplay(courses, currentWave);
-        var classes = (<select defaultValue="3" name="wave" id="wave">
+        var toDisplay = calcDisplay(courses, currentWave, student);
+        var classes = (<select defaultValue="4" name="wave" id="wave">
+          <option value="4">Wave 4</option>
           <option value="3">Wave 3</option>
           <option value="2">Wave 2</option>
           <option value="1">Wave 1</option>
