@@ -1,9 +1,16 @@
 import React, { useState, useContext } from "react";
 import { Colors, Typography, Form } from "@/styles";
-import { Container, ContainerInner } from '@/globalStyles.js'
+import { Container, ContainerInner } from '@/globalStyles.js';
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Options } from "./styles";
 import { FirebaseContext } from "@/firebaseContext";
+
+import Donate_5 from "./Donate_5.png";
+import Donate_10 from "./Donate_10.png";
+import Donate_20 from "./Donate_20.png";
+import Donate_Custom from "./Donate_Custom.png";
 
 const Donate = () => {
   return (
@@ -17,38 +24,38 @@ const Donate = () => {
           we appreciate any of the help we can get! If you have the means, please donate below. 
           Anything is highly appreciated! <br/>
         </Typography.BodyText>
-        <div style={{width: '50%', display: 'flex', 
-                    flexDirection: 'row', justifyContent: 'space-between', 
-                    margin: 'auto'}}>
-          <Form.Button>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <Options>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="HULXJH7DN8Q9G" />
+            <input type="image" src={Donate_5} name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          </form>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="HULXJH7DN8Q9G" />
+            <input type="image" src={Donate_10} name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          </form>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="HULXJH7DN8Q9G" />
+            <input type="image" src={Donate_20} name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          </form>
+          
+        </Options>
+        <Options>
+          <Typography.BodyText style={{display: "flex"}}>
+            Or input a custom amount 
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
               <input type="hidden" name="cmd" value="_s-xclick" />
               <input type="hidden" name="hosted_button_id" value="HULXJH7DN8Q9G" />
+              <input type="image" src={Donate_Custom} name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" 
+                style={{height: "30px", marginLeft: "10px"}}/>
             </form>
-            <Typography.Header style={{color:"white", fontSize:"24px"}}>$10</Typography.Header>
-          </Form.Button>
-          <Form.Button>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="HULXJH7DN8Q9G" />
-              
-            </form>
-            <Typography.Header style={{color:"white", fontSize:"24px"}}>$20</Typography.Header>
-          </Form.Button>
-          <Form.Button>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="HULXJH7DN8Q9G" />
-            </form>
-            <Typography.Header style={{color:"white", fontSize:"24px"}}>$50</Typography.Header>
-          </Form.Button>
-        </div>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="HULXJH7DN8Q9G" />
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-          <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
+          </Typography.BodyText>
+        </Options>
+        <Typography.Header2 style={{color:Colors.WLF_PURPLE, fontSize: "30px", textAlign: "center"}}>
+          Thank you so much!
+        </Typography.Header2>
         </ContainerInner>
       </Container>
       <Footer />
