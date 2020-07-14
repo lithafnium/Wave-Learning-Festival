@@ -25,10 +25,12 @@ var namify = function(course) { // please change this later lol
 };
 
 var withdraw = function(student, course) {
-  if (confirm("Are you sure you want to drop\"course.courseTitle\"?")) {
-
-  } else {
-    // phew
+  return function() {
+    if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
+      // TODO: drop the course
+    } else {
+      // phew
+    }
   }
 }
 
@@ -45,8 +47,8 @@ var calcDisplay = function(courses, wave, student) {
         <b>Instructor: </b>{namify(course.teachers)}<br/>
         <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
         <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
-        <b><a href={course.zoomLink}>Zoom Link</a></b>
-        <input type="button" onclick={withdraw(student, course)}>Withdraw</input>
+        <b><a href={course.zoomLink}>Zoom Link</a></b> <br/>
+        <input type="button" onclick={withdraw(student, course)} value="Withdraw" />
         </p>
       </div>);
       // console.log("adding course");
@@ -139,11 +141,14 @@ const Dashboard = () => {
                   setLoading(false);
                 }
                 // console.log("hello " + snap.data().course);
+                console.log("num: " + numCourses);
+                var currentNum = 0;
                 for (var i = 0; i < numCourses; i++) {
                   var current = courseData[i];
-                  var courseId = current.data().course;
-                  var isWaitlisted = current.data().waitlisted;
+                  var courseId = current.course;
+                  var isWaitlisted = current.waitlisted;
                   db.collection("fl_content").where("id", "==", courseId).get().then(function(snapshot) {
+                    currentNum++;
                     var courses = [];
                     snapshot.forEach(function(snap) {
                       courses.push(snap);
@@ -151,7 +156,7 @@ const Dashboard = () => {
                     var toPush = courses[0].data();
                     toPush.waitlisted = isWaitlisted;
                     coursesResult.push(toPush);
-                    if (numCourses == i - 1) {
+                    if (numCourses == currentNum) {
                       setCourses(coursesResult);
                       setLoading(false);
                     }
