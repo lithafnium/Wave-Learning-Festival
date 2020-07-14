@@ -28,17 +28,15 @@ var namify = function(course) { // please change this later lol
   return result;
 };
 
-var withdraw = function(student, course) {
-  return function() {
-    if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
-      // TODO: drop the course
-    } else {
-      // phew
-    }
+var withdraw = function(student, course, db) {
+  if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
+    db.collection("fl_content").doc(course.id).delete();
+  } else {
+    // phew
   }
 }
 
-var calcDisplay = function(courses, wave, student) {
+var calcDisplay = function(courses, wave, student, db) {
    console.log(courses);
   var result = [];
   for (var i = 0; i < courses.length; i++) {
@@ -52,7 +50,7 @@ var calcDisplay = function(courses, wave, student) {
         <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
         <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
         <b><a href={course.zoomLink}>Zoom Link</a></b> <br/>
-        <input type="button" onclick={withdraw(student, course)} value="Withdraw" />
+        <input type="button" onClick={() => {withdraw(student, course, db);}} value="Withdraw" />
         </p>
       </div>);
       // console.log("adding course");
@@ -256,7 +254,7 @@ const Dashboard = () => {
 
       var currentWave = 4;
       if (student) {
-        var toDisplay = calcDisplay(courses, currentWave, student);
+        var toDisplay = calcDisplay(courses, currentWave, student, db);
         var classes = (<select defaultValue="4" name="wave" id="wave">
           <option value="4">Wave 4</option>
           <option value="3">Wave 3</option>
