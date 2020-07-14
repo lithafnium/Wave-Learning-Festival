@@ -225,7 +225,7 @@ exports.sendEmailConfirmationStudent =
         
         const newValue = snap.data()
         const email = newValue.email
-        const name = newValue.name
+        const name = newValue.name_first + " " + newValue.name_last
         let lower = email.toLowerCase()
         let account
 
