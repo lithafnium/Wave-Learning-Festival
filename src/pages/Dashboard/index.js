@@ -2,12 +2,16 @@ import React, {useState, useContext} from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
-import {FirebaseContext} from '../../firebaseContext'
+import { Colors, Typography } from "@/styles"
+import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
+import { Column, Text, ProfileItem, Label, Data } from './styles.js';
 import 'firebase/firestore'
 import firebase from 'firebase'
 import $ from 'jquery'
 import ReactDOMServer from 'react-dom/server';
+
+import WavyPurple from '../About/assets/wavy_purple.svg';
 
 var namify = function(course) { // please change this later lol
   var teacher1 = course.teacher1Name;
@@ -25,15 +29,15 @@ var namify = function(course) { // please change this later lol
 };
 
 var withdraw = function(student, course) {
-  if (confirm("Are you sure you want to drop\"course.courseTitle\"?")) {
+  /*if (confirm("Are you sure you want to drop\"course.courseTitle\"?")) {
 
   } else {
     // phew
-  }
+  }*/
 }
 
 var calcDisplay = function(courses, wave, student) {
-  // console.log("uh");
+   console.log(courses);
   var result = [];
   for (var i = 0; i < courses.length; i++) {
     var course = courses[i];
@@ -63,7 +67,18 @@ var genFrag = function(label, data) {
 };
 
 var fragHtml = function(info) {
-    return (<p class="profile-item"><b><span class="label">{info.label}</span>: </b><span class="data">{info.data}</span>{/*&nbsp;&nbsp;<button type="button">Edit</button>*/}</p>);
+    return (
+    <ProfileItem>
+      <Column>
+        <Label>{`${info.label} `}</Label>
+      </Column>
+      <Column>
+        <Data>
+          <p style={{margin: 5}}>{`${info.data} `}</p>
+        </Data>
+      </Column>
+    </ProfileItem>
+    );
 };
 
 var genEdit = function(info) {
@@ -75,7 +90,11 @@ var generateStudentInfo = function(student) {
     genFrag("Name", student.name),
     genFrag("Email", student.email),
     genFrag("Parent Name", student.parentName),
-    genFrag("Parent Email", student.parentEmail)
+    genFrag("Parent Email", student.parentEmail),
+    genFrag("Age", student.age),
+    genFrag("School", student.school),
+    genFrag("Country", student.country),
+    genFrag("City", student.city)
   ];
 };
 
@@ -127,22 +146,23 @@ const Dashboard = () => {
             if (students.length > 0) {
               var coursesResult = [];
               setStudent(students[0].data());
-              var theStudent = students[0].data();
-              db.collection("courseAssignments").where("student", "==", theStudent.id).get().then(function(snapshot) {
+              var theStudent = students[0].data(); 
+              db.collection("courseAssignments").where("studentID", "==", theStudent.id).get().then(function(snapshot) { 
                 var currentlyCounted = 0;
                 var courseData = [];
                 snapshot.forEach(function(snap) {
                   courseData.push(snap.data());
                 });
                 var numCourses = courseData.length;
-                if (numCourses == 0) {
+                if (numCourses >= 0) {
                   setLoading(false);
                 }
                 // console.log("hello " + snap.data().course);
                 for (var i = 0; i < numCourses; i++) {
                   var current = courseData[i];
-                  var courseId = current.data().course;
-                  var isWaitlisted = current.data().waitlisted;
+                  console.log(current)
+                  var courseId = current.courseID;
+                  var isWaitlisted = current.waitlisted;
                   db.collection("fl_content").where("id", "==", courseId).get().then(function(snapshot) {
                     var courses = [];
                     snapshot.forEach(function(snap) {
@@ -157,6 +177,7 @@ const Dashboard = () => {
                     }
                   });
                 }
+                console.log(courses);
               });
             }
           });
@@ -272,28 +293,38 @@ const Dashboard = () => {
         });
 
         return (<>
-            <div>
-                <Navbar/>
-                <Container>
-                <ContainerInner>
+          <div>
+            <Navbar/>
+              <Container>
+              <ContainerInner>
+              <div style={{display: "flex", height: "100%"}}>
+                <Column>
+                  <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
+                  <div style={{backgroundImage: `url(${WavyPurple})`, 
+                              backgroundSize: "cover",
+                              backgroundRepeat: "no-repeat", 
+                              height: "80%"}}>
+                    <Text>
+                      <br/>
+                      <br/>
+                      {studentInfo.map(fragHtml)}
+                    </Text>
+                  </div>
+                </Column>
+                <Column>
+                <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header>
+                  {classes}
 
-                <h1>Profile</h1>
-                {studentInfo.map(fragHtml)}
-
-                <br/><br/>
-                <h1>Classes</h1>
-                {classes}
-
-                <div class="row-dash" id="list-of-courses">
-                  {toDisplay}
-                </div>
-
-                </ContainerInner>
-                </Container>
-
-                <Footer/>
-            </div>
-            </>);
+                  <div class="row-dash" id="list-of-courses">
+                    {toDisplay}
+                  </div>
+                </Column>
+              </div>
+              </ContainerInner>
+              </Container>
+            <Footer/>
+          </div>
+        </>);
         }
 
         return (
