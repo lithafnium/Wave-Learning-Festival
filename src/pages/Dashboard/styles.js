@@ -6,6 +6,8 @@ export const Column = styled.div`
     float: left;
     padding-left: 5px;
     padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 `
 
 export const Text = styled.div`
@@ -30,4 +32,8 @@ export const Data = styled.div`
     border-radius: 5px;
     height: 50%;
     width: 150px;
+`
+
+export const Row = styled.div`
+    width: 100%
 `

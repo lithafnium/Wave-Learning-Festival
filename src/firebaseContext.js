@@ -16,7 +16,7 @@ export const FirebaseProvider = ({ children }) => {
     }
 
     const createStorage = () => {
-        setStorage(firebaseApp.storage())
+        setStorage(firebaseApp.storage().ref())
     }
 
     useEffect(() => {
