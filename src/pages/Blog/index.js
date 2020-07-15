@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from '../../globalStyles'
@@ -15,27 +15,29 @@ const Blog = () => {
   const [loading, setLoading] = useState(true)
   const [blogPosts, setBlogPosts] = useState([])
   const colors = [Colors.WLF_ORANGE, Colors.WLF_PURPLE, Colors.WLF_TURQOUISE, Colors.WLF_YELLOW]
-  if (db && loading && !blogPosts.length) {
-    db.collection('fl_content')
-      .get()
-      .then(function (querySnapshot) {
-        const posts = []
-        querySnapshot.forEach(function (doc) {
-          if (doc.data().schema == 'blogPost') {
-            posts.push(doc)
-          }
+  useEffect(() => {
+    if (db && loading && !blogPosts.length) {
+      db.collection('fl_content')
+        .get()
+        .then(function (querySnapshot) {
+          const posts = []
+          querySnapshot.forEach(function (doc) {
+            if (doc.data().schema === 'blogPost') {
+              posts.push(doc)
+            }
+          })
+          setBlogPosts(posts)
+          setLoading(false)
         })
-        setBlogPosts(posts)
-        setLoading(false)
-      })
-      .catch(function (error) {
-        console.log('Error getting documents: ', error)
-      })
-  }
+        .catch(function (error) {
+          console.log('Error getting documents: ', error)
+        })
+    }
 
-  blogPosts.sort(function (a, b) {
-    return new Date(b.data().date) - new Date(a.data().date)
-  })
+    blogPosts.sort(function (a, b) {
+      return new Date(b.data().date) - new Date(a.data().date)
+    })
+  }, [db, blogPosts])
 
   if (loading) {
     return (
@@ -59,15 +61,13 @@ const Blog = () => {
       <Container>
         <ContainerInner>
           <Typography.Header style={{ color: Colors.WLF_PURPLE }}>Blog</Typography.Header>
-          <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
-              Welcome to Wave Learning Festival's Blog!
-          </Typography.BodyText>
           <BlogContainer>
-            {blogPosts.map((post, index) => (
-              <Column key={index}>
-                <BlogCard color = {colors[index % 4]} doc={post}/>
-              </Column>
-            ))}
+            {blogPosts.map((post, index) => {
+              return (
+                <Column key={index}>
+                  <BlogCard color = {colors[index % 4]} doc={post}/>
+                </Column>)
+            })}
           </BlogContainer>
 
         </ContainerInner>

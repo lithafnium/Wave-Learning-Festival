@@ -9,6 +9,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body h1{
+  font-family: 'Mukta Mahee', sans-serif;
+}
+
+body h2{
+  font-family: 'Mukta Mahee', sans-serif;
+}
+
+body p{
+  font-family: 'Muli', sans-serif;
+}
+
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

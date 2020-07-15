@@ -5,22 +5,26 @@ export const Card = styled.div`
     width: 100%; 
     box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.15);
     background-color: #ffffff;
-    border-radius: 15px; 
+    border-radius: 10px; 
 
     img {
-        
         border-radius: 15px; 
-
     }
 `
 export const BlogImage = styled.img`
     width: 100%; 
     box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.15);
     border-radius: 15px; 
-    height: auto; 
+    max-height: 200px; 
+    object-fit: cover; 
 
     padding: ${props => props.padding ? '15px' : '0px'}; 
     z-index: 5; 
+    transition: 0.2s; 
+    &:hover{
+        box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.4);
+        cursor: pointer; 
+    }
 `
 
 export const Header = styled.div`
@@ -33,9 +37,15 @@ export const Header = styled.div`
     z-index: 10; 
     padding-top: 25px; 
 
-    border-top-right-radius: 15px; 
-    border-bottom-right-radius: 15px; 
-    border-bottom-left-radius: 15px; 
+    border-top-right-radius: 10px; 
+    border-bottom-right-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+    transition: 0.2s; 
+
+    &:hover{
+        box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.4);
+        cursor: pointer; 
+    }
 `
 
 export const Title = styled.h2`

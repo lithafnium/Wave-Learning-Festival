@@ -25,6 +25,7 @@ const BlogCard = ({ doc, color }) => {
                 }).catch(function (error) {
                   console.log('Error in download URL')
                   setImage(WaveLogo)
+                  throw error
                 })
             } else {
               console.log('No such document!')
@@ -40,12 +41,16 @@ const BlogCard = ({ doc, color }) => {
       }
     }
   }, [doc])
+  const redirect = (link) => {
+    window.location.href = `/blog/${link}`
+  }
+
   return (
     <div>
-      <BlogImage src={image} padding={padding}/>
+      <BlogImage onClick={() => redirect(doc.data().id)} src={image} padding={padding}/>
       <Header>
         <Heading left top right color={color} >
-          <Type>Statistics</Type>
+          <Type>{doc.data().category}</Type>
         </Heading>
         <Heading left bottom right>
           <Title color={color}>{doc.data().title}</Title>

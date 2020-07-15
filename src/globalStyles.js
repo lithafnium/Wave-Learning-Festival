@@ -42,8 +42,4 @@ export const ContainerInner = styled.div`
 
     }
 
-    & h1{
-        color: #2684ff;
-    }
-
 `

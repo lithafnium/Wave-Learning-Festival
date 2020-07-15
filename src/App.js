@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import logo from './logo.svg'
+import './App.css'
 import About from './pages/About'
 import Teachers from './pages/Teachers'
 import Team from './pages/Team'
@@ -71,7 +71,7 @@ import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
-function App() {
+function App () {
   return (
     <FirebaseProvider>
       <Router>
@@ -100,9 +100,6 @@ function App() {
             </Route>
             <Route path="/courses-archive">
               <CoursesArchive />
-            </Route>
-            <Route path="/blog">
-              <Blog />
             </Route>
             <Route path="/join">
               <Join />
@@ -262,6 +259,7 @@ function App() {
             <Route path="/join">
               <Join />
             </Route>
+            <Route path="/blog/:blogSlug" component={BlogPage} />
             <Route path="/blog">
               <Blog />
             </Route>
@@ -279,4 +277,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
