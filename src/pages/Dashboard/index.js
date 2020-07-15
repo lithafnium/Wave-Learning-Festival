@@ -30,7 +30,9 @@ var namify = function(course) { // please change this later lol
 
 var withdraw = function(student, course, db) {
   if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
-    db.collection("fl_content").doc(course.id).delete();
+    db.collection("fl_content").doc(course.id).delete().then(function() {
+      window.location.reload();
+    });
   } else {
     // phew
   }
@@ -50,7 +52,10 @@ var calcDisplay = function(courses, wave, student, db) {
         <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
         <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
         <b><a href={course.zoomLink}>Zoom Link</a></b> <br/>
-        <input type="button" onClick={() => {withdraw(student, course, db);}} value="Withdraw" />
+        <input type="button" onClick={(e) => {
+          e.preventDefault();
+          withdraw(student, course, db);
+        }} value="Withdraw" />
         </p>
       </div>);
       // console.log("adding course");
