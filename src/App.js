@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import logo from './logo.svg'
+import './App.css'
 import About from './pages/About'
 import Teachers from './pages/Teachers'
 import Team from './pages/Team'
@@ -61,6 +61,7 @@ import StudentAgreement from './pages/Terms/StudentAgreement'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
+import Donate from './pages/Donate'
 import Join from './pages/Join'
 import Mission from './pages/Mission'
 import Blog from './pages/Blog'
@@ -70,7 +71,7 @@ import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
-function App() {
+function App () {
   return (
     <FirebaseProvider>
       <Router>
@@ -99,9 +100,6 @@ function App() {
             </Route>
             <Route path="/courses-archive">
               <CoursesArchive />
-            </Route>
-            <Route path="/blog">
-              <Blog />
             </Route>
             <Route path="/join">
               <Join />
@@ -252,12 +250,16 @@ function App() {
             <Route path="/unsubscribe">
               <Unsubscribe />
             </Route>
+            <Route path="/donate">
+              <Donate />
+            </Route>
             <Route path="/mission">
               <Mission />
             </Route>
             <Route path="/join">
               <Join />
             </Route>
+            <Route path="/blog/:blogSlug" component={BlogPage} />
             <Route path="/blog">
               <Blog />
             </Route>
@@ -275,4 +277,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
