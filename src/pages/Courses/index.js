@@ -73,7 +73,6 @@ const Courses = () => {
       db.collection('fl_content').get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           if (doc.data().schema === 'coursePage' && doc.data().wave === WAVE) {
-            console.log(doc.data())
             db.doc(doc.data().picture[0].path).get().then(function (picture) {
               if (picture.exists) {
                 storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
@@ -168,7 +167,7 @@ const Courses = () => {
   }, [filteredItems])
 
   useEffect(() => {
-    if (courses.length >= 25) {
+    if (courses.length >= 80) {
       setLoading(true)
     }
   }, [courses])
