@@ -5,7 +5,7 @@ import { Container, ContainerInner } from "../../globalStyles"
 import { Colors, Typography } from "@/styles"
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
-import { Column, Text, ProfileItem, Label, Data } from './styles.js';
+import { Column, Text, ProfileItem, Label, Data, Row } from './styles.js';
 import 'firebase/firestore'
 import firebase from 'firebase'
 import $ from 'jquery'
@@ -45,16 +45,20 @@ var calcDisplay = function(courses, wave, student) {
     var course = courses[i];
     // console.log(course.wave.toString() + "!=" + wave.toString())
     if (course.wave.toString() == wave.toString()) {
-      result.push(<div class="course-dash">
-        <p>
-        <b>Course Name: </b><a href={"/courses/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
-        <b>Instructor: </b>{namify(course.teachers)}<br/>
-        <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
-        <b><a href={course.courseDocuments}>Course Documents</a></b><br/>
-        <b><a href={course.zoomLink}>Zoom Link</a></b> <br/>
-        <input type="button" onclick={withdraw(student, course)} value="Withdraw" />
-        </p>
-      </div>);
+      console.log(course);
+      result.push(
+        <Row>
+          <img src={course.imageUrl} style={{float: "left", width: 150}}/>
+          <p>
+          <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
+          <b>Instructor(s): </b>{namify(course.teachers)}<br/>
+          <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+          <b><a href={course.courseDocuments}>Course Documents</a>                 </b>
+          <b><a href={course.zoomLink}>Zoom Link</a></b>        <br/>
+          <b><a href="www.edstem.org">Edx</a></b> <br/>
+          <input type="button" onclick={withdraw(student, course)} value="Withdraw" />
+          </p>
+        </Row>);
       // console.log("adding course");
     }
   }
@@ -126,7 +130,7 @@ const Dashboard = () => {
     const [student, setStudent] = useState(null);
     const [theError, setTheError] = useState(null);
     const [courses, setCourses] = useState([]);
-    const {db} = useContext(FirebaseContext);
+    const {db, storage} = useContext(FirebaseContext);
 
     if (db && !calledOnce) {
       setCalledOnce(true);
@@ -173,12 +177,18 @@ const Dashboard = () => {
                       courses.push(snap);
                     });
                     var toPush = courses[0].data();
-                    toPush.waitlisted = isWaitlisted;
-                    coursesResult.push(toPush);
-                    if (numCourses == currentNum) {
-                      setCourses(coursesResult);
-                      setLoading(false);
-                    }
+                    db.doc(toPush.picture[0].path).get().then(function (picture) {
+                      storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
+                        .then(function (url) {
+                        toPush.waitlisted = isWaitlisted;
+                        toPush.imageUrl = url;
+                        coursesResult.push(toPush);
+                        if (numCourses == currentNum) {
+                          setCourses(coursesResult);
+                          setLoading(false);
+                        }
+                      })
+                    })
                   });
                 }
                 console.log(courses);
@@ -257,8 +267,9 @@ const Dashboard = () => {
       var currentWave = 4;
       if (student) {
         var toDisplay = calcDisplay(courses, currentWave, student);
-        var classes = (<select defaultValue="4" name="wave" id="wave">
-          <option value="4">Wave 4</option>
+        var classes = (
+        <select defaultValue="4" name="wave" id="wave">
+          <option class={Typography.BodyText} value="4">Wave 4</option>
           <option value="3">Wave 3</option>
           <option value="2">Wave 2</option>
           <option value="1">Wave 1</option>
@@ -316,9 +327,7 @@ const Dashboard = () => {
                   </div>
                 </Column>
                 <Column>
-                <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header>
-                  {classes}
-
+                <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes {classes}</Typography.Header>
                   <div class="row-dash" id="list-of-courses">
                     {toDisplay}
                   </div>
