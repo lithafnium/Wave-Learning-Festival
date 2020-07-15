@@ -362,12 +362,12 @@ const About = () => {
             As Featured In:
         </Typography.Header>
         <MediumContainer>
-          <FeaturedLink href="https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/"><FeaturedImage style={{ width: '60%' }} src={Assets.NBC}/></FeaturedLink>
-          <FeaturedLink href="https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/"><FeaturedImage style={{ width: '40%' }} src={Assets.HarvardCrimson}/></FeaturedLink>
-          <FeaturedLink href="https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz"><FeaturedImage style={{ width: '80%' }} src={Assets.DailyPenn}/></FeaturedLink>
-          <FeaturedLink href="https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Pasdena}/></FeaturedLink>
-          <FeaturedLink href="https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Monrovia}/></FeaturedLink>
-          <FeaturedLink href="https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Arcadia}/></FeaturedLink>
+          <FeaturedLink target="_blank" href="https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/"><FeaturedImage style={{ width: '60%' }} src={Assets.NBC}/></FeaturedLink>
+          <FeaturedLink target="_blank" href="https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/"><FeaturedImage style={{ width: '40%' }} src={Assets.HarvardCrimson}/></FeaturedLink>
+          <FeaturedLink target="_blank" href="https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz"><FeaturedImage style={{ width: '80%' }} src={Assets.DailyPenn}/></FeaturedLink>
+          <FeaturedLink target="_blank" href="https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Pasdena}/></FeaturedLink>
+          <FeaturedLink target="_blank" href="https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Monrovia}/></FeaturedLink>
+          <FeaturedLink target="_blank" href="https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Arcadia}/></FeaturedLink>
         </MediumContainer>
       </div>
       <div style={{
