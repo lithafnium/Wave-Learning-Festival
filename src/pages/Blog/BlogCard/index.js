@@ -48,7 +48,7 @@ const BlogCard = ({ doc, color }) => {
   return (
     <div>
       <BlogImage onClick={() => redirect(doc.data().id)} src={image} padding={padding}/>
-      <Header>
+      <Header onClick={() => redirect(doc.data().id)}>
         <Heading left top right color={color} >
           <Type>{doc.data().category}</Type>
         </Heading>
