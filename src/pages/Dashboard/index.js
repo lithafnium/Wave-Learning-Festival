@@ -28,17 +28,17 @@ var namify = function(course) { // please change this later lol
   return result;
 };
 
-var withdraw = function(student, course) {
-  return function() {
-    if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
-      // TODO: drop the course
-    } else {
-      // phew
-    }
+var withdraw = function(student, course, db) {
+  if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
+    db.collection("fl_content").doc(course.id).delete().then(function() {
+      window.location.reload();
+    });
+  } else {
+    // phew
   }
 }
 
-var calcDisplay = function(courses, wave, student) {
+var calcDisplay = function(courses, wave, student, db) {
    console.log(courses);
   var result = [];
   for (var i = 0; i < courses.length; i++) {
@@ -56,7 +56,10 @@ var calcDisplay = function(courses, wave, student) {
           <b><a href={course.courseDocuments}>Course Documents</a>                 </b>
           <b><a href={course.zoomLink}>Zoom Link</a></b>        <br/>
           <b><a href="www.edstem.org">Edx</a></b> <br/>
-          <input type="button" onclick={withdraw(student, course)} value="Withdraw" />
+          <input type="button" onClick={(e) => {
+              e.preventDefault();
+              withdraw(student, course, db);
+            }} value="Withdraw" />
           </p>
         </Row>);
       // console.log("adding course");
