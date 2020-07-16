@@ -274,9 +274,11 @@ function App () {
             <Route path="/edit-profile">
               <EditProfile />
             </Route>
+            {/*
             <Route path="/dashboard/edit-profile">
               <EditProfile />
             </Route>
+            */}
             <Route path="/dashboard">
               <Dashboard />
             </Route>

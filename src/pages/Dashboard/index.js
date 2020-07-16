@@ -155,8 +155,8 @@ const Dashboard = () => {
             if (students.length > 0) {
               var coursesResult = [];
               setStudent(students[0].data());
-              var theStudent = students[0].data(); 
-              db.collection("courseAssignments").where("studentID", "==", theStudent.id).get().then(function(snapshot) { 
+              var theStudent = students[0].data();
+              db.collection("courseAssignments").where("studentID", "==", theStudent.id).get().then(function(snapshot) {
                 var currentlyCounted = 0;
                 var courseData = [];
                 snapshot.forEach(function(snap) {
@@ -318,9 +318,9 @@ const Dashboard = () => {
               <div style={{display: "flex", height: "100%"}}>
                 <Column>
                   <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
-                  <div style={{backgroundImage: `url(${WavyPurple})`, 
+                  <div style={{backgroundImage: `url(${WavyPurple})`,
                               backgroundSize: "cover",
-                              backgroundRepeat: "no-repeat", 
+                              backgroundRepeat: "no-repeat",
                               height: "80%"}}>
                     <Text>
                       <br/>
