@@ -18,7 +18,8 @@ import {
   Error,
   Popup,
   FeaturedImage,
-  FeaturedLink
+  FeaturedLink,
+  ContainerInner
 } from './styles'
 import { Colors, Typography } from '@/styles'
 import './styles.css'
@@ -361,14 +362,14 @@ const About = () => {
         >
             As Featured In:
         </Typography.Header>
-        <MediumContainer>
-          <FeaturedLink target="_blank" href="https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/"><FeaturedImage style={{ width: '60%' }} src={Assets.NBC}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/"><FeaturedImage style={{ width: '40%' }} src={Assets.HarvardCrimson}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz"><FeaturedImage style={{ width: '80%' }} src={Assets.DailyPenn}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Pasdena}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Monrovia}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Arcadia}/></FeaturedLink>
-        </MediumContainer>
+        <ContainerInner>
+          <FeaturedImage onClick={() => window.open('https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/', '_blank')} width={25} src={Assets.NBC}/>
+          <FeaturedImage onClick={() => window.open('https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/', '_blank')} width={15} src={Assets.HarvardCrimson}/>
+          <FeaturedImage onClick={() => window.open('https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz', '_blank')} width={25} src={Assets.DailyPenn}/>
+          <FeaturedImage onClick={() => window.open('https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Pasdena}/>
+          <FeaturedImage onClick={() => window.open('https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Monrovia}/>
+          <FeaturedImage onClick={() => window.open('https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Arcadia}/>
+        </ContainerInner>
       </div>
       <div style={{
         display: 'flex',

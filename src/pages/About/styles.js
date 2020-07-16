@@ -250,10 +250,51 @@ export const Error = styled.p`
 `
 
 export const FeaturedImage = styled.img`
+
+@media ${device.mobileS} {
+      width: 70%; 
+
+    }
+
+    @media ${device.tablet} {
+      width: ${props => `${props.width}%`};
+
+
+    }
   height: auto; 
-  margin: 30px; 
+  margin: 25px; 
+
+  &:hover{
+    cursor: pointer; 
+  }
 `
+
 export const FeaturedLink = styled.a`
+  width: 33%; 
+  margin: auto;   
+  margin: 30px; 
+
+`
+
+export const ContainerInner = styled.div`
+    margin-bottom: 5vh;
   display: flex; 
-  justify-content: center; 
+  flex-wrap: wrap; 
+  max-width: 1024px; 
+  justify-content: space-evenly;
+    @media ${device.mobileS} {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    @media ${device.tablet} {
+      flex-direction: row;
+
+        margin-top: 0;
+        width: 100%;
+
+    }
+
 `
