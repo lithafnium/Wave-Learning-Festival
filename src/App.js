@@ -68,7 +68,7 @@ import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
 import CourseSignUp from './pages/Courses/CourseSignUp'
 import CoursePage from './pages/Courses/CoursePages'
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Redirect, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
 function App () {
@@ -266,7 +266,7 @@ function App () {
             <Route path="/course-sign-up">
               <CourseSignUp />
             </Route>
-            <Route path="/.well-known/acme-challenge/wENkOsrUt3foNRRhb36jHq934gBXpgiaLuxSGhrIOGk" />
+            <Route exact path="/.well-known/acme-challenge/19aT_RwfTKRnM_J-NCtBpztdqnk7sJYqFX6QDeOtLLE" />
             <Route path="/:slug" component={CoursePage} />
             <Route path="/">
               <About />
