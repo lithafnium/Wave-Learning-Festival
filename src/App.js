@@ -266,7 +266,7 @@ function App () {
             <Route path="/course-sign-up">
               <CourseSignUp />
             </Route>
-            <Route path="/.well-known/acme-challenge/RIDsjG5kurqFh_mQ_WJzvbGEBPu-T9l2-te0JZWxfdc" />
+            <Route path="/.well-known/acme-challenge/wENkOsrUt3foNRRhb36jHq934gBXpgiaLuxSGhrIOGk" />
             <Route path="/:slug" component={CoursePage} />
             <Route path="/">
               <About />
