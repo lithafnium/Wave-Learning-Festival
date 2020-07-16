@@ -2,10 +2,10 @@ import React, {useState, useContext} from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { Container, ContainerInner } from "../../globalStyles"
-import { Colors, Typography } from "@/styles"
+import { Colors, Typography, Form } from "@/styles"
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
-import { Column, Text, ProfileItem, Label, Data, Row } from './styles.js';
+import { Column, Text, Row, Label, Data, Class, ClassText } from './styles.js';
 import 'firebase/firestore'
 import firebase from 'firebase'
 import $ from 'jquery'
@@ -39,31 +39,49 @@ var withdraw = function(student, course, db) {
 }
 
 var calcDisplay = function(courses, wave, student, db) {
-   console.log(courses);
   var result = [];
-  for (var i = 0; i < courses.length; i++) {
-    var course = courses[i];
-    // console.log(course.wave.toString() + "!=" + wave.toString())
+  if (result.length == 0) {
+  courses.map(function(course) {
     if (course.wave.toString() == wave.toString()) {
-      console.log(course);
       result.push(
-        <Row>
-          <img src={course.imageUrl} style={{float: "left", width: 150}}/>
-          <p>
-          <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
-          <b>Instructor(s): </b>{namify(course.teachers)}<br/>
-          <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
-          <b><a href={course.courseDocuments}>Course Documents</a>                 </b>
-          <b><a href={course.zoomLink}>Zoom Link</a></b>        <br/>
-          <b><a href="www.edstem.org">Edx</a></b> <br/>
-          <input type="button" onClick={(e) => {
+        <Class>
+          <img src={course.imageUrl} style={{float: "left", height: "auto", maxWidth: "40%"}}/>
+          <ClassText>
+            <p style={{margin: 0}}>
+              <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
+              <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+            </p>
+
+            <Row>
+              {course.courseDocuments && 
+                <a href={course.courseDocuments} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
+                  <Form.Button style={{margin: 5}}>
+                  <b>Course Documents</b>
+                </Form.Button></a>}
+              {course.zoomLink && 
+                <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
+                  <Form.Button style={{margin: 5}}>
+                  <b>Zoom Link</b>
+                </Form.Button></a>}
+              <a href="www.edstem.org" style={{textDecoration: "none", color: "white", margin: "auto", height: "100%"}}>
+                <Form.Button style={{margin: 5}}>
+                <b>Edx</b>
+              </Form.Button></a>
+            </Row>
+
+            <Form.Button onClick={(e) => {
               e.preventDefault();
-              withdraw(student, course, db);
-            }} value="Withdraw" />
-          </p>
-        </Row>);
-      // console.log("adding course");
-    }
+              withdraw(student, course, db);}} 
+              style={{marginTop: 0, width: "auto", height: 25, margin: "auto", backgroundColor: "grey"}}>
+              <Typography.Header style={{margin: "auto", color:"white", fontSize:"12px"}} >
+                Withdraw
+              </Typography.Header>
+            </Form.Button>
+
+          </ClassText>
+        </Class>);
+      }
+    })
   }
   return result;
 };
@@ -77,7 +95,7 @@ var genFrag = function(label, data) {
 
 var fragHtml = function(info) {
     return (
-    <ProfileItem>
+    <Row>
       <Column>
         <Label>{`${info.label} `}</Label>
       </Column>
@@ -86,7 +104,7 @@ var fragHtml = function(info) {
           <p style={{margin: 5}}>{`${info.data} `}</p>
         </Data>
       </Column>
-    </ProfileItem>
+    </Row>
     );
 };
 
@@ -134,6 +152,7 @@ const Dashboard = () => {
     const [theError, setTheError] = useState(null);
     const [courses, setCourses] = useState([]);
     const {db, storage} = useContext(FirebaseContext);
+    const [wave, setWave] = useState("4");
 
     if (db && !calledOnce) {
       setCalledOnce(true);
@@ -267,27 +286,37 @@ const Dashboard = () => {
 
       }
 
-      var currentWave = 4;
+      var inputChanged = function(setWave) {
+
+        var result = (event) => {
+          var value = event.target.value;
+          toDisplay = calcDisplay(courses, value);
+            // console.log(toDisplay);
+            document.getElementById("list-of-courses").innerHTML = ReactDOMServer.renderToString(toDisplay);
+          setWave(prevData => {
+            var result = {...prevData};
+            result = value;
+            return result;
+          });
+          
+        };
+        return result;
+      };
+
+      var WAVE_OPTIONS = [
+        4,
+        3,
+        2,
+        1
+      ];
+      
       if (student) {
-        var toDisplay = calcDisplay(courses, currentWave, student);
-        var classes = (
-        <select defaultValue="4" name="wave" id="wave">
-          <option class={Typography.BodyText} value="4">Wave 4</option>
-          <option value="3">Wave 3</option>
-          <option value="2">Wave 2</option>
-          <option value="1">Wave 1</option>
-        </select>);
+        var toDisplay = "" //calcDisplay(courses, wave, student);
+        console.log(wave);
         var studentInfo = generateStudentInfo(student);
 
         $(document).ready(function() {
           // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
-          $(document).on('change', "#wave", function(e) {
-            var newWave = e.target.value;
-            // console.log("new wave: " + newWave);
-            toDisplay = calcDisplay(courses, newWave);
-            // console.log(toDisplay);
-            document.getElementById("list-of-courses").innerHTML = ReactDOMServer.renderToString(toDisplay);
-          });
           $(document).on("click", ".profile-item button", function(e) {
             var label = $(this).parent().find(".label").html();
             var data = $(this).parent().find(".data").html();
@@ -330,7 +359,18 @@ const Dashboard = () => {
                   </div>
                 </Column>
                 <Column>
-                <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes {classes}</Typography.Header>
+                <div style={{display: "flex"}}>
+                  <Column style={{width: "80%"}}>
+                <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header></Column>
+                <Column style={{width: "10%"}}>
+                  <Form.Dropdown
+                      onChange={inputChanged(setWave)}
+                      style={{borderColor: "black", width: 150, marginTop: 25}}>
+                    {WAVE_OPTIONS.map((value) => (
+                      <option value={value}>{`Wave ${value}`}</option>
+                    ))}
+                  </Form.Dropdown></Column>
+                  </div>
                   <div class="row-dash" id="list-of-courses">
                     {toDisplay}
                   </div>

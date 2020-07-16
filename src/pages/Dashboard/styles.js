@@ -15,7 +15,7 @@ export const Text = styled.div`
     margin-left: 20px;  
 `
 
-export const ProfileItem = styled.div`
+export const Row = styled.div`
     width: 100%;  
     display: flex;
     flex-direction: row;
@@ -34,6 +34,14 @@ export const Data = styled.div`
     width: 150px;
 `
 
-export const Row = styled.div`
-    width: 100%
+export const Class = styled.div`
+    width: 100%;
+    margin: 10px
+`
+
+export const ClassText = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 0
 `

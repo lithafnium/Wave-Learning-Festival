@@ -248,6 +248,12 @@ function App () {
             <Route path="/login">
               <Login />
             </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/dashboard/edit-profile">
+              <EditProfile />
+            </Route>
             <Route path="/signup">
               <Signup />
             </Route>
@@ -273,12 +279,6 @@ function App () {
             <Route path="/:slug" component={CoursePage} />
             <Route path="/edit-profile">
               <EditProfile />
-            </Route>
-            <Route path="/dashboard/edit-profile">
-              <EditProfile />
-            </Route>
-            <Route path="/dashboard">
-              <Dashboard />
             </Route>
             <Route path="/">
               <About />
