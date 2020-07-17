@@ -133,7 +133,7 @@ var fitsRequirements = function(studentData) {
 var emailValidated = function(email) {
   //Based on thouroughly tested regex
   const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return regexEmail.test(String(email));
+  return regexEmail.test(String(email.replace(" ", "")));
 }
 
 var submit = function(db, studentData, setErrorMessage, setPage) {
