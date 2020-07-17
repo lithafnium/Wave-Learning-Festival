@@ -70,7 +70,6 @@ import CourseSignUp from './pages/Courses/CourseSignUp'
 import CoursePage from './pages/Courses/CoursePages'
 
 import Dashboard from './pages/Dashboard'
-import EditProfile from './pages/Dashboard/EditProfile'
 
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
@@ -251,9 +250,6 @@ function App () {
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-            <Route path="/dashboard/edit-profile">
-              <EditProfile />
-            </Route>
             <Route path="/signup">
               <Signup />
             </Route>
@@ -277,9 +273,6 @@ function App () {
               <CourseSignUp />
             </Route>
             <Route path="/:slug" component={CoursePage} />
-            <Route path="/edit-profile">
-              <EditProfile />
-            </Route>
             <Route path="/">
               <About />
             </Route>
