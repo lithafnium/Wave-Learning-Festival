@@ -70,10 +70,10 @@ const Courses = () => {
 
   useEffect(() => {
     if (db) {
-      db.collection('fl_content').get().then(function (querySnapshot) {
+      db.collection('fl_content').onSnapshot(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           if (doc.data().schema === 'coursePage' && doc.data().wave === WAVE) {
-            db.doc(doc.data().picture[0].path).get().then(function (picture) {
+            db.doc(doc.data().picture[0].path).onSnapshot(function (picture) {
               if (picture.exists) {
                 storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
                   .then(function (url) {
