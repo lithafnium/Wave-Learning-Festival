@@ -1,7 +1,7 @@
-import React, {useState, useContext} from 'react'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
-import { Container, ContainerInner } from "../../globalStyles"
+import React, {useState, useContext, useEffect} from 'react'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import { Container, ContainerInner } from "@/globalStyles"
 import { Colors, Typography, Form } from "@/styles"
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
@@ -28,7 +28,7 @@ var namify = function(course) { // please change this later lol
   return result;
 };
 
-var withdraw = function(student, course, db) {
+const withdraw = (student, course, db) => {
   if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
     db.collection("fl_content").doc(course.id).delete().then(function() {
       window.location.reload();
@@ -37,54 +37,6 @@ var withdraw = function(student, course, db) {
     // phew
   }
 }
-
-var calcDisplay = function(courses, wave, student, db) {
-  var result = [];
-  if (result.length == 0) {
-  courses.map(function(course) {
-    if (course.wave.toString() == wave.toString()) {
-      result.push(
-        <Class>
-          <img src={course.imageUrl} style={{float: "left", height: "auto", maxWidth: "40%"}}/>
-          <ClassText>
-            <p style={{margin: 0}}>
-              <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
-              <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
-            </p>
-
-            <Row>
-              {course.courseDocuments && 
-                <a href={course.courseDocuments} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
-                  <Form.Button style={{margin: 5}}>
-                  <b>Course Documents</b>
-                </Form.Button></a>}
-              {course.zoomLink && 
-                <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
-                  <Form.Button style={{margin: 5}}>
-                  <b>Zoom Link</b>
-                </Form.Button></a>}
-              <a href="www.edstem.org" style={{textDecoration: "none", color: "white", margin: "auto", height: "100%"}}>
-                <Form.Button style={{margin: 5}}>
-                <b>Edx</b>
-              </Form.Button></a>
-            </Row>
-
-            <Form.Button onClick={(e) => {
-              e.preventDefault();
-              withdraw(student, course, db);}} 
-              style={{marginTop: 0, width: "auto", height: 25, margin: "auto", backgroundColor: "grey"}}>
-              <Typography.Header style={{margin: "auto", color:"white", fontSize:"12px"}} >
-                Withdraw
-              </Typography.Header>
-            </Form.Button>
-
-          </ClassText>
-        </Class>);
-      }
-    })
-  }
-  return result;
-};
 
 var genFrag = function(label, data) {
   return {
@@ -151,9 +103,11 @@ const Dashboard = () => {
     const [student, setStudent] = useState(null);
     const [theError, setTheError] = useState(null);
     const [courses, setCourses] = useState([]);
+    const [coursesDisplayed, setCoursesDisplayed] = useState([]);
     const {db, storage} = useContext(FirebaseContext);
     const [wave, setWave] = useState("4");
 
+  useEffect (() => {
     if (db && !calledOnce) {
       setCalledOnce(true);
       // console.log("call " + calledOnce);
@@ -222,6 +176,22 @@ const Dashboard = () => {
         }
       });
     }
+  }, [db, storage])
+
+  useEffect(() => {
+    if (coursesDisplayed.length === 0) {
+      setCoursesDisplayed(courses)
+    } else {
+      setCoursesDisplayed(courses.filter(course => {
+        for (let i = 0; i < courses.length; i++) {
+          if (course.wave.includes(wave)) {
+            return true
+          }
+        }
+        return false
+      }))
+    }
+  }, [wave])
 
     /*
       if (loading) {
@@ -290,9 +260,6 @@ const Dashboard = () => {
 
         var result = (event) => {
           var value = event.target.value;
-          toDisplay = calcDisplay(courses, value);
-            // console.log(toDisplay);
-            document.getElementById("list-of-courses").innerHTML = ReactDOMServer.renderToString(toDisplay);
           setWave(prevData => {
             var result = {...prevData};
             result = value;
@@ -311,7 +278,6 @@ const Dashboard = () => {
       ];
       
       if (student) {
-        var toDisplay = "" //calcDisplay(courses, wave, student);
         console.log(wave);
         var studentInfo = generateStudentInfo(student);
 
@@ -361,19 +327,52 @@ const Dashboard = () => {
                 <Column>
                 <div style={{display: "flex"}}>
                   <Column style={{width: "80%"}}>
-                <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header></Column>
-                <Column style={{width: "10%"}}>
-                  <Form.Dropdown
-                      onChange={inputChanged(setWave)}
-                      style={{borderColor: "black", width: 150, marginTop: 25}}>
-                    {WAVE_OPTIONS.map((value) => (
-                      <option value={value}>{`Wave ${value}`}</option>
-                    ))}
-                  </Form.Dropdown></Column>
-                  </div>
-                  <div class="row-dash" id="list-of-courses">
-                    {toDisplay}
-                  </div>
+                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header>
+                  </Column>
+                  <Column style={{width: "10%"}}>
+                    <Form.Dropdown
+                        onChange={inputChanged(setWave)}
+                        style={{borderColor: "black", width: 150, marginTop: 25}}>
+                      {WAVE_OPTIONS.map((value) => (
+                        <option value={value}>{`Wave ${value}`}</option>
+                      ))}
+                    </Form.Dropdown>
+                  </Column>
+                </div>
+
+                {coursesDisplayed.map(course => {return (
+                  <Class>
+                  <img src={course.imageUrl} style={{float: "left", height: "auto", maxWidth: "40%", marginRight: 10}}/>
+                  <ClassText>
+                    <p style={{margin: 0}}>
+                      <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
+                      <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+                    </p>
+                    <Row>
+                      {course.courseDocuments && 
+                        <a href={course.courseDocuments} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
+                          <Form.Button style={{margin: 5}}>
+                          <b>Course Documents</b>
+                        </Form.Button></a>}
+                      {course.zoomLink && 
+                        <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
+                          <Form.Button style={{margin: 5}}>
+                          <b>Zoom Link</b>
+                        </Form.Button></a>}
+                      <a href="www.edstem.org" style={{textDecoration: "none", color: "white", margin: "auto", height: "100%"}}>
+                        <Form.Button style={{margin: 5}}>
+                        <b>Edx</b>
+                      </Form.Button></a>
+                    </Row>
+                    <Form.Button onClick={() => {withdraw(student, course, db)}}
+                      style={{marginTop: 0, width: "auto", height: 25, margin: "auto", backgroundColor: "grey"}}>
+                      <Typography.Header style={{margin: "auto", color:"white", fontSize:"12px"}} >
+                        Withdraw
+                      </Typography.Header>
+                    </Form.Button>
+                  </ClassText>
+                  </Class>
+                )})}
                 </Column>
               </div>
               </ContainerInner>
@@ -394,7 +393,6 @@ const Dashboard = () => {
 
             <Footer/>
           </>);
-
 }
 
 export default Dashboard

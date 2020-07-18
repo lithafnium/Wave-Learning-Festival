@@ -36,12 +36,15 @@ export const Data = styled.div`
 
 export const Class = styled.div`
     width: 100%;
-    margin: 10px
+    margin: 10px;
+    padding: 5px;
+    clear: left;
 `
 
 export const ClassText = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 10px;
-    margin-right: 0
+    margin-right: 0;
+    text-align: center;
 `
