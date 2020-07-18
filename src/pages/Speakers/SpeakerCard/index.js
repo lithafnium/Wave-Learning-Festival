@@ -1,8 +1,7 @@
 import React from 'react'
-
-import Nate from '../nate_saal.jpg'
-import { SpeakerContainer, SpeakerImage, Description, SpeakerContainerInner, Button } from './styles'
-const SpeakerCard = ({ picture, description }) => {
+import { Card, Speaker, Info, Header, Details } from './styles'
+import Andrew from './andrew_cramer.jpg'
+const SpeakerCard = () => {
   return (
     <SpeakerContainer>
       <h1>Nate Saal: The Art and Science of Making Chocolate</h1>
@@ -17,6 +16,13 @@ const SpeakerCard = ({ picture, description }) => {
         </div>
       </SpeakerContainerInner>
     </SpeakerContainer>
+    <Card>
+      <Speaker src={Andrew}/>
+      <Info>
+        <Header>Andy Cramer</Header>
+        <Details>Professor, Los Angeles Mission College</Details>
+      </Info>
+    </Card>
   )
 }
 
