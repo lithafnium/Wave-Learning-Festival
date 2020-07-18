@@ -40,7 +40,7 @@ const FeaturedSpeaker = ({ picture, description }) => {
             <Heading>Scheduled Date:</Heading>
             <Content>Wave 4: 8/1</Content>
 
-            <Button>RSVP Now</Button>
+            <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
           </SpeakerContainerInner>
         </SpeakerContainer>
       </AnimateHeight>
