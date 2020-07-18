@@ -115,29 +115,29 @@ var fitsRequirements = function(studentData) {
 var emailValidated = function(email) {
   //Based on thouroughly tested regex
   const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return regexEmail.test(String(email));
+  return regexEmail.test(String(email.replace(" ", "")));
 }
 
 var submit = function(db, studentData, setErrorMessage, setPage) {
   var submission = {...studentData};
-  db.collection("StudentRegistrations").where("email", "==", submission.email).get().then(function(snapshot) {
+  db.collection("SpeakerRegistrations").where("email", "==", submission.email).get().then(function(snapshot) {
     var ls = [];
     snapshot.forEach(function(snap) {
       ls.push(snap.data());
     });
     if (ls.length > 0) {
-      db.collection("StudentRegistrations").doc(ls[0].id).update(submission).then(function() {
+      db.collection("SpeakerRegistrations").doc(ls[0].id).update(submission).then(function() {
         setPage("emailTaken");
         console.log(ls[0].id);
       });
     } else {
-      db.collection("StudentRegistrations").add(submission).then(function(ref) {
+      db.collection("SpeakerRegistrations").add(submission).then(function(ref) {
         firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
           setPage("complete");
         }).catch(function(error) {
           setPage("complete");
         });
-        db.collection("StudentRegistrations").doc(ref.id).update({id: ref.id});
+        db.collection("SpeakerRegistrations").doc(ref.id).update({id: ref.id});
       });
     }
   });
@@ -309,7 +309,7 @@ const Complete = () => {
     <div>
     <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
     <Typography.BodyText color="white">
-      You and/or your parent should recieve a confirmation email shortly. <br/>
+      We look forward to seeing you at our speaker seminar(s). <br/>
       Click <a href="/">here</a> to go back to the homepage.
     </Typography.BodyText>
     </div>
