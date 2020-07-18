@@ -31,9 +31,12 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <NavbarInner>
-        <BrandText onClick={() => window.location.href = '/'}src={LogoTextFull} />
-        <Brand onClick={() => window.location.href = '/'} src={Logo} />
+        <BrandText src={LogoTextFull} />
+        <Brand src={Logo} />
         <Links>
+          <NavItem>
+            <Link to="/">Home</Link>
+          </NavItem>
           <NavItem onMouseEnter={() => setAboutShow(true)}
             onMouseLeave={() => setAboutShow(false)}>
             <Link>About Us</Link>
@@ -170,9 +173,6 @@ const Navbar = () => {
           <NavItem>
             <Link to="/blog">Blog</Link>
           </NavItem>
-          <NavItem>
-            <Link to="/speakers">Speakers</Link>
-          </NavItem>
           <NavItem
             onMouseEnter={() => setFaqShow(true)}
             onMouseLeave={() => setFaqShow(false)}
@@ -273,9 +273,6 @@ const Navbar = () => {
           </NavItem>
           <NavItem>
             <Link to="/blog">Blog</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/speakers">Speakers</Link>
           </NavItem>
           <NavItem>
             <Link to="/join">Join the Team</Link>

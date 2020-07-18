@@ -22,11 +22,11 @@ const Courses = () => {
   const [filteredItems, updateFiltered] = useState([])
   const colors = [Colors.WLF_ORANGE, Colors.WLF_PURPLE, Colors.WLF_TURQOUISE, Colors.WLF_YELLOW]
 
-  const addFilter = (text, color, age) => {
+  const addFilter = (text, color) => {
     updateFiltered(filteredItems => [...filteredItems, { text, color }])
   }
 
-  const removeFilter = (text, color, age) => {
+  const removeFilter = (text, color) => {
     updateFiltered(filteredItems.filter(item => item.text !== text))
   }
   const categories = {
@@ -38,16 +38,14 @@ const Courses = () => {
   const onSearch = (e) => {
     if (e.length === 0 && filteredItems.length === 0) {
       setFilteredCourses(courses)
-    } else if (e.length === 0 && (filteredItems.length !== 0)) {
+    } else if (e.length === 0 && filteredItems.length !== 0) {
       setFilteredCourses(courses.filter(course => {
         for (let i = 0; i < filteredItems.length; i++) {
-          if (!isNaN(filteredItems[i].text)) {
-            if (!course.targetGrades.includes(filteredItems[i].text)) return false
-          } else if (!course.category.includes(filteredItems[i].text)) {
-            return false
+          if (course.category.includes(filteredItems[i].text)) {
+            return true
           }
         }
-        return true
+        return false
       }))
     } else if (filteredItems.length === 0) {
       setFilteredCourses(courses.filter(course => {
@@ -56,14 +54,11 @@ const Courses = () => {
     } else {
       setFilteredCourses(courses.filter(course => {
         for (let i = 0; i < filteredItems.length; i++) {
-          if (!isNaN(filteredItems[i].text)) {
-            if (!course.targetGrades.includes(filteredItems[i].text)) return false
-          } else if (!course.category.includes(filteredItems[i].text)) {
-            return false
+          if (course.category.includes(filteredItems[i].text)) {
+            if (course.title.toLowerCase().includes(e.toLowerCase())) {
+              return true
+            }
           }
-        }
-        if (course.title.toLowerCase().includes(e.toLowerCase())) {
-          return true
         }
         return false
       }))
@@ -75,11 +70,10 @@ const Courses = () => {
 
   useEffect(() => {
     if (db) {
-      db.collection('fl_content').onSnapshot(function (querySnapshot) {
+      db.collection('fl_content').get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           if (doc.data().schema === 'coursePage' && doc.data().wave === WAVE) {
-            console.log(doc.data())
-            db.doc(doc.data().picture[0].path).onSnapshot(function (picture) {
+            db.doc(doc.data().picture[0].path).get().then(function (picture) {
               if (picture.exists) {
                 storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
                   .then(function (url) {
@@ -129,7 +123,6 @@ const Courses = () => {
                     const course = {
                       title: doc.data().courseTitle,
                       category: doc.data().courseCategory,
-                      targetGrades: doc.data().targetAudienceGrades,
                       image: url,
                       teachers,
                       description: doc.data().courseDescription,
@@ -163,13 +156,11 @@ const Courses = () => {
     } else {
       setFilteredCourses(courses.filter(course => {
         for (let i = 0; i < filteredItems.length; i++) {
-          if (!isNaN(filteredItems[i].text)) {
-            if (!course.targetGrades.includes(filteredItems[i].text)) return false
-          } else if (!course.category.includes(filteredItems[i].text)) {
-            return false
+          if (course.category.includes(filteredItems[i].text)) {
+            return true
           }
         }
-        return true
+        return false
       }))
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
