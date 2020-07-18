@@ -11,6 +11,8 @@ import Courses from './pages/Courses'
 import CoursesInProgress from './pages/Courses/CoursesInProgress'
 import CoursesArchive from './pages/Courses/CoursesArchive'
 import Speakers from './pages/Speakers'
+import SpeakerSignUp from './pages/Speakers/SpeakerSignup'
+
 // wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
 import CourseHowCancerWorks from './pages/Courses_W1/CoursePages/HowCancerWorks'
@@ -261,6 +263,9 @@ function App () {
             </Route>
             <Route path="/speakers">
               <Speakers />
+            </Route>
+            <Route path="/speaker-sign-up">
+              <SpeakerSignUp />
             </Route>
             <Route path="/blog/:blogSlug" component={BlogPage} />
             <Route path="/blog">
