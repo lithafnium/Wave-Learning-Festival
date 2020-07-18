@@ -1,13 +1,13 @@
 import React from 'react'
 import { Card, Speaker, Info, Header, Details } from './styles'
-import Andrew from './andrew_cramer.jpg'
-const SpeakerCard = () => {
+
+const SpeakerCard = ({ name, img, title, color }) => {
   return (
     <Card>
-      <Speaker src={Andrew}/>
+      <Speaker src={img} color={color}/>
       <Info>
-        <Header>Andy Cramer</Header>
-        <Details>Professor, Los Angeles Mission College</Details>
+        <Header>{name}</Header>
+        <Details>{title}</Details>
       </Info>
     </Card>
   )

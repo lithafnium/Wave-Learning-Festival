@@ -3,7 +3,6 @@ import { device } from '@/theme'
 
 export const Card = styled.div`
     box-shadow: 0 0 1.25rem rgba(31, 45, 61, 0.15); 
-    width: 33%; 
     height: auto; 
     padding: 35px; 
     display: flex; 
@@ -11,19 +10,7 @@ export const Card = styled.div`
     align-items: center; 
     border-radius: 10px; 
 
-    @media ${device.mobileS} {
-        width: 100%; 
-
-    }
-
-    @media ${device.tablet} {
-        width: 50%; 
-    }
-
-    @media ${device.laptop} {
-        width: 33%; 
-
-    }
+    width: 100%; 
 `
 
 export const Speaker = styled.img`
@@ -32,6 +19,7 @@ export const Speaker = styled.img`
     object-fit: cover; 
     border-radius: 50%; 
     margin-bottom: 2em; 
+    border: 5px solid ${props => props.color}; 
 `
 
 export const Info = styled.div`
