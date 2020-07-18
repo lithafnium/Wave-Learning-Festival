@@ -106,7 +106,7 @@ const CoursePage = ({ match }) => {
               setClassTime(data.classTime + " (Times are in EDT)");
             }
             */
-            setClassTime(data.classTime)
+            setClassTime(data.classTime);
           }
           if (!teachersObj) {
             setTeachersObj(data.teachers)
@@ -156,7 +156,7 @@ const CoursePage = ({ match }) => {
     return new Date(dateTimeInLocal.getTime() + totalMillis + timezoneOffset)
   }
 
-  const timezoneCode = 'Eastern Time' // new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2]
+  const timezoneCode = "Eastern Time"; // new Date().toLocaleTimeString('en-us', { timeZoneName: 'short' }).split(' ')[2]
 
   return (
     <div>

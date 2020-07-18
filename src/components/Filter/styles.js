@@ -3,7 +3,6 @@ import { Colors } from '@/styles'
 export const Container = styled.div`
     width: 100%; 
     margin-bottom: 2rem; 
-    text-align: left; 
 `
 
 export const ContainerInner = styled.div`

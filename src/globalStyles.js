@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const ContainerInner = styled.div`
     margin-bottom: 5vh;
-    
+
     @media ${device.mobileS} {
         flex-direction: column;
         justify-content: center;
