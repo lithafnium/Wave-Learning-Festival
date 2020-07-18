@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Checkbox from '../Checkbox'
 import Chip from '../Chip'
 import { Container, ContainerInner, FilteredBar, SearchBar, SearchIcon, SearchContainer, FilterContainer, CheckboxContainer, CheckboxColumn } from './styles'
@@ -55,7 +55,7 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
           <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Math" value = "math"/>
         </CheckboxColumn>
       </CheckboxContainer>
-      <h2 style={{ color: Colors.WLF_PURPLE }}>Age</h2>
+      <h2 style={{ color: Colors.WLF_PURPLE }}>Grade Level:</h2>
       <CheckboxContainer>
         <CheckboxColumn>
           <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_PURPLE} text = "Grade 6" value = "6"/>
