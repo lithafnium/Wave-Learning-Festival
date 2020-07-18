@@ -10,7 +10,6 @@ const SpeakerCard = ({ name, img, title, color }) => {
         <Details>{title}</Details>
       </Info>
     </Card>
-  )
-}
+  )}
 
 export default SpeakerCard
