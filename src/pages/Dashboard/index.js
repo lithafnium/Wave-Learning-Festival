@@ -53,12 +53,12 @@ var calcDisplay = function(courses, wave, student, db) {
             </p>
 
             <Row>
-              {course.courseDocuments && 
+              {course.courseDocuments &&
                 <a href={course.courseDocuments} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
                   <Form.Button style={{margin: 5}}>
                   <b>Course Documents</b>
                 </Form.Button></a>}
-              {course.zoomLink && 
+              {course.zoomLink &&
                 <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
                   <Form.Button style={{margin: 5}}>
                   <b>Zoom Link</b>
@@ -71,7 +71,8 @@ var calcDisplay = function(courses, wave, student, db) {
 
             <Form.Button onClick={(e) => {
               e.preventDefault();
-              withdraw(student, course, db);}} 
+              console.log("hi");
+              withdraw(student, course, db);}}
               style={{marginTop: 0, width: "auto", height: 25, margin: "auto", backgroundColor: "grey"}}>
               <Typography.Header style={{margin: "auto", color:"white", fontSize:"12px"}} >
                 Withdraw
@@ -298,7 +299,7 @@ const Dashboard = () => {
             result = value;
             return result;
           });
-          
+
         };
         return result;
       };
@@ -309,7 +310,7 @@ const Dashboard = () => {
         2,
         1
       ];
-      
+
       if (student) {
         var toDisplay = "" //calcDisplay(courses, wave, student);
         console.log(wave);
