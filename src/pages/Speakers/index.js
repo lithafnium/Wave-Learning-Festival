@@ -19,6 +19,12 @@ import { Colors } from '@/styles'
 const Speakers = () => {
   const speakers = [
     {
+      img: Nate,
+      name: 'Nate Saal',
+      title: 'CEO, CocoTerra Company',
+      date: 'Wave 4: 8/1'
+    },
+    {
       img: Andrew,
       name: 'Andrew Cramer',
       date: 'Wave 5: 8/22',
@@ -27,33 +33,33 @@ const Speakers = () => {
     {
       name: 'Lisa Baldwin',
       img: Lisa,
-      title: 'Contemporary Plein Air Painter'
+      title: 'Contemporary Plein Air Painter',
+      date: 'TBD'
 
-    },
-    {
-      img: Nicole,
-      name: 'Nicole Chung',
-      title: 'Author of All You Can Ever Know, Editor in Chief of Catapult Magazine'
     },
     {
       name: 'Rhiannon McGavin',
       img: Rhiannon,
-      title: 'Poet'
+      title: 'Poet',
+      date: '8/29'
     },
     {
       name: 'Jasmine Shao',
       img: Jasmine,
-      title: "AKA studyquill! UCLA '24"
+      title: "AKA studyquill! UCLA '24",
+      date: 'TBD'
     },
     {
       name: 'Iris Fu',
       img: Iris,
-      title: 'Stanford Student, Youtuber'
+      title: 'Stanford Student, Youtuber',
+      date: '9/4'
     },
     {
       name: 'Ruta Sepetys',
       img: Ruta,
-      title: 'Author'
+      title: 'Author',
+      date: 'TBD'
     }
   ]
 
@@ -64,13 +70,13 @@ const Speakers = () => {
       <Navbar/>
       <Container style={{ minHeight: '0vh' }}>
         <ContainerInner>
-          <Featured>Featured Speaker : </Featured>
+          <Featured>Upcoming Speaker : </Featured>
           <FeaturedSpeaker/>
         </ContainerInner>
       </Container>
       <Container>
         <ContainerInner>
-          <Featured>Upcoming Speakers : </Featured>
+          {/* <Featured>Upcoming Speakers : </Featured> */}
           <Row>
             {
               speakers.map((speaker, index) => {
@@ -79,6 +85,7 @@ const Speakers = () => {
                   name={speaker.name}
                   img={speaker.img}
                   title={speaker.title}
+                  date={speaker.date}
                   color={colors[index % 4]}/>
               })
             }
