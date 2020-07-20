@@ -10,7 +10,6 @@ const SpeakerCard = ({ name, img, title, color, date }) => {
         <Details>{title}</Details>
         <p>Date: {date}</p>
         <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
-
       </Info>
     </Card>
   )
