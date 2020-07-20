@@ -35,3 +35,23 @@ export const Details = styled.p`
     margin: 0px; 
     color: #aaaaaa; 
 `
+export const Button = styled.button`
+    border: none; 
+    padding: 12px 20px 12px 20px; 
+    background-color: ${props => props.color};
+    color: white; 
+    font-size: 0.9rem; 
+    border-radius: 25px; 
+    font-family: 'Muli', sans-serif;
+    font-weight: 700; 
+    transition: 0.2s; 
+
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        cursor: pointer; 
+        opacity: 0.8; 
+    }
+`
