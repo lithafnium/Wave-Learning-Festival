@@ -72,7 +72,6 @@ import CourseSignUp from './pages/Courses/CourseSignUp'
 import CoursePage from './pages/Courses/CoursePages'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
-
 function App () {
   return (
     <FirebaseProvider>
