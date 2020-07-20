@@ -38,6 +38,7 @@ const DIRECTOR_MARKETING = "Director of Marketing";
 const DIRECTOR_MEDIA_DESIGN = "Director of Media and Design";
 const ASSOC_DIRECTOR_MEDIA_DESIGN = "Associate Director of Media and Design";
 const DIRECTOR_BUSINESS = "Director of Business";
+const ADVISOR = "Advisor";
 
 const teamData = [
   {
@@ -47,10 +48,10 @@ const teamData = [
     image: KarlyHou,
   },
   {
-    name: "Yael Livneh",
-    school: "Cal Poly SLO 2023",
+    name: "Amy Shen",
+    school: "University of Pennsylvania 2022",
     position: DIRECTOR_LOGISTICS,
-    image: YaelLivneh,
+    image: AmyShen,
   },
   {
     name: "Salma Kamni",
@@ -81,12 +82,6 @@ const teamData = [
     school: "Carnegie Mellon University 2023",
     position: ASSOC_DIRECTOR_LOGISTICS,
     image: AlainDalma,
-  },
-  {
-    name: "Amy Shen",
-    school: "University of Pennsylvania 2022",
-    position: ASSOC_DIRECTOR_LOGISTICS,
-    image: AmyShen,
   },
   {
     name: "Steve Li",
@@ -159,6 +154,12 @@ const teamData = [
     school: "Harvard 2023",
     position: DIRECTOR_BUSINESS,
     image: CarterMartindale,
+  },
+  {
+    name: "Yael Livneh",
+    school: "Cal Poly SLO 2023",
+    position: ADVISOR,
+    image: YaelLivneh,
   },
 ]
 
