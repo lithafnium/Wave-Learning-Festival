@@ -64,7 +64,6 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Unsubscribe from './pages/Unsubscribe'
 import Donate from './pages/Donate'
-import PartnersSponsors from './pages/PartnersSponsors'
 import Join from './pages/Join'
 import Mission from './pages/Mission'
 import Blog from './pages/Blog'
@@ -243,9 +242,6 @@ function App () {
             </Route>
             <Route path="/student-agreement">
               <StudentAgreement />
-            </Route>
-            <Route path="/partners-and-sponsors">
-              <PartnersSponsors />
             </Route>
             <Route path="/login">
               <Login />

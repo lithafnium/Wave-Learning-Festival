@@ -60,9 +60,12 @@ export const STATES =["Alaska",
                   "Wyoming"];
 
 export const SPEAKERS = [
+    "Nicole Chung: Why Your Stories Matter",
     "Nate Saal",
-    "Andy Cramer",
-    "Nicole Chung", 
+    "Andrew Cramer",
+    "Lisa Baldwin",
     "Rhiannon McGavin",
-    "Jasmine Shao"
+    "Jasmine Shao",
+    "Iris Fu",
+    "Ruta Sepetys"
   ];

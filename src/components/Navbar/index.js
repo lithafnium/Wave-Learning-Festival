@@ -144,6 +144,9 @@ const Navbar = () => {
             </NavbarDropdown>
             )}
           </NavItem>
+          <NavItem>
+            <Link to="/speakers">Speakers</Link>
+          </NavItem>
           <NavItem onMouseEnter={() => setApplyShow(true)}
             onMouseLeave={() => setApplyShow(false)}>
             <Link>Apply</Link>
@@ -185,9 +188,6 @@ const Navbar = () => {
           </NavItem>
           <NavItem>
             <Link to="/blog">Blog</Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/speakers">Speakers</Link>
           </NavItem>
           <NavItem
             onMouseEnter={() => setFaqShow(true)}
