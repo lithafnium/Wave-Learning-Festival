@@ -21,6 +21,7 @@ import { FaUserAlt, FaChalkboardTeacher, FaUserFriends } from 'react-icons/fa'
 import Logo from './logo.svg'
 import LogoText from './logoText.png'
 import LogoTextFull from './logo with type (1).svg'
+import firebase from 'firebase'
 
 const Navbar = () => {
   const [applyShow, setApplyShow] = useState(false)
@@ -28,6 +29,22 @@ const Navbar = () => {
   const [aboutShow, setAboutShow] = useState(false)
   const [faqShow, setFaqShow] = useState(false)
   const [slide, toggleSlide] = useState(false)
+  const [accountStatus, setAccountStatus] = useState(null);
+  const [calledOnce, setCalledOnce] = useState(false);
+
+
+  if (!calledOnce) {
+    setCalledOnce(true);
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        setAccountStatus(<Link to="/sign-out">Sign Out</Link>);
+      } else {
+        setAccountStatus(<Link to="/sign-in">Sign In</Link>);
+      }
+    });
+  }
+
+
   return (
     <NavbarContainer>
       <NavbarInner>
@@ -238,6 +255,9 @@ const Navbar = () => {
                 </NavbarDropdown>
               </>
             )}
+          </NavItem>
+          <NavItem>
+          {accountStatus}
           </NavItem>
           {/*
                     <Link to='/login'>
