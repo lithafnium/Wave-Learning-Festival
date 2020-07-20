@@ -239,6 +239,9 @@ const Navbar = () => {
               </>
             )}
           </NavItem>
+          <NavItem>
+            <Link to="/donate">Donate</Link>
+          </NavItem>
           {/*
                     <Link to='/login'>
                         <Button>
@@ -288,6 +291,9 @@ const Navbar = () => {
           </NavItem>
           <NavItem>
             <Link to="/faq-parents">Parents FAQ</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/donate">Donate</Link>
           </NavItem>
         </SideBar>
       </NavbarInner>
