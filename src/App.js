@@ -69,6 +69,7 @@ import BlogPage from './pages/Blog/BlogPage'
 import CourseSignUp from './pages/Courses/CourseSignUp'
 import CoursePage from './pages/Courses/CoursePages'
 import ChangePassword from './pages/ChangePassword'
+import SignIn from "./pages/SignIn"
 
 import Dashboard from './pages/Dashboard'
 
@@ -275,6 +276,9 @@ function App () {
             </Route>
             <Route path="/change-password">
               <ChangePassword />
+            </Route>
+            <Route path="/sign-in">
+              <SignIn />
             </Route>
             <Route path="/:slug" component={CoursePage} />
             <Route path="/">
