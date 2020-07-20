@@ -242,6 +242,13 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     }
 
     <Typography.Header2 color="white" fontSize="24px">
+      RSVP for the attending seminars! *
+    </Typography.Header2>
+    {SPEAKERS.map((value) => (
+      renderMultiOption({key: "speakers", option: value, studentData, setStudentData})
+    ))}
+
+    <Typography.Header2 color="white" fontSize="24px">
       I have read and agree to the <a href="/student-agreement" target="_blank">Student Agreement</a> / He leído y acepto el Acuerdo del estudiante
     </Typography.Header2>
     {YES.map((value) => (
@@ -254,13 +261,6 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
     </Typography.Header2>
     {YES.map((value) => (
       renderSingleOption({key: "termsConditions", option: value, studentData, setStudentData})
-    ))}
-
-    <Typography.Header2 color="white" fontSize="24px">
-      RSVP for the attending seminars! *
-    </Typography.Header2>
-    {SPEAKERS.map((value) => (
-      renderMultiOption({key: "speakers", option: value, studentData, setStudentData})
     ))}
 
     <Typography.Header2 color="white" fontSize="24px">
