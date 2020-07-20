@@ -369,7 +369,7 @@ const About = () => {
           <FeaturedImage onClick={() => window.open('https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Pasdena}/>
           <FeaturedImage onClick={() => window.open('https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Monrovia}/>
           <FeaturedImage onClick={() => window.open('https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Arcadia}/>
-          <FeaturedImage onClick={() => window.open('https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.KTVU}/>
+          <FeaturedImage onClick={() => window.open('https://www.ktvu.com/news/harvard-student-develops-wave-learning-festival-offers-free-online-courses', '_blank')} width={27} src={Assets.KTVU}/>
 
         </ContainerInner>
       </div>
