@@ -123,7 +123,16 @@ const ChangePassword = () => {
 
   if (db && !calledOnce && !user) {
     setCalledOnce(true);
+    firebase.auth().onAuthStateChanged(function(theUser) {
+      if (theUser) {
+        setUser(theUser);
+        setPage("home");
+      } else {
+        setPage("not_signed_in");
+      }
+    });
     // setUser(firebase.auth().currentUser); // UNCOMMENT THIS OUT
+    /*
     firebase.auth().signInWithEmailAndPassword("jsr7@williams.edu", "cheesemaker123").catch(function(error) {
       setPage("error");
       setError(error.message);
@@ -137,6 +146,7 @@ const ChangePassword = () => {
         }
       }
     });
+    */
   }
 
   return (

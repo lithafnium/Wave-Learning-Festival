@@ -111,15 +111,11 @@ const Dashboard = () => {
     if (db && !calledOnce) {
       setCalledOnce(true);
       // console.log("call " + calledOnce);
-      firebase.auth().signInWithEmailAndPassword("jsr7@williams.edu", "cheesemaker123").catch(function(error) { // DELETE THIS LATER
-          setError(true);
-          setTheError(error);
-          setLoading(false);
-      }).then(function(result) {
-        // console.log(result.user.uid);
-        setUser(result.user);
-        if (result.user) {
-          db.collection("students2").where("userID", "==", result.user.uid).get().then(function(snapshot) {
+      firebase.auth().onAuthStateChanged(function(theUser) {
+        if (theUser) {
+          // console.log(result.user.uid);
+          setUser(theUser);
+          db.collection("students2").where("userID", "==", theUser.uid).get().then(function(snapshot) {
             var students = [];
             snapshot.forEach(function(snap) {
               students.push(snap);
@@ -170,9 +166,9 @@ const Dashboard = () => {
                 console.log(courses);
               });
             }
-          });
+            });
         } else {
-          setLoading(false);
+          window.location.href = "/sign-in";
         }
       });
     }
