@@ -73,6 +73,22 @@ const Navbar = () => {
                     Meet the Team
                 </DropdownItem>
               </Link>
+              <Link to="/partners-and-sponsors">
+                <DropdownItem>
+                  <IconContext.Provider
+                    value={{
+                      color: WLF_PURPLE,
+                      style: {
+                        verticalAlign: 'middle',
+                        marginRight: '10px'
+                      }
+                    }}
+                  >
+                    <div><FaUserFriends /></div>
+                  </IconContext.Provider>
+                    Partners and Sponsors
+                </DropdownItem>
+              </Link>
             </NavbarDropdown>
             )}
           </NavItem>
@@ -130,6 +146,9 @@ const Navbar = () => {
               </Link>
             </NavbarDropdown>
             )}
+          </NavItem>
+          <NavItem>
+            <Link to="/speakers">Speakers</Link>
           </NavItem>
           <NavItem onMouseEnter={() => setApplyShow(true)}
             onMouseLeave={() => setApplyShow(false)}>
@@ -239,6 +258,9 @@ const Navbar = () => {
               </>
             )}
           </NavItem>
+          <NavItem>
+            <Link to="/donate">Donate</Link>
+          </NavItem>
           {/*
                     <Link to='/login'>
                         <Button>
@@ -285,6 +307,9 @@ const Navbar = () => {
           </NavItem>
           <NavItem>
             <Link to="/faq-parents">Parents FAQ</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/donate">Donate</Link>
           </NavItem>
         </SideBar>
       </NavbarInner>
