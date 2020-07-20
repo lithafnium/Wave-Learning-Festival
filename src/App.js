@@ -10,6 +10,8 @@ import FAQTeachers from './pages/FAQ/Teachers'
 import Courses from './pages/Courses'
 import CoursesInProgress from './pages/Courses/CoursesInProgress'
 import CoursesArchive from './pages/Courses/CoursesArchive'
+import Speakers from './pages/Speakers'
+import SpeakerSignUp from './pages/Speakers/SpeakerSignup'
 
 // wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
@@ -68,7 +70,7 @@ import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
 import CourseSignUp from './pages/Courses/CourseSignUp'
 import CoursePage from './pages/Courses/CoursePages'
-import { Switch, Redirect, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 function App () {
   return (
@@ -258,6 +260,12 @@ function App () {
             <Route path="/join">
               <Join />
             </Route>
+            <Route path="/speakers">
+              <Speakers />
+            </Route>
+            <Route path="/speaker-sign-up">
+              <SpeakerSignUp />
+            </Route>
             <Route path="/blog/:blogSlug" component={BlogPage} />
             <Route path="/blog">
               <Blog />
@@ -266,6 +274,7 @@ function App () {
               <CourseSignUp />
             </Route>
             <Route path="/:slug" component={CoursePage} />
+
             <Route path="/">
               <About />
             </Route>

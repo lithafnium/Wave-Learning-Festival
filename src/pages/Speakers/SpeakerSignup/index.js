@@ -1,325 +1,324 @@
-import React, {useState, useContext} from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Colors, Typography, Form } from "@/styles";
-import * as Styles from "./styles";
-import Logo from "./logo.png"
+import React, { useState, useContext } from 'react'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import { Colors, Typography, Form } from '@/styles'
+import * as Styles from './styles'
+import Logo from './logo.png'
 import firebase from 'firebase'
-import { FirebaseContext } from "@/firebaseContext";
-import { COUNTRIES, UNITED_STATES, STATES, SPEAKERS } from "./data"
+import { FirebaseContext } from '@/firebaseContext'
+import { COUNTRIES, UNITED_STATES, STATES, SPEAKERS } from './data'
 
-var inputChanged = function(key, setStudentData) {
-
+var inputChanged = function (key, setStudentData) {
   var result = (event) => {
-    var value = event.target.value;
-    if (key == "name_first" || key == "name_last") {
-      value = value.substring(0, 1).toUpperCase() + value.substring(1);
+    var value = event.target.value
+    if (key == 'name_first' || key == 'name_last') {
+      value = value.substring(0, 1).toUpperCase() + value.substring(1)
     }
     setStudentData(prevData => {
-      var result = {...prevData};
-      result[key] = value;
-      return result;
-    });
-  };
-  return result;
-};
+      var result = { ...prevData }
+      result[key] = value
+      return result
+    })
+  }
+  return result
+}
 
-const renderMultiOption = ({key, option, studentData, setStudentData}) => (
+const renderMultiOption = ({ key, option, studentData, setStudentData }) => (
   <Form.RadioInputBackground onClick={() => {
-    const newData = studentData[key];
-    const ix = newData.indexOf(option);
+    const newData = studentData[key]
+    const ix = newData.indexOf(option)
     if (ix >= 0) {
-      newData.splice(ix,1);
+      newData.splice(ix, 1)
     } else {
-      newData.push(option);
+      newData.push(option)
     }
     setStudentData(prevData => {
-      var result = {...prevData};
-      result[key] = newData;
-      return result;
-  });
+      var result = { ...prevData }
+      result[key] = newData
+      return result
+    })
   }}>
     <Form.RadioInputButton many={true} selected={studentData[key].indexOf(option) >= 0}/>
-    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',}}>
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
       <Typography.BodyText color="white">{option}</Typography.BodyText>
-      <div style={{height: 40}}>
-        {option === "Other" &&
+      <div style={{ height: 40 }}>
+        {option === 'Other' &&
           <Form.Input
-            value={studentData["other" + key]}
+            value={studentData['other' + key]}
             onChange={event => {
-              const value = event.target.value;
+              const value = event.target.value
               setStudentData(prevData => {
                 var result = {
                   ...prevData
-                };
-                result["other" + key] = value;
-                return result;
-              });
+                }
+                result['other' + key] = value
+                return result
+              })
             }}
           />
         }
       </div>
     </div>
   </Form.RadioInputBackground>
-);
+)
 
-const renderSingleOption = ({other, key, option, studentData, setStudentData}) => (
+const renderSingleOption = ({ other, key, option, studentData, setStudentData }) => (
   <Form.RadioInputBackground onClick={() => {
     setStudentData(prevData => {
       var result = {
-      ...prevData,
-      };
-      result[key] = option;
-      return result;
+        ...prevData
+      }
+      result[key] = option
+      return result
     }
-  );
+    )
   }}>
     <Form.RadioInputButton many={true} selected={studentData[key] == option}/>
-    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center',}}>
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
       <Typography.BodyText color="white">{option}</Typography.BodyText>
-      <div style={{height: 40}}>
-        {option === "Other" &&
+      <div style={{ height: 40 }}>
+        {option === 'Other' &&
           <Form.Input
-            value={studentData["other" + key]}
+            value={studentData['other' + key]}
             onChange={event => {
-              const value = event.target.value;
+              const value = event.target.value
               setStudentData(prevData => {
                 var result = {
                   ...prevData
-                };
-                result["other" + key] = value;
-                return result;
-            });
+                }
+                result['other' + key] = value
+                return result
+              })
             }}
           />
         }
       </div>
     </div>
   </Form.RadioInputBackground>
-);
+)
 
-const renderOption = ({option}) => (
+const renderOption = ({ option }) => (
   <option value={option}>{option}</option>
 )
 
-var fitsRequirements = function(studentData) {
-  var result = studentData.name_first != "" &&
-    studentData.name_last != "" &&
-    studentData.email != "" &&
-    studentData.parentName != "" &&
-    studentData.parentEmail != "" &&
-    studentData.speakers != ""
-  return result;
-};
-
-var emailValidated = function(email) {
-  //Based on thouroughly tested regex
-  const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return regexEmail.test(String(email.replace(" ", "")));
+var fitsRequirements = function (studentData) {
+  var result = studentData.name_first != '' &&
+    studentData.name_last != '' &&
+    studentData.email != '' &&
+    studentData.parentName != '' &&
+    studentData.parentEmail != '' &&
+    studentData.speakers != ''
+  return result
 }
 
-var submit = function(db, studentData, setErrorMessage, setPage) {
-  var submission = {...studentData};
-  db.collection("SpeakerRegistrations").where("email", "==", submission.email).get().then(function(snapshot) {
-    var ls = [];
-    snapshot.forEach(function(snap) {
-      ls.push(snap.data());
-    });
+var emailValidated = function (email) {
+  // Based on thouroughly tested regex
+  const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return regexEmail.test(String(email.replace(' ', '')))
+}
+
+var submit = function (db, studentData, setErrorMessage, setPage) {
+  var submission = { ...studentData }
+  db.collection('SpeakerRegistrations').where('email', '==', submission.email).get().then(function (snapshot) {
+    var ls = []
+    snapshot.forEach(function (snap) {
+      ls.push(snap.data())
+    })
     if (ls.length > 0) {
-      db.collection("SpeakerRegistrations").doc(ls[0].id).update(submission).then(function() {
-        setPage("emailTaken");
-        console.log(ls[0].id);
-      });
+      db.collection('SpeakerRegistrations').doc(ls[0].id).update(submission).then(function () {
+        setPage('emailTaken')
+        console.log(ls[0].id)
+      })
     } else {
-      db.collection("SpeakerRegistrations").add(submission).then(function(ref) {
-        firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function() {
-          setPage("complete");
-        }).catch(function(error) {
-          setPage("complete");
-        });
-        db.collection("SpeakerRegistrations").doc(ref.id).update({id: ref.id});
-      });
+      db.collection('SpeakerRegistrations').add(submission).then(function (ref) {
+        firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function () {
+          setPage('complete')
+        }).catch(function (error) {
+          setPage('complete')
+        })
+        db.collection('SpeakerRegistrations').doc(ref.id).update({ id: ref.id })
+      })
     }
-  });
-};
+  })
+}
 
 var YES_NO = [
-  "Yes!",
-  "No"
-];
+  'Yes!',
+  'No'
+]
 
-var YES = ["Yes"];
+var YES = ['Yes']
 
 const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWrongSubmission, setErrorMessage) => {
   return (
     <>
-    <Typography.Header color={Colors.WLF_YELLOW}>
+      <Typography.Header color={Colors.WLF_YELLOW}>
       Speaker RSVP
-    </Typography.Header>
+      </Typography.Header>
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
       Student First Name / Nombre *
-    </Typography.Header2>
-    <Form.Input
-      value={studentData.name_first}
-      onChange={inputChanged("name_first", setStudentData)}
-    />
-    <Typography.Header2 color="white" fontSize="24px">
+      </Typography.Header2>
+      <Form.Input
+        value={studentData.name_first}
+        onChange={inputChanged('name_first', setStudentData)}
+      />
+      <Typography.Header2 color="white" fontSize="24px">
       Student Last Name / Apellido *
-    </Typography.Header2>
-    <Form.Input
-      value={studentData.name_last}
-      onChange={inputChanged("name_last", setStudentData)}
-    />
+      </Typography.Header2>
+      <Form.Input
+        value={studentData.name_last}
+        onChange={inputChanged('name_last', setStudentData)}
+      />
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
       Student Email / Correo electrónico *
-    </Typography.Header2>
-    <Typography.BodyText color="white">
+      </Typography.Header2>
+      <Typography.BodyText color="white">
       If possible, please use a personal email instead of a school email. <br/>
-      Parents: If you have multiple children signing up for speakers, 
+      Parents: If you have multiple children signing up for speakers,
       please make sure you input a different email per child here.
-    </Typography.BodyText>
-    <Form.Input
-      value={studentData.email}
-      onChange={inputChanged("email", setStudentData)}
-    />
+      </Typography.BodyText>
+      <Form.Input
+        value={studentData.email}
+        onChange={inputChanged('email', setStudentData)}
+      />
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
       Let me know when registrations for future waves begin! / Notifícame de cursos nuevos! *
-    </Typography.Header2>
-    {YES_NO.map((value) => (
-      renderSingleOption({key: "futureWaves", option: value, studentData, setStudentData})
-    ))}
-
-    <Typography.Header2 color="white" fontSize="24px">
-      Parent/Guardian Name (Full) / Nombre de padre o madre *
-    </Typography.Header2>
-    <Form.Input
-      value={studentData.parentName}
-      onChange={inputChanged("parentName", setStudentData)}
-    />
-
-    <Typography.Header2 color="white" fontSize="24px">
-      Parent/Guardian Email / Correo electrónico de padre o madre *
-    </Typography.Header2>
-    <Form.Input
-      value={studentData.parentEmail}
-      onChange={inputChanged("parentEmail", setStudentData)}
-    />
-
-    <Typography.Header2 color="white" fontSize="24px">
-      Country / País *
-    </Typography.Header2>
-    <Form.Dropdown
-      onChange={inputChanged("country", setStudentData)}
-    >
-      {COUNTRIES.map((value) => (
-        renderOption({option: value})
+      </Typography.Header2>
+      {YES_NO.map((value) => (
+        renderSingleOption({ key: 'futureWaves', option: value, studentData, setStudentData })
       ))}
-    </Form.Dropdown>
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
+      Parent/Guardian Name (Full) / Nombre de padre o madre *
+      </Typography.Header2>
+      <Form.Input
+        value={studentData.parentName}
+        onChange={inputChanged('parentName', setStudentData)}
+      />
+
+      <Typography.Header2 color="white" fontSize="24px">
+      Parent/Guardian Email / Correo electrónico de padre o madre *
+      </Typography.Header2>
+      <Form.Input
+        value={studentData.parentEmail}
+        onChange={inputChanged('parentEmail', setStudentData)}
+      />
+
+      <Typography.Header2 color="white" fontSize="24px">
+      Country / País *
+      </Typography.Header2>
+      <Form.Dropdown
+        onChange={inputChanged('country', setStudentData)}
+      >
+        {COUNTRIES.map((value) => (
+          renderOption({ option: value })
+        ))}
+      </Form.Dropdown>
+
+      <Typography.Header2 color="white" fontSize="24px">
       City *
-    </Typography.Header2>
-    <Form.Input
-      value={studentData.city}
-      onChange={inputChanged("city", setStudentData)}
-    />
+      </Typography.Header2>
+      <Form.Input
+        value={studentData.city}
+        onChange={inputChanged('city', setStudentData)}
+      />
 
-    {studentData.country === UNITED_STATES && <>
+      {studentData.country === UNITED_STATES && <>
         <Typography.Header2 color="white" fontSize="24px">
           State *
         </Typography.Header2>
         <Form.Dropdown
-          onChange={inputChanged("state", setStudentData)}
+          onChange={inputChanged('state', setStudentData)}
         >
           {STATES.map((value) => (
-            renderOption({option: value})
+            renderOption({ option: value })
           ))}
         </Form.Dropdown>
-        </>
-    }
+      </>
+      }
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
       RSVP for the attending seminars! *
-    </Typography.Header2>
-    {SPEAKERS.map((value) => (
-      renderMultiOption({key: "speakers", option: value, studentData, setStudentData})
-    ))}
+      </Typography.Header2>
+      {SPEAKERS.map((value) => (
+        renderMultiOption({ key: 'speakers', option: value, studentData, setStudentData })
+      ))}
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
       I have read and agree to the <a href="/student-agreement" target="_blank">Student Agreement</a> / He leído y acepto el Acuerdo del estudiante
-    </Typography.Header2>
-    {YES.map((value) => (
-      renderSingleOption({key: "studentAgreement", option: value, studentData, setStudentData})
-    ))}
+      </Typography.Header2>
+      {YES.map((value) => (
+        renderSingleOption({ key: 'studentAgreement', option: value, studentData, setStudentData })
+      ))}
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
       I have read and agree to the <a href="/terms-conditions" target="_blank">Terms and Conditions</a>&nbsp;
        and <a href="/privacy-policy" target="_blank">Privacy Policy</a>. / He leído y acepto los <a href="/terms-conditions" target="_blank">Términos y Condiciones</a> y la <a href="/privacy-policy" target="_blank">Política de Privacidad</a>. *
-    </Typography.Header2>
-    {YES.map((value) => (
-      renderSingleOption({key: "termsConditions", option: value, studentData, setStudentData})
-    ))}
+      </Typography.Header2>
+      {YES.map((value) => (
+        renderSingleOption({ key: 'termsConditions', option: value, studentData, setStudentData })
+      ))}
 
-    <Typography.Header2 color="white" fontSize="24px">
+      <Typography.Header2 color="white" fontSize="24px">
       Any comments or questions for the teachers or for the board? / ¿Tiene usted alguna pregunta para los maestros o para nosotros?
-    </Typography.Header2>
-    <Form.BigInput
-      value={studentData.questions}
-      onChange={inputChanged("questions", setStudentData)}
-    />
+      </Typography.Header2>
+      <Form.BigInput
+        value={studentData.questions}
+        onChange={inputChanged('questions', setStudentData)}
+      />
 
-    <Typography.BodyText color="white">
+      <Typography.BodyText color="white">
       * Required field
-    </Typography.BodyText>
+      </Typography.BodyText>
 
-    <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-      <Form.Button onClick={(event) => {
-        if (fitsRequirements(studentData)) {
-          if (emailValidated(studentData.email) &&
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Form.Button onClick={(event) => {
+          if (fitsRequirements(studentData)) {
+            if (emailValidated(studentData.email) &&
               emailValidated(studentData.parentEmail)) {
-              event.target.parentNode.removeChild(event.target);
-              submit(db, studentData, setErrorMessage, setPage);
+              event.target.parentNode.removeChild(event.target)
+              submit(db, studentData, setErrorMessage, setPage)
+            } else {
+              setWrongSubmission('Please input a valid email address.')
+            }
           } else {
-            setWrongSubmission("Please input a valid email address.")
+            setWrongSubmission('Please fill out the required fields.')
           }
-        } else {
-          setWrongSubmission("Please fill out the required fields.")
-        }
-      }} enabled={fitsRequirements(studentData)}>
-        <Typography.Header color="white" fontSize="24px">
+        }} enabled={fitsRequirements(studentData)}>
+          <Typography.Header color="white" fontSize="24px">
           Submit
-        </Typography.Header>
-      </Form.Button>
-    </div>
+          </Typography.Header>
+        </Form.Button>
+      </div>
 
-    {wrongSubmission &&
+      {wrongSubmission &&
     <Typography.BodyText color="white">
       {wrongSubmission}
     </Typography.BodyText>}
 
     </>
-  );
+  )
 }
 
 const Complete = () => {
   return (
     <div>
-    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
-    <Typography.BodyText color="white">
+      <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
+      <Typography.BodyText color="white">
       We look forward to seeing you at our speaker seminar(s). <br/>
       Click <a href="/">here</a> to go back to the homepage.
-    </Typography.BodyText>
+      </Typography.BodyText>
     </div>
-  );
+  )
 }
 
 const Loading = () => {
   return (
     <Typography.Header color={Colors.WLF_YELLOW}>Loading...</Typography.Header>
-  );
+  )
 }
 
 const Error = (errorMessage) => {
@@ -331,58 +330,58 @@ const Error = (errorMessage) => {
 const EmailTaken = () => {
   return (<>
     <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
-    <Typography.BodyText color="white"> 
-      Note: your email address has already been registered this wave, 
+    <Typography.BodyText color="white">
+      Note: your email address has already been registered this wave,
       so we updated your registration to match the response you just submitted.
     </Typography.BodyText>
     <Typography.BodyText color="white">
       You and/or your parent should recieve a confirmation email shortly. <br/>
       Click <a href="/">here</a> to go back to the homepage.
     </Typography.BodyText>
-    </>
+  </>
   )
 }
 
 const CourseSignUp = () => {
-  const [page, setPage] = useState("loading");
-  const [calledOnce, setCalledOnce] = useState(false);
-  const [wrongSubmission, setWrongSubmission] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [page, setPage] = useState('loading')
+  const [calledOnce, setCalledOnce] = useState(false)
+  const [wrongSubmission, setWrongSubmission] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const [studentData, setStudentData] = useState({
-    name_first: "",
-    name_last: "",
-    email: "",
-    futureWaves: "",
-    age: "",
-    parentName: "",
-    parentEmail: "",
-    country: "",
-    city: "",
-    state: "",
-    studentAgreement: "",
-    termsConditions: "",
-    notInterested: "",
+    name_first: '',
+    name_last: '',
+    email: '',
+    futureWaves: '',
+    age: '',
+    parentName: '',
+    parentEmail: '',
+    country: '',
+    city: '',
+    state: '',
+    studentAgreement: '',
+    termsConditions: '',
+    notInterested: '',
     speakers: [],
-    questions: ""
+    questions: ''
   })
 
-  const {db} = useContext(FirebaseContext);
+  const { db } = useContext(FirebaseContext)
 
   if (db && !calledOnce) {
-    setPage("home");
-    setCalledOnce(true);
+    setPage('home')
+    setCalledOnce(true)
   }
 
   return (
-    <div style={{overflow: 'hidden', position: 'relative'}}>
+    <div style={{ overflow: 'hidden', position: 'relative' }}>
       <Navbar />
       <Styles.SignupBackground>
-        <div style={{maxWidth: 800}}>
-          {page === "home" && Home(db, setPage, studentData, setStudentData, wrongSubmission, setWrongSubmission, setErrorMessage)}
-          {page === "complete" && Complete()}
-          {page === "loading" && Loading()}
-          {page === "error" && Error(errorMessage)}
-          {page === "emailTaken" && EmailTaken()}
+        <div style={{ maxWidth: 800 }}>
+          {page === 'home' && Home(db, setPage, studentData, setStudentData, wrongSubmission, setWrongSubmission, setErrorMessage)}
+          {page === 'complete' && Complete()}
+          {page === 'loading' && Loading()}
+          {page === 'error' && Error(errorMessage)}
+          {page === 'emailTaken' && EmailTaken()}
         </div>
       </Styles.SignupBackground>
       <Styles.LogoBackground src={Logo} alt="logo" style={{
@@ -391,7 +390,7 @@ const CourseSignUp = () => {
         height: 300,
         transform: 'rotate(-35deg)',
         top: '60%',
-        left: -100,
+        left: -100
       }}/>
       <Styles.LogoBackground src={Logo} alt="logo" style={{
         position: 'absolute',
@@ -399,11 +398,11 @@ const CourseSignUp = () => {
         height: 300,
         transform: 'rotate(-235deg)',
         top: '20%',
-        right: -150,
+        right: -150
       }}/>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default CourseSignUp;
+export default CourseSignUp
