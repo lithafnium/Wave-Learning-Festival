@@ -11,7 +11,7 @@ const FAQStudents = () => {
       <Container>
         <ContainerInner>
           <Typography.Header style={{ color: Colors.WLF_PURPLE }}>
-            FAQ - Teachers
+            FAQ - Instructors
           </Typography.Header>
           <br />
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
@@ -41,7 +41,7 @@ const FAQStudents = () => {
           </Typography.Header2>
           <Typography.BodyText>
             Yes. You will be planning your course with the help of Wave Learning
-            Festival’s Logistics team. Together, you will build and structure
+            Festival’s Operations and Content team. Together, you will build and structure
             your class programming to make sure your class is successful when
             you teach it. Our team will also be in contact throughout the
             duration of your seminar, should you have any questions or request
@@ -66,7 +66,6 @@ const FAQStudents = () => {
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             Is it possible to co-teach with another person?
           </Typography.Header2>
-          <br />
           <Typography.BodyText>
             Yes! In fact, we encourage it—double the ideas and half the work is
             awesome for everyone involved. When filling out the Teacher
@@ -77,7 +76,6 @@ const FAQStudents = () => {
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             What should I teach?
           </Typography.Header2>
-          <br />
           <Typography.BodyText>
             All topics are valid, whether traditional or a bit eccentric!
             Whatever you choose to teach, our priority is to keep classes fun

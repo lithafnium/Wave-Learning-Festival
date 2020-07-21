@@ -11,7 +11,7 @@ import { BodyText } from '@/styles/Typography'
 const TeacherHome = ({ setPage }) => {
   return (<>
     <Typography.Header color={Colors.WLF_YELLOW}>
-      Teachers
+      Instructors
     </Typography.Header>
     <Typography.BodyText color="white" fontSize="20px" style={{ marginBottom: 30 }}>
       Want to share your passions with students worldwide? Apply to be a teacher for Wave Learning Festival!
@@ -25,11 +25,11 @@ const TeacherHome = ({ setPage }) => {
         <Styles.TeacherImage src={TeacherPic} />
       </Styles.TestimonialItem>
       <Styles.TestimonialItem style={{ alignItems: 'flex-start' }}>
-        <Typography.Header color={Colors.WLF_YELLOW} fontSize="28px">
-          "I loved teaching and working with all these excited learners!"
+        <Typography.Header color={Colors.WLF_YELLOW} fontSize="20px">
+          "I am 100% looking to pursue teaching as a career in the future which is something I never considered before working with Wave Learning Festival. The Wave administration made teaching my course, Introduction to Filmmaking, such a positive experience for me. I started out my class as a college student looking to share a couple of fun tips about filmmaking and I ended my class as an educator passionate about student engagement and educational equity. Thank you a million times to the Wave team!"
         </Typography.Header>
         <Typography.Header color={Colors.WLF_YELLOW} fontSize="28px">
-          -Cecelia, Wave 1 teacher
+          - Morgan, Wave 3 instructor
         </Typography.Header>
       </Styles.TestimonialItem>
     </Styles.TestimonialBackground>

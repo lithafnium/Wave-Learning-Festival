@@ -232,7 +232,7 @@ const Navbar = () => {
                           <FaChalkboardTeacher />
                         </div>
                       </IconContext.Provider>
-                      Teachers
+                      Instructors
                     </DropdownItem>
                   </Link>
                 </NavbarDropdown>
