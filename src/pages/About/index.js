@@ -79,7 +79,7 @@ const About = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'row',
-                marginTop: '50px',
+                marginTop: '20px',
                 flexWrap: 'wrap'
               }}
             >
@@ -98,6 +98,35 @@ const About = () => {
                   <p>Register Now!</p>
                 </Button>
               </a>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                position: 'relative',
+                justifyContent: 'flex-start',
+                width: '460px',
+                borderRadius: '20px',
+                backgroundColor: Colors.WLF_PURPLE,
+                marginTop: 30,
+                paddingLeft: 15
+              }}
+            >
+              <Typography.Header
+                style={{
+                  position: 'relative',
+                  zIndex: 2,
+                  color: Colors.WLF_YELLOW,
+                  fontSize: 23
+                }}
+              >
+                Announcements:
+                <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}> 
+                  <ul style={{marginTop: -10, marginLeft:-25, lineHeight:1.5}}>
+                    <li>Student course registration closes on 7/23! <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a> </li>
+                    <li>Jameela Jamil is hosting a Q&A on 7/30! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                  </ul>
+                </Typography.BodyText>
+              </Typography.Header>
             </div>
           </div>
           <HeaderImage src={Assets.Swing} />
