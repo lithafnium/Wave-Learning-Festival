@@ -62,9 +62,6 @@ export const SPEAKERS = [
   'Nicole Chung: Why Your Stories Matter',
   'Nate Saal',
   'Andrew Cramer',
-  'Lisa Baldwin',
   'Rhiannon McGavin',
-  'Jasmine Shao',
-  'Iris Fu',
-  'Ruta Sepetys'
+  'Iris Fu'
 ]
