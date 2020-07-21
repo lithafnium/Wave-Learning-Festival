@@ -114,10 +114,10 @@ const Speakers = () => {
       <Container>
         <ContainerInner>
           <Featured>Next Up: </Featured>
-          <Row>
             {
               speakers.map((speaker, index) => {
-                return <SpeakerCard
+                return           <Row>
+                <SpeakerCard
                   key={index}
                   name={speaker.name}
                   img={speaker.img}
@@ -125,11 +125,11 @@ const Speakers = () => {
                   date={speaker.date}
                   desc={speaker.desc}
                   bio={speaker.bio}
-                  color={colors[index % 4]}/>
+                  color={colors[index % 4]}/>          </Row>
+
               })
             }
 
-          </Row>
 
         </ContainerInner>
       </Container>

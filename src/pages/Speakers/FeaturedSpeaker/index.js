@@ -8,7 +8,9 @@ import {
   SpeakerContainerInner,
   Button,
   Heading,
-  Triangle
+  Triangle,
+  Info, 
+  ImageContainer
 } from './styles'
 import AnimateHeight from 'react-animate-height'
 
@@ -19,14 +21,17 @@ const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio }) =>
     <div>
       <SpeakerContainer>
         <SpeakerContainerInner>
+          <ImageContainer>
           <SpeakerImage src={picture} />
-          <div>
+
+          </ImageContainer>
+          <Info>
             <h1>{name}</h1>
             <Description>{subtitle}</Description>
             <p>{date}</p>
             <Button onClick={() => toggleShow(!show)}>Learn More</Button> &nbsp;&nbsp;
             <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
-          </div>
+          </Info>
         </SpeakerContainerInner>
       </SpeakerContainer>
       <AnimateHeight height={show ? 'auto' : 0} duration={200}>

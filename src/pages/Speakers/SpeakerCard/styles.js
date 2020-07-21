@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import { device } from '@/theme'
 
+export const ImageContainer = styled.div`
+    flex-grow: 4; 
+    flex-basis: 0;
+    display: flex; 
+    justify-content: center; 
+`
+
 export const Speaker = styled.img`
     width: 12em; 
     height: 12em; 
@@ -8,10 +15,13 @@ export const Speaker = styled.img`
     object-fit: cover; 
     border-radius: 50%; 
     border: 5px solid ${props => props.color};
+    margin-bottom: 1em; 
+    
 `
 
 export const Info = styled.div`
-    width: 550px;
+    flex-grow: 5; 
+    flex-basis: 0;
 `
 
 export const Header = styled.h2`
@@ -43,20 +53,7 @@ export const Button = styled.button`
         opacity: 0.8; 
     }
 `
-
-
-
-
-
-
-
-
-
-
-
-
 export const SpeakerContainer = styled.div`
-    position: relative; 
     width: 100%; 
     
     padding: 2em;  
