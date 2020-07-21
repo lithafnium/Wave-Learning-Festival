@@ -58,7 +58,7 @@ const Speakers = () => {
       img: Jasmine,
       title: "AKA studyquill! UCLA '24",
       date: 'TBD',
-      desc: "How do people become famous? Specifically, how do people talking to themselves in their bedrooms blow up into Internet stars? I don't have all the answers to the age-old puzzle of popularity, but here's what I can tell you: (1) How to start creating or improve your own content! I'll share the top tips I've learned from my four years of video and photo experience, and my insider reflections on the 'influencer industry' as a whole. (2) How people seem to make an income out of thin air! I'll show you how monetization, sponsorships, affiliate marketing, and other methods work, so you can be an informed consumer or get started on your Internet career. (3) And maybe, just maybe... how to become famous.",
+      desc: <p>How do people become famous? Specifically, how do people talking to themselves in their bedrooms blow up into Internet stars? I don't have all the answers to the age-old puzzle of popularity, but here's what I can tell you: <br/><br/> How to start creating or improve your own content! I'll share the top tips I've learned from my four years of video and photo experience, and my insider reflections on the 'influencer industry' as a whole. <br/><br/> How people seem to make an income out of thin air! I'll show you how monetization, sponsorships, affiliate marketing, and other methods work, so you can be an informed consumer or get started on your Internet career. <br/><br/> And maybe, just maybe... how to become famous.</p>,
       bio: "Hello! My name is Jasmine. I'm the creator behind the YouTube channel and Instagram account @studyquill, where I share tips on studying and bullet journaling. In my four years on social media, I've gained 550,000+ subscribers and 300,000+ Instagram followers. I've collaborated with brands like Google Chromebooks, Texas Instruments, and Grammarly, and have been profiled in the Wall Street Journal and National Geographic textbooks. I also published a book about bullet journaling and interned with the marketing team of my favorite stationery company! Proud Ravenclaw and lover of string crafts."
     },
     {
@@ -74,7 +74,7 @@ const Speakers = () => {
       img: Ruta,
       title: '#1 NYT Bestselling Author of Historical Fiction',
       date: 'TBD',
-      desc: 'Coming Soon!',
+      desc: <p><b>Seminar 1: Anatomy of a Page-Turner: Building a Bestselling Novel</b><br/>  Why do some books pull you to the page and keep you there? This seminar will examine the elements of compelling story building including plot, stakes, pacing, characters, setting, and voice. Presentation will be followed by a Q & A. <br/><br/> <b>Seminar 2: History in Hiding: The Elusive Power of Historical Fiction </b><br/>What determines how history is preserved and recalled? Why do some parts of history penetrate our collective consciousness while others remain hidden? This seminar will explore unearthing buried history and creative research! Topics will include the power of historical fiction to facilitate progress, create pathways for global dialogue, and give voice to the voiceless. Presentation will be followed by discussion and Q & A. <br/><br/> <b>Seminar 3: Meet the Author: Ruta Sepetys Discusses Her Novels</b><br/>Prior to becoming a bestselling novelist, Ruta Sepetys spent over twenty years in the entertainment industry helping artists and musicians tell stories through song. In this seminar, Ruta will discuss her path to publication and answer questions about two of her New York Times bestselling novels—Salt to the Sea and Between Shades of Gray. </p> ,
       bio: "Ruta Sepetys is a #1 New York Times bestselling author of historical fiction published in over sixty countries and forty languages. Sepetys is considered a “crossover” novelist as her books are read by both students and adults worldwide. Winner of the Carnegie Medal, Ruta is renowned for giving voice to underrepresented history and those who experienced it.  Her books have won or been shortlisted for over forty book prizes, are included on over thirty state reading lists, and are currently in development for film and television. www.rutasepetys.com"
     }
   ]
@@ -86,10 +86,10 @@ const Speakers = () => {
       <Navbar/>
       <Container style={{ minHeight: '0vh'}}>
         <ContainerInner style={{marginBottom: 0}}>
-          <Featured>Featured Speaker : </Featured>
+          <Featured>Featured Speaker: </Featured>
           <FeaturedSpeaker 
             name="Q&#38;A with Jameela Jamil"
-            date="7/30 4pm EDT"
+            date="Date: 7/30 4pm EDT"
             picture={Jameela}
             subtitle="The Good Place Actress and Women's Body Image Activist"
             bio="Jameela Jamil is an English-born actress, writer, DJ, model, radio host, and activist. She was discovered at 22 years old when she was teaching English in London, UK. Her first job in media was a main host on T4, the UK's leading youth entertainment show, and she soon went on to become a journalist for Cosmopolitan Magazine and the Huffington Post. 2012 saw many successes for Jamil, when she released her successful clothing line, shot for both British and American Vogue, Glamour Magazine, Cosmopolitan Magazine and Japanese teen vogue, and was nominated for the PPA and BSME awards for her writing.
@@ -100,7 +100,7 @@ const Speakers = () => {
       </Container>
       <Container style={{ minHeight: '0vh' }}>
         <ContainerInner>
-          <Featured>Upcoming Speaker : </Featured>
+          <Featured>Upcoming Speaker: </Featured>
           <FeaturedSpeaker 
             name="Nicole Chung: Why Your Stories Matter"
             date="Date: 7/28 2:30-3:30 PM EDT"
