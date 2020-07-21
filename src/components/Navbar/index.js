@@ -70,22 +70,6 @@ const Navbar = () => {
                     Meet the Team
                 </DropdownItem>
               </Link>
-              <Link to="/partners-and-sponsors">
-                <DropdownItem>
-                  <IconContext.Provider
-                    value={{
-                      color: WLF_PURPLE,
-                      style: {
-                        verticalAlign: 'middle',
-                        marginRight: '10px'
-                      }
-                    }}
-                  >
-                    <div><FaUserFriends /></div>
-                  </IconContext.Provider>
-                    Partners and Sponsors
-                </DropdownItem>
-              </Link>
             </NavbarDropdown>
             )}
           </NavItem>
