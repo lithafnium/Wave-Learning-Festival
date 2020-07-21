@@ -163,6 +163,14 @@ const Dashboard = () => {
                         coursesResult.push(toPush);
                         if (numCourses == currentNum) {
                           setCourses(coursesResult);
+                          setCoursesDisplayed(coursesResult.filter(course => {
+                            for (let i = 0; i < courses.length; i++) {
+                              if (course.wave.includes(wave)) {
+                                return true
+                              }
+                            }
+                            return false
+                          }))
                           setLoading(false);
                         }
                       })
@@ -181,220 +189,194 @@ const Dashboard = () => {
   }, [db, storage])
 
   useEffect(() => {
-    if (coursesDisplayed.length === 0) {
-      setCoursesDisplayed(courses)
-    } else {
-      setCoursesDisplayed(courses.filter(course => {
-        for (let i = 0; i < courses.length; i++) {
-          if (course.wave.includes(wave)) {
-            return true
-          }
+    setCoursesDisplayed(courses.filter(course => {
+      for (let i = 0; i < courses.length; i++) {
+        if (course.wave.includes(wave)) {
+          return true
         }
-        return false
-      }))
-    }
+      }
+      return false
+    }))
   }, [wave])
 
-    /*
-      if (loading) {
-        return (
-          <>
-          <Navbar/>
+  if (isError) {
+    return (
+      <>
+        <Navbar/>
+        <Container>
+        <ContainerInner>
+        <p>Error. Code: {theError.code}</p>
+        <p>Error Message: {theError.message}</p>
+        </ContainerInner>
+        </Container>
+
+        <Footer/>
+      </>);
+  }
+
+  if (loading) {
+    return (
+      <>
+        <Navbar/>
+        <Container>
+        <ContainerInner>
+        <p>Loading database...</p>
+        </ContainerInner>
+        </Container>
+
+        <Footer/>
+      </>);
+
+  }
+
+  if (!user) {
+    return (
+      <>
+        <Navbar/>
+        <Container>
+        <ContainerInner>
+        <p>Not signed in.</p>
+        </ContainerInner>
+        </Container>
+
+        <Footer/>
+      </>);
+
+  }
+
+  var inputChanged = function(setWave) {
+
+    var result = (event) => {
+      var value = event.target.value;
+      setWave(prevData => {
+        var result = {...prevData};
+        result = value;
+        return result;
+      });
+
+    };
+    return result;
+  };
+
+  var WAVE_OPTIONS = [
+    4,
+    3,
+    2,
+    1
+  ];
+
+  if (student) {
+    console.log(wave);
+    var studentInfo = generateStudentInfo(student);
+
+    $(document).ready(function() {
+      // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
+      $(document).on("click", ".profile-item button", function(e) {
+        var label = $(this).parent().find(".label").html();
+        var data = $(this).parent().find(".data").html();
+        $(this).parent().after(ReactDOMServer.renderToString(genEdit({"label": label, "data": data})));
+        var editing = $(this).parent().next();
+        // console.log(editing.find("*"));
+        editing.find(".edit-field").focus();
+        editing.find(".edit-field").select();
+        $(this).parent().remove();
+      });
+      $(document).on("click", ".profile-item-edit button", function(e) {
+        var label = $(this).parent().find(".label").html();
+        var newData = $(this).parent().find(".edit-field").val();
+        var change = changing(label, newData, student);
+        // console.log(change);
+        db.doc('students2/' + student.id).set(change);
+        $(this).parent().after(ReactDOMServer.renderToString(fragHtml({"label": label, "data": newData})));
+        $(this).parent().remove();
+      });
+      // console.log("hi");
+    });
+
+    return (<>
+      <div>
+        <Navbar/>
           <Container>
           <ContainerInner>
-              <p>
-                Loading...
-              </p>
+          <div style={{display: "flex", height: "100%"}}>
+            <Column>
+              <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
+              <div style={{backgroundImage: `url(${WavyPurple})`,
+                          backgroundSize: "cover",
+                          backgroundRepeat: "no-repeat",
+                          height: "80%"}}>
+                <Text>
+                  <br/>
+                  <br/>
+                  {studentInfo.map(fragHtml)}
+                </Text>
+              </div>
+            </Column>
+            <Column>
+            <div style={{display: "flex"}}>
+              <Column style={{width: "80%"}}>
+                <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header>
+              </Column>
+              <Column style={{width: "10%"}}>
+                <Form.Dropdown
+                    onChange={inputChanged(setWave)}
+                    style={{borderColor: "black", width: 150, marginTop: 25}}>
+                  {WAVE_OPTIONS.map((value) => (
+                    <option value={value}>{`Wave ${value}`}</option>
+                  ))}
+                </Form.Dropdown>
+              </Column>
+            </div>
+
+            {coursesDisplayed.map(course => {
+              return (
+              <Class>
+              <img src={course.imageUrl} style={{float: "left", height: "auto", maxWidth: "40%", marginRight: 10}}/>
+              <ClassText>
+                <p style={{margin: 0}}>
+                  <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
+                  <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+                </p>
+                <Row>
+                  {course.zoomLink &&
+                    <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
+                      <Form.Button style={{margin: 5}}>
+                      <b>Zoom Link</b>
+                    </Form.Button></a>}
+                  <a href="www.edstem.org" style={{textDecoration: "none", color: "white", margin: "auto", height: "100%"}}>
+                    <Form.Button style={{margin: 5}}>
+                    <b>Edx</b>
+                  </Form.Button></a>
+                </Row>
+                <Form.Button onClick={() => {withdraw(student, course, db)}}
+                  style={{marginTop: 0, width: "auto", height: 25, margin: "auto", backgroundColor: "grey"}}>
+                  <Typography.Header style={{margin: "auto", color:"white", fontSize:"12px"}} >
+                    Withdraw
+                  </Typography.Header>
+                </Form.Button>
+              </ClassText>
+              </Class>
+            )})}
+            </Column>
+          </div>
           </ContainerInner>
           </Container>
-          <Footer/>
-          </>
-        );
-      }
-      */
+        <Footer/>
+      </div>
+    </>);
+    }
 
-      if (isError) {
-        return (
-          <>
-            <Navbar/>
-            <Container>
-            <ContainerInner>
-            <p>Error. Code: {theError.code}</p>
-            <p>Error Message: {theError.message}</p>
-            </ContainerInner>
-            </Container>
+    return (
+      <>
+        <Navbar/>
+        <Container>
+        <ContainerInner>
+        <p>Loading information for {user.email}...</p>
+        </ContainerInner>
+        </Container>
 
-            <Footer/>
-          </>);
-      }
-
-      if (loading) {
-        return (
-          <>
-            <Navbar/>
-            <Container>
-            <ContainerInner>
-            <p>Loading database...</p>
-            </ContainerInner>
-            </Container>
-
-            <Footer/>
-          </>);
-
-      }
-
-      if (!user) {
-        return (
-          <>
-            <Navbar/>
-            <Container>
-            <ContainerInner>
-            <p>Not signed in.</p>
-            </ContainerInner>
-            </Container>
-
-            <Footer/>
-          </>);
-
-      }
-
-      var inputChanged = function(setWave) {
-
-        var result = (event) => {
-          var value = event.target.value;
-          setWave(prevData => {
-            var result = {...prevData};
-            result = value;
-            return result;
-          });
-
-        };
-        return result;
-      };
-
-      var WAVE_OPTIONS = [
-        4,
-        3,
-        2,
-        1
-      ];
-
-      if (student) {
-        console.log(wave);
-        var studentInfo = generateStudentInfo(student);
-
-        $(document).ready(function() {
-          // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
-          $(document).on("click", ".profile-item button", function(e) {
-            var label = $(this).parent().find(".label").html();
-            var data = $(this).parent().find(".data").html();
-            $(this).parent().after(ReactDOMServer.renderToString(genEdit({"label": label, "data": data})));
-            var editing = $(this).parent().next();
-            // console.log(editing.find("*"));
-            editing.find(".edit-field").focus();
-            editing.find(".edit-field").select();
-            $(this).parent().remove();
-          });
-          $(document).on("click", ".profile-item-edit button", function(e) {
-            var label = $(this).parent().find(".label").html();
-            var newData = $(this).parent().find(".edit-field").val();
-            var change = changing(label, newData, student);
-            // console.log(change);
-            db.doc('students2/' + student.id).set(change);
-            $(this).parent().after(ReactDOMServer.renderToString(fragHtml({"label": label, "data": newData})));
-            $(this).parent().remove();
-          });
-          // console.log("hi");
-        });
-
-        return (<>
-          <div>
-            <Navbar/>
-              <Container>
-              <ContainerInner>
-              <div style={{display: "flex", height: "100%"}}>
-                <Column>
-                  <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
-                  <div style={{backgroundImage: `url(${WavyPurple})`,
-                              backgroundSize: "cover",
-                              backgroundRepeat: "no-repeat",
-                              height: "80%"}}>
-                    <Text>
-                      <br/>
-                      <br/>
-                      {studentInfo.map(fragHtml)}
-                    </Text>
-                  </div>
-                </Column>
-                <Column>
-                <div style={{display: "flex"}}>
-                  <Column style={{width: "80%"}}>
-                    <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header>
-                  </Column>
-                  <Column style={{width: "10%"}}>
-                    <Form.Dropdown
-                        onChange={inputChanged(setWave)}
-                        style={{borderColor: "black", width: 150, marginTop: 25}}>
-                      {WAVE_OPTIONS.map((value) => (
-                        <option value={value}>{`Wave ${value}`}</option>
-                      ))}
-                    </Form.Dropdown>
-                  </Column>
-                </div>
-
-                {coursesDisplayed.map(course => {return (
-                  <Class>
-                  <img src={course.imageUrl} style={{float: "left", height: "auto", maxWidth: "40%", marginRight: 10}}/>
-                  <ClassText>
-                    <p style={{margin: 0}}>
-                      <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
-                      <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
-                    </p>
-                    <Row>
-                      {course.courseDocuments &&
-                        <a href={course.courseDocuments} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
-                          <Form.Button style={{margin: 5}}>
-                          <b>Course Documents</b>
-                        </Form.Button></a>}
-                      {course.zoomLink &&
-                        <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
-                          <Form.Button style={{margin: 5}}>
-                          <b>Zoom Link</b>
-                        </Form.Button></a>}
-                      <a href="www.edstem.org" style={{textDecoration: "none", color: "white", margin: "auto", height: "100%"}}>
-                        <Form.Button style={{margin: 5}}>
-                        <b>Edx</b>
-                      </Form.Button></a>
-                    </Row>
-                    <Form.Button onClick={() => {withdraw(student, course, db)}}
-                      style={{marginTop: 0, width: "auto", height: 25, margin: "auto", backgroundColor: "grey"}}>
-                      <Typography.Header style={{margin: "auto", color:"white", fontSize:"12px"}} >
-                        Withdraw
-                      </Typography.Header>
-                    </Form.Button>
-                  </ClassText>
-                  </Class>
-                )})}
-                </Column>
-              </div>
-              </ContainerInner>
-              </Container>
-            <Footer/>
-          </div>
-        </>);
-        }
-
-        return (
-          <>
-            <Navbar/>
-            <Container>
-            <ContainerInner>
-            <p>Loading information for {user.email}...</p>
-            </ContainerInner>
-            </Container>
-
-            <Footer/>
-          </>);
+        <Footer/>
+      </>);
 }
 
 export default Dashboard
