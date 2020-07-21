@@ -14,9 +14,9 @@ export const Row = styled.div`
     grid-template-columns: repeat(1, [col-start] minmax(200px, 1fr) [col-end]);
   }
   @media ${device.tablet} {
-    grid-template-columns: repeat(2, [col-start] minmax(200px, 1fr) [col-end]);
+    grid-template-columns: repeat(1, [col-start] minmax(200px, 1fr) [col-end]);
   }
   @media ${device.laptop} {
-    grid-template-columns: repeat(3, [col-start] minmax(200px, 1fr) [col-end]);
+    grid-template-columns: repeat(1, [col-start] minmax(200px, 1fr) [col-end]);
   }
 `
