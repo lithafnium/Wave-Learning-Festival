@@ -6,6 +6,8 @@ import FeaturedSpeaker from './FeaturedSpeaker'
 import { Featured, Row } from './styles'
 import AnimateHeight from 'react-animate-height'
 import SpeakerCard from './SpeakerCard'
+
+import Jameela from './jameela-jamil.jpg'
 import Nate from './nate_saal.jpg'
 import Iris from './iris_fu.jpg'
 import Jasmine from './jasmine_shao.jpeg'
@@ -56,7 +58,7 @@ const Speakers = () => {
       img: Jasmine,
       title: "AKA studyquill! UCLA '24",
       date: 'TBD',
-      desc: "How do people become famous? Specifically, how do people talking to themselves in their bedrooms blow up into Internet stars? I don't have all the answers to the age-old puzzle of popularity, but here's what I can tell you: (1) How to start creating or improve your own content! I'll share the top tips I've learned from my four years of video and photo experience, and my insider reflections on the 'influencer industry' as a whole. (2) How people seem to make an income out of thin air! I'll show you how monetization, sponsorships, affiliate marketing, and other methods work, so you can be an informed consumer or get started on your Internet career. (3) And maybe, just maybe... how to become famous.",
+      desc: <p>How do people become famous? Specifically, how do people talking to themselves in their bedrooms blow up into Internet stars? I don't have all the answers to the age-old puzzle of popularity, but here's what I can tell you: <br/><br/> How to start creating or improve your own content! I'll share the top tips I've learned from my four years of video and photo experience, and my insider reflections on the 'influencer industry' as a whole. <br/><br/> How people seem to make an income out of thin air! I'll show you how monetization, sponsorships, affiliate marketing, and other methods work, so you can be an informed consumer or get started on your Internet career. <br/><br/> And maybe, just maybe... how to become famous.</p>,
       bio: "Hello! My name is Jasmine. I'm the creator behind the YouTube channel and Instagram account @studyquill, where I share tips on studying and bullet journaling. In my four years on social media, I've gained 550,000+ subscribers and 300,000+ Instagram followers. I've collaborated with brands like Google Chromebooks, Texas Instruments, and Grammarly, and have been profiled in the Wall Street Journal and National Geographic textbooks. I also published a book about bullet journaling and interned with the marketing team of my favorite stationery company! Proud Ravenclaw and lover of string crafts."
     },
     {
@@ -72,7 +74,7 @@ const Speakers = () => {
       img: Ruta,
       title: '#1 NYT Bestselling Author of Historical Fiction',
       date: 'TBD',
-      desc: 'Coming Soon!',
+      desc: <p><b>Seminar 1: Anatomy of a Page-Turner: Building a Bestselling Novel</b><br/>  Why do some books pull you to the page and keep you there? This seminar will examine the elements of compelling story building including plot, stakes, pacing, characters, setting, and voice. Presentation will be followed by a Q & A. <br/><br/> <b>Seminar 2: History in Hiding: The Elusive Power of Historical Fiction </b><br/>What determines how history is preserved and recalled? Why do some parts of history penetrate our collective consciousness while others remain hidden? This seminar will explore unearthing buried history and creative research! Topics will include the power of historical fiction to facilitate progress, create pathways for global dialogue, and give voice to the voiceless. Presentation will be followed by discussion and Q & A. <br/><br/> <b>Seminar 3: Meet the Author: Ruta Sepetys Discusses Her Novels</b><br/>Prior to becoming a bestselling novelist, Ruta Sepetys spent over twenty years in the entertainment industry helping artists and musicians tell stories through song. In this seminar, Ruta will discuss her path to publication and answer questions about two of her New York Times bestselling novels—Salt to the Sea and Between Shades of Gray. </p> ,
       bio: "Ruta Sepetys is a #1 New York Times bestselling author of historical fiction published in over sixty countries and forty languages. Sepetys is considered a “crossover” novelist as her books are read by both students and adults worldwide. Winner of the Carnegie Medal, Ruta is renowned for giving voice to underrepresented history and those who experienced it.  Her books have won or been shortlisted for over forty book prizes, are included on over thirty state reading lists, and are currently in development for film and television. www.rutasepetys.com"
     }
   ]
@@ -82,19 +84,40 @@ const Speakers = () => {
   return (
     <div>
       <Navbar/>
+      <Container style={{ minHeight: '0vh'}}>
+        <ContainerInner style={{marginBottom: 0}}>
+          <Featured>Featured Speaker: </Featured>
+          <FeaturedSpeaker 
+            name="Q&#38;A with Jameela Jamil"
+            date="Date: 7/30 4pm EDT"
+            picture={Jameela}
+            subtitle="The Good Place Actress and Women's Body Image Activist"
+            bio="Jameela Jamil is an English-born actress, writer, DJ, model, radio host, and activist. She was discovered at 22 years old when she was teaching English in London, UK. Her first job in media was a main host on T4, the UK's leading youth entertainment show, and she soon went on to become a journalist for Cosmopolitan Magazine and the Huffington Post. 2012 saw many successes for Jamil, when she released her successful clothing line, shot for both British and American Vogue, Glamour Magazine, Cosmopolitan Magazine and Japanese teen vogue, and was nominated for the PPA and BSME awards for her writing.
+            Later that year she was recruited by BBC Radio 1 to host her own show on their network, which would lead to a promotion in 2013 where she made history. She was the first woman in its 60 years on air to host the Official Chart on the esteemed radio station. With much success, including several awards for radio and a growing DJ career she stayed on at the network until 2015, when she left to pursue a writing career in the United States. After signing as a comedy writer at 3ARTS and being taken on by UTA, she was chosen for Micheal Schur’s latest project, The Good Place(2016), to star opposite Kristen Bell. The comedy series aired in the fall of 2016 to tremendous success and accolades and was continued through 2017, 2018 and for its fourth (and sadly last) season, this year.
+            Most recently, she has been an activist on women's body-imaging issues and has openly discussed her struggle with eating disorders, as well as her childhood difficulties, born with congenital hearing loss and labyrinthitis. Her website and instagram page I Weigh promotes 'radical inclusivity, so no one feels alone' and boasts 1.2 million followers. Jamil describes I Weigh as 'a movement... for us to feel valuable and see how amazing we are, and look past the flesh on our bones'. Jamil was one of fifteen women selected to appear on the cover of the 2019 issue of British Vogue 'Forces for Change.' That same year, she was awarded 'Advocate of the Year' from the Ehlers-Danlos Society. She has raised funds and supports efforts to promote both local community projects and access to culture for communities globally."
+          />
+        </ContainerInner>
+      </Container>
       <Container style={{ minHeight: '0vh' }}>
         <ContainerInner>
-          <Featured>Upcoming Speaker : </Featured>
-          <FeaturedSpeaker/>
+          <Featured>Upcoming Speaker: </Featured>
+          <FeaturedSpeaker 
+            name="Nicole Chung: Why Your Stories Matter"
+            date="Date: 7/28 2:30-3:30 PM EDT"
+            picture={Nicole}
+            subtitle="Author of All You Can Ever Know, Editor in Chief of Catapult Magazine"
+            bio="Nicole Chung's nationally bestselling debut memoir All You Can Ever Know was a finalist for the National Book Critics Circle Award for Autobiography, longlisted for the PEN Open Book Award, and named a Best Book of the Year by The Washington Post, The Boston Globe, NPR, TIME, Library Journal, BuzzFeed, Goodreads, and the Chicago and Seattle Public Library systems, among many others. Nicole has written for numerous publications, including The New York Times, The Guardian, GQ, TIME, and Longreads, and has taught writing workshops for Kundiman, Catapult, and PEN/Faulkner’s Writers in Schools program. She is the editor in chief of the National Magazine Award-winning Catapult magazine, co-editor of the immigration anthology A Map Is Only One Story, and the former managing editor of the beloved, now-shuttered website The Toast. Her next book is forthcoming from Ecco Books/HarperCollins."
+            description="Award-winning author and editor Nicole Chung will cover topics related to writing, revision, publishing, and community in a frank, participant-driven discussion with students."
+          />
         </ContainerInner>
       </Container>
       <Container>
         <ContainerInner>
           <Featured>Next Up: </Featured>
-          <Row>
             {
               speakers.map((speaker, index) => {
-                return <SpeakerCard
+                return           <Row>
+                <SpeakerCard
                   key={index}
                   name={speaker.name}
                   img={speaker.img}
@@ -102,11 +125,11 @@ const Speakers = () => {
                   date={speaker.date}
                   desc={speaker.desc}
                   bio={speaker.bio}
-                  color={colors[index % 4]}/>
+                  color={colors[index % 4]}/>          </Row>
+
               })
             }
 
-          </Row>
 
         </ContainerInner>
       </Container>

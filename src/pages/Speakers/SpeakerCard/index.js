@@ -5,7 +5,8 @@ import {
   Description,
   SpeakerContainerInner,
   Heading,
-  Triangle
+  Triangle,
+  ImageContainer
 } from './styles'
 import AnimateHeight from 'react-animate-height'
 
@@ -16,8 +17,10 @@ const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
     <div>
       <SpeakerContainer>
         <SpeakerContainerInner>
-          <Speaker src={img} color={color}/>
-          <div style={{ gridColumn: 'span 2', alignSelf: 'center' }}>
+            <ImageContainer>
+            <Speaker src={img} color={color}/>
+
+            </ImageContainer>
             <Info>
               <Header color = {color}>{name}</Header>
               <Details>{title}</Details>
@@ -25,7 +28,6 @@ const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
               <Button color = {color} onClick={() => toggleShow(!show)}>Learn More</Button> &nbsp;&nbsp;
               <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
             </Info>
-          </div>
         </SpeakerContainerInner>
       </SpeakerContainer>
       <AnimateHeight height={show ? 'auto' : 0} duration={200}>

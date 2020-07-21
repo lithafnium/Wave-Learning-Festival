@@ -60,6 +60,7 @@ export const STATES = ['Alaska',
 
 export const SPEAKERS = [
   'Nicole Chung: Why Your Stories Matter',
+  "Q/A with Jameela Jamil",
   'Nate Saal',
   'Andrew Cramer',
   'Rhiannon McGavin',

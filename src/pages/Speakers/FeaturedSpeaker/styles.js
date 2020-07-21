@@ -2,6 +2,18 @@ import styled from 'styled-components'
 import { Colors } from '@/styles'
 import { device } from '@/theme'
 
+export const Info = styled.div`
+    flex-grow: 4; 
+    flex-basis: 0; 
+`
+
+export const ImageContainer = styled.div`
+    flex-grow: 4; 
+    flex-basis: 0; 
+    display: flex; 
+    justify-content: center; 
+`
+
 export const SpeakerContainer = styled.div`
     position: relative; 
     width: 100%; 
@@ -51,7 +63,8 @@ export const Button = styled.button`
     border-radius: 25px; 
     font-family: 'Muli', sans-serif;
     font-weight: 700; 
-    transition: 0.2s; 
+    transition: 0.2s;
+    margin: 3px;
     &:focus{
         outline: none;
     }
