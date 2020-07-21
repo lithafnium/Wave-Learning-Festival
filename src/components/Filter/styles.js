@@ -102,3 +102,8 @@ export const CheckboxContainer = styled.div`
 export const CheckboxColumn = styled.div`
   margin-right: 1.5em; 
 `
+
+export const OptionsContainer = styled.div`
+  display: flex; 
+  flex-wrap: wrap; 
+`
