@@ -51,7 +51,8 @@ export const Button = styled.button`
     border-radius: 25px; 
     font-family: 'Muli', sans-serif;
     font-weight: 700; 
-    transition: 0.2s; 
+    transition: 0.2s;
+    margin: 3px;
     &:focus{
         outline: none;
     }
