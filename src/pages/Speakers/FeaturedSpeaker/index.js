@@ -22,8 +22,10 @@ const FeaturedSpeaker = ({ picture, description }) => {
           <SpeakerImage src={Nicole} />
           <div>
             <h1>Nicole Chung: Why Your Stories Matter</h1>
-            <p>Author of All You Can Ever Know, Editor in Chief of Catapult magazine</p>
-            <Button onClick={() => toggleShow(!show)}>RSVP Now</Button>
+            <Description>Author of All You Can Ever Know, Editor in Chief of Catapult Magazine</Description>
+            <p>Date: 7/28 2:30-3:30 PM EDT</p>
+            <Button onClick={() => toggleShow(!show)}>Learn More</Button> &nbsp;&nbsp;
+            <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
           </div>
         </SpeakerContainerInner>
       </SpeakerContainer>
