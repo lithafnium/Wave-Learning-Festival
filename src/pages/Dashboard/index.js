@@ -30,8 +30,14 @@ var namify = function(course) { // please change this later lol
 
 const withdraw = (student, course, db) => {
   if (window.confirm("Are you sure you want to drop \"" + course.courseTitle + "\"?")) {
-    db.collection("fl_content").doc(course.id).delete().then(function() {
-      window.location.reload();
+    db.collection("courseAssignments").doc(course.assignmentID).delete().then(function() {
+      db.collection("deleteAssignments")
+        .add({
+          courseID: course.id,
+          studentID: student.id,
+          waitlisted: course.waitlisted
+        })
+        .then(window.location.reload())       
     });
   } else {
     // phew
@@ -110,13 +116,11 @@ const Dashboard = () => {
   useEffect (() => {
     if (db && !calledOnce) {
       setCalledOnce(true);
-      // console.log("call " + calledOnce);
       firebase.auth().signInWithEmailAndPassword("jsr7@williams.edu", "cheesemaker123").catch(function(error) { // DELETE THIS LATER
           setError(true);
           setTheError(error);
           setLoading(false);
       }).then(function(result) {
-        // console.log(result.user.uid);
         setUser(result.user);
         if (result.user) {
           db.collection("students2").where("userID", "==", result.user.uid).get().then(function(snapshot) {
@@ -124,28 +128,25 @@ const Dashboard = () => {
             snapshot.forEach(function(snap) {
               students.push(snap);
             });
-            // console.log(students.length + " " + calledOnce);
             if (students.length > 0) {
               var coursesResult = [];
               setStudent(students[0].data());
               var theStudent = students[0].data();
-              db.collection("courseAssignments").where("studentID", "==", theStudent.id).get().then(function(snapshot) {
+              db.collection("courseAssignments").where("studentID", "==", theStudent.id).get().then(function(assignments) {
                 var currentlyCounted = 0;
                 var courseData = [];
-                snapshot.forEach(function(snap) {
-                  courseData.push(snap.data());
+                assignments.forEach(function(snap) {
+                  courseData.push({data: snap.data(), id: snap.id});
                 });
                 var numCourses = courseData.length;
                 if (numCourses >= 0) {
                   setLoading(false);
                 }
-                // console.log("hello " + snap.data().course);
-                console.log("num: " + numCourses);
                 var currentNum = 0;
                 for (var i = 0; i < numCourses; i++) {
                   var current = courseData[i];
-                  var courseId = current.courseID;
-                  var isWaitlisted = current.waitlisted;
+                  var courseId = current.data.courseID;
+                  var isWaitlisted = current.data.waitlisted;
                   db.collection("fl_content").where("id", "==", courseId).get().then(function(snapshot) {
                     currentNum++;
                     var courses = [];
@@ -158,6 +159,7 @@ const Dashboard = () => {
                         .then(function (url) {
                         toPush.waitlisted = isWaitlisted;
                         toPush.imageUrl = url;
+                        toPush.assignmentID = current.id
                         coursesResult.push(toPush);
                         if (numCourses == currentNum) {
                           setCourses(coursesResult);
