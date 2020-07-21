@@ -267,7 +267,7 @@ const Dashboard = () => {
             result = value;
             return result;
           });
-          
+
         };
         return result;
       };
@@ -278,7 +278,7 @@ const Dashboard = () => {
         2,
         1
       ];
-      
+
       if (student) {
         console.log(wave);
         var studentInfo = generateStudentInfo(student);
@@ -351,12 +351,12 @@ const Dashboard = () => {
                       <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
                     </p>
                     <Row>
-                      {course.courseDocuments && 
+                      {course.courseDocuments &&
                         <a href={course.courseDocuments} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
                           <Form.Button style={{margin: 5}}>
                           <b>Course Documents</b>
                         </Form.Button></a>}
-                      {course.zoomLink && 
+                      {course.zoomLink &&
                         <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
                           <Form.Button style={{margin: 5}}>
                           <b>Zoom Link</b>
