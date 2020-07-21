@@ -33,6 +33,7 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
           <SearchBar onChange={e => searchItems(e.target.value)}/>
         </SearchContainer>
       </ContainerInner>
+      <h2 style={{ color: Colors.WLF_PURPLE, textAlign: 'left' }}>Course Categories:</h2>
       <CheckboxContainer>
         <CheckboxColumn>
           <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_PURPLE} text = "History" value = "history"/>
@@ -52,6 +53,22 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
         <CheckboxColumn>
           <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "Culture" value = "culture"/>
           <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Math" value = "math"/>
+        </CheckboxColumn>
+      </CheckboxContainer>
+      <h2 style={{ color: Colors.WLF_PURPLE, textAlign: 'left' }}>Grade Filters:</h2>
+      <CheckboxContainer>
+        <CheckboxColumn>
+          <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_PURPLE} text = "Grade 6" value = "6"/>
+          <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "Grade 7" value = "7"/>
+          <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_TURQOUISE} text = "Grade 8" value = "8"/>
+        </CheckboxColumn>
+        <CheckboxColumn>
+          <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Grade 9" value = "9"/>
+          <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_PURPLE} text = "Grade 10" value = "10"/>
+        </CheckboxColumn>
+        <CheckboxColumn>
+          <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "Grade 11" value = "11"/>
+          <Checkbox age={true} addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_TURQOUISE} text = "Grade 12" value = "12"/>
         </CheckboxColumn>
       </CheckboxContainer>
 
