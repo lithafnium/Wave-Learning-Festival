@@ -54,6 +54,7 @@ export const BrandText = styled.img`
     display: block;
   }
   height: auto;
+  cursor: pointer;
 `;
 
 export const Brand = styled.img`
@@ -65,6 +66,7 @@ export const Brand = styled.img`
   }
   width: 3.5em;
   height: auto;
+  cursor: pointer;
 `;
 
 export const Links = styled.div`
