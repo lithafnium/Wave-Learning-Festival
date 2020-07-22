@@ -38,6 +38,8 @@ const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
           <Description> {desc} </Description>
           <Heading color = {color}>Bio: </Heading>
           <Description> {bio} </Description>
+          <Heading color = {color}>Scheduled Date: </Heading>
+          <Description> {date} </Description>
           <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
         </SpeakerContainerInner>
       </SpeakerContainer>

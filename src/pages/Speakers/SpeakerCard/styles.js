@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { device } from '@/theme'
 
 export const ImageContainer = styled.div`
-    flex-grow: 4; 
+    flex-grow: 3; 
     flex-basis: 0;
     display: flex; 
     justify-content: center; 
