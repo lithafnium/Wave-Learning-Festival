@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { device } from '@/theme'
 
 export const ImageContainer = styled.div`
-    flex-grow: 4; 
+    flex-grow: 3; 
     flex-basis: 0;
     display: flex; 
     justify-content: center; 
@@ -42,7 +42,8 @@ export const Button = styled.button`
     border-radius: 25px; 
     font-family: 'Muli', sans-serif;
     font-weight: 700; 
-    transition: 0.2s; 
+    transition: 0.2s;
+    margin: 5px; 
 
     &:focus{
         outline: none;

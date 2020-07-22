@@ -13,10 +13,18 @@ const TeacherHome = ({ setPage }) => {
     <Typography.Header color={Colors.WLF_YELLOW}>
       Instructors
     </Typography.Header>
-    <Typography.BodyText color="white" fontSize="20px" style={{ marginBottom: 30 }}>
+    <Typography.BodyText color="white" fontSize="20px" style={{ marginBottom:-10}}>
       Want to share your passions with students worldwide? Apply to be a teacher for Wave Learning Festival!
     </Typography.BodyText>
-    <Typography.BodyText color="white" fontSize="20px">
+    <div style={{ display: 'flex', flexDirection: 'row', margin:'auto'}}>
+      <Form.Button onClick={() => setPage('teacherData')}>
+        <Typography.Header color="white" fontSize="24px">
+          Apply Now!
+        </Typography.Header>
+      </Form.Button>
+      <div style={{ flex: 1 }} />
+    </div>
+    <Typography.BodyText color="white" fontSize="20px" style={{paddingTop:20}}>
       Wave Learning Festival is an educational platform organized by students at Harvard, Stanford, Northwestern,
       UPenn, Williams, RISD, and SLO in which college students teach free seminars on a variety of topics to middle and high schoolers online.
     </Typography.BodyText>
@@ -49,7 +57,7 @@ const TeacherHome = ({ setPage }) => {
       pursuing other summer experiences. No prior teaching experience is
       required, and you will receive help in making your class come to life!
     </Typography.BodyText>
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <div style={{ display: 'flex', flexDirection: 'row'}}>
       <Form.Button onClick={() => setPage('teacherData')}>
         <Typography.Header color="white" fontSize="24px">
           Apply Now!

@@ -31,9 +31,11 @@ export const TeacherBackground = styled.div`
 
 export const TestimonialBackground = styled.div`
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin: 50px 0px;
+  width: 75%;
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
 `
 
 export const TestimonialItem = styled.div`
@@ -44,9 +46,9 @@ export const TestimonialItem = styled.div`
 `
 
 export const TeacherImage = styled.img`
-  width: 180px;
-  height: 180px;
-  border-radius: 90px;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
   border: 5px solid ${Colors.WLF_YELLOW};
 `
 

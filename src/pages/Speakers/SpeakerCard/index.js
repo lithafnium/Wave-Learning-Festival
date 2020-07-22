@@ -11,7 +11,7 @@ import {
 import AnimateHeight from 'react-animate-height'
 
 
-const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
+const SpeakerCard = ({ name, img, title, color, date, desc, bio, hasTime }) => {
   const [show, toggleShow] = useState(false)
   return (
     <div>
@@ -26,7 +26,7 @@ const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
               <Details>{title}</Details>
               <p>Date: {date}</p>
               <Button color = {color} onClick={() => toggleShow(!show)}>Learn More</Button> &nbsp;&nbsp;
-              <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
+              {hasTime && <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>}
             </Info>
         </SpeakerContainerInner>
       </SpeakerContainer>
@@ -38,7 +38,9 @@ const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
           <Description> {desc} </Description>
           <Heading color = {color}>Bio: </Heading>
           <Description> {bio} </Description>
-          <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
+          <Heading color = {color}>Scheduled Date: </Heading>
+          <Description> {date} </Description>
+          {hasTime && <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>}
         </SpeakerContainerInner>
       </SpeakerContainer>
       </AnimateHeight>

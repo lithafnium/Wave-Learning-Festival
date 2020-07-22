@@ -298,3 +298,22 @@ export const ContainerInner = styled.div`
     }
 
 `
+
+export const Announcements = styled.div`
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    width: 460px;
+    border-radius: 20px;
+    background-color: ${Colors.WLF_PURPLE};
+    margin-top: 30px;
+    padding-left: 15px;
+    @media ${device.mobileS} {
+      width: 100%
+    }
+
+    @media ${device.tablet} {
+    }
+
+`
+
