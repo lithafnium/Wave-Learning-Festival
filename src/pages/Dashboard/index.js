@@ -37,7 +37,7 @@ const withdraw = (student, course, db) => {
           studentID: student.id,
           waitlisted: course.waitlisted
         })
-        .then(window.location.reload())       
+        .then(window.location.reload())
     });
   } else {
     // phew
@@ -338,7 +338,7 @@ const Dashboard = () => {
                   <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
                 </p>
                 <Row>
-                  {course.zoomLink &&
+                  {course.zoomLink && !course.waitlisted &&
                     <a href={course.zoomLink} style={{textDecoration: "none", color: "white", margin: "auto", height: "auto"}}>
                       <Form.Button style={{margin: 5}}>
                       <b>Zoom Link</b>
