@@ -11,7 +11,7 @@ import {
 import AnimateHeight from 'react-animate-height'
 
 
-const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
+const SpeakerCard = ({ name, img, title, color, date, desc, bio, hasTime }) => {
   const [show, toggleShow] = useState(false)
   return (
     <div>
@@ -40,7 +40,7 @@ const SpeakerCard = ({ name, img, title, color, date, desc, bio }) => {
           <Description> {bio} </Description>
           <Heading color = {color}>Scheduled Date: </Heading>
           <Description> {date} </Description>
-          <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
+          {hasTime && <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>}
         </SpeakerContainerInner>
       </SpeakerContainer>
       </AnimateHeight>
