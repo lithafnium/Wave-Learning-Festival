@@ -4,8 +4,8 @@ import { device } from '@/theme'
 export const ImageContainer = styled.div`
     flex-grow: 3; 
     flex-basis: 0;
-    display: flex; 
-    justify-content: center; 
+    /* display: flex; 
+    justify-content: center;  */
 `
 
 export const Speaker = styled.img`
@@ -15,7 +15,13 @@ export const Speaker = styled.img`
     object-fit: cover; 
     border-radius: 50%; 
     border: 5px solid ${props => props.color};
-    margin-bottom: 1em; 
+    /* margin-bottom: 1em;  */
+    @media ${device.mobileS} {
+        margin-left: 0px; 
+    }
+    @media ${device.tablet} {
+        margin-left: 2.5em; 
+    }
     
 `
 
