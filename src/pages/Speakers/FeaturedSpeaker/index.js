@@ -30,7 +30,7 @@ const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio, hasT
             <Description>{subtitle}</Description>
             <p>{date}</p>
             <Button onClick={() => toggleShow(!show)}>Learn More</Button> &nbsp;&nbsp;
-            <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
+            {hasTime && <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>}
           </Info>
         </SpeakerContainerInner>
       </SpeakerContainer>

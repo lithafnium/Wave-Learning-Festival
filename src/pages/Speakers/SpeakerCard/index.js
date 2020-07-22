@@ -26,7 +26,7 @@ const SpeakerCard = ({ name, img, title, color, date, desc, bio, hasTime }) => {
               <Details>{title}</Details>
               <p>Date: {date}</p>
               <Button color = {color} onClick={() => toggleShow(!show)}>Learn More</Button> &nbsp;&nbsp;
-              <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
+              {hasTime && <Button color = {color} onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>}
             </Info>
         </SpeakerContainerInner>
       </SpeakerContainer>
