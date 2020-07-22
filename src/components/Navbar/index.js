@@ -266,31 +266,34 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </NavItem>
           <NavItem>
-            <Link to="/team">Team</Link>
+            <Link to="/mission">Mission and Values</Link>
           </NavItem>
           <NavItem>
-            <Link to="/teachers">Teachers</Link>
+            <Link to="/team">Team</Link>
           </NavItem>
           <NavItem>
             <Link to="/courses">Courses</Link>
           </NavItem>
           <NavItem>
-            <Link to="/blog">Blog</Link>
+            <Link to="/speakers">Speakers</Link>
           </NavItem>
           <NavItem>
-            <Link to="/speakers">Speakers</Link>
+            <Link to="/teachers">Apply to Teach</Link>
           </NavItem>
           <NavItem>
             <Link to="/join">Join the Team</Link>
           </NavItem>
           <NavItem>
-            <Link to="/faq-teachers">Teachers FAQ</Link>
+            <Link to="/blog">Blog</Link>
           </NavItem>
           <NavItem>
-            <Link to="/faq-students">Student FAQ</Link>
+            <Link to="/faq-students">Students FAQ</Link>
           </NavItem>
           <NavItem>
             <Link to="/faq-parents">Parents FAQ</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/faq-teachers">Instructors FAQ</Link>
           </NavItem>
           <NavItem>
             <Link to="/donate">Donate</Link>
