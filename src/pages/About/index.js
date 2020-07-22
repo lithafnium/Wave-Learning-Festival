@@ -79,7 +79,7 @@ const About = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'row',
-                marginTop: '50px',
+                marginTop: '20px',
                 flexWrap: 'wrap'
               }}
             >
@@ -98,6 +98,35 @@ const About = () => {
                   <p>Register Now!</p>
                 </Button>
               </a>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                position: 'relative',
+                justifyContent: 'flex-start',
+                width: '460px',
+                borderRadius: '20px',
+                backgroundColor: Colors.WLF_PURPLE,
+                marginTop: 30,
+                paddingLeft: 15
+              }}
+            >
+              <Typography.Header
+                style={{
+                  position: 'relative',
+                  zIndex: 2,
+                  color: Colors.WLF_YELLOW,
+                  fontSize: 23
+                }}
+              >
+                Announcements:
+                <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}> 
+                  <ul style={{marginTop: -10, marginLeft:-25, lineHeight:1.5}}>
+                    <li>Student course registration closes on 7/23! <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a> </li>
+                    <li>Jameela Jamil is hosting a Q&A on 7/30! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                  </ul>
+                </Typography.BodyText>
+              </Typography.Header>
             </div>
           </div>
           <HeaderImage src={Assets.Swing} />
@@ -364,14 +393,14 @@ const About = () => {
         </Typography.Header>
         <ContainerInner>
           <FeaturedImage onClick={() => window.open('https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/', '_blank')} width={25} src={Assets.NBC}/>
-          <FeaturedImage onClick={() => window.open('https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/', '_blank')} width={15} src={Assets.HarvardCrimson}/>
-          <FeaturedImage onClick={() => window.open('https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz', '_blank')} width={25} src={Assets.DailyPenn}/>
+          <FeaturedImage onClick={() => window.open('https://www.today.com/parents/19-online-activities-keep-kids-entertained-all-summer-t187359', '_blank')} width={30} src={Assets.TodayShow}/>
+          <FeaturedImage onClick={() => window.open('https://www.ktvu.com/news/harvard-student-develops-wave-learning-festival-offers-free-online-courses', '_blank')} width={23} src={Assets.KTVU}/>
+          <FeaturedImage onClick={() => window.open('https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz', '_blank')} width={35} src={Assets.DailyPenn}/>
+          <FeaturedImage onClick={() => window.open('https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/', '_blank')} width={13} src={Assets.HarvardCrimson}/>
           <FeaturedImage onClick={() => window.open('https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Pasdena}/>
           <FeaturedImage onClick={() => window.open('https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Monrovia}/>
           <FeaturedImage onClick={() => window.open('https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Arcadia}/>
-          <FeaturedImage onClick={() => window.open('https://www.ktvu.com/news/harvard-student-develops-wave-learning-festival-offers-free-online-courses', '_blank')} width={27} src={Assets.KTVU}/>
-
-        </ContainerInner>
+          </ContainerInner>
       </div>
       <div style={{
         display: 'flex',
