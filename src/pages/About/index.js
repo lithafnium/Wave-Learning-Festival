@@ -19,7 +19,8 @@ import {
   Popup,
   FeaturedImage,
   FeaturedLink,
-  ContainerInner
+  ContainerInner, 
+  Announcements
 } from './styles'
 import { Colors, Typography } from '@/styles'
 import './styles.css'
@@ -99,18 +100,7 @@ const About = () => {
                 </Button>
               </a>
             </div>
-            <div
-              style={{
-                display: 'flex',
-                position: 'relative',
-                justifyContent: 'flex-start',
-                width: '460px',
-                borderRadius: '20px',
-                backgroundColor: Colors.WLF_PURPLE,
-                marginTop: 30,
-                paddingLeft: 15
-              }}
-            >
+            <Announcements>
               <Typography.Header
                 style={{
                   position: 'relative',
@@ -129,7 +119,7 @@ const About = () => {
                   </ul>
                 </Typography.BodyText>
               </Typography.Header>
-            </div>
+            </Announcements>
           </div>
           <HeaderImage src={Assets.Swing} />
         </AboutDescription>

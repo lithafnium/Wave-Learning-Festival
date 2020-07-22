@@ -14,7 +14,7 @@ import {
 } from './styles'
 import AnimateHeight from 'react-animate-height'
 
-const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio }) => {
+const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio, hasTime }) => {
   const [show, toggleShow] = useState(false)
 
   return (
@@ -48,7 +48,7 @@ const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio }) =>
             <Heading>Scheduled Date:</Heading>
             <Content>{date}</Content>
 
-            <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>
+            {hasTime && <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>}
           </SpeakerContainerInner>
         </SpeakerContainer>
       </AnimateHeight>
