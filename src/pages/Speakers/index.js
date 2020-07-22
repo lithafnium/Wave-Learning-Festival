@@ -98,8 +98,8 @@ const Speakers = () => {
     }
   ]
 
-  const colors1 = [Colors.WLF_TURQOUISE, Colors.WLF_PURPLE, Colors.WLF_ORANGE, Colors.WLF_YELLOW]
-  const colors2 = [ Colors.WLF_YELLOW, Colors.WLF_TURQOUISE, Colors.WLF_PURPLE, Colors.WLF_ORANGE]
+  const colors1 = [Colors.WLF_TURQOUISE, Colors.WLF_YELLOW, Colors.WLF_ORANGE, Colors.WLF_PURPLE]
+  const colors2 = [ Colors.WLF_PURPLE, Colors.WLF_TURQOUISE, Colors.WLF_YELLOW, Colors.WLF_ORANGE]
 
 
   return (
