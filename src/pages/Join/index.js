@@ -3,6 +3,7 @@ import { Container, ContainerInner, Input, Subscribe, Error } from "./styles";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FirebaseContext } from "@/firebaseContext";
+import {Colors, Typography } from "@/styles";
 
 const Join = () => {
   return (
@@ -10,7 +11,7 @@ const Join = () => {
       <Navbar />
       <Container>
         <ContainerInner>
-          <h1>Join the Wave Learning Festival Team!</h1>
+          <Typography.Header style={{color: Colors.WLF_PURPLE}}>Join the Wave Learning Festival Team!</Typography.Header>
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSdvwghN60MNhtoJMTuR5lb-l-eh3JZNYacKJX_lPBppItp8Xw/viewform?embedded=true"
             width="700"

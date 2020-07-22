@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import WavyTeachers from "./wavy_teachers.svg";
-import {Colors} from "@/styles";
-import { device } from "@/theme";
+import styled from 'styled-components'
+import WavyTeachers from './wavy_teachers.svg'
+import { device } from '@/theme'
 
-export const TeacherBackground = styled.div`
+export const SignupBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,29 +26,6 @@ export const TeacherBackground = styled.div`
   @media ${device.laptop} {
     padding: 100px 300px;
   }
-`
-
-export const TestimonialBackground = styled.div`
-  display: grid;
-  width: 75%;
-  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin: auto;
-`
-
-export const TestimonialItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
-export const TeacherImage = styled.img`
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
-  border: 5px solid ${Colors.WLF_YELLOW};
 `
 
 export const LogoBackground = styled.img`

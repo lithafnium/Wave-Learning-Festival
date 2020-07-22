@@ -37,7 +37,7 @@ const Navbar = () => {
     setCalledOnce(true);
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        setAccountStatus(<Link to="/dashboard">Dashboard</Link>);
+        setAccountStatus(<Link to="/dashboard">Dash</Link>);
       } else {
         setAccountStatus(<Link to="/sign-in">Sign In</Link>);
       }
@@ -48,12 +48,9 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <NavbarInner>
-        <BrandText src={LogoTextFull} />
-        <Brand src={Logo} />
+        <BrandText onClick={() => window.location.href = '/'}src={LogoTextFull} />
+        <Brand onClick={() => window.location.href = '/'} src={Logo} />
         <Links>
-          <NavItem>
-            <Link to="/">Home</Link>
-          </NavItem>
           <NavItem onMouseEnter={() => setAboutShow(true)}
             onMouseLeave={() => setAboutShow(false)}>
             <Link>About Us</Link>
@@ -147,6 +144,9 @@ const Navbar = () => {
               </Link>
             </NavbarDropdown>
             )}
+          </NavItem>
+          <NavItem>
+            <Link to="/speakers">Speakers</Link>
           </NavItem>
           <NavItem onMouseEnter={() => setApplyShow(true)}
             onMouseLeave={() => setApplyShow(false)}>
@@ -249,7 +249,7 @@ const Navbar = () => {
                           <FaChalkboardTeacher />
                         </div>
                       </IconContext.Provider>
-                      Teachers
+                      Instructors
                     </DropdownItem>
                   </Link>
                 </NavbarDropdown>
@@ -257,7 +257,10 @@ const Navbar = () => {
             )}
           </NavItem>
           <NavItem>
-          {accountStatus}
+            {accountStatus}
+          </NavItem>
+          <NavItem>
+            <Link to="/donate">Donate</Link>
           </NavItem>
           {/*
                     <Link to='/login'>
@@ -283,28 +286,37 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </NavItem>
           <NavItem>
-            <Link to="/team">Team</Link>
+            <Link to="/mission">Mission and Values</Link>
           </NavItem>
           <NavItem>
-            <Link to="/teachers">Teachers</Link>
+            <Link to="/team">Team</Link>
           </NavItem>
           <NavItem>
             <Link to="/courses">Courses</Link>
           </NavItem>
           <NavItem>
-            <Link to="/blog">Blog</Link>
+            <Link to="/speakers">Speakers</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/teachers">Apply to Teach</Link>
           </NavItem>
           <NavItem>
             <Link to="/join">Join the Team</Link>
           </NavItem>
           <NavItem>
-            <Link to="/faq-teachers">Teachers FAQ</Link>
+            <Link to="/blog">Blog</Link>
           </NavItem>
           <NavItem>
-            <Link to="/faq-students">Student FAQ</Link>
+            <Link to="/faq-students">Students FAQ</Link>
           </NavItem>
           <NavItem>
             <Link to="/faq-parents">Parents FAQ</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/faq-teachers">Instructors FAQ</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/donate">Donate</Link>
           </NavItem>
         </SideBar>
       </NavbarInner>

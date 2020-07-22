@@ -18,7 +18,9 @@ import {
   Error,
   Popup,
   FeaturedImage,
-  FeaturedLink
+  FeaturedLink,
+  ContainerInner,
+  Announcements
 } from './styles'
 import { Colors, Typography } from '@/styles'
 import './styles.css'
@@ -78,7 +80,7 @@ const About = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'row',
-                marginTop: '50px',
+                marginTop: '20px',
                 flexWrap: 'wrap'
               }}
             >
@@ -98,6 +100,26 @@ const About = () => {
                 </Button>
               </a>
             </div>
+            <Announcements>
+              <Typography.Header
+                style={{
+                  position: 'relative',
+                  zIndex: 2,
+                  color: Colors.WLF_YELLOW,
+                  fontSize: 23
+                }}
+              >
+                Announcements:
+                <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}>
+                  <ul style={{marginTop: -10, marginLeft:-25, lineHeight:1.5}}>
+                    <li>Student course registration closes on 7/23! <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a> </li>
+                    <li>Discuss the writing process with author and editor Nicole Chung on 7/28! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                    <li>Actress and activist Jameela Jamil is hosting a Q&A on 7/30! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                    <li>Learn about chocolate with CocoTerra CEO Nate Saal on 8/1! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                  </ul>
+                </Typography.BodyText>
+              </Typography.Header>
+            </Announcements>
           </div>
           <HeaderImage src={Assets.Swing} />
         </AboutDescription>
@@ -320,7 +342,7 @@ const About = () => {
           >
             {' '}
             Sign up here to get alerted and be the first to register for Wave 4!
-            <Popup subscribed = {true}><p>Registration is currently open from July 10 - July 20 --enter your email and we will alert you as soon as courses open! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
+            <Popup subscribed = {true}><p>Registration is currently open from July 10 - July 23! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
             {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates. Furthermore, click on "Courses" at the top of our webpage to check out the courses we'll be offering!</p>
             </Popup>}
           </Typography.Header>
@@ -361,14 +383,16 @@ const About = () => {
         >
             As Featured In:
         </Typography.Header>
-        <MediumContainer>
-          <FeaturedLink target="_blank" href="https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/"><FeaturedImage style={{ width: '60%' }} src={Assets.NBC}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/"><FeaturedImage style={{ width: '40%' }} src={Assets.HarvardCrimson}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz"><FeaturedImage style={{ width: '80%' }} src={Assets.DailyPenn}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Pasdena}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Monrovia}/></FeaturedLink>
-          <FeaturedLink target="_blank" href="https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/"><FeaturedImage style={{ width: '80%' }} src={Assets.Arcadia}/></FeaturedLink>
-        </MediumContainer>
+        <ContainerInner>
+          <FeaturedImage onClick={() => window.open('https://www.nbcbayarea.com/news/coronavirus/local-college-student-creates-online-learning-center-for-kids-people-from-31-countries-sign-on/2324327/', '_blank')} width={25} src={Assets.NBC}/>
+          <FeaturedImage onClick={() => window.open('https://www.today.com/parents/19-online-activities-keep-kids-entertained-all-summer-t187359', '_blank')} width={30} src={Assets.TodayShow}/>
+          <FeaturedImage onClick={() => window.open('https://www.ktvu.com/news/harvard-student-develops-wave-learning-festival-offers-free-online-courses', '_blank')} width={23} src={Assets.KTVU}/>
+          <FeaturedImage onClick={() => window.open('https://www.thedp.com/article/2020/06/penn-students-create-online-learning-platforms-cornavirus-wave-festival-inventxyz', '_blank')} width={35} src={Assets.DailyPenn}/>
+          <FeaturedImage onClick={() => window.open('https://www.thecrimson.com/article/2020/5/21/harvard-coronavirus-altered-summer-plans/', '_blank')} width={13} src={Assets.HarvardCrimson}/>
+          <FeaturedImage onClick={() => window.open('https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Pasdena}/>
+          <FeaturedImage onClick={() => window.open('https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Monrovia}/>
+          <FeaturedImage onClick={() => window.open('https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Arcadia}/>
+          </ContainerInner>
       </div>
       <div style={{
         display: 'flex',
@@ -381,7 +405,7 @@ const About = () => {
         <Typography.Header
           style={{ color: 'white', fontSize: 28, marginBottom: 20, marginTop: 20 }}
         >
-            We are accepting Donations!
+            We are accepting donations!
         </Typography.Header>
         <a href="/donate" className="sign-up-link">
           <Button

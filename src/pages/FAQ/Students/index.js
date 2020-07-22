@@ -33,21 +33,24 @@ const FAQStudents = () => {
           </Typography.BodyText>
           <br />
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
-            How many classes can I register for?
+            How many courses can I be enrolled in?
           </Typography.Header2>
           <Typography.BodyText>
-            For our current Wave Two, you are able to register for up to three courses!
-            We will prioritize your first choice in the registration form. 
+            For our current Wave Four, in the registration form, you can indicate whether
+	    you want to be enrolled in 1, 2, or 3 courses. You can choose up to 8 
+	    different courses that you are interested in in a priority ranking order.
+	    We will try our best to enroll you in the number of courses you indicate!
           </Typography.BodyText>
           <br />
 	<Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
-            How many classes will I be enrolled in?
+            Can I be waitlisted in a course?
           </Typography.Header2>
           <Typography.BodyText>
-            For Wave Two you will be enrolled in 1-3 courses depending on 
-            class sizes and availability. Out of respect for our teachers who
-            have volunteered their time, please attend all classes that you are
-            able to be placed in.
+            There are multiple reasons you could be waitlisted in a course. Each 
+	    instructor indicates a maximum class size. If that class is filled, you
+	    can no longer be enrolled in it. In addition, some courses only allow
+	    students in a certain grade range to join. If you are outside of that
+	    grade range, you will unfortunately be waitlisted in that course.
           </Typography.BodyText>
           <br />
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
@@ -59,6 +62,17 @@ const FAQStudents = () => {
             inconvenient time zones.
           </Typography.BodyText>
           <br />
+	  <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
+            I'm outside the target grade range. Can I still register for the class?
+          </Typography.Header2>
+          <Typography.BodyText>
+            Yes! Each course indicates a target grade range that is a good indication
+	    of the difficulty of the course. Make sure to keep this in mind when
+	    registering for a course outside of your grade range. There are some
+	    courses that have a restricted grade range – you may not register for 
+	    these courses if you are outside of the grade range.
+          </Typography.BodyText>
+	  <br />
           <Typography.Header2 style={{ color: Colors.WLF_BLACK, fontSize: 20 }}>
             Can I request a class?
           </Typography.Header2>
