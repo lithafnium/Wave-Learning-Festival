@@ -123,7 +123,9 @@ const About = () => {
                 <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}> 
                   <ul style={{marginTop: -10, marginLeft:-25, lineHeight:1.5}}>
                     <li>Student course registration closes on 7/23! <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a> </li>
-                    <li>Jameela Jamil is hosting a Q&A on 7/30! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                    <li>Discuss the writing process with author and editor Nicole Chung on 7/28! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                    <li>Actress and activist Jameela Jamil is hosting a Q&A on 7/30! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                    <li>Learn about chocolate with CocoTerra CEO Nate Saal on 8/1! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
                   </ul>
                 </Typography.BodyText>
               </Typography.Header>
