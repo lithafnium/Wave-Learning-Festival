@@ -21,7 +21,7 @@ var inputChanged = function(key, setField) {
 };
 
 var submit = (signInForm, setWrongSubmission) => {
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(function() {
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function() {
     firebase.auth().signInWithEmailAndPassword(signInForm.username, signInForm.password).then(function(result) {
       if (result) {
         window.location.href = "/dashboard";

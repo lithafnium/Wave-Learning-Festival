@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import logo from './logo.svg'
+import firebase from 'firebase'
 import './App.css'
 import About from './pages/About'
 import Teachers from './pages/Teachers'
@@ -73,7 +74,7 @@ import SignIn from "./pages/SignIn"
 
 import Dashboard from './pages/Dashboard'
 
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Switch, Redirect, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 
 function App () {
@@ -279,6 +280,12 @@ function App () {
             </Route>
             <Route path="/sign-in">
               <SignIn />
+            </Route>
+            <Route path="/sign-out">
+              {
+                firebase.auth().signOut()
+              }
+              <Redirect to="/" />
             </Route>
             <Route path="/:slug" component={CoursePage} />
             <Route path="/">
