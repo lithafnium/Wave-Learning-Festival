@@ -37,7 +37,7 @@ const Navbar = () => {
     setCalledOnce(true);
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        setAccountStatus(<Link to="/sign-out">Sign Out</Link>);
+        setAccountStatus(<Link to="/dashboard">Dashboard</Link>);
       } else {
         setAccountStatus(<Link to="/sign-in">Sign In</Link>);
       }

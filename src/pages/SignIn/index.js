@@ -6,6 +6,7 @@ import * as Styles from "./styles";
 import Logo from "./logo.png"
 import firebase from 'firebase'
 import { FirebaseContext } from "@/firebaseContext";
+import { Redirect } from 'react-router-dom'
 
 var inputChanged = function(key, setField) {
 
@@ -85,6 +86,7 @@ const Loading = () => {
 const SignIn = () => {
   const [page, setPage] = useState("loading");
   const [calledOnce, setCalledOnce] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
   const [wrongSubmission, setWrongSubmission] = useState("");
   const [signInForm, setSignInForm] = useState({
     username: "",
@@ -96,6 +98,16 @@ const SignIn = () => {
   if (db && !calledOnce) {
     setCalledOnce(true);
     setPage("home");
+  }
+
+  firebase.auth().onAuthStateChanged(function(theUser) {
+    if (theUser) {
+      setSignedIn(true);
+    }
+  });
+
+  if (signedIn) {
+    return (<Redirect to="/dashboard" />);
   }
 
   return (

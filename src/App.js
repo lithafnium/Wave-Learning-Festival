@@ -71,6 +71,7 @@ import CourseSignUp from './pages/Courses/CourseSignUp'
 import CoursePage from './pages/Courses/CoursePages'
 import ChangePassword from './pages/ChangePassword'
 import SignIn from "./pages/SignIn"
+import SignOut from "./pages/SignOut"
 
 import Dashboard from './pages/Dashboard'
 
@@ -282,10 +283,7 @@ function App () {
               <SignIn />
             </Route>
             <Route path="/sign-out">
-              {
-                firebase.auth().signOut()
-              }
-              <Redirect to="/" />
+              <SignOut />
             </Route>
             <Route path="/:slug" component={CoursePage} />
             <Route path="/">
