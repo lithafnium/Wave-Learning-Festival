@@ -19,7 +19,7 @@ import {
   Popup,
   FeaturedImage,
   FeaturedLink,
-  ContainerInner, 
+  ContainerInner,
   Announcements
 } from './styles'
 import { Colors, Typography } from '@/styles'
@@ -110,7 +110,7 @@ const About = () => {
                 }}
               >
                 Announcements:
-                <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}> 
+                <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}>
                   <ul style={{marginTop: -10, marginLeft:-25, lineHeight:1.5}}>
                     <li>Student course registration closes on 7/23! <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a> </li>
                     <li>Discuss the writing process with author and editor Nicole Chung on 7/28! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
@@ -405,7 +405,7 @@ const About = () => {
         <Typography.Header
           style={{ color: 'white', fontSize: 28, marginBottom: 20, marginTop: 20 }}
         >
-            We are accepting Donations!
+            We are accepting donations!
         </Typography.Header>
         <a href="/donate" className="sign-up-link">
           <Button
