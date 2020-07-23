@@ -299,6 +299,8 @@ const Dashboard = () => {
           <div style={{display: "flex", height: "100%"}}>
             <Column>
               <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
+              <a href="/sign-out">Sign Out</a><br/>
+              <a href="/change-password">Change Password</a>
               <div style={{backgroundImage: `url(${WavyPurple})`,
                           backgroundSize: "cover",
                           backgroundRepeat: "no-repeat",
