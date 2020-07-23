@@ -37,9 +37,9 @@ const Navbar = () => {
     setCalledOnce(true);
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        setAccountStatus(<Link to="/dashboard">Dash</Link>);
+        setAccountStatus(<Link to="/dashboard"><Button>Dashboard</Button></Link>);
       } else {
-        setAccountStatus(<Link to="/sign-in">Sign In</Link>);
+        setAccountStatus(<Link to="/sign-in"><Button>Login</Button></Link>);
       }
     });
   }
@@ -257,9 +257,6 @@ const Navbar = () => {
             )}
           </NavItem>
           <NavItem>
-            {accountStatus}
-          </NavItem>
-          <NavItem>
             <Link to="/donate">Donate</Link>
           </NavItem>
           {/*
@@ -269,6 +266,9 @@ const Navbar = () => {
                         </Button>
                     </Link>
                     */}
+          <NavItem style={{border: "none"}}>
+            {accountStatus}
+          </NavItem>
         </Links>
         <Hamburger slide={slide} onClick={() => toggleSlide(!slide)}>
           <div style={{ backgroundColor: 'rgb(240,240,240)', width: 40, height: 40, borderRadius: 20, marginLeft: -5, marginTop: -4, position: 'absolute', zIndex: 1 }}></div>
