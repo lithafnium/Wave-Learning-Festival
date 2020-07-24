@@ -75,6 +75,7 @@ import CoursePage from './pages/Courses/CoursePages'
 import ChangePassword from './pages/ChangePassword'
 import SignIn from "./pages/SignIn"
 import SignOut from "./pages/SignOut"
+import ResetPassword from "./pages/ResetPassword"
 
 import Dashboard from './pages/Dashboard'
 
@@ -276,6 +277,9 @@ function App () {
             </Route>
             <Route path="/speaker-sign-up">
               <SpeakerSignUp />
+            </Route>
+            <Route path="/reset-password">
+              <ResetPassword />
             </Route>
             <Route path="/blog/:blogSlug" component={BlogPage} />
             <Route path="/blog">

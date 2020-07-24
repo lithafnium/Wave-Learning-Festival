@@ -62,6 +62,7 @@ const Home = (db, signInForm, setSignInForm, wrongSubmission, setWrongSubmission
         onChange={inputChanged('password', setSignInForm)}
         type="password"
       />
+      <a id="forgot-password" href="/reset-password">Forgot password?</a>
 
       <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
         <Form.Button onClick={(event) => {
