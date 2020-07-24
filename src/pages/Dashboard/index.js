@@ -72,7 +72,7 @@ var genEdit = function(info) {
 
 var generateStudentInfo = function(student) {
   return [
-    genFrag("Name", student.name),
+    genFrag("Name", student.name_first + " " + student.name_last),
     genFrag("Email", student.email),
     genFrag("Parent Name", student.parentName),
     genFrag("Parent Email", student.parentEmail),
