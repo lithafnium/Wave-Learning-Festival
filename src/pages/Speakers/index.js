@@ -13,7 +13,6 @@ import Iris from './iris_fu.jpg'
 import Jasmine from './jasmine_shao.jpeg'
 import Lisa from './lisa_baldwin.jpeg'
 import Nicole from './nicole_chung.jpg'
-import Rhiannon from './rhiannon_mcgavin.jpg'
 import Ruta from './ruta_sepetys.jpg'
 import Andrew from './andrew_cramer.jpg'
 import { Colors } from '@/styles'
@@ -66,15 +65,6 @@ const Speakers = () => {
       date: 'TBD',
       desc: 'Develop the fundamental skills of plein air painting. Students will learn how to sketch, mix colors, the basics of composition, and the use of perspective. Discover like the French Impressionists how to capture natural light, shade, and color. This hands on 6 session course gives students both historical background and practical instruction on how to paint nature from observation. With drawing and painting exercises and coaching students will also be encouraged to develop their own individual painting styles.',
       bio: 'Lisa Baldwin is a contemporary plein air painter who edits her compositions to include only what is essential like a visual haiku. Lisa is from South Eastern Quebec and moved to Los Angeles four and a half years ago. She has always been an outdoors woman and her work is influenced by the paintings of Tom Thomson and the Canadian Group of Seven. They were a collective of early 20th century artists who, like the Impressionists painted outdoors on location. They traveled into the wilderness to paint and believed that a distinct Canadian art could be developed through direct contact with nature. Lisa is currently represented by Topanga Canyon Gallery in Los Angeles and Cube Projects in Ottawa. Her work is in private collections across Canada, the United States, Belgium, Hungary, and China.',
-      hasTime: false
-    },
-    {
-      name: "Rhiannon McGavin: Now That's What I Call A Sonnet",
-      img: Rhiannon,
-      title: 'Award-Winning Poet',
-      date: '8/29',
-      desc: "This workshop will be an overview of the sonnet's history and structure as a form. We will read and discuss works by Terrance Hayes, Wanda Coleman, Kim Addonizio, Franny Choi, and more.",
-      bio: 'Rhiannon McGavin has failed the driver’s license test three times so far. Her work has been published by Tia Chucha Press, CURA, The Believer, Tagvverk, and Teen Vogue. She is the former Youth Poet Laureate of Los Angeles, as well as the 2019 recipient of the Fred and Edith Herman Memorial Prize from the Academy of American Poets.  Her first book Branches is available from Not a Cult, and her second book Grocery List Poems is forthcoming 2021.',
       hasTime: false
     },
     {
