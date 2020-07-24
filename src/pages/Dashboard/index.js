@@ -355,10 +355,11 @@ const Dashboard = () => {
                       <Form.Button style={{ margin: 5 }}>
                         <b>Zoom Link</b>
                       </Form.Button></a>}
+                        {course.edLink && !course.waitlisted &&
                           <a href={course.edLink} style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: '100%' }}>
                             <Form.Button style={{ margin: 5 }}>
                               <b>Ed</b>
-                            </Form.Button></a>
+                            </Form.Button></a>}
                         </Row>
                         <Form.Button onClick={() => { withdraw(student, course, db) }}
                           style={{ marginTop: 0, width: 'auto', height: 25, margin: 'auto', backgroundColor: 'grey' }}>
