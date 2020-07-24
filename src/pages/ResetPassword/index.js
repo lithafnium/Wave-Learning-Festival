@@ -7,6 +7,7 @@ import Logo from "./logo.png"
 import firebase from 'firebase'
 import { FirebaseContext } from "@/firebaseContext";
 import { Redirect } from 'react-router-dom'
+import "./styles.css"
 
 var inputChanged = function(key, setField) {
 
@@ -21,28 +22,22 @@ var inputChanged = function(key, setField) {
   return result;
 };
 
-var submit = (signInForm, setWrongSubmission) => {
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION).then(function() {
-    firebase.auth().signInWithEmailAndPassword(signInForm.username, signInForm.password).then(function(result) {
-      if (result) {
-        window.location.href = "/dashboard";
-      }
-    }).catch(function(error) {
-      setWrongSubmission("Wrong email/password!");
-    });
+var submit = (forgotForm, setWrongSubmission, setPage) => {
+  firebase.auth().sendPasswordResetEmail(forgotForm.email).then(function() {
+    setPage("completed");
+  }).catch(function(error) {
+    setPage("completed");
   });
 };
 
-const Home = (db, signInForm, setSignInForm, wrongSubmission, setWrongSubmission) => {
+const Home = (db, forgotForm, setForgotForm, wrongSubmission, setWrongSubmission, setPage) => {
   return (
     <>
     <Typography.Header color={Colors.WLF_YELLOW}>
-      Sign In
+      Reset Password
     </Typography.Header>
-
-    <Typography.BodyText color="white" fontsize="21px">
-      If you have registered for Wave 4 courses, you will receive an email on Friday, July 24th with the email and password to log in to your account.
-      After you have logged in, you will be able to access your Dashboard, where you can view your Wave 4 enrollment details and withdraw from courses.
+    <Typography.BodyText color="white">
+      Please type in your email address below and we'll send you a password reset link shortly.
     </Typography.BodyText>
 
     <br />
@@ -51,22 +46,14 @@ const Home = (db, signInForm, setSignInForm, wrongSubmission, setWrongSubmission
       Email
     </Typography.Header2>
     <Form.Input
-      value={signInForm.username}
-      onChange={inputChanged("username", setSignInForm)}
+      value={forgotForm.password}
+      onChange={inputChanged("email", setForgotForm)}
+      type="email"
     />
-    <Typography.Header2 color="white" fontSize="24px">
-      Password
-    </Typography.Header2>
-    <Form.Input
-      value={signInForm.password}
-      onChange={inputChanged("password", setSignInForm)}
-      type="password"
-    />
-    <a id="forgot-password" href="/reset-password">Forgot password?</a>
 
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
       <Form.Button onClick={(event) => {
-        submit(signInForm, setWrongSubmission);
+        submit(forgotForm, setWrongSubmission, setPage);
       }}>
         <Typography.Header color="white" fontSize="24px">
           Submit
@@ -89,14 +76,19 @@ const Loading = () => {
   );
 }
 
-const SignIn = () => {
+const Completed = () => {
+  return (
+    <Typography.Header color={Colors.WLF_YELLOW}>If there is an account associated with that email address, a password reset email will be sent to you shortly.</Typography.Header>
+  );
+}
+
+const ForgotPassword = () => {
   const [page, setPage] = useState("loading");
   const [calledOnce, setCalledOnce] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
   const [wrongSubmission, setWrongSubmission] = useState("");
-  const [signInForm, setSignInForm] = useState({
-    username: "",
-    password: ""
+  const [forgotForm, setForgotForm] = useState({
+    email: ""
   })
 
   const {db} = useContext(FirebaseContext);
@@ -121,8 +113,9 @@ const SignIn = () => {
       <Navbar />
       <Styles.SignupBackground>
         <div style={{maxWidth: 800}}>
-          {page === "home" && Home(db, signInForm, setSignInForm, wrongSubmission, setWrongSubmission)}
+          {page === "home" && Home(db, forgotForm, setForgotForm, wrongSubmission, setWrongSubmission, setPage)}
           {page === "loading" && Loading()}
+          {page === "completed" && Completed()}
         </div>
       </Styles.SignupBackground>
       <Styles.LogoBackground src={Logo} alt="logo" style={{
@@ -146,4 +139,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default ForgotPassword;
