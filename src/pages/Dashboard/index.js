@@ -121,7 +121,6 @@ const Dashboard = () => {
     if (db && auth) {
       // console.log("call " + calledOnce);
       auth.onAuthStateChanged(function (theUser) {
-        console.log(theUser)
         if (theUser) {
           // console.log(result.user.uid);
 
@@ -132,7 +131,6 @@ const Dashboard = () => {
             snapshot.forEach(function (snap) {
               students.push(snap)
             })
-            console.log(students)
             if (students.length > 0) {
               var coursesResult = []
               setStudent(students[0].data())
@@ -159,7 +157,6 @@ const Dashboard = () => {
                       courses.push(snap)
                     })
                     var toPush = courses[0].data()
-                    console.log(toPush)
                     db.doc(toPush.picture[0].path).get().then(function (picture) {
                       storage.child('flamelink/media/' + picture.data().file).getDownloadURL()
                         .then(function (url) {
@@ -264,8 +261,8 @@ const Dashboard = () => {
     4/*,
     3,
     2,
-    1*/
-  ];
+    1 */
+  ]
 
   if (student) {
     var studentInfo = generateStudentInfo(student)
@@ -315,16 +312,16 @@ const Dashboard = () => {
                   </Text>
                 </div>
                 <Row>
-                <a href="/sign-out" style={{ textDecoration: 'none', color: 'white', float: 'left' }}>
-                  <Form.Button style={{ margin: 5, width: 125, textAlign: 'center', fontSize: 18 }}>
-                    <b>Sign Out</b>
-                  </Form.Button>
-                </a>
-                <a href="/change-password" style={{ textDecoration: 'none', color: 'white', float: 'right' }}>
-                  <Form.Button style={{ margin: 5, width: 200, textAlign: 'center', fontSize: 18 }}>
-                    <b>Change Password</b>
-                  </Form.Button>
-                </a>
+                  <a href="/sign-out" style={{ textDecoration: 'none', color: 'white', float: 'left' }}>
+                    <Form.Button style={{ margin: 5, width: 125, textAlign: 'center', fontSize: 18 }}>
+                      <b>Sign Out</b>
+                    </Form.Button>
+                  </a>
+                  <a href="/change-password" style={{ textDecoration: 'none', color: 'white', float: 'right' }}>
+                    <Form.Button style={{ margin: 5, width: 200, textAlign: 'center', fontSize: 18 }}>
+                      <b>Change Password</b>
+                    </Form.Button>
+                  </a>
                 </Row>
               </Column>
               <Column>
@@ -343,9 +340,9 @@ const Dashboard = () => {
                   </Column>
                 </div>
 
-                {coursesDisplayed.map(course => {
+                {coursesDisplayed.map((course, index) => {
                   return (
-                    <Class>
+                    <Class key={index}>
                       <img src={course.imageUrl} style={{ float: 'left', height: 'auto', maxWidth: '40%', marginRight: 10 }}/>
                       <ClassText>
                         <p style={{ margin: 0 }}>
@@ -358,7 +355,7 @@ const Dashboard = () => {
                       <Form.Button style={{ margin: 5 }}>
                         <b>Zoom Link</b>
                       </Form.Button></a>}
-                          <a href="www.edstem.org" style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: '100%' }}>
+                          <a href={course.edLink} style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: '100%' }}>
                             <Form.Button style={{ margin: 5 }}>
                               <b>Ed</b>
                             </Form.Button></a>
