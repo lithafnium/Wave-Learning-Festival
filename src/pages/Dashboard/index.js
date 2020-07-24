@@ -303,8 +303,6 @@ const Dashboard = () => {
           <div style={{display: "flex", height: "100%"}}>
             <Column>
               <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
-              <a href="/sign-out">Sign Out</a><br/>
-              <a href="/change-password">Change Password</a>
               <div style={{backgroundImage: `url(${WavyPurple})`,
                           backgroundSize: "cover",
                           backgroundRepeat: "no-repeat"}}>
@@ -314,6 +312,17 @@ const Dashboard = () => {
                   <br/>
                 </Text>
               </div>
+              <br/>
+              <a href="/sign-out" style={{textDecoration: "none", color: "white", float: "left"}}>
+                <Form.Button style={{margin: 5, width: 125, textAlign: 'center', fontSize: 18}}>
+                  <b>Sign Out</b>
+                </Form.Button> 
+              </a>
+              <a href="/change-password" style={{textDecoration: "none", color: "white", float: "right"}}>
+                <Form.Button style={{margin: 5, width: 200, textAlign: 'center', fontSize: 18}}>
+                  <b>Change Password</b>
+                </Form.Button>
+              </a>
             </Column>
             <Column>
             <div style={{display: "flex"}}>
