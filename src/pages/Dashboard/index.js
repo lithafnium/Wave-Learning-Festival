@@ -121,7 +121,7 @@ const Dashboard = () => {
         if (theUser) {
           // console.log(result.user.uid);
           setUser(theUser);
-          db.collection("students2").where("userID", "==", theUser.uid).get().then(function(snapshot) {
+          db.collection("StudentRegistrations").where("userID", "==", theUser.uid).get().then(function(snapshot) {
             var students = [];
             snapshot.forEach(function(snap) {
               students.push(snap);
@@ -284,7 +284,7 @@ const Dashboard = () => {
         var newData = $(this).parent().find(".edit-field").val();
         var change = changing(label, newData, student);
         // console.log(change);
-        db.doc('students2/' + student.id).set(change);
+        db.doc('StudentRegistrations/' + student.id).set(change);
         $(this).parent().after(ReactDOMServer.renderToString(fragHtml({"label": label, "data": newData})));
         $(this).parent().remove();
       });
