@@ -308,6 +308,7 @@ const Dashboard = () => {
                 <Text>
                   <br/>
                   <br/>
+                  <br/>
                   {studentInfo.map(fragHtml)}
                 </Text>
               </div>
@@ -335,7 +336,7 @@ const Dashboard = () => {
               <ClassText>
                 <p style={{margin: 0}}>
                   <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
-                  <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+                  <b>Dates/Times: </b>{course.classDays + " at " + course.classTime + " EDT"} <br/>
                 </p>
                 <Row>
                   {course.zoomLink && !course.waitlisted &&
