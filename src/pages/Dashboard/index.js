@@ -305,7 +305,8 @@ const Dashboard = () => {
                 <div style={{
                   backgroundImage: `url(${WavyPurple})`,
                   backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat'
+                  backgroundRepeat: 'no-repeat',
+                  marginBottom: 5
                 }}>
                   <Text>
                     <br/><br/>
@@ -313,7 +314,7 @@ const Dashboard = () => {
                     <br/>
                   </Text>
                 </div>
-                <br/>
+                <Row>
                 <a href="/sign-out" style={{ textDecoration: 'none', color: 'white', float: 'left' }}>
                   <Form.Button style={{ margin: 5, width: 125, textAlign: 'center', fontSize: 18 }}>
                     <b>Sign Out</b>
@@ -324,16 +325,17 @@ const Dashboard = () => {
                     <b>Change Password</b>
                   </Form.Button>
                 </a>
+                </Row>
               </Column>
               <Column>
                 <div style={{ display: 'flex' }}>
-                  <Column style={{ width: '80%' }}>
+                  <Column style={{ width: '70%' }}>
                     <Typography.Header style={{ color: Colors.WLF_PURPLE }}>My Classes</Typography.Header>
                   </Column>
-                  <Column style={{ width: '10%' }}>
+                  <Column style={{ width: '30%' }}>
                     <Form.Dropdown
                       onChange={inputChanged(setWave)}
-                      style={{ borderColor: 'black', width: 150, marginTop: 25 }}>
+                      style={{ borderColor: 'black', width: '100%', marginTop: 25 }}>
                       {WAVE_OPTIONS.map((value) => (
                         <option value={value}>{`Wave ${value}`}</option>
                       ))}
