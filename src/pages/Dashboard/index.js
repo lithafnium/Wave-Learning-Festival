@@ -351,12 +351,12 @@ const Dashboard = () => {
                         </p>
                         <Row>
                           {course.zoomLink && !course.waitlisted &&
-                    <a href={course.zoomLink} style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: 'auto' }}>
+                    <a href={course.zoomLink} target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: 'auto' }}>
                       <Form.Button style={{ margin: 5 }}>
                         <b>Zoom Link</b>
                       </Form.Button></a>}
                         {course.edLink && !course.waitlisted &&
-                          <a href={course.edLink} style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: '100%' }}>
+                          <a href={course.edLink} target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: '100%' }}>
                             <Form.Button style={{ margin: 5 }}>
                               <b>Ed</b>
                             </Form.Button></a>}

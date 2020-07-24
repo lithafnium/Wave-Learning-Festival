@@ -288,6 +288,9 @@ function App () {
             <Route path="/course-sign-up">
               <CourseSignUpClosed />
             </Route>
+            <Route path="/course-sign-up-manual-wave20lfstaff">
+              <CourseSignUp />
+            </Route>
             <Route path="/change-password">
               <ChangePassword />
             </Route>
