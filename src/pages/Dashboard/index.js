@@ -161,7 +161,7 @@ const Dashboard = () => {
                         .then(function (url) {
                         toPush.waitlisted = isWaitlisted;
                         toPush.imageUrl = url;
-                        toPush.assignmentID = current.id
+                        toPush.assignmentID = current.id;
                         coursesResult.push(toPush);
                         if (numCourses == currentNum) {
                           setCourses(coursesResult);
@@ -268,7 +268,7 @@ const Dashboard = () => {
   ];
 
   if (student) {
-    console.log(wave);
+    // console.log(wave);
     var studentInfo = generateStudentInfo(student);
 
     $(document).ready(function() {
@@ -348,7 +348,7 @@ const Dashboard = () => {
                     </Form.Button></a>}
                   <a href="www.edstem.org" style={{textDecoration: "none", color: "white", margin: "auto", height: "100%"}}>
                     <Form.Button style={{margin: 5}}>
-                    <b>Edx</b>
+                    <b>Ed</b>
                   </Form.Button></a>
                 </Row>
                 <Form.Button onClick={() => {withdraw(student, course, db)}}
