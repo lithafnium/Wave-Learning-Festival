@@ -5,7 +5,7 @@ import { Container, ContainerInner } from "@/globalStyles"
 import { Colors, Typography, Form } from "@/styles"
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
-import { Column, Text, Row, Label, Data, Class, ClassText } from './styles.js';
+import { ProfileLeft, ProfileRight, Column, Text, Row, Label, Data, Class, ClassText } from './styles.js';
 import 'firebase/firestore'
 import firebase from 'firebase'
 import $ from 'jquery'
@@ -54,14 +54,14 @@ var genFrag = function(label, data) {
 var fragHtml = function(info) {
     return (
     <Row>
-      <Column>
+      <ProfileLeft>
         <Label>{`${info.label} `}</Label>
-      </Column>
-      <Column>
+      </ProfileLeft>
+      <ProfileRight>
         <Data>
           <p style={{margin: 5}}>{`${info.data} `}</p>
         </Data>
-      </Column>
+      </ProfileRight>
     </Row>
     );
 };
@@ -303,13 +303,11 @@ const Dashboard = () => {
               <a href="/change-password">Change Password</a>
               <div style={{backgroundImage: `url(${WavyPurple})`,
                           backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat",
-                          height: "80%"}}>
+                          backgroundRepeat: "no-repeat"}}>
                 <Text>
-                  <br/>
-                  <br/>
-                  <br/>
+                  <br/><br/>
                   {studentInfo.map(fragHtml)}
+                  <br/>
                 </Text>
               </div>
             </Column>

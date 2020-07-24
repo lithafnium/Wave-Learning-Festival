@@ -10,6 +10,25 @@ export const Column = styled.div`
     margin-right: 10px;
 `
 
+export const ProfileLeft = styled.div`
+    width: 25%; 
+    height: 100%;  
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+`
+export const ProfileRight = styled.div`
+    width: 75%; 
+    height: 100%;  
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+`
+
 export const Text = styled.div`
     width: 100%;
     margin-left: 20px;  
@@ -31,7 +50,7 @@ export const Data = styled.div`
     border-style: solid;
     border-radius: 5px;
     height: 50%;
-    width: 150px;
+    width: 90%;
 `
 
 export const Class = styled.div`
