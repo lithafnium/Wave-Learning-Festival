@@ -71,8 +71,12 @@ var genEdit = function(info) {
 };
 
 var generateStudentInfo = function(student) {
+  var studentName = student.name
+  if (typeof studentName === "undefined"){
+    studentName = student.name_first + " " + student.name_last;
+  }
   return [
-    genFrag("Name", student.name_first + " " + student.name_last),
+    genFrag("Name", studentName),
     genFrag("Email", student.email),
     genFrag("Parent Name", student.parentName),
     genFrag("Parent Email", student.parentEmail),
