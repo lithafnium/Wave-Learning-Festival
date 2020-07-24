@@ -5,7 +5,14 @@ import { Container, ContainerInner } from "@/globalStyles"
 import { Colors, Typography, Form } from "@/styles"
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
-import { ProfileLeft, ProfileRight, Column, Text, Row, Label, Data, Class, ClassText } from './styles.js';
+import { 
+  ProfileLeft, 
+  ProfileRight, 
+  Column, Row, 
+  Text, Label, 
+  Data, Class, 
+  ClassText, 
+  Sections } from './styles.js';
 import 'firebase/firestore'
 import firebase from 'firebase'
 import $ from 'jquery'
@@ -300,7 +307,7 @@ const Dashboard = () => {
         <Navbar/>
           <Container>
           <ContainerInner>
-          <div style={{display: "flex", height: "100%"}}>
+            <Sections>
             <Column>
               <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
               <a href="/sign-out">Sign Out</a><br/>
@@ -316,20 +323,20 @@ const Dashboard = () => {
               </div>
             </Column>
             <Column>
-            <div style={{display: "flex"}}>
-              <Column style={{width: "80%"}}>
+            <Sections>
+              <Column style={{width: "70%"}}>
                 <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Classes</Typography.Header>
               </Column>
-              <Column style={{width: "10%"}}>
+              <Column style={{width: "30%"}}>
                 <Form.Dropdown
                     onChange={inputChanged(setWave)}
-                    style={{borderColor: "black", width: 150, marginTop: 25}}>
+                    style={{borderColor: "black", width: "100%"}}>
                   {WAVE_OPTIONS.map((value) => (
                     <option value={value}>{`Wave ${value}`}</option>
                   ))}
                 </Form.Dropdown>
               </Column>
-            </div>
+              </Sections>
 
             {coursesDisplayed.map(course => {
               return (
@@ -361,7 +368,7 @@ const Dashboard = () => {
               </Class>
             )})}
             </Column>
-          </div>
+            </Sections>
           </ContainerInner>
           </Container>
         <Footer/>

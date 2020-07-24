@@ -1,13 +1,53 @@
 import styled from 'styled-components'
+import { device } from '@/theme'
 
-export const Column = styled.div`
-    width: 50%; 
+export const Column = styled.div` 
     height: 100%;  
-    float: left;
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 10px;
     margin-right: 10px;
+
+    @media ${device.mobileS} {
+        width: 100%;
+      }
+      @media ${device.mobileM} {
+        width: 100%;
+      }
+      @media ${device.mobileL} {
+        width: 100%;
+      }
+      @media ${device.tablet} {
+        width: 100%;
+      }
+      @media ${device.tabletL} {
+        width: 50%;
+        float: left;
+      }
+      @media ${device.laptop} {
+        width: 50%;
+        float: left;
+      }
+`
+
+export const Sections = styled.div`
+
+@media ${device.mobileS} {
+    width: 100%;
+  }
+  @media ${device.mobileM} {
+    width: 100%;
+  }
+  @media ${device.mobileL} {
+    width: 100%;
+  }
+  @media ${device.tablet} {
+    width: 100%;
+  }
+  @media ${device.laptop} {
+    display: flex;
+  }
+
 `
 
 export const ProfileLeft = styled.div`
@@ -51,11 +91,13 @@ export const Data = styled.div`
     border-radius: 5px;
     height: 50%;
     width: 90%;
+    white-space: no-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `
 
 export const Class = styled.div`
     width: 100%;
-    margin: 10px;
     padding: 5px;
     clear: left;
 `
