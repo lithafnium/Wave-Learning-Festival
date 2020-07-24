@@ -261,10 +261,10 @@ const Dashboard = () => {
   };
 
   var WAVE_OPTIONS = [
-    4,
+    4/*,
     3,
     2,
-    1
+    1*/
   ];
 
   if (student) {
