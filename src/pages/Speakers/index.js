@@ -13,7 +13,6 @@ import Iris from './iris_fu.jpg'
 import Jasmine from './jasmine_shao.jpeg'
 import Lisa from './lisa_baldwin.jpeg'
 import Nicole from './nicole_chung.jpg'
-import Rhiannon from './rhiannon_mcgavin.jpg'
 import Ruta from './ruta_sepetys.jpg'
 import Andrew from './andrew_cramer.jpg'
 import { Colors } from '@/styles'
@@ -69,15 +68,6 @@ const Speakers = () => {
       hasTime: false
     },
     {
-      name: "Rhiannon McGavin: Now That's What I Call A Sonnet",
-      img: Rhiannon,
-      title: 'Award-Winning Poet',
-      date: '8/29',
-      desc: "This workshop will be an overview of the sonnet's history and structure as a form. We will read and discuss works by Terrance Hayes, Wanda Coleman, Kim Addonizio, Franny Choi, and more.",
-      bio: 'Rhiannon McGavin has failed the driver’s license test three times so far. Her work has been published by Tia Chucha Press, CURA, The Believer, Tagvverk, and Teen Vogue. She is the former Youth Poet Laureate of Los Angeles, as well as the 2019 recipient of the Fred and Edith Herman Memorial Prize from the Academy of American Poets.  Her first book Branches is available from Not a Cult, and her second book Grocery List Poems is forthcoming 2021.',
-      hasTime: false
-    },
-    {
       name: 'Jasmine Shao: Become an iNfLuEnCeR: How to Grow & Monetize Your Platform!',
       img: Jasmine,
       title: "AKA studyquill! UCLA '24",
@@ -90,7 +80,7 @@ const Speakers = () => {
       name: 'Iris Fu: How to Self-Publish a Book in a Month',
       img: Iris,
       title: "Economics Author, Youtuber, Stanford '24",
-      date: '9/4',
+      date: '9/3 5:30pm EDT',
       desc: "Have you always had an interest that you'd want to showcase through a book? Does publishing a book seem like a daunting task? Well, it doesn't have to be! In this seminar, you'll learn how you can go from writing, editing, and self-publishing your book in as short of a time frame as a month. We'll focus on using the publishing platform Amazon KDP, and leave ample of time for questions to cater to your needs! ",
       bio: 'Iris Fu is a rising freshman at Stanford University, where she plans to study computer science and economics. In high school, she self-published an introductory economics book, created an international video pal program, and had the opportunity to perform flute at Carnegie Hall. This summer, she is working at a blockchain identity startup, running a college admissions Youtube channel (Iris Fu), and seeking cool opportunities like speaking at Wave LF!',
       hasTime: false

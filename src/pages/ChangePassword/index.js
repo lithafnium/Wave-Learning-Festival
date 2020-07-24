@@ -62,7 +62,12 @@ const Home = (db, setPage, passForm, setPassForm, user, wrongSubmission, setWron
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
       <Form.Button onClick={(event) => {
         if (passForm.new_password === passForm.confirm) {
-          submit(passForm, user, setError, setPage);
+          var credential = firebase.auth.EmailAuthProvider.credential(user.email, passForm.new_password);
+          user.reauthenticateWithCredential(credential).then(function() { // login succeeded; not ok
+            setWrongSubmission("New password must not be identical to your current one!");
+          }).catch(function(error) { // login didn't succeed; password is different
+            submit(passForm, user, setError, setPage);
+          });
         } else {
           setWrongSubmission("Passwords must match!");
         }
