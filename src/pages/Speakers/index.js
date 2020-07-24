@@ -90,7 +90,7 @@ const Speakers = () => {
       name: 'Iris Fu: How to Self-Publish a Book in a Month',
       img: Iris,
       title: "Economics Author, Youtuber, Stanford '24",
-      date: '9/4',
+      date: '9/3 5:30pm EDT',
       desc: "Have you always had an interest that you'd want to showcase through a book? Does publishing a book seem like a daunting task? Well, it doesn't have to be! In this seminar, you'll learn how you can go from writing, editing, and self-publishing your book in as short of a time frame as a month. We'll focus on using the publishing platform Amazon KDP, and leave ample of time for questions to cater to your needs! ",
       bio: 'Iris Fu is a rising freshman at Stanford University, where she plans to study computer science and economics. In high school, she self-published an introductory economics book, created an international video pal program, and had the opportunity to perform flute at Carnegie Hall. This summer, she is working at a blockchain identity startup, running a college admissions Youtube channel (Iris Fu), and seeking cool opportunities like speaking at Wave LF!',
       hasTime: false
