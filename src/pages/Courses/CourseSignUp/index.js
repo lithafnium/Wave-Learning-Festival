@@ -208,6 +208,7 @@ var YES = ["Yes"];
 const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWrongSubmission, setErrorMessage) => {
   return (
     <>
+    <br/>
     <Typography.Header color={Colors.WLF_YELLOW}>
       Course Signup
     </Typography.Header>

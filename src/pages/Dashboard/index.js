@@ -5,7 +5,7 @@ import { Container, ContainerInner } from "@/globalStyles"
 import { Colors, Typography, Form } from "@/styles"
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
-import { Column, Text, Row, Label, Data, Class, ClassText } from './styles.js';
+import { ProfileLeft, ProfileRight, Column, Text, Row, Label, Data, Class, ClassText } from './styles.js';
 import 'firebase/firestore'
 import firebase from 'firebase'
 import $ from 'jquery'
@@ -54,14 +54,14 @@ var genFrag = function(label, data) {
 var fragHtml = function(info) {
     return (
     <Row>
-      <Column>
+      <ProfileLeft>
         <Label>{`${info.label} `}</Label>
-      </Column>
-      <Column>
+      </ProfileLeft>
+      <ProfileRight>
         <Data>
           <p style={{margin: 5}}>{`${info.data} `}</p>
         </Data>
-      </Column>
+      </ProfileRight>
     </Row>
     );
 };
@@ -71,8 +71,12 @@ var genEdit = function(info) {
 };
 
 var generateStudentInfo = function(student) {
+  var studentName = student.name
+  if (typeof studentName === "undefined"){
+    studentName = student.name_first + " " + student.name_last;
+  }
   return [
-    genFrag("Name", student.name),
+    genFrag("Name", studentName),
     genFrag("Email", student.email),
     genFrag("Parent Name", student.parentName),
     genFrag("Parent Email", student.parentEmail),
@@ -121,7 +125,7 @@ const Dashboard = () => {
         if (theUser) {
           // console.log(result.user.uid);
           setUser(theUser);
-          db.collection("students2").where("userID", "==", theUser.uid).get().then(function(snapshot) {
+          db.collection("StudentRegistrations").where("userID", "==", theUser.uid).get().then(function(snapshot) {
             var students = [];
             snapshot.forEach(function(snap) {
               students.push(snap);
@@ -157,7 +161,7 @@ const Dashboard = () => {
                         .then(function (url) {
                         toPush.waitlisted = isWaitlisted;
                         toPush.imageUrl = url;
-                        toPush.assignmentID = current.id
+                        toPush.assignmentID = current.id;
                         coursesResult.push(toPush);
                         if (numCourses == currentNum) {
                           setCourses(coursesResult);
@@ -264,7 +268,7 @@ const Dashboard = () => {
   ];
 
   if (student) {
-    console.log(wave);
+    // console.log(wave);
     var studentInfo = generateStudentInfo(student);
 
     $(document).ready(function() {
@@ -284,7 +288,7 @@ const Dashboard = () => {
         var newData = $(this).parent().find(".edit-field").val();
         var change = changing(label, newData, student);
         // console.log(change);
-        db.doc('students2/' + student.id).set(change);
+        db.doc('StudentRegistrations/' + student.id).set(change);
         $(this).parent().after(ReactDOMServer.renderToString(fragHtml({"label": label, "data": newData})));
         $(this).parent().remove();
       });
@@ -299,18 +303,26 @@ const Dashboard = () => {
           <div style={{display: "flex", height: "100%"}}>
             <Column>
               <Typography.Header style={{color: Colors.WLF_PURPLE}}>My Profile</Typography.Header>
-              <a href="/sign-out">Sign Out</a><br/>
-              <a href="/change-password">Change Password</a>
               <div style={{backgroundImage: `url(${WavyPurple})`,
                           backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat",
-                          height: "80%"}}>
+                          backgroundRepeat: "no-repeat"}}>
                 <Text>
-                  <br/>
-                  <br/>
+                  <br/><br/>
                   {studentInfo.map(fragHtml)}
+                  <br/>
                 </Text>
               </div>
+              <br/>
+              <a href="/sign-out" style={{textDecoration: "none", color: "white", float: "left"}}>
+                <Form.Button style={{margin: 5, width: 125, textAlign: 'center', fontSize: 18}}>
+                  <b>Sign Out</b>
+                </Form.Button> 
+              </a>
+              <a href="/change-password" style={{textDecoration: "none", color: "white", float: "right"}}>
+                <Form.Button style={{margin: 5, width: 200, textAlign: 'center', fontSize: 18}}>
+                  <b>Change Password</b>
+                </Form.Button>
+              </a>
             </Column>
             <Column>
             <div style={{display: "flex"}}>
@@ -335,7 +347,7 @@ const Dashboard = () => {
               <ClassText>
                 <p style={{margin: 0}}>
                   <a href={"/" + course.id}>{course.courseTitle}{course.waitlisted && " (WAITLISTED)"}</a><br/>
-                  <b>Dates/Times: </b>{course.classDays + " at " + course.classTime}<br/>
+                  <b>Dates/Times: </b>{course.classDays + " at " + course.classTime + " EDT"} <br/>
                 </p>
                 <Row>
                   {course.zoomLink && !course.waitlisted &&
@@ -345,7 +357,7 @@ const Dashboard = () => {
                     </Form.Button></a>}
                   <a href="www.edstem.org" style={{textDecoration: "none", color: "white", margin: "auto", height: "100%"}}>
                     <Form.Button style={{margin: 5}}>
-                    <b>Edx</b>
+                    <b>Ed</b>
                   </Form.Button></a>
                 </Row>
                 <Form.Button onClick={() => {withdraw(student, course, db)}}
