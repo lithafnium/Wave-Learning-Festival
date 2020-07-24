@@ -54,6 +54,7 @@ export const BrandText = styled.img`
     display: block;
   }
   height: auto;
+  cursor: pointer;
 `;
 
 export const Brand = styled.img`
@@ -65,6 +66,7 @@ export const Brand = styled.img`
   }
   width: 3.5em;
   height: auto;
+  cursor: pointer;
 `;
 
 export const Links = styled.div`
@@ -91,16 +93,19 @@ export const Links = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 15px 40px 15px 40px;
-
+  font-family: "Mukta Mahee", sans-serif;
+  padding: 10px 25px 10px 25px;
   border-radius: 40px;
   border: none;
-  background-color: #6e00ff;
-  margin-left: 15px;
+  background-color: ${WLF_PURPLE};
   color: #eeeeee !important;
   font-weight: 600;
   font-size: 16px;
   transition: 0.2s;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.2s;
+  border-bottom: white;
 
   & a {
     margin: 0px;
@@ -109,6 +114,7 @@ export const Button = styled.button`
   &:hover {
     cursor: pointer;
     opacity: 0.8;
+    border-bottom: white;
   }
 
   &:focus {
@@ -208,8 +214,8 @@ export const NavbarDropdown = styled.div`
 export const NavItem = styled.p`
   position: relative;
   margin: 0px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   transition: 0.2s;
   width: fit-content;
   border-bottom: 2px solid white;

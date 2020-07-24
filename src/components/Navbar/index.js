@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import {
   NavbarContainer,
@@ -21,6 +21,7 @@ import { FaUserAlt, FaChalkboardTeacher, FaUserFriends } from 'react-icons/fa'
 import Logo from './logo.svg'
 import LogoText from './logoText.png'
 import LogoTextFull from './logo with type (1).svg'
+import { FirebaseContext } from '@/firebaseContext'
 
 const Navbar = () => {
   const [applyShow, setApplyShow] = useState(false)
@@ -28,6 +29,28 @@ const Navbar = () => {
   const [aboutShow, setAboutShow] = useState(false)
   const [faqShow, setFaqShow] = useState(false)
   const [slide, toggleSlide] = useState(false)
+  const [accountStatus, setAccountStatus] = useState(null)
+  const [calledOnce, setCalledOnce] = useState(false)
+  const { auth } = useContext(FirebaseContext)
+
+  const logOut = () => {
+    auth.signOut().then(function () {
+
+    })
+  }
+
+  useEffect(() => {
+    if (auth) {
+      auth.onAuthStateChanged(function (user) {
+        if (user) {
+          setAccountStatus(<Link to="/dashboard"><Button>Dashboard</Button></Link>)
+        } else {
+          setAccountStatus(<Link to="/sign-in"><Button>Login</Button></Link>)
+        }
+      })
+    }
+  }, [auth])
+
   return (
     <NavbarContainer>
       <NavbarInner>
@@ -249,6 +272,12 @@ const Navbar = () => {
                         </Button>
                     </Link>
                     */}
+          <NavItem style={{ border: 'none' }}>
+            {accountStatus}
+          </NavItem>
+          {/* <NavItem>
+            <Link><Button onClick = {() => logOut()}>Signout</Button></Link>
+          </NavItem> */}
         </Links>
         <Hamburger slide={slide} onClick={() => toggleSlide(!slide)}>
           <div style={{ backgroundColor: 'rgb(240,240,240)', width: 40, height: 40, borderRadius: 20, marginLeft: -5, marginTop: -4, position: 'absolute', zIndex: 1 }}></div>

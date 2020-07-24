@@ -180,7 +180,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
       please make sure you input a different email per child here.
       </Typography.BodyText>
       <Form.Input
-        value={studentData.email}
+        value={studentData.email.toLowerCase()}
         onChange={inputChanged('email', setStudentData)}
       />
 

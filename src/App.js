@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import logo from './logo.svg'
+import firebase from 'firebase'
 import './App.css'
 import About from './pages/About'
 import Teachers from './pages/Teachers'
@@ -69,8 +70,16 @@ import Mission from './pages/Mission'
 import Blog from './pages/Blog'
 import BlogPage from './pages/Blog/BlogPage'
 import CourseSignUp from './pages/Courses/CourseSignUp'
+import CourseSignUpClosed from './pages/Courses/CourseSignUpClosed'
 import CoursePage from './pages/Courses/CoursePages'
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
+import ChangePassword from './pages/ChangePassword'
+import SignIn from "./pages/SignIn"
+import SignOut from "./pages/SignOut"
+import ResetPassword from "./pages/ResetPassword"
+
+import Dashboard from './pages/Dashboard'
+
+import { Switch, Redirect, Route, BrowserRouter as Router } from 'react-router-dom'
 import { FirebaseProvider } from './firebaseContext'
 function App () {
   return (
@@ -245,6 +254,9 @@ function App () {
             <Route path="/login">
               <Login />
             </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
             <Route path="/signup">
               <Signup />
             </Route>
@@ -266,12 +278,24 @@ function App () {
             <Route path="/speaker-sign-up">
               <SpeakerSignUp />
             </Route>
+            <Route path="/reset-password">
+              <ResetPassword />
+            </Route>
             <Route path="/blog/:blogSlug" component={BlogPage} />
             <Route path="/blog">
               <Blog />
             </Route>
             <Route path="/course-sign-up">
-              <CourseSignUp />
+              <CourseSignUpClosed />
+            </Route>
+            <Route path="/change-password">
+              <ChangePassword />
+            </Route>
+            <Route path="/sign-in">
+              <SignIn />
+            </Route>
+            <Route path="/sign-out">
+              <SignOut />
             </Route>
             <Route path="/:slug" component={CoursePage} />
 
