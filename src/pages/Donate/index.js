@@ -20,9 +20,7 @@ const Donate = () => {
         <ContainerInner>
         <Typography.Header style={{ color: Colors.WLF_PURPLE }}>Donate</Typography.Header>
         <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
-          As we are a fully volunteer run organization, offering free, accessible learning to all, 
-          we appreciate any of the help we can get! If you have the means, please donate below.
-          Anything is highly appreciated! <br/><br/>
+          Looking for a way to help Wave grow? In order to expand our programming and continue offering free, accessible learning to all, we need your help! Wave is a non-profit organization run completely by volunteers, and all donations go towards improving and expanding our quality of service. If you have the means, please donate below! Any amount is useful and highly appreciated!<br/><br/>
           <b>For now, we are taking donations from residents of California, New York, New Jersey, or Massachusetts.</b><br/>
         </Typography.BodyText>
         <Options>
