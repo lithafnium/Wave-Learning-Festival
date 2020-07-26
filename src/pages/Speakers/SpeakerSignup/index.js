@@ -105,6 +105,7 @@ var fitsRequirements = function (studentData) {
   var result = studentData.name_first != '' &&
     studentData.name_last != '' &&
     studentData.email != '' &&
+    studentData.age != '' &&
     studentData.parentName != '' &&
     studentData.parentEmail != '' &&
     studentData.speakers != ''
@@ -145,7 +146,23 @@ var submit = function (db, studentData, setErrorMessage, setPage) {
 var YES_NO = [
   'Yes!',
   'No'
-]
+];
+
+var AGE_OPTIONS = [
+  "",
+  "Under 10",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+];
 
 var YES = ['Yes']
 
@@ -183,6 +200,17 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
         value={studentData.email.toLowerCase()}
         onChange={inputChanged('email', setStudentData)}
       />
+
+      <Typography.Header2 color="white" fontSize="24px">
+        Age / Edad *
+      </Typography.Header2>
+      <Form.Dropdown
+        onChange={inputChanged("age", setStudentData)}
+      >
+        {AGE_OPTIONS.map((value) => (
+          renderOption({option: value})
+        ))}
+      </Form.Dropdown>
 
       <Typography.Header2 color="white" fontSize="24px">
       Let me know when registrations for future waves begin! / Notifícame de cursos nuevos! *
