@@ -286,7 +286,7 @@ exports.sendEmailConfirmationSpeakers =
         mailOptions.text = 
             `Hi ${name}!
 Thank you for registering for our special speakers!
-Because there is limited space available in these speaker events, you will find out closer to the date of the event whether you have secured a spot. Please let us know if you have any questions!
+Because there is limited space available in these speaker events, you will find out a day before the event whether you have secured a spot. Please let us know if you have any questions!
 
 Best,            
 ${first} ${last}

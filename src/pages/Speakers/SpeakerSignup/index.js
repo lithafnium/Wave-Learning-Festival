@@ -204,6 +204,9 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
       <Typography.Header2 color="white" fontSize="24px">
         Age / Edad *
       </Typography.Header2>
+      <Typography.BodyText color="white">
+        Please check the target audience of each speaker to see if the seminar is right for you!
+      </Typography.BodyText>
       <Form.Dropdown
         onChange={inputChanged("age", setStudentData)}
       >
