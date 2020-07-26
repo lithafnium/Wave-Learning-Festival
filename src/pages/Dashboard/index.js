@@ -5,8 +5,7 @@ import { Container, ContainerInner } from '@/globalStyles'
 import { Colors, Typography, Form } from '@/styles'
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
-import { ProfileLeft, ProfileRight, Column, Text, Row, Label, Data, Class, ClassText, Sections } from './styles.js'
-import 'firebase/firestore'
+import { Cancel, EditInput, ProfileLeft, ProfileRight, Column, Text, Row, Label, Data, Class, ClassText, Sections } from './styles.js'
 import $ from 'jquery'
 import ReactDOMServer from 'react-dom/server'
 
@@ -51,16 +50,17 @@ var genFrag = function (label, data) {
   }
 }
 
-var fragHtml = function (info) {
+var fragHtml = function (info, edit) {
   return (
     <Row>
       <ProfileLeft>
         <Label>{`${info.label} `}</Label>
       </ProfileLeft>
       <ProfileRight>
-        <Data>
-          <p style={{ margin: 5 }}>{`${info.data} `}</p>
-        </Data>
+        {/* <Data edit={edit}> */}
+        {/* {!edit && <p style={{ margin: 5 }}>{`${info.data} `}</p>} */}
+        <EditInput edit={edit} disabled={!edit} value={info.data}/>
+        {/* </Data> */}
       </ProfileRight>
     </Row>
   )
@@ -107,7 +107,6 @@ var changing = function (label, data, student) {
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true)
-  const [calledOnce, setCalledOnce] = useState(false)
   const [isError, setError] = useState(false)
   const [user, setUser] = useState(null)
   const [student, setStudent] = useState(null)
@@ -116,6 +115,7 @@ const Dashboard = () => {
   const [coursesDisplayed, setCoursesDisplayed] = useState([])
   const { db, storage, auth } = useContext(FirebaseContext)
   const [wave, setWave] = useState('4')
+  const [edit, toggleEdit] = useState(false)
 
   useEffect(() => {
     if (db && auth) {
@@ -267,29 +267,29 @@ const Dashboard = () => {
   if (student) {
     var studentInfo = generateStudentInfo(student)
 
-    $(document).ready(function () {
-      // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
-      $(document).on('click', '.profile-item button', function (e) {
-        var label = $(this).parent().find('.label').html()
-        var data = $(this).parent().find('.data').html()
-        $(this).parent().after(ReactDOMServer.renderToString(genEdit({ label: label, data: data })))
-        var editing = $(this).parent().next()
-        // console.log(editing.find("*"));
-        editing.find('.edit-field').focus()
-        editing.find('.edit-field').select()
-        $(this).parent().remove()
-      })
-      $(document).on('click', '.profile-item-edit button', function (e) {
-        var label = $(this).parent().find('.label').html()
-        var newData = $(this).parent().find('.edit-field').val()
-        var change = changing(label, newData, student)
-        // console.log(change);
-        db.doc('StudentRegistrations/' + student.id).set(change)
-        $(this).parent().after(ReactDOMServer.renderToString(fragHtml({ label: label, data: newData })))
-        $(this).parent().remove()
-      })
-      // console.log("hi");
-    })
+    // $(document).ready(function () {
+    //   // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
+    //   $(document).on('click', '.profile-item button', function (e) {
+    //     var label = $(this).parent().find('.label').html()
+    //     var data = $(this).parent().find('.data').html()
+    //     $(this).parent().after(ReactDOMServer.renderToString(genEdit({ label: label, data: data })))
+    //     var editing = $(this).parent().next()
+    //     // console.log(editing.find("*"));
+    //     editing.find('.edit-field').focus()
+    //     editing.find('.edit-field').select()
+    //     $(this).parent().remove()
+    //   })
+    //   $(document).on('click', '.profile-item-edit button', function (e) {
+    //     var label = $(this).parent().find('.label').html()
+    //     var newData = $(this).parent().find('.edit-field').val()
+    //     var change = changing(label, newData, student)
+    //     // console.log(change);
+    //     db.doc('StudentRegistrations/' + student.id).set(change)
+    //     $(this).parent().after(ReactDOMServer.renderToString(fragHtml({ label: label, data: newData })))
+    //     $(this).parent().remove()
+    //   })
+    //   // console.log("hi");
+    // })
 
     return (<>
       <div>
@@ -303,13 +303,20 @@ const Dashboard = () => {
                   backgroundImage: `url(${WavyPurple})`,
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat',
-                  marginBottom: 5
+                  marginBottom: 5,
+                  paddingBottom: '20px'
                 }}>
                   <Text>
                     <br/><br/>
-                    {studentInfo.map(fragHtml)}
+                    {studentInfo.map((info) => fragHtml(info, edit))}
                     <br/>
                   </Text>
+                  {edit && <Row style={{ alignItems: 'center' }}>
+                    <Form.Button onClick={() => toggleEdit(!edit)} style={{ marginTop: 0, marginRight: 20, marginLeft: 20, width: 100, textAlign: 'center', fontSize: 18 }}>
+                      <b style ={{ color: 'white' }}>Submit</b>
+                    </Form.Button>
+                    <Cancel style ={{ color: 'white' }}>Cancel</Cancel>
+                  </Row>}
                 </div>
                 <Row>
                   <a href="/sign-out" style={{ textDecoration: 'none', color: 'white', float: 'left' }}>
@@ -322,6 +329,9 @@ const Dashboard = () => {
                       <b>Change Password</b>
                     </Form.Button>
                   </a>
+                  <Form.Button onClick={() => toggleEdit(!edit)} style={{ margin: 5, width: 200, textAlign: 'center', fontSize: 18 }}>
+                    <b style ={{ color: 'white' }}>Edit Profile</b>
+                  </Form.Button>
                 </Row>
               </Column>
               <Column>
@@ -333,8 +343,8 @@ const Dashboard = () => {
                     <Form.Dropdown
                       onChange={inputChanged(setWave)}
                       style={{ borderColor: 'black', width: '100%', marginTop: 25 }}>
-                      {WAVE_OPTIONS.map((value) => (
-                        <option value={value}>{`Wave ${value}`}</option>
+                      {WAVE_OPTIONS.map((value, index) => (
+                        <option key={index} value={value}>{`Wave ${value}`}</option>
                       ))}
                     </Form.Dropdown>
                   </Column>
@@ -355,7 +365,7 @@ const Dashboard = () => {
                       <Form.Button style={{ margin: 5 }}>
                         <b>Zoom Link</b>
                       </Form.Button></a>}
-                        {course.edLink && !course.waitlisted &&
+                          {course.edLink && !course.waitlisted &&
                           <a href={course.edLink} target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: '100%' }}>
                             <Form.Button style={{ margin: 5 }}>
                               <b>Ed</b>
