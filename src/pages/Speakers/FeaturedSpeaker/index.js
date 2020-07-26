@@ -14,7 +14,7 @@ import {
 } from './styles'
 import AnimateHeight from 'react-animate-height'
 
-const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio, hasTime }) => {
+const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio, hasTime, age }) => {
   const [show, toggleShow] = useState(false)
 
   return (
@@ -47,7 +47,8 @@ const FeaturedSpeaker = ({ name, date, picture, subtitle, description, bio, hasT
             <Description style={{whiteSpace: "pre-wrap"}}>{bio}</Description>
             <Heading>Scheduled Date:</Heading>
             <Content>{date}</Content>
-
+            <Heading>Target Audience: </Heading>
+            <Content> {age} </Content>
             {hasTime && <Button onClick={() => window.open('/speaker-sign-up', '_blank')}>RSVP Now</Button>}
           </SpeakerContainerInner>
         </SpeakerContainer>
