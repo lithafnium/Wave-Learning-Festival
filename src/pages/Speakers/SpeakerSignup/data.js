@@ -61,6 +61,5 @@ export const STATES = ['Alaska',
 export const SPEAKERS = [
   'Nicole Chung: Why Your Stories Matter (7/28 2:30pm EDT)',
   "Q&A with Jameela Jamil (7/30 7pm EDT)",
-  'Nate Saal: The Art and Science of Chocolate Making (8/1 5pm EDT)',
-  'Iris Fu: How to Self-Publish a Book in a Month (9/3 5:30pm EDT)'
+  'Nate Saal: The Art and Science of Chocolate Making (8/1 5pm EDT)'
 ]
