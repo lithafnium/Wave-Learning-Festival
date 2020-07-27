@@ -20,8 +20,6 @@ import { Colors } from '@/styles'
 
 const Speakers = () => {
   const upcomingSpeakers = [
-
-
      {
       img: Nicole,
       name: 'Nicole Chung: Why Your Stories Matter',
@@ -29,7 +27,7 @@ const Speakers = () => {
       title: 'Author of All You Can Ever Know, Editor in Chief of Catapult Magazine',
       bio: "Nicole Chung's nationally bestselling debut memoir All You Can Ever Know was a finalist for the National Book Critics Circle Award for Autobiography, longlisted for the PEN Open Book Award, and named a Best Book of the Year by The Washington Post, The Boston Globe, NPR, TIME, Library Journal, BuzzFeed, Goodreads, and the Chicago and Seattle Public Library systems, among many others. Nicole has written for numerous publications, including The New York Times, The Guardian, GQ, TIME, and Longreads, and has taught writing workshops for Kundiman, Catapult, and PEN/Faulkner’s Writers in Schools program. She is the editor in chief of the National Magazine Award-winning Catapult magazine, co-editor of the immigration anthology A Map Is Only One Story, and the former managing editor of the beloved, now-shuttered website The Toast. Her next book is forthcoming from Ecco Books/HarperCollins.",
       desc: 'Award-winning author and editor Nicole Chung will cover topics related to writing, revision, publishing, and community in a frank, participant-driven discussion with students.',
-      hasTime: true,
+      hasTime: false,
       age: "Any Age"
     },
     {
@@ -51,10 +49,7 @@ const Speakers = () => {
       bio: "I am a San Francisco Bay Area native with a passion for technology and food. For the last 25 years, I’ve been in the start-up world as a founder or part of the founding team of multiple software, middleware and hardware companies.  With academic training in molecular biophysics and biochemistry, I've had a lifelong interest in technology, food science and DIY food making.  Professionally, I've spent my career as a serial entrepreneur bringing new technologies to market.  When I'm not hard at work, you'll find me beekeeping, making wine, olive oil and vinegar, growing exotic fruits, and a host of weekend farming activities.  My latest venture, CocoTerra, sits at the intersection of technology and food.  It draws on my knowledge and skills from all my different business experiences to simplify the chocolate-making process using smart software and hardware design so anyone can become a creative, successful and proud chocolate-maker.  Go to www.cocoterra.com if you are curious to learn more.",
       hasTime: true,
       age: "12+"
-    }
-  ]
-
-  const speakers = [
+    }, 
     {
       name: 'Cliff Hsia: How to Write a Resumé That Will Get Recruiters’ Attention and Get You Interviews',
       img: Cliff,
@@ -66,9 +61,12 @@ const Speakers = () => {
       bio: <p>Cliff Hsia is a Hawaii-raised, California-based writer, marketer, teacher, traveler, husband, and father. Over the course of his 15+ years marketing career in technology, he has worked for various companies in the Bay Area, including Alibaba, Cisco, Box, and Palo Alto Networks. He's also worked for dozens of companies as a freelance copywriter and editor for startups and big tech giants like Google, Yahoo, and Lyft. Throughout his career, he's learned how to efficiently get more jobs and clients—many at the same time—with a clear and well-written resume, solid interviewing skills, and savvy negotiating techniques. 
         <br/>Check out his writing about family travel and lifestyle design at LiveFamilyTravel.com, HuffPost, TODAY, The Good Men Project, and other media publications. Cliff also works as a private writing and English tutor, a Gates Millennium/APIA Scholar mentor, and a YouTube creator. 
         <br/>Connect with Cliff here: <a href="https://www.facebook.com/clifftutoring">Facebook</a> and <a href="https://youtu.be/tHFGwMGJDIc">YouTube – 6 Years of Travel Around the World</a></p>,
-      hasTime: false,
+      hasTime: true,
       age: "9th Grade and up"
     },
+  ]
+
+  const speakers = [
     {
       img: Andrew,
       name: 'Andrew Cramer: Wizard of Populism',
