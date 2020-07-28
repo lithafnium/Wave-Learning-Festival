@@ -18,9 +18,7 @@ const Mission = () => {
             Social Equity
           </Typography.Header2>
           <Typography.BodyText>
-            Wave has a commitment to lessen the educational equities that have been 
-            exacerbated by the pandemic, as well as long-standing inequities that have 
-            always persisted. We believe that our students should be given equitable 
+            Wave has a commitment to lessen the educational inequities caused by the COVID-19 pandemic, as well as the long-standing gaps in educational opportunity. We believe that our students should be given equitable 
             opportunities to succeed both inside and outside the classroom, focusing on 
             those with less access to external resources. Some of our initiatives include:
             <ul>
@@ -40,7 +38,7 @@ const Mission = () => {
             Truth
           </Typography.Header2>
           <Typography.BodyText>
-            Wave believes in education through objective truth, providing courses 
+            Wave believes in education through objective truth, and we try to provide courses 
             free from historical and political bias. Some of our practices include:
             <ul>
               <li>
@@ -63,7 +61,7 @@ const Mission = () => {
             eliminating price from the equation. Some of our initiatives include:
             <ul>
               <li>
-                Providing high-quality, innovative courses for free
+                Providing high-quality, live, interactive courses for free
               </li>
               <li>
                 Partnering with other free, educational resources and community organizations

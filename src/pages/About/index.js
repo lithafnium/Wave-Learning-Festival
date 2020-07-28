@@ -91,12 +91,12 @@ const About = () => {
               </a>
               <a href="/teachers" className="sign-up-link">
                 <Button>
-                  <p>Teachers</p>
+                  <p>Instructors</p>
                 </Button>
               </a>
               <a href="/course-sign-up" className="sign-up-link">
                 <Button>
-                  <p>Register Now!</p>
+                  <p>Register!</p>
                 </Button>
               </a>
             </div>
