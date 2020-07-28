@@ -12,7 +12,10 @@ import Courses from './pages/Courses'
 import CoursesInProgress from './pages/Courses/CoursesInProgress'
 import CoursesArchive from './pages/Courses/CoursesArchive'
 import Speakers from './pages/Speakers'
-import SpeakerSignUp from './pages/Speakers/SpeakerSignup'
+import Speaker1SignUp from './pages/Speakers/SpeakerSignup/speaker1.js'
+import Speaker2SignUp from './pages/Speakers/SpeakerSignup/speaker2.js'
+import Speaker3SignUp from './pages/Speakers/SpeakerSignup/speaker3.js'
+
 
 // wave 1
 import CourseLearnPython from './pages/Courses_W1/CoursePages/LearnPython'
@@ -275,8 +278,14 @@ function App () {
             <Route path="/speakers">
               <Speakers />
             </Route>
-            <Route path="/speaker-sign-up">
-              <SpeakerSignUp />
+            <Route path="/speaker-sign-up-jameela">
+              <Speaker1SignUp />
+            </Route>
+            <Route path="/speaker-sign-up-nate">
+              <Speaker2SignUp />
+            </Route>
+            <Route path="/speaker-sign-up-cliff">
+              <Speaker3SignUp />
             </Route>
             <Route path="/reset-password">
               <ResetPassword />
