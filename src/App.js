@@ -282,7 +282,7 @@ function App () {
             <Route path="/past-speakers">
               <PastSpeakers />
             </Route>
-            <Route path="/speaker-sign-up-jameela">
+            <Route path="/speaker-sign-up-ruta">
               <Speaker1SignUp />
             </Route>
             <Route path="/speaker-sign-up-nate">
