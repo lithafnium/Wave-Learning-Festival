@@ -366,7 +366,7 @@ const About = () => {
               onClick={() => subscribe()}
               style={{ marginTop: 40 }}
             >
-              <p>{subscribed ? 'Subscribed!' : 'Subscribe'}</p>
+              <p>{subscribed ? 'Submitted!' : 'Submit'}</p>
             </Button>
           </NewsLetter>
         </MediumContainer>
