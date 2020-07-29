@@ -114,8 +114,6 @@ const About = () => {
                 <Typography.BodyText style={{ color: 'white', fontSize: 16, fontWeight: '100' }}>
                   <ul style={{ marginTop: -10, marginLeft: -25, lineHeight: 1.5 }}>
                     <li>Wave 5 course registration opens on Saturday, 8/1!</li>
-                    <li>Discuss the writing process with author and editor Nicole Chung on Tuesday, 7/28! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
-                    <li>Actress and activist Jameela Jamil is hosting a Q&A on Thursday, 7/30! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
                     <li>Learn about chocolate with CocoTerra CEO Nate Saal on Saturday, 8/1! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
                     <li>Learn how to write a stand-out resumé with Cliff Hsia on Wedneday, 8/5! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
                   </ul>
