@@ -134,8 +134,6 @@ const Dashboard = () => {
           setUser(theUser)
           db.collection('StudentRegistrations').where('userID', '==', theUser.uid).get().then(function (snapshot) {
             var students = []
-            console.log(snapshot)
-
             snapshot.forEach(function (snap) {
               students.push(snap)
             })
@@ -189,7 +187,6 @@ const Dashboard = () => {
                     })
                   })
                 })
-                console.log(courses)
               })
             }
           })

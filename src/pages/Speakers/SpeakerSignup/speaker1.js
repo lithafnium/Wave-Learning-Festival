@@ -6,7 +6,10 @@ import * as Styles from './styles'
 import Logo from './logo.png'
 import firebase from 'firebase'
 import { FirebaseContext } from '@/firebaseContext'
-import { COUNTRIES, UNITED_STATES, STATES, SPEAKERS } from './data'
+import { COUNTRIES, UNITED_STATES, STATES } from './data'
+
+const TITLE = "Q&A with Jameela Jamil"
+const SPEAKERS = ["Q&A with Jameela Jamil (7/30 7pm EDT)"]
 
 var inputChanged = function (key, setStudentData) {
   var result = (event) => {
@@ -170,7 +173,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
   return (
     <>
       <Typography.Header color={Colors.WLF_YELLOW}>
-      Speaker RSVP
+      RSVP for {TITLE}
       </Typography.Header>
 
       <Typography.Header2 color="white" fontSize="24px">
@@ -272,7 +275,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
       }
 
       <Typography.Header2 color="white" fontSize="24px">
-      RSVP for the attending seminars! *
+      Confirm that this is the seminar you would like to RSVP for! *
       </Typography.Header2>
       {SPEAKERS.map((value) => (
         renderMultiOption({ key: 'speakers', option: value, studentData, setStudentData })
