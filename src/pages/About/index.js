@@ -50,6 +50,7 @@ const About = () => {
     }
 
     if (db && valid) {
+      const name_split = name.split(' ')
       db.collection('Newsletter')
         .add({
           name,
@@ -110,12 +111,12 @@ const About = () => {
                 }}
               >
                 Announcements:
-                <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}>
-                  <ul style={{marginTop: -10, marginLeft:-25, lineHeight:1.5}}>
-                    <li>Student course registration closes on 7/23! <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a> </li>
-                    <li>Discuss the writing process with author and editor Nicole Chung on 7/28! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
-                    <li>Actress and activist Jameela Jamil is hosting a Q&A on 7/30! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
-                    <li>Learn about chocolate with CocoTerra CEO Nate Saal on 8/1! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                <Typography.BodyText style={{ color: 'white', fontSize: 16, fontWeight: '100' }}>
+                  <ul style={{ marginTop: -10, marginLeft: -25, lineHeight: 1.5 }}>
+                    <li>Student course registration closes on 7/23! <a href="/courses" style={{ color: Colors.WLF_YELLOW }}>Learn More</a> </li>
+                    <li>Discuss the writing process with author and editor Nicole Chung on 7/28! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
+                    <li>Actress and activist Jameela Jamil is hosting a Q&A on 7/30! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
+                    <li>Learn about chocolate with CocoTerra CEO Nate Saal on 8/1! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
                   </ul>
                 </Typography.BodyText>
               </Typography.Header>
@@ -392,7 +393,7 @@ const About = () => {
           <FeaturedImage onClick={() => window.open('https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Pasdena}/>
           <FeaturedImage onClick={() => window.open('https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Monrovia}/>
           <FeaturedImage onClick={() => window.open('https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Arcadia}/>
-          </ContainerInner>
+        </ContainerInner>
       </div>
       <div style={{
         display: 'flex',
