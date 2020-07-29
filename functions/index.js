@@ -232,45 +232,8 @@ exports.sendEmailConfirmationSpeakers =
         const email = newValue.email
         const name = newValue.name_first + ' ' + newValue.name_last
         let lower = email.toLowerCase()
-        let account
+        let account = getAccount(lower)
 
-        if(!isNaN(lower.charAt(0))){
-            account = accounts[2]
-        } else if(sr('a', 'an', lower)){
-            account = accounts[0]
-        } else if(sr('an', 'caro', lower)){
-            account = accounts[1]
-        } else if(sr('caro', 'co', lower)){
-            account = accounts[3]
-        } else if(sr('co', 'ek', lower)){
-            account = accounts[4]
-        } else if(sr('ek', 'gr', lower)){
-            account = accounts[5]
-        } else if(sr('gr', 'iri', lower)){
-            account = accounts[6]
-        } else if(sr('iri', 'josh', lower)){
-            account = accounts[7]
-        } else if(sr('josh', 'kt', lower)){
-            account = accounts[8]
-        } else if(sr('kt', 'lt', lower)){
-            account = accounts[9]
-        } else if(sr('lt', 'maya', lower)){
-            account = accounts[10]
-        } else if(sr('maya', 'no', lower)){
-            account = accounts[11]
-        } else if(sr('no', 'raq', lower)){
-            account = accounts[12]
-        } else if(sr('raq', 'sar', lower)){
-            account = accounts[13]
-        } else if(sr('sar', 'sunh', lower)){
-            account = accounts[14]
-        } else if(sr('sunh', 'ul', lower)){
-            account = accounts[15]
-        } else if(sr('ul', 'xiao', lower)){
-            account = accounts[16]
-        } else if(sr('xiao', 'zzzzz', lower)){
-            account = accounts[17]
-        }
         const { first, last, user, pass } = account
         const mailTransport = nodemailer.createTransport({
             service: 'gmail',
@@ -316,45 +279,8 @@ exports.sendEmailConfirmationStudent =
         const parentName = newValue.parentName;
         const parentEmail = newValue.parentEmail;
         let lower = email.toLowerCase()
-        let account
-
-        if(!isNaN(lower.charAt(0))){
-            account = accounts[2]
-        } else if(sr('a', 'an', lower)){
-            account = accounts[0]
-        } else if(sr('an', 'caro', lower)){
-            account = accounts[1]
-        } else if(sr('caro', 'co', lower)){
-            account = accounts[3]
-        } else if(sr('co', 'ek', lower)){
-            account = accounts[4]
-        } else if(sr('ek', 'gr', lower)){
-            account = accounts[5]
-        } else if(sr('gr', 'iri', lower)){
-            account = accounts[6]
-        } else if(sr('iri', 'josh', lower)){
-            account = accounts[7]
-        } else if(sr('josh', 'kt', lower)){
-            account = accounts[8]
-        } else if(sr('kt', 'lt', lower)){
-            account = accounts[9]
-        } else if(sr('lt', 'maya', lower)){
-            account = accounts[10]
-        } else if(sr('maya', 'no', lower)){
-            account = accounts[11]
-        } else if(sr('no', 'raq', lower)){
-            account = accounts[12]
-        } else if(sr('raq', 'sar', lower)){
-            account = accounts[13]
-        } else if(sr('sar', 'sunh', lower)){
-            account = accounts[14]
-        } else if(sr('sunh', 'ul', lower)){
-            account = accounts[15]
-        } else if(sr('ul', 'xiao', lower)){
-            account = accounts[16]
-        } else if(sr('xiao', 'zzzzz', lower)){
-            account = accounts[17]
-        }
+        let account = getAccount(lower)
+        
         const { first, last, user, pass } = account
         const mailTransport = nodemailer.createTransport({
             service: 'gmail',
