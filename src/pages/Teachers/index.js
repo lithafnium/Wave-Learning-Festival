@@ -14,7 +14,7 @@ const TeacherHome = ({ setPage }) => {
       Instructors
     </Typography.Header>
     <Typography.BodyText color="white" fontSize="20px" style={{ marginBottom:-10}}>
-      Want to share your passions with students worldwide? Apply to be a teacher for Wave Learning Festival!
+      Want to share your passions with students worldwide? Apply to be an instructor for Wave Learning Festival!
     </Typography.BodyText>
     {/*<div style={{ display: 'flex', flexDirection: 'row'}}>
       <Form.Button onClick={() => setPage('teacherData')}>
