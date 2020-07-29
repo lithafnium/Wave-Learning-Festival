@@ -91,12 +91,12 @@ const About = () => {
               </a>
               <a href="/teachers" className="sign-up-link">
                 <Button>
-                  <p>Teachers</p>
+                  <p>Instructors</p>
                 </Button>
               </a>
               <a href="/course-sign-up" className="sign-up-link">
                 <Button>
-                  <p>Register Now!</p>
+                  <p>Register!</p>
                 </Button>
               </a>
             </div>
@@ -342,7 +342,7 @@ const About = () => {
             style={{ color: 'white', fontSize: 28, marginBottom: 30 }}
           >
             {' '}
-            Sign up here to get alerted and be the first to register for Wave 4!
+            Sign up here to get alerted and be the first to register for Wave 5!
             {/*<Popup subscribed = {true}><p>Registration is currently open from July 10 - July 23! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
             {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates. Furthermore, click on "Courses" at the top of our webpage to check out the courses we'll be offering!</p>
             </Popup>}*/}
@@ -366,7 +366,7 @@ const About = () => {
               onClick={() => subscribe()}
               style={{ marginTop: 40 }}
             >
-              <p>{subscribed ? 'Subscribed!' : 'Subscribe'}</p>
+              <p>{subscribed ? 'Submitted!' : 'Submit'}</p>
             </Button>
           </NewsLetter>
         </MediumContainer>

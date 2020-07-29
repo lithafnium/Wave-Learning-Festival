@@ -30,7 +30,7 @@ const FAQStudents = () => {
             How long will my teaching session be?
           </Typography.Header2>
           <Typography.BodyText>
-            That will be up to you, as the teacher of a session. You may choose
+            That will be up to you, as the instructor for the session. You may choose
             between a one-day seminar, a one-week seminar, or a two-week
             seminar. You can also decide how long you would like to teach per
             day, and how many days a week you would like to teach.
@@ -99,7 +99,7 @@ const FAQStudents = () => {
             Do I have to assign homework? Do I have to proctor exams?
           </Typography.Header2>
           <Typography.BodyText>
-            Absolutely not! As a teacher, you will have control over the amount
+            Absolutely not! As an instructor, you will have control over the amount
             of interactive work you would like to assign. There won’t be any
             official system in which to assign feedback for student work.
             However, if you would like to have a platform on which to give

@@ -45,7 +45,7 @@ const CourseSignUpClosed = () => {
         <div style={{maxWidth: 650}}>
           <>
           <Typography.Header color={Colors.WLF_YELLOW} fontSize="36px">
-            Wave 4 course registration has closed!
+            Wave 5 course registration opens soon!
           </Typography.Header>
 
           <Typography.BodyText color="white" fontSize="21px">
