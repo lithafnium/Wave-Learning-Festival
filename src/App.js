@@ -285,9 +285,6 @@ function App () {
             <Route path="/speaker-sign-up-ruta">
               <Speaker1SignUp />
             </Route>
-            <Route path="/speaker-sign-up-nate">
-              <Speaker2SignUp />
-            </Route>
             <Route path="/speaker-sign-up-cliff">
               <Speaker3SignUp />
             </Route>
