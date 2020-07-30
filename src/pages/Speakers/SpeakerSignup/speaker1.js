@@ -182,9 +182,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
       Student Email / Correo electrónico *
       </Typography.Header2>
       <Typography.BodyText color="white">
-      If possible, please use a personal email instead of a school email. <br/>
-      Parents: If you have multiple children signing up for speakers,
-      please make sure you input a different email per child here.
+      If possible, please use a personal email instead of a school email.
       </Typography.BodyText>
       <Form.Input
         value={studentData.email.toLowerCase()}
