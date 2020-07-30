@@ -123,18 +123,7 @@ var emailValidated = function (email) {
 
 var submit = function (db, studentData, setErrorMessage, setPage) {
   var submission = { ...studentData }
-  db.collection('SpeakerRegistrations').where('email', '==', submission.email).get().then(function (snapshot) {
-    var ls = []
-    snapshot.forEach(function (snap) {
-      ls.push(snap.data())
-    })
-    if (ls.length > 0) {
-      db.collection('SpeakerRegistrations').doc(ls[0].id).update(submission).then(function () {
-        setPage('emailTaken')
-        console.log(ls[0].id)
-      })
-    } else {
-      db.collection('SpeakerRegistrations').add(submission).then(function (ref) {
+  db.collection('SpeakerRegistrations').add(submission).then(function (ref) {
         firebase.auth().createUserWithEmailAndPassword(submission.email, ref.id).then(function () {
           setPage('complete')
         }).catch(function (error) {
@@ -142,8 +131,6 @@ var submit = function (db, studentData, setErrorMessage, setPage) {
         })
         db.collection('SpeakerRegistrations').doc(ref.id).update({ id: ref.id })
       })
-    }
-  })
 }
 
 var YES_NO = [
@@ -195,9 +182,7 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
       Student Email / Correo electrónico *
       </Typography.Header2>
       <Typography.BodyText color="white">
-      If possible, please use a personal email instead of a school email. <br/>
-      Parents: If you have multiple children signing up for speakers,
-      please make sure you input a different email per child here.
+      If possible, please use a personal email instead of a school email.
       </Typography.BodyText>
       <Form.Input
         value={studentData.email.toLowerCase()}
@@ -361,20 +346,6 @@ const Error = (errorMessage) => {
   )
 }
 
-const EmailTaken = () => {
-  return (<>
-    <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
-    <Typography.BodyText color="white">
-      Note: your email address has already been registered this wave,
-      so we updated your registration to match the response you just submitted.
-    </Typography.BodyText>
-    <Typography.BodyText color="white">
-      You and/or your parent should recieve a confirmation email shortly. <br/>
-      Click <a href="/">here</a> to go back to the homepage.
-    </Typography.BodyText>
-  </>
-  )
-}
 
 const CourseSignUp = () => {
   const [page, setPage] = useState('loading')
@@ -415,7 +386,6 @@ const CourseSignUp = () => {
           {page === 'complete' && Complete()}
           {page === 'loading' && Loading()}
           {page === 'error' && Error(errorMessage)}
-          {page === 'emailTaken' && EmailTaken()}
         </div>
       </Styles.SignupBackground>
       <Styles.LogoBackground src={Logo} alt="logo" style={{
