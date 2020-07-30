@@ -17,7 +17,7 @@ import {
 import { WLF_PURPLE } from '@/styles/Colors'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { IconContext } from 'react-icons'
-import { FaUserAlt, FaChalkboardTeacher, FaUserFriends } from 'react-icons/fa'
+import { FaUserAlt, FaChalkboardTeacher, FaUserFriends, FaMicrophone, FaMicrophoneAlt, FaMicrophoneAltSlash } from 'react-icons/fa'
 import Logo from './logo.svg'
 import LogoText from './logoText.png'
 import LogoTextFull from './logo with type (1).svg'
@@ -25,6 +25,7 @@ import { FirebaseContext } from '@/firebaseContext'
 
 const Navbar = () => {
   const [applyShow, setApplyShow] = useState(false)
+  const [speakersShow, setSpeakersShow] = useState(false)
   const [coursesShow, setCoursesShow] = useState(false)
   const [aboutShow, setAboutShow] = useState(false)
   const [faqShow, setFaqShow] = useState(false)
@@ -151,8 +152,44 @@ const Navbar = () => {
             </NavbarDropdown>
             )}
           </NavItem>
-          <NavItem>
-            <Link to="/speakers">Speakers</Link>
+          <NavItem onMouseEnter={() => setSpeakersShow(true)}
+            onMouseLeave={() => setSpeakersShow(false)}>
+            <Link>Speakers</Link>
+            {speakersShow && (<NavbarDropdown>
+              <Link to="/speakers">
+                <DropdownItem>
+                  <IconContext.Provider
+                    value={{
+                      color: WLF_PURPLE,
+                      style: {
+                        verticalAlign: 'middle',
+                        marginRight: '10px'
+                      }
+                    }}
+                  >
+                    <div><FaMicrophoneAlt /></div>
+                  </IconContext.Provider>
+                    Upcoming
+                </DropdownItem>
+              </Link>
+              <Link to="/past-speakers">
+                <DropdownItem>
+                  <IconContext.Provider
+                    value={{
+                      color: WLF_PURPLE,
+                      style: {
+                        verticalAlign: 'middle',
+                        marginRight: '10px'
+                      }
+                    }}
+                  >
+                    <div><FaMicrophoneAlt/></div>
+                  </IconContext.Provider>
+                    Past
+                </DropdownItem>
+              </Link>
+            </NavbarDropdown>
+            )}
           </NavItem>
           <NavItem onMouseEnter={() => setApplyShow(true)}
             onMouseLeave={() => setApplyShow(false)}>
@@ -307,6 +344,9 @@ const Navbar = () => {
             <Link to="/speakers">Speakers</Link>
           </NavItem>
           <NavItem>
+            <Link to="/past-speakers">Past Speakers</Link>
+          </NavItem>
+          <NavItem>
             <Link to="/teachers">Apply to Teach</Link>
           </NavItem>
           <NavItem>
@@ -326,6 +366,8 @@ const Navbar = () => {
           </NavItem>
           <NavItem>
             <Link to="/donate">Donate</Link>
+          </NavItem><NavItem>
+            <Link to="/sign-in">Dashboard</Link>
           </NavItem>
         </SideBar>
       </NavbarInner>

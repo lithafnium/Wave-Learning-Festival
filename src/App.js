@@ -12,6 +12,7 @@ import Courses from './pages/Courses'
 import CoursesInProgress from './pages/Courses/CoursesInProgress'
 import CoursesArchive from './pages/Courses/CoursesArchive'
 import Speakers from './pages/Speakers'
+import PastSpeakers from './pages/Speakers/pastspeakers.js'
 import Speaker1SignUp from './pages/Speakers/SpeakerSignup/speaker1.js'
 import Speaker2SignUp from './pages/Speakers/SpeakerSignup/speaker2.js'
 import Speaker3SignUp from './pages/Speakers/SpeakerSignup/speaker3.js'
@@ -278,11 +279,11 @@ function App () {
             <Route path="/speakers">
               <Speakers />
             </Route>
-            <Route path="/speaker-sign-up-jameela">
-              <Speaker1SignUp />
+            <Route path="/past-speakers">
+              <PastSpeakers />
             </Route>
-            <Route path="/speaker-sign-up-nate">
-              <Speaker2SignUp />
+            <Route path="/speaker-sign-up-ruta">
+              <Speaker1SignUp />
             </Route>
             <Route path="/speaker-sign-up-cliff">
               <Speaker3SignUp />

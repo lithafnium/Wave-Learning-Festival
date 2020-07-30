@@ -1,121 +1,128 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, useReducer } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from '@/globalStyles'
 import { Colors, Typography, Form } from '@/styles'
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
-import { ProfileLeft, ProfileRight, Column, Text, Row, Label, Data, Class, ClassText, Sections } from './styles.js'
-import 'firebase/firestore'
-import $ from 'jquery'
-import ReactDOMServer from 'react-dom/server'
-
+import { Cancel, EditInput, ProfileLeft, ProfileRight, Column, Text, Row, Label, Class, ClassText, Sections } from './styles.js'
 import WavyPurple from '../About/assets/wavy_purple.svg'
 
-var namify = function (course) { // please change this later lol
-  var teacher1 = course.teacher1Name
-  var teacher2 = course.teacher2Name
-  var teacher3 = course.teacher3Name
-
-  var result = teacher1
-  if (teacher2 != '') {
-    result += ', ' + teacher2
-  }
-  if (teacher3 != '') {
-    result += ', ' + teacher3
-  }
-  return result
+const profileState = {
+  name: '',
+  email: '',
+  parentName: '',
+  parentEmail: '',
+  age: '',
+  school: '',
+  country: '',
+  city: ''
 }
 
-const withdraw = (student, course, db) => {
-  if (window.confirm('Are you sure you want to drop "' + course.courseTitle + '"?')) {
-    db.collection('courseAssignments').doc(course.assignmentID).delete().then(function () {
-      console.log('adding to deleted')
-      db.collection('deleteAssignments')
-        .add({
-          courseID: course.id,
-          studentID: student.id,
-          waitlisted: course.waitlisted
-        })
-        .then(window.location.reload())
-    })
-  } else {
-    // phew
+const profileReducer = (state, action) => {
+  switch (action.type) {
+    case 'NAME':
+      return ({
+        ...state,
+        name: action.content
+      })
+    case 'EMAIL':
+      return ({
+        ...state,
+        email: action.content
+      })
+    case 'PARENTNAME':
+      return ({
+        ...state,
+        parentName: action.content
+      })
+    case 'PARENTEMAIL':
+      return ({
+        ...state,
+        parentEmail: action.content
+      })
+    case 'AGE':
+      return ({
+        ...state,
+        age: action.content
+      })
+    case 'SCHOOL':
+      return ({
+        ...state,
+        school: action.content
+      })
+    case 'COUNTRY':
+      return ({
+        ...state,
+        country: action.content
+      })
+    case 'CITY':
+      return ({
+        ...state,
+        city: action.content
+      })
+    case 'RESET':
+      return (action.content)
   }
-}
-
-var genFrag = function (label, data) {
-  return {
-    label: label,
-    data: data
-  }
-}
-
-var fragHtml = function (info) {
-  return (
-    <Row>
-      <ProfileLeft>
-        <Label>{`${info.label} `}</Label>
-      </ProfileLeft>
-      <ProfileRight>
-        <Data>
-          <p style={{ margin: 5 }}>{`${info.data} `}</p>
-        </Data>
-      </ProfileRight>
-    </Row>
-  )
-}
-
-var genEdit = function (info) {
-  return (<p className="profile-item-edit"><b><span className="label">{info.label}</span>: </b> <input className="edit-field" type="text" value={info.data} /><button type="button">Submit</button></p>)
-}
-
-var generateStudentInfo = function (student) {
-  var studentName = student.name
-  if (typeof studentName === 'undefined') {
-    studentName = student.name_first + ' ' + student.name_last
-  }
-  return [
-    genFrag('Name', studentName),
-    genFrag('Email', student.email),
-    genFrag('Parent Name', student.parentName),
-    genFrag('Parent Email', student.parentEmail),
-    genFrag('Age', student.age),
-    genFrag('School', student.school),
-    genFrag('Country', student.country),
-    genFrag('City', student.city)
-  ]
-}
-
-var changing = function (label, data, student) {
-  var result = student
-  var fieldName = 'nothing'
-  if (label === 'Name') {
-    fieldName = 'name'
-  } else if (label === 'Email') {
-    fieldName = 'email'
-  } else if (label === 'Parent Name') {
-    fieldName = 'parentName'
-  } else if (label === 'Parent Email') {
-    fieldName = 'parentEmail'
-  } else if (label === 'School') {
-    fieldName = 'school'
-  }
-  result[fieldName] = data
-  return result
 }
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true)
-  const [calledOnce, setCalledOnce] = useState(false)
   const [isError, setError] = useState(false)
   const [user, setUser] = useState(null)
   const [student, setStudent] = useState(null)
   const [theError, setTheError] = useState(null)
   const [courses, setCourses] = useState([])
   const [coursesDisplayed, setCoursesDisplayed] = useState([])
-  const { db, storage, auth } = useContext(FirebaseContext)
   const [wave, setWave] = useState('4')
+  const [edit, toggleEdit] = useState(false)
+  const [localInfo, setLocalInfo] = useState({})
+  const [docID, setDocID] = useState('')
+  const { db, storage, auth } = useContext(FirebaseContext)
+  const [profile, profileDispatch] = useReducer(profileReducer, profileState)
+
+  const withdraw = (student, course, db) => {
+    if (window.confirm('Are you sure you want to drop "' + course.courseTitle + '"?')) {
+      db.collection('courseAssignments').doc(course.assignmentID).delete().then(function () {
+        console.log('adding to deleted')
+        db.collection('deleteAssignments')
+          .add({
+            courseID: course.id,
+            studentID: student.id,
+            waitlisted: course.waitlisted
+          })
+          .then(window.location.reload())
+      })
+    } else {
+      // phew
+    }
+  }
+
+  const genFrag = function (label, data, dispatch, state) {
+    return {
+      label,
+      data,
+      dispatch,
+      state
+    }
+  }
+
+  const generateStudentInfo = function (student) {
+    var studentName = student.name
+    if (typeof studentName === 'undefined') {
+      studentName = student.name_first + ' ' + student.name_last
+    }
+    return [
+      genFrag('Name', studentName, 'NAME', 'name'),
+      genFrag('Email', student.email, 'EMAIL', 'email'),
+      genFrag('Parent Name', student.parentName, 'PARENTNAME', 'parentName'),
+      genFrag('Parent Email', student.parentEmail, 'PARENTEMAIL', 'parentEmail'),
+      genFrag('Age', student.age, 'AGE', 'age'),
+      genFrag('School', student.school, 'SCHOOL', 'school'),
+      genFrag('Country', student.country, 'COUNTRY', 'country'),
+      genFrag('City', student.city, 'CITY', 'city')
+    ]
+  }
 
   useEffect(() => {
     if (db && auth) {
@@ -127,12 +134,12 @@ const Dashboard = () => {
           setUser(theUser)
           db.collection('StudentRegistrations').where('userID', '==', theUser.uid).get().then(function (snapshot) {
             var students = []
-
             snapshot.forEach(function (snap) {
               students.push(snap)
             })
             if (students.length > 0) {
               var coursesResult = []
+              setDocID(students[0].id)
               setStudent(students[0].data())
               var theStudent = students[0].data()
               db.collection('courseAssignments').where('studentID', '==', theStudent.id).get().then(function (assignments) {
@@ -180,7 +187,6 @@ const Dashboard = () => {
                     })
                   })
                 })
-                console.log(courses)
               })
             }
           })
@@ -201,6 +207,94 @@ const Dashboard = () => {
       return false
     }))
   }, [wave])
+
+  useEffect(() => {
+    if (student) {
+      var studentInfo = generateStudentInfo(student)
+      var studentName = student.name
+      if (typeof studentName === 'undefined') {
+        studentName = student.name_first + ' ' + student.name_last
+      }
+      setLocalInfo({
+        name: studentName,
+        email: student.email,
+        parentName: student.parentName,
+        parentEmail: student.parentEmail,
+        age: student.age,
+        school: student.school,
+        country: student.country,
+        city: student.city
+      })
+      studentInfo.forEach(label => {
+        profileDispatch({ type: label.dispatch, content: label.data })
+      })
+    }
+  }, [student])
+
+  const cancel = () => {
+    profileDispatch({ type: 'RESET', content: localInfo })
+    toggleEdit(false)
+  }
+
+  const submit = () => {
+    if (localInfo.name !== profile.name ||
+           localInfo.email !== profile.email ||
+           localInfo.parentName !== profile.parentName ||
+            localInfo.parentEmail !== profile.parentEmail) {
+      const editRef = db.collection('editAssignments').where('studentId', '==', student.id)
+      editRef.get().then(snapshot => {
+        if (!snapshot.empty) {
+          db.collection('editAssignments').doc(snapshot.docs[0].id).update({
+            name: profile.name,
+            email: profile.email,
+            parentName: profile.parentName,
+            parentEmail: profile.parentEmail,
+            studentId: student.id,
+            userId: student.userID,
+            courses: coursesDisplayed
+          })
+        } else {
+          db.collection('editAssignments').add({
+            name: profile.name,
+            email: profile.email,
+            parentName: profile.parentName,
+            parentEmail: profile.parentEmail,
+            studentId: student.id,
+            userId: student.userID,
+            courses: coursesDisplayed
+          })
+        }
+      })
+    }
+    const name = profile.name.split(' ')
+    db.collection('StudentRegistrations').doc(docID).update({
+      name_first: name[0],
+      name_last: name[1],
+      email: profile.email,
+      parentEmail: student.parentEmail,
+      parentName: profile.parentName,
+      age: profile.age,
+      school: profile.school,
+      country: profile.country,
+      city: profile.city
+    })
+
+    if (localInfo.email !== profile.email) {
+      auth.onAuthStateChanged(function (user) {
+        if (user) {
+          user.updateEmail(profile.email).then(() => {
+
+          }).catch(e => {
+            throw e
+          })
+        } else {
+        }
+      })
+    }
+
+    setLocalInfo(profile)
+    toggleEdit(false)
+  }
 
   if (isError) {
     return (
@@ -245,7 +339,7 @@ const Dashboard = () => {
       </>)
   }
 
-  var inputChanged = function (setWave) {
+  const inputChanged = function (setWave) {
     var result = (event) => {
       var value = event.target.value
       setWave(prevData => {
@@ -257,7 +351,7 @@ const Dashboard = () => {
     return result
   }
 
-  var WAVE_OPTIONS = [
+  const WAVE_OPTIONS = [
     4/*,
     3,
     2,
@@ -266,31 +360,6 @@ const Dashboard = () => {
 
   if (student) {
     var studentInfo = generateStudentInfo(student)
-
-    $(document).ready(function () {
-      // document.getElementById("wave").dispatchEvent(new Event("change", {bubbles: true}));
-      $(document).on('click', '.profile-item button', function (e) {
-        var label = $(this).parent().find('.label').html()
-        var data = $(this).parent().find('.data').html()
-        $(this).parent().after(ReactDOMServer.renderToString(genEdit({ label: label, data: data })))
-        var editing = $(this).parent().next()
-        // console.log(editing.find("*"));
-        editing.find('.edit-field').focus()
-        editing.find('.edit-field').select()
-        $(this).parent().remove()
-      })
-      $(document).on('click', '.profile-item-edit button', function (e) {
-        var label = $(this).parent().find('.label').html()
-        var newData = $(this).parent().find('.edit-field').val()
-        var change = changing(label, newData, student)
-        // console.log(change);
-        db.doc('StudentRegistrations/' + student.id).set(change)
-        $(this).parent().after(ReactDOMServer.renderToString(fragHtml({ label: label, data: newData })))
-        $(this).parent().remove()
-      })
-      // console.log("hi");
-    })
-
     return (<>
       <div>
         <Navbar/>
@@ -303,13 +372,35 @@ const Dashboard = () => {
                   backgroundImage: `url(${WavyPurple})`,
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat',
-                  marginBottom: 5
+                  marginBottom: 5,
+                  paddingBottom: '20px'
                 }}>
                   <Text>
                     <br/><br/>
-                    {studentInfo.map(fragHtml)}
+                    {studentInfo.map((info, index) => {
+                      return (
+                        <Row key={index}>
+                          <ProfileLeft>
+                            <Label>{`${info.label} `}</Label>
+                          </ProfileLeft>
+                          <ProfileRight>
+                            <EditInput
+                              edit={edit}
+                              disabled={!edit}
+                              value={profile[info.state]}
+                              onChange={e => profileDispatch({ type: info.dispatch, content: e.target.value })}/>
+                          </ProfileRight>
+                        </Row>
+                      )
+                    })}
                     <br/>
                   </Text>
+                  {edit && <Row style={{ alignItems: 'center' }}>
+                    <Form.Button onClick={() => submit()} style={{ marginTop: 0, marginRight: 20, marginLeft: 20, width: 100, textAlign: 'center', fontSize: 18 }}>
+                      <b style ={{ color: 'white' }}>Submit</b>
+                    </Form.Button>
+                    <Cancel onClick={() => cancel()} style ={{ color: 'white' }}>Cancel</Cancel>
+                  </Row>}
                 </div>
                 <Row>
                   <a href="/sign-out" style={{ textDecoration: 'none', color: 'white', float: 'left' }}>
@@ -322,6 +413,9 @@ const Dashboard = () => {
                       <b>Change Password</b>
                     </Form.Button>
                   </a>
+                  <Form.Button onClick={() => toggleEdit(!edit)} style={{ margin: 5, width: 200, textAlign: 'center', fontSize: 18 }}>
+                    <b style ={{ color: 'white' }}>Edit Profile</b>
+                  </Form.Button>
                 </Row>
               </Column>
               <Column>
@@ -333,8 +427,8 @@ const Dashboard = () => {
                     <Form.Dropdown
                       onChange={inputChanged(setWave)}
                       style={{ borderColor: 'black', width: '100%', marginTop: 25 }}>
-                      {WAVE_OPTIONS.map((value) => (
-                        <option value={value}>{`Wave ${value}`}</option>
+                      {WAVE_OPTIONS.map((value, index) => (
+                        <option key={index} value={value}>{`Wave ${value}`}</option>
                       ))}
                     </Form.Dropdown>
                   </Column>
@@ -355,7 +449,7 @@ const Dashboard = () => {
                       <Form.Button style={{ margin: 5 }}>
                         <b>Zoom Link</b>
                       </Form.Button></a>}
-                        {course.edLink && !course.waitlisted &&
+                          {course.edLink && !course.waitlisted &&
                           <a href={course.edLink} target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto', height: '100%' }}>
                             <Form.Button style={{ margin: 5 }}>
                               <b>Ed</b>

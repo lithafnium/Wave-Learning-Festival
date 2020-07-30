@@ -59,6 +59,5 @@ export const STATES = ['Alaska',
   'Wyoming']
 
 export const SPEAKERS = [
-  'Nate Saal: The Art and Science of Chocolate Making (8/1 5pm EDT)', 
   "Cliff Hsia: How to Write a Resumé That Will Get Recruiters’ Attention and Get You Interviews (8/5 7pm EDT)"
 ]

@@ -50,6 +50,7 @@ const About = () => {
     }
 
     if (db && valid) {
+      const name_split = name.split(' ')
       db.collection('Newsletter')
         .add({
           name,
@@ -110,13 +111,11 @@ const About = () => {
                 }}
               >
                 Announcements:
-                <Typography.BodyText style={{color: 'white', fontSize: 16, fontWeight: '100' }}>
-                  <ul style={{marginTop: -10, marginLeft:-25, lineHeight:1.5}}>
+                <Typography.BodyText style={{ color: 'white', fontSize: 16, fontWeight: '100' }}>
+                  <ul style={{ marginTop: -10, marginLeft: -25, lineHeight: 1.5 }}>
                     <li>Wave 5 course registration opens on Saturday, 8/1!</li>
-                    <li>Discuss the writing process with author and editor Nicole Chung on Tuesday, 7/28! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
-                    <li>Actress and activist Jameela Jamil is hosting a Q&A on Thursday, 7/30! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
-                    <li>Learn about chocolate with CocoTerra CEO Nate Saal on Saturday, 8/1! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
-                    <li>Learn how to write a stand-out resumé with Cliff Hsia on Wedneday, 8/5! <a href="/speakers" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
+                    <li>Learn about chocolate with CocoTerra CEO Nate Saal on Saturday, 8/1! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
+                    <li>Learn how to write a stand-out resumé with Cliff Hsia on Wedneday, 8/5! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
                   </ul>
                 </Typography.BodyText>
               </Typography.Header>
@@ -342,10 +341,15 @@ const About = () => {
             style={{ color: 'white', fontSize: 28, marginBottom: 30 }}
           >
             {' '}
+<<<<<<< HEAD
             Sign up here to get alerted and be the first to register for Wave 5!
             {/*<Popup subscribed = {true}><p>Registration is currently open from July 10 - July 23! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
+=======
+            Sign up here to get alerted and be the first to register for Wave 4!
+            {/* <Popup subscribed = {true}><p>Registration is currently open from July 10 - July 23! Once you've subscribed, click <a href="http://www.wavelf.org/courses">here</a> to see the courses we plan to offer!</p></Popup>
+>>>>>>> development
             {subscribed && <Popup subscribed={subscribed}><p>Thank you for subscribing! Please follow the directions sent to your email to ensure you receive our updates. Furthermore, click on "Courses" at the top of our webpage to check out the courses we'll be offering!</p>
-            </Popup>}*/}
+            </Popup>} */}
           </Typography.Header>
           <NewsLetter>
             <Input
@@ -393,7 +397,7 @@ const About = () => {
           <FeaturedImage onClick={() => window.open('https://www.pasadenaindependent.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Pasdena}/>
           <FeaturedImage onClick={() => window.open('https://www.monroviaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Monrovia}/>
           <FeaturedImage onClick={() => window.open('https://www.arcadiaweekly.com/education/wave-learning-festival-teaches-kids-globally/', '_blank')} width={27} src={Assets.Arcadia}/>
-          </ContainerInner>
+        </ContainerInner>
       </div>
       <div style={{
         display: 'flex',

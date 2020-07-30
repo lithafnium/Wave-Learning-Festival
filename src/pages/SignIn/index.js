@@ -29,6 +29,7 @@ var submit = (signInForm, setWrongSubmission) => {
       }
     }).catch(function (error) {
       setWrongSubmission('Wrong email/password!')
+      throw Error(error)
     })
   })
 }
