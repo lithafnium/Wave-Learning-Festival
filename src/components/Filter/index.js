@@ -34,7 +34,7 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
         </SearchContainer>
       </ContainerInner>
       <OptionsContainer>
-        <div>
+        <div style = {{ marginRight: '30px' }}>
           <h2 style={{ color: Colors.WLF_PURPLE, textAlign: 'left' }}>Course Categories:</h2>
           <CheckboxContainer>
             <CheckboxColumn>

@@ -160,6 +160,7 @@ const Courses = () => {
   }, [db, storage])
 
   useEffect(() => {
+    console.log(courses.length)
     if (filteredItems.length === 0) {
       setFilteredCourses(courses)
     } else {
