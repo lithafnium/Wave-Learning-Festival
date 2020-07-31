@@ -56,9 +56,9 @@ const Speakers = () => {
       name: 'Ruta Sepetys: Anatomy of a Page-Turner: Building a Bestselling Novel',
       img: Ruta,
       title: '#1 NYT Bestselling Author of Historical Fiction',
-      date: <p>Seminar 1: Tuesday 8/18 6:00-7:00pm EDT
-      <br/>Seminar 2: Tuesday 8/25 6:00-7:00pm EDT
-      <br/>Seminar 3: Tuesday 9/1 6:00-7:00pm EDT</p>,
+      date: <p>Seminar 1: Tuesday 8/18 7:00-8:00pm EDT
+      <br/>Seminar 2: Tuesday 8/25 7:00-8:00pm EDT
+      <br/>Seminar 3: Tuesday 9/1 7:00-8:00pm EDT</p>,
       desc: <p><b>Seminar 1: Anatomy of a Page-Turner: Building a Bestselling Novel</b><br/>  Why do some books pull you to the page and keep you there? This seminar will examine the elements of compelling story building including plot, stakes, pacing, characters, setting, and voice. Presentation will be followed by a Q & A. <br/><br/> <b>Seminar 2: History in Hiding: The Elusive Power of Historical Fiction </b><br/>What determines how history is preserved and recalled? Why do some parts of history penetrate our collective consciousness while others remain hidden? This seminar will explore unearthing buried history and creative research! Topics will include the power of historical fiction to facilitate progress, create pathways for global dialogue, and give voice to the voiceless. Presentation will be followed by discussion and Q & A. <br/><br/> <b>Seminar 3: Meet the Author: Ruta Sepetys Discusses Her Novels</b><br/>Prior to becoming a bestselling novelist, Ruta Sepetys spent over twenty years in the entertainment industry helping artists and musicians tell stories through song. In this seminar, Ruta will discuss her path to publication and answer questions about two of her New York Times bestselling novels—Salt to the Sea and Between Shades of Gray. </p>,
       bio: 'Ruta Sepetys is a #1 New York Times bestselling author of historical fiction published in over sixty countries and forty languages. Sepetys is considered a “crossover” novelist as her books are read by both students and adults worldwide. Winner of the Carnegie Medal, Ruta is renowned for giving voice to underrepresented history and those who experienced it.  Her books have won or been shortlisted for over forty book prizes, are included on over thirty state reading lists, and are currently in development for film and television. www.rutasepetys.com',
       hasTime: true,
