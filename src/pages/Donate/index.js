@@ -21,7 +21,7 @@ const Donate = () => {
         <Typography.Header style={{ color: Colors.WLF_PURPLE }}>Donate</Typography.Header>
         <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
           Looking for a way to help Wave grow? In order to expand our programming and continue offering free, accessible learning to all, we need your help! Wave is a non-profit organization run completely by volunteers, and all donations go towards improving and expanding our quality of service. If you have the means, please donate below! Any amount is useful and highly appreciated!<br/><br/>
-          <b>For now, we are taking donations from residents of California, New York, New Jersey, or Massachusetts.</b><br/>
+          <b>For now, we are taking donations from residents of Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Idaho, Indiana, Iowa, Kansas, Louisiana, Maine, Massachusetts, New Jersey, New York, Rhode Island, South Dakota, Texas, Vermont, West Virginia, Wisconsin, and Wyoming.</b><br/>
         </Typography.BodyText>
         <Options>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
