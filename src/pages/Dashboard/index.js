@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Container, ContainerInner } from '@/globalStyles'
 import { Colors, Typography, Form } from '@/styles'
+import { MdClose } from "react-icons/md";
 import { FirebaseContext } from '../../firebaseContext'
 import './styles.css'
 import { Cancel, EditInput, ProfileLeft, ProfileRight, Column, Text, Row, Label, Class, ClassText, Sections } from './styles.js'
@@ -81,8 +82,19 @@ const Dashboard = () => {
   const { db, storage, auth } = useContext(FirebaseContext)
   const [profile, profileDispatch] = useReducer(profileReducer, profileState)
 
+  const [withdrawing, setWithdrawing] = useState(false)
+  const [withdrawingCourse, setWithdrawingCourse] = useState('')
+  const [withdrawReasons, setWithdrawReasons] = useState([]);
+
   const withdraw = (student, course, db) => {
-    if (window.confirm('Are you sure you want to drop "' + course.courseTitle + '"?')) {
+    toggleWithdraw(course);
+    if (withdrawReasons.length != 0) {
+      db.collection('withdrawReasons').add({
+        courseID: course.id,
+        studentID: student.id,
+        waitlisted: course.waitlisted,
+        withdrawReasons: withdrawReasons
+      }).then(setWithdrawReasons([]))
       db.collection('courseAssignments').doc(course.assignmentID).delete().then(function () {
         console.log('adding to deleted')
         db.collection('deleteAssignments')
@@ -96,6 +108,11 @@ const Dashboard = () => {
     } else {
       // phew
     }
+  }
+
+  const toggleWithdraw = (course) => {
+    setWithdrawing(!withdrawing);
+    setWithdrawingCourse(course);
   }
 
   const genFrag = function (label, data, dispatch, state) {
@@ -467,6 +484,30 @@ const Dashboard = () => {
                 })}
               </Column>
             </Sections>
+            {withdrawing && withdrawingCourse != null && 
+               <PopUp>
+               <PopUpInner>
+                 <Heading>
+                 <Icon onClick={toggleWithdraw}>
+                   <IconContext.Provider
+                     value={{color: "grey",size: "2em",
+                             style: { verticalAlign: "middle", margin: '10px' },
+                           }}>
+                     <div>
+                       <MdClose />
+                     </div>
+                   </IconContext.Provider>
+                 </Icon>
+                 <Typography.Header2 style={{ color: Colors.WLF_BLACK, 
+                                             fontSize: 25, textAlign: 'center', marginLeft: 30}}>
+                  Are you sure you want to withdraw from {withdrawingCourse.courseTitle}?</Typography.Header2>
+                 </Heading>
+                 <Text>
+                   
+                 </Text>
+               </PopUpInner>
+             </PopUp>
+            }
           </ContainerInner>
         </Container>
         <Footer/>
