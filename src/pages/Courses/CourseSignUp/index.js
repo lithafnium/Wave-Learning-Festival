@@ -564,10 +564,10 @@ const Complete = () => {
       If you have the means, please donate donate to help Wave better serve our students. (We recommend $5 per course, but any amount is greatly appreciated!)
       <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left', marginTop:-10, fontSize:24}}>
         <Form.Button style={{textAlign: 'center', alignItems: 'center', marginRight:20 }}>
-          <a href="/" target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto'}}><b>Home</b></a>
+          <a href="/" style={{ textDecoration: 'none', color: 'white', margin: 'auto'}}><b>Home</b></a>
         </Form.Button> 
         <Form.Button style={{textAlign: 'center', alignItems: 'center' }}>
-          <a href="/donate" target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto'}}><b>Donate</b></a>
+          <a href="/donate" style={{ textDecoration: 'none', color: 'white', margin: 'auto'}}><b>Donate</b></a>
         </Form.Button>
       </div>
     </Typography.BodyText>
