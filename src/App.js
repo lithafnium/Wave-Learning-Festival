@@ -296,7 +296,7 @@ function App () {
               <Blog />
             </Route>
             <Route path="/course-sign-up">
-              <CourseSignUpClosed />
+              <CourseSignUp />
             </Route>
             <Route path="/course-sign-up-manual-wave20lfstaff">
               <CourseSignUp />
