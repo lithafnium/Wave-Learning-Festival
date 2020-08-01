@@ -515,9 +515,18 @@ const Complete = () => {
   return (
     <div>
     <Typography.Header color={Colors.WLF_YELLOW}>Thanks for signing up!</Typography.Header>
-    <Typography.BodyText color="white">
-      You and/or your parent should recieve a confirmation email shortly. <br/>
-      Click <a href="/">here</a> to go back to the homepage.
+    <Typography.BodyText color="white" style={{fontSize: 21}}>
+      You and/or your parent should recieve a confirmation email shortly. <br/><br/>
+      We never want financial ability to prevent anyone from being able to learn. In order for us to provide accessible educational resources to students across the world, we need your help! <br/><br/>
+      If you have the means, please donate donate to help Wave better serve our students. (We recommend $5 per course, but any amount is greatly appreciated!)
+      <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left', marginTop:-10, fontSize:24}}>
+        <Form.Button style={{textAlign: 'center', alignItems: 'center', marginRight:20 }}>
+          <a href="/" target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto'}}><b>Home</b></a>
+        </Form.Button> 
+        <Form.Button style={{textAlign: 'center', alignItems: 'center' }}>
+          <a href="/donate" target="_blank" style={{ textDecoration: 'none', color: 'white', margin: 'auto'}}><b>Donate</b></a>
+        </Form.Button>
+      </div>
     </Typography.BodyText>
     </div>
   );
@@ -588,7 +597,7 @@ const CourseSignUp = () => {
   const {db} = useContext(FirebaseContext);
 
   if (db && !calledOnce) {
-    setPage("home");
+    setPage("complete");
     setCalledOnce(true);
   }
 
