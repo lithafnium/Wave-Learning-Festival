@@ -189,7 +189,7 @@ var submit = function(db, studentData, setErrorMessage, setPage) {
         questions: submission.questions, 
         wave5: true
       }).then(function() {
-        setPage("emailTaken");
+        setPage("complete");
         console.log(ls[0].id);
       });
     } else {
@@ -637,7 +637,7 @@ const CourseSignUp = () => {
   const {db} = useContext(FirebaseContext);
 
   if (db && !calledOnce) {
-    setPage("complete");
+    setPage("home");
     setCalledOnce(true);
   }
 
