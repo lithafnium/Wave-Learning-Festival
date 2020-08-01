@@ -22,7 +22,7 @@ import {
   ContainerInner,
   Announcements
 } from './styles'
-import { Colors, Typography } from '@/styles'
+import { Colors, Typography, Form } from '@/styles'
 import './styles.css'
 import * as Assets from './assets'
 import { FirebaseContext } from '@/firebaseContext'
@@ -113,8 +113,7 @@ const About = () => {
                 Announcements:
                 <Typography.BodyText style={{ color: 'white', fontSize: 16, fontWeight: '100' }}>
                   <ul style={{ marginTop: -10, marginLeft: -25, lineHeight: 1.5 }}>
-                    <li>Wave 5 course registration opens on Saturday, 8/1!</li>
-                    <li>Learn about chocolate with CocoTerra CEO Nate Saal on Saturday, 8/1! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
+                    <li><b>WAVE 5 COURSE REGISTRATION IS OPEN!</b> <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
                     <li>Learn how to write a stand-out resumé with Cliff Hsia on Wedneday, 8/5! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
                   </ul>
                 </Typography.BodyText>
