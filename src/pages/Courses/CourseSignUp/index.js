@@ -209,6 +209,7 @@ var PAST_COURSES_OPTIONS = [
   "Yes, in Wave 1!",
   "Yes, in Wave 2!",
   "Yes, in Wave 3!",
+  "Yes, in Wave 4!",
   "No"
 ];
 
