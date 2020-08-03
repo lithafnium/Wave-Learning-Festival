@@ -109,25 +109,48 @@ const renderOption = ({option}) => (
   <option value={option}>{option}</option>
 )
 
-var fitsRequirements = function(studentData) {
-  var result = studentData.name_first != "" &&
-    studentData.name_last != "" &&
-    studentData.email != "" &&
-    studentData.parentName != "" &&
-    studentData.parentEmail != "" &&
-    studentData.numCourses != "" &&
-    studentData.firstCourse != "" &&
-    studentData.termsConditions != "" &&
-    studentData.notInterested != "" &&
-    studentData.pastCourses &&
-    studentData.futureWaves != "" &&
-    studentData.age != "" &&
-    studentData.country != "" &&
-    studentData.city != "" &&
-    studentData.school != "" &&
-    studentData.studentAgreement != "" &&
-    studentData.howYouHear != "";
-  return result;
+var fitsRequirements = function(studentData, wrongSubmission, setWrongSubmission) {
+  var checkChangeSubmission = function(newMessage) {
+    if (newMessage !== wrongSubmission) {
+      setWrongSubmission(newMessage);
+    }
+  }
+
+  let checkKeys = ["name_first", "name_last", "email", "parentName", "parentEmail",
+                   "numCourses", "firstCourse", "termsConditions", "notInterested",
+                   "pastCourses", "futureWaves", "age", "country", "city", "school",
+                   "studentAgreement", "howYouHear"];
+  for (let key in checkKeys) {
+    if (!studentData[checkKeys[key]]) {
+      checkChangeSubmission("Please fill out the required fields.");
+      return false;
+    }
+  }
+
+  if (!(emailValidated(studentData.email) && emailValidated(studentData.parentEmail))) {
+    checkChangeSubmission("Please input valid email addresses.");
+    return false;
+  }
+
+  let courseKeys = ["firstCourse", "secondCourse", "thirdCourse", "fourthCourse",
+                    "fifthCourse", "sixthCourse", "seventhCourse", "eigthCourse"];
+  let courses = [];
+
+  for (let key in courseKeys) {
+    let option = studentData[courseKeys[key]];
+    if (!option) {
+      break;
+    }
+    if (courses.includes(option)) {
+      checkChangeSubmission("Please choose unique courses for the options.");
+      return false;
+    } else {
+      courses.push(option);
+    }
+  }
+
+  checkChangeSubmission("");
+  return true;
 };
 
 var emailValidated = function(email) {
@@ -484,18 +507,9 @@ const Home = (db, setPage, studentData, setStudentData, wrongSubmission, setWron
 
     <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
       <Form.Button onClick={(event) => {
-        if (fitsRequirements(studentData)) {
-          if (emailValidated(studentData.email) &&
-              emailValidated(studentData.parentEmail)) {
-              event.target.parentNode.removeChild(event.target);
-              submit(db, studentData, setErrorMessage, setPage);
-          } else {
-            setWrongSubmission("Please input a valid email address.")
-          }
-        } else {
-          setWrongSubmission("Please fill out the required fields.")
-        }
-      }} enabled={fitsRequirements(studentData)}>
+          event.target.parentNode.removeChild(event.target);
+          submit(db, studentData, setErrorMessage, setPage);
+        }} enabled={fitsRequirements(studentData, wrongSubmission, setWrongSubmission)} >
         <Typography.Header color="white" fontSize="24px">
           Submit
         </Typography.Header>
