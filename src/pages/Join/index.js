@@ -13,9 +13,9 @@ const Join = () => {
         <ContainerInner>
           <Typography.Header style={{color: Colors.WLF_PURPLE}}>Join the Wave Learning Festival Team!</Typography.Header>
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdvwghN60MNhtoJMTuR5lb-l-eh3JZNYacKJX_lPBppItp8Xw/viewform?embedded=true"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdl_OKRRZOHB4gRRSCMbHKnRmaq-n_T6upYNtC687PtmV_dRA/viewform?embedded=true"
             width="700"
-            height="520"
+            height="700"
             frameborder="0"
             marginheight="0"
             marginwidth="0"
