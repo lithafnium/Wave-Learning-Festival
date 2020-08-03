@@ -34,7 +34,7 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
         </SearchContainer>
       </ContainerInner>
       <OptionsContainer>
-        <div>
+        <div style = {{ marginRight: '30px' }}>
           <h2 style={{ color: Colors.WLF_PURPLE, textAlign: 'left' }}>Course Categories:</h2>
           <CheckboxContainer>
             <CheckboxColumn>
@@ -43,7 +43,7 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
               <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_TURQOUISE} text = "Science" value = "science"/>
             </CheckboxColumn>
             <CheckboxColumn>
-              <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Writing" value = "writing"/>
+              <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Literature" value = "literature"/>
               <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_PURPLE} text = "Arts" value = "arts"/>
               <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "School Tips" value = "schoolTips"/>
             </CheckboxColumn>
@@ -55,6 +55,8 @@ const Filter = ({ filteredItems, addFilter, removeFilter, searchItems }) => {
             <CheckboxColumn>
               <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_ORANGE} text = "Culture" value = "culture"/>
               <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Math" value = "math"/>
+              <Checkbox addFilter = {addFilter} removeFilter = {removeFilter} color = {Colors.WLF_YELLOW} text = "Lifestyle" value = "lifestyle"/>
+
             </CheckboxColumn>
           </CheckboxContainer>
         </div>

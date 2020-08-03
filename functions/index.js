@@ -297,15 +297,15 @@ exports.sendEmailConfirmationStudent =
             to: email,
         }
 
-        mailOptions.subject = "Wave Learning Festival: Thank you for Registering for Wave 4!"
+        mailOptions.subject = "Wave Learning Festival: Thank you for Registering for Wave 5!"
         mailOptions.text = `
 Dear ${name},
-Thank you for registering for Wave 4 of Wave Learning Festival--we’re so excited for you to join us!
+Thank you for registering for Wave 5 of Wave Learning Festival--we’re so excited for you to join us!
 \nBecause we’re a new and growing non-profit, our email account isn’t always recognized by spam filters. 
 To make sure you get all of our updates, please add my email as a contact. In Gmail, you can do this 
 by hovering over my icon in this email and clicking "Add to Contacts". In other email services, you can 
 click on contacts and add my email manually. Please let us know if there are any problems!
-\nRegistration for Wave 4 continues until Thursday, 7/23. You will be notified of your course acceptances and waitlists on Friday, 7/24. 
+\nRegistration for Wave 5 continues until Wednesday, 8/12. You will be notified of your course acceptances and waitlists on Friday, 8/14. 
 \nThanks so much! If you have any questions, just reply and let me know! We’re excited to have you on board.
 
 Best,
@@ -318,15 +318,15 @@ const mailOptionsParent = {
     to: parentEmail,
 }
 
-mailOptionsParent.subject = "Wave Learning Festival: Thank you for Registering your Student for Wave 4!"
+mailOptionsParent.subject = "Wave Learning Festival: Thank you for Registering your Student for Wave 5!"
 mailOptionsParent.text = `
 Dear ${parentName},
-Thank you for registering for Wave 4 of Wave Learning Festival--we’re so excited for your student to join us!
+Thank you for registering for Wave 5 of Wave Learning Festival--we’re so excited for your student to join us!
 \nBecause we’re a new and growing non-profit, our email account isn’t always recognized by spam filters. 
 To make sure you get all of our updates, please add my email as a contact. In Gmail, you can do this 
 by hovering over my icon in this email and clicking "Add to Contacts". In other email services, you can 
 click on contacts and add my email manually. Please let us know if there are any problems!
-\nRegistration for Wave 4 has been extended until Thursday, 7/23. You will be notified of your course acceptances and waitlists on Friday, 7/24. 
+\nRegistration for Wave 5 continues until Wednesday, 8/12. You will be notified of your course acceptances and waitlists on Friday, 8/14.
 \nThanks so much! If you have any questions, just reply and let me know! We’re excited to have you on board.
 
 Best,

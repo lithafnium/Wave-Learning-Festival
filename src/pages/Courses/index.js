@@ -9,7 +9,7 @@ import { Button, Header, Title, Heading } from './styles'
 import 'firebase/firestore'
 
 import WaveLogo from '../Blog/wave-learning-logo.png'
-import ProgressBar from './ProgressBars/wlf_progressbar-04.png'
+import ProgressBar from './ProgressBars/wlf_progressbar-01.png'
 
 import Filter from '../../components/Filter'
 import CourseCard from '../../components/CourseCard'
@@ -71,15 +71,14 @@ const Courses = () => {
   }
 
   /* Set Current Wave */
-  const WAVE = '4'
+  const WAVE = '5'
 
   useEffect(() => {
     if (db) {
       db.collection('fl_content').onSnapshot(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           if (doc.data().schema === 'coursePage' && doc.data().wave === WAVE) {
-            console.log(doc.data())
-            var pic = doc.data().picture[0];
+            var pic = doc.data().picture[0]
             if (pic) {
               db.doc(pic.path).onSnapshot(function (picture) {
                 if (picture.exists) {
@@ -161,6 +160,7 @@ const Courses = () => {
   }, [db, storage])
 
   useEffect(() => {
+    console.log(courses.length)
     if (filteredItems.length === 0) {
       setFilteredCourses(courses)
     } else {
@@ -209,7 +209,7 @@ const Courses = () => {
           </div>
 
           <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
-            We are excited to offer <strong>{courses.length} courses</strong> across a variety of subjects for Wave Four running from <strong>July 27th to August 14th</strong>. Our
+            We are excited to offer <strong>{courses.length} courses</strong> across a variety of subjects for Wave Five running from <strong>August 17th to August 30th</strong>. Our
             volunteer educators have worked hard to prepare engaging and
             thoughtful curricula and can't wait to share their passions with
             you. Feel free to send any
