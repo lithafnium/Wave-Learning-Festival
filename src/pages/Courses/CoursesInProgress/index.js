@@ -138,7 +138,7 @@ const Courses = () => {
           </div>
 
           <Typography.BodyText style={{ color: Colors.WLF_BLACK }}>
-            We are excited to offer <strong>{courses.length} courses</strong> across a variety of subjects for Wave Three running from <strong>July 27th to August 14th</strong>. Our
+            We are excited to offer <strong>{courses.length} courses</strong> across a variety of subjects for Wave Four running from <strong>July 27th to August 14th</strong>. Our
             volunteer educators have worked hard to prepare engaging and
             thoughtful curricula and can't wait to share their passions with
             you. Feel free to send any
