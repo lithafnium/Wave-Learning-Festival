@@ -115,6 +115,7 @@ const About = () => {
                   <ul style={{ marginTop: -10, marginLeft: -25, lineHeight: 1.5 }}>
                     <li><b>WAVE 5 COURSE REGISTRATION IS OPEN!</b> <a href="/courses" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
                     <li>Learn how to write a stand-out resumé with Cliff Hsia on Wedneday, 8/5! <a href="/speakers" style={{ color: Colors.WLF_YELLOW }}>Learn More</a></li>
+                    <li>Interested in joining the Wave team? Applications are open until 8/11! <a href="/join" style={{color: Colors.WLF_YELLOW}}>Learn More</a></li>
                   </ul>
                 </Typography.BodyText>
               </Typography.Header>
