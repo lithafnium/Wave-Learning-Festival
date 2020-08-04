@@ -86,6 +86,12 @@ const teamData = [
     image: AlainDalma
   },
   {
+    name: 'Yael Livneh',
+    school: 'Cal Poly SLO 2023',
+    position: ASSOC_DIRECTOR_LOGISTICS,
+    image: YaelLivneh
+  },
+  {
     name: 'Steve Li',
     school: 'Harvard 2023',
     position: CO_DIRECTOR_TECH,
@@ -163,12 +169,6 @@ const teamData = [
     position: DIRECTOR_BUSINESS,
     image: CarterMartindale
   },
-  {
-    name: 'Yael Livneh',
-    school: 'Cal Poly SLO 2023',
-    position: ADVISOR,
-    image: YaelLivneh
-  }
 ]
 
 function getColor (position) {
