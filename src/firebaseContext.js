@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { firebaseApp } from './firebase'
 export const FirebaseContext = React.createContext()
 
+
 export const FirebaseProvider = ({ children }) => {
   const [auth, setAuth] = useState(null)
   const [db, setdb] = useState(null)
