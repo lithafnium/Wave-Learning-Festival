@@ -282,10 +282,13 @@ function App () {
             <Route path="/past-speakers">
               <PastSpeakers />
             </Route>
-            <Route path="/speaker-sign-up-ruta">
+            <Route path="/speaker-sign-up-ruta1">
               <Speaker1SignUp />
             </Route>
-            <Route path="/speaker-sign-up-cliff">
+            <Route path="/speaker-sign-up-ruta2">
+              <Speaker2SignUp />
+            </Route>
+            <Route path="/speaker-sign-up-ruta3">
               <Speaker3SignUp />
             </Route>
             <Route path="/reset-password">
