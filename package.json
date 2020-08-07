@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "aws-amplify": "^3.0.22",
     "craco": "0.0.3",
     "craco-alias": "^2.1.1",
     "firebase": "^7.15.0",
