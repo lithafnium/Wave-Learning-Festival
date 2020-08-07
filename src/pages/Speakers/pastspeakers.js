@@ -21,6 +21,22 @@ import { Colors } from '@/styles'
 const PastSpeakers = () => {
   const pastSpeakers = [
     {
+      name: 'Cliff Hsia: How to Write a Resumé That Will Get Recruiters’ Attention and Get You Interviews',
+      img: Cliff,
+      title: 'Writer, Marketer, Teacher',
+      date: 'Wednesday 8/5 7:00-8:00pm EDT',
+      desc: <p><b>Seminar 1: How to Write a Resumé That Will Get Recruiters’ Attention and Get You Interviews</b>
+      <br/>How do you stand out in a crowded field of job applicants? A clear and well-written resumé. A solid LinkedIn profile helps, too.
+      <br/>In this session, you'll learn quick and easy steps to write an attention-grabbing resumé and a LinkedIn profile that get you requests for interviews—no matter what your level of work experience may be.
+      <br/>Come with your questions as there will be plenty of time for Q&A with Cliff.</p>,
+      bio: <p>Cliff Hsia is a Hawaii-raised, California-based writer, marketer, teacher, traveler, husband, and father. Over the course of his 15+ years marketing career in technology, he has worked for various companies in the Bay Area, including Alibaba, Cisco, Box, and Palo Alto Networks. He's also worked for dozens of companies as a freelance copywriter and editor for startups and big tech giants like Google, Yahoo, and Lyft. Throughout his career, he's learned how to efficiently get more jobs and clients—many at the same time—with a clear and well-written resume, solid interviewing skills, and savvy negotiating techniques. 
+        <br/>Check out his writing about family travel and lifestyle design at LiveFamilyTravel.com, HuffPost, TODAY, The Good Men Project, and other media publications. Cliff also works as a private writing and English tutor, a Gates Millennium/APIA Scholar mentor, and a YouTube creator. 
+        <br/>Connect with Cliff here: <a href="https://www.facebook.com/clifftutoring">Facebook</a> and <a href="https://youtu.be/tHFGwMGJDIc">YouTube – 6 Years of Travel Around the World</a></p>,
+      hasTime: false,
+      age: "9th Grade and up",
+      signup: ""
+    },
+    {
       img: Nate,
       name: 'Nate Saal: The Art and Science of Making Chocolate',
       title: 'CEO, CocoTerra Company',
