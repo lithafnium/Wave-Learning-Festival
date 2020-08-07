@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
 import { listBlogs, listPosts } from '../../graphql/queries';
-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import {
