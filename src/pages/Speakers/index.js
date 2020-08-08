@@ -31,6 +31,17 @@ const Speakers = () => {
       age: "6th - 12th Grade",
       signup: "/speaker-sign-up-ruta1"
     },
+    {
+      name: 'Lisa Baldwin: The Natural Way to Paint',
+      img: Lisa,
+      title: 'Contemporary Plein Air Painter',
+      date: 'Pre-recorded videos sent every Monday, Wednesday, Friday, during Wave 5 (6 videos total)',
+      desc: 'Develop the fundamental skills of plein air painting. Students will learn how to sketch, mix colors, the basics of composition, and the use of perspective. Discover like the French Impressionists how to capture natural light, shade, and color. This hands on 6 session course gives students both historical background and practical instruction on how to paint nature from observation. With drawing and painting exercises and coaching students will also be encouraged to develop their own individual painting styles.',
+      bio: 'Lisa Baldwin is a contemporary plein air painter who edits her compositions to include only what is essential like a visual haiku. Lisa is from South Eastern Quebec and moved to Los Angeles four and a half years ago. She has always been an outdoors woman and her work is influenced by the paintings of Tom Thomson and the Canadian Group of Seven. They were a collective of early 20th century artists who, like the Impressionists painted outdoors on location. They traveled into the wilderness to paint and believed that a distinct Canadian art could be developed through direct contact with nature. Lisa is currently represented by Topanga Canyon Gallery in Los Angeles and Cube Projects in Ottawa. Her work is in private collections across Canada, the United States, Belgium, Hungary, and China.',
+      hasTime: true, 
+      age: "12+ including adults",
+      signup: "/speaker-sign-up-lisa"
+    },
   ]
 
   const speakers = [
@@ -102,17 +113,6 @@ const Speakers = () => {
       bio: 'Iris Fu is a rising freshman at Stanford University, where she plans to study computer science and economics. In high school, she self-published an introductory economics book, created an international video pal program, and had the opportunity to perform flute at Carnegie Hall. This summer, she is working at a blockchain identity startup, running a college admissions Youtube channel (Iris Fu), and seeking cool opportunities like speaking at Wave LF!',
       hasTime: false, 
       age: "7th - 12th Grade",
-      signup: ""
-    },
-    {
-      name: 'Lisa Baldwin: The Natural Way to Paint ',
-      img: Lisa,
-      title: 'Contemporary Plein Air Painter',
-      date: 'Pre-recorded, Videos sent every Monday, Wednesday, Friday, during Wave 5 (6 videos total)',
-      desc: 'Develop the fundamental skills of plein air painting. Students will learn how to sketch, mix colors, the basics of composition, and the use of perspective. Discover like the French Impressionists how to capture natural light, shade, and color. This hands on 6 session course gives students both historical background and practical instruction on how to paint nature from observation. With drawing and painting exercises and coaching students will also be encouraged to develop their own individual painting styles.',
-      bio: 'Lisa Baldwin is a contemporary plein air painter who edits her compositions to include only what is essential like a visual haiku. Lisa is from South Eastern Quebec and moved to Los Angeles four and a half years ago. She has always been an outdoors woman and her work is influenced by the paintings of Tom Thomson and the Canadian Group of Seven. They were a collective of early 20th century artists who, like the Impressionists painted outdoors on location. They traveled into the wilderness to paint and believed that a distinct Canadian art could be developed through direct contact with nature. Lisa is currently represented by Topanga Canyon Gallery in Los Angeles and Cube Projects in Ottawa. Her work is in private collections across Canada, the United States, Belgium, Hungary, and China.',
-      hasTime: false, 
-      age: "12+ including adults",
       signup: ""
     },
     {
