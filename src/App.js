@@ -16,6 +16,7 @@ import PastSpeakers from './pages/Speakers/pastspeakers.js'
 import Speaker1SignUp from './pages/Speakers/SpeakerSignup/speaker1.js'
 import Speaker2SignUp from './pages/Speakers/SpeakerSignup/speaker2.js'
 import Speaker3SignUp from './pages/Speakers/SpeakerSignup/speaker3.js'
+import Speaker4SignUp from './pages/Speakers/SpeakerSignup/speaker4.js'
 
 
 // wave 1
@@ -290,6 +291,9 @@ function App () {
             </Route>
             <Route path="/speaker-sign-up-ruta3">
               <Speaker3SignUp />
+            </Route>
+            <Route path="/speaker-sign-up-lisa">
+              <Speaker4SignUp />
             </Route>
             <Route path="/reset-password">
               <ResetPassword />
