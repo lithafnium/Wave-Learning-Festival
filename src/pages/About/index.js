@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
-import { listBlogs, listPosts } from '../../graphql/queries'
 import { createNewsletter } from '../../graphql/mutations'
-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import {
@@ -47,19 +45,6 @@ const About = () => {
       }
     ))
   }
-
-  const getBlog = async () => {
-    const todos = await API.graphql(graphqlOperation(listBlogs));
-    console.log(todos)
-  }
-  const getPosts = async () => {
-    let posts = await API.graphql(graphqlOperation(listPosts))
-    console.log(posts)
-  }
-  useEffect(() => {
-    getBlog()
-    getPosts()
-  }, [])
 
   const subscribe = () => {
     toggleEmail(false)
