@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Amplify, { API, graphqlOperation } from 'aws-amplify'
-import { listBlogs, listPosts } from '../../graphql/queries';
+import { listBlogs, listPosts } from '../../graphql/queries'
+import { createNewsletter } from '../../graphql/mutations'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -37,6 +38,16 @@ const About = () => {
   const [emailError, toggleEmail] = useState(false)
   const [subscribed, toggleSubscribed] = useState(false)
   const { db } = useContext(FirebaseContext)
+  const addEmail = async () => {
+    API.graphql(graphqlOperation(createNewsletter, {
+        input: {
+          email: "steveli@college.harvard.edu", 
+          name: "Steve Li"
+        }
+      }
+    ))
+  }
+
   const getBlog = async () => {
     const todos = await API.graphql(graphqlOperation(listBlogs));
     console.log(todos)
@@ -64,14 +75,16 @@ const About = () => {
       valid = false
     }
 
-    if (db && valid) {
+    if (valid) {
       const name_split = name.split(' ')
-      db.collection('Newsletter')
-        .add({
-          name,
-          email
-        })
-        .then(toggleSubscribed(true))
+      API.graphql(graphqlOperation(createNewsletter, {
+        input: {
+          email: email, 
+          name: name
+        }
+      }
+    ))
+      toggleSubscribed(true)
     }
   }
 
@@ -113,6 +126,11 @@ const About = () => {
               <a href="/course-sign-up" className="sign-up-link">
                 <Button>
                   <p>Register!</p>
+                </Button>
+              </a>
+              <a  className="sign-up-link">
+                <Button onClick={() => addEmail()}>
+                  <p>Add test</p>
                 </Button>
               </a>
             </div>
